@@ -261,6 +261,11 @@ Nuestro producto principal, uFlex, es una solución integral diseñada para la t
 
 Empoderar a pacientes y especialistas en rehabilitación mediante soluciones IoT innovadoras que garanticen la precisión clínica en el hogar, reduciendo los tiempos de recuperación y eliminando la incertidumbre en las terapias remotas.
 
+### Visión
+
+Ser reconocidos en el 2030 como la startup líder en telemonitoreo biomecánico en Latinoamérica, destacando por la integración de hardware de bajo costo y software de alta fidelidad para la salud articular.
+
+
 
 ### 1.1.1. Descripción de la Startup
 
