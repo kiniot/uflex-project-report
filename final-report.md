@@ -397,7 +397,132 @@ El proceso de colaboración en el informe se realizó mediante commits constante
 
 ### 2.1.1. Análisis competitivo
 
+<table>
+  <tr>
+    <th colspan="6">Competitive Analysis landscape</th>
+  </tr>
+  <tr>
+    <td colspan="2" align="center"><b>¿Por qué llevar a cabo este análisis?</b></td>
+    <td colspan="4">¿De qué manera puede KinIoT diferenciarse de las soluciones de rehabilitación digital actuales mediante el uso de tecnología IoT para capturar datos cuantitativos precisos, superando las barreras de alto costo y falta de biofeedback en tiempo real que presentan los competidores en el mercado peruano?</td>
+  </tr>
+  <tr>
+    <th colspan="2">Nombre</th>
+    <th>KinIoT</th>
+    <th>Sword Health</th>
+    <th>Hinge Health</th>
+    <th>Physitrack</th>
+  </tr>
+  <tr>
+    <td colspan="2" align="center"><b>Logo</b></td>
+    <td align="center"><img src="img/kiniot-logo.png" alt="KinIoT logo" width="100"></td>
+    <td align="center"><img src="img/sword-logo.png" alt="Sword Health logo" width="100"></td>
+    <td align="center"><img src="img/hinge-logo.png" alt="Hinge Health logo" width="100"></td>
+    <td align="center"><img src="img/physitrack-logo.png" alt="Physitrack logo" width="100"></td>
+  </tr>
+  <tr>
+    <td rowspan="2"><b>Perfil</b></td>
+    <td><b>Overview</b></td>
+    <td>Ecosistema IoT y SaaS para telerehabilitación con monitoreo biomecánico en tiempo real</td>
+    <td>Líder global en terapia física digital con sensores de grado clínico y supervisión médica</td>
+    <td>Clínica digital integral que usa sensores y visión computarizada para el cuidado articular</td>
+    <td>Plataforma SaaS global para prescripción de ejercicios y seguimiento de resultados mediante video</td>
+  </tr>
+  <tr>
+    <td><b>Ventaja competitiva ¿Qué valor ofrece a los clientes?</b></td>
+    <td>Monitoreo cuantitativo preciso mediante sensores físicos a un costo accesible para el mercado local</td>
+    <td>IA avanzada y sensores de alta fidelidad con validación clínica masiva en mercados premium</td>
+    <td>Ecosistema híbrido que combina sensores físicos con visión artificial "TrueMotion"</td>
+    <td>Marca establecida con una de las bibliotecas de ejercicios clínicos más grandes del mundo</td>
+  </tr>
+  <tr>
+    <td rowspan="2"><b>Perfil de Marketing</b></td>
+    <td><b>Mercado objetivo</b></td>
+    <td>Centros de salud, Fisioterapeutas y pacientes con lesiones de miembro superior.</td>
+    <td>Grandes corporaciones y planes de salud empresariales en EE. UU. y Europa</td>
+    <td>Empleadores y planes de salud que buscan reducir costos por cirugías innecesarias</td>
+    <td>Fisioterapeutas independientes y clínicas de tamaño medio a nivel global</td>
+  </tr>
+  <tr>
+    <td><b>Estrategias de Marketing</b></td>
+    <td>B2B enfocado en reducir la deserción y optimizar el tiempo de evaluación manual.</td>
+    <td>Enfoque en el ahorro de costos para empleadores al evitar cirugías innecesarias</td>
+    <td>Marketing basado en la reducción del dolor crónico y programas preventivos corporativos</td>
+    <td>Marketing digital masivo y alianzas con asociaciones profesionales de fisioterapia</td>
+  </tr>
+  <tr>
+    <td rowspan="3"><b>Perfil de Producto</b></td>
+    <td><b>Productos &amp; Servicios</b></td>
+    <td>Kinetic Track: Nodos vestibles (IoT) + App móvil con gamificación + Dashboard Web.</td>
+    <td>Plataforma de "Terapeuta Digital", sensores propios y programas especializados como Bloom</td>
+    <td>Sensores de movimiento, programas de coaching de salud y visión computarizada</td>
+    <td>Aplicación para prescripción de ejercicios, telemedicina y seguimiento de adherencia</td>
+  </tr>
+  <tr>
+    <td><b>Precios y Costos</b></td>
+    <td>Pago por kit de hardware + Suscripción mensual por paciente activo (SaaS)</td>
+    <td>Modelo de precios premium orientado a contratos corporativos de alto volumen</td>
+    <td>Modelo de suscripción B2B de alto nivel para grandes beneficios corporativos</td>
+    <td>Suscripción de bajo costo por profesional de la salud.</td>
+  </tr>
+  <tr>
+    <td><b>Canales de distribución</b></td>
+    <td>Web para especialistas y Administradores; App Móvil para pacientes.</td>
+    <td>Ecosistema cerrado de Hardware, Tablet y Aplicaciones Móviles</td>
+    <td>Aplicaciones móviles integradas con hardware y cámara</td>
+    <td>Aplicaciones Web y Móviles multiplataforma</td>
+  </tr>
+  <tr>
+    <td rowspan="4"><b>Análisis SWOT</b></td>
+    <td><b>Fortalezas</b></td>
+    <td>Captura de datos biomecánicos precisos que elimina la subjetividad clínica y enfoque específico en lesiones de miembro superior, permitiendo algoritmos más exactos</td>
+    <td>Capital masivo, algoritmos de IA de vanguardia y validación clínica de nivel superior</td>
+    <td>Utiliza una combinación avanzada de sensores vestibles y visión computarizada a través de la cámara del smartphone para corregir la postura en tiempo real</td>
+    <td>Gran base de usuarios instalada y reconocimiento de marca global</td>
+  </tr>
+  <tr>
+    <td><b>Oportunidades</b></td>
+    <td>Alta penetración de smartphones y demanda de telemedicina en el hogar peruano</td>
+    <td>Expansión a Latinoamérica mediante alianzas con aseguradoras globales.</td>
+    <td>Aunque domina el mercado estadounidense, tiene una gran oportunidad de crecimiento en regiones como Latinoamérica</td>
+    <td>Integrar visión computarizada para actualizar su propuesta tecnológica</td>
+  </tr>
+  <tr>
+    <td><b>Debilidades</b></td>
+    <td>Marca nueva en el mercado sin historial extenso de datos clínicos acumulados</td>
+    <td>Precio prohibitivo para el mercado de clínicas pequeñas (MYPES) en regiones emergentes como Perú</td>
+    <td>Su modelo de negocio está diseñado para grandes corporaciones (B2B), lo que resulta económicamente inviable para clínicas pequeñas o independientes</td>
+    <td>Carece de herramientas de biofeedback en tiempo real o sensores de movimiento</td>
+  </tr>
+  <tr>
+    <td><b>Amenazas</b></td>
+    <td>Resistencia al cambio por parte de fisioterapeutas con métodos tradicionales analógicos</td>
+    <td>Competencia agresiva de Hinge Health en el sector corporativo</td>
+    <td>Usuarios que requieran mayor precisión clínica (IoT) para patologías complejas</td>
+    <td>El surgimiento de sensores IoT de bajo costo y alta precisión que pueden democratizar el acceso a la tecnología que antes eran exclusivas</td>
+  </tr>
+</table>
+
 ### 2.1.2. Estrategias y tácticas frente a competidores
+
+En esta sección se detallan las estrategias y tácticas que KinIoT aplicará para establecer una ventaja competitiva en el sector de la telerehabilitación biomecánica.
+
+**Estrategias para afrontar las fortalezas de los competidores**
+
+- **Diferenciación por Precisión Articular Específica:** Para enfrentar la fortaleza de Hinge Health y su tecnología de visión artificial, KinIoT aplicará la táctica de "Validación Biomecánica por Sensores Inerciales". Dado que la visión por cámara puede perder precisión ante oclusiones físicas, nuestros sensores físicos garantizan una captura de datos del Rango de Movimiento (ROM) con un margen de error menor al 5%, lo cual es fundamental para la rehabilitación de codo y muñeca.
+
+- **Estrategia de Accesibilidad B2B Local:** Ante el dominio de Sword Health en mercados corporativos de alto nivel, implementaremos una táctica de "Aprovisionamiento de Bajo Costo para MYPES". Nos enfocaremos en clínicas privadas de Lima Metropolitana ofreciendo un modelo de pago por kit de hardware y una suscripción SaaS escalable, permitiendo que centros locales adopten tecnología de punta sin la inversión prohibitiva de los competidores globales.
+
+**Estrategias para aprovechar las debilidades de los competidores**
+
+- **Táctica de Biofeedback Activo en Tiempo Real:** Aprovecharemos la debilidad de Physitrack, que se limita al seguimiento pasivo basado en videos, mediante la implementación de corrección postural inmediata. La aplicación móvil de Kinetic Track proporcionará alertas visuales y gamificadas que guiarán al paciente durante la ejecución del ejercicio, asegurando que se cumplan los protocolos terapéuticos y reduciendo el riesgo de movimientos compensatorios lesivos.
+
+- **Estrategia de Fidelización basada en Datos Objetivos:** Capitalizaremos la falta de métricas cuantitativas en las terapias tradicionales para ofrecer a los fisioterapeutas un dashboard de alta densidad de datos. Esto les permitirá ajustar los planes de tratamiento basados en evidencia clínica real, mejorando la adherencia del paciente y reduciendo la tasa de deserción que afecta la rentabilidad de las clínicas.
+
+**Contexto de Oportunidades y Amenazas**
+
+- **Oportunidades:** Aprovecharemos la alta penetración de smartphones en los hogares peruanos (94.8%) y el crecimiento de las atenciones por telemedicina (más de 3.4 millones recientemente) para posicionar la telerehabilitación como un estándar accesible.
+
+- **Amenazas:** Para mitigar la resistencia al cambio de los especialistas tradicionales, se aplicará una táctica de "Onboarding y Soporte Especializado", demostrando mediante informes automáticos cómo nuestra herramienta reduce en un 30% el tiempo de evaluación manual en el consultorio.
 
 ## 2.2. Entrevistas
 
@@ -410,6 +535,20 @@ El proceso de colaboración en el informe se realizó mediante commits constante
 ## 2.3. Needfinding
 
 ### 2.3.1. User Personas
+
+Esta sección presenta nuestros usuarios ideales diseñados para el ecosistema de KinIoT. Estos artefactos se han construido a partir del análisis del mercado peruano de salud, el comportamiento de las clínicas privadas y las barreras de accesibilidad en la rehabilitación física.
+
+**User persona del segmento de pacientes en rehabilitación del miembro superior**
+
+<img src="img/user-persona-paciente.png" alt="User Persona Paciente" width="800">
+
+**User persona del segmento de fisioterapeuta**
+
+<img src="img/user-persona-fisioterapeuta.png" alt="User Persona Fisioterapeuta" width="800">
+
+**User persona del segmento de administradores de clínica y centros de salud**
+
+<img src="img/user-persona-administrador.png" alt="User Persona Administrador" width="800">
 
 ### 2.3.2. User Task Matrix
 
