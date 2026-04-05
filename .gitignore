@@ -2,8 +2,9 @@
 README.md
 new.md
 
-# Claude Code config
+# Claude Code configs
 .claude/
+CLAUDE.md
 
 # IntelliJ / JetBrains IDE settings
 .idea/
