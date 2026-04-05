@@ -14,8 +14,6 @@
 
 <h4 style="text-align: center"> Docente: Marco Antonio León Baca </h4>
 
-<br>
-
 <h3 style="text-align: center;"> Informe del Trabajo Final </h3>
 
 <h4 style="text-align: center"> Startup: KinIoT </h4>
@@ -206,6 +204,8 @@ Análisis de cantidad de commits realizados por semana.
 
 # Student Outcome
 
+En el siguiente cuadro se describe las acciones realizadas y enunciados de conclusiones por parte del grupo, que permiten sustentar el haber alcanzado el logro del ABET – EAC - Student Outcome 5
+
 <table>
   <thead>
     <tr>
@@ -216,38 +216,38 @@ Análisis de cantidad de commits realizados por semana.
   </thead>
   <tbody>
     <tr>
-      <td rowspan="5">[COMPLETAR: criterio específico 1]</td>
-      <td><strong>[COMPLETAR: Integrante 1]</strong><br><b>TB1:</b> <br><b>TP1:</b> <br><b>TB2:</b> <br><b>TF1:</b></td>
-      <td rowspan="5"><b>TB1:</b> <br><b>TP1:</b> <br><b>TB2:</b> <br><b>TF1:</b></td>
+      <td rowspan="5"><strong>Trabaja en equipo para proporcionar liderazgo en forma conjunta</strong></td>
+      <td><strong>Crispin Ramos, Daniel Franco</strong><br><b>TB1:</b></td>
+      <td rowspan="5"><b>TB1:</b></td>
     </tr>
     <tr>
-      <td><strong>[COMPLETAR: Integrante 2]</strong><br><b>TB1:</b> <br><b>TP1:</b> <br><b>TB2:</b> <br><b>TF1:</b></td>
+      <td><strong>Ramirez Mestanza, Salim Ignacio</strong><br><b>TB1:</b></td>
     </tr>
     <tr>
-      <td><strong>[COMPLETAR: Integrante 3]</strong><br><b>TB1:</b> <br><b>TP1:</b> <br><b>TB2:</b> <br><b>TF1:</b></td>
+      <td><strong>Rivera Sosa, Eduardo Gael</strong><br><b>TB1:</b></td>
     </tr>
     <tr>
-      <td><strong>[COMPLETAR: Integrante 4]</strong><br><b>TB1:</b> <br><b>TP1:</b> <br><b>TB2:</b> <br><b>TF1:</b></td>
+      <td><strong>Sulca Gonzales, Paúl Fernando</strong><br><b>TB1:</b></td>
     </tr>
     <tr>
-      <td><strong>[COMPLETAR: Integrante 5]</strong><br><b>TB1:</b> <br><b>TP1:</b> <br><b>TB2:</b> <br><b>TF1:</b></td>
+      <td><strong>Varela Bustinza, Marcelo Alessandro</strong><br><b>TB1:</b></td>
     </tr>
     <tr>
-      <td rowspan="5">[COMPLETAR: criterio específico 2]</td>
-      <td><strong>[COMPLETAR: Integrante 1]</strong><br><b>TB1:</b> <br><b>TP1:</b> <br><b>TB2:</b> <br><b>TF1:</b></td>
-      <td rowspan="5"><b>TB1:</b> <br><b>TP1:</b> <br><b>TB2:</b> <br><b>TF1:</b></td>
+      <td rowspan="5"><strong>Crea un entorno colaborativo e inclusivo, establece metas, planifica tareas y cumple objetivos</strong></td>
+      <td><strong>Crispin Ramos, Daniel Franco</strong><br><b>TB1:</b></td>
+      <td rowspan="5"><b>TB1:</b></td>
     </tr>
     <tr>
-      <td><strong>[COMPLETAR: Integrante 2]</strong><br><b>TB1:</b> <br><b>TP1:</b> <br><b>TB2:</b> <br><b>TF1:</b></td>
+      <td><strong>Ramirez Mestanza, Salim Ignacio</strong><br><b>TB1:</b></td>
     </tr>
     <tr>
-      <td><strong>[COMPLETAR: Integrante 3]</strong><br><b>TB1:</b> <br><b>TP1:</b> <br><b>TB2:</b> <br><b>TF1:</b></td>
+      <td><strong>Rivera Sosa, Eduardo Gael</strong><br><b>TB1:</b></td>
     </tr>
     <tr>
-      <td><strong>[COMPLETAR: Integrante 4]</strong><br><b>TB1:</b> <br><b>TP1:</b> <br><b>TB2:</b> <br><b>TF1:</b></td>
+      <td><strong>Sulca Gonzales, Paúl Fernando</strong><br><b>TB1:</b></td>
     </tr>
     <tr>
-      <td><strong>[COMPLETAR: Integrante 5]</strong><br><b>TB1:</b> <br><b>TP1:</b> <br><b>TB2:</b> <br><b>TF1:</b></td>
+      <td><strong>Varela Bustinza, Marcelo Alessandro</strong><br><b>TB1:</b></td>
     </tr>
   </tbody>
 </table>
