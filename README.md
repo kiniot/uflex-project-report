@@ -317,6 +317,10 @@ Innovación constante: Buscamos optimizar continuamente nuestros algoritmos de p
 
 ### 1.2.1 Antecedentes y problemática
 
+#### WHAT (Qué)
+
+El principal problema es la falta de seguimiento preciso y continuo de la rehabilitación de fracturas de miembro superior en el domicilio del paciente, lo que genera riesgo de mala ejecución de ejercicios, recaídas, secuelas funcionales y prolongación de los tiempos de recuperación (Carbajal Galarza et al., 2021).
+Muchos centros de rehabilitación en el Perú aún dependen de controles presenciales periódicos, dejando grandes lapsos de tiempo sin supervisión clínica efectiva entre sesiones, lo que limita la optimización del proceso terapéutico (MINSA, 2025b).
 
 
 ### 1.2.2 Lean UX Process
