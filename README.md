@@ -359,6 +359,7 @@ Económicamente, una sesión de terapia individual cuesta entre S/ 100 y S/ 200 
 
 ### 1.2.2 Lean UX Process
 
+El Lean UX Process es una metodología ágil que prioriza el aprendizaje validado y la colaboración multidisciplinaria sobre la documentación exhaustiva. En el desarrollo de uFlex, aplicamos este enfoque para iterar rápidamente sobre la integración de hardware IoT y software, centrando el diseño en la reducción de la incertidumbre clínica y operativa mediante ciclos continuos de retroalimentación entre el paciente y el especialista.
 
 
 #### 1.2.2.1. Lean UX Problem Statements
