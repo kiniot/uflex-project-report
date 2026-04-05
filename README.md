@@ -84,13 +84,9 @@ Se usó el flujo de trabajo **GitFlow**, que incluye las siguientes ramas princi
 
 - **main:** Rama principal que contiene la versión estable y consolidada del documento.
 - **develop:** Rama de integración utilizada para fusionar los cambios realizados en las ramas de características.
-- **feature/tbX-daniel:** Rama utilizada por Daniel para el desarrollo de las tareas correspondientes para una determinada entrega.
-- **feature/tbX-salim:** Rama utilizada por Salim para el desarrollo de las tareas correspondientes para una determinada entrega.
-- **feature/tbX-gael:** Rama utilizada por Gael para el desarrollo de las tareas correspondientes para una determinada entrega.
-- **feature/tbX-paul:** Rama utilizada por Paul para el desarrollo de las tareas correspondientes para una determinada entrega.
-- **feature/tbX-marcelo:** Rama utilizada por Marcelo para el desarrollo de las tareas correspondientes para una determinada entrega.
+- **feature/feature-name:** Ramas de características utilizadas para desarrollar secciones específicas del informe, como "feature/introduccion", "feature-requirements", etc.
 - **release/vX.X.X:** Rama creada para preparar versiones candidatas al reporte final, siguiendo *Semantic Versioning 2.0.0*. En esta rama se realizan ajustes finales como correcciones menores y revisiones antes de integrarla a `main`.
-- **hotfix/urgent-fix:** Rama utilizada para aplicar correcciones críticas directamente sobre `main`, asegurando la estabilidad de la versión publicada.
+- **hotfix/fix-name:** Rama utilizada para aplicar correcciones críticas directamente sobre `main`, asegurando la estabilidad de la versión publicada.
 
 ## TB1
 
