@@ -1,3 +1,10 @@
+# Example/reference files
+README.md
+new.md
+
+# Claude Code config
+.claude/
+
 # IntelliJ / JetBrains IDE settings
 .idea/
 *.iml
