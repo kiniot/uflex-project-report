@@ -365,14 +365,6 @@ El proceso de colaboración en el informe se realizó mediante commits constante
 
 ### 1.1.2. Perfiles de integrantes del equipo
 
-| **Perfil** | **Foto** |
-| ---------- | -------- |
-| **Eduardo Gael Rivera Sosa**<br> Mi nombre es Gael Rivera, soy estudiante de Ingeniería de Software. Me considero una persona responsable, competitiva y dedicada, con habilidades que me permiten comunicarme y trabajar en equipo de manera efectiva. Siempre estoy dispuesto a asumir nuevos desafíos y encontrar soluciones colaborativas. | <img src="img/gael-photo.jpg" alt="gael image" width="200"> |
-| **[COMPLETAR: Apellidos, Nombres]**<br> [COMPLETAR: descripción] | <img src="img/[COMPLETAR].jpg" alt="[COMPLETAR]" width="200"> |
-| **[COMPLETAR: Apellidos, Nombres]**<br> [COMPLETAR: descripción] | <img src="img/[COMPLETAR].jpg" alt="[COMPLETAR]" width="200"> |
-| **[COMPLETAR: Apellidos, Nombres]**<br> [COMPLETAR: descripción] | <img src="img/[COMPLETAR].jpg" alt="[COMPLETAR]" width="200"> |
-| **[COMPLETAR: Apellidos, Nombres]**<br> [COMPLETAR: descripción] | <img src="img/[COMPLETAR].jpg" alt="[COMPLETAR]" width="200"> |
-
 ## 1.2. Solution Profile
 
 ### 1.2.1 Antecedentes y problemática
