@@ -253,7 +253,7 @@ En el siguiente cuadro se describe las acciones realizadas y enunciados de concl
 # Capítulo I: Introducción
 
 ## 1.1. Startup Profile
-
+KinIoT es una startup peruana conformada por estudiantes de Ingeniería de Software de la Universidad Peruana de Ciencias Aplicadas (UPC). Nuestra organización nace con el propósito de cerrar la brecha tecnológica en el sector salud, específicamente en el área de la medicina física y rehabilitación. Nos especializamos en el desarrollo de ecosistemas de Internet de las Cosas (IoT) y soluciones SaaS (Software as a Service) que transforman procesos terapéuticos convencionales en experiencias digitales precisas, seguras y monitoreadas.
 
 
 ### 1.1.1. Descripción de la Startup
