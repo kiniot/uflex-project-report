@@ -672,6 +672,93 @@ En esta sección se detallan las estrategias y tácticas que KinIoT aplicará pa
 
 ### 2.2.1. Diseño de entrevistas
 
+**Segmento 1: Administradores de Clínicas y Centros de Salud**
+
+**Preguntas de contexto y perfil (1-3)**
+
+1. ¿Cuál es su nombre, edad y en qué distrito vive actualmente?
+   - ¿Con quién vive? ¿Tiene pareja o hijos?
+   - ¿Cuál es su formación académica y cuántos años lleva trabajando en administración de salud?
+
+2. ¿Cómo está organizado el centro donde trabaja? ¿Cuántas sedes o especialistas tiene a cargo y cuántos pacientes atienden aproximadamente al mes?
+3. ¿Qué herramientas o sistemas utiliza actualmente para gestionar el seguimiento de pacientes y la operación del centro?
+
+**Preguntas sobre la problemática (4-8)**
+
+4. ¿Cuáles son los procesos que más le consumen tiempo o que le resultan más difíciles de controlar en la operación diaria?
+5. ¿Han tenido casos de pacientes que abandonan su tratamiento de rehabilitación antes de completarlo?
+6. ¿Cómo realizan actualmente el seguimiento de un paciente durante el tiempo que está en casa, entre una sesión presencial y otra?
+7. ¿Qué tan fácil o difícil es para usted saber si los fisioterapeutas están siendo productivos y si los pacientes están progresando correctamente?
+8. ¿Han implementado alguna tecnología nueva en el centro anteriormente?
+
+**Preguntas de perfil digital y objetivos (9-10)**
+
+9. ¿Qué dispositivos usa más en su trabajo diario y cómo prefiere acceder a información del centro: laptop, tablet o celular?
+10. ¿Cuáles son sus principales objetivos para el centro en términos de crecimiento, retención de pacientes o mejora de la calidad del servicio?
+
+**Preguntas de validación de solución (11-12)**
+
+11. Si pudiera monitorear en tiempo real cómo sus pacientes realizan los ejercicios en casa —con datos precisos de movimiento y alertas automáticas para sus especialistas— ¿qué impacto tendría eso en su servicio y en el negocio?
+12. ¿Qué factores priorizaría al decidir adoptar una nueva plataforma tecnológica en su centro? (costo, facilidad de uso, soporte técnico, integración con sistemas actuales, tiempo de implementación)
+
+**Segmento 2: Fisioterapeutas y Especialistas en Rehabilitación**
+
+**Preguntas de contexto y perfil (1-3)**
+
+1. ¿Cuál es su nombre, edad y en qué distrito vive actualmente?
+   - ¿Con quién vive? ¿Tiene pareja o hijos?
+   - ¿Cuál es su especialidad y cuántos años lleva ejerciendo como fisioterapeuta?
+
+2. ¿Cómo es el entorno donde trabaja? ¿Ejerce en una clínica, centro de rehabilitación, de forma independiente o en varios lugares?
+3. ¿Qué herramientas o métodos utiliza actualmente para registrar el progreso de sus pacientes y planificar sus sesiones?
+
+**Preguntas sobre la problemática (4-8)**
+
+4. ¿Cuáles son los mayores desafíos que enfrenta al hacer seguimiento del progreso de un paciente entre una sesión presencial y otra?
+5. ¿Cómo sabe si un paciente está realizando correctamente los ejercicios en casa? ¿Qué pasa cuando no lo hace bien?
+6. ¿Ha tenido pacientes que abandonan el tratamiento antes de completarlo? ¿Qué cree que lo provoca?
+7. ¿Qué información le resulta más difícil de obtener para ajustar el protocolo de ejercicios de un paciente?
+8. ¿Cómo se comunica habitualmente con sus pacientes fuera de las sesiones presenciales?
+
+**Preguntas de perfil digital y objetivos (9-10)**
+
+9. ¿Qué dispositivos usa más en su práctica diaria: laptop, tablet o celular? ¿Utiliza alguna app o plataforma digital actualmente?
+10. ¿Cuál es su mayor objetivo profesional en este momento? ¿Qué le haría sentir que está brindando la mejor atención posible a sus pacientes?
+
+**Preguntas de validación de solución (11-12)**
+
+11. Si tuviera acceso a datos en tiempo real sobre los movimientos de su paciente durante sus ejercicios en casa —ángulos articulares, repeticiones, alertas de mala ejecución— ¿cómo cambiaría su forma de trabajar?
+12. ¿Qué tan importante es para usted que una herramienta digital sea fácil de usar y no interrumpa su flujo de trabajo clínico?
+
+**Segmento 3: Pacientes en Rehabilitación de Miembro Superior**
+
+**Preguntas de contexto y perfil (1-3)**
+
+1. ¿Cuál es su nombre, edad y en qué distrito vive actualmente?
+   - ¿Con quién vive? ¿Tiene pareja o hijos?
+   - ¿A qué se dedica actualmente? ¿Trabaja, estudia o ambas?
+
+2. ¿Podría contarme brevemente sobre su lesión? ¿Qué le ocurrió y cuánto tiempo lleva en proceso de rehabilitación?
+3. ¿Cómo está siendo su experiencia de rehabilitación hasta ahora? ¿Va al centro de salud con frecuencia o realiza la mayoría de ejercicios en casa?
+
+**Preguntas sobre la problemática (4-8)**
+
+4. ¿Cómo realiza sus ejercicios de rehabilitación en casa? ¿Alguien le supervisa o los hace solo?
+5. ¿Qué tan seguro se siente al hacer los ejercicios en casa? ¿Ha tenido dudas sobre si los está haciendo correctamente?
+6. ¿Qué dificultades ha encontrado durante su proceso de rehabilitación, tanto dentro como fuera del centro de salud?
+7. ¿Cómo se comunica con su fisioterapeuta fuera de las sesiones cuando tiene dudas o inconvenientes?
+8. ¿Ha sentido en algún momento que su progreso se estanca o que no sabe si está mejorando?
+
+**Preguntas de perfil digital y objetivos (9-10)**
+
+9. ¿Qué dispositivos usa con más frecuencia en su día a día: celular, tablet o computadora? ¿Qué aplicaciones utiliza habitualmente?
+10. ¿Cuál es su principal motivación para completar su rehabilitación? ¿Qué espera poder hacer cuando se recupere?
+
+**Preguntas de validación de solución (11-12)**
+
+11. Si existiera un dispositivo que midiera con precisión sus movimientos durante los ejercicios en casa y le indicara en tiempo real si los está haciendo bien, ¿lo usaría?
+12. ¿Qué tan importante es para usted que una herramienta así sea fácil de colocar y usar sin ayuda de otra persona?
+
 
 
 ### 2.2.2. Registro de entrevistas
