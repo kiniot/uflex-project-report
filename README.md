@@ -220,7 +220,7 @@ En el siguiente cuadro se describe las acciones realizadas y enunciados de concl
       <td><strong>Ramirez Mestanza, Salim Ignacio</strong><br><b>TB1:</b></td>
     </tr>
     <tr>
-      <td><strong>Rivera Sosa, Eduardo Gael</strong><br><b>TB1:</b></td>
+      <td><strong>Rivera Sosa, Eduardo Gael</strong><br><b>AV1:</b> Asumí el liderazgo técnico del diseño de la arquitectura de software de uFlex, elaborando los Software Architecture System Landscape, Context, Container y Deployment Diagrams (secciones 4.1.3.1 a 4.1.3.3). Coordiné con el equipo la definición de los bounded contexts y facilité junto a ellos el Design-Level EventStorming (sección 4.1.1), guiando las decisiones sobre comandos, eventos de dominio y agregados para que cada integrante pudiera aportar desde su área. Además, lideré la elaboración del análisis competitivo (2.1.1) y de las estrategias y tácticas frente a competidores (2.1.2), proponiendo al equipo el marco de referencia y consolidando los aportes individuales en un único entregable coherente.</td>
     </tr>
     <tr>
       <td><strong>Sulca Gonzales, Paúl Fernando</strong><br><b>TB1:</b></td>
@@ -237,7 +237,7 @@ En el siguiente cuadro se describe las acciones realizadas y enunciados de concl
       <td><strong>Ramirez Mestanza, Salim Ignacio</strong><br><b>TB1:</b></td>
     </tr>
     <tr>
-      <td><strong>Rivera Sosa, Eduardo Gael</strong><br><b>TB1:</b></td>
+      <td><strong>Rivera Sosa, Eduardo Gael</strong><br><b>AV1:</b> Planifiqué y entregué en los plazos acordados las secciones a mi cargo: 1.3 Segmentos objetivo, 2.1.1 Análisis competitivo, 2.1.2 Estrategias y tácticas frente a competidores, 2.3.1 User Personas y 4.1.3 Software Architecture con todos sus diagramas (Landscape, Context, Container y Deployment). Establecí metas intermedias para cada entregable y las alineé con el avance del equipo mediante revisiones periódicas. Participé activamente en el Design-Level EventStorming (4.1.1) como actividad colaborativa, asegurando que las voces de todos los integrantes fueran consideradas al definir eventos y contextos, y manteniendo un entorno inclusivo donde cada aporte quedara reflejado en el diseño final.</td>
     </tr>
     <tr>
       <td><strong>Sulca Gonzales, Paúl Fernando</strong><br><b>TB1:</b></td>
