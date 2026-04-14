@@ -487,7 +487,7 @@ Sabremos que esto es cierto cuando veamos que el tiempo de configuración inicia
 
 A continuación, se presenta el Lean UX Canvas elaborado en la herramienta Miro:
 
-<img src="/assets/images/screenshots/LeanUxCanvas.png" alt="LeanUxCanvas.png">
+<img src="assets/lean-ux/canvas/canvas.png" alt="Lean UX Canvas">
 
 Enlace al Lean UX Canvas:
 https://miro.com/app/board/uXjVGuekPgY=/?share_link_id=263966947817 
@@ -554,10 +554,10 @@ Este segmento agrupa a los tomadores de decisiones B2B que gestionan la operaci�
   </tr>
   <tr>
     <td colspan="2" align="center"><b>Logo</b></td>
-    <td align="center"><img src="img/kiniot-logo.png" alt="KinIoT logo" width="100"></td>
-    <td align="center"><img src="img/sword-logo.png" alt="Sword Health logo" width="100"></td>
-    <td align="center"><img src="img/hinge-logo.png" alt="Hinge Health logo" width="100"></td>
-    <td align="center"><img src="img/physitrack-logo.png" alt="Physitrack logo" width="100"></td>
+    <td align="center"><img src="assets/logos/competitors/uflex.png" alt="KinIoT logo" width="100"></td>
+    <td align="center"><img src="assets/logos/competitors/sword.png" alt="Sword Health logo" width="100"></td>
+    <td align="center"><img src="assets/logos/competitors/hinge-health.png" alt="Hinge Health logo" width="100"></td>
+    <td align="center"><img src="assets/logos/competitors/physitrack.png" alt="Physitrack logo" width="100"></td>
   </tr>
   <tr>
     <td rowspan="2"><b>Perfil</b></td>
@@ -781,15 +781,15 @@ Esta sección presenta nuestros usuarios ideales diseñados para el ecosistema d
 
 **User persona del segmento de pacientes en rehabilitación del miembro superior**
 
-<img src="img/user-persona-paciente.png" alt="User Persona Paciente" width="800">
+<img src="assets/requirements/personas/paciente.png" alt="User Persona Paciente" width="800">
 
 **User persona del segmento de fisioterapeuta**
 
-<img src="img/user-persona-fisioterapeuta.png" alt="User Persona Fisioterapeuta" width="800">
+<img src="assets/requirements/personas/fisioterapeuta.png" alt="User Persona Fisioterapeuta" width="800">
 
 **User persona del segmento de administradores de clínica y centros de salud**
 
-<img src="img/user-persona-administrador.png" alt="User Persona Administrador" width="800">
+<img src="assets/requirements/personas/admin.png" alt="User Persona Administrador" width="800">
 
 ### 2.3.2. User Task Matrix
 
