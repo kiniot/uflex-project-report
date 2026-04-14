@@ -213,37 +213,37 @@ En el siguiente cuadro se describe las acciones realizadas y enunciados de concl
   <tbody>
     <tr>
       <td rowspan="5"><strong>Trabaja en equipo para proporcionar liderazgo en forma conjunta</strong></td>
-      <td><strong>Crispin Ramos, Daniel Franco</strong><br><b>TB1:</b></td>
-      <td rowspan="5"><b>TB1:</b></td>
+      <td><strong>Crispin Ramos, Daniel Franco</strong><br><b>AV1:</b></td>
+      <td rowspan="5"><b>AV1:</b> Durante el desarrollo del AV1, que abarcó desde el perfil de la startup hasta el diseño de la solución de software, hemos aprendido que el liderazgo no recae en una sola persona sino que se ejerce de forma conjunta. Cada integrante tomó la conducción de las secciones en las que tenía mayor dominio y al mismo tiempo apoyó activamente al resto, lo que nos permitió avanzar de manera paralela sin perder coherencia. Actividades transversales como el EventStorming evidenciaron que compartir el liderazgo fortalece la calidad de las decisiones y nos ayuda a alinear el rumbo del proyecto como equipo.</td>
     </tr>
     <tr>
-      <td><strong>Ramirez Mestanza, Salim Ignacio</strong><br><b>TB1:</b></td>
+      <td><strong>Ramirez Mestanza, Salim Ignacio</strong><br><b>AV1:</b></td>
     </tr>
     <tr>
       <td><strong>Rivera Sosa, Eduardo Gael</strong><br><b>AV1:</b> Lideré el diseño de la arquitectura de software de uFlex elaborando los diagramas Landscape, Context, Container y Deployment. Facilité junto al equipo el Design-Level EventStorming, guiando las decisiones sobre eventos y bounded contexts. También dirigí el análisis competitivo y las estrategias frente a competidores, consolidando los aportes del equipo en un entregable coherente.</td>
     </tr>
     <tr>
-      <td><strong>Sulca Gonzales, Paúl Fernando</strong><br><b>TB1:</b></td>
+      <td><strong>Sulca Gonzales, Paúl Fernando</strong><br><b>AV1:</b></td>
     </tr>
     <tr>
-      <td><strong>Varela Bustinza, Marcelo Alessandro</strong><br><b>TB1:</b></td>
+      <td><strong>Varela Bustinza, Marcelo Alessandro</strong><br><b>AV1:</b></td>
     </tr>
     <tr>
       <td rowspan="5"><strong>Crea un entorno colaborativo e inclusivo, establece metas, planifica tareas y cumple objetivos</strong></td>
-      <td><strong>Crispin Ramos, Daniel Franco</strong><br><b>TB1:</b></td>
-      <td rowspan="5"><b>TB1:</b></td>
+      <td><strong>Crispin Ramos, Daniel Franco</strong><br><b>AV1:</b></td>
+      <td rowspan="5"><b>AV1:</b> A lo largo del AV1 hemos logrado cubrir todo el alcance planificado, desde la definición de la startup y el análisis del problema hasta el diseño completo de la solución de software. Para conseguirlo establecimos metas claras por capítulo, distribuimos las tareas según las fortalezas de cada integrante y realizamos revisiones constantes para mantener el avance alineado. Creemos que el entorno colaborativo e inclusivo que construimos fue clave: cada propuesta fue discutida en conjunto y los entregables finales reflejan aportes de todo el equipo, cumpliendo los objetivos acordados en los plazos previstos.</td>
     </tr>
     <tr>
-      <td><strong>Ramirez Mestanza, Salim Ignacio</strong><br><b>TB1:</b></td>
+      <td><strong>Ramirez Mestanza, Salim Ignacio</strong><br><b>AV1:</b></td>
     </tr>
     <tr>
       <td><strong>Rivera Sosa, Eduardo Gael</strong><br><b>AV1:</b> Planifiqué y entregué en los plazos acordados las secciones a mi cargo: segmentos objetivo, análisis competitivo, estrategias frente a competidores, user personas y la arquitectura de software con sus diagramas. Participé activamente en el Design-Level EventStorming como actividad colaborativa, asegurando que los aportes de todos los integrantes se reflejaran en el diseño final.</td>
     </tr>
     <tr>
-      <td><strong>Sulca Gonzales, Paúl Fernando</strong><br><b>TB1:</b></td>
+      <td><strong>Sulca Gonzales, Paúl Fernando</strong><br><b>AV1:</b></td>
     </tr>
     <tr>
-      <td><strong>Varela Bustinza, Marcelo Alessandro</strong><br><b>TB1:</b></td>
+      <td><strong>Varela Bustinza, Marcelo Alessandro</strong><br><b>AV1:</b></td>
     </tr>
   </tbody>
 </table>
