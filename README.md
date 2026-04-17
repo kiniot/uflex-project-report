@@ -1611,11 +1611,23 @@ URL completa: https://fastpavos.atlassian.net/jira/software/projects/UF/boards/3
 
 #### 4.1.3.2. Software Architecture Context Level Diagrams
 
+El diagrama de contexto de uFlex muestra a los tres actores operativos que interactúan directamente con la plataforma (paciente, fisioterapeuta y administrador de clínica), el sistema uFlex como unidad en foco —que encapsula los sensores IMU vestibles, el firmware embebido, la app móvil y el backend cloud— y los tres servicios externos con los que se integra: Supabase (OAuth), Stripe (pagos) y Resend (correos transaccionales).
 
+<div style="text-align: center;">
+  <img src="./assets/diagrams/software-architecture/context/src/context.png" alt="uFlex — Software Architecture Context Level Diagram" style="max-width: 100%; height: auto;">
+</div>
+
+*Figura 4.1.3.2. Diagrama de contexto (C4 Nivel 1) de uFlex.*
 
 #### 4.1.3.3. Software Architecture Container Level Diagrams
 
+El diagrama de contenedores detalla la arquitectura interna de uFlex, organizada en tres capas: la capa IoT & Edge (sensor IMU vestible, firmware embebido, procesamiento biomecánico en el edge y buffer local), la capa de aplicaciones cliente (app móvil nativa del paciente y PWA web para fisioterapeutas y administradores de clínica) y la capa de servicios backend (microservicios de identidad, sesiones de terapia, tendencias clínicas, suscripciones, analítica y notificaciones, cada uno con su base de datos). El API Gateway centraliza el enrutamiento entre clientes y servicios, y las integraciones externas con Supabase (OAuth), Stripe (pagos) y Resend (correos) se muestran fuera del límite del sistema.
 
+<div style="text-align: center;">
+  <img src="./assets/diagrams/software-architecture/containers/src/containers.png" alt="uFlex — Software Architecture Container Level Diagram" style="max-width: 100%; height: auto;">
+</div>
+
+*Figura 4.1.3.3. Diagrama de contenedores (C4 Nivel 2) de uFlex.*
 
 #### 4.1.3.4. Software Architecture Deployment Diagrams
 

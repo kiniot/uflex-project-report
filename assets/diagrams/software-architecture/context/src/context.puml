@@ -1,0 +1,40 @@
+@startuml uflex-sa-context
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Context.puml
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+
+' Styling approximations for Structurizr look (blue & gray palette)
+skinparam shadowing false
+skinparam defaultFontName Arial
+skinparam Handwritten false
+skinparam Padding 2
+skinparam wrapWidth 200
+
+' ---- Tags / legend (blue for uFlex, gray for external) ----
+AddPersonTag("internal", $bgColor="#4A6FA5", $fontColor="#ffffff", $borderColor="#2F4A73", $legendText="Usuario interno (uFlex)")
+AddSystemTag("target",   $bgColor="#1168BD", $fontColor="#ffffff", $borderColor="#0B4884", $legendText="Sistema uFlex (en foco)")
+AddSystemTag("external", $bgColor="#999999", $fontColor="#ffffff", $borderColor="#6B6B6B", $legendText="Sistema externo")
+
+' System Context Diagram
+title System Context Diagram for uFlex (KinIoT)
+
+Person(patient,         "Paciente",                 "Realiza terapia de miembro superior en el domicilio", $tags="internal")
+Person(physiotherapist, "Fisioterapeuta",           "Supervisa el progreso y ajusta los protocolos clínicos", $tags="internal")
+Person(clinicAdmin,     "Administrador de Clínica", "Gestiona sedes, pacientes y suscripciones", $tags="internal")
+
+System(uflex, "uFlex", "Plataforma IoT/SaaS multi-tenant para telerehabilitación de miembro superior; incluye sensores IMU, firmware embebido, app móvil y backend cloud", $tags="target")
+
+System_Ext(supabase, "Supabase (OAuth)", "Proveedor de autenticación e identidad federada", $tags="external")
+System_Ext(stripe,   "Stripe",            "Pasarela de pagos para suscripciones de clínicas", $tags="external")
+System_Ext(resend,   "Resend",            "Servicio de envío de correos transaccionales", $tags="external")
+
+Rel(patient,         uflex, "Ejecuta rutinas y consulta retroalimentación biomecánica")
+Rel(physiotherapist, uflex, "Supervisa sesiones y ajusta protocolos clínicos")
+Rel(clinicAdmin,     uflex, "Administra clínica, usuarios y suscripción")
+
+Rel(uflex, supabase, "Delega autenticación OAuth y gestión de identidad")
+Rel(uflex, stripe,   "Procesa pagos de suscripción")
+Rel(uflex, resend,   "Envía correos transaccionales y notificaciones")
+
+SHOW_LEGEND()
+@enduml
