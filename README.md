@@ -1591,6 +1591,44 @@ URL completa: https://fastpavos.atlassian.net/jira/software/projects/UF/boards/3
 
 #### 4.1.1.3 Bounded Context Canvases
 
+En esta sección el equipo presenta sus Bounded Context Canvases, empezando por los
+importantes.
+
+##### IAM
+
+Contexto génerico para la identificación y acceso.
+
+<img src="assets/diagrams/canvases/IAM.png" alt="IAM Bounded context canvases" width="800">
+
+##### Profile
+
+Encargado de gestionar la información personal de cada usuario registrado en la aplicación.
+
+<img src="assets/diagrams/canvases/Profile.png" alt="Profile Bounded context canvases" width="800">
+
+##### Subscription
+
+Encargado de gestionar la adquisición y activación de los planes de suscripción.
+
+<img src="assets/diagrams/canvases/Subscription.png" alt="Subscription Bounded context canvases" width="800">
+
+##### Planning
+
+Encargado del ciclo de vida de los planes de tratamiento de los pacientes.
+
+<img src="assets/diagrams/canvases/Planning.png" alt="Planning Bounded context canvases" width="800">
+
+##### Device
+
+Encargado del ciclo de vida de los dispositivos IOT.
+
+<img src="assets/diagrams/canvases/Device.png" alt="Device Bounded context canvases" width="800">
+
+##### Rehabilitation
+
+Encargado de orquestar cada sesión de cada terapia física ejecutada por el paciente.
+
+<img src="assets/diagrams/canvases/Rehabilitation.png" alt="Rehabilitation Bounded context canvases" width="800">
 
 
 <hr class="page-break">
