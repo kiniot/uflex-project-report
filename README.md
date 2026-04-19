@@ -217,7 +217,7 @@ En el siguiente cuadro se describe las acciones realizadas y enunciados de concl
       <td rowspan="5"><b>AV1:</b> Durante el desarrollo del AV1, que abarcó desde el perfil de la startup hasta el diseño de la solución de software, hemos aprendido que el liderazgo no recae en una sola persona sino que se ejerce de forma conjunta. Cada integrante tomó la conducción de las secciones en las que tenía mayor dominio y al mismo tiempo apoyó activamente al resto, lo que nos permitió avanzar de manera paralela sin perder coherencia. Actividades transversales como el EventStorming evidenciaron que compartir el liderazgo fortalece la calidad de las decisiones y nos ayuda a alinear el rumbo del proyecto como equipo.</td>
     </tr>
     <tr>
-      <td><strong>Ramirez Mestanza, Salim Ignacio</strong><br><b>AV1:</b></td>
+      <td><strong>Ramirez Mestanza, Salim Ignacio</strong><br><b>AV1:</b> Lideré la elaboración de las User Stories del proyecto, estructurando los requerimientos funcionales y sus criterios de aceptación para mantener coherencia entre los módulos. Además, apoyé activamente en el Design-Level EventStorming para alinear decisiones de dominio con el equipo y desarrollé el Domain Message Flows Modeling, integrando los eventos y mensajes clave entre bounded contexts.</td>
     </tr>
     <tr>
       <td><strong>Rivera Sosa, Eduardo Gael</strong><br><b>AV1:</b> Lideré el diseño de la arquitectura de software de uFlex elaborando los diagramas Landscape, Context, Container y Deployment. Facilité junto al equipo el Design-Level EventStorming, guiando las decisiones sobre eventos y bounded contexts. También dirigí el análisis competitivo y las estrategias frente a competidores, consolidando los aportes del equipo en un entregable coherente.</td>
@@ -234,7 +234,7 @@ En el siguiente cuadro se describe las acciones realizadas y enunciados de concl
       <td rowspan="5"><b>AV1:</b> A lo largo del AV1 hemos logrado cubrir todo el alcance planificado, desde la definición de la startup y el análisis del problema hasta el diseño completo de la solución de software. Para conseguirlo establecimos metas claras por capítulo, distribuimos las tareas según las fortalezas de cada integrante y realizamos revisiones constantes para mantener el avance alineado. Creemos que el entorno colaborativo e inclusivo que construimos fue clave: cada propuesta fue discutida en conjunto y los entregables finales reflejan aportes de todo el equipo, cumpliendo los objetivos acordados en los plazos previstos.</td>
     </tr>
     <tr>
-      <td><strong>Ramirez Mestanza, Salim Ignacio</strong><br><b>AV1:</b></td>
+      <td><strong>Ramirez Mestanza, Salim Ignacio</strong><br><b>AV1:</b> Planifiqué y entregué en los plazos acordados las secciones a mi cargo, especialmente la definición de User Stories y el Domain Message Flows Modeling. Participé de forma activa en el Design-Level EventStorming como espacio colaborativo, incorporando los aportes del equipo para mantener metas comunes, una coordinación inclusiva y el cumplimiento de los objetivos del AV1.</td>
     </tr>
     <tr>
       <td><strong>Rivera Sosa, Eduardo Gael</strong><br><b>AV1:</b> Planifiqué y entregué en los plazos acordados las secciones a mi cargo: segmentos objetivo, análisis competitivo, estrategias frente a competidores, user personas y la arquitectura de software con sus diagramas. Participé activamente en el Design-Level EventStorming como actividad colaborativa, asegurando que los aportes de todos los integrantes se reflejaran en el diseño final.</td>
@@ -253,6 +253,9 @@ En el siguiente cuadro se describe las acciones realizadas y enunciados de concl
 # Capítulo I: Introducción
 
 ## 1.1. Startup Profile
+
+### 1.1.1. Descripción de la Startup
+
 KinIoT es una startup peruana conformada por estudiantes de Ingeniería de Software de la Universidad Peruana de Ciencias Aplicadas (UPC). Nuestra organización nace con el propósito de cerrar la brecha tecnológica en el sector salud, específicamente en el área de la medicina física y rehabilitación. Nos especializamos en el desarrollo de ecosistemas de Internet de las Cosas (IoT) y soluciones SaaS (Software as a Service) que transforman procesos terapéuticos convencionales en experiencias digitales precisas, seguras y monitoreadas.
 
 Nuestro producto principal, uFlex, es una solución integral diseñada para la telerehabilitación de lesiones en el complejo articular de miembro superior. Mediante el uso de sensores vestibles de alta precisión y una plataforma cloud multitenant, permitimos que las clínicas y centros de salud extiendan su capacidad de atención al hogar del paciente, garantizando que cada movimiento sea auditado por especialistas y ejecutado correctamente por el usuario.
@@ -267,14 +270,10 @@ Ser reconocidos en el 2030 como la startup líder en telemonitoreo biomecánico 
 
 ### Valores
 
-Integridad de datos: Nos comprometemos a que la información capturada por nuestros sensores sea un reflejo fiel del progreso del paciente.
-Accesibilidad: Diseñamos tecnología compleja que sea fácil de usar para cualquier paciente, sin importar su experiencia técnica.
-Enfoque en el paciente: Cada línea de código y cada componente de hardware tiene como fin último una recuperación sin secuelas.
-Innovación constante: Buscamos optimizar continuamente nuestros algoritmos de procesamiento para ofrecer métricas cada vez más exactas.
-
-### 1.1.1. Descripción de la Startup
-
-
+* Integridad de datos: Nos comprometemos a que la información capturada por nuestros sensores sea un reflejo fiel del progreso del paciente.
+* Accesibilidad: Diseñamos tecnología compleja que sea fácil de usar para cualquier paciente, sin importar su experiencia técnica.
+* Enfoque en el paciente: Cada línea de código y cada componente de hardware tiene como fin último una recuperación sin secuelas.
+* Innovación constante: Buscamos optimizar continuamente nuestros algoritmos de procesamiento para ofrecer métricas cada vez más exactas.
 
 ### 1.1.2. Perfiles de los integrantes del equipo
 
@@ -287,24 +286,24 @@ Innovación constante: Buscamos optimizar continuamente nuestros algoritmos de p
   </thead>
   <tbody>
     <tr>
+      <td><strong>Crispín Ramos, Daniel Franco</strong><br> [COMPLETAR: descripción]</td>
+      <td><img src="img/[COMPLETAR].jpg" alt="daniel image" width="200"></td>
+    </tr>
+    <tr>
+      <td><strong>Ramirez Mestanza, Salim Ignacio</strong><br> Soy Salim, estudiante de Ingenieria de Software, con entusiasmo por el desarrollo backend, la arquitectura de software y el cloud. Me enfoco en tomar decisiones tecnicas complejas que generen impacto directo en los resultados del proyecto y aporten a los atributos de calidad esperados del software. Me considero perseverante, no me rindo ante los retos y siempre busco la colaboracion del equipo para avanzar. Tambien asumo un rol de liderazgo, porque creo firmemente que cada integrante es una parte indispensable para el exito del proyecto.</td>
+      <td><img src="assets/images/photos/salim-photo.jpeg" alt="salim image" width="200"></td>
+    </tr>
+    <tr>
       <td><strong>Rivera Sosa, Eduardo Gael</strong><br> Soy Gael, desarrollador Full Stack con enfoque en IA. Me gusta construir productos que realmente funcionen y aprender rápido lo que sea necesario para lograrlo. Soy proactivo, me adapto bien al trabajo en equipo y disfruto resolver problemas desde la raíz. Cuando algo se puede hacer mejor, lo digo.</td>
       <td><img src="assets/images/photos/gael-photo.jpg" alt="gael image" width="200"></td>
     </tr>
     <tr>
-      <td><strong>[COMPLETAR: Apellidos, Nombres]</strong><br> [COMPLETAR: descripción]</td>
-      <td><img src="img/[COMPLETAR].jpg" alt="[COMPLETAR]" width="200"></td>
-    </tr>
-    <tr>
-      <td><strong>[COMPLETAR: Apellidos, Nombres]</strong><br> [COMPLETAR: descripción]</td>
-      <td><img src="img/[COMPLETAR].jpg" alt="[COMPLETAR]" width="200"></td>
-    </tr>
-    <tr>
-      <td><strong>[COMPLETAR: Apellidos, Nombres]</strong><br> [COMPLETAR: descripción]</td>
-      <td><img src="img/[COMPLETAR].jpg" alt="[COMPLETAR]" width="200"></td>
+      <td><strong>Sulca Gonzales, Paúl Fernando</strong><br> [COMPLETAR: descripción]</td>
+      <td><img src="img/[COMPLETAR].jpg" alt="paul image" width="200"></td>
     </tr>
     <tr>
       <td><strong>Varela Bustinza, Marcelo Alessandro</strong><br> Mi nombre es Marcelo Varela. Soy un estudiante de la carrera de Ingeniería De Software, tengo 21 años y actualmente me encuentro cursando el octavo ciclo de la carrera. Me caracterizo por ser una persona responsable, resiliente y proactiva, al cual le gusta aprender sobre tecnología y el desarrollo de software. Mi compromiso como miembro de este equipo es brindar mi apoyo y participación para enfrentar lo desafíos así como dar lo mejor de mí para el éxito de este proyecto.</td>
-      <td><img src="img/[COMPLETAR].jpg" alt="[COMPLETAR]" width="200"></td>
+      <td><img src="img/[COMPLETAR].jpg" alt="marcelo image" width="200"></td>
     </tr>
   </tbody>
 </table>
@@ -807,11 +806,60 @@ Esta sección presenta nuestros usuarios ideales diseñados para el ecosistema d
 
 ## 2.4. Big Picture EventStorming
 
+En esta sección se introduce y resume el proceso realizado por el equipo para el Big Picture Event Storming, que fue realizado por todos los integrantes y plasmado con la ayuda de la herramienta Miro. A continuación, se explica el proceso:
 
+**1. Open**
+
+En esta etapa el equipo se concentró en generar la mayor cantidad de eventos de dominio posibles (cosas que suceden en el negocio) escribiendo en los post-its naranjas.
+
+![big-picture-1](assets/diagrams/ddd/event-storming/big-picture/big-picture-event-storming-1.png)
+
+**2. Explore**
+
+Después de la anterior etapa, en esta se concentró en ordenar cronológicamente los eventos, eliminar los eventos repetidos, identificar sus actores y posibles sistemas externos, y finalmente algunos puntos de dolor en post-its morados.
+
+![big-picture-2](assets/diagrams/ddd/event-storming/big-picture/big-picture-event-storming-2.png)
+
+**3. Close**
+
+En esta última etapa, se documentaron en post-its rosados los problemas más relevantes detectados, junto con aspectos que debíamos investigar más a fondo o descartar según el alcance definido.
+
+![big-picture-3](assets/diagrams/ddd/event-storming/big-picture/big-picture-event-storming-3.png)
+
+Luego de conversar un poco, el equipo descartó algunos eventos y se ordenaron mejor las líneas de tiempo.
+
+![big-picture-4](assets/diagrams/ddd/event-storming/big-picture/big-picture-event-storming-4.png)
+
+Finalmente, se presenta el Big Picture Event Storming finalizado, con los eventos ordenados, los puntos de dolor identificados y los aspectos a investigar destacados.
+
+![big-picture-5](assets/diagrams/ddd/event-storming/big-picture/big-picture-event-storming-5.png)
+
+Se puede acceder al Big Picture Event Storming en el siguiente enlace de la herramienta Miro: [Version final del Big Picture Event Storming](https://miro.com/app/board/uXjVGsDiw2M=/?share_link_id=274967609887)
+
+> *Enlace completo:* https://miro.com/app/board/uXjVGsDiw2M=/?share_link_id=274967609887
+
+Este proceso permitió al equipo obtener una visión de alto nivel de los principales eventos del negocio, identificar puntos críticos y definir prioridades para las siguientes etapas del proyecto.
 
 <hr class="page-break">
 
 ## 2.5. Ubiquitous Language
+
+| Término                    | Equivalente                    | Definición                                                                                                                                                                         |
+|----------------------------|--------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Range of Motion (ROM)      | Rango de Movimiento            | Magnitud de arco, medida en grados, que una articulación puede recorrer en un plano específico. Es el indicador principal para evaluar la recuperación funcional de codo y muñeca. |
+| Flexion                    | Flexión                        | Movimiento que reduce el ángulo entre los huesos de una articulación. En el codo, es acercar la mano al hombro; en la muñeca, es mover la palma hacia el antebrazo.                |
+| Extension                  | Extensión                      | Movimiento que aumenta el ángulo entre los huesos de una articulación, estirando el miembro. Es lo opuesto a la flexión.                                                           |
+| Pronation                  | Pronación                      | Movimiento de rotación del antebrazo que permite girar la palma de la mano hacia abajo (hacia el suelo).                                                                           |
+| Supination                 | Supinación                     | Movimiento de rotación del antebrazo que permite girar la palma de la mano hacia arriba (hacia el techo).                                                                          |
+| Compensatory Movement      | Movimiento Compensatorio       | Movimiento involuntario o erróneo de una articulación adyacente (ej. el hombro) para sustituir la falta de movilidad de la articulación lesionada (ej. el codo).                   |
+| Clinical Session           | Sesión Clínica                 | Conjunto de ejercicios prescritos por el fisioterapeuta que el paciente debe ejecutar en un periodo de tiempo determinado, bajo el monitoreo de los sensores.                      |
+| Kinematic Chain            | Cadena Cinemática              | Conjunto de articulaciones y segmentos óseos conectados (hombro-codo-muñeca) que actúan de forma coordinada para realizar un movimiento funcional.                                 |
+| Therapeutic Protocol       | Protocolo Terapéutico          | Plan de rehabilitación personalizado que incluye el número de repeticiones, series y los límites de ángulos permitidos para un paciente específico.                                |
+| Joint Rigidity (Ankylosis) | Rigidez Articular (Anquilosis) | Limitación o pérdida total de la movilidad en una articulación debido a una lesión o falta de ejercicio post-operatorio.                                                           |
+| Wearable Node              | Nodo Vestible                  | Dispositivo físico que contiene los sensores inerciales y se coloca sobre el segmento corporal del paciente para capturar datos biomecánicos.                                      |
+| Clinic                     | Clínica                        | Organización que adquiere el servicio SaaS y gestiona a sus propios especialistas y pacientes dentro de la plataforma.                                                             |
+| Physiotherapist            | Fisioterapeuta                 | Profesional de la salud encargado de crear los protocolos, monitorear los datos de los sensores y validar el progreso del paciente.                                                |
+| Adherence                  | Adherencia                     | Nivel de compromiso y cumplimiento del paciente con respecto al plan de ejercicios prescrito por el especialista.                                                                  |
 
 <hr class="page-break">
 
@@ -1575,11 +1623,59 @@ URL completa: https://fastpavos.atlassian.net/jira/software/projects/UF/boards/3
 
 ## 4.1. Strategic-Level Domain-Driven Design
 
-
+En esta sección se aborda la perspectiva estratégica del enfoque Domain-Driven Design (DDD), la cual se centra en definir los límites del dominio y establecer una visión clara de cómo las diferentes partes del sistema interactúan entre sí. A través de técnicas como Event Storming, Context Mapping y la definición de una arquitectura de software adecuada, se busca garantizar que el diseño del sistema esté alineado con los objetivos del negocio y las necesidades de los usuarios.
 
 ### 4.1.1. Design-Level EventStorming
 
+El Event Storming se llevó a cabo en una sesión colaborativa con la participación de cinco miembros del equipo, incluyendo un facilitador y un relator. Durante la sesión, se utilizaron notas adhesivas de colores para representar eventos de dominio, comandos, agregados y otros elementos clave del sistema. El objetivo principal fue capturar una visión integral del flujo de eventos dentro del dominio educativo, identificar puntos críticos y descubrir posibles bounded contexts.
 
+A continuación, se detallan los pasos seguidos y los resultados obtenidos en cada una de las fases del Event Storming.
+
+**Antes de la sesión:**
+
+Primero, se preparó el espacio de trabajo con un mural digital (Miro) y se definieron las reglas básicas para la participación. Se estableció que todas las ideas eran bienvenidas y que el objetivo era fomentar la colaboración y la creatividad.
+
+**Durante la sesión:**
+
+1. **Unstructured Exploration:** Se comenzó con una lluvia de ideas para identificar eventos de dominio relevantes. Cada participante escribió eventos en notas adhesivas y las colocó en el mural, sin preocuparse inicialmente por el orden o la estructura.
+
+    ![design-level-event-storming-1](assets/diagrams/ddd/event-storming/design-level/design-level-event-storming-1.png)
+
+2. **Timelines:** Se organizó la secuencia temporal de los eventos identificados, creando una línea de tiempo que reflejaba el flujo natural del dominio. Se agruparon eventos relacionados y se identificaron interacciones clave.
+
+    ![design-level-event-storming-2](assets/diagrams/ddd/event-storming/design-level/design-level-event-storming-2.png)
+
+3. **Pain points:** Se identificaron puntos de dolor y áreas de incertidumbre dentro del flujo de eventos. Estos puntos se marcaron con notas de color diferente para destacarlos y facilitar su análisis posterior.
+
+    ![design-level-event-storming-3](assets/diagrams/ddd/event-storming/design-level/design-level-event-storming-3.png)
+
+4. **Pivotal points:** Se destacaron eventos clave que representaban cambios significativos en el estado del sistema o que tenían un impacto considerable en el negocio. Estos eventos se utilizaron como referencia para definir los límites de los bounded contexts.
+
+    ![design-level-event-storming-4](assets/diagrams/ddd/event-storming/design-level/design-level-event-storming-4.png)
+
+5. **Commands:** Se añadieron comandos que desencadenaban los eventos identificados. Esto ayudó a clarificar las acciones que los usuarios o sistemas externos podían realizar dentro del dominio.
+
+    ![design-level-event-storming-5](assets/diagrams/ddd/event-storming/design-level/design-level-event-storming-5.png)
+
+6. **Policies:** Se definieron políticas que regulaban cómo y cuándo se ejecutaban ciertos comandos o eventos, estableciendo reglas de negocio claras.
+
+    ![design-level-event-storming-6](assets/diagrams/ddd/event-storming/design-level/design-level-event-storming-6.png)
+
+7. **Read models:** Se identificaron modelos de lectura necesarios para consultar el estado del sistema y presentar información relevante a los usuarios.
+
+    ![design-level-event-storming-7](assets/diagrams/ddd/event-storming/design-level/design-level-event-storming-7.png)
+
+8. **External systems:** Se mapearon sistemas externos que interactuaban con el dominio, identificando puntos de integración y comunicación.
+
+    ![design-level-event-storming-8](assets/diagrams/ddd/event-storming/design-level/design-level-event-storming-8.png)
+
+9. **Aggregates:** Se agruparon eventos y comandos en agregados, definiendo las unidades de consistencia dentro del dominio.
+
+    ![design-level-event-storming-9](assets/diagrams/ddd/event-storming/design-level/design-level-event-storming-9.png)
+
+10. **Bounded Contexts:** Finalmente, se delinearon los límites de los bounded contexts basados en los eventos, agregados y puntos clave identificados. Esta agrupación en clústeres permitirá discutir y clasificar los contexts en Core, Supporting y Generic.
+
+    ![design-level-event-storming-10](assets/diagrams/ddd/event-storming/design-level/design-level-event-storming-10.png)
 
 #### 4.1.1.1 Candidate Context Discovery
 
