@@ -43,7 +43,7 @@ Enterprise_Boundary(kiniot, "KinIoT") {
 ' =========================================================
 System_Boundary(saasProviders, "Third-party SaaS Providers") {
   System_Ext(supabase, "Supabase", "Autenticación OAuth y base de datos de identidad (usuarios, roles y tenants)", $tags="external")
-  System_Ext(stripe,   "Stripe",   "Pasarela de pagos para suscripciones multi-tenant de clínicas",              $tags="external")
+  System_Ext(culqi,    "Culqi",    "Pasarela de pagos peruana para suscripciones multi-tenant de clínicas",      $tags="external")
   System_Ext(resend,   "Resend",   "Envío de correos transaccionales y notificaciones clínicas",                  $tags="external")
 }
 
@@ -85,7 +85,7 @@ Rel(wearablePlatform, clinicalCloud,    "Envía datos biomecánicos anonimizados
 Rel(mobilePlatform, supabase,     "Autentica al paciente (OAuth)")
 Rel(webPlatform,    supabase,     "Autentica/autoriza profesionales (OAuth)")
 Rel(clinicalCloud,  supabase,     "Valida tokens y consulta identidad")
-Rel(clinicalCloud,  stripe,       "Procesa pagos de suscripción")
+Rel(clinicalCloud,  culqi,        "Procesa pagos de suscripción")
 Rel(clinicalCloud,  resend,       "Envía correos transaccionales")
 Rel(clinicalCloud,  pushProvider, "Despacha notificaciones push")
 Rel(mobilePlatform, pushProvider, "Recibe notificaciones push")

@@ -80,7 +80,7 @@ Deployment_Node(azureCloud, "Microsoft Azure Cloud", "Región: Brazil South", $s
 ' =========================================================
 Deployment_Node(thirdParty, "Third-party SaaS Providers", "Managed external services", $sprite="plug") {
   Container(supabaseService, "Supabase",   "OAuth + Identity DB", "Autenticación y BD de usuarios",  $tags="external")
-  Container(stripeService,   "Stripe API", "Payments",             "Pasarela de pagos",               $tags="external")
+  Container(culqiService,    "Culqi API",  "Payments",             "Pasarela de pagos peruana",       $tags="external")
   Container(resendService,   "Resend API", "Email delivery",       "Envío de correos transaccionales",$tags="external")
 }
 
@@ -106,7 +106,7 @@ Rel(microservices,  azureMonitor,  "Telemetría")
 Rel(mobileApp,     supabaseService, "OAuth login",  "HTTPS")
 Rel(webClientApp,  supabaseService, "OAuth login",  "HTTPS")
 Rel(apim,          supabaseService, "Valida JWT",   "HTTPS")
-Rel(microservices, stripeService,   "Procesa pagos","HTTPS")
+Rel(microservices, culqiService,    "Procesa pagos","HTTPS")
 Rel(microservices, resendService,   "Envía correos","HTTPS")
 
 SHOW_LEGEND()
