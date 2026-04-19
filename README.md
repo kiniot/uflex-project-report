@@ -806,7 +806,39 @@ Esta sección presenta nuestros usuarios ideales diseñados para el ecosistema d
 
 ## 2.4. Big Picture EventStorming
 
+En esta sección se introduce y resume el proceso realizado por el equipo para el Big Picture Event Storming, que fue realizado por todos los integrantes y plasmado con la ayuda de la herramienta Miro. A continuación, se explica el proceso:
 
+**1. Open**
+
+En esta etapa el equipo se concentró en generar la mayor cantidad de eventos de dominio posibles (cosas que suceden en el negocio) escribiendo en los post-its naranjas.
+
+![big-picture-1](assets/diagrams/ddd/event-storming/big-picture/big-picture-1.png)
+
+**2. Explore**
+
+Después de la anterior etapa, en esta se concentró en ordenar cronológicamente los eventos, eliminar los eventos repetidos, identificar sus actores y posibles sistemas externos, y finalmente algunos puntos de dolor en post-its morados.
+
+![big-picture-2](assets/diagrams/ddd/event-storming/big-picture/big-picture-2.png)
+
+**3. Close**
+
+En esta última etapa, se documentaron en post-its rosados los problemas más relevantes detectados, junto con aspectos que debíamos investigar más a fondo o descartar según el alcance definido.
+
+![big-picture-3](assets/diagrams/ddd/event-storming/big-picture/big-picture-3.png)
+
+Luego de conversar un poco, el equipo descartó algunos eventos y se ordenaron mejor las líneas de tiempo.
+
+![big-picture-4](assets/diagrams/ddd/event-storming/big-picture/big-picture-4.png)
+
+Finalmente, se presenta el Big Picture Event Storming finalizado, con los eventos ordenados, los puntos de dolor identificados y los aspectos a investigar destacados.
+
+![big-picture-5](assets/diagrams/ddd/event-storming/big-picture/big-picture-5.png)
+
+Se puede acceder al Big Picture Event Storming en el siguiente enlace de la herramienta Miro: [Version final del Big Picture Event Storming](https://miro.com/app/board/uXjVGsDiw2M=/?share_link_id=274967609887)
+
+> *Enlace completo:* https://miro.com/app/board/uXjVGsDiw2M=/?share_link_id=274967609887
+
+Este proceso permitió al equipo obtener una visión de alto nivel de los principales eventos del negocio, identificar puntos críticos y definir prioridades para las siguientes etapas del proyecto.
 
 <hr class="page-break">
 
