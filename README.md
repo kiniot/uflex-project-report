@@ -286,24 +286,24 @@ Ser reconocidos en el 2030 como la startup líder en telemonitoreo biomecánico 
   </thead>
   <tbody>
     <tr>
+      <td><strong>Crispín Ramos, Daniel Franco</strong><br> [COMPLETAR: descripción]</td>
+      <td><img src="img/[COMPLETAR].jpg" alt="daniel image" width="200"></td>
+    </tr>
+    <tr>
+      <td><strong>Ramirez Mestanza, Salim Ignacio</strong><br> [COMPLETAR: descripción]</td>
+      <td><img src="img/[COMPLETAR].jpg" alt="salim image" width="200"></td>
+    </tr>
+    <tr>
       <td><strong>Rivera Sosa, Eduardo Gael</strong><br> Soy Gael, desarrollador Full Stack con enfoque en IA. Me gusta construir productos que realmente funcionen y aprender rápido lo que sea necesario para lograrlo. Soy proactivo, me adapto bien al trabajo en equipo y disfruto resolver problemas desde la raíz. Cuando algo se puede hacer mejor, lo digo.</td>
       <td><img src="assets/images/photos/gael-photo.jpg" alt="gael image" width="200"></td>
     </tr>
     <tr>
-      <td><strong>[COMPLETAR: Apellidos, Nombres]</strong><br> [COMPLETAR: descripción]</td>
-      <td><img src="img/[COMPLETAR].jpg" alt="[COMPLETAR]" width="200"></td>
-    </tr>
-    <tr>
-      <td><strong>[COMPLETAR: Apellidos, Nombres]</strong><br> [COMPLETAR: descripción]</td>
-      <td><img src="img/[COMPLETAR].jpg" alt="[COMPLETAR]" width="200"></td>
-    </tr>
-    <tr>
-      <td><strong>[COMPLETAR: Apellidos, Nombres]</strong><br> [COMPLETAR: descripción]</td>
-      <td><img src="img/[COMPLETAR].jpg" alt="[COMPLETAR]" width="200"></td>
+      <td><strong>Sulca Gonzales, Paúl Fernando</strong><br> [COMPLETAR: descripción]</td>
+      <td><img src="img/[COMPLETAR].jpg" alt="paul image" width="200"></td>
     </tr>
     <tr>
       <td><strong>Varela Bustinza, Marcelo Alessandro</strong><br> Mi nombre es Marcelo Varela. Soy un estudiante de la carrera de Ingeniería De Software, tengo 21 años y actualmente me encuentro cursando el octavo ciclo de la carrera. Me caracterizo por ser una persona responsable, resiliente y proactiva, al cual le gusta aprender sobre tecnología y el desarrollo de software. Mi compromiso como miembro de este equipo es brindar mi apoyo y participación para enfrentar lo desafíos así como dar lo mejor de mí para el éxito de este proyecto.</td>
-      <td><img src="img/[COMPLETAR].jpg" alt="[COMPLETAR]" width="200"></td>
+      <td><img src="img/[COMPLETAR].jpg" alt="marcelo image" width="200"></td>
     </tr>
   </tbody>
 </table>
