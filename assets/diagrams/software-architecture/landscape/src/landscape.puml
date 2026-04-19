@@ -1,0 +1,96 @@
+@startuml uflex-sa-landscape
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Context.puml
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+
+' Styling approximations for Structurizr look (blue & gray palette)
+skinparam shadowing false
+skinparam defaultFontName Arial
+skinparam Handwritten false
+skinparam Padding 3
+skinparam wrapWidth 200
+skinparam nodesep 40
+skinparam ranksep 60
+
+' ---- Tags / legend ----
+AddPersonTag("user",     $bgColor="#4A6FA5", $fontColor="#ffffff", $borderColor="#2F4A73", $legendText="Usuario de uFlex")
+AddSystemTag("kiniot",   $bgColor="#1168BD", $fontColor="#ffffff", $borderColor="#0B4884", $legendText="Sistema de KinIoT")
+AddSystemTag("external", $bgColor="#999999", $fontColor="#ffffff", $borderColor="#6B6B6B", $legendText="SaaS externo integrado (core)")
+AddSystemTag("platform", $bgColor="#7D98B5", $fontColor="#ffffff", $borderColor="#5C7590", $legendText="Servicio de plataforma / observabilidad")
+AddSystemTag("planned",  $bgColor="#B8C4CE", $fontColor="#000000", $borderColor="#7D98B5", $legendText="Integración planificada (roadmap)")
+
+title System Landscape Diagram for KinIoT
+
+' =========================================================
+' Actors
+' =========================================================
+Person(patient,         "Paciente",                 "Realiza terapia de miembro superior en el domicilio", $tags="user")
+Person(physiotherapist, "Fisioterapeuta",           "Supervisa progreso y ajusta protocolos clínicos", $tags="user")
+Person(clinicAdmin,     "Administrador de Clínica", "Gestiona sedes, pacientes y suscripciones", $tags="user")
+
+' =========================================================
+' KinIoT enterprise boundary — uFlex decomposed into its high-level sub-systems
+' =========================================================
+Enterprise_Boundary(kiniot, "KinIoT") {
+  System(webPlatform,      "uFlex Web Platform",      "Landing page pública y PWA clínica para fisioterapeutas y administradores de clínica", $tags="kiniot")
+  System(mobilePlatform,   "uFlex Mobile Platform",   "Apps nativas iOS/Android para pacientes: rutinas, feedback biomecánico y sincronización con el sensor", $tags="kiniot")
+  System(wearablePlatform, "uFlex Wearable Platform", "Sensor IMU vestible con firmware embebido y edge app para captura y procesamiento biomecánico", $tags="kiniot")
+  System(clinicalCloud,    "uFlex Clinical Cloud",    "Microservicios y bases de datos clínicas que orquestan sesiones, suscripciones, analítica y notificaciones", $tags="kiniot")
+}
+
+' =========================================================
+' Third-party SaaS (core integrations — grey)
+' =========================================================
+System_Boundary(saasProviders, "Third-party SaaS Providers") {
+  System_Ext(supabase, "Supabase", "Autenticación OAuth y base de datos de identidad (usuarios, roles y tenants)", $tags="external")
+  System_Ext(stripe,   "Stripe",   "Pasarela de pagos para suscripciones multi-tenant de clínicas",              $tags="external")
+  System_Ext(resend,   "Resend",   "Envío de correos transaccionales y notificaciones clínicas",                  $tags="external")
+}
+
+' =========================================================
+' Platform / observability services (blue-gray)
+' =========================================================
+System_Boundary(platformServices, "Platform & Observability Services") {
+  System_Ext(pushProvider, "Push Notifications (FCM / APNs)",    "Entrega de notificaciones push a dispositivos iOS y Android del paciente", $tags="platform")
+  System_Ext(azureMonitor, "Azure Monitor / Application Insights","Observabilidad del backend: logs, métricas y trazas distribuidas",          $tags="platform")
+}
+
+' =========================================================
+' Planned integrations (light gray — roadmap)
+' =========================================================
+System_Boundary(plannedIntegrations, "Planned Integrations") {
+  System_Ext(clinicEhr, "EHR de la Clínica", "Historia Clínica Electrónica de la clínica — integración planificada para adjuntar informes biomecánicos al expediente del paciente", $tags="planned")
+}
+
+' =========================================================
+' People → KinIoT systems
+' =========================================================
+Rel(patient,         webPlatform,      "Navega el landing antes de registrarse")
+Rel(patient,         mobilePlatform,   "Ejecuta rutinas y revisa feedback")
+Rel(patient,         wearablePlatform, "Usa el sensor durante los ejercicios")
+Rel(physiotherapist, webPlatform,      "Supervisa sesiones y ajusta protocolos")
+Rel(clinicAdmin,     webPlatform,      "Administra clínica, usuarios y suscripción")
+
+' =========================================================
+' Intra-KinIoT interactions
+' =========================================================
+Rel(mobilePlatform,   wearablePlatform, "Controla sesión y recibe muestras (BLE)")
+Rel(mobilePlatform,   clinicalCloud,    "Sincroniza datos y consume APIs (HTTPS)")
+Rel(webPlatform,      clinicalCloud,    "Consume APIs clínicas (HTTPS)")
+Rel(wearablePlatform, clinicalCloud,    "Envía datos biomecánicos anonimizados")
+
+' =========================================================
+' KinIoT systems → external ecosystem
+' =========================================================
+Rel(mobilePlatform, supabase,     "Autentica al paciente (OAuth)")
+Rel(webPlatform,    supabase,     "Autentica/autoriza profesionales (OAuth)")
+Rel(clinicalCloud,  supabase,     "Valida tokens y consulta identidad")
+Rel(clinicalCloud,  stripe,       "Procesa pagos de suscripción")
+Rel(clinicalCloud,  resend,       "Envía correos transaccionales")
+Rel(clinicalCloud,  pushProvider, "Despacha notificaciones push")
+Rel(mobilePlatform, pushProvider, "Recibe notificaciones push")
+Rel(clinicalCloud,  azureMonitor, "Emite logs, métricas y trazas")
+Rel(clinicalCloud,  clinicEhr,    "Exporta informes biomecánicos al expediente (planificado)")
+
+SHOW_LEGEND()
+@enduml

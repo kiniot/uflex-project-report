@@ -1607,7 +1607,19 @@ URL completa: https://fastpavos.atlassian.net/jira/software/projects/UF/boards/3
 
 #### 4.1.3.1. Software Architecture System Landscape Diagram
 
+El System Landscape Diagram presenta una vista de alto nivel del ecosistema tecnológico en el que opera uFlex, el producto insignia de la startup KinIoT. A diferencia del Context Diagram —que enfoca a uFlex como un único sistema— el Landscape descompone a uFlex en los cuatro sub-sistemas que conforman su portafolio técnico y muestra cómo estos interactúan entre sí y con el ecosistema externo. Su propósito es ofrecer a cualquier lector, técnico o no, una comprensión rápida y completa del alcance del producto y sus integraciones.
 
+Dentro del *Enterprise Boundary* de KinIoT se distinguen cuatro sistemas propios: **uFlex Web Platform** (landing público y PWA clínica desplegados en Vercel, usados por fisioterapeutas y administradores de clínica), **uFlex Mobile Platform** (apps nativas iOS y Android por las cuales el paciente ejecuta sus rutinas y recibe retroalimentación biomecánica), **uFlex Wearable Platform** (hardware propio de KinIoT: el sensor IMU vestible junto con su firmware embebido en C++ y la capa edge en Python que procesa las señales en tiempo real) y **uFlex Clinical Cloud** (los microservicios Spring Boot y las bases de datos Azure que orquestan sesiones clínicas, suscripciones multi-tenant, analítica y notificaciones). Las interacciones internas se visualizan explícitamente: la Mobile Platform se comunica con el Wearable vía BLE y con el Clinical Cloud vía HTTPS; la Web Platform también consume las APIs clínicas; y el Wearable envía datos anonimizados directamente al Cloud.
+
+El ecosistema externo se agrupa en tres categorías diferenciadas por color para que el lector identifique de un vistazo el rol de cada proveedor. En gris se encuentran los **SaaS core** (Supabase para autenticación OAuth e identidad, Stripe para pagos de suscripción y Resend para correos transaccionales), integraciones de negocio sin las cuales uFlex no puede operar. En azul-grisáceo se muestran los **servicios de plataforma y observabilidad** (FCM/APNs para notificaciones push al paciente y Azure Monitor / Application Insights para telemetría del backend), que soportan la operación técnica sin ser parte del dominio. En un gris azulado más claro aparece la **integración planificada** con el EHR de la clínica, representando en el roadmap la futura exportación de informes biomecánicos al expediente oficial del paciente.
+
+Los tres actores que interactúan con uFlex en este nivel son el **paciente** (toca tres sistemas: navega el landing antes de registrarse, usa la app móvil para las rutinas y el sensor vestible durante los ejercicios), el **fisioterapeuta** (accede a la PWA para supervisar sesiones y ajustar protocolos) y el **administrador de clínica** (gestiona sedes, usuarios y suscripción desde la misma PWA). Esta distribución refleja la realidad clínica: el paciente es quien genera los datos en casa, mientras que el staff clínico los consume y los convierte en decisiones terapéuticas.
+
+<div style="text-align: center;">
+  <img src="./assets/diagrams/software-architecture/landscape/src/landscape.png" alt="uFlex — Software Architecture System Landscape Diagram" style="max-width: 100%; height: auto;">
+</div>
+
+*Figura 4.1.3.1. Diagrama de Paisaje (System Landscape) del ecosistema KinIoT — uFlex descompuesto en sus cuatro sub-sistemas, junto a sus proveedores SaaS, servicios de plataforma e integraciones planificadas.*
 
 #### 4.1.3.2. Software Architecture Context Level Diagrams
 
@@ -1631,7 +1643,19 @@ El diagrama de contenedores detalla la arquitectura interna de uFlex, organizada
 
 #### 4.1.3.4. Software Architecture Deployment Diagrams
 
+El Deployment Diagram muestra cómo los contenedores lógicos definidos en la sección anterior se despliegan físicamente sobre la infraestructura real de producción. Su propósito es responder a la pregunta "¿dónde corre cada pieza de software?" y es especialmente útil para el equipo de operaciones, DevOps y soporte, ya que explicita los dispositivos, proveedores cloud y protocolos de comunicación entre cada capa.
 
+El diagrama se organiza en cuatro zonas de despliegue claramente diferenciadas. La primera es el **Entorno Local (Paciente / Clínica)**, que agrupa los tres nodos que viven físicamente fuera de la nube: el **IMU Sensor Device** (hardware propio de KinIoT con el firmware embebido en C++), el **Smartphone del Paciente** (iOS 17+ o Android 13+ corriendo la Mobile App y su Mobile DB en SQLite) y el **Edge Server** (una laptop Ubuntu/Windows conectada a la LAN local que ejecuta la Edge App en Python y el Edge DB en SQLite para el procesamiento biomecánico en tiempo real). La comunicación entre el sensor y el smartphone se realiza por **BLE**, y entre el smartphone y el edge por **WiFi / HTTPS** dentro de la red local.
+
+La segunda zona es **Vercel** (Edge Network / CDN global), donde se despliegan la **Landing Page** (TypeScript / Next.js como sitio público estático) y la **Web Client App** (PWA Angular para fisioterapeutas y administradores de clínica). La tercera zona es **Microsoft Azure Cloud** en la región Brazil South, que concentra todo el backend: **Azure API Management** como gateway PaaS que enruta tráfico, valida JWT y aplica cuotas; **Azure Container Apps Environment** como runtime gestionado donde corren los cinco microservicios Java/Spring Boot (Therapy Session, Clinical Trends, Subscription, Analytics y Notification Services) —representados por simplicidad como un solo bloque "uFlex Microservices"—; **Azure Database for PostgreSQL Flexible Server** que hospeda las cuatro bases de datos de dominio (Therapy, Trends, Subscription y Analytics); y **Azure Monitor / Application Insights** para la observabilidad del backend (logs, métricas y trazas distribuidas).
+
+La cuarta zona agrupa a los **Third-party SaaS Providers**: Supabase (que concentra la autenticación OAuth y la base de datos de identidad), Stripe (pasarela de pagos para las suscripciones multi-tenant de clínicas) y Resend (envío de correos transaccionales). Todas las comunicaciones entre zonas viajan por **HTTPS**, salvo la conexión interna entre los microservicios y la base de datos, que usa **JDBC/SSL**. Este nivel de detalle permite, por ejemplo, identificar qué latencia esperar en cada salto, qué firewall o grupo de seguridad proteger, y qué credenciales/secretos rotar en cada integración.
+
+<div style="text-align: center;">
+  <img src="./assets/diagrams/software-architecture/deployment/src/deployment.png" alt="uFlex — Software Architecture Deployment Diagram" style="max-width: 100%; height: auto;">
+</div>
+
+*Figura 4.1.3.4. Diagrama de Despliegue (Deployment) de uFlex — distribución física de contenedores sobre el entorno local del paciente, Vercel, Microsoft Azure y los proveedores SaaS de terceros.*
 
 <hr class="page-break">
 
