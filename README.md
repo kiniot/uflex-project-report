@@ -1608,17 +1608,25 @@ Encargado de gestionar la información personal de cada usuario registrado en la
 
 ##### Subscription
 
+Encargado de gestionar la adquisición y activación de los planes de suscripción.
+
 <img src="assets/diagrams/canvases/Subscription.png" alt="Subscription Bounded context canvases" width="800">
 
 ##### Planning
+
+Encargado del ciclo de vida de los planes de tratamiento de los pacientes.
 
 <img src="assets/diagrams/canvases/Planning.png" alt="Planning Bounded context canvases" width="800">
 
 ##### Device
 
+Encargado del ciclo de vida de los dispositivos IOT.
+
 <img src="assets/diagrams/canvases/Device.png" alt="Device Bounded context canvases" width="800">
 
 ##### Rehabilitation
+
+Encargado de orquestar cada sesión de cada terapia física ejecutada por el paciente.
 
 <img src="assets/diagrams/canvases/Rehabilitation.png" alt="Rehabilitation Bounded context canvases" width="800">
 
