@@ -1591,6 +1591,8 @@ URL completa: https://fastpavos.atlassian.net/jira/software/projects/UF/boards/3
 
 #### 4.1.1.3 Bounded Context Canvases
 
+En esta sección el equipo presenta sus Bounded Context Canvases, empezando por los
+importantes.
 
 
 <hr class="page-break">
