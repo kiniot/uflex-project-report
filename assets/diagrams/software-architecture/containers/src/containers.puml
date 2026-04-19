@@ -15,25 +15,24 @@ skinparam ranksep 60
 LAYOUT_WITH_LEGEND()
 
 ' ---- Tags / legend ----
-AddPersonTag("internal",       $bgColor="#4A6FA5", $fontColor="#ffffff", $borderColor="#2F4A73", $legendText="Usuario interno (uFlex)")
+AddPersonTag("user",           $bgColor="#4A6FA5", $fontColor="#ffffff", $borderColor="#2F4A73", $legendText="Usuario de uFlex")
 AddSystemTag("external",       $bgColor="#999999", $fontColor="#ffffff", $borderColor="#6B6B6B", $legendText="Sistema externo")
-AddContainerTag("mobile",      $bgColor="#438DD5", $fontColor="#ffffff", $borderColor="#2E6295", $legendText="App móvil nativa")
-AddContainerTag("web",         $bgColor="#438DD5", $fontColor="#ffffff", $borderColor="#2E6295", $legendText="Aplicación web / PWA")
+AddContainerTag("clientApp",   $bgColor="#438DD5", $fontColor="#ffffff", $borderColor="#2E6295", $legendText="Aplicación cliente (landing / móvil / web)")
 AddContainerTag("gateway",     $bgColor="#0B4884", $fontColor="#ffffff", $borderColor="#062F5A", $legendText="API Gateway")
 AddContainerTag("service",     $bgColor="#1168BD", $fontColor="#ffffff", $borderColor="#0B4884", $legendText="Microservicio (backend)")
 AddContainerTag("database",    $bgColor="#85BBF0", $fontColor="#000000", $borderColor="#438DD5", $legendText="Base de datos")
-AddContainerTag("iot",         $bgColor="#708090", $fontColor="#ffffff", $borderColor="#4F5B66", $legendText="Firmware IoT (embedded)")
-AddContainerTag("edge",        $bgColor="#B0C4DE", $fontColor="#000000", $borderColor="#708090", $legendText="Edge computing")
-AddContainerTag("iotHardware", $bgColor="#4F5B66", $fontColor="#ffffff", $borderColor="#2F3840", $legendText="Hardware IoT propio (sensor IMU)")
+AddContainerTag("iot",         $bgColor="#2E6295", $fontColor="#ffffff", $borderColor="#1C4E80", $legendText="Firmware IoT (embedded)")
+AddContainerTag("edge",        $bgColor="#6BA3DC", $fontColor="#000000", $borderColor="#438DD5", $legendText="Edge computing")
+AddContainerTag("iotHardware", $bgColor="#1C4E80", $fontColor="#ffffff", $borderColor="#0F2A4C", $legendText="Hardware IoT propio (sensor IMU)")
 
 title Container Diagram for uFlex (KinIoT)
 
 ' =========================================================
 ' Actors (top row)
 ' =========================================================
-Person(patient,         "Paciente",                 "Realiza terapia de miembro superior", $tags="internal")
-Person(physiotherapist, "Fisioterapeuta",           "Supervisa sesiones y ajusta protocolos", $tags="internal")
-Person(clinicAdmin,     "Administrador de Clínica", "Gestiona sedes, usuarios y suscripción", $tags="internal")
+Person(patient,         "Paciente",                 "Realiza terapia de miembro superior; navega el landing antes de registrarse", $tags="user")
+Person(physiotherapist, "Fisioterapeuta",           "Supervisa sesiones y ajusta protocolos", $tags="user")
+Person(clinicAdmin,     "Administrador de Clínica", "Gestiona sedes, usuarios y suscripción", $tags="user")
 
 ' =========================================================
 ' uFlex system
@@ -50,55 +49,56 @@ System_Boundary(uflex, "uFlex") {
 
   ' ---- Client Tier ----
   Boundary(clientTier, "Client Apps Tier") {
-    Container(mobileApp,    "Mobile App",       "Swift/SwiftUI (iOS), Kotlin/Jetpack Compose (Android)", "App del paciente: rutinas, feedback y sincronización con el sensor", $tags="mobile")
-    ContainerDb(mobileDB,   "Mobile DB",        "SQLite",               "Caché local del paciente (rutinas, progreso)", $tags="database")
-    Container(webClientApp, "Web Client App",   "TypeScript, Angular",  "PWA para fisioterapeutas y administradores de clínica", $tags="web")
+    Container(landingPage,  "Landing Page",     "TypeScript (Vercel)",                                 "Sitio público: información de producto y captación de leads", $tags="clientApp")
+    Container(mobileApp,    "Mobile App",       "Swift/SwiftUI (iOS), Kotlin/Jetpack Compose (Android)", "App del paciente: rutinas, feedback y sincronización con el sensor", $tags="clientApp")
+    ContainerDb(mobileDB,   "Mobile DB",        "SQLite",                                              "Caché local del paciente (rutinas, progreso)", $tags="database")
+    Container(webClientApp, "Web Client App",   "TypeScript, Angular (Vercel)",                        "PWA para fisioterapeutas y administradores de clínica", $tags="clientApp")
   }
 
   ' ---- API Gateway ----
-  Container(apiGateway, "API Gateway", "AWS API Gateway", "Enruta requests y aplica autenticación/cuotas", $tags="gateway")
+  Container(apiGateway, "API Gateway", "Azure API Management", "Enruta requests, valida JWT y aplica cuotas", $tags="gateway")
 
   ' ---- Backend Services Tier ----
   Boundary(backendTier, "Backend Services Tier") {
-    Container(iamService,          "IAM Service",             "Java, Spring Boot", "Gestiona roles, tenants y perfiles clínicos (delega OAuth a Supabase)", $tags="service")
-    ContainerDb(iamDB,             "IAM DB",                  "PostgreSQL",        "Perfiles, roles y políticas de acceso", $tags="database")
+    Container(therapyService,      "Therapy Session Service", "Java, Spring Boot",            "Gestiona sesiones de terapia y métricas biomecánicas", $tags="service")
+    ContainerDb(therapyDB,         "Therapy DB",              "Azure Database for PostgreSQL","Sesiones, ROM, repeticiones y calidad de ejecución", $tags="database")
 
-    Container(therapyService,      "Therapy Session Service", "Java, Spring Boot", "Gestiona sesiones de terapia y métricas biomecánicas", $tags="service")
-    ContainerDb(therapyDB,         "Therapy DB",              "Oracle",            "Sesiones, ROM, repeticiones y calidad de ejecución", $tags="database")
+    Container(trendsService,       "Clinical Trends Service", "Java, Spring Boot",            "Consolida tendencias clínicas por paciente y protocolo", $tags="service")
+    ContainerDb(trendsDB,          "Trends DB",               "Azure Database for PostgreSQL","Series agregadas de evolución clínica", $tags="database")
 
-    Container(trendsService,       "Clinical Trends Service", "Java, Spring Boot", "Consolida tendencias clínicas por paciente y protocolo", $tags="service")
-    ContainerDb(trendsDB,          "Trends DB",               "Oracle",            "Series agregadas de evolución clínica", $tags="database")
+    Container(subscriptionService, "Subscription Service",    "Java, Spring Boot",            "Gestiona suscripciones multi-tenant de clínicas", $tags="service")
+    ContainerDb(subscriptionDB,    "Subscription DB",         "Azure Database for PostgreSQL","Planes, tenants y estado de facturación", $tags="database")
 
-    Container(subscriptionService, "Subscription Service",    "Java, Spring Boot", "Gestiona suscripciones multi-tenant de clínicas", $tags="service")
-    ContainerDb(subscriptionDB,    "Subscription DB",         "Oracle",            "Planes, tenants y estado de facturación", $tags="database")
+    Container(analyticsService,    "Analytics Service",       "Java, Spring Boot",            "Genera KPIs clínicos y de negocio", $tags="service")
+    ContainerDb(analyticsDB,       "Analytics DB",            "Azure Database for PostgreSQL","Datasets analíticos anonimizados", $tags="database")
 
-    Container(analyticsService,    "Analytics Service",       "Java, Spring Boot", "Genera KPIs clínicos y de negocio", $tags="service")
-    ContainerDb(analyticsDB,       "Analytics DB",            "Oracle",            "Datasets analíticos anonimizados", $tags="database")
-
-    Container(notificationService, "Notification Service",    "Java, Spring Boot", "Orquesta correos transaccionales y notificaciones", $tags="service")
+    Container(notificationService, "Notification Service",    "Java, Spring Boot",            "Orquesta correos transaccionales y notificaciones", $tags="service")
   }
 }
 
 ' =========================================================
-' External systems (bottom)
+' External systems
 ' =========================================================
-System_Ext(supabase, "Supabase (OAuth)", "Proveedor de autenticación e identidad", $tags="external")
-System_Ext(stripe,   "Stripe",           "Pasarela de pagos", $tags="external")
-System_Ext(resend,   "Resend",           "Envío de correos transaccionales", $tags="external")
+System_Ext(supabase, "Supabase", "Autenticación OAuth y base de datos de identidad (usuarios, roles y tenants)", $tags="external")
+System_Ext(stripe,   "Stripe",   "Pasarela de pagos", $tags="external")
+System_Ext(resend,   "Resend",   "Envío de correos transaccionales", $tags="external")
 
 ' =========================================================
 ' Relations — users to clients
 ' =========================================================
+Rel(patient,         landingPage,  "Explora contenido público antes de registrarse")
 Rel(patient,         mobileApp,    "Ejecuta rutinas y revisa feedback")
 Rel(physiotherapist, webClientApp, "Revisa sesiones y ajusta protocolos")
 Rel(clinicAdmin,     webClientApp, "Administra clínica y suscripción")
 
-' ---- Clients to edge / storage / gateway ----
-Rel(mobileApp, embeddedApp, "Controla sesión del sensor (BLE)")
-Rel(mobileApp, edgeApp,     "Sincroniza datos vía Facade")
-Rel(mobileApp, mobileDB,    "Lee/escribe caché local")
-Rel(mobileApp, apiGateway,  "Consume servicios cloud (HTTPS)")
-Rel(webClientApp, apiGateway, "Consume servicios cloud (HTTPS)")
+' ---- Clients to edge / storage / gateway / auth ----
+Rel(mobileApp,    embeddedApp, "Controla sesión del sensor (BLE)")
+Rel(mobileApp,    edgeApp,     "Sincroniza datos vía Facade")
+Rel(mobileApp,    mobileDB,    "Lee/escribe caché local")
+Rel(mobileApp,    apiGateway,  "Consume servicios cloud (HTTPS)")
+Rel(mobileApp,    supabase,    "Autentica al paciente (OAuth)")
+Rel(webClientApp, apiGateway,  "Consume servicios cloud (HTTPS)")
+Rel(webClientApp, supabase,    "Autentica/autoriza profesionales (OAuth)")
 
 ' ---- IoT chain ----
 Rel(embeddedApp, imuSensor, "Lee IMU y controla hardware")
@@ -106,15 +106,14 @@ Rel(embeddedApp, edgeApp,   "Envía muestras biomecánicas")
 Rel(edgeApp,     edgeDB,    "Persiste muestras locales")
 Rel(edgeApp,     apiGateway,"Envía datos anonimizados")
 
-' ---- Gateway to services ----
-Rel(apiGateway, iamService,          "Rutea identidad/roles")
+' ---- Gateway to auth & services ----
+Rel(apiGateway, supabase,            "Valida JWT y obtiene claims de usuario")
 Rel(apiGateway, therapyService,      "Rutea sesiones")
 Rel(apiGateway, trendsService,       "Rutea tendencias")
 Rel(apiGateway, subscriptionService, "Rutea suscripciones")
 Rel(apiGateway, analyticsService,    "Rutea analítica")
 
 ' ---- Services to own DBs ----
-Rel(iamService,          iamDB,          "Persiste perfiles y roles")
 Rel(therapyService,      therapyDB,      "Persiste sesiones")
 Rel(trendsService,       trendsDB,       "Persiste tendencias")
 Rel(subscriptionService, subscriptionDB, "Persiste suscripciones")
@@ -126,11 +125,8 @@ Rel(analyticsService,    therapyService,      "Consume sesiones")
 Rel(therapyService,      notificationService, "Solicita notificaciones clínicas")
 Rel(subscriptionService, notificationService, "Solicita avisos de facturación")
 
-' ---- Clients & services to externals ----
-Rel(mobileApp,           supabase, "Autentica al paciente (OAuth)")
-Rel(webClientApp,        supabase, "Autentica/autoriza profesionales (OAuth)")
-Rel(iamService,          supabase, "Valida tokens OAuth")
-Rel(subscriptionService, stripe,   "Procesa pagos de suscripción")
-Rel(notificationService, resend,   "Envía correos transaccionales")
+' ---- Services to externals ----
+Rel(subscriptionService, stripe, "Procesa pagos de suscripción")
+Rel(notificationService, resend, "Envía correos transaccionales")
 
 @enduml
