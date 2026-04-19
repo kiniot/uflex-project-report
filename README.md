@@ -1602,6 +1602,8 @@ Contexto génerico para la identificación y acceso.
 
 ##### Profile
 
+Encargado de gestionar la información personal de cada usuario registrado en la aplicación.
+
 <img src="assets/diagrams/canvases/Profile.png" alt="Profile Bounded context canvases" width="800">
 
 ##### Subscription
