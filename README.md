@@ -813,6 +813,23 @@ Esta sección presenta nuestros usuarios ideales diseñados para el ecosistema d
 
 ## 2.5. Ubiquitous Language
 
+| Término                    | Equivalente                    | Definición                                                                                                                                                                         |
+|----------------------------|--------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Range of Motion (ROM)      | Rango de Movimiento            | Magnitud de arco, medida en grados, que una articulación puede recorrer en un plano específico. Es el indicador principal para evaluar la recuperación funcional de codo y muñeca. |
+| Flexion                    | Flexión                        | Movimiento que reduce el ángulo entre los huesos de una articulación. En el codo, es acercar la mano al hombro; en la muñeca, es mover la palma hacia el antebrazo.                |
+| Extension                  | Extensión                      | Movimiento que aumenta el ángulo entre los huesos de una articulación, estirando el miembro. Es lo opuesto a la flexión.                                                           |
+| Pronation                  | Pronación                      | Movimiento de rotación del antebrazo que permite girar la palma de la mano hacia abajo (hacia el suelo).                                                                           |
+| Supination                 | Supinación                     | Movimiento de rotación del antebrazo que permite girar la palma de la mano hacia arriba (hacia el techo).                                                                          |
+| Compensatory Movement      | Movimiento Compensatorio       | Movimiento involuntario o erróneo de una articulación adyacente (ej. el hombro) para sustituir la falta de movilidad de la articulación lesionada (ej. el codo).                   |
+| Clinical Session           | Sesión Clínica                 | Conjunto de ejercicios prescritos por el fisioterapeuta que el paciente debe ejecutar en un periodo de tiempo determinado, bajo el monitoreo de los sensores.                      |
+| Kinematic Chain            | Cadena Cinemática              | Conjunto de articulaciones y segmentos óseos conectados (hombro-codo-muñeca) que actúan de forma coordinada para realizar un movimiento funcional.                                 |
+| Therapeutic Protocol       | Protocolo Terapéutico          | Plan de rehabilitación personalizado que incluye el número de repeticiones, series y los límites de ángulos permitidos para un paciente específico.                                |
+| Joint Rigidity (Ankylosis) | Rigidez Articular (Anquilosis) | Limitación o pérdida total de la movilidad en una articulación debido a una lesión o falta de ejercicio post-operatorio.                                                           |
+| Wearable Node              | Nodo Vestible                  | Dispositivo físico que contiene los sensores inerciales y se coloca sobre el segmento corporal del paciente para capturar datos biomecánicos.                                      |
+| Clinic                     | Clínica                        | Organización que adquiere el servicio SaaS y gestiona a sus propios especialistas y pacientes dentro de la plataforma.                                                             |
+| Physiotherapist            | Fisioterapeuta                 | Profesional de la salud encargado de crear los protocolos, monitorear los datos de los sensores y validar el progreso del paciente.                                                |
+| Adherence                  | Adherencia                     | Nivel de compromiso y cumplimiento del paciente con respecto al plan de ejercicios prescrito por el especialista.                                                                  |
+
 <hr class="page-break">
 
 # Capítulo III: Requirements Specification
