@@ -812,27 +812,27 @@ En esta sección se introduce y resume el proceso realizado por el equipo para e
 
 En esta etapa el equipo se concentró en generar la mayor cantidad de eventos de dominio posibles (cosas que suceden en el negocio) escribiendo en los post-its naranjas.
 
-![big-picture-1](assets/diagrams/ddd/event-storming/big-picture/big-picture-1.png)
+![big-picture-1](assets/diagrams/ddd/event-storming/big-picture/big-picture-event-storming-1.png)
 
 **2. Explore**
 
 Después de la anterior etapa, en esta se concentró en ordenar cronológicamente los eventos, eliminar los eventos repetidos, identificar sus actores y posibles sistemas externos, y finalmente algunos puntos de dolor en post-its morados.
 
-![big-picture-2](assets/diagrams/ddd/event-storming/big-picture/big-picture-2.png)
+![big-picture-2](assets/diagrams/ddd/event-storming/big-picture/big-picture-event-storming-2.png)
 
 **3. Close**
 
 En esta última etapa, se documentaron en post-its rosados los problemas más relevantes detectados, junto con aspectos que debíamos investigar más a fondo o descartar según el alcance definido.
 
-![big-picture-3](assets/diagrams/ddd/event-storming/big-picture/big-picture-3.png)
+![big-picture-3](assets/diagrams/ddd/event-storming/big-picture/big-picture-event-storming-3.png)
 
 Luego de conversar un poco, el equipo descartó algunos eventos y se ordenaron mejor las líneas de tiempo.
 
-![big-picture-4](assets/diagrams/ddd/event-storming/big-picture/big-picture-4.png)
+![big-picture-4](assets/diagrams/ddd/event-storming/big-picture/big-picture-event-storming-4.png)
 
 Finalmente, se presenta el Big Picture Event Storming finalizado, con los eventos ordenados, los puntos de dolor identificados y los aspectos a investigar destacados.
 
-![big-picture-5](assets/diagrams/ddd/event-storming/big-picture/big-picture-5.png)
+![big-picture-5](assets/diagrams/ddd/event-storming/big-picture/big-picture-event-storming-5.png)
 
 Se puede acceder al Big Picture Event Storming en el siguiente enlace de la herramienta Miro: [Version final del Big Picture Event Storming](https://miro.com/app/board/uXjVGsDiw2M=/?share_link_id=274967609887)
 
@@ -1623,11 +1623,59 @@ URL completa: https://fastpavos.atlassian.net/jira/software/projects/UF/boards/3
 
 ## 4.1. Strategic-Level Domain-Driven Design
 
-
+En esta sección se aborda la perspectiva estratégica del enfoque Domain-Driven Design (DDD), la cual se centra en definir los límites del dominio y establecer una visión clara de cómo las diferentes partes del sistema interactúan entre sí. A través de técnicas como Event Storming, Context Mapping y la definición de una arquitectura de software adecuada, se busca garantizar que el diseño del sistema esté alineado con los objetivos del negocio y las necesidades de los usuarios.
 
 ### 4.1.1. Design-Level EventStorming
 
+El Event Storming se llevó a cabo en una sesión colaborativa con la participación de cinco miembros del equipo, incluyendo un facilitador y un relator. Durante la sesión, se utilizaron notas adhesivas de colores para representar eventos de dominio, comandos, agregados y otros elementos clave del sistema. El objetivo principal fue capturar una visión integral del flujo de eventos dentro del dominio educativo, identificar puntos críticos y descubrir posibles bounded contexts.
 
+A continuación, se detallan los pasos seguidos y los resultados obtenidos en cada una de las fases del Event Storming.
+
+**Antes de la sesión:**
+
+Primero, se preparó el espacio de trabajo con un mural digital (Miro) y se definieron las reglas básicas para la participación. Se estableció que todas las ideas eran bienvenidas y que el objetivo era fomentar la colaboración y la creatividad.
+
+**Durante la sesión:**
+
+1. **Unstructured Exploration:** Se comenzó con una lluvia de ideas para identificar eventos de dominio relevantes. Cada participante escribió eventos en notas adhesivas y las colocó en el mural, sin preocuparse inicialmente por el orden o la estructura.
+
+    ![design-level-event-storming-1](assets/diagrams/ddd/event-storming/design-level/design-level-event-storming-1.png)
+
+2. **Timelines:** Se organizó la secuencia temporal de los eventos identificados, creando una línea de tiempo que reflejaba el flujo natural del dominio. Se agruparon eventos relacionados y se identificaron interacciones clave.
+
+    ![design-level-event-storming-2](assets/diagrams/ddd/event-storming/design-level/design-level-event-storming-2.png)
+
+3. **Pain points:** Se identificaron puntos de dolor y áreas de incertidumbre dentro del flujo de eventos. Estos puntos se marcaron con notas de color diferente para destacarlos y facilitar su análisis posterior.
+
+    ![design-level-event-storming-3](assets/diagrams/ddd/event-storming/design-level/design-level-event-storming-3.png)
+
+4. **Pivotal points:** Se destacaron eventos clave que representaban cambios significativos en el estado del sistema o que tenían un impacto considerable en el negocio. Estos eventos se utilizaron como referencia para definir los límites de los bounded contexts.
+
+    ![design-level-event-storming-4](assets/diagrams/ddd/event-storming/design-level/design-level-event-storming-4.png)
+
+5. **Commands:** Se añadieron comandos que desencadenaban los eventos identificados. Esto ayudó a clarificar las acciones que los usuarios o sistemas externos podían realizar dentro del dominio.
+
+    ![design-level-event-storming-5](assets/diagrams/ddd/event-storming/design-level/design-level-event-storming-5.png)
+
+6. **Policies:** Se definieron políticas que regulaban cómo y cuándo se ejecutaban ciertos comandos o eventos, estableciendo reglas de negocio claras.
+
+    ![design-level-event-storming-6](assets/diagrams/ddd/event-storming/design-level/design-level-event-storming-6.png)
+
+7. **Read models:** Se identificaron modelos de lectura necesarios para consultar el estado del sistema y presentar información relevante a los usuarios.
+
+    ![design-level-event-storming-7](assets/diagrams/ddd/event-storming/design-level/design-level-event-storming-7.png)
+
+8. **External systems:** Se mapearon sistemas externos que interactuaban con el dominio, identificando puntos de integración y comunicación.
+
+    ![design-level-event-storming-8](assets/diagrams/ddd/event-storming/design-level/design-level-event-storming-8.png)
+
+9. **Aggregates:** Se agruparon eventos y comandos en agregados, definiendo las unidades de consistencia dentro del dominio.
+
+    ![design-level-event-storming-9](assets/diagrams/ddd/event-storming/design-level/design-level-event-storming-9.png)
+
+10. **Bounded Contexts:** Finalmente, se delinearon los límites de los bounded contexts basados en los eventos, agregados y puntos clave identificados. Esta agrupación en clústeres permitirá discutir y clasificar los contexts en Core, Supporting y Generic.
+
+    ![design-level-event-storming-10](assets/diagrams/ddd/event-storming/design-level/design-level-event-storming-10.png)
 
 #### 4.1.1.1 Candidate Context Discovery
 
