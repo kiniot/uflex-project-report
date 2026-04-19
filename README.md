@@ -290,8 +290,8 @@ Ser reconocidos en el 2030 como la startup líder en telemonitoreo biomecánico 
       <td><img src="img/[COMPLETAR].jpg" alt="daniel image" width="200"></td>
     </tr>
     <tr>
-      <td><strong>Ramirez Mestanza, Salim Ignacio</strong><br> [COMPLETAR: descripción]</td>
-      <td><img src="img/[COMPLETAR].jpg" alt="salim image" width="200"></td>
+      <td><strong>Ramirez Mestanza, Salim Ignacio</strong><br> Soy Salim, estudiante de Ingenieria de Software, con entusiasmo por el desarrollo backend, la arquitectura de software y el cloud. Me enfoco en tomar decisiones tecnicas complejas que generen impacto directo en los resultados del proyecto y aporten a los atributos de calidad esperados del software. Me considero perseverante, no me rindo ante los retos y siempre busco la colaboracion del equipo para avanzar. Tambien asumo un rol de liderazgo, porque creo firmemente que cada integrante es una parte indispensable para el exito del proyecto.</td>
+      <td><img src="assets/images/photos/salim-photo.jpeg" alt="salim image" width="200"></td>
     </tr>
     <tr>
       <td><strong>Rivera Sosa, Eduardo Gael</strong><br> Soy Gael, desarrollador Full Stack con enfoque en IA. Me gusta construir productos que realmente funcionen y aprender rápido lo que sea necesario para lograrlo. Soy proactivo, me adapto bien al trabajo en equipo y disfruto resolver problemas desde la raíz. Cuando algo se puede hacer mejor, lo digo.</td>
