@@ -1,0 +1,77 @@
+@startuml uflex-iam-component
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+
+' Styling
+skinparam shadowing false
+skinparam defaultFontName Arial
+skinparam Handwritten false
+skinparam Padding 3
+skinparam wrapWidth 200
+skinparam nodesep 35
+skinparam ranksep 55
+
+' ---- Tags ----
+' Clients (each with its own brand colour)
+AddContainerTag("iosApp",     $bgColor="#1168BD", $fontColor="#ffffff", $borderColor="#0B4884", $legendText="iOS Mobile App")
+AddContainerTag("androidApp", $bgColor="#A3C43E", $fontColor="#000000", $borderColor="#6E8C20", $legendText="Android Mobile App")
+AddContainerTag("webApp",     $bgColor="#438DD5", $fontColor="#ffffff", $borderColor="#2E6295", $legendText="Web Client App PWA")
+
+' IAM internal layers
+AddComponentTag("interface",      $bgColor="#1168BD", $fontColor="#ffffff", $borderColor="#0B4884", $legendText="Interface Layer REST")
+AddComponentTag("application",    $bgColor="#1168BD", $fontColor="#ffffff", $borderColor="#0B4884", $legendText="Application Layer CQRS")
+AddComponentTag("domain",         $bgColor="#0B4884", $fontColor="#ffffff", $borderColor="#062F5A", $legendText="Domain Layer")
+AddComponentTag("infrastructure", $bgColor="#6BA3DC", $fontColor="#000000", $borderColor="#438DD5", $legendText="Infrastructure Layer")
+AddComponentTag("acl",            $bgColor="#F5A97F", $fontColor="#000000", $borderColor="#C87A4C", $legendText="External ACL")
+
+' External systems & database
+AddSystemTag("externalAuth", $bgColor="#E63946", $fontColor="#ffffff", $borderColor="#9B1E28", $legendText="External OAuth Provider")
+AddSystemTag("externalMail", $bgColor="#999999", $fontColor="#ffffff", $borderColor="#6B6B6B", $legendText="External Email Delivery")
+AddContainerTag("database",  $bgColor="#20B2AA", $fontColor="#ffffff", $borderColor="#148F89", $legendText="Relational SQL Database")
+
+title Component Diagram — IAM Bounded Context
+
+' =========================================================
+' Clients
+' =========================================================
+Container(androidApp, "Android Mobile App",  "Kotlin / Android SDK",       "Aplicación nativa Android para pacientes", $tags="androidApp")
+Container(iosApp,     "iOS Mobile App",      "Swift / iOS SDK",            "Aplicación nativa iOS para pacientes",     $tags="iosApp")
+Container(webApp,     "Web Client App",      "TypeScript / Angular PWA",   "PWA para fisioterapeutas y administradores de clínica", $tags="webApp")
+
+' =========================================================
+' IAM Service internal layers
+' =========================================================
+Container_Boundary(iamService, "IAM Service — RESTful API") {
+  Component(interfaceLayer,      "IAM Interface Layer",        "Component: Java 17 / Spring Boot 3", "Controllers y endpoints REST — Authentication, Users, Roles",                             $tags="interface")
+  Component(applicationLayer,    "IAM Application Layer",      "Component: Java 17 / Spring Boot 3", "Servicios CQRS que coordinan commands, queries y event handlers del dominio IAM",          $tags="application")
+  Component(supabaseAcl,         "Supabase Auth Service ACL",  "Component: Java 17 / Spring Boot 3", "Fachada ACL hacia Supabase para crear identidades, validar JWT y consumir webhooks",       $tags="acl")
+  Component(domainLayer,         "IAM Domain Layer",           "Component: Java 17 / Spring Boot 3", "Aggregate User, Entity Role, Value Objects y eventos de dominio",                          $tags="domain")
+  Component(infrastructureLayer, "IAM Infrastructure Layer",   "Component: Java 17 / Spring Boot 3", "Repositorios JPA, integración con Resend, Spring Security y validación de JWT de Supabase",$tags="infrastructure")
+}
+
+' =========================================================
+' External systems & database
+' =========================================================
+System_Ext(supabase,   "Supabase — OAuth + Identity DB", "Sistema externo de identidad y autenticación OAuth",  $tags="externalAuth")
+System_Ext(resend,     "Resend — Email Delivery",        "Sistema externo de envío de correos transaccionales", $tags="externalMail")
+ContainerDb(iamDB,     "IAM Relational SQL Database",    "Container: Azure Database for PostgreSQL", "Almacena perfiles clínicos del contexto IAM — users, roles, audit events", $tags="database")
+
+' =========================================================
+' Relations — vertical flow
+' =========================================================
+Rel(androidApp, interfaceLayer, "Hace llamadas API hacia", "JSON/HTTPS")
+Rel(iosApp,     interfaceLayer, "Hace llamadas API hacia", "JSON/HTTPS")
+Rel(webApp,     interfaceLayer, "Hace llamadas API hacia", "JSON/HTTPS")
+
+Rel(interfaceLayer,   applicationLayer,    "Invoca servicios de la capa de aplicación")
+
+Rel(applicationLayer, supabaseAcl,         "Delega autenticación y sincronización de identidad", "in-process call")
+Rel(applicationLayer, domainLayer,         "Orquesta casos de uso del dominio")
+Rel(applicationLayer, infrastructureLayer, "Usa infraestructura — repos JPA e integraciones")
+
+Rel(supabaseAcl,         supabase, "Valida JWT, crea identidades y consume webhooks", "HTTPS")
+Rel(infrastructureLayer, resend,   "Envía correos transaccionales",                    "HTTPS")
+Rel(infrastructureLayer, iamDB,    "Persistencia — commands y queries",                "JDBC/SSL")
+
+SHOW_LEGEND()
+@enduml

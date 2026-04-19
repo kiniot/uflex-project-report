@@ -182,15 +182,24 @@ Análisis de cantidad de commits realizados por semana.
          - [4.1.3.3. Software Architecture Container Level Diagrams](#4133-software-architecture-container-level-diagrams)
          - [4.1.3.4. Software Architecture Deployment Diagrams](#4134-software-architecture-deployment-diagrams)
    - [4.2. Tactical-Level Domain-Driven Design](#42-tactical-level-domain-driven-design)
-      - [4.2.X. Bounded Context: <Bounded Context Name>](#42X-bounded-context-bounded-context-name)
-         - [4.2.X.1. Domain Layer](#4211-domain-layer)
-         - [4.2.X.2. Interface Layer](#4212-interface-layer)
-         - [4.2.X.3. Application Layer](#4213-application-layer)
-         - [4.2.X.4. Infrastructure Layer](#4214-infrastructure-layer)
-         - [4.2.X.5. Bounded Context Software Architecture Component Level Diagrams](#4215-bounded-context-software-architecture-component-level-diagrams)
-         - [4.2.X.6. Bounded Context Software Architecture Code Level Diagrams](#4216-bounded-context-software-architecture-code-level-diagrams)
-            - [4.2.X.6.1. Bounded Context Domain Layer Class Diagrams](#42161-bounded-context-domain-layer-class-diagrams)
-            - [4.2.X.6.2. Bounded Context Database Design Diagram](#42162-bounded-context-database-design-diagram)
+      - [4.2.1. Bounded Context: IAM](#421-bounded-context-iam)
+         - [4.2.1.1. Domain Layer](#4211-domain-layer)
+         - [4.2.1.2. Interface Layer](#4212-interface-layer)
+         - [4.2.1.3. Application Layer](#4213-application-layer)
+         - [4.2.1.4. Infrastructure Layer](#4214-infrastructure-layer)
+         - [4.2.1.5. Bounded Context Software Architecture Component Level Diagrams](#4215-bounded-context-software-architecture-component-level-diagrams)
+         - [4.2.1.6. Bounded Context Software Architecture Code Level Diagrams](#4216-bounded-context-software-architecture-code-level-diagrams)
+            - [4.2.1.6.1. Bounded Context Domain Layer Class Diagrams](#42161-bounded-context-domain-layer-class-diagrams)
+            - [4.2.1.6.2. Bounded Context Database Design Diagram](#42162-bounded-context-database-design-diagram)
+      - [4.2.2. Bounded Context: Subscription](#422-bounded-context-subscription)
+         - [4.2.2.1. Domain Layer](#4221-domain-layer)
+         - [4.2.2.2. Interface Layer](#4222-interface-layer)
+         - [4.2.2.3. Application Layer](#4223-application-layer)
+         - [4.2.2.4. Infrastructure Layer](#4224-infrastructure-layer)
+         - [4.2.2.5. Bounded Context Software Architecture Component Level Diagrams](#4225-bounded-context-software-architecture-component-level-diagrams)
+         - [4.2.2.6. Bounded Context Software Architecture Code Level Diagrams](#4226-bounded-context-software-architecture-code-level-diagrams)
+            - [4.2.2.6.1. Bounded Context Domain Layer Class Diagrams](#42261-bounded-context-domain-layer-class-diagrams)
+            - [4.2.2.6.2. Bounded Context Database Design Diagram](#42262-bounded-context-database-design-diagram)
 
 - [Conclusiones](#conclusiones)
    - [Conclusiones y recomendaciones](#conclusiones-y-recomendaciones)
@@ -1663,39 +1672,1403 @@ La cuarta zona agrupa a los **Third-party SaaS Providers**: Supabase (que concen
 
 
 
-### 4.2.X. Bounded Context: <Bounded Context Name>
+### 4.2.1. Bounded Context: IAM
 
+El bounded context **IAM (Identity and Access Management)** concentra todo lo relacionado con la identidad de los usuarios de uFlex y su rol dentro del ecosistema clínico. A diferencia de Supabase —que actúa como identity provider externo y responsable de la autenticación OAuth— el BC IAM se encarga del **perfil enriquecido** del usuario dentro del dominio: su rol clínico (Paciente, Fisioterapeuta o Administrador de Clínica), su clínica asociada y su ciclo de vida (pendiente de verificación, verificado, suspendido). La relación con Supabase se implementa mediante un Anti-Corruption Layer (ACL), de modo que un cambio en la API de Supabase no contamine el modelo de dominio. Los comandos y eventos emitidos por este BC (`CreateUserCommand`, `VerifyUserCommand`, `UserCreatedEvent`, `UserVerifiedEvent`) fueron identificados durante el Design-Level EventStorming.
 
+#### 4.2.1.1. Domain Layer
 
-#### 4.2.X.1. Domain Layer
+En esta sección se describen los elementos del Domain Layer del contexto de IAM, que son necesarios para modelar la gestión de identidades y accesos dentro de uFlex. Estos componentes definen las reglas de negocio y las invariantes asociadas a la autenticación, autorización y administración de usuarios en la plataforma clínica multi-tenant.
 
+**1. User (Aggregate Root)**
 
+Representa al usuario del sistema, con su identidad enriquecida, roles clínicos y asociación al tenant (clínica). La autenticación real (contraseña/OAuth) vive en Supabase; por eso el aggregate guarda `supabaseUserId` como referencia externa en lugar de almacenar la contraseña.
 
-#### 4.2.X.2. Interface Layer
+**Atributos principales:**
 
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| `id` | `UserId` | private | Identificador interno del usuario. |
+| `supabaseUserId` | `String` | private | Identificador del usuario en Supabase (UUID emitido por el OAuth provider). Inmutable tras la creación. |
+| `emailAddress` | `EmailAddress` | private | Correo del usuario (VO compartido con otros BCs). |
+| `fullName` | `FullName` | private | Nombre completo del usuario. |
+| `roles` | `Set<Role>` | private | Conjunto de roles clínicos asignados. |
+| `verificationStatus` | `VerificationStatus` | private | Estado de verificación de correo (`NOT_VERIFIED` / `VERIFIED`). |
+| `accountStatus` | `AccountStatus` | private | Estado de la cuenta (`PENDING`, `ACTIVE`, `BLOCKED`, `DELETED`). |
+| `verificationCode` | `VerificationCode` | private | Código y expiración para verificación clínica adicional (por ejemplo, validación por el Administrador de Clínica). |
+| `clinicId` | `ClinicId` | private | Identificador de la clínica (tenant) asociada; puede quedar sin asignar hasta el onboarding. |
 
+**Métodos principales:**
 
-#### 4.2.X.3. Application Layer
+| Método | Tipo Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| `User()` | Constructor | public | Constructor vacío requerido por JPA. |
+| `User(EmailAddress, String supabaseUserId, VerificationCode)` | Constructor | public | Crea un usuario en estado `PENDING` y `NOT_VERIFIED`, con `clinicId` vacío y sin roles. |
+| `User(EmailAddress, String supabaseUserId, VerificationCode, List<Role>)` | Constructor | public | Crea usuario e inicializa roles usando `validateRoleSet`. |
+| `addRole(Role role)` | `User` | public | Agrega un rol al conjunto y valida la coherencia con el tenant. |
+| `addRoles(List<Role> roles)` | `User` | public | Valida y agrega múltiples roles. |
+| `isVerified()` | `boolean` | public | Devuelve `true` si `verificationStatus == VERIFIED`. |
+| `activate()` | `void` | public | Cambia `accountStatus` a `ACTIVE` solo si el usuario ya está `VERIFIED`. |
+| `assignVerificationCode(String email, String code, Integer expirationMinutes)` | `void` | public | Asigna un nuevo `VerificationCode` y publica `UserVerificationCodeAssignedEvent`. |
+| `verifyUser(String code)` | `void` | public | Valida el código, marca `VERIFIED`, activa la cuenta y limpia el `VerificationCode`. |
+| `associateClinic(ClinicId clinicId)` | `void` | public | Asocia un `clinicId` si el usuario aún no tenía tenant asignado. |
+| `disassociateClinic(ClinicId clinicId)` | `void` | public | Desasocia si coincide con el tenant actual; de lo contrario lanza excepción. |
 
+**2. Role (Entity)**
 
+Define un rol clínico asignable a un usuario. Persiste como entidad para permitir nuevas autorizaciones granulares a futuro sin migrar el schema del aggregate.
 
-#### 4.2.X.4. Infrastructure Layer
+**Atributos principales:**
 
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| `id` | `Long` | private | Identificador único del rol. |
+| `name` | `Roles` | private | Nombre del rol (enum `PATIENT`, `PHYSIOTHERAPIST`, `CLINIC_ADMIN`). |
 
+**Métodos principales:**
 
-#### 4.2.X.5. Bounded Context Software Architecture Component Level Diagrams
+| Método | Tipo Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| `Role()` | Constructor | public | Constructor vacío (JPA/Lombok). |
+| `Role(Roles name)` | Constructor | public | Inicializa rol con el enum correspondiente. |
+| `getStringName()` | `String` | public | Devuelve el nombre del enum como string. |
+| `getDefaultRole()` *(static)* | `Role` | public | Devuelve el rol por defecto (`PATIENT`). |
+| `toRoleFromName(String name)` *(static)* | `Role` | public | Crea un `Role` a partir del nombre del enum. |
+| `validateRoleSet(List<Role> roles)` *(static)* | `List<Role>` | public | Si la lista es nula o vacía, retorna `[PATIENT]`. |
 
+**3. AccountStatus (Value Object)**
 
+Estado actual de la cuenta del usuario.
 
-#### 4.2.X.6. Bounded Context Software Architecture Code Level Diagrams
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| `PENDING` | Enum | public | La cuenta está pendiente de activación. |
+| `ACTIVE` | Enum | public | La cuenta está activa. |
+| `BLOCKED` | Enum | public | La cuenta está bloqueada por el Administrador de Clínica o por Soporte. |
+| `DELETED` | Enum | public | La cuenta fue eliminada lógicamente. |
 
+**4. VerificationStatus (Value Object)**
 
+Indica si el correo del usuario ya fue verificado.
 
-##### 4.2.X.6.1. Bounded Context Domain Layer Class Diagrams
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| `NOT_VERIFIED` | Enum | public | El correo aún no está verificado. |
+| `VERIFIED` | Enum | public | El correo fue verificado exitosamente. |
 
+**5. Roles (Value Object)**
 
+Enumera los roles clínicos disponibles en uFlex.
 
-##### 4.2.X.6.2. Bounded Context Database Design Diagram
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| `PATIENT` | Enum | public | Paciente en rehabilitación que usa la Mobile App y el sensor vestible. |
+| `PHYSIOTHERAPIST` | Enum | public | Fisioterapeuta que supervisa sesiones y ajusta protocolos clínicos. |
+| `CLINIC_ADMIN` | Enum | public | Administrador de clínica que gestiona sedes, usuarios y suscripción. |
+
+**6. ClinicId (Value Object)**
+
+Identificador del tenant (clínica) al que se asocia un usuario. Es una referencia lógica al BC Subscription; no es una foreign key dura para mantener la autonomía entre bounded contexts.
+
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| `clinicId` | `UUID` | private | Identificador de la clínica; puede ser `null` si aún no ha sido asignado. |
+
+**Métodos principales:**
+
+| Método | Tipo Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| `ClinicId()` | Constructor | public | Inicializa con `null` (no asignado). |
+| `ClinicId(UUID clinicId)` | Constructor | public | Valida que el UUID no sea nulo. |
+| `isAssigned()` | `boolean` | public | `true` si `clinicId != null`. |
+
+**7. VerificationCode (Value Object)**
+
+Código y fecha de expiración usados para verificar usuarios (activación de correo o re-validación clínica). El envío del código se delega a Resend a través del `EmailService`.
+
+**Atributos principales:**
+
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| `code` | `String` | private | Código de verificación (puede quedar `null` tras la verificación). |
+| `expiration` | `LocalDateTime` | private | Fecha y hora de expiración del código. |
+
+**Métodos principales:**
+
+| Método | Tipo Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| `VerificationCode(String, LocalDateTime)` | Constructor | public | Valida que el código no sea vacío y que la expiración sea futura. |
+| `isExpired()` | `boolean` | public | `true` si `now > expiration`. |
+| `matches(String inputCode)` | `boolean` | public | `true` si el código coincide y no ha expirado. |
+
+**8. EmailAddress (Value Object)**
+
+VO compartido entre bounded contexts para representar un correo electrónico válido.
+
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| `value` | `String` | private | Valor del correo, validado contra formato RFC 5322. |
+
+**9. FullName (Value Object)**
+
+Nombre completo del usuario, compuesto por nombre y apellidos.
+
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| `firstName` | `String` | private | Nombre(s) del usuario. |
+| `lastName` | `String` | private | Apellidos del usuario. |
+
+**10. SignUpCommand (Command)**
+
+Comando para registrar un nuevo usuario en uFlex tras el flujo OAuth de Supabase.
+
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| `supabaseUserId` | `String` | public | ID del usuario emitido por Supabase. |
+| `emailAddress` | `EmailAddress` | public | Correo del usuario. |
+| `fullName` | `FullName` | public | Nombre completo. |
+| `roles` | `List<Role>` | public | Roles iniciales (validados por `validateRoleSet`). |
+| `clinicId` | `ClinicId` | public | Clínica a la que se asocia (opcional en el onboarding inicial). |
+
+**11. SignInCommand (Command)**
+
+Comando para iniciar sesión. En uFlex la autenticación la realiza Supabase; este comando valida el JWT emitido por Supabase y carga el contexto clínico.
+
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| `supabaseJwt` | `String` | public | Token JWT emitido por Supabase tras autenticación OAuth. |
+
+**12. VerifyUserCommand (Command)**
+
+Comando para verificar un usuario mediante código (verificación clínica adicional aparte de la verificación de correo de Supabase).
+
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| `email` | `String` | public | Correo del usuario a verificar. |
+| `code` | `String` | public | Código de verificación recibido por correo. |
+
+**13. ResendVerificationCodeCommand (Command)**
+
+Comando para reenviar un código de verificación.
+
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| `email` | `String` | public | Correo válido del usuario al que se reenvía el código. |
+
+**14. AssignUserClinicIdCommand (Command)**
+
+Comando para asociar un usuario a una clínica (tenant). Es emitido típicamente por el BC Subscription cuando se activa el plan de la clínica y el administrador invita a sus fisioterapeutas.
+
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| `userId` | `Long` | public | ID del usuario objetivo. |
+| `clinicId` | `UUID` | public | ID de la clínica a asociar. |
+
+**15. SeedRolesCommand (Command)**
+
+Comando utilizado al arranque del servicio para sembrar los roles clínicos base si aún no existen en la base de datos.
+
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| *(ninguno)* | — | — | No requiere atributos; su ejecución crea los roles `PATIENT`, `PHYSIOTHERAPIST` y `CLINIC_ADMIN`. |
+
+**16. GetAuthenticatedUserClinicIdQuery (Query)**
+
+Consulta para obtener el `ClinicId` del usuario autenticado en el contexto de seguridad.
+
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| *(ninguno)* | — | — | No requiere atributos; retorna el `ClinicId` del usuario autenticado a partir del token JWT. |
+
+**17. GetUserByIdQuery (Query)**
+
+Consulta un usuario por su identificador interno.
+
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| `userId` | `Long` | public | ID interno del usuario. |
+
+**18. GetUsersByClinicIdQuery (Query)**
+
+Lista los usuarios asociados a una clínica (útil para la PWA del Administrador de Clínica).
+
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| `clinicId` | `UUID` | public | ID de la clínica. |
+
+**19. GetUsersByRoleQuery (Query)**
+
+Lista los usuarios de una clínica filtrados por rol (p. ej. todos los fisioterapeutas de una sede).
+
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| `clinicId` | `UUID` | public | ID de la clínica sobre la que se filtra. |
+| `role` | `Roles` | public | Rol a filtrar. |
+
+**20. UserCreatedEvent (Domain Event)**
+
+Evento publicado al crear un usuario. Permite al BC Subscription u otros reaccionar (por ejemplo, asignar un asiento del plan).
+
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| `userId` | `Long` | private | ID del usuario creado. |
+| `supabaseUserId` | `String` | private | ID en Supabase. |
+| `emailAddress` | `String` | private | Correo del usuario. |
+| `occurredOn` | `Instant` | private | Marca temporal del evento. |
+
+**21. UserVerifiedEvent (Domain Event)**
+
+Evento publicado cuando el usuario completa la verificación.
+
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| `userId` | `Long` | private | ID del usuario verificado. |
+| `verifiedAt` | `Instant` | private | Marca temporal de la verificación. |
+
+**22. UserVerificationCodeAssignedEvent (Domain Event)**
+
+Evento publicado al asignar un código de verificación; es consumido por un handler que dispara el envío del correo vía Resend.
+
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| `source` (heredado) | `Object` | private | Objeto origen del evento (`ApplicationEvent`). |
+| `email` | `String` | private | Correo destinatario del código. |
+| `code` | `String` | private | Código generado. |
+| `expirationMinutes` | `Integer` | private | Minutos hasta la expiración. |
+
+**23. UserCommandService (Domain Service)**
+
+Maneja los commands relacionados con usuarios.
+
+| Método | Tipo Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| `handle(SignInCommand)` | `Optional<ImmutablePair<User, String>>` | public | Valida el JWT de Supabase y retorna el par (usuario, token enriquecido con clínica). |
+| `handle(SignUpCommand)` | `Optional<User>` | public | Registra un usuario nuevo en uFlex tras el OAuth de Supabase. |
+| `handle(VerifyUserCommand)` | `boolean` | public | Verifica el usuario por código y activa la cuenta. |
+| `handle(ResendVerificationCodeCommand)` | `boolean` | public | Reenvía el código de verificación si el usuario aún no está verificado. |
+| `handle(AssignUserClinicIdCommand)` | `void` | public | Asocia un usuario a una clínica. |
+
+**24. UserQueryService (Domain Service)**
+
+Maneja las queries relacionadas con usuarios.
+
+| Método | Tipo Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| `handle(GetAuthenticatedUserClinicIdQuery)` | `Optional<ClinicId>` | public | Obtiene el `ClinicId` del usuario autenticado. |
+| `handle(GetUserByIdQuery)` | `Optional<User>` | public | Recupera un usuario por su ID interno. |
+| `handle(GetUsersByClinicIdQuery)` | `List<User>` | public | Lista los usuarios asociados a una clínica. |
+| `handle(GetUsersByRoleQuery)` | `List<User>` | public | Lista los usuarios de una clínica filtrados por rol. |
+
+**25. RoleCommandService (Domain Service)**
+
+Maneja los commands relacionados con la gestión de roles.
+
+| Método | Tipo Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| `handle(SeedRolesCommand)` | `void` | public | Siembra los roles clínicos base si aún no existen. |
+
+#### 4.2.1.2. Interface Layer
+
+**1. AuthenticationController (REST Controller)**
+
+Expone las funcionalidades de autenticación y registro a través de endpoints HTTP. Internamente delega la autenticación a Supabase y enriquece la respuesta con el perfil clínico local.
+
+**Endpoints principales:**
+
+| Método | Ruta base | HTTP | Descripción |
+|---|---|---|---|
+| `signIn` | `/api/v1/authentication/sign-in` | POST | Recibe el JWT de Supabase, lo valida y retorna la sesión enriquecida con rol clínico y `clinicId`. |
+| `signUp` | `/api/v1/authentication/sign-up` | POST | Registra un nuevo usuario local tras el signup en Supabase. |
+| `verify` | `/api/v1/authentication/verify` | POST | Verifica al usuario con el código clínico enviado por correo. |
+| `resendCode` | `/api/v1/authentication/resend-code` | POST | Reenvía el código de verificación al correo del usuario. |
+
+**2. UserController (REST Controller)**
+
+Expone operaciones de consulta y administración del perfil clínico.
+
+**Endpoints principales:**
+
+| Método | Ruta base | HTTP | Descripción |
+|---|---|---|---|
+| `getUserById` | `/api/v1/users/{id}` | GET | Obtiene el perfil clínico por ID interno. |
+| `getUsersByClinic` | `/api/v1/users?clinicId={id}` | GET | Lista los usuarios de una clínica (requiere rol `CLINIC_ADMIN`). |
+| `getUsersByRole` | `/api/v1/users?clinicId={id}&role={role}` | GET | Lista los usuarios de una clínica filtrados por rol. |
+| `assignClinic` | `/api/v1/users/{id}/clinic` | PATCH | Asocia un usuario a una clínica (invocado desde el BC Subscription). |
+
+**3. Resources (DTOs)**
+
+DTOs utilizados para la comunicación REST, modelados como Java Records.
+
+| Resource | Atributos principales | Descripción |
+|---|---|---|
+| `AuthenticatedUserResource` | `id: Long`, `emailAddress: String`, `roles: List<String>`, `clinicId: UUID`, `token: String` | Respuesta del sign-in (perfil enriquecido + token). |
+| `SignInResource` | `supabaseJwt: String` | Token JWT emitido por Supabase que se envía para canjear por sesión local. |
+| `SignUpResource` | `supabaseUserId: String`, `emailAddress: String`, `fullName: String`, `roles: List<String>`, `clinicId: UUID` | Datos mínimos para crear el perfil local. |
+| `VerifyUserResource` | `email: String`, `code: String` | Verificación de usuario por código. |
+| `ResendVerificationCodeResource` | `email: String` | Solicita reenviar el código de verificación. |
+| `UserResource` | `id: Long`, `emailAddress: String`, `fullName: String`, `roles: List<String>`, `clinicId: UUID`, `accountStatus: String` | Usuario expuesto por la API de consulta. |
+| `RoleResource` | `id: Long`, `name: String` | Representación de un rol clínico. |
+
+**4. Transform (Assemblers)**
+
+Convierten entre entidades del dominio y recursos REST, así como entre recursos y commands/queries.
+
+| Assembler | Entrada | Salida | Descripción |
+|---|---|---|---|
+| `AuthenticatedUserResourceFromEntityAssembler` | `User`, `token: String` | `AuthenticatedUserResource` | Mapea el aggregate `User` y el token enriquecido al recurso de respuesta de sign-in. |
+| `SignInCommandFromResourceAssembler` | `SignInResource` | `SignInCommand` | Construye el command de sign-in a partir del JWT recibido. |
+| `SignUpCommandFromResourceAssembler` | `SignUpResource` | `SignUpCommand` | Construye el command de registro, mapeando `List<String>` a `List<Role>`. |
+| `VerifyUserCommandFromResourceAssembler` | `VerifyUserResource` | `VerifyUserCommand` | Construye el command de verificación por código. |
+| `ResendVerificationCodeCommandFromResourceAssembler` | `ResendVerificationCodeResource` | `ResendVerificationCodeCommand` | Construye el command de reenvío de código. |
+| `UserResourceFromEntityAssembler` | `User` | `UserResource` | Expone el aggregate como recurso de consulta. |
+| `RoleResourceFromEntityAssembler` | `Role` | `RoleResource` | Expone el rol como recurso. |
+
+#### 4.2.1.3. Application Layer
+
+**1. IamContextFacadeImpl (ACL Facade)**
+
+Implementa la fachada que otros bounded contexts (Subscription, Therapy, Trends, Analytics) usan para obtener información de identidad sin conocer el modelo interno del BC IAM.
+
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| `userQueryService` | `UserQueryService` | private | Servicio de consultas del dominio IAM. |
+
+**Métodos principales:**
+
+| Método | Tipo Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| `fetchAuthenticatedUserClinicId()` | `UUID` | public | Retorna el `clinicId` actual a partir del contexto de seguridad (o `null` si no existe). |
+| `fetchUserById(Long userId)` | `Optional<UserDto>` | public | Expone un DTO ligero del perfil, sin el aggregate interno. |
+
+**2. RoleCommandServiceImpl (Command Service Implementation)**
+
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| `roleRepository` | `RoleRepository` | private | Acceso a la persistencia de roles. |
+
+**Métodos principales:**
+
+| Método | Tipo Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| `handle(SeedRolesCommand)` | `void` | public | Crea los roles del enum `Roles` si aún no existen. |
+
+**3. UserCommandServiceImpl (Command Service Implementation)**
+
+Orquesta registro, validación de sesión, verificación y asociación de clínica. No gestiona contraseñas (eso vive en Supabase).
+
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| `userRepository` | `UserRepository` | private | Persistencia de usuarios. |
+| `supabaseAuthPort` | `SupabaseAuthPort` | private | ACL contra el OAuth provider externo. |
+| `jwtValidationPort` | `JwtValidationPort` | private | Validación de los JWT emitidos por Supabase. |
+| `verificationService` | `VerificationService` | private | Generación y validación de códigos de verificación. |
+| `roleRepository` | `RoleRepository` | private | Resolución de roles por nombre. |
+| `eventPublisher` | `ApplicationEventPublisher` | private | Publicación de domain events. |
+
+**Métodos principales:**
+
+| Método | Tipo Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| `handle(SignInCommand)` | `Optional<ImmutablePair<User, String>>` | public | Valida el JWT de Supabase, carga el perfil local y retorna `(user, token enriquecido con clinicId)`. |
+| `handle(SignUpCommand)` | `Optional<User>` | public | Crea el perfil local tras el signup en Supabase, asigna roles y genera el código de verificación clínica. |
+| `handle(VerifyUserCommand)` | `boolean` | public | Valida el código y activa la cuenta. |
+| `handle(ResendVerificationCodeCommand)` | `boolean` | public | Reenvía el código de verificación si el usuario no está verificado. |
+| `handle(AssignUserClinicIdCommand)` | `void` | public | Asocia la clínica al usuario objetivo. |
+
+**4. UserQueryServiceImpl (Query Service Implementation)**
+
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| `userRepository` | `UserRepository` | private | Lectura del read model de usuarios. |
+| `identityService` | `IdentityService` | private | Proveedor del contexto de identidad actual. |
+
+**Métodos principales:**
+
+| Método | Tipo Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| `handle(GetAuthenticatedUserClinicIdQuery)` | `Optional<ClinicId>` | public | Retorna el `ClinicId` del usuario autenticado. |
+| `handle(GetUserByIdQuery)` | `Optional<User>` | public | Recupera un usuario por su ID interno. |
+| `handle(GetUsersByClinicIdQuery)` | `List<User>` | public | Lista los usuarios asociados a una clínica. |
+| `handle(GetUsersByRoleQuery)` | `List<User>` | public | Lista los usuarios de una clínica por rol. |
+
+**5. SubscriptionActivatedEventHandler (Domain Event Handler)**
+
+Reacciona al evento `SubscriptionActivatedEvent` emitido por el BC Subscription para sincronizar el `clinicId` del Administrador de Clínica tras la activación del plan.
+
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| `userCommandService` | `UserCommandService` | private | Envía `AssignUserClinicIdCommand` al usuario administrador. |
+
+| Método | Tipo Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| `on(SubscriptionActivatedEvent)` | `void` | public | Asocia el `clinicId` recién creado al administrador de la clínica. |
+
+**6. ApplicationReadyEventHandler (Framework Event Handler)**
+
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| `roleCommandService` | `RoleCommandService` | private | Orquesta la siembra de roles. |
+
+| Método | Tipo Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| `on(ApplicationReadyEvent)` | `void` | public | Ejecuta `SeedRolesCommand` al arrancar el servicio. |
+
+**7. UserVerificationCodeAssignedEventHandler (Domain Event Handler)**
+
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| `emailService` | `EmailService` | private | Servicio para envío de correos (Resend). |
+
+| Método | Tipo Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| `handle(UserVerificationCodeAssignedEvent)` | `void` | public | Envía el correo con el código y la expiración (ejecución `@Async`). |
+
+**8. EmailService (Outbound Service Port)**
+
+Interfaz para envío de correos (implementada contra Resend en la Infrastructure Layer).
+
+| Método | Tipo Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| `sendVerificationEmail(String to, String code, int expirationMinutes)` | `void` | public | Envía un correo de verificación. |
+| `sendPasswordResetEmail(String to, String link)` | `void` | public | Envía un correo de restablecimiento (delegado a Supabase que genera el link). |
+| `sendClinicInvitationEmail(String to, String clinicName, String token)` | `void` | public | Envía invitación a fisioterapeuta para unirse a una clínica. |
+
+**9. SupabaseAuthPort (Outbound Service Port — ACL)**
+
+Puerto hacia Supabase Auth. Reemplaza al `HashingService` y `TokenService` del ejemplo clásico (Supabase gestiona contraseñas y emite tokens).
+
+| Método | Tipo Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| `createIdentity(EmailAddress, FullName)` | `String` | public | Crea una identidad en Supabase y retorna el `supabaseUserId`. |
+| `resendSupabaseVerification(EmailAddress)` | `void` | public | Solicita a Supabase reenviar el correo de verificación de su lado. |
+| `disableIdentity(String supabaseUserId)` | `void` | public | Inhabilita la identidad en Supabase al eliminar/bloquear el perfil local. |
+
+**10. JwtValidationPort (Outbound Service Port)**
+
+Valida los JWT emitidos por Supabase y extrae claims. uFlex **no emite** tokens propios.
+
+| Método | Tipo Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| `validateToken(String jwt)` | `boolean` | public | Valida firma, emisor y expiración del JWT de Supabase. |
+| `getSupabaseUserIdFromToken(String jwt)` | `Optional<String>` | public | Extrae el claim `sub` (UUID de Supabase). |
+| `getEmailFromToken(String jwt)` | `Optional<String>` | public | Extrae el claim `email`. |
+
+**11. IdentityService (Outbound Service Port)**
+
+Interfaz para obtener los datos del contexto de seguridad actual (principalmente leídos del JWT tras su validación por el filtro de seguridad).
+
+| Método | Tipo Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| `getUserId()` | `Optional<Long>` | public | ID interno del usuario autenticado. |
+| `getSupabaseUserId()` | `Optional<String>` | public | ID en Supabase del usuario autenticado. |
+| `getEmail()` | `Optional<String>` | public | Email del contexto. |
+| `getRoles()` | `Set<String>` | public | Roles del contexto. |
+| `getClinicId()` | `Optional<UUID>` | public | Clínica asociada al usuario actual. |
+| `isServiceAccount()` | `boolean` | public | Indica si el caller es una service account (por ejemplo, otro microservicio interno). |
+
+**12. VerificationService (Outbound Service Port)**
+
+Interfaz para generar y validar códigos de verificación.
+
+| Método | Tipo Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| `generateCode()` | `String` | public | Genera un código con longitud por defecto. |
+| `generateCode(int length)` | `String` | public | Genera un código con longitud indicada. |
+| `generateExpirationMinutes()` | `Integer` | public | Devuelve los minutos de expiración configurados. |
+| `verifyCode(String code, String expected, LocalDateTime expiration)` | `boolean` | public | Verifica coincidencia y vigencia del código. |
+
+#### 4.2.1.4. Infrastructure Layer
+
+**1. UserRepository (Repository Interface)**
+
+Interfaz de acceso a datos para usuarios, implementada por Spring Data JPA sobre Azure Database for PostgreSQL.
+
+| Método | Tipo Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| `findById(Long id)` | `Optional<User>` | public | Busca un usuario por su identificador interno. |
+| `save(User user)` | `User` | public | Persiste o actualiza un usuario. |
+| `findByEmailAddress(EmailAddress email)` | `Optional<User>` | public | Obtiene un usuario por su correo. |
+| `findBySupabaseUserId(String supabaseUserId)` | `Optional<User>` | public | Obtiene un usuario por su ID en Supabase. |
+| `existsByEmailAddress(EmailAddress email)` | `boolean` | public | Verifica la existencia de un usuario por correo. |
+| `findAllByClinicId(UUID clinicId)` | `List<User>` | public | Lista usuarios por clínica. |
+| `findAllByClinicIdAndRole(UUID clinicId, Roles role)` | `List<User>` | public | Lista usuarios por clínica y rol. |
+
+**2. RoleRepository (Repository Interface)**
+
+| Método | Tipo Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| `findById(Long id)` | `Optional<Role>` | public | Busca un rol por su identificador. |
+| `save(Role role)` | `Role` | public | Persiste o actualiza un rol. |
+| `findByName(Roles name)` | `Optional<Role>` | public | Obtiene un rol por su enum `Roles`. |
+| `existsByName(Roles name)` | `boolean` | public | Verifica existencia por nombre de rol. |
+
+**3. WebSecurityConfiguration (Security Config)**
+
+Configuración de Spring Security stateless con validación del JWT emitido por Supabase (no se emiten tokens propios).
+
+| Método/Bean | Tipo Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| `supabaseJwtFilter()` | `SupabaseJwtAuthenticationFilter` | public | Filtro que extrae y valida el JWT emitido por Supabase y autentica el request. |
+| `authenticationManager(config)` | `AuthenticationManager` | public | Expone el `AuthenticationManager` de Spring Security. |
+| `filterChain(HttpSecurity http)` | `SecurityFilterChain` | public | CORS, CSRF off, handler 401, stateless; `permitAll` a `/api/v1/authentication/**` y a Swagger. |
+
+**4. SupabaseJwtAuthenticationFilter (Security Filter)**
+
+Filtro que autentica requests a partir del JWT Bearer emitido por Supabase.
+
+| Método | Tipo Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| `doFilterInternal(request, response, chain)` | `void` | protected | Extrae el token, lo valida contra `JwtValidationPort`, carga el `UserDetails` local y establece la autenticación. |
+
+**5. UnauthorizedRequestHandlerEntryPoint (Auth EntryPoint)**
+
+Maneja las respuestas 401 no autorizadas.
+
+| Método | Tipo Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| `commence(request, response, authException)` | `void` | public | Responde con `401 Unauthorized` en formato JSON. |
+
+**6. UserDetailsServiceImpl (UserDetailsService)**
+
+Carga el perfil local a partir del `supabaseUserId` extraído del JWT.
+
+| Método | Tipo Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| `loadUserBySupabaseId(String supabaseUserId)` | `UserDetails` | public | Carga el perfil local a partir del ID de Supabase. |
+
+**7. UserDetailsImpl (Security Model)**
+
+Adaptador con authorities y `clinicId`.
+
+| Método | Tipo Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| `build(User user)` | `UserDetailsImpl` | public | Construye desde la entidad `User` (roles → authorities, `clinicId` como claim extra). |
+
+**8. VerificationServiceImpl (Verification Service)**
+
+Generación y validación de códigos OTP con configuración externa.
+
+| Método | Tipo Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| `generateCode()` | `String` | public | Genera un código con longitud por defecto. |
+| `generateCode(int length)` | `String` | public | Genera un código con la longitud indicada. |
+| `generateExpirationMinutes()` | `Integer` | public | Minutos de expiración configurados. |
+| `verifyCode(String code, String expected, LocalDateTime expiration)` | `boolean` | public | Verifica coincidencia y vigencia. |
+
+**9. VerificationProperties (Configuration Properties)**
+
+Propiedades externas para OTP (prefijo `uflex.iam.verification`).
+
+| Campo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| `expirationMinutes` | `Integer` | private | Minutos de expiración por defecto. |
+| `codeLength` | `Integer` | private | Longitud del código OTP. |
+
+**10. ResendEmailServiceImpl (Email Adapter)**
+
+Implementación de `EmailService` contra la API de Resend.
+
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| `resendClient` | `ResendHttpClient` | private | Cliente HTTP hacia la API de Resend. |
+| `templateRenderer` | `EmailTemplateRenderer` | private | Motor de plantillas (Thymeleaf) para los correos. |
+
+| Método | Tipo Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| `sendVerificationEmail(String to, String code, int exp)` | `void` | public | Renderiza la plantilla y llama a Resend. |
+| `sendPasswordResetEmail(String to, String link)` | `void` | public | Envía correo de reseteo con plantilla. |
+| `sendClinicInvitationEmail(String to, String clinicName, String token)` | `void` | public | Envía correo de invitación a clínica. |
+
+**11. SupabaseAuthAdapter (ACL Adapter)**
+
+Implementa `SupabaseAuthPort`. Único componente que conoce el vocabulario de Supabase; consume además los webhooks de signup/verificación emitidos por Supabase.
+
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| `supabaseClient` | `SupabaseHttpClient` | private | Cliente HTTP hacia la Admin API de Supabase. |
+| `userCommandService` | `UserCommandService` | private | Se invoca desde el handler de webhook para disparar `SignUpCommand`. |
+
+| Método | Tipo Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| `createIdentity(EmailAddress, FullName)` | `String` | public | Crea identidad en Supabase vía Admin API y retorna su `id`. |
+| `resendSupabaseVerification(EmailAddress)` | `void` | public | Llama al endpoint `/auth/v1/resend` de Supabase. |
+| `disableIdentity(String supabaseUserId)` | `void` | public | Inhabilita la identidad en Supabase. |
+| `onSignupWebhook(SupabaseSignupPayload)` | `void` | public | Endpoint de webhook que recibe el evento de signup y dispara `SignUpCommand` internamente. |
+
+**12. SupabaseJwtValidator (JWT Validation Adapter)**
+
+Implementa `JwtValidationPort` sobre la librería `jjwt`, cargando la JWKS pública de Supabase.
+
+| Método | Tipo Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| `validateToken(String jwt)` | `boolean` | public | Valida firma, issuer y expiración contra la JWKS de Supabase. |
+| `getSupabaseUserIdFromToken(String jwt)` | `Optional<String>` | public | Extrae el claim `sub`. |
+| `getEmailFromToken(String jwt)` | `Optional<String>` | public | Extrae el claim `email`. |
+
+**13. CurrentUserProviderImpl (Identity Adapter)**
+
+Implementa `IdentityService` leyendo el contexto de `SecurityContextHolder` de Spring Security.
+
+| Método | Tipo Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| `getUserId()` | `Optional<Long>` | public | ID interno del usuario autenticado. |
+| `getSupabaseUserId()` | `Optional<String>` | public | ID en Supabase del usuario autenticado. |
+| `getEmail()` | `Optional<String>` | public | Email del contexto. |
+| `getRoles()` | `Set<String>` | public | Authorities del contexto. |
+| `getClinicId()` | `Optional<UUID>` | public | `clinicId` del contexto. |
+| `isServiceAccount()` | `boolean` | public | Indica si es una cuenta de servicio interna. |
+
+#### 4.2.1.5. Bounded Context Software Architecture Component Level Diagrams
+
+El diagrama de componentes (C4 Nivel 3) muestra cómo se organiza internamente el contenedor `IAM Service` (Java/Spring Boot). Se distinguen cinco componentes principales: el `User Controller` como punto de entrada REST, los dos application services `User Command Service` y `User Query Service` que materializan el patrón CQRS, el `User Repository (JPA)` como abstracción de persistencia y el `Supabase Auth Adapter` como ACL contra el identity provider externo. Todos los componentes viven dentro del *Container Boundary* del IAM Service; el API Gateway queda fuera (delega tráfico), la `IAM DB` también (Azure Database for PostgreSQL, consumida por JDBC/SSL) y Supabase aparece como sistema externo con doble flujo (el adapter lo consulta vía HTTPS y Supabase lo notifica vía webhook).
+
+<div style="text-align: center;">
+  <img src="./assets/diagrams/software-architecture/components/src/iam.png" alt="uFlex — IAM Bounded Context Component Diagram" style="max-width: 100%; height: auto;">
+</div>
+
+*Figura 4.2.1.5. Diagrama de componentes (C4 Nivel 3) del Bounded Context IAM.*
+
+#### 4.2.1.6. Bounded Context Software Architecture Code Level Diagrams
+
+##### 4.2.1.6.1. Bounded Context Domain Layer Class Diagrams
+
+El diagrama de clases del Domain Layer del BC IAM modela exclusivamente los conceptos centrales del dominio, sin incluir las capas de application ni infrastructure. El paquete `domain.model.aggregates` contiene al Aggregate Root `User` y a la Entity `Role`; `domain.model.valueobjects` agrupa los Value Objects (`UserId`, `EmailAddress`, `FullName`, `ClinicId`, `VerificationCode`) y los enumerados (`Roles`, `AccountStatus`, `VerificationStatus`); `domain.model.events` encapsula los Domain Events publicados por el aggregate (`UserCreatedEvent`, `UserVerifiedEvent`, `UserVerificationCodeAssignedEvent`); y `domain.exceptions` reúne las excepciones de negocio que protegen las invariantes del dominio. Las flechas con línea continua marcan composición (el `User` contiene sus Value Objects), las flechas con línea punteada marcan dependencias semánticas (eventos publicados y excepciones lanzadas) y los rombos vacíos indican agregación con cardinalidad opcional o múltiple (relación de `User` con `ClinicId` y con `Role`).
+
+<div style="text-align: center;">
+  <img src="./assets/diagrams/uml/class/src/iam.png" alt="uFlex — IAM Bounded Context Domain Class Diagram" style="max-width: 100%; height: auto;">
+</div>
+
+*Figura 4.2.1.6.1. Diagrama de clases del dominio del Bounded Context IAM.*
+
+##### 4.2.1.6.2. Bounded Context Database Design Diagram
+
+El esquema físico del BC IAM en Azure Database for PostgreSQL consta de una tabla principal `users` que almacena el perfil enriquecido (identificador interno, referencia al usuario en Supabase, email único, nombre completo, rol, estado, clínica asociada y timestamps de auditoría), dos tablas de catálogo `user_roles` y `user_statuses` para mantener normalizados los valores permitidos (usadas también para internacionalizar descripciones en el futuro) y una tabla `user_audit_events` que registra los eventos significativos del ciclo de vida del usuario (creación, verificación, cambios de rol, suspensiones) con un payload JSONB flexible. Los índices incluyen unicidad sobre `email` y `supabase_user_id`, e índices compuestos por `(role, clinic_id)` y `(clinic_id)` para soportar las queries más frecuentes de la Web Client App (listado por clínica y por rol). Se optó deliberadamente por **no** declarar una foreign key dura sobre `clinic_id` hacia la tabla de clínicas del BC Subscription: cada bounded context aísla su schema y la referencia es lógica, respetando la autonomía entre contextos.
+
+<div style="text-align: center;">
+  <img src="./assets/diagrams/database/erd/iam-erd.png" alt="uFlex — IAM Bounded Context Database ER Diagram" style="max-width: 100%; height: auto;">
+</div>
+
+*Figura 4.2.1.6.2. Diagrama entidad-relación del Bounded Context IAM.*
+
+### 4.2.2. Bounded Context: Subscription
+
+El bounded context **Subscription** concentra la gestión comercial del modelo SaaS multi-tenant de uFlex: catálogo de planes, ciclo de vida de la suscripción de cada clínica (compra, activación, renovación, vencimiento, cancelación), emisión de facturas y reconciliación de pagos con la pasarela externa Culqi. A diferencia del BC IAM —que modela la identidad del usuario individual— este contexto trabaja a nivel de *clínica* (tenant) y es disparado típicamente por el Administrador de Clínica. Los comandos y eventos principales (`PurchaseSubscriptionPlanCommand`, `SubscriptionPurchasedEvent`, `SubscriptionLinkedToClinicEvent`) fueron identificados durante el Design-Level EventStorming.
+
+#### 4.2.2.1. Domain Layer
+
+En esta sección se describen los elementos del Domain Layer del contexto de Subscription, que modelan las reglas de negocio asociadas a la venta, activación y facturación de los planes multi-tenant de uFlex. Las invariantes clave son: una clínica puede tener una sola suscripción `ACTIVE` a la vez, una suscripción no puede activarse sin un cobro confirmado por Culqi, y las facturas emitidas son inmutables salvo por transiciones de estado controladas.
+
+**1. Subscription (Aggregate Root)**
+
+Representa la suscripción de una clínica a uFlex. Encapsula el plan contratado, el ciclo de facturación, las ventanas temporales (periodo actual, próxima facturación, periodo de prueba) y la colección de facturas emitidas.
+
+**Atributos principales:**
+
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| `id` | `SubscriptionId` | private | Identificador interno de la suscripción. |
+| `clinicId` | `ClinicId` | private | Tenant (clínica) al que pertenece la suscripción. |
+| `plan` | `SubscriptionPlan` | private | Plan contratado (referencia a la Entity del catálogo). |
+| `status` | `SubscriptionStatus` | private | Estado actual (`PENDING_PAYMENT`, `TRIAL`, `ACTIVE`, `PAST_DUE`, `CANCELLED`, `EXPIRED`). |
+| `billingCycle` | `BillingCycle` | private | Ciclo de facturación elegido (`MONTHLY` o `YEARLY`). |
+| `currentPeriodStart` | `LocalDate` | private | Fecha de inicio del periodo actual. |
+| `currentPeriodEnd` | `LocalDate` | private | Fecha de fin del periodo actual. |
+| `nextBillingDate` | `LocalDate` | private | Fecha en la que se cobrará la renovación automática. |
+| `trialUntil` | `LocalDate` | private | Fecha de fin del periodo de prueba (si aplica). |
+| `paymentReference` | `PaymentReference` | private | Referencia al medio de pago tokenizado en Culqi. |
+| `invoices` | `List<Invoice>` | private | Historial de facturas emitidas para esta suscripción. |
+
+**Métodos principales:**
+
+| Método | Tipo Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| `Subscription()` | Constructor | public | Constructor vacío requerido por JPA. |
+| `Subscription(ClinicId, SubscriptionPlan, BillingCycle)` | Constructor | public | Crea una suscripción en estado `PENDING_PAYMENT`. |
+| `activate()` | `void` | public | Cambia el estado a `ACTIVE` tras confirmar el primer cobro; publica `SubscriptionActivatedEvent`. |
+| `renew()` | `Invoice` | public | Genera una nueva factura para el siguiente periodo y actualiza `nextBillingDate`. |
+| `cancel(String reason)` | `void` | public | Cambia el estado a `CANCELLED` y publica `SubscriptionCancelledEvent`. |
+| `markPastDue()` | `void` | public | Marca la suscripción como `PAST_DUE` si un cobro falla. |
+| `expire()` | `void` | public | Transiciona a `EXPIRED` cuando la cuenta lleva más de N días en `PAST_DUE`. |
+| `linkToClinic(ClinicId)` | `void` | public | Asocia la suscripción a la clínica en la primera compra; publica `SubscriptionLinkedToClinicEvent`. |
+| `registerPayment(PaymentReference)` | `void` | public | Registra una referencia de pago tokenizada para cobros recurrentes. |
+| `isActive()` | `boolean` | public | Devuelve `true` si el estado actual es `ACTIVE` o `TRIAL`. |
+
+**2. SubscriptionPlan (Entity)**
+
+Define un plan del catálogo comercial (por ejemplo, *Starter*, *Professional*, *Enterprise*). Persiste como entidad para permitir al equipo comercial crear nuevos planes sin redesplegar el código.
+
+**Atributos principales:**
+
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| `id` | `PlanId` | private | Identificador del plan. |
+| `name` | `String` | private | Nombre comercial (p. ej. *Starter*). |
+| `code` | `String` | private | Código único tipo SKU. |
+| `monthlyPrice` | `Money` | private | Precio del ciclo mensual. |
+| `yearlyPrice` | `Money` | private | Precio del ciclo anual (usualmente con descuento). |
+| `maxPatients` | `Integer` | private | Tope de pacientes concurrentes incluidos. |
+| `maxPhysiotherapists` | `Integer` | private | Tope de fisioterapeutas incluidos. |
+| `features` | `Set<String>` | private | Funcionalidades incluidas (tags). |
+| `active` | `boolean` | private | `true` si el plan está disponible para nueva compra. |
+
+**Métodos principales:**
+
+| Método | Tipo Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| `priceFor(BillingCycle)` | `Money` | public | Retorna `monthlyPrice` o `yearlyPrice` según el ciclo. |
+| `isActive()` | `boolean` | public | `true` si el plan está activo en el catálogo. |
+| `deactivate()` | `void` | public | Retira el plan del catálogo (no afecta a suscripciones ya vendidas). |
+
+**3. Invoice (Entity)**
+
+Factura emitida para cada periodo facturable de una suscripción. Una vez emitida es prácticamente inmutable; solo cambia su estado a través de transiciones controladas.
+
+**Atributos principales:**
+
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| `id` | `InvoiceId` | private | Identificador de la factura. |
+| `subscriptionId` | `SubscriptionId` | private | Suscripción a la que pertenece. |
+| `amount` | `Money` | private | Monto cobrado. |
+| `issuedAt` | `Instant` | private | Fecha/hora de emisión. |
+| `dueAt` | `Instant` | private | Fecha/hora límite de pago. |
+| `paidAt` | `Instant` | private | Fecha/hora de confirmación del pago. |
+| `status` | `InvoiceStatus` | private | Estado (`PENDING`, `PAID`, `FAILED`, `VOID`). |
+| `providerTransactionId` | `String` | private | ID de la transacción en Culqi. |
+
+**Métodos principales:**
+
+| Método | Tipo Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| `markAsPaid(String txId)` | `void` | public | Marca la factura como `PAID` y publica `InvoicePaidEvent`. |
+| `markAsFailed(String reason)` | `void` | public | Marca la factura como `FAILED` y publica `InvoicePaymentFailedEvent`. |
+| `voidInvoice()` | `void` | public | Anula la factura (por ejemplo, ante una cancelación dentro del periodo de gracia). |
+| `isOverdue()` | `boolean` | public | `true` si `now > dueAt` y el estado es `PENDING`. |
+
+**4. SubscriptionId / PlanId / InvoiceId / ClinicId (Value Objects)**
+
+Identificadores opacos basados en UUID. `ClinicId` es compartido con el BC IAM (referencia lógica al tenant).
+
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| `value` | `UUID` | private | Valor inmutable generado al crear el agregado/entidad. |
+
+**5. Money (Value Object)**
+
+Monto monetario con moneda explícita.
+
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| `amount` | `BigDecimal` | private | Valor numérico con precisión suficiente para evitar pérdidas por redondeo. |
+| `currency` | `String` | private | Código ISO 4217 (por ejemplo `PEN` o `USD`). |
+
+**Métodos principales:**
+
+| Método | Tipo Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| `plus(Money other)` | `Money` | public | Suma dos montos (misma moneda). |
+| `isZero()` | `boolean` | public | `true` si el monto es cero. |
+
+**6. PaymentReference (Value Object)**
+
+Referencia tokenizada al medio de pago registrado en Culqi (uFlex no almacena números de tarjeta).
+
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| `providerToken` | `String` | private | Token opaco emitido por Culqi. |
+| `last4` | `String` | private | Últimos 4 dígitos (para mostrar al usuario). |
+| `expiresOn` | `YearMonth` | private | Fecha de expiración de la tarjeta. |
+
+**7. BillingCycle (Value Object)**
+
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| `MONTHLY` | Enum | public | Cobro mensual recurrente. |
+| `YEARLY` | Enum | public | Cobro anual con descuento. |
+
+**8. SubscriptionStatus (Value Object)**
+
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| `PENDING_PAYMENT` | Enum | public | Suscripción creada, a la espera del primer cobro. |
+| `TRIAL` | Enum | public | Periodo de prueba activo. |
+| `ACTIVE` | Enum | public | Suscripción activa y al día. |
+| `PAST_DUE` | Enum | public | Falló un cobro recurrente; en periodo de gracia. |
+| `CANCELLED` | Enum | public | Cancelada por la clínica; sigue activa hasta fin del periodo. |
+| `EXPIRED` | Enum | public | Expiró definitivamente. |
+
+**9. InvoiceStatus (Value Object)**
+
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| `PENDING` | Enum | public | Factura emitida, pago pendiente. |
+| `PAID` | Enum | public | Pago confirmado por Culqi. |
+| `FAILED` | Enum | public | Pago rechazado por Culqi. |
+| `VOID` | Enum | public | Factura anulada. |
+
+**10. PurchaseSubscriptionPlanCommand (Command)**
+
+Comando emitido por el Administrador de Clínica al comprar una suscripción.
+
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| `clinicId` | `UUID` | public | Tenant que compra. |
+| `planId` | `UUID` | public | Plan seleccionado. |
+| `billingCycle` | `BillingCycle` | public | Ciclo `MONTHLY` o `YEARLY`. |
+| `paymentToken` | `String` | public | Token emitido por el SDK de Culqi en el frontend. |
+
+**11. LinkSubscriptionToClinicCommand (Command)**
+
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| `subscriptionId` | `UUID` | public | Suscripción a asociar. |
+| `clinicId` | `UUID` | public | Clínica destino. |
+
+**12. RenewSubscriptionCommand (Command)**
+
+Emitido por el scheduler cuando llega la `nextBillingDate`.
+
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| `subscriptionId` | `UUID` | public | Suscripción a renovar. |
+
+**13. CancelSubscriptionCommand (Command)**
+
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| `subscriptionId` | `UUID` | public | Suscripción a cancelar. |
+| `reason` | `String` | public | Motivo informado por el usuario. |
+
+**14. RegisterInvoicePaymentCommand (Command)**
+
+Emitido por el webhook de Culqi al confirmar un cobro.
+
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| `invoiceId` | `UUID` | public | Factura pagada. |
+| `providerTransactionId` | `String` | public | ID de la transacción en Culqi. |
+
+**15. CreatePlanCommand (Command)**
+
+Usado por Operaciones para crear nuevos planes en el catálogo.
+
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| `name` | `String` | public | Nombre comercial. |
+| `code` | `String` | public | Código SKU único. |
+| `monthlyPrice` | `Money` | public | Precio mensual. |
+| `yearlyPrice` | `Money` | public | Precio anual. |
+| `maxPatients` | `Integer` | public | Tope de pacientes. |
+| `maxPhysiotherapists` | `Integer` | public | Tope de fisioterapeutas. |
+
+**16. DeactivatePlanCommand (Command)**
+
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| `planId` | `UUID` | public | Plan a retirar del catálogo. |
+
+**17. ChangeSubscriptionPlanCommand (Command)**
+
+Emitido por el Administrador de Clínica desde el dashboard para hacer upgrade o downgrade a otro plan. El servicio de precios calcula el monto prorrateado para el resto del periodo vigente.
+
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| `subscriptionId` | `UUID` | public | Suscripción a modificar. |
+| `newPlanId` | `UUID` | public | Nuevo plan deseado. |
+| `newBillingCycle` | `BillingCycle` | public | Ciclo de facturación para el nuevo plan (puede coincidir con el anterior). |
+| `effectiveAt` | `EffectivePolicy` | public | Política de aplicación: `IMMEDIATE` (prorratea y cobra la diferencia) o `AT_NEXT_PERIOD` (aplica al renovar). |
+
+**18. UpdatePaymentMethodCommand (Command)**
+
+Emitido desde el dashboard cuando el Administrador de Clínica actualiza su tarjeta (por ejemplo, tras un vencimiento). El `paymentToken` es emitido por el SDK de Culqi en el frontend y reemplaza al almacenado en el aggregate.
+
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| `subscriptionId` | `UUID` | public | Suscripción cuyo medio de pago se actualiza. |
+| `paymentToken` | `String` | public | Nuevo token tokenizado por Culqi. |
+
+**19. GetPlanListQuery (Query)**
+
+Consulta usada por la Web Client App para mostrar el catálogo de planes.
+
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| `activeOnly` | `boolean` | public | Si `true`, solo planes vigentes; si `false`, incluye deprecados (uso interno). |
+
+**20. GetPlanByIdQuery (Query)**
+
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| `planId` | `UUID` | public | ID del plan. |
+
+**21. GetSubscriptionByIdQuery (Query)**
+
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| `subscriptionId` | `UUID` | public | ID de la suscripción. |
+
+**22. GetSubscriptionByClinicQuery (Query)**
+
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| `clinicId` | `UUID` | public | Clínica dueña de la suscripción. |
+
+**23. GetInvoiceHistoryQuery (Query)**
+
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| `subscriptionId` | `UUID` | public | Suscripción cuyo historial se consulta. |
+
+**24. SubscriptionPurchasedEvent (Domain Event)**
+
+Evento publicado al concretarse una compra. Consumido internamente para disparar la emisión de la primera factura.
+
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| `subscriptionId` | `UUID` | private | Suscripción recién creada. |
+| `clinicId` | `UUID` | private | Clínica compradora. |
+| `planId` | `UUID` | private | Plan contratado. |
+| `amount` | `Money` | private | Monto cobrado. |
+| `occurredOn` | `Instant` | private | Marca temporal. |
+
+**25. SubscriptionLinkedToClinicEvent (Domain Event)**
+
+Evento que **consumen otros BCs** (especialmente IAM) para sincronizar el `clinicId` del Administrador de Clínica.
+
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| `subscriptionId` | `UUID` | private | Suscripción. |
+| `clinicId` | `UUID` | private | Tenant asociado. |
+| `occurredOn` | `Instant` | private | Marca temporal. |
+
+**26. SubscriptionActivatedEvent (Domain Event)**
+
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| `subscriptionId` | `UUID` | private | Suscripción activada. |
+| `clinicId` | `UUID` | private | Tenant. |
+| `activatedAt` | `Instant` | private | Marca temporal. |
+
+**27. SubscriptionRenewedEvent (Domain Event)**
+
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| `subscriptionId` | `UUID` | private | Suscripción renovada. |
+| `newPeriodEnd` | `LocalDate` | private | Fin del nuevo periodo. |
+
+**28. SubscriptionCancelledEvent (Domain Event)**
+
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| `subscriptionId` | `UUID` | private | Suscripción cancelada. |
+| `reason` | `String` | private | Motivo. |
+| `cancelledAt` | `Instant` | private | Marca temporal. |
+
+**29. InvoicePaidEvent (Domain Event)**
+
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| `invoiceId` | `UUID` | private | Factura pagada. |
+| `amount` | `Money` | private | Monto cobrado. |
+| `paidAt` | `Instant` | private | Marca temporal. |
+
+**30. InvoicePaymentFailedEvent (Domain Event)**
+
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| `invoiceId` | `UUID` | private | Factura fallida. |
+| `reason` | `String` | private | Motivo del rechazo. |
+| `failedAt` | `Instant` | private | Marca temporal. |
+
+**31. SubscriptionPlanChangedEvent (Domain Event)**
+
+Evento publicado al cambiar el plan de una suscripción. Permite al BC Analytics registrar conversiones y a otros contextos ajustar los topes de uso.
+
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| `subscriptionId` | `UUID` | private | Suscripción modificada. |
+| `oldPlanId` | `UUID` | private | Plan anterior. |
+| `newPlanId` | `UUID` | private | Plan nuevo. |
+| `proratedAmount` | `Money` | private | Monto prorrateado cobrado (cero si `AT_NEXT_PERIOD`). |
+| `changedAt` | `Instant` | private | Marca temporal. |
+
+**32. PaymentMethodUpdatedEvent (Domain Event)**
+
+Evento publicado al actualizar el medio de pago. Consumido por el `NotificationService` para enviar un correo de confirmación al administrador.
+
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| `subscriptionId` | `UUID` | private | Suscripción afectada. |
+| `last4` | `String` | private | Últimos 4 dígitos de la nueva tarjeta (para mostrar). |
+| `updatedAt` | `Instant` | private | Marca temporal. |
+
+**33. SubscriptionCommandService (Domain Service)**
+
+Maneja los commands relacionados con el ciclo de vida de la suscripción.
+
+| Método | Tipo Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| `handle(PurchaseSubscriptionPlanCommand)` | `SubscriptionId` | public | Ejecuta la compra: llama a Culqi, crea la suscripción y emite la primera factura. |
+| `handle(LinkSubscriptionToClinicCommand)` | `void` | public | Asocia la suscripción al tenant. |
+| `handle(RenewSubscriptionCommand)` | `void` | public | Dispara la renovación recurrente. |
+| `handle(CancelSubscriptionCommand)` | `void` | public | Cancela la suscripción con motivo. |
+| `handle(RegisterInvoicePaymentCommand)` | `void` | public | Marca una factura como `PAID` tras el webhook de Culqi. |
+| `handle(ChangeSubscriptionPlanCommand)` | `Money` | public | Cambia el plan (upgrade/downgrade); si `IMMEDIATE`, calcula y cobra el prorrateo con `SubscriptionPricingService`. |
+| `handle(UpdatePaymentMethodCommand)` | `void` | public | Reemplaza la `PaymentReference` del aggregate con el nuevo token de Culqi. |
+
+**34. SubscriptionQueryService (Domain Service)**
+
+| Método | Tipo Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| `handle(GetSubscriptionByIdQuery)` | `Subscription` | public | Obtiene una suscripción por ID. |
+| `handle(GetSubscriptionByClinicQuery)` | `Subscription` | public | Obtiene la suscripción activa de una clínica. |
+| `handle(GetInvoiceHistoryQuery)` | `List<Invoice>` | public | Lista las facturas históricas. |
+
+**35. PlanCommandService (Domain Service)**
+
+| Método | Tipo Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| `handle(CreatePlanCommand)` | `PlanId` | public | Crea un nuevo plan en el catálogo. |
+| `handle(DeactivatePlanCommand)` | `void` | public | Retira un plan del catálogo. |
+
+**36. PlanQueryService (Domain Service)**
+
+| Método | Tipo Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| `handle(GetPlanListQuery)` | `List<SubscriptionPlan>` | public | Lista los planes disponibles. |
+| `handle(GetPlanByIdQuery)` | `SubscriptionPlan` | public | Obtiene un plan por ID. |
+
+**37. SubscriptionPricingService (Domain Service)**
+
+Servicio puro de cálculo de precios y prorrateo.
+
+| Método | Tipo Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| `priceFor(SubscriptionPlan, BillingCycle)` | `Money` | public | Calcula el precio del plan para el ciclo indicado. |
+| `applyProration(Subscription, SubscriptionPlan)` | `Money` | public | Calcula el monto prorrateado al cambiar de plan a mitad de periodo. |
+
+#### 4.2.2.2. Interface Layer
+
+**1. SubscriptionController (REST Controller)**
+
+Expone los casos de uso de suscripción al Administrador de Clínica a través de la PWA.
+
+| Método | Ruta base | HTTP | Descripción |
+|---|---|---|---|
+| `purchaseSubscription` | `/api/v1/subscriptions` | POST | Compra un plan usando un `paymentToken` emitido por el SDK de Culqi en el frontend. |
+| `getSubscriptionByClinic` | `/api/v1/subscriptions?clinicId={id}` | GET | Obtiene la suscripción activa de la clínica. |
+| `cancelSubscription` | `/api/v1/subscriptions/{id}/cancel` | POST | Cancela una suscripción vigente. |
+| `changePlan` | `/api/v1/subscriptions/{id}/plan` | PATCH | Cambia el plan (upgrade/downgrade) con política `IMMEDIATE` o `AT_NEXT_PERIOD`. |
+| `updatePaymentMethod` | `/api/v1/subscriptions/{id}/payment-method` | PATCH | Actualiza el medio de pago con un nuevo token de Culqi. |
+| `getInvoiceHistory` | `/api/v1/subscriptions/{id}/invoices` | GET | Devuelve el historial de facturas. |
+
+**2. PlanController (REST Controller)**
+
+Catálogo público de planes visible en la landing y en la PWA.
+
+| Método | Ruta base | HTTP | Descripción |
+|---|---|---|---|
+| `getPlans` | `/api/v1/plans` | GET | Lista los planes activos del catálogo. |
+| `getPlanById` | `/api/v1/plans/{id}` | GET | Obtiene un plan específico. |
+| `createPlan` | `/api/v1/plans` | POST | Crea un plan (operación de administración interna). |
+| `deactivatePlan` | `/api/v1/plans/{id}` | DELETE | Retira un plan del catálogo. |
+
+**3. CulqiWebhookController (REST Controller)**
+
+Endpoint que recibe los eventos de Culqi (confirmación de cargo, fallo de cobro). Valida la firma HMAC antes de procesar.
+
+| Método | Ruta base | HTTP | Descripción |
+|---|---|---|---|
+| `handleWebhook` | `/api/v1/webhooks/culqi` | POST | Recibe y procesa eventos de Culqi; traduce a `RegisterInvoicePaymentCommand` o `InvoicePaymentFailedEvent`. |
+
+**4. Resources (DTOs)**
+
+| Resource | Atributos principales | Descripción |
+|---|---|---|
+| `PurchaseSubscriptionResource` | `clinicId: UUID`, `planId: UUID`, `billingCycle: String`, `paymentToken: String` | Datos de compra recibidos desde el frontend. |
+| `SubscriptionResource` | `id: UUID`, `clinicId: UUID`, `planName: String`, `status: String`, `billingCycle: String`, `currentPeriodEnd: LocalDate`, `nextBillingDate: LocalDate` | Representación de una suscripción. |
+| `PlanResource` | `id: UUID`, `name: String`, `code: String`, `monthlyPrice: BigDecimal`, `yearlyPrice: BigDecimal`, `currency: String`, `maxPatients: Integer`, `maxPhysiotherapists: Integer`, `features: List<String>` | Representación de un plan. |
+| `InvoiceResource` | `id: UUID`, `amount: BigDecimal`, `currency: String`, `issuedAt: Instant`, `dueAt: Instant`, `paidAt: Instant`, `status: String` | Representación de una factura. |
+| `CancelSubscriptionResource` | `reason: String` | Motivo de cancelación. |
+| `ChangePlanResource` | `newPlanId: UUID`, `newBillingCycle: String`, `effectiveAt: String` | Datos para cambiar de plan desde el dashboard. |
+| `UpdatePaymentMethodResource` | `paymentToken: String` | Nuevo token tokenizado por el SDK de Culqi en el frontend. |
+
+**5. Transform (Assemblers)**
+
+| Assembler | Entrada | Salida | Descripción |
+|---|---|---|---|
+| `PurchaseSubscriptionCommandFromResourceAssembler` | `PurchaseSubscriptionResource` | `PurchaseSubscriptionPlanCommand` | Construye el command de compra. |
+| `SubscriptionResourceFromEntityAssembler` | `Subscription` | `SubscriptionResource` | Expone el aggregate como recurso. |
+| `PlanResourceFromEntityAssembler` | `SubscriptionPlan` | `PlanResource` | Expone el plan como recurso. |
+| `InvoiceResourceFromEntityAssembler` | `Invoice` | `InvoiceResource` | Expone la factura como recurso. |
+| `CancelSubscriptionCommandFromResourceAssembler` | `CancelSubscriptionResource`, `subscriptionId: UUID` | `CancelSubscriptionCommand` | Construye el command de cancelación. |
+| `ChangeSubscriptionPlanCommandFromResourceAssembler` | `ChangePlanResource`, `subscriptionId: UUID` | `ChangeSubscriptionPlanCommand` | Construye el command de cambio de plan. |
+| `UpdatePaymentMethodCommandFromResourceAssembler` | `UpdatePaymentMethodResource`, `subscriptionId: UUID` | `UpdatePaymentMethodCommand` | Construye el command de actualización del medio de pago. |
+
+#### 4.2.2.3. Application Layer
+
+**1. SubscriptionContextFacadeImpl (ACL Facade)**
+
+Fachada que otros bounded contexts usan para consultar estado de suscripción sin acoplarse al modelo interno.
+
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| `subscriptionQueryService` | `SubscriptionQueryService` | private | Servicio de consultas de Subscription. |
+
+| Método | Tipo Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| `isClinicSubscriptionActive(UUID clinicId)` | `boolean` | public | Responde si el tenant tiene una suscripción vigente. |
+| `fetchCurrentPlanCode(UUID clinicId)` | `Optional<String>` | public | Retorna el código del plan contratado para gating de features. |
+
+**2. SubscriptionCommandServiceImpl**
+
+Orquesta la compra, renovación, cancelación y reconciliación de pagos.
+
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| `subscriptionRepository` | `SubscriptionRepository` | private | Persistencia del aggregate. |
+| `planRepository` | `PlanRepository` | private | Consulta del catálogo. |
+| `invoiceRepository` | `InvoiceRepository` | private | Persistencia de facturas. |
+| `culqiPaymentPort` | `CulqiPaymentPort` | private | ACL hacia la pasarela. |
+| `iamContextFacadePort` | `IamContextFacadePort` | private | Consulta del BC IAM. |
+| `pricingService` | `SubscriptionPricingService` | private | Cálculo de precios. |
+| `eventPublisher` | `ApplicationEventPublisher` | private | Publicación de domain events. |
+
+| Método | Tipo Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| `handle(PurchaseSubscriptionPlanCommand)` | `SubscriptionId` | public | Valida admin, tokeniza el pago, crea la suscripción, emite factura y publica `SubscriptionPurchasedEvent`. |
+| `handle(LinkSubscriptionToClinicCommand)` | `void` | public | Asocia la suscripción al tenant y publica `SubscriptionLinkedToClinicEvent`. |
+| `handle(RenewSubscriptionCommand)` | `void` | public | Genera factura y cobra vía Culqi; maneja fallos con reintentos. |
+| `handle(CancelSubscriptionCommand)` | `void` | public | Marca la suscripción como `CANCELLED` y publica el evento. |
+| `handle(RegisterInvoicePaymentCommand)` | `void` | public | Marca la factura como `PAID` tras el webhook de Culqi. |
+| `handle(ChangeSubscriptionPlanCommand)` | `Money` | public | Cambia de plan: si `IMMEDIATE`, usa `SubscriptionPricingService.applyProration` y cobra la diferencia vía `CulqiPaymentPort`; si `AT_NEXT_PERIOD`, difiere el cambio a la próxima renovación. Publica `SubscriptionPlanChangedEvent`. |
+| `handle(UpdatePaymentMethodCommand)` | `void` | public | Tokeniza la nueva tarjeta con `CulqiPaymentPort`, reemplaza la `PaymentReference` en el aggregate y publica `PaymentMethodUpdatedEvent`. |
+
+**3. SubscriptionQueryServiceImpl**
+
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| `subscriptionRepository` | `SubscriptionRepository` | private | Lectura del aggregate. |
+| `invoiceRepository` | `InvoiceRepository` | private | Lectura de facturas. |
+
+| Método | Tipo Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| `handle(GetSubscriptionByIdQuery)` | `Subscription` | public | Recupera una suscripción por ID. |
+| `handle(GetSubscriptionByClinicQuery)` | `Subscription` | public | Recupera la suscripción activa de una clínica. |
+| `handle(GetInvoiceHistoryQuery)` | `List<Invoice>` | public | Historial de facturas. |
+
+**4. PlanCommandServiceImpl**
+
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| `planRepository` | `PlanRepository` | private | Acceso al catálogo. |
+
+| Método | Tipo Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| `handle(CreatePlanCommand)` | `PlanId` | public | Crea un plan nuevo. |
+| `handle(DeactivatePlanCommand)` | `void` | public | Retira un plan del catálogo. |
+
+**5. PlanQueryServiceImpl**
+
+| Método | Tipo Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| `handle(GetPlanListQuery)` | `List<SubscriptionPlan>` | public | Lista los planes. |
+| `handle(GetPlanByIdQuery)` | `SubscriptionPlan` | public | Obtiene un plan por ID. |
+
+**6. CulqiWebhookEventHandler (Integration Event Handler)**
+
+Procesa los eventos de Culqi recibidos por el `CulqiWebhookController`.
+
+| Método | Tipo Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| `on(CulqiChargeSucceeded)` | `void` | public | Traduce a `RegisterInvoicePaymentCommand` y lo despacha al Command Service. |
+| `on(CulqiChargeFailed)` | `void` | public | Publica `InvoicePaymentFailedEvent` y marca la suscripción como `PAST_DUE` si corresponde. |
+
+**7. SubscriptionRenewalScheduler (Scheduled Task)**
+
+Job programado que detecta suscripciones cuyo `nextBillingDate` venció y dispara `RenewSubscriptionCommand`.
+
+| Método | Tipo Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| `runDailyRenewalBatch()` | `void` | public | Ejecuta `@Scheduled(cron)`; recorre las suscripciones con `nextBillingDate <= today` y despacha los commands de renovación. |
+
+**8. SubscriptionExpirationScheduler (Scheduled Task)**
+
+| Método | Tipo Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| `runDailyExpirationBatch()` | `void` | public | Marca como `EXPIRED` las suscripciones que llevan más de N días en `PAST_DUE`. |
+
+**9. ApplicationReadyEventHandler (Framework Event Handler)**
+
+| Método | Tipo Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| `on(ApplicationReadyEvent)` | `void` | public | Ejecuta la semilla de planes base al arranque si el catálogo está vacío. |
+
+**10. CulqiPaymentPort (Outbound Service Port)**
+
+ACL hacia Culqi.
+
+| Método | Tipo Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| `createCharge(Money amount, String token)` | `PaymentReference` | public | Crea un cargo contra el token emitido por el SDK de Culqi. |
+| `refundCharge(PaymentReference)` | `void` | public | Reversa un cobro. |
+| `verifyWebhookSignature(String payload, String signature)` | `boolean` | public | Valida la firma HMAC del webhook de Culqi. |
+
+**11. IamContextFacadePort (Outbound Service Port)**
+
+Puerto hacia la fachada del BC IAM para validar el usuario que compra.
+
+| Método | Tipo Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| `fetchClinicIdOfAdmin(Long userId)` | `UUID` | public | Obtiene el `clinicId` del administrador autenticado. |
+| `validateClinicAdmin(Long userId)` | `boolean` | public | Verifica que el usuario tenga el rol `CLINIC_ADMIN`. |
+
+**12. NotificationServicePort (Outbound Service Port)**
+
+Puerto hacia el Notification Service hermano para enviar correos (que a su vez usa Resend).
+
+| Método | Tipo Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| `sendInvoiceIssuedNotification(String email, Invoice invoice)` | `void` | public | Solicita al Notification Service enviar la factura por correo. |
+| `sendPaymentFailedNotification(String email, Invoice invoice)` | `void` | public | Notifica al admin que un cobro falló. |
+| `sendSubscriptionCancelledNotification(String email, Subscription sub)` | `void` | public | Notifica la cancelación. |
+
+#### 4.2.2.4. Infrastructure Layer
+
+**1. SubscriptionRepository (Repository Interface)**
+
+Spring Data JPA sobre Azure Database for PostgreSQL.
+
+| Método | Tipo Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| `save(Subscription sub)` | `Subscription` | public | Persiste o actualiza una suscripción. |
+| `findById(UUID id)` | `Optional<Subscription>` | public | Busca por ID. |
+| `findByClinicId(UUID clinicId)` | `Optional<Subscription>` | public | Obtiene la suscripción activa de un tenant. |
+| `findAllPastDue()` | `List<Subscription>` | public | Lista las suscripciones `PAST_DUE` (usado por el scheduler de expiración). |
+| `findAllDueForRenewal(LocalDate today)` | `List<Subscription>` | public | Lista las suscripciones con `nextBillingDate <= today`. |
+
+**2. PlanRepository (Repository Interface)**
+
+| Método | Tipo Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| `save(SubscriptionPlan plan)` | `SubscriptionPlan` | public | Persiste un plan. |
+| `findById(UUID id)` | `Optional<SubscriptionPlan>` | public | Busca por ID. |
+| `findAllActive()` | `List<SubscriptionPlan>` | public | Lista los planes activos. |
+| `findByCode(String code)` | `Optional<SubscriptionPlan>` | public | Busca por código SKU. |
+
+**3. InvoiceRepository (Repository Interface)**
+
+| Método | Tipo Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| `save(Invoice invoice)` | `Invoice` | public | Persiste una factura. |
+| `findById(UUID id)` | `Optional<Invoice>` | public | Busca por ID. |
+| `findBySubscriptionId(UUID id)` | `List<Invoice>` | public | Lista las facturas de una suscripción. |
+| `findAllOverdue()` | `List<Invoice>` | public | Lista las facturas vencidas pendientes de cobro. |
+
+**4. CulqiPaymentAdapter (ACL Adapter)**
+
+Implementa `CulqiPaymentPort`. Único componente que conoce el vocabulario de Culqi.
+
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| `culqiClient` | `CulqiHttpClient` | private | Cliente HTTP hacia la API pública de Culqi. |
+| `webhookSecret` | `String` | private | Secreto compartido con Culqi para validar firmas HMAC. |
+
+| Método | Tipo Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| `createCharge(Money amount, String token)` | `PaymentReference` | public | Invoca `POST /v2/charges` de Culqi y mapea la respuesta. |
+| `refundCharge(PaymentReference)` | `void` | public | Invoca `POST /v2/refunds`. |
+| `verifyWebhookSignature(String payload, String signature)` | `boolean` | public | Valida la firma HMAC-SHA256 del webhook. |
+
+**5. CulqiHttpClient (HTTP Client)**
+
+Wrapper de la API REST de Culqi usando `WebClient` de Spring.
+
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| `webClient` | `WebClient` | private | Cliente HTTP reactivo. |
+| `privateKey` | `String` | private | Clave privada de Culqi (cargada desde Azure Key Vault). |
+
+| Método | Tipo Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| `post(String path, Object body)` | `JsonNode` | public | Ejecuta una petición POST autenticada. |
+| `get(String path)` | `JsonNode` | public | Ejecuta una petición GET autenticada. |
+
+**6. IamContextFacadeAdapter (ACL Adapter)**
+
+Implementa `IamContextFacadePort` invocando al IAM Service hermano vía HTTP interno.
+
+| Método | Tipo Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| `fetchClinicIdOfAdmin(Long userId)` | `UUID` | public | Llama a `GET /api/v1/users/{id}` del IAM Service. |
+| `validateClinicAdmin(Long userId)` | `boolean` | public | Valida que el usuario tenga el rol `CLINIC_ADMIN`. |
+
+**7. NotificationServiceAdapter (ACL Adapter)**
+
+Implementa `NotificationServicePort` invocando al Notification Service hermano.
+
+| Método | Tipo Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| `sendInvoiceIssuedNotification(email, invoice)` | `void` | public | Encola una petición contra el Notification Service que a su vez envía el correo vía Resend. |
+| `sendPaymentFailedNotification(email, invoice)` | `void` | public | Notifica fallo de cobro. |
+| `sendSubscriptionCancelledNotification(email, sub)` | `void` | public | Notifica cancelación. |
+
+**8. SubscriptionScheduler (Spring Scheduled)**
+
+Implementación del scheduler basado en Spring `@Scheduled` con cron expressions configurables.
+
+| Método | Tipo Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| `runDailyRenewalBatch()` | `void` | public | `@Scheduled(cron = "${uflex.subscription.renewal-cron}")`. |
+| `runDailyExpirationBatch()` | `void` | public | `@Scheduled(cron = "${uflex.subscription.expiration-cron}")`. |
+
+**9. CulqiWebhookController (Integration Controller)**
+
+Endpoint REST que recibe los webhooks de Culqi.
+
+| Método | Tipo Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| `handleWebhook(String body, String signature)` | `ResponseEntity<Void>` | public | Valida la firma HMAC, deserializa el evento y delega en el `CulqiWebhookEventHandler`. |
+
+**10. PlanSeederProperties (Configuration Properties)**
+
+Propiedades externas con los planes base que se insertan en un ambiente nuevo.
+
+| Campo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| `seedPlans` | `List<PlanSeed>` | private | Lista de planes a sembrar al arranque. |
+
+#### 4.2.2.5. Bounded Context Software Architecture Component Level Diagrams
+
+El diagrama de componentes del BC Subscription replica el patrón de capas del BC IAM y añade dos Anti-Corruption Layers diferenciadas: **Culqi Payments Service ACL** (contra la pasarela de pagos externa) e **IAM Context Service ACL** (contra el BC IAM hermano, para validar el rol `CLINIC_ADMIN` y obtener el `clinicId` asociado al administrador autenticado). El Infrastructure Layer, además de persistir contra la Subscription DB, también se comunica con el Notification Service hermano para enviar facturas y avisos de cobro fallido por correo. La capa Domain permanece aislada de todas las integraciones externas.
+
+<div style="text-align: center;">
+  <img src="./assets/diagrams/software-architecture/components/src/subscription.png" alt="uFlex — Subscription Bounded Context Component Diagram" style="max-width: 100%; height: auto;">
+</div>
+
+*Figura 4.2.2.5. Diagrama de componentes (C4 Nivel 3) del Bounded Context Subscription.*
+
+#### 4.2.2.6. Bounded Context Software Architecture Code Level Diagrams
+
+##### 4.2.2.6.1. Bounded Context Domain Layer Class Diagrams
+
+El diagrama de clases del Domain Layer del BC Subscription modela exclusivamente los conceptos centrales del dominio, sin incluir las capas de application ni infrastructure. El Aggregate Root `Subscription` está compuesto por la Entity `SubscriptionPlan` (referencia al catálogo) y una colección de Entities `Invoice` (historial de facturas emitidas). Los Value Objects modelan los conceptos monetarios (`Money`, `PaymentReference`) y temporales (`BillingCycle`) así como los estados (`SubscriptionStatus`, `InvoiceStatus`). Los Domain Events publicados (`SubscriptionPurchasedEvent`, `SubscriptionLinkedToClinicEvent`, `SubscriptionActivatedEvent`, `SubscriptionRenewedEvent`, `SubscriptionCancelledEvent`, `InvoicePaidEvent`, `InvoicePaymentFailedEvent`) permiten que el BC IAM (sincronización del `clinicId`), el Notification Service (envío de correos) y la analítica interna reaccionen sin acoplamiento directo al aggregate. El único Domain Service en sentido estricto es `SubscriptionPricingService`, que encapsula la lógica de cálculo de precios y prorrateo entre planes y ciclos de facturación. El paquete `domain.exceptions` reúne las excepciones de negocio que protegen las invariantes del aggregate.
+
+<div style="text-align: center;">
+  <img src="./assets/diagrams/uml/class/src/subscription.png" alt="uFlex — Subscription Bounded Context Domain Class Diagram" style="max-width: 100%; height: auto;">
+</div>
+
+*Figura 4.2.2.6.1. Diagrama de clases del dominio del Bounded Context Subscription.*
+
+##### 4.2.2.6.2. Bounded Context Database Design Diagram
+
+El esquema físico del BC Subscription en Azure Database for PostgreSQL está compuesto por tres tablas principales: `subscription_plans` (catálogo con precios mensuales y anuales, topes de pacientes y fisioterapeutas, y estado activo/inactivo), `subscriptions` (suscripción por tenant, con FK lógica a `subscription_plans`, estado, ventanas del periodo actual, fecha de próxima facturación, referencia de pago tokenizada en Culqi y `clinic_id` como referencia lógica al BC IAM sin FK dura) e `invoices` (facturas emitidas por cada periodo, con FK a `subscriptions`, monto, estado y `provider_transaction_id` para reconciliación con Culqi). Se complementa con dos tablas de catálogo (`subscription_statuses` e `invoice_statuses`) para normalizar los enumerados, e índices compuestos por `(clinic_id, status)` y `(status, next_billing_date)` para soportar las queries más frecuentes (consulta de suscripción activa por clínica y detección de renovaciones vencidas por el scheduler).
+
+<div style="text-align: center;">
+  <img src="./assets/diagrams/database/erd/subscription-erd.png" alt="uFlex — Subscription Bounded Context Database ER Diagram" style="max-width: 100%; height: auto;">
+</div>
+
+*Figura 4.2.2.6.2. Diagrama entidad-relación del Bounded Context Subscription.*
 
 <hr class="page-break">
 

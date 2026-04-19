@@ -1,0 +1,199 @@
+@startuml uflex-iam-domain-class
+' Domain Layer Class Diagram — IAM Bounded Context (uFlex)
+
+skinparam shadowing false
+skinparam defaultFontName Arial
+skinparam classFontSize 12
+skinparam classAttributeIconSize 0
+skinparam packageStyle rectangle
+skinparam linetype ortho
+skinparam nodesep 30
+skinparam ranksep 55
+
+hide empty members
+
+' Stereotype palette (blue aggregates, teal VOs, salmon commands/queries/events, gray interfaces)
+skinparam class {
+  BackgroundColor<<AggregateRoot>>     #1168BD
+  FontColor<<AggregateRoot>>           #FFFFFF
+  BorderColor<<AggregateRoot>>         #0B4884
+
+  BackgroundColor<<Entity>>            #438DD5
+  FontColor<<Entity>>                  #FFFFFF
+  BorderColor<<Entity>>                #2E6295
+
+  BackgroundColor<<ValueObject>>       #85BBF0
+  FontColor<<ValueObject>>             #000000
+  BorderColor<<ValueObject>>           #438DD5
+
+  BackgroundColor<<Command>>           #F5A97F
+  FontColor<<Command>>                 #000000
+  BorderColor<<Command>>               #C87A4C
+
+  BackgroundColor<<Query>>             #EED49F
+  FontColor<<Query>>                   #000000
+  BorderColor<<Query>>                 #B89A5A
+
+  BackgroundColor<<DomainEvent>>       #F28FAD
+  FontColor<<DomainEvent>>             #000000
+  BorderColor<<DomainEvent>>           #B56580
+
+  BackgroundColor<<DomainService>>     #6BA3DC
+  FontColor<<DomainService>>           #000000
+  BorderColor<<DomainService>>         #438DD5
+
+  BackgroundColor<<Port>>              #B8C4CE
+  FontColor<<Port>>                    #000000
+  BorderColor<<Port>>                  #7D98B5
+
+  BackgroundColor<<Exception>>         #CDA1A1
+  FontColor<<Exception>>               #000000
+  BorderColor<<Exception>>             #8F6262
+}
+
+title Domain Layer Class Diagram — IAM Bounded Context (uFlex)
+
+' =========================================================
+' DOMAIN LAYER — Aggregates & Entity
+' =========================================================
+package "domain.model.aggregates" {
+  class User <<AggregateRoot>> {
+    - id: UserId
+    - supabaseUserId: String
+    - emailAddress: EmailAddress
+    - fullName: FullName
+    - roles: Set<Role>
+    - verificationStatus: VerificationStatus
+    - accountStatus: AccountStatus
+    - verificationCode: VerificationCode
+    - clinicId: ClinicId
+    --
+    + User()
+    + User(email, supabaseId, code)
+    + User(email, supabaseId, code, roles)
+    + addRole(role: Role): User
+    + addRoles(roles: List<Role>): User
+    + isVerified(): boolean
+    + activate(): void
+    + assignVerificationCode(email, code, expMin): void
+    + verifyUser(code: String): void
+    + associateClinic(clinicId: ClinicId): void
+    + disassociateClinic(clinicId: ClinicId): void
+  }
+
+  class Role <<Entity>> {
+    - id: Long
+    - name: Roles
+    --
+    + Role()
+    + Role(name: Roles)
+    + getStringName(): String
+    + {static} getDefaultRole(): Role
+    + {static} toRoleFromName(name: String): Role
+    + {static} validateRoleSet(roles: List<Role>): List<Role>
+  }
+}
+
+' =========================================================
+' DOMAIN LAYER — Value Objects
+' =========================================================
+package "domain.model.valueobjects" {
+  class UserId <<ValueObject>> {
+    - value: Long
+  }
+  class EmailAddress <<ValueObject>> {
+    - value: String
+    + validate(): void
+  }
+  class FullName <<ValueObject>> {
+    - firstName: String
+    - lastName: String
+  }
+  class ClinicId <<ValueObject>> {
+    - clinicId: UUID
+    + isAssigned(): boolean
+  }
+  class VerificationCode <<ValueObject>> {
+    - code: String
+    - expiration: LocalDateTime
+    + isExpired(): boolean
+    + matches(input: String): boolean
+  }
+  enum Roles <<ValueObject>> {
+    PATIENT
+    PHYSIOTHERAPIST
+    CLINIC_ADMIN
+  }
+  enum AccountStatus <<ValueObject>> {
+    PENDING
+    ACTIVE
+    BLOCKED
+    DELETED
+  }
+  enum VerificationStatus <<ValueObject>> {
+    NOT_VERIFIED
+    VERIFIED
+  }
+}
+
+' =========================================================
+' DOMAIN LAYER — Domain Events
+' =========================================================
+package "domain.model.events" {
+  class UserCreatedEvent <<DomainEvent>> {
+    + userId: Long
+    + supabaseUserId: String
+    + emailAddress: String
+    + occurredOn: Instant
+  }
+  class UserVerifiedEvent <<DomainEvent>> {
+    + userId: Long
+    + verifiedAt: Instant
+  }
+  class UserVerificationCodeAssignedEvent <<DomainEvent>> {
+    + email: String
+    + code: String
+    + expirationMinutes: Integer
+  }
+}
+
+' =========================================================
+' Domain Exceptions
+' =========================================================
+package "domain.exceptions" {
+  class UserNotFoundException <<Exception>>
+  class UserAlreadyVerifiedException <<Exception>>
+  class InvalidRoleException <<Exception>>
+  class ClinicAlreadyAssignedException <<Exception>>
+  class ExpiredVerificationCodeException <<Exception>>
+
+  UserNotFoundException -[hidden]down- UserAlreadyVerifiedException
+  UserAlreadyVerifiedException -[hidden]down- InvalidRoleException
+  InvalidRoleException -[hidden]down- ClinicAlreadyAssignedException
+  ClinicAlreadyAssignedException -[hidden]down- ExpiredVerificationCodeException
+}
+
+' =========================================================
+' Composition & relationships
+' =========================================================
+User *-- UserId
+User *-- EmailAddress
+User *-- FullName
+User *-- AccountStatus
+User *-- VerificationStatus
+User *-- VerificationCode
+User "0..1" o-- ClinicId
+User "*" o-- Role
+Role *-- Roles
+
+User ..> UserCreatedEvent : publishes
+User ..> UserVerifiedEvent : publishes
+User ..> UserVerificationCodeAssignedEvent : publishes
+
+User ..> UserAlreadyVerifiedException : throws
+User ..> ExpiredVerificationCodeException : throws
+User ..> ClinicAlreadyAssignedException : throws
+User ..> UserNotFoundException : throws
+Role ..> InvalidRoleException : throws
+
+@enduml

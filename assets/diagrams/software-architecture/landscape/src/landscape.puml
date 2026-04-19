@@ -6,7 +6,6 @@
 ' Styling approximations for Structurizr look (blue & gray palette)
 skinparam shadowing false
 skinparam defaultFontName Arial
-skinparam Handwritten false
 skinparam Padding 3
 skinparam wrapWidth 200
 skinparam nodesep 40

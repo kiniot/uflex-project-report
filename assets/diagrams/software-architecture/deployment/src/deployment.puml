@@ -16,7 +16,6 @@
 ' =========================================================
 skinparam shadowing false
 skinparam defaultFontName Arial
-skinparam Handwritten false
 skinparam Padding 3
 skinparam wrapWidth 200
 skinparam nodesep 30
