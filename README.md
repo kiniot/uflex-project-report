@@ -1696,11 +1696,11 @@ Contexto génerico para la identificación y acceso.
 
 <img src="assets/diagrams/canvases/IAM.png" alt="IAM Bounded context canvases" width="800">
 
-##### Profile
+##### Organization
 
 Encargado de gestionar la información personal de cada usuario registrado en la aplicación.
 
-<img src="assets/diagrams/canvases/Profile.png" alt="Profile Bounded context canvases" width="800">
+<img src="assets/diagrams/canvases/Organization.png" alt="Organization Bounded context canvases" width="800">
 
 ##### Subscription
 
@@ -1720,11 +1720,11 @@ Encargado del ciclo de vida de los dispositivos IOT.
 
 <img src="assets/diagrams/canvases/Device.png" alt="Device Bounded context canvases" width="800">
 
-##### Rehabilitation
+##### Therapy
 
 Encargado de orquestar cada sesión de cada terapia física ejecutada por el paciente.
 
-<img src="assets/diagrams/canvases/Rehabilitation.png" alt="Rehabilitation Bounded context canvases" width="800">
+<img src="assets/diagrams/canvases/Therapy.png" alt="Therapy Bounded context canvases" width="800">
 
 
 <hr class="page-break">
