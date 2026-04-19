@@ -1,0 +1,83 @@
+@startuml uflex-iam-erd
+' Database Design Diagram — IAM Bounded Context (uFlex)
+' Target: Azure Database for PostgreSQL — Flexible Server
+
+skinparam shadowing false
+skinparam defaultFontName Arial
+skinparam linetype ortho
+
+!define table(x) entity x << (T,#438DD5) >>
+!define enum(x)  entity x << (E,#85BBF0) >>
+
+hide circle
+hide empty members
+
+' =========================================================
+' Tables
+' =========================================================
+table(users) {
+  * id                 : UUID <<PK>>
+  --
+  * supabase_user_id   : VARCHAR(64) <<UNIQUE>>
+  * email              : VARCHAR(254) <<UNIQUE>>
+  * full_name          : VARCHAR(160)
+  * role               : VARCHAR(32)  <<FK → user_roles.code>>
+  * status             : VARCHAR(32)  <<FK → user_statuses.code>>
+    clinic_id          : UUID         <<ref Subscription BC>>
+  * created_at         : TIMESTAMP
+  * updated_at         : TIMESTAMP
+}
+
+table(user_audit_events) {
+  * id                 : UUID <<PK>>
+  --
+  * user_id            : UUID <<FK → users.id>>
+  * event_type         : VARCHAR(64)
+    event_payload      : JSONB
+  * occurred_at        : TIMESTAMP
+}
+
+enum(user_roles) {
+  * code               : VARCHAR(32) <<PK>>
+  --
+  * description        : VARCHAR(120)
+}
+note right of user_roles
+  Values:
+  - PATIENT
+  - PHYSIOTHERAPIST
+  - CLINIC_ADMIN
+end note
+
+enum(user_statuses) {
+  * code               : VARCHAR(32) <<PK>>
+  --
+  * description        : VARCHAR(120)
+}
+note right of user_statuses
+  Values:
+  - PENDING
+  - VERIFIED
+  - SUSPENDED
+end note
+
+' =========================================================
+' Relationships
+' =========================================================
+users }o--|| user_roles    : "has role"
+users }o--|| user_statuses : "has status"
+users ||--o{ user_audit_events : "triggers"
+
+note bottom of users
+  Indices:
+  - UNIQUE (email)
+  - UNIQUE (supabase_user_id)
+  - INDEX (role, clinic_id)
+  - INDEX (clinic_id)
+
+  clinic_id is a logical reference to the
+  Subscription BC (no hard FK: bounded
+  contexts isolate their schemas).
+end note
+
+@enduml
