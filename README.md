@@ -1594,6 +1594,18 @@ URL completa: https://fastpavos.atlassian.net/jira/software/projects/UF/boards/3
 En esta sección el equipo presenta sus Bounded Context Canvases, empezando por los
 importantes.
 
+<img src="assets/diagrams/canvases/IAM.png" alt="IAM Bounded context canvases" width="800">
+
+<img src="assets/diagrams/canvases/Profile.png" alt="Profile Bounded context canvases" width="800">
+
+<img src="assets/diagrams/canvases/Subscription.png" alt="Subscription Bounded context canvases" width="800">
+
+<img src="assets/diagrams/canvases/Planning.png" alt="Planning Bounded context canvases" width="800">
+
+<img src="assets/diagrams/canvases/Device.png" alt="Device Bounded context canvases" width="800">
+
+<img src="assets/diagrams/canvases/Rehabilitation.png" alt="Rehabilitation Bounded context canvases" width="800">
+
 
 <hr class="page-break">
 
