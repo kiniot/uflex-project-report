@@ -2522,6 +2522,8 @@ El esquema físico del BC IAM en Azure Database for PostgreSQL consta de una tab
 
 *Figura 4.2.1.6.2. Diagrama entidad-relación del Bounded Context IAM.*
 
+<hr class="page-break">
+
 ### 4.2.2. Bounded Context: Subscription
 
 El bounded context **Subscription** concentra la gestión comercial del modelo SaaS multi-tenant de uFlex: catálogo de planes, ciclo de vida de la suscripción de cada clínica (compra, activación, renovación, vencimiento, cancelación), emisión de facturas y reconciliación de pagos con la pasarela externa Culqi. A diferencia del BC IAM —que modela la identidad del usuario individual— este contexto trabaja a nivel de *clínica* (tenant) y es disparado típicamente por el Administrador de Clínica. Los comandos y eventos principales (`PurchaseSubscriptionPlanCommand`, `SubscriptionPurchasedEvent`, `SubscriptionLinkedToClinicEvent`) fueron identificados durante el Design-Level EventStorming.
@@ -3244,13 +3246,19 @@ El esquema físico del BC Subscription en Azure Database for PostgreSQL está co
 
 <hr class="page-break">
 
+<hr class="page-break">
+
 ### 4.2.3. Bounded Context: Organization
 
 
 
+<hr class="page-break">
+
 ### 4.2.4. Bounded Context: Device
 
 
+
+<hr class="page-break">
 
 ### 4.2.5. Bounded Context: Planning
 
@@ -3506,9 +3514,15 @@ El esquema físico del BC Planning en Azure Database for PostgreSQL consta de un
 
 *Figura 4.2.5.6.2. Diagrama entidad-relación del Bounded Context Planning.*
 
+<hr class="page-break">
+
+<hr class="page-break">
+
 ### 4.2.6. Bounded Context: Therapy
 
 
+
+<hr class="page-break">
 
 # Conclusiones
 
@@ -3522,6 +3536,38 @@ El esquema físico del BC Planning en Azure Database for PostgreSQL consta de un
 
 # Bibliografía
 
+1. Andina. (2023). *Cenate brindó más de 3,200 sesiones de telerehabilitación física en lo que va del 2023*. https://andina.pe/agencia/noticia-cenate-brindo-mas-3200-sesiones-telerehabilitacion-fisica-lo-va-del-2023-938058.aspx
 
+2. Arias Tolentino, E. (2022). *Fracturas expuestas en pacientes atendidos en el Hospital Carlos Lanfranco La Hoz en el 2021* [Proyecto de investigación de segunda especialidad, Universidad Privada San Juan Bautista]. Repositorio Institucional UPSJB. https://repositorio.upsjb.edu.pe/backend/api/core/bitstreams/e7625b29-4ecd-4401-b26e-a9e7dfcc23e9/content
+
+3. Carbajal Galarza, M. M., Chinchihualpa Paredes, N. O., & Abanto Perez, S. A. (2021). *Eficacia de las intervenciones tecnológicas para mejorar la función motora del miembro superior de personas que han sufrido un accidente cerebrovascular en países de bajos y medianos ingresos: revisión sistemática y metaanálisis* [Trabajo de investigación para optar por el título profesional de Médico Cirujano, Universidad Peruana Cayetano Heredia]. Repositorio Institucional UPCH. https://hdl.handle.net/20.500.12866/9440
+
+4. Castro Villanueva, D. (2023). *Diseño mecatrónico de un dispositivo para la rehabilitación pasiva de la rodilla* [Tesis de título profesional, Pontificia Universidad Católica del Perú]. Repositorio Institucional PUCP. http://hdl.handle.net/20.500.12404/26882
+
+5. Fernandez Agurto, P. E., Yenque Zavalaga, K. M. J., & Yucra Castro, K. F. (2025). *Programas de telerehabilitación en atención domiciliaria en adultos y adultos mayores con EPOC: Un scoping review* [Tesis de licenciatura, Universidad Peruana Cayetano Heredia]. Repositorio Institucional UPCH. https://repositorio.upch.edu.pe/bitstream/handle/20.500.12866/17596/Programas_FernandezAgurto_Paola.pdf?sequence=1&isAllowed=y
+
+6. Fisiofix. (2025). *¿Cuánto cuesta una sesión de fisioterapia en Lima?* https://fisiofix.pe/cuanto-cuesta-una-sesion-de-fisioterapia-en-lima/
+
+7. Instituto Nacional de Estadística e Informática. (2022). *En el Perú 1 millón 575 mil personas presentan algún tipo de discapacidad*. https://m.inei.gob.pe/prensa/noticias/en-el-peru-1-millon-575-mil-personas-presentan-alg/
+
+8. Instituto Nacional de Estadística e Informática. (2025). *Uso de Internet y teléfonos celulares en Perú, tercer trimestre de 2025*. https://www.gob.pe/institucion/inei/noticias/1342293-en-el-tercer-trimestre-de-2025-el-91-3-de-la-poblacion-de-6-y-mas-anos-de-e
+
+9. Instituto Nacional de Rehabilitación. (2025). *Efecto del uso de la férula de neopreno "Madey" sobre la capacidad funcional de los miembros superiores en las actividades de vida diaria de los pacientes adultos con artritis reumatoide del Instituto Nacional de Rehabilitación*. https://app.inr.gob.pe/investigacion/media/BancoInvestigacion/BI_Institucional/extrainstitucional_25.pdf
+
+10. León, M. (2023). *Diseño de un dispositivo de habilitación portátil de codo para personas con epicondilitis lateral* [Tesis título profesional, Pontificia Universidad Católica del Perú]. Repositorio Institucional PUCP. http://hdl.handle.net/20.500.12404/26570
+
+11. Ministerio de Salud. (2019). *Prevención y manejo de condiciones secundarias de salud en personas con discapacidad*. https://www.minsa.gob.pe/presupuestales/doc2019/pp/anexo/ANEXO2_8.pdf
+
+12. Ministerio de Salud. (2025a). *Más de 3,4 millones de atenciones por telemedicina en Perú (enero 2024 – marzo 2025)*. Ministerio de Salud del Perú. https://www.gob.pe/institucion/minsa/noticias/1132597-mas-de-3-4-millones-de-atenciones-por-telemedicina-un-hito-en-la-atencion-
+
+13. Ministerio de Salud. (2025b). *Instituto Nacional de Rehabilitación brindó 276 893 atenciones en consulta, procedimientos médicos y terapias durante el 2024*. https://www.gob.pe/institucion/minsa/noticias/1093672-instituto-nacional-de-rehabilitacion-brindo-276-893-atenciones-en-consulta-procedimientos-medicos-y-terapias-durante-el-2024
+
+14. Ministerio de Vivienda, Construcción y Saneamiento. (2022). *Más del 30% de peruanos con discapacidad tiene problemas para su desarrollo profesional debido a barreras en sus ciudades*. https://www.gob.pe/institucion/vivienda/noticias/658298-mas-del-30-de-peruanos-con-discapacidad-tiene-problemas-para-su-desarrollo-profesional-debido-a-barreras-en-sus-ciudades
+
+15. OSIPTEL. (2024). *Encuesta Residencial de Servicios de Telecomunicaciones (ERESTEL) – 94,8% de hogares peruanos cuenta con un smartphone*. Organismo Supervisor de Inversión Privada en Telecomunicaciones. https://www.osiptel.gob.pe/portal-del-usuario/noticias/erestel-el-94-8-de-hogares-peruanos-cuenta-con-un-smartphone/
+
+16. Pelvicare. (2022). *Telerehabilitación*. https://pelvicare.pe/tratamientos/telerehabilitacion/
+
+17. Rosales, F., Gutiérrez, D., y Valencia, J. (2023). Características laborales y uso de la práctica digital de fisioterapeutas en Lima Metropolitana y el Callao-Perú durante la pandemia de la COVID-19. *Revista Peruana de Rehabilitación y Salud Humana, 5*(1), 1-12. https://revistas.upch.edu.pe/index.php/RHR/article/view/5034
 
 <hr class="page-break">
