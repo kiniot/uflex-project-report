@@ -1,0 +1,112 @@
+@startuml uflex-sa-deployment
+!include <C4/C4_Deployment>
+
+' =========================================================
+' Icons (only the essentials — keep diagram lightweight)
+' =========================================================
+!include <tupadr3/devicons/linux>
+!include <tupadr3/font-awesome-5/microchip>
+!include <tupadr3/font-awesome-5/mobile_alt>
+!include <tupadr3/font-awesome-5/globe>
+!include <tupadr3/font-awesome-5/cloud>
+!include <tupadr3/font-awesome-5/plug>
+
+' =========================================================
+' Styling
+' =========================================================
+skinparam shadowing false
+skinparam defaultFontName Arial
+skinparam Padding 3
+skinparam wrapWidth 200
+skinparam nodesep 30
+skinparam ranksep 50
+
+' ---- Tags ----
+AddContainerTag("kiniot",   $bgColor="#1168BD", $fontColor="#ffffff", $borderColor="#0B4884", $legendText="Software de uFlex (KinIoT)")
+AddContainerTag("database", $bgColor="#85BBF0", $fontColor="#000000", $borderColor="#438DD5", $legendText="Base de datos")
+AddContainerTag("external", $bgColor="#999999", $fontColor="#ffffff", $borderColor="#6B6B6B", $legendText="Servicio SaaS externo")
+
+title Deployment Diagram for uFlex (KinIoT) — Production Environment
+
+' =========================================================
+' Patient / Edge environment (local)
+' =========================================================
+Deployment_Node(patientEnv, "Entorno Local (Paciente / Clínica)", "Red doméstica o LAN clínica") {
+
+  Deployment_Node(imuDevice, "IMU Sensor Device", "Hardware propio KinIoT", $sprite="microchip") {
+    Container(embeddedApp, "Embedded App", "C++ firmware", "Muestreo, filtrado y transmisión BLE", $tags="kiniot")
+  }
+
+  Deployment_Node(smartphone, "Smartphone del Paciente", "iOS 17+ / Android 13+", $sprite="mobile_alt") {
+    Container(mobileApp,  "Mobile App", "Swift / Kotlin", "App del paciente", $tags="kiniot")
+    ContainerDb(mobileDB, "Mobile DB",  "SQLite",         "Caché local",       $tags="database")
+  }
+
+  Deployment_Node(edgeNode, "Edge Server (Laptop)", "Ubuntu / Windows — LAN local", $sprite="linux") {
+    Container(edgeApp,  "Edge App", "Python", "Procesamiento biomecánico + AI", $tags="kiniot")
+    ContainerDb(edgeDB, "Edge DB",  "SQLite", "Buffer local de muestras",       $tags="database")
+  }
+}
+
+' =========================================================
+' Vercel
+' =========================================================
+Deployment_Node(vercel, "Vercel", "Edge Network / CDN global", $sprite="globe") {
+  Container(landingPage,  "Landing Page",   "TypeScript (Next.js)", "Sitio público estático", $tags="kiniot")
+  Container(webClientApp, "Web Client App", "TypeScript, Angular",  "PWA clínica",             $tags="kiniot")
+}
+
+' =========================================================
+' Microsoft Azure Cloud (consolidated)
+' =========================================================
+Deployment_Node(azureCloud, "Microsoft Azure Cloud", "Región: Brazil South", $sprite="cloud") {
+
+  Container(apim, "Azure API Management", "PaaS gateway", "Enruta, valida JWT y aplica cuotas", $tags="kiniot")
+
+  Deployment_Node(aca, "Azure Container Apps Environment", "Managed container runtime") {
+    Container(microservices, "uFlex Microservices", "5× Java / Spring Boot", "Therapy Session, Clinical Trends, Subscription, Analytics y Notification Services", $tags="kiniot")
+  }
+
+  Deployment_Node(pgServer, "Azure Database for PostgreSQL — Flexible Server", "Managed database") {
+    ContainerDb(appDBs, "uFlex Databases", "PostgreSQL 16", "Therapy DB, Trends DB, Subscription DB y Analytics DB", $tags="database")
+  }
+
+  Container(azureMonitor, "Azure Monitor / App Insights", "Observabilidad PaaS", "Logs, métricas y trazas del backend", $tags="kiniot")
+}
+
+' =========================================================
+' Third-party SaaS (grouped)
+' =========================================================
+Deployment_Node(thirdParty, "Third-party SaaS Providers", "Managed external services", $sprite="plug") {
+  Container(supabaseService, "Supabase",   "OAuth + Identity DB", "Autenticación y BD de usuarios",  $tags="external")
+  Container(culqiService,    "Culqi API",  "Payments",             "Pasarela de pagos peruana",       $tags="external")
+  Container(resendService,   "Resend API", "Email delivery",       "Envío de correos transaccionales",$tags="external")
+}
+
+' =========================================================
+' Relations — local chain
+' =========================================================
+Rel(embeddedApp, mobileApp, "Muestras biomecánicas", "BLE")
+Rel(mobileApp,   edgeApp,   "Sincroniza datos",       "WiFi / HTTPS (LAN)")
+Rel(mobileApp,   mobileDB,  "Lee / escribe caché")
+Rel(edgeApp,     edgeDB,    "Persiste muestras")
+
+' ---- Clients to Azure ----
+Rel(mobileApp,    apim, "Consume APIs",             "HTTPS")
+Rel(webClientApp, apim, "Consume APIs",             "HTTPS")
+Rel(edgeApp,      apim, "Envía datos anonimizados", "HTTPS")
+
+' ---- Azure internal ----
+Rel(apim,           microservices, "Rutea",     "HTTPS")
+Rel(microservices,  appDBs,        "Persiste",  "JDBC/SSL")
+Rel(microservices,  azureMonitor,  "Telemetría")
+
+' ---- Azure to external SaaS ----
+Rel(mobileApp,     supabaseService, "OAuth login",  "HTTPS")
+Rel(webClientApp,  supabaseService, "OAuth login",  "HTTPS")
+Rel(apim,          supabaseService, "Valida JWT",   "HTTPS")
+Rel(microservices, culqiService,    "Procesa pagos","HTTPS")
+Rel(microservices, resendService,   "Envía correos","HTTPS")
+
+SHOW_LEGEND()
+@enduml

@@ -1,0 +1,292 @@
+@startuml uflex-subscription-domain-class
+' Domain Layer Class Diagram — Subscription Bounded Context (uFlex)
+
+skinparam shadowing false
+skinparam defaultFontName Arial
+skinparam classFontSize 12
+skinparam classAttributeIconSize 0
+skinparam packageStyle rectangle
+skinparam linetype ortho
+skinparam nodesep 30
+skinparam ranksep 55
+
+hide empty members
+
+' Stereotype palette
+skinparam class {
+  BackgroundColor<<AggregateRoot>>     #1168BD
+  FontColor<<AggregateRoot>>           #FFFFFF
+  BorderColor<<AggregateRoot>>         #0B4884
+
+  BackgroundColor<<Entity>>            #438DD5
+  FontColor<<Entity>>                  #FFFFFF
+  BorderColor<<Entity>>                #2E6295
+
+  BackgroundColor<<ValueObject>>       #85BBF0
+  FontColor<<ValueObject>>             #000000
+  BorderColor<<ValueObject>>           #438DD5
+
+  BackgroundColor<<Command>>           #F5A97F
+  FontColor<<Command>>                 #000000
+  BorderColor<<Command>>               #C87A4C
+
+  BackgroundColor<<Query>>             #EED49F
+  FontColor<<Query>>                   #000000
+  BorderColor<<Query>>                 #B89A5A
+
+  BackgroundColor<<DomainEvent>>       #F28FAD
+  FontColor<<DomainEvent>>             #000000
+  BorderColor<<DomainEvent>>           #B56580
+
+  BackgroundColor<<DomainService>>     #6BA3DC
+  FontColor<<DomainService>>           #000000
+  BorderColor<<DomainService>>         #438DD5
+
+  BackgroundColor<<Port>>              #B8C4CE
+  FontColor<<Port>>                    #000000
+  BorderColor<<Port>>                  #7D98B5
+
+  BackgroundColor<<Exception>>         #CDA1A1
+  FontColor<<Exception>>               #000000
+  BorderColor<<Exception>>             #8F6262
+}
+
+title Domain Layer Class Diagram — Subscription Bounded Context (uFlex)
+
+' =========================================================
+' DOMAIN LAYER — Aggregates & Entities
+' =========================================================
+package "domain.model.aggregates" {
+  class Subscription <<AggregateRoot>> {
+    - id: SubscriptionId
+    - clinicId: ClinicId
+    - plan: SubscriptionPlan
+    - status: SubscriptionStatus
+    - billingCycle: BillingCycle
+    - currentPeriodStart: LocalDate
+    - currentPeriodEnd: LocalDate
+    - nextBillingDate: LocalDate
+    - trialUntil: LocalDate
+    - paymentReference: PaymentReference
+    - invoices: List<Invoice>
+    - createdAt: Instant
+    - updatedAt: Instant
+    --
+    + Subscription()
+    + Subscription(clinicId, plan, billingCycle)
+    + activate(): void
+    + renew(): Invoice
+    + cancel(reason: String): void
+    + markPastDue(): void
+    + expire(): void
+    + linkToClinic(clinicId: ClinicId): void
+    + registerPayment(ref: PaymentReference): void
+    + isActive(): boolean
+  }
+}
+
+package "domain.model.entities" {
+  class SubscriptionPlan <<Entity>> {
+    - id: PlanId
+    - name: String
+    - code: String
+    - monthlyPrice: Money
+    - yearlyPrice: Money
+    - maxPatients: Integer
+    - maxPhysiotherapists: Integer
+    - features: Set<String>
+    - active: boolean
+    --
+    + SubscriptionPlan()
+    + priceFor(cycle: BillingCycle): Money
+    + isActive(): boolean
+    + deactivate(): void
+  }
+
+  class Invoice <<Entity>> {
+    - id: InvoiceId
+    - subscriptionId: SubscriptionId
+    - amount: Money
+    - issuedAt: Instant
+    - dueAt: Instant
+    - paidAt: Instant
+    - status: InvoiceStatus
+    - providerTransactionId: String
+    --
+    + Invoice()
+    + markAsPaid(txId: String): void
+    + markAsFailed(reason: String): void
+    + voidInvoice(): void
+    + isOverdue(): boolean
+  }
+}
+
+' =========================================================
+' DOMAIN LAYER — Value Objects
+' =========================================================
+package "domain.model.valueobjects" {
+  class SubscriptionId <<ValueObject>> {
+    - value: UUID
+  }
+  class PlanId <<ValueObject>> {
+    - value: UUID
+  }
+  class InvoiceId <<ValueObject>> {
+    - value: UUID
+  }
+  class ClinicId <<ValueObject>> {
+    - value: UUID
+  }
+  class Money <<ValueObject>> {
+    - amount: BigDecimal
+    - currency: String
+    + plus(other: Money): Money
+    + isZero(): boolean
+  }
+  class PaymentReference <<ValueObject>> {
+    - providerToken: String
+    - last4: String
+    - expiresOn: YearMonth
+  }
+  enum BillingCycle <<ValueObject>> {
+    MONTHLY
+    YEARLY
+  }
+  enum SubscriptionStatus <<ValueObject>> {
+    PENDING_PAYMENT
+    TRIAL
+    ACTIVE
+    PAST_DUE
+    CANCELLED
+    EXPIRED
+  }
+  enum InvoiceStatus <<ValueObject>> {
+    PENDING
+    PAID
+    FAILED
+    VOID
+  }
+}
+
+' =========================================================
+' DOMAIN LAYER — Domain Events
+' =========================================================
+package "domain.model.events" {
+  class SubscriptionPurchasedEvent <<DomainEvent>> {
+    + subscriptionId: UUID
+    + clinicId: UUID
+    + planId: UUID
+    + amount: Money
+    + occurredOn: Instant
+  }
+  class SubscriptionLinkedToClinicEvent <<DomainEvent>> {
+    + subscriptionId: UUID
+    + clinicId: UUID
+    + occurredOn: Instant
+  }
+  class SubscriptionActivatedEvent <<DomainEvent>> {
+    + subscriptionId: UUID
+    + clinicId: UUID
+    + activatedAt: Instant
+  }
+  class SubscriptionRenewedEvent <<DomainEvent>> {
+    + subscriptionId: UUID
+    + newPeriodEnd: LocalDate
+  }
+  class SubscriptionCancelledEvent <<DomainEvent>> {
+    + subscriptionId: UUID
+    + reason: String
+    + cancelledAt: Instant
+  }
+  class InvoicePaidEvent <<DomainEvent>> {
+    + invoiceId: UUID
+    + amount: Money
+    + paidAt: Instant
+  }
+  class InvoicePaymentFailedEvent <<DomainEvent>> {
+    + invoiceId: UUID
+    + reason: String
+    + failedAt: Instant
+  }
+  class SubscriptionPlanChangedEvent <<DomainEvent>> {
+    + subscriptionId: UUID
+    + oldPlanId: UUID
+    + newPlanId: UUID
+    + proratedAmount: Money
+    + changedAt: Instant
+  }
+  class PaymentMethodUpdatedEvent <<DomainEvent>> {
+    + subscriptionId: UUID
+    + last4: String
+    + updatedAt: Instant
+  }
+}
+
+' =========================================================
+' DOMAIN LAYER — Domain Services
+' =========================================================
+package "domain.services" {
+  interface SubscriptionPricingService <<DomainService>> {
+    + priceFor(plan: SubscriptionPlan, cycle: BillingCycle): Money
+    + applyProration(sub: Subscription, newPlan: SubscriptionPlan): Money
+  }
+}
+
+' =========================================================
+' Domain Exceptions
+' =========================================================
+package "domain.exceptions" {
+  class SubscriptionNotFoundException <<Exception>>
+  class SubscriptionAlreadyActiveException <<Exception>>
+  class ClinicAlreadySubscribedException <<Exception>>
+  class PlanNotAvailableException <<Exception>>
+  class PaymentDeclinedException <<Exception>>
+  class InvoiceAlreadyPaidException <<Exception>>
+
+  SubscriptionNotFoundException -[hidden]down- SubscriptionAlreadyActiveException
+  SubscriptionAlreadyActiveException -[hidden]down- ClinicAlreadySubscribedException
+  ClinicAlreadySubscribedException -[hidden]down- PlanNotAvailableException
+  PlanNotAvailableException -[hidden]down- PaymentDeclinedException
+  PaymentDeclinedException -[hidden]down- InvoiceAlreadyPaidException
+}
+
+' =========================================================
+' Composition & relationships
+' =========================================================
+Subscription *-- SubscriptionId
+Subscription *-- ClinicId
+Subscription *-- SubscriptionStatus
+Subscription *-- BillingCycle
+Subscription *-- PaymentReference
+Subscription "1" o-- SubscriptionPlan
+Subscription "1" *-- "*" Invoice
+
+SubscriptionPlan *-- PlanId
+SubscriptionPlan *-- Money
+
+Invoice *-- InvoiceId
+Invoice *-- Money
+Invoice *-- InvoiceStatus
+
+Subscription ..> SubscriptionPurchasedEvent : publishes
+Subscription ..> SubscriptionLinkedToClinicEvent : publishes
+Subscription ..> SubscriptionActivatedEvent : publishes
+Subscription ..> SubscriptionRenewedEvent : publishes
+Subscription ..> SubscriptionCancelledEvent : publishes
+Subscription ..> SubscriptionPlanChangedEvent : publishes
+Subscription ..> PaymentMethodUpdatedEvent : publishes
+Invoice ..> InvoicePaidEvent : publishes
+Invoice ..> InvoicePaymentFailedEvent : publishes
+
+Subscription ..> SubscriptionAlreadyActiveException : throws
+Subscription ..> ClinicAlreadySubscribedException : throws
+Subscription ..> SubscriptionNotFoundException : throws
+Subscription ..> PaymentDeclinedException : throws
+Invoice ..> InvoiceAlreadyPaidException : throws
+SubscriptionPlan ..> PlanNotAvailableException : throws
+
+SubscriptionPricingService ..> SubscriptionPlan
+SubscriptionPricingService ..> Subscription
+SubscriptionPricingService ..> Money
+
+@enduml

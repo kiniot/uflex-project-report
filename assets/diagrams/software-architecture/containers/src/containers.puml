@@ -1,0 +1,138 @@
+@startuml uflex-sa-containers
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Context.puml
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+
+' Styling approximations for Structurizr look (blue & gray palette)
+skinparam shadowing false
+skinparam defaultFontName Arial
+skinparam Padding 3
+skinparam wrapWidth 200
+skinparam nodesep 40
+skinparam ranksep 60
+
+LAYOUT_WITH_LEGEND()
+
+' ---- Tags / legend ----
+AddPersonTag("user",           $bgColor="#4A6FA5", $fontColor="#ffffff", $borderColor="#2F4A73", $legendText="Usuario de uFlex")
+AddSystemTag("external",       $bgColor="#999999", $fontColor="#ffffff", $borderColor="#6B6B6B", $legendText="Sistema externo")
+AddContainerTag("clientApp",   $bgColor="#438DD5", $fontColor="#ffffff", $borderColor="#2E6295", $legendText="Aplicación cliente (landing / móvil / web)")
+AddContainerTag("gateway",     $bgColor="#0B4884", $fontColor="#ffffff", $borderColor="#062F5A", $legendText="API Gateway")
+AddContainerTag("service",     $bgColor="#1168BD", $fontColor="#ffffff", $borderColor="#0B4884", $legendText="Microservicio (backend)")
+AddContainerTag("database",    $bgColor="#85BBF0", $fontColor="#000000", $borderColor="#438DD5", $legendText="Base de datos")
+AddContainerTag("iot",         $bgColor="#2E6295", $fontColor="#ffffff", $borderColor="#1C4E80", $legendText="Firmware IoT (embedded)")
+AddContainerTag("edge",        $bgColor="#6BA3DC", $fontColor="#000000", $borderColor="#438DD5", $legendText="Edge computing")
+AddContainerTag("iotHardware", $bgColor="#1C4E80", $fontColor="#ffffff", $borderColor="#0F2A4C", $legendText="Hardware IoT propio (sensor IMU)")
+
+title Container Diagram for uFlex (KinIoT)
+
+' =========================================================
+' Actors (top row)
+' =========================================================
+Person(patient,         "Paciente",                 "Realiza terapia de miembro superior; navega el landing antes de registrarse", $tags="user")
+Person(physiotherapist, "Fisioterapeuta",           "Supervisa sesiones y ajusta protocolos", $tags="user")
+Person(clinicAdmin,     "Administrador de Clínica", "Gestiona sedes, usuarios y suscripción", $tags="user")
+
+' =========================================================
+' uFlex system
+' =========================================================
+System_Boundary(uflex, "uFlex") {
+
+  ' ---- IoT Tier ----
+  Boundary(iotTier, "IoT & Edge Tier") {
+    Container(imuSensor,    "IMU Sensor Device", "Hardware propio KinIoT", "Sensor vestible (muñeca/codo) que captura aceleración y orientación", $tags="iotHardware")
+    Container(embeddedApp,  "Embedded App",      "C++",                     "Firmware del sensor IMU: muestreo, filtrado y transmisión BLE", $tags="iot")
+    Container(edgeApp,      "Edge App",          "Python",                  "Procesamiento biomecánico y retroalimentación AI en tiempo real", $tags="edge")
+    ContainerDb(edgeDB,     "Edge DB",           "SQLite",                  "Buffer local de muestras biomecánicas", $tags="database")
+  }
+
+  ' ---- Client Tier ----
+  Boundary(clientTier, "Client Apps Tier") {
+    Container(landingPage,  "Landing Page",     "TypeScript (Vercel)",                                 "Sitio público: información de producto y captación de leads", $tags="clientApp")
+    Container(mobileApp,    "Mobile App",       "Swift/SwiftUI (iOS), Kotlin/Jetpack Compose (Android)", "App del paciente: rutinas, feedback y sincronización con el sensor", $tags="clientApp")
+    ContainerDb(mobileDB,   "Mobile DB",        "SQLite",                                              "Caché local del paciente (rutinas, progreso)", $tags="database")
+    Container(webClientApp, "Web Client App",   "TypeScript, Angular (Vercel)",                        "PWA para fisioterapeutas y administradores de clínica", $tags="clientApp")
+  }
+
+  ' ---- API Gateway ----
+  Container(apiGateway, "API Gateway", "Azure API Management", "Enruta requests, valida JWT y aplica cuotas", $tags="gateway")
+
+  ' ---- Backend Services Tier ----
+  Boundary(backendTier, "Backend Services Tier") {
+    Container(iamService,          "IAM Service",             "Java, Spring Boot",            "Capa delgada sobre Supabase: sincroniza usuarios y enriquece perfiles con rol clínico y clínica asociada", $tags="service")
+    ContainerDb(iamDB,             "IAM DB",                  "Azure Database for PostgreSQL","Perfiles enriquecidos (rol, clínica, metadatos clínicos)", $tags="database")
+
+    Container(therapyService,      "Therapy Session Service", "Java, Spring Boot",            "Gestiona sesiones de terapia y métricas biomecánicas", $tags="service")
+    ContainerDb(therapyDB,         "Therapy DB",              "Azure Database for PostgreSQL","Sesiones, ROM, repeticiones y calidad de ejecución", $tags="database")
+
+    Container(trendsService,       "Clinical Trends Service", "Java, Spring Boot",            "Consolida tendencias clínicas por paciente y protocolo", $tags="service")
+    ContainerDb(trendsDB,          "Trends DB",               "Azure Database for PostgreSQL","Series agregadas de evolución clínica", $tags="database")
+
+    Container(subscriptionService, "Subscription Service",    "Java, Spring Boot",            "Gestiona suscripciones multi-tenant de clínicas", $tags="service")
+    ContainerDb(subscriptionDB,    "Subscription DB",         "Azure Database for PostgreSQL","Planes, tenants y estado de facturación", $tags="database")
+
+    Container(analyticsService,    "Analytics Service",       "Java, Spring Boot",            "Genera KPIs clínicos y de negocio", $tags="service")
+    ContainerDb(analyticsDB,       "Analytics DB",            "Azure Database for PostgreSQL","Datasets analíticos anonimizados", $tags="database")
+
+    Container(notificationService, "Notification Service",    "Java, Spring Boot",            "Orquesta correos transaccionales y notificaciones", $tags="service")
+  }
+}
+
+' =========================================================
+' External systems
+' =========================================================
+System_Ext(supabase, "Supabase", "Autenticación OAuth y base de datos de identidad (usuarios, roles y tenants)", $tags="external")
+System_Ext(culqi,    "Culqi",    "Pasarela de pagos peruana", $tags="external")
+System_Ext(resend,   "Resend",   "Envío de correos transaccionales", $tags="external")
+
+' =========================================================
+' Relations — users to clients
+' =========================================================
+Rel(patient,         landingPage,  "Explora contenido público antes de registrarse")
+Rel(patient,         mobileApp,    "Ejecuta rutinas y revisa feedback")
+Rel(physiotherapist, webClientApp, "Revisa sesiones y ajusta protocolos")
+Rel(clinicAdmin,     webClientApp, "Administra clínica y suscripción")
+
+' ---- Clients to edge / storage / gateway / auth ----
+Rel(mobileApp,    embeddedApp, "Controla sesión del sensor (BLE)")
+Rel(mobileApp,    edgeApp,     "Sincroniza datos vía Facade")
+Rel(mobileApp,    mobileDB,    "Lee/escribe caché local")
+Rel(mobileApp,    apiGateway,  "Consume servicios cloud (HTTPS)")
+Rel(mobileApp,    supabase,    "Autentica al paciente (OAuth)")
+Rel(webClientApp, apiGateway,  "Consume servicios cloud (HTTPS)")
+Rel(webClientApp, supabase,    "Autentica/autoriza profesionales (OAuth)")
+
+' ---- IoT chain ----
+Rel(embeddedApp, imuSensor, "Lee IMU y controla hardware")
+Rel(embeddedApp, edgeApp,   "Envía muestras biomecánicas")
+Rel(edgeApp,     edgeDB,    "Persiste muestras locales")
+Rel(edgeApp,     apiGateway,"Envía datos anonimizados")
+
+' ---- Gateway to auth & services ----
+Rel(apiGateway, supabase,            "Valida JWT y obtiene claims de usuario")
+Rel(apiGateway, iamService,          "Rutea perfiles y roles")
+Rel(apiGateway, therapyService,      "Rutea sesiones")
+Rel(apiGateway, trendsService,       "Rutea tendencias")
+Rel(apiGateway, subscriptionService, "Rutea suscripciones")
+Rel(apiGateway, analyticsService,    "Rutea analítica")
+
+' ---- Services to own DBs ----
+Rel(iamService,          iamDB,          "Persiste perfiles enriquecidos")
+Rel(iamService,          supabase,       "Sincroniza usuarios (webhook + API)")
+Rel(therapyService,      therapyDB,      "Persiste sesiones")
+Rel(trendsService,       trendsDB,       "Persiste tendencias")
+Rel(subscriptionService, subscriptionDB, "Persiste suscripciones")
+Rel(analyticsService,    analyticsDB,    "Persiste datasets analíticos")
+
+' ---- Service-to-service ----
+Rel(analyticsService,    trendsService,       "Consume tendencias")
+Rel(analyticsService,    therapyService,      "Consume sesiones")
+Rel(therapyService,      notificationService, "Solicita notificaciones clínicas")
+Rel(subscriptionService, notificationService, "Solicita avisos de facturación")
+Rel(subscriptionService, iamService,          "Asocia suscripción a usuarios y clínica")
+
+' ---- Services to externals ----
+Rel(subscriptionService, culqi,  "Procesa pagos de suscripción")
+Rel(notificationService, resend, "Envía correos transaccionales")
+
+@enduml

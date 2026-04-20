@@ -1,0 +1,120 @@
+@startuml uflex-subscription-erd
+' Database Design Diagram — Subscription Bounded Context (uFlex)
+' Target: Azure Database for PostgreSQL — Flexible Server
+
+skinparam shadowing false
+skinparam defaultFontName Arial
+skinparam linetype ortho
+
+!define table(x) entity x << (T,#438DD5) >>
+!define enum(x)  entity x << (E,#85BBF0) >>
+
+hide circle
+hide empty members
+
+' =========================================================
+' Tables
+' =========================================================
+table(subscription_plans) {
+  * id                       : UUID <<PK>>
+  --
+  * code                     : VARCHAR(32)  <<UNIQUE>>
+  * name                     : VARCHAR(120)
+  * monthly_price_amount     : NUMERIC(12,2)
+  * monthly_price_currency   : CHAR(3)
+  * yearly_price_amount      : NUMERIC(12,2)
+  * yearly_price_currency    : CHAR(3)
+  * max_patients             : INTEGER
+  * max_physiotherapists     : INTEGER
+    features                 : JSONB
+  * active                   : BOOLEAN
+  * created_at               : TIMESTAMP
+  * updated_at               : TIMESTAMP
+}
+
+table(subscriptions) {
+  * id                       : UUID <<PK>>
+  --
+  * clinic_id                : UUID         <<ref IAM BC>>
+  * plan_id                  : UUID         <<FK → subscription_plans.id>>
+  * status                   : VARCHAR(32)  <<FK → subscription_statuses.code>>
+  * billing_cycle            : VARCHAR(16)
+  * current_period_start     : DATE
+  * current_period_end       : DATE
+  * next_billing_date        : DATE
+    trial_until              : DATE
+    payment_provider_token   : VARCHAR(128)
+    payment_method_last4     : CHAR(4)
+    payment_method_exp       : CHAR(7)
+  * created_at               : TIMESTAMP
+  * updated_at               : TIMESTAMP
+}
+
+table(invoices) {
+  * id                       : UUID <<PK>>
+  --
+  * subscription_id          : UUID         <<FK → subscriptions.id>>
+  * amount                   : NUMERIC(12,2)
+  * currency                 : CHAR(3)
+  * status                   : VARCHAR(32)  <<FK → invoice_statuses.code>>
+  * issued_at                : TIMESTAMP
+  * due_at                   : TIMESTAMP
+    paid_at                  : TIMESTAMP
+    provider_transaction_id  : VARCHAR(128)
+  * created_at               : TIMESTAMP
+  * updated_at               : TIMESTAMP
+}
+
+enum(subscription_statuses) {
+  * code               : VARCHAR(32) <<PK>>
+  --
+  * description        : VARCHAR(120)
+}
+note right of subscription_statuses
+  Values:
+  - PENDING_PAYMENT
+  - TRIAL
+  - ACTIVE
+  - PAST_DUE
+  - CANCELLED
+  - EXPIRED
+end note
+
+enum(invoice_statuses) {
+  * code               : VARCHAR(32) <<PK>>
+  --
+  * description        : VARCHAR(120)
+}
+note right of invoice_statuses
+  Values:
+  - PENDING
+  - PAID
+  - FAILED
+  - VOID
+end note
+
+' =========================================================
+' Relationships
+' =========================================================
+subscriptions    }o--|| subscription_plans    : "uses plan"
+subscriptions    }o--|| subscription_statuses : "has status"
+subscriptions    ||--o{ invoices              : "issues"
+invoices         }o--|| invoice_statuses      : "has status"
+
+note bottom of subscriptions
+  Indices:
+  - UNIQUE (clinic_id) WHERE status = 'ACTIVE'
+  - INDEX  (clinic_id, status)
+  - INDEX  (status, next_billing_date)
+
+  clinic_id is a logical reference to the IAM BC
+  (no hard FK: bounded contexts isolate their schemas).
+end note
+
+note bottom of invoices
+  Indices:
+  - INDEX  (subscription_id, issued_at DESC)
+  - UNIQUE (provider_transaction_id) WHERE provider_transaction_id IS NOT NULL
+end note
+
+@enduml
