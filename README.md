@@ -200,6 +200,42 @@ Análisis de cantidad de commits realizados por semana.
          - [4.2.2.6. Bounded Context Software Architecture Code Level Diagrams](#4226-bounded-context-software-architecture-code-level-diagrams)
             - [4.2.2.6.1. Bounded Context Domain Layer Class Diagrams](#42261-bounded-context-domain-layer-class-diagrams)
             - [4.2.2.6.2. Bounded Context Database Design Diagram](#42262-bounded-context-database-design-diagram)
+      - [4.2.3. Bounded Context: Organization](#423-bounded-context-organization)
+          - [4.2.3.1. Domain Layer](#4231-domain-layer)
+          - [4.2.3.2. Interface Layer](#4232-interface-layer)
+          - [4.2.3.3. Application Layer](#4233-application-layer)
+          - [4.2.3.4. Infrastructure Layer](#4234-infrastructure-layer)
+          - [4.2.3.5. Bounded Context Software Architecture Component Level Diagrams](#4235-bounded-context-software-architecture-component-level-diagrams)
+          - [4.2.3.6. Bounded Context Software Architecture Code Level Diagrams](#4236-bounded-context-software-architecture-code-level-diagrams)
+            - [4.2.3.6.1. Bounded Context Domain Layer Class Diagrams](#42361-bounded-context-domain-layer-class-diagrams)
+            - [4.2.3.6.2. Bounded Context Database Design Diagram](#42362-bounded-context-database-design-diagram)
+      - [4.2.4. Bounded Context: Device](#424-bounded-context-device)
+          - [4.2.4.1. Domain Layer](#4241-domain-layer)
+          - [4.2.4.2. Interface Layer](#4242-interface-layer)
+          - [4.2.4.3. Application Layer](#4243-application-layer)
+          - [4.2.4.4. Infrastructure Layer](#4244-infrastructure-layer)
+          - [4.2.4.5. Bounded Context Software Architecture Component Level Diagrams](#4245-bounded-context-software-architecture-component-level-diagrams)
+          - [4.2.4.6. Bounded Context Software Architecture Code Level Diagrams](#4246-bounded-context-software-architecture-code-level-diagrams)
+            - [4.2.4.6.1. Bounded Context Domain Layer Class Diagrams](#42461-bounded-context-domain-layer-class-diagrams)
+            - [4.2.4.6.2. Bounded Context Database Design Diagram](#42462-bounded-context-database-design-diagram)
+      - [4.2.5. Bounded Context: Planning](#425-bounded-context-planning)
+          - [4.2.5.1. Domain Layer](#4251-domain-layer)
+          - [4.2.5.2. Interface Layer](#4252-interface-layer)
+          - [4.2.5.3. Application Layer](#4253-application-layer)
+          - [4.2.5.4. Infrastructure Layer](#4254-infrastructure-layer)
+          - [4.2.5.5. Bounded Context Software Architecture Component Level Diagrams](#4255-bounded-context-software-architecture-component-level-diagrams)
+          - [4.2.5.6. Bounded Context Software Architecture Code Level Diagrams](#4256-bounded-context-software-architecture-code-level-diagrams)
+            - [4.2.5.6.1. Bounded Context Domain Layer Class Diagrams](#42561-bounded-context-domain-layer-class-diagrams)
+            - [4.2.5.6.2. Bounded Context Database Design Diagram](#42562-bounded-context-database-design-diagram)
+      - [4.2.6. Bounded Context: Therapy](#426-bounded-context-therapy)
+          - [4.2.6.1. Domain Layer](#4261-domain-layer)
+          - [4.2.6.2. Interface Layer](#4262-interface-layer)
+          - [4.2.6.3. Application Layer](#4263-application-layer)
+          - [4.2.6.4. Infrastructure Layer](#4264-infrastructure-layer)
+          - [4.2.6.5. Bounded Context Software Architecture Component Level Diagrams](#4265-bounded-context-software-architecture-component-level-diagrams)
+          - [4.2.6.6. Bounded Context Software Architecture Code Level Diagrams](#4266-bounded-context-software-architecture-code-level-diagrams)
+            - [4.2.6.6.1. Bounded Context Domain Layer Class Diagrams](#42661-bounded-context-domain-layer-class-diagrams)
+            - [4.2.6.6.2. Bounded Context Database Design Diagram](#42662-bounded-context-database-design-diagram)
 
 - [Conclusiones](#conclusiones)
    - [Conclusiones y recomendaciones](#conclusiones-y-recomendaciones)
@@ -1804,7 +1840,9 @@ La cuarta zona agrupa a los **Third-party SaaS Providers**: Supabase (que concen
 
 ## 4.2. Tactical-Level Domain-Driven Design
 
+En esta sección se aborda la perspectiva táctica del enfoque Domain-Driven Design (DDD), la cual se centra en representar el dominio del negocio mediante elementos concretos de software. A partir de los límites definidos en el diseño estratégico, se modelan entidades, objetos de valor, servicios y otros componentes clave que encapsulan las reglas del dominio y responden a las necesidades del sistema. Este nivel permite estructurar la solución de manera más alineada con los procesos y problemáticas reales, garantizando una implementación coherente y sostenible.
 
+Cada bounded context contará con su propio apartado, donde se detallará cómo estos elementos se articulan para gestionar los flujos de aplicación, facilitar la interacción con sistemas externos y contribuir al objetivo central de la solución.
 
 ### 4.2.1. Bounded Context: IAM
 
@@ -2457,7 +2495,7 @@ Implementa `IdentityService` leyendo el contexto de `SecurityContextHolder` de S
 El diagrama de componentes (C4 Nivel 3) muestra cómo se organiza internamente el contenedor `IAM Service` (Java/Spring Boot). Se distinguen cinco componentes principales: el `User Controller` como punto de entrada REST, los dos application services `User Command Service` y `User Query Service` que materializan el patrón CQRS, el `User Repository (JPA)` como abstracción de persistencia y el `Supabase Auth Adapter` como ACL contra el identity provider externo. Todos los componentes viven dentro del *Container Boundary* del IAM Service; el API Gateway queda fuera (delega tráfico), la `IAM DB` también (Azure Database for PostgreSQL, consumida por JDBC/SSL) y Supabase aparece como sistema externo con doble flujo (el adapter lo consulta vía HTTPS y Supabase lo notifica vía webhook).
 
 <div style="text-align: center;">
-  <img src="./assets/diagrams/software-architecture/components/src/iam.png" alt="uFlex — IAM Bounded Context Component Diagram" style="max-width: 100%; height: auto;">
+  <img src="assets/diagrams/software-architecture/components/out/iam.png" alt="uFlex — IAM Bounded Context Component Diagram" style="max-width: 100%; height: auto;">
 </div>
 
 *Figura 4.2.1.5. Diagrama de componentes (C4 Nivel 3) del Bounded Context IAM.*
@@ -2469,7 +2507,7 @@ El diagrama de componentes (C4 Nivel 3) muestra cómo se organiza internamente e
 El diagrama de clases del Domain Layer del BC IAM modela exclusivamente los conceptos centrales del dominio, sin incluir las capas de application ni infrastructure. El paquete `domain.model.aggregates` contiene al Aggregate Root `User` y a la Entity `Role`; `domain.model.valueobjects` agrupa los Value Objects (`UserId`, `EmailAddress`, `FullName`, `ClinicId`, `VerificationCode`) y los enumerados (`Roles`, `AccountStatus`, `VerificationStatus`); `domain.model.events` encapsula los Domain Events publicados por el aggregate (`UserCreatedEvent`, `UserVerifiedEvent`, `UserVerificationCodeAssignedEvent`); y `domain.exceptions` reúne las excepciones de negocio que protegen las invariantes del dominio. Las flechas con línea continua marcan composición (el `User` contiene sus Value Objects), las flechas con línea punteada marcan dependencias semánticas (eventos publicados y excepciones lanzadas) y los rombos vacíos indican agregación con cardinalidad opcional o múltiple (relación de `User` con `ClinicId` y con `Role`).
 
 <div style="text-align: center;">
-  <img src="./assets/diagrams/uml/class/src/iam.png" alt="uFlex — IAM Bounded Context Domain Class Diagram" style="max-width: 100%; height: auto;">
+  <img src="assets/diagrams/uml/class/out/iam.png" alt="uFlex — IAM Bounded Context Domain Class Diagram" style="max-width: 100%; height: auto;">
 </div>
 
 *Figura 4.2.1.6.1. Diagrama de clases del dominio del Bounded Context IAM.*
@@ -2479,7 +2517,7 @@ El diagrama de clases del Domain Layer del BC IAM modela exclusivamente los conc
 El esquema físico del BC IAM en Azure Database for PostgreSQL consta de una tabla principal `users` que almacena el perfil enriquecido (identificador interno, referencia al usuario en Supabase, email único, nombre completo, rol, estado, clínica asociada y timestamps de auditoría), dos tablas de catálogo `user_roles` y `user_statuses` para mantener normalizados los valores permitidos (usadas también para internacionalizar descripciones en el futuro) y una tabla `user_audit_events` que registra los eventos significativos del ciclo de vida del usuario (creación, verificación, cambios de rol, suspensiones) con un payload JSONB flexible. Los índices incluyen unicidad sobre `email` y `supabase_user_id`, e índices compuestos por `(role, clinic_id)` y `(clinic_id)` para soportar las queries más frecuentes de la Web Client App (listado por clínica y por rol). Se optó deliberadamente por **no** declarar una foreign key dura sobre `clinic_id` hacia la tabla de clínicas del BC Subscription: cada bounded context aísla su schema y la referencia es lógica, respetando la autonomía entre contextos.
 
 <div style="text-align: center;">
-  <img src="./assets/diagrams/database/erd/iam-erd.png" alt="uFlex — IAM Bounded Context Database ER Diagram" style="max-width: 100%; height: auto;">
+  <img src="assets/diagrams/database/erd/out/iam-erd.png" alt="uFlex — IAM Bounded Context Database ER Diagram" style="max-width: 100%; height: auto;">
 </div>
 
 *Figura 4.2.1.6.2. Diagrama entidad-relación del Bounded Context IAM.*
@@ -3177,7 +3215,7 @@ Propiedades externas con los planes base que se insertan en un ambiente nuevo.
 El diagrama de componentes del BC Subscription replica el patrón de capas del BC IAM y añade dos Anti-Corruption Layers diferenciadas: **Culqi Payments Service ACL** (contra la pasarela de pagos externa) e **IAM Context Service ACL** (contra el BC IAM hermano, para validar el rol `CLINIC_ADMIN` y obtener el `clinicId` asociado al administrador autenticado). El Infrastructure Layer, además de persistir contra la Subscription DB, también se comunica con el Notification Service hermano para enviar facturas y avisos de cobro fallido por correo. La capa Domain permanece aislada de todas las integraciones externas.
 
 <div style="text-align: center;">
-  <img src="./assets/diagrams/software-architecture/components/src/subscription.png" alt="uFlex — Subscription Bounded Context Component Diagram" style="max-width: 100%; height: auto;">
+  <img src="assets/diagrams/software-architecture/components/out/subscription.png" alt="uFlex — Subscription Bounded Context Component Diagram" style="max-width: 100%; height: auto;">
 </div>
 
 *Figura 4.2.2.5. Diagrama de componentes (C4 Nivel 3) del Bounded Context Subscription.*
@@ -3189,7 +3227,7 @@ El diagrama de componentes del BC Subscription replica el patrón de capas del B
 El diagrama de clases del Domain Layer del BC Subscription modela exclusivamente los conceptos centrales del dominio, sin incluir las capas de application ni infrastructure. El Aggregate Root `Subscription` está compuesto por la Entity `SubscriptionPlan` (referencia al catálogo) y una colección de Entities `Invoice` (historial de facturas emitidas). Los Value Objects modelan los conceptos monetarios (`Money`, `PaymentReference`) y temporales (`BillingCycle`) así como los estados (`SubscriptionStatus`, `InvoiceStatus`). Los Domain Events publicados (`SubscriptionPurchasedEvent`, `SubscriptionLinkedToClinicEvent`, `SubscriptionActivatedEvent`, `SubscriptionRenewedEvent`, `SubscriptionCancelledEvent`, `InvoicePaidEvent`, `InvoicePaymentFailedEvent`) permiten que el BC IAM (sincronización del `clinicId`), el Notification Service (envío de correos) y la analítica interna reaccionen sin acoplamiento directo al aggregate. El único Domain Service en sentido estricto es `SubscriptionPricingService`, que encapsula la lógica de cálculo de precios y prorrateo entre planes y ciclos de facturación. El paquete `domain.exceptions` reúne las excepciones de negocio que protegen las invariantes del aggregate.
 
 <div style="text-align: center;">
-  <img src="./assets/diagrams/uml/class/src/subscription.png" alt="uFlex — Subscription Bounded Context Domain Class Diagram" style="max-width: 100%; height: auto;">
+  <img src="assets/diagrams/uml/class/out/subscription.png" alt="uFlex — Subscription Bounded Context Domain Class Diagram" style="max-width: 100%; height: auto;">
 </div>
 
 *Figura 4.2.2.6.1. Diagrama de clases del dominio del Bounded Context Subscription.*
@@ -3199,12 +3237,278 @@ El diagrama de clases del Domain Layer del BC Subscription modela exclusivamente
 El esquema físico del BC Subscription en Azure Database for PostgreSQL está compuesto por tres tablas principales: `subscription_plans` (catálogo con precios mensuales y anuales, topes de pacientes y fisioterapeutas, y estado activo/inactivo), `subscriptions` (suscripción por tenant, con FK lógica a `subscription_plans`, estado, ventanas del periodo actual, fecha de próxima facturación, referencia de pago tokenizada en Culqi y `clinic_id` como referencia lógica al BC IAM sin FK dura) e `invoices` (facturas emitidas por cada periodo, con FK a `subscriptions`, monto, estado y `provider_transaction_id` para reconciliación con Culqi). Se complementa con dos tablas de catálogo (`subscription_statuses` e `invoice_statuses`) para normalizar los enumerados, e índices compuestos por `(clinic_id, status)` y `(status, next_billing_date)` para soportar las queries más frecuentes (consulta de suscripción activa por clínica y detección de renovaciones vencidas por el scheduler).
 
 <div style="text-align: center;">
-  <img src="./assets/diagrams/database/erd/subscription-erd.png" alt="uFlex — Subscription Bounded Context Database ER Diagram" style="max-width: 100%; height: auto;">
+  <img src="assets/diagrams/database/erd/out/subscription-erd.png" alt="uFlex — Subscription Bounded Context Database ER Diagram" style="max-width: 100%; height: auto;">
 </div>
 
 *Figura 4.2.2.6.2. Diagrama entidad-relación del Bounded Context Subscription.*
 
 <hr class="page-break">
+
+### 4.2.3. Bounded Context: Organization
+
+
+
+### 4.2.4. Bounded Context: Device
+
+
+
+### 4.2.5. Bounded Context: Planning
+
+#### 4.2.5.1. Domain Layer
+
+En esta sección se describen los elementos del Domain Layer del contexto de Planning, los cuales modelan la prescripción clínica y el ciclo de vida del tratamiento. Este lenguaje técnico permite al Fisioterapeuta definir metas biomecánicas y asegurar que el equipamiento IoT esté correctamente asignado al paciente.
+
+**1. TreatmentPlan (Aggregate Root)**
+
+Es el núcleo del proceso de rehabilitación. Define qué ejercicios debe realizar el paciente, bajo qué límites angulares y con qué equipo físico. Controla la invariante de negocio de que un paciente no puede tener dos planes activos simultáneamente para la misma lesión.
+
+**Atributos principales:**
+
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| `id` | `TreatmentPlanId` | private | Identificador único del plan de tratamiento. |
+| `patientId` | `PatientId` | private | Referencia lógica al paciente (del BC IAM). |
+| `physiotherapistId` | `PhysiotherapistId` | private | Referencia al especialista responsable. |
+| `jointType` | `JointType` | private | Articulación a tratar (`ELBOW`, `WRIST`). |
+| `targetROM` | `TargetROM` | private | Rangos de movimiento objetivo (metas angulares). |
+| `status` | `PlanStatus` | private | Estado del plan (`CREATED`, `ACTIVE`, `FINALIZED`, `REMOVED`). |
+| `deviceId` | `DeviceId` | private | Identificador del kit IoT vinculado al plan. |
+| `createdAt` | `LocalDateTime` | private | Fecha de creación del plan. |
+
+**Métodos principales:**
+
+| Método | Tipo Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| `TreatmentPlan()` | Constructor | public | Constructor requerido para persistencia. |
+| `create(PatientId, JointType, TargetROM)` | `TreatmentPlan` | public | Crea un nuevo plan en estado `CREATED`. |
+| `linkDevice(DeviceId)` | `void` | public | Vincula un kit IoT al plan, cambia estado a `ACTIVE` y publica `IoTKitLinkedToPatient`. |
+| `updatePlan(TargetROM)` | `void` | public | Actualiza las metas angulares y publica `TreatmentPlanUpdated`. |
+| `remove()` | `void` | public | Ejecuta eliminación lógica del plan y publica `TreatmentPlanRemoved`. |
+| `finalize(ClinicalReport)` | `void` | public | Cierra el plan tras el alta médica y publica `TreatmentPlanFinalized`. |
+
+**2. TargetROM (Value Object)**
+
+Define los límites cinemáticos que el paciente debe alcanzar o no exceder durante su terapia.
+
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| `minAngle` | `Double` | private | Angulo minimo permitido (por ejemplo, extension total). |
+| `maxAngle` | `Double` | private | Angulo maximo objetivo (por ejemplo, flexion deseada). |
+| `unit` | `String` | private | Unidad de medida, siempre `degrees`. |
+
+**3. PlanStatus (Value Object)**
+
+Estado de ciclo de vida del plan terapéutico.
+
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| `CREATED` | Enum | public | Plan diseñado pero sin equipo vinculado. |
+| `ACTIVE` | Enum | public | Plan en ejecución con equipo IoT vinculado. |
+| `FINALIZED` | Enum | public | Tratamiento concluido exitosamente (alta). |
+| `REMOVED` | Enum | public | Plan cancelado o descartado. |
+
+**4. JointType (Value Object)**
+
+Clasifica la articulación objetivo del tratamiento.
+
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| `ELBOW` | Enum | public | Tratamiento enfocado en la articulación del codo. |
+| `WRIST` | Enum | public | Tratamiento enfocado en la articulación de la muñeca. |
+
+**5. DeviceId (Value Object)**
+
+Referencia al kit de sensores asignado. Asegura que el código del hardware sea válido antes de la vinculación.
+
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| `serialNumber` | `String` | private | Código único del kit IoT (por ejemplo, `KT-2026-001`). |
+
+**6. ClinicalReport (Entity)**
+
+Documento generado al finalizar el tratamiento que resume el desempeño biomecánico del paciente.
+
+**Atributos principales:**
+
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| `id` | `Long` | private | Identificador del reporte clínico. |
+| `summary` | `String` | private | Observaciones finales del fisioterapeuta. |
+| `completionRate` | `Double` | private | Porcentaje de cumplimiento de las sesiones prescritas. |
+
+**10. PlanningCommandService (Domain Service)**
+
+Coordina las operaciones complejas que involucran el estado de los planes de tratamiento.
+
+| Método | Tipo Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| `handle(CreateTreatmentPlanCommand)` | `UUID` | public | Registra un nuevo plan y valida que el paciente sea apto. |
+| `handle(LinkIoTKitCommand)` | `boolean` | public | Verifica disponibilidad del kit y lo vincula al paciente. |
+| `handle(DischargePatientCommand)` | `void` | public | Ejecuta el alta, genera el reporte y libera el kit IoT (`Unlink`). |
+
+**11. PlanningQueryService (Domain Service)**
+
+Maneja las consultas de información sobre planes activos e históricos.
+
+| Método | Tipo Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| `handle(GetActivePlanByPatientIdQuery)` | `Optional<TreatmentPlan>` | public | Obtiene el plan activo que el paciente debe ejecutar en su app. |
+| `handle(GetClinicalHistoryQuery)` | `List<TreatmentPlan>` | public | Lista todos los planes (activos y finalizados) de un paciente. |
+
+#### 4.2.5.2. Interface Layer
+
+En esta sección se describen los elementos del Interface Layer del contexto de Planning. Esta capa expone las capacidades de prescripción clínica, asignación de dispositivos IoT y cierre terapéutico mediante contratos REST claros para la aplicación web clínica y los consumidores internos.
+
+**1. TreatmentPlanController (REST Controller)**
+
+Este controlador expone las capacidades de prescripción clínica y gestión de planes. Permite que el Fisioterapeuta defina la ruta de recuperación del paciente y que el Administrador supervise la asignación de recursos.
+
+**Endpoints principales:**
+
+| Método | Ruta base | HTTP | Descripción |
+|---|---|---|---|
+| `createTreatmentPlan` | `/api/v1/plans` | POST | Registra un nuevo plan de tratamiento para un paciente específico. |
+| `updateTreatmentPlan` | `/api/v1/plans/{id}` | PUT | Actualiza las metas angulares (`TargetROM`) o detalles del plan existente. |
+| `getPlanById` | `/api/v1/plans/{id}` | GET | Recupera la información detallada de un plan de tratamiento. |
+| `getActivePlanByPatient` | `/api/v1/plans/active/{patientId}` | GET | Obtiene el plan vigente que el paciente debe ejecutar en su aplicación móvil. |
+| `removeTreatmentPlan` | `/api/v1/plans/{id}` | DELETE | Realiza la eliminación lógica de un plan que no ha sido iniciado. |
+
+**2. ClinicalDischargeController (REST Controller)**
+
+Controlador especializado en el cierre del ciclo terapéutico y la liberación de recursos de hardware.
+
+**Endpoints principales:**
+
+| Método | Ruta base | HTTP | Descripción |
+|---|---|---|---|
+| `dischargePatient` | `/api/v1/plans/{id}/discharge` | POST | Ejecuta el alta médica, genera el reporte final y cambia el estado del plan a `FINALIZED`. |
+| `linkIoTKit` | `/api/v1/plans/{id}/link-device` | PATCH | Vincula un kit de sensores (`DeviceId`) a un plan de tratamiento activo. |
+| `getClinicalHistory` | `/api/v1/plans/history/{patientId}` | GET | Lista todos los planes previos y reportes clínicos del paciente. |
+
+**3. Resources (DTOs)**
+
+Representaciones de datos optimizadas para la comunicación externa, implementadas como Java Records.
+
+| Resource | Atributos principales | Descripción |
+|---|---|---|
+| `CreateTreatmentPlanResource` | `patientId: UUID`, `physiotherapistId: UUID`, `jointType: String`, `minAngle: Double`, `maxAngle: Double` | Datos necesarios para la creación inicial del plan. |
+| `TreatmentPlanResource` | `id: UUID`, `patientId: UUID`, `jointType: String`, `status: String`, `minAngle: Double`, `maxAngle: Double`, `deviceId: String` | Representación completa del plan para consulta. |
+| `UpdateTreatmentPlanResource` | `minAngle: Double`, `maxAngle: Double` | Datos permitidos para la actualización de metas terapéuticas. |
+| `LinkDeviceResource` | `serialNumber: String` | Contiene el identificador del hardware a vincular. |
+| `DischargeResource` | `summary: String`, `completionRate: Double` | Información necesaria para cerrar el caso clínico. |
+| `ClinicalReportResource` | `planId: UUID`, `summary: String`, `finalizedAt: Date` | Resumen ejecutivo del alta médica. |
+
+**4. Transform (Assemblers)**
+
+Componentes encargados de la traducción entre el modelo de dominio y la representación externa.
+
+| Assembler | Entrada | Salida | Descripción |
+|---|---|---|---|
+| `TreatmentPlanFromResourceAssembler` | `CreateTreatmentPlanResource` | `CreateTreatmentPlanCommand` | Transforma el JSON de creación en un command de dominio. |
+| `UpdatePlanCommandFromResourceAssembler` | `UpdateTreatmentPlanResource` | `UpdateTreatmentPlanCommand` | Mapea la actualización de metas angulares. |
+| `TreatmentPlanResourceFromEntityAssembler` | `TreatmentPlan` | `TreatmentPlanResource` | Convierte el aggregate root en un recurso de lectura. |
+| `LinkDeviceCommandFromResourceAssembler` | `LinkDeviceResource` | `LinkDeviceCommand` | Crea el command para asociar el hardware al paciente. |
+| `DischargeCommandFromResourceAssembler` | `DischargeResource` | `DischargePatientCommand` | Prepara los datos para el proceso de alta y liberación de equipo. |
+| `ClinicalReportResourceFromEntityAssembler` | `ClinicalReport` | `ClinicalReportResource` | Mapea la entidad de reporte a su representación REST. |
+
+#### 4.2.5.3. Application Layer
+
+**1. PlanningContextFacadeImpl (ACL Facade)**
+
+Proporciona un punto de entrada simplificado para que otros bounded contexts consulten el estado de los planes de tratamiento sin exponer la complejidad interna del aggregate.
+
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| `planningQueryService` | `PlanningQueryService` | private | Servicio de consultas del dominio Planning. |
+
+**Métodos principales:**
+
+| Método | Tipo Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| `fetchActivePlanByPatientId(UUID patientId)` | `Optional<ActivePlanDto>` | public | Retorna información básica del plan activo (metas y dispositivo) para la ejecución de la terapia. |
+| `isPatientUnderActiveTreatment(UUID patientId)` | `boolean` | public | Verifica si el paciente tiene un plan en estado `ACTIVE`. |
+
+**2. TreatmentPlanCommandServiceImpl (Command Service Implementation)**
+
+Orquesta la lógica de creación, actualización y cierre de planes. Coordina la publicación de eventos para notificar al BC de Inventario cuando un equipo es vinculado o liberado.
+
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| `treatmentPlanRepository` | `TreatmentPlanRepository` | private | Acceso a la persistencia de planes. |
+| `externalInventoryService` | `InventoryService` | private | ACL para validar la existencia de dispositivos físicos. |
+| `eventPublisher` | `ApplicationEventPublisher` | private | Publicador de eventos de dominio. |
+
+**Métodos principales:**
+
+| Método | Tipo Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| `handle(CreateTreatmentPlanCommand)` | `UUID` | public | Crea el plan en estado `CREATED` y valida que no existan planes activos duplicados. |
+| `handle(LinkIoTKitCommand)` | `void` | public | Valida el `serialNumber` con el BC de Inventario, vincula el equipo y publica `IoTKitLinkedToPatient`. |
+| `handle(UpdateTreatmentPlanCommand)` | `void` | public | Actualiza los `TargetROM` y publica `TreatmentPlanUpdated`. |
+| `handle(DischargePatientCommand)` | `void` | public | Genera el reporte clínico, finaliza el plan y publica `TreatmentPlanFinalized`. |
+
+**3. PlanningQueryServiceImpl (Query Service Implementation)**
+
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| `treatmentPlanRepository` | `TreatmentPlanRepository` | private | Acceso al read model de planes de tratamiento. |
+
+**Métodos principales:**
+
+| Método | Tipo Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| `handle(GetActivePlanByPatientIdQuery)` | `Optional<TreatmentPlan>` | public | Recupera el plan vigente para el paciente. |
+| `handle(GetClinicalHistoryQuery)` | `List<TreatmentPlan>` | public | Lista todos los planes históricos asociados a un `PatientId`. |
+
+#### 4.2.5.4. Infrastructure Layer
+
+**1. TreatmentPlanRepository (Repository Interface)**
+
+Interfaz de acceso a datos para los planes de tratamiento, utilizando Spring Data JPA sobre PostgreSQL.
+
+| Método | Tipo Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| `findById(TreatmentPlanId id)` | `Optional<TreatmentPlan>` | public | Recupera un plan por su identificador único. |
+| `save(TreatmentPlan plan)` | `TreatmentPlan` | public | Persiste o actualiza el estado del aggregate. |
+| `findByPatientIdAndStatus(PatientId pId, PlanStatus s)` | `Optional<TreatmentPlan>` | public | Busca un plan específico de un paciente por su estado (por ejemplo, `ACTIVE`). |
+| `findAllByPatientId(PatientId patientId)` | `List<TreatmentPlan>` | public | Obtiene el historial completo de tratamientos del paciente. |
+| `existsByPatientIdAndStatus(PatientId pId, PlanStatus s)` | `boolean` | public | Invariante: verifica si ya hay un plan activo para evitar duplicidad. |
+
+#### 4.2.5.5. Bounded Context Software Architecture Component Level Diagrams
+
+El diagrama de componentes (C4 Nivel 3) muestra cómo se organiza internamente el contenedor Planning Service (Java/Spring Boot). Se distinguen seis componentes principales: el TreatmentPlanController y el ClinicalDischargeController como puntos de entrada REST, los application services TreatmentPlanCommandServiceImpl y PlanningQueryServiceImpl que materializan el patrón CQRS, el TreatmentPlanRepository (JPA) como abstracción de persistencia y el ExternalInventoryServiceAdapter como ACL para validar la disponibilidad de kits IoT. Todos los componentes viven dentro del Container Boundary del Planning Service; el API Gateway queda fuera (delega tráfico) y la Planning DB también (Azure Database for PostgreSQL, consumida por JDBC/SSL).
+
+<div style="text-align: center;">
+  <img src="assets/diagrams/software-architecture/components/out/planning.png" alt="uFlex — Planning Bounded Context Component Diagram" style="max-width: 100%; height: auto;">
+</div>
+
+*Figura 4.2.5.5. Diagrama de componentes (C4 Nivel 3) del Bounded Context Planning.*
+
+#### 4.2.5.6. Bounded Context Software Architecture Code Level Diagrams
+
+##### 4.2.5.6.1. Bounded Context Domain Layer Class Diagrams
+
+El diagrama de clases del Domain Layer del BC Planning modela exclusivamente los conceptos centrales del dominio, sin incluir las capas de application ni infrastructure. El paquete `domain.model.aggregates` contiene al Aggregate Root `TreatmentPlan`; `domain.model.entities` incluye la Entity `ClinicalReport`; `domain.model.valueobjects` agrupa los Value Objects (`TreatmentPlanId`, `PatientId`, `PhysiotherapistId`, `TargetROM`, `DeviceId`) y los enumerados (`PlanStatus`, `JointType`); `domain.model.events` encapsula los Domain Events publicados por el aggregate (`IoTKitLinkedToPatient`, `TreatmentPlanUpdated`, `TreatmentPlanRemoved`, `TreatmentPlanFinalized`); y `domain.exceptions` reúne las excepciones de negocio que protegen las invariantes del dominio (por ejemplo, evitar más de un plan activo por paciente/lesión). Las flechas con línea continua marcan composición (el `TreatmentPlan` contiene sus Value Objects), las flechas con línea punteada marcan dependencias semánticas (eventos publicados y excepciones lanzadas) y los rombos vacíos indican agregación con cardinalidad opcional o múltiple (relación del plan con `DeviceId` y con `ClinicalReport` al cierre terapéutico).
+
+<div style="text-align: center;">
+  <img src="assets/diagrams/uml/class/out/planning.png" alt="uFlex — IAM Bounded Context Domain Class Diagram" style="max-width: 100%; height: auto;">
+</div>
+
+*Figura 4.2.5.6.1. Diagrama de clases del dominio del Bounded Context Planning.*
+
+##### 4.2.5.6.2. Bounded Context Database Design Diagram
+
+El esquema físico del BC Planning en Azure Database for PostgreSQL consta de una tabla principal `treatment_plans` que almacena el estado clínico-operativo del tratamiento (identificador del plan, `patient_id`, `physiotherapist_id`, articulación objetivo, rangos `min_angle`/`max_angle`, estado del plan, `device_id` y timestamps de auditoría), una tabla `clinical_reports` para registrar el resultado de alta asociado al plan (resumen y porcentaje de cumplimiento), y una tabla de catálogo `plan_statuses` para normalizar los estados permitidos del ciclo de vida (`CREATED`, `ACTIVE`, `FINALIZED`, `REMOVED`). Los índices incluyen búsquedas por `(patient_id, status)` para obtener rápidamente el plan activo, por `patient_id` para el historial clínico, y por `device_id` para trazabilidad del kit IoT asignado. Se optó deliberadamente por **no** declarar foreign keys duras hacia tablas de otros bounded contexts (`patient_id` del BC IAM y `device_id` del BC Device/Inventory): las referencias son lógicas para mantener la autonomía entre contextos.
+
+<div style="text-align: center;">
+  <img src="assets/diagrams/database/erd/out/planning-erd.png" alt="uFlex — IAM Bounded Context Database ER Diagram" style="max-width: 100%; height: auto;">
+</div>
+
+*Figura 4.2.5.6.2. Diagrama entidad-relación del Bounded Context Planning.*
+
+### 4.2.6. Bounded Context: Therapy
+
+
 
 # Conclusiones
 

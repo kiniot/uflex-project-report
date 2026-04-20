@@ -1,0 +1,90 @@
+@startuml arthrotech-planning-erd
+' Database Design Diagram — Planning Bounded Context (ArthroTech)
+' Target: Azure Database for PostgreSQL — Flexible Server
+
+skinparam shadowing false
+skinparam defaultFontName Arial
+skinparam linetype ortho
+
+!define table(x) entity x << (T,#438DD5) >>
+!define enum(x)  entity x << (E,#85BBF0) >>
+
+hide circle
+hide empty members
+
+title Database Design — Planning Bounded Context
+
+' =========================================================
+' Tables
+' =========================================================
+table(treatment_plans) {
+  * id                   : UUID <<PK>>
+  --
+  * patient_id           : UUID <<Ref IAM>>
+  * physiotherapist_id   : UUID <<Ref IAM>>
+  * joint_type           : VARCHAR(20) <<FK → joint_types.code>>
+  * status               : VARCHAR(20) <<FK → plan_statuses.code>>
+  * min_angle            : DECIMAL(5,2)
+  * max_angle            : DECIMAL(5,2)
+    device_id            : VARCHAR(50) <<Ref Inventory>>
+  * created_at           : TIMESTAMP
+  * updated_at           : TIMESTAMP
+}
+
+table(clinical_reports) {
+  * id                   : BIGINT <<PK>>
+  --
+  * plan_id              : UUID <<FK → treatment_plans.id>>
+  * summary              : TEXT
+  * completion_rate      : DECIMAL(5,2)
+  * finalized_at         : TIMESTAMP
+}
+
+enum(joint_types) {
+  * code                 : VARCHAR(20) <<PK>>
+  --
+  * description          : VARCHAR(100)
+}
+note right of joint_types
+  Values:
+  - ELBOW (Codo)
+  - WRIST (Muñeca)
+end note
+
+enum(plan_statuses) {
+  * code                 : VARCHAR(20) <<PK>>
+  --
+  * description          : VARCHAR(100)
+}
+note right of plan_statuses
+  Values:
+  - CREATED
+  - ACTIVE
+  - FINALIZED
+  - REMOVED
+end note
+
+' =========================================================
+' Relationships
+' =========================================================
+treatment_plans }o--|| joint_types   : "targets"
+treatment_plans }o--|| plan_statuses : "current state"
+treatment_plans ||--o| clinical_reports : "generates on discharge"
+
+note bottom of treatment_plans
+  Indices:
+  - INDEX (patient_id, status)
+  - INDEX (physiotherapist_id)
+  - INDEX (device_id) WHERE status = 'ACTIVE'
+
+  device_id es una referencia lógica al
+  BC de Inventario para validar el kit IoT.
+end note
+
+note bottom of clinical_reports
+  La relación es 1:1 con treatment_plans,
+  pero solo existe cuando el plan
+  pasa a estado 'FINALIZED'.
+end note
+
+@enduml
