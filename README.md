@@ -837,6 +837,45 @@ Esta sección presenta nuestros usuarios ideales diseñados para el ecosistema d
 
 ### 2.3.2. User Task Matrix
 
+En este User Task Matrix se detallan las tareas clave que cada tipo de usuario puede realizar dentro del ecosistema de uFlex.
+
+| **TAREA** | **Mateo Rojas (Paciente en Rehab.) - Frecuencia** | **Mateo Rojas (Paciente en Rehab.) - Importancia** |
+|---|:---:|:---:|
+| Realizar rutina de ejercicios físicos | Alta | Alta |
+| Evaluar el rango de movimiento (ROM) | Media | Media |
+| Reportar/Registrar síntomas y dolor | Alta | Alta |
+| Ajustar el plan de tratamiento | N/A | N/A |
+| Instruir/Aprender postura biomecánica | Alta | Alta |
+| Monitorear asistencia y retención | N/A | N/A |
+| Gestionar recursos y equipamiento | N/A | N/A |
+| Pagar / Facturar servicios de terapia | Baja | Alta |
+
+| **TAREA** | **Valeria Castro (Fisioterapeuta) - Frecuencia** | **Valeria Castro (Fisioterapeuta) - Importancia** |
+|---|:---:|:---:|
+| Realizar rutina de ejercicios físicos | Baja | Baja |
+| Evaluar el rango de movimiento (ROM) | Alta | Alta |
+| Reportar/Registrar síntomas y dolor | Alta | Alta |
+| Ajustar el plan de tratamiento | Media | Alta |
+| Instruir/Aprender postura biomecánica | Alta | Alta |
+| Monitorear asistencia y retención | Media | Media |
+| Gestionar recursos y equipamiento | Baja | Baja |
+| Pagar / Facturar servicios de terapia | N/A | N/A |
+
+| **TAREA** | **Roberto Villanueva (Administrador) - Frecuencia** | **Roberto Villanueva (Administrador) - Importancia** |
+|---|:---:|:---:|
+| Realizar rutina de ejercicios físicos | N/A | N/A |
+| Evaluar el rango de movimiento (ROM) | N/A | N/A |
+| Reportar/Registrar síntomas y dolor | N/A | N/A |
+| Ajustar el plan de tratamiento | N/A | N/A |
+| Instruir/Aprender postura biomecánica | N/A | N/A |
+| Monitorear asistencia y retención | Alta | Alta |
+| Gestionar recursos y equipamiento | Alta | Alta |
+| Pagar / Facturar servicios de terapia | Media | Alta |
+
+**Análisis de la Matriz**
+
+El análisis revela que las tareas críticas del paciente (ejecución física) y del fisioterapeuta (evaluación del ROM) convergen fuertemente en el reporte de síntomas y la corrección postural, validando la necesidad de comunicación clínica bidireccional. En contraste, el administrador opera en un flujo completamente aislado del proceso médico, enfocando sus tareas de alta importancia en la gestión de recursos, retención y facturación. Esta clara división confirma que la solución debe separar funcionalmente la captura autónoma de datos biomecánicos del panel de control gerencial.
+
 
 
 ### 2.3.3. User Journey Mapping
