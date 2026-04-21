@@ -1728,7 +1728,45 @@ Primero, se preparó el espacio de trabajo con un mural digital (Miro) y se defi
 
 #### 4.1.1.2 Domain Message Flows Modeling
 
+El Domain Storytelling es una técnica visual y colaborativa que facilita la exploración del conocimiento dentro del dominio del negocio, cuyo propósito principal es generar una comprensión común sobre lo que se desarrolla en un proceso específico, involucrando tanto a los expertos del negocio como a los equipos técnicos.
 
+En este sentido, elaboramos los domain storytelling tomando como referencia las interacciones entre los bounded contexts, con el fin de analizar y comprender de manera más clara la lógica del negocio.
+
+**Escenario 1:** Clínica adquiere suscripción y activa operación
+
+**Objetivo:** El Administrador de la Clínica compra un plan para habilitar el uso de la plataforma y vincular hardware.
+
+![domain-message-flow-1](assets/diagrams/ddd/domain-message-flows/domain-message-flow-1.png)
+
+**Escenario 2:** Registro de Fisioterapeuta y asignación de credenciales
+
+**Objetivo:** El Administrador registra a un nuevo Fisioterapeuta en la plataforma, asignándole credenciales de acceso para que pueda supervisar pacientes.
+
+![domain-message-flow-2](assets/diagrams/ddd/domain-message-flows/domain-message-flow-2.png)
+
+**Escenario 3:** Creación de Plan de Tratamiento y asignación de Kit IoT
+
+**Objetivo:** El Fisioterapeuta crea un plan de tratamiento para un paciente y asigna un kit IoT para que el paciente pueda ejecutar su rutina de rehabilitación remota.
+
+![domain-message-flow-3](assets/diagrams/ddd/domain-message-flows/domain-message-flow-3.png)
+
+**Escenario 4:** Verificación de estado de hardware previo a Terapia
+
+**Objetivo:** El sistema asegura que el sensor tiene batería y conexión antes de iniciar la sesión de terapia para garantizar la captura de datos en tiempo real.
+
+![domain-message-flow-4](assets/diagrams/ddd/domain-message-flows/domain-message-flow-4.png)
+
+**Escenario 5:** Ejecución de Terapia con detección de compensaciones
+
+**Objetivo:** Monitorear el movimiento en tiempo real y alertar si hay "trampa" (movimiento anómalo).
+
+![domain-message-flow-5](assets/diagrams/ddd/domain-message-flows/domain-message-flow-5.png)
+
+**Escenario 6:** Finalización de sesión y actualización de progreso
+
+**Objetivo:** Cerrar la sesión y enviar los datos para que el médico los analice y ajuste el plan de tratamiento si es necesario.
+
+![domain-message-flow-6](assets/diagrams/ddd/domain-message-flows/domain-message-flow-6.png)
 
 #### 4.1.1.3 Bounded Context Canvases
 
