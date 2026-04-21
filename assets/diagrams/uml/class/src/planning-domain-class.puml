@@ -1,0 +1,161 @@
+@startuml arthrotech-planning-domain-class
+' Domain Layer Class Diagram — Planning Bounded Context (ArthroTech)
+
+skinparam shadowing false
+skinparam defaultFontName Arial
+skinparam classFontSize 12
+skinparam classAttributeIconSize 0
+skinparam packageStyle rectangle
+skinparam linetype ortho
+skinparam nodesep 30
+skinparam ranksep 55
+
+hide empty members
+
+' Stereotype palette
+skinparam class {
+  BackgroundColor<<AggregateRoot>>     #1168BD
+  FontColor<<AggregateRoot>>           #FFFFFF
+  BorderColor<<AggregateRoot>>         #0B4884
+
+  BackgroundColor<<Entity>>            #438DD5
+  FontColor<<Entity>>                  #FFFFFF
+  BorderColor<<Entity>>                #2E6295
+
+  BackgroundColor<<ValueObject>>       #85BBF0
+  FontColor<<ValueObject>>             #000000
+  BorderColor<<ValueObject>>           #438DD5
+
+  BackgroundColor<<DomainEvent>>       #F28FAD
+  FontColor<<DomainEvent>>             #000000
+  BorderColor<<DomainEvent>>           #B56580
+
+  BackgroundColor<<Exception>>         #CDA1A1
+  FontColor<<Exception>>               #000000
+  BorderColor<<Exception>>             #8F6262
+}
+
+title Domain Layer Class Diagram — Planning Bounded Context
+
+' =========================================================
+' DOMAIN LAYER — Aggregates & Entity
+' =========================================================
+package "domain.model.aggregates" {
+  class TreatmentPlan <<AggregateRoot>> {
+    - id: TreatmentPlanId
+    - patientId: PatientId
+    - physiotherapistId: PhysiotherapistId
+    - jointType: JointType
+    - targetROM: TargetROM
+    - status: PlanStatus
+    - deviceId: DeviceId
+    - createdAt: LocalDateTime
+    --
+    + TreatmentPlan()
+    + create(patientId, physioId, jointType, targetROM): TreatmentPlan
+    + linkDevice(deviceId: DeviceId): void
+    + updatePlan(newROM: TargetROM): void
+    + remove(): void
+    + finalize(report: ClinicalReport): void
+  }
+}
+
+package "domain.model.entities" {
+  class ClinicalReport <<Entity>> {
+    - id: Long
+    - summary: String
+    - completionRate: Double
+    - finalizedAt: LocalDateTime
+    --
+    + ClinicalReport(summary, rate)
+  }
+}
+
+' =========================================================
+' DOMAIN LAYER — Value Objects
+' =========================================================
+package "domain.model.valueobjects" {
+  class TreatmentPlanId <<ValueObject>> {
+    - value: UUID
+  }
+  class PatientId <<ValueObject>> {
+    - value: UUID
+  }
+  class PhysiotherapistId <<ValueObject>> {
+    - value: UUID
+  }
+  class DeviceId <<ValueObject>> {
+    - serialNumber: String
+  }
+  class TargetROM <<ValueObject>> {
+    - minAngle: Double
+    - maxAngle: Double
+    - unit: String
+    + validateRange(): void
+  }
+  enum JointType <<ValueObject>> {
+    ELBOW
+    WRIST
+  }
+  enum PlanStatus <<ValueObject>> {
+    CREATED
+    ACTIVE
+    FINALIZED
+    REMOVED
+  }
+}
+
+' =========================================================
+' DOMAIN LAYER — Domain Events
+' =========================================================
+package "domain.model.events" {
+  class TreatmentPlanCreatedEvent <<DomainEvent>> {
+    + planId: UUID
+    + patientId: UUID
+  }
+  class IoTKitLinkedToPatientEvent <<DomainEvent>> {
+    + planId: UUID
+    + serialNumber: String
+  }
+  class TreatmentPlanUpdatedEvent <<DomainEvent>> {
+    + planId: UUID
+    + newROM: TargetROM
+  }
+  class TreatmentPlanFinalizedEvent <<DomainEvent>> {
+    + planId: UUID
+    + patientId: UUID
+  }
+}
+
+' =========================================================
+' Domain Exceptions
+' =========================================================
+package "domain.exceptions" {
+  class ActivePlanAlreadyExistsException <<Exception>>
+  class InvalidPlanStatusTransitionException <<Exception>>
+  class InvalidROMRangeException <<Exception>>
+  class DeviceAlreadyAssignedException <<Exception>>
+}
+
+' =========================================================
+' Composition & relationships
+' =========================================================
+TreatmentPlan *-- TreatmentPlanId
+TreatmentPlan *-- PatientId
+TreatmentPlan *-- PhysiotherapistId
+TreatmentPlan *-- JointType
+TreatmentPlan *-- PlanStatus
+TreatmentPlan *-- TargetROM
+TreatmentPlan "0..1" o-- DeviceId
+TreatmentPlan "0..1" *-- ClinicalReport
+
+TreatmentPlan ..> TreatmentPlanCreatedEvent : publishes
+TreatmentPlan ..> IoTKitLinkedToPatientEvent : publishes
+TreatmentPlan ..> TreatmentPlanUpdatedEvent : publishes
+TreatmentPlan ..> TreatmentPlanFinalizedEvent : publishes
+
+TreatmentPlan ..> ActivePlanAlreadyExistsException : throws
+TreatmentPlan ..> InvalidPlanStatusTransitionException : throws
+TargetROM ..> InvalidROMRangeException : throws
+
+@enduml
