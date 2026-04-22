@@ -271,7 +271,7 @@ En el siguiente cuadro se describe las acciones realizadas y enunciados de concl
       <td><strong>Sulca Gonzales, Paúl Fernando</strong><br><b>AV1:</b></td>
     </tr>
     <tr>
-      <td><strong>Varela Bustinza, Marcelo Alessandro</strong><br><b>AV1:</b></td>
+      <td><strong>Varela Bustinza, Marcelo Alessandro</strong><br><b>AV1:</b>Durante el desarrollo del proyecto, aporté activamente en la organización y desarrollo de capítulos clave, participando en temas como Lean UX, entrevistas, needfinding y diseño de software. Mi contribución permitió coordinar ideas con el equipo y avanzar de manera conjunta hacia los objetivos del trabajo.</td>
     </tr>
     <tr>
       <td rowspan="5"><strong>Crea un entorno colaborativo e inclusivo, establece metas, planifica tareas y cumple objetivos</strong></td>
@@ -288,7 +288,7 @@ En el siguiente cuadro se describe las acciones realizadas y enunciados de concl
       <td><strong>Sulca Gonzales, Paúl Fernando</strong><br><b>AV1:</b></td>
     </tr>
     <tr>
-      <td><strong>Varela Bustinza, Marcelo Alessandro</strong><br><b>AV1:</b></td>
+      <td><strong>Varela Bustinza, Marcelo Alessandro</strong><br><b>AV1:</b>Participé de forma colaborativa en la distribución y ejecución de tareas, asumiendo responsabilidades concretas dentro del proyecto y cumpliendo con los entregables asignados. Esto ayudó a mantener un trabajo ordenado, con metas claras y un avance coordinado entre los integrantes.</td>
     </tr>
   </tbody>
 </table>
@@ -348,7 +348,7 @@ Ser reconocidos en el 2030 como la startup líder en telemonitoreo biomecánico 
     </tr>
     <tr>
       <td><strong>Varela Bustinza, Marcelo Alessandro</strong><br> Mi nombre es Marcelo Varela. Soy un estudiante de la carrera de Ingeniería De Software, tengo 21 años y actualmente me encuentro cursando el octavo ciclo de la carrera. Me caracterizo por ser una persona responsable, resiliente y proactiva, al cual le gusta aprender sobre tecnología y el desarrollo de software. Mi compromiso como miembro de este equipo es brindar mi apoyo y participación para enfrentar lo desafíos así como dar lo mejor de mí para el éxito de este proyecto.</td>
-      <td><img src="img/[COMPLETAR].jpg" alt="marcelo image" width="200"></td>
+      <td><img src="assets/images/photos/Marcelo-photo.jpeg" alt="marcelo image" width="200"></td>
     </tr>
   </tbody>
 </table>
