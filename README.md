@@ -882,6 +882,20 @@ El análisis revela que las tareas críticas del paciente (ejecución física) y
 
 
 
+A continuación, se presentan los User Journey Maps de cada User Persona priorizado para uFlex. Estos mapas permiten visualizar el recorrido completo de cada segmento durante el proceso de rehabilitación remota, identificando puntos de dolor, necesidades de información y oportunidades de mejora en cada etapa de interacción con la solución.
+
+* User Journey Map de Mateo Rojas (Paciente en rehabilitación):
+
+  ![User Journey Map del User Persona Mateo Rojas](./assets/images/photos/user-journey-map-mateo-rojas.png)
+
+* User Journey Map de Valeria Castro (Fisioterapeuta):
+
+  ![User Journey Map del User Persona Valeria Castro](./assets/images/photos/user-journey-map-valeria-castro.png)
+
+* User Journey Map de Roberto Villanueva (Administrador de clínica):
+
+  ![User Journey Map del User Persona Roberto Villanueva](./assets/images/photos/user-journey-map-roberto-villanueva.png)
+
 ### 2.3.4. Empathy Mapping
 
 
