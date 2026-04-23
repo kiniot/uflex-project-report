@@ -897,6 +897,28 @@ A continuación, se presentan los User Journey Maps de cada User Persona prioriz
 
 ### 2.3.4. Empathy Mapping
 
+Se elaboraron los Empathy Mapping para los tres User Personas priorizados de uFlex: **Mateo Rojas (Paciente)**, **Valeria Castro (Fisioterapeuta)** y **Roberto Villanueva (Administrador de clínica)**. Este ejercicio permitió comprender de forma integral lo que cada perfil dice, piensa, hace y siente durante su experiencia con el proceso de rehabilitación remota, identificando sus principales pains y gains para orientar decisiones de diseño centradas en valor clínico, operativo y de adherencia.
+
+---
+
+#### Paciente en rehabilitación (Mateo Rojas)
+
+![Empathy Mapping - Paciente](./assets/requirements/maps/empathy-maps/empathy-mapping-paciente.png.png)
+
+---
+
+#### Fisioterapeuta (Valeria Castro)
+
+![Empathy Mapping - Fisioterapeuta](./assets/requirements/maps/empathy-maps/empathy-mapping-fisioterapeuta.png.png)
+
+---
+
+#### Administrador de clínica (Roberto Villanueva)
+
+![Empathy Mapping - Administrador](./assets/requirements/maps/empathy-maps/empathy-mapping-admin.png.png)
+
+---
+
 
 
 <hr class="page-break">
