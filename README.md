@@ -343,8 +343,8 @@ Ser reconocidos en el 2030 como la startup líder en telemonitoreo biomecánico 
       <td><img src="assets/images/photos/gael-photo.jpg" alt="gael image" width="200"></td>
     </tr>
     <tr>
-      <td><strong>Sulca Gonzales, Paúl Fernando</strong><br> [COMPLETAR: descripción]</td>
-      <td><img src="img/[COMPLETAR].jpg" alt="paul image" width="200"></td>
+      <td><strong>Sulca Gonzales, Paúl Fernando</strong><br> Soy Paúl, estudiante de 8vo ciclo de Ingeniería de Software en la Universidad Peruana de Ciencias Aplicadas. Tengo interés en el desarrollo full-stack, las metodologías ágiles y la gestión de proyectos. Me enfoco en aprender rápidamente y adaptarme a distintos retos, aportando soluciones tecnológicas innovadoras y de impacto. Me considero una persona analítica, con pensamiento crítico, y disfruto trabajar en equipo para lograr resultados sólidos y bien estructurados.</td>
+      <td><img src="assets/images/photos/paul-photo.png" alt="paul image" width="200"></td>
     </tr>
     <tr>
       <td><strong>Varela Bustinza, Marcelo Alessandro</strong><br> Mi nombre es Marcelo Varela. Soy un estudiante de la carrera de Ingeniería De Software, tengo 21 años y actualmente me encuentro cursando el octavo ciclo de la carrera. Me caracterizo por ser una persona responsable, resiliente y proactiva, al cual le gusta aprender sobre tecnología y el desarrollo de software. Mi compromiso como miembro de este equipo es brindar mi apoyo y participación para enfrentar lo desafíos así como dar lo mejor de mí para el éxito de este proyecto.</td>
