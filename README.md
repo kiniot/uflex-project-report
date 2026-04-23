@@ -268,7 +268,7 @@ En el siguiente cuadro se describe las acciones realizadas y enunciados de concl
       <td><strong>Rivera Sosa, Eduardo Gael</strong><br><b>AV1:</b> Lideré el diseño de la arquitectura de software de uFlex elaborando los diagramas Landscape, Context, Container y Deployment. Facilité junto al equipo el Design-Level EventStorming, guiando las decisiones sobre eventos y bounded contexts. También dirigí el análisis competitivo y las estrategias frente a competidores, consolidando los aportes del equipo en un entregable coherente.</td>
     </tr>
     <tr>
-      <td><strong>Sulca Gonzales, Paúl Fernando</strong><br><b>AV1:</b></td>
+      <td><strong>Sulca Gonzales, Paúl Fernando</strong><br><b>AV1:</b> Lideré y facilité actividades de análisis centradas en el usuario, incluyendo la elaboración de entrevistas, User Task Matrix, User Journey Mapping y Empathy Mapping, articulando los aportes del equipo para convertirlos en insumos de diseño consistentes. Además, participé activamente en Big Picture Event Storming y Candidate Context Discovery para alinear decisiones de dominio y delimitar bounded contexts con enfoque estratégico.</td>
     </tr>
     <tr>
       <td><strong>Varela Bustinza, Marcelo Alessandro</strong><br><b>AV1:</b>Durante el desarrollo del proyecto, aporté activamente en la organización y desarrollo de capítulos clave, participando en temas como Lean UX, entrevistas, needfinding y diseño de software. Mi contribución permitió coordinar ideas con el equipo y avanzar de manera conjunta hacia los objetivos del trabajo.</td>
@@ -285,7 +285,7 @@ En el siguiente cuadro se describe las acciones realizadas y enunciados de concl
       <td><strong>Rivera Sosa, Eduardo Gael</strong><br><b>AV1:</b> Planifiqué y entregué en los plazos acordados las secciones a mi cargo: segmentos objetivo, análisis competitivo, estrategias frente a competidores, user personas y la arquitectura de software con sus diagramas. Participé activamente en el Design-Level EventStorming como actividad colaborativa, asegurando que los aportes de todos los integrantes se reflejaran en el diseño final.</td>
     </tr>
     <tr>
-      <td><strong>Sulca Gonzales, Paúl Fernando</strong><br><b>AV1:</b></td>
+      <td><strong>Sulca Gonzales, Paúl Fernando</strong><br><b>AV1:</b> Planifiqué y cumplí los entregables asignados en las etapas de investigación y modelado del dominio, coordinando con el equipo la priorización de tareas para mantener el avance del AV1 dentro de los plazos. Mi participación en la definición de bounded contexts y en el diseño táctico DDD (capas y diagramas de soporte) contribuyó a consolidar un entorno de trabajo colaborativo, ordenado e inclusivo orientado al cumplimiento de objetivos.</td>
     </tr>
     <tr>
       <td><strong>Varela Bustinza, Marcelo Alessandro</strong><br><b>AV1:</b>Participé de forma colaborativa en la distribución y ejecución de tareas, asumiendo responsabilidades concretas dentro del proyecto y cumpliendo con los entregables asignados. Esto ayudó a mantener un trabajo ordenado, con metas claras y un avance coordinado entre los integrantes.</td>
@@ -356,7 +356,6 @@ Ser reconocidos en el 2030 como la startup líder en telemonitoreo biomecánico 
 <hr class="page-break">
 
 ## 1.2. Solution Profile
-
 
 
 ### 1.2.1 Antecedentes y problemática
