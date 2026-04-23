@@ -59,8 +59,19 @@
 
 # Registro de Versiones del Informe
 
-| Version | Fecha | Autor | Descripción de modificación |
-|---------|-------|-------|-----------------------------|
+| Version  | Fecha      | Autor                                 | Descripción de modificación                                                     |
+|----------|------------|---------------------------------------|---------------------------------------------------------------------------------|
+| 1.0.0    | 2026-04-04 | Ramirez Mestanza, Salim Ignacio       | Creación de estructura base, carátula y registro de versiones.                  |
+| 1.1.0    | 2026-04-05 | Varela Bustinza, Marcelo Alessandro   | Redacción de Capítulo I: Startup Profile y Solution Profile (Lean UX).          |
+| 1.2.0    | 2026-04-07 | Sulca Gonzales, Paúl Fernando         | Desarrollo de Capítulo II: Requirements Elicitation & Analysis.                 |
+| 1.3.0    | 2026-04-10 | Crispín Ramos, Daniel Franco          | Desarrollo de Capítulo III: Requirements Specification.                         |
+| 1.4.0    | 2026-04-13 | Rivera Sosa, Eduardo Gael             | Desarrollo de Capítulo IV: Strategic DDD y Software Architecture.               |
+| 1.5.1    | 2026-04-16 | Varela Bustinza, Marcelo Alessandro   | Desarrollo Tactical DDD del Bounded Context: Organization.                      |
+| 1.5.2    | 2026-04-16 | Rivera Sosa, Eduardo Gael             | Desarrollo Tactical DDD del Bounded Context: IAM y Subscription.                |
+| 1.5.3    | 2026-04-19 | Crispín Ramos, Daniel Franco          | Desarrollo Tactical DDD del Bounded Context: Device.                            |
+| 1.5.4    | 2026-04-21 | Ramirez Mestanza, Salim Ignacio       | Desarrollo Tactical DDD del Bounded Context: Planning.                          |
+| 1.5.5    | 2026-04-22 | Sulca Gonzales, Paúl Fernando         | Desarrollo Tactical DDD del Bounded Context: Therapy.                           |
+| 1.6.0    | 2026-04-23 | Ramirez Mestanza, Salim Ignacio       | Integración de Student Outcome, Conclusiones (avance) y Bibliografía para AV1.  |
 
 <hr class="page-break">
 
