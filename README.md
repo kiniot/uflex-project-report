@@ -59,8 +59,19 @@
 
 # Registro de Versiones del Informe
 
-| Version | Fecha | Autor | Descripción de modificación |
-|---------|-------|-------|-----------------------------|
+| Version  | Fecha      | Autor                                 | Descripción de modificación                                                     |
+|----------|------------|---------------------------------------|---------------------------------------------------------------------------------|
+| 1.0.0    | 2026-04-04 | Ramirez Mestanza, Salim Ignacio       | Creación de estructura base, carátula y registro de versiones.                  |
+| 1.1.0    | 2026-04-05 | Varela Bustinza, Marcelo Alessandro   | Redacción de Capítulo I: Startup Profile y Solution Profile (Lean UX).          |
+| 1.2.0    | 2026-04-07 | Sulca Gonzales, Paúl Fernando         | Desarrollo de Capítulo II: Requirements Elicitation & Analysis.                 |
+| 1.3.0    | 2026-04-10 | Crispín Ramos, Daniel Franco          | Desarrollo de Capítulo III: Requirements Specification.                         |
+| 1.4.0    | 2026-04-13 | Rivera Sosa, Eduardo Gael             | Desarrollo de Capítulo IV: Strategic DDD y Software Architecture.               |
+| 1.5.1    | 2026-04-16 | Varela Bustinza, Marcelo Alessandro   | Desarrollo Tactical DDD del Bounded Context: Organization.                      |
+| 1.5.2    | 2026-04-16 | Rivera Sosa, Eduardo Gael             | Desarrollo Tactical DDD del Bounded Context: IAM y Subscription.                |
+| 1.5.3    | 2026-04-19 | Crispín Ramos, Daniel Franco          | Desarrollo Tactical DDD del Bounded Context: Device.                            |
+| 1.5.4    | 2026-04-21 | Ramirez Mestanza, Salim Ignacio       | Desarrollo Tactical DDD del Bounded Context: Planning.                          |
+| 1.5.5    | 2026-04-22 | Sulca Gonzales, Paúl Fernando         | Desarrollo Tactical DDD del Bounded Context: Therapy.                           |
+| 1.6.0    | 2026-04-23 | Ramirez Mestanza, Salim Ignacio       | Integración de Student Outcome, Conclusiones (avance) y Bibliografía para AV1.  |
 
 <hr class="page-break">
 
@@ -258,7 +269,7 @@ En el siguiente cuadro se describe las acciones realizadas y enunciados de concl
   <tbody>
     <tr>
       <td rowspan="5"><strong>Trabaja en equipo para proporcionar liderazgo en forma conjunta</strong></td>
-      <td><strong>Crispin Ramos, Daniel Franco</strong><br><b>AV1:</b></td>
+      <td><strong>Crispin Ramos, Daniel Franco</strong><br><b>AV1:</b> Lideré la ejecución del Needfinding y la elaboración del Impact Mapping, articulando las necesidades del usuario con los objetivos de negocio. Asumí la responsabilidad del diseño estratégico Context Mapping y el desarrollo táctico DDD del Bounded Context Device. Participé activamente en las sesiones de EventStorming, guiando la delimitación de contextos y validando las interacciones estratégicas del sistema.</td>
       <td rowspan="5"><b>AV1:</b> Durante el desarrollo del AV1, que abarcó desde el perfil de la startup hasta el diseño de la solución de software, hemos aprendido que el liderazgo no recae en una sola persona sino que se ejerce de forma conjunta. Cada integrante tomó la conducción de las secciones en las que tenía mayor dominio y al mismo tiempo apoyó activamente al resto, lo que nos permitió avanzar de manera paralela sin perder coherencia. Actividades transversales como el EventStorming evidenciaron que compartir el liderazgo fortalece la calidad de las decisiones y nos ayuda a alinear el rumbo del proyecto como equipo.</td>
     </tr>
     <tr>
@@ -275,7 +286,7 @@ En el siguiente cuadro se describe las acciones realizadas y enunciados de concl
     </tr>
     <tr>
       <td rowspan="5"><strong>Crea un entorno colaborativo e inclusivo, establece metas, planifica tareas y cumple objetivos</strong></td>
-      <td><strong>Crispin Ramos, Daniel Franco</strong><br><b>AV1:</b></td>
+      <td><strong>Crispin Ramos, Daniel Franco</strong><br><b>AV1:</b> Planifiqué y cumplí con los entregables de análisis y diseño asignados, coordinando con el equipo la priorización de las actividades dentro del Bounded Context Device. Mi participación activa en las sesiones de EventStorming y en la validación de diagramas tácticos facilitó el consenso técnico y aseguró que los aportes del equipo se integraran correctamente dentro de los plazos del AV1.</td>
       <td rowspan="5"><b>AV1:</b> A lo largo del AV1 hemos logrado cubrir todo el alcance planificado, desde la definición de la startup y el análisis del problema hasta el diseño completo de la solución de software. Para conseguirlo establecimos metas claras por capítulo, distribuimos las tareas según las fortalezas de cada integrante y realizamos revisiones constantes para mantener el avance alineado. Creemos que el entorno colaborativo e inclusivo que construimos fue clave: cada propuesta fue discutida en conjunto y los entregables finales reflejan aportes de todo el equipo, cumpliendo los objetivos acordados en los plazos previstos.</td>
     </tr>
     <tr>
@@ -331,8 +342,8 @@ Ser reconocidos en el 2030 como la startup líder en telemonitoreo biomecánico 
   </thead>
   <tbody>
     <tr>
-      <td><strong>Crispín Ramos, Daniel Franco</strong><br> [COMPLETAR: descripción]</td>
-      <td><img src="img/[COMPLETAR].jpg" alt="daniel image" width="200"></td>
+      <td><strong>Crispín Ramos, Daniel Franco</strong><br> Soy Daniel. Tengo interés por la arquitectura de sistemas y el diseño de soluciones. Me entusiasma profundizar en metodologías como Domain-Driven Design y patrones de diseño para entender cómo construir aplicaciones escalables y mantenibles. Soy una persona responsable, comprometida y con facilidad para trabajar en equipo.</td>
+      <td><img src="assets/images/photos/daniel-photo.jpg" alt="daniel image" width="200"></td>
     </tr>
     <tr>
       <td><strong>Ramirez Mestanza, Salim Ignacio</strong><br> Soy Salim, estudiante de Ingenieria de Software, con entusiasmo por el desarrollo backend, la arquitectura de software y el cloud. Me enfoco en tomar decisiones tecnicas complejas que generen impacto directo en los resultados del proyecto y aporten a los atributos de calidad esperados del software. Me considero perseverante, no me rindo ante los retos y siempre busco la colaboracion del equipo para avanzar. Tambien asumo un rol de liderazgo, porque creo firmemente que cada integrante es una parte indispensable para el exito del proyecto.</td>
