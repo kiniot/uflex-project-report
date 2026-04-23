@@ -877,7 +877,6 @@ En este User Task Matrix se detallan las tareas clave que cada tipo de usuario p
 El análisis revela que las tareas críticas del paciente (ejecución física) y del fisioterapeuta (evaluación del ROM) convergen fuertemente en el reporte de síntomas y la corrección postural, validando la necesidad de comunicación clínica bidireccional. En contraste, el administrador opera en un flujo completamente aislado del proceso médico, enfocando sus tareas de alta importancia en la gestión de recursos, retención y facturación. Esta clara división confirma que la solución debe separar funcionalmente la captura autónoma de datos biomecánicos del panel de control gerencial.
 
 
-
 ### 2.3.3. User Journey Mapping
 
 
@@ -1776,6 +1775,70 @@ Primero, se preparó el espacio de trabajo con un mural digital (Miro) y se defi
     ![design-level-event-storming-10](assets/diagrams/ddd/event-storming/design-level/design-level-event-storming-10.png)
 
 #### 4.1.1.1 Candidate Context Discovery
+
+En esta sección se describe el proceso seguido por el equipo para descubrir los bounded contexts candidatos de uFlex a partir del Design-Level EventStorming. El objetivo fue identificar límites naturales del dominio de telerehabilitación, priorizar las partes con mayor valor estratégico para el negocio y preparar una base clara para el modelado posterior (Domain Message Flows y Bounded Context Canvases).
+
+La sesión se realizó en Miro con una duración aproximada de 1 hora 45 minutos (dentro del límite recomendado de 2 horas). Como insumos se utilizaron la línea de tiempo de eventos, los comandos asociados, los actores identificados y los puntos de dolor detectados en la sesión anterior.
+
+**Técnica aplicada: Start-with-Value (complementada con Look-for-Pivotal-Events)**
+
+Se priorizó Start-with-Value para ubicar primero los flujos que diferencian a uFlex en el mercado: monitoreo biomecánico remoto, retroalimentación en tiempo real y continuidad terapéutica basada en datos. De forma complementaria, se revisaron eventos pivote para detectar cambios de estado entre subdominios (por ejemplo: activación de plan, inicio/cierre de sesión terapéutica, alertas de movimiento anómalo, y estado del kit IoT).
+
+El proceso se organizó en tres pasos documentados:
+
+1. **Identificación de valor estratégico:** se trabajó inicialmente con los eventos de dominio (post-its naranjas) para responder qué partes del flujo generan valor directo para la clínica, el fisioterapeuta y el paciente.
+
+   ![Identificación de valor estratégico](assets/diagrams/ddd/candidate-context-discovery/candidate-context-discovery-step1-v1.jpg)
+
+2. **Agrupación de eventos en torno al valor:** luego se agruparon los eventos por afinidad de negocio y cohesión funcional, emergiendo clústeres naturales alrededor de identidad y acceso, organización clínica, suscripción, planificación terapéutica, ciclo de vida de dispositivos y ejecución de terapia.
+
+   ![Agrupación de eventos en torno al valor](assets/diagrams/ddd/candidate-context-discovery/candidate-context-discovery-step2-v1.png)
+
+3. **Clasificación Core, Supporting y Generic:** con los clústeres ya estabilizados, se clasificaron los candidate contexts según su aporte de diferenciación al negocio y su rol dentro del ecosistema. En esta fase se distinguieron los contextos núcleo que sostienen la propuesta de valor clínica de uFlex, los contextos de soporte operacional y los contextos genéricos de plataforma.
+
+   ![Clasificación Core, Supporting, Generic](assets/diagrams/ddd/candidate-context-discovery/candidate-context-discovery-step3-v1.png)
+
+Con esta tercera iteración, el equipo dejó una base consistente para pasar al detalle de candidate contexts y su justificación estratégica en la siguiente subsección.
+
+**Candidate Contexts identificados**
+
+Como resultado de la sesión, se identificaron seis bounded contexts candidatos para uFlex:
+
+| Candidate Context | Eventos clave asociados | Clasificación | Descripción | Justificación |
+|---|---|---|---|---|
+| IAM | `Create User`, `User Created`, `User Verified` | Generic | Gestión de identidad, autenticación y acceso por rol. | Es transversal y necesario para operar, pero no representa diferenciación de negocio en telerehabilitación. |
+| Organization | `Patient Profile Created`, `Patient Profile Updated`, `Physiotherapist Registered` | Supporting | Administración de perfiles clínicos y estructura organizacional de la clínica. | Sostiene la operación multiusuario y multirol, habilitando la trazabilidad de pacientes y especialistas. |
+| Subscription | `Purchase Subscription Plan`, `Subscription Plan Purchased`, `IoT Linked To Clinic` | Supporting | Gestión comercial del plan contratado y habilitación operativa de la clínica. | Es clave para monetización y activación del servicio, aunque no constituye el núcleo clínico diferencial. |
+| Planning | `Treatment Plan Created`, `Treatment Plan Assigned`, `Treatment Plan Updated`, `Treatment Plan Removed`, `Treatment Plan Finalized` | Core | Ciclo de vida del plan terapéutico y su asignación a cada paciente. | Define la estrategia clínica personalizada y conecta la prescripción con la ejecución terapéutica remota. |
+| Device | `IoT Kit Registered`, `IoT Kit Linked To Patient`, `IoT Kit Calibrated`, `IoT Battery Low Level Detected`, `IoT Device Disconnected` | Supporting | Gestión de estado, vinculación y salud operativa de dispositivos IoT. | Es indispensable para la continuidad técnica de la terapia remota y la calidad de captura de datos. |
+| Therapy | `Therapy Session Initiated`, `Routine Started`, `Joint Motion Data Captured`, `Repetition Validated`, `Anomalous Movement Detected`, `Visual Alert Triggered`, `Pain Level Reported`, `Routine Completed`, `Therapy Session Finalized` | Core | Orquestación de la sesión terapéutica y procesamiento de señales biomecánicas en tiempo real. | Contiene la propuesta de valor principal de uFlex: monitoreo objetivo, feedback inmediato y trazabilidad clínica del progreso. |
+
+**Clasificación estratégica**
+
+Como parte del análisis Start-with-Value, se representó gráficamente la clasificación de los bounded contexts en una matriz de dos ejes:
+
+- **Business Differentiation** (eje X): grado en que el contexto aporta valor estratégico o diferenciación frente a otras soluciones.
+- **Model Complexity** (eje Y): nivel de complejidad requerido para implementar y mantener el contexto.
+
+En esta matriz de clasificación de bounded contexts, se distribuyeron los contextos en los tres tipos:
+
+- **Core:** `Planning`, `Therapy`.
+- **Supporting:** `Organization`, `Subscription`, `Device`.
+- **Generic:** `IAM`.
+
+![Matriz de clasificación de bounded contexts](assets/diagrams/ddd/candidate-context-discovery/candidate-context-discovery-strategic-classification-v1.png)
+
+**Resultados**
+
+Se definieron seis bounded contexts candidatos, de los cuales:
+
+- 2 Core (`Planning`, `Therapy`).
+- 3 Supporting (`Organization`, `Subscription`, `Device`).
+- 1 Generic (`IAM`).
+
+La aplicación de la técnica Start-with-Value permitió asegurar que la atención principal del diseño táctico se concentre en `Therapy` y `Planning`, dado que allí reside la propuesta de valor diferenciadora de uFlex: monitoreo biomecánico en tiempo real y continuidad terapéutica basada en datos.
+
+El resto de contexts se modelan en las siguientes secciones mediante Domain Message Flows y Bounded Context Canvases, garantizando consistencia y claridad en la arquitectura estratégica.
 
 
 
