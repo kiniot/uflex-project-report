@@ -3879,7 +3879,33 @@ El esquema físico del BC Subscription en Azure Database for PostgreSQL está co
   </tbody>
 </table>
 
+#### 4.2.3.5. Bounded Context Software Architecture Component Level Diagrams
+
+El diagrama de componentes (C4 Nivel 3) muestra cómo se organiza internamente el contenedor Organization API (Java/Spring Boot). Se distinguen como piezas centrales los controladores ClinicController, BranchController, PhysiotherapistProfileController y PatientProfileController como puntos de entrada REST; los application services ClinicCommandServiceImpl, ClinicQueryServiceImpl, PhysiotherapistProfileCommandServiceImpl y PatientProfileCommandServiceImpl como responsables de materializar la lógica de aplicación; la fachada OrganizationContextFacadeImpl como ACL consumida por bounded contexts hermanos; los repositorios ClinicRepository, PhysiotherapistProfileRepository y PatientProfileRepository como abstracciones de persistencia; y los adaptadores SunatTaxIdAdapter, LicenseRegistryAdapter y AzureBlobStorageAdapter para integrarse con servicios externos de validación y almacenamiento. Todos estos componentes viven dentro del Container Boundary del Planning Service; el API Gateway queda fuera como mecanismo de enrutamiento y validación JWT, y la Organization DB también se modela externamente como Azure Database for PostgreSQL.
+
+<div style="text-align: center;"> <img src="assets/diagrams/software-architecture/components/out/diagram-organization.png" alt="uFlex — Organization Bounded Context Component Diagram" style="max-width: 100%; height: auto;"> </div>
+
+Figura 4.2.3.5. Diagrama de componentes (C4 Nivel 3) del Bounded Context Organization.
+
+#### 4.2.3.6. Bounded Context Software Architecture Code Level Diagrams
+##### 4.2.3.6.1. Bounded Context Domain Layer Class Diagrams
+
+El diagrama de clases del Domain Layer del BC Organization modela exclusivamente los conceptos centrales del dominio, sin incluir las capas de application ni infrastructure. El paquete domain.model.aggregates contiene los Aggregate Roots Clinic, PhysiotherapistProfile y PatientProfile; domain.model.entities incluye las Entities Branch y ClinicAdminProfile; domain.model.valueobjects agrupa los Value Objects que representan la identidad organizacional, los datos de contacto, la información clínica resumida y las referencias lógicas hacia otros bounded contexts, además de los enumerados que gobiernan los estados de clínicas, sedes y perfiles; domain.model.events encapsula los Domain Events publicados por los aggregates, como ClinicRegisteredEvent, ClinicActivatedEvent, BranchAddedEvent, PhysiotherapistProfileRegisteredEvent, PatientProfileRegisteredEvent y PatientAssignedToPhysiotherapistEvent; y domain.exceptions reúne las excepciones de negocio que protegen las invariantes del dominio, por ejemplo la unicidad del RUC, la existencia de una única sede central o la restricción de asignar pacientes únicamente a fisioterapeutas de la misma clínica. Las flechas con línea continua representan composición entre aggregates y sus Value Objects, las flechas con línea punteada expresan dependencias semánticas hacia eventos publicados y excepciones lanzadas, y los rombos vacíos indican relaciones de agregación o asociación opcional dentro del modelo del dominio.
+
+<div style="text-align: center;"> <img src="assets/diagrams/uml/class/out/domain-layer-diagram-organization.png" alt="uFlex — Organization Bounded Context Domain Class Diagram" style="max-width: 100%; height: auto;"> </div>
+
+Figura 4.2.3.6.1. Diagrama de clases del dominio del Bounded Context Organization.
+
+##### 4.2.3.6.2. Bounded Context Database Design Diagram
+
+El esquema físico del BC Organization en Azure Database for PostgreSQL se estructura alrededor de tablas principales para la gestión organizacional y de perfiles clínicos. La tabla clinics almacena la identidad de la clínica como tenant, incluyendo razón social, nombre comercial, RUC, datos de contacto, logotipo, estado y datos de auditoría; branches registra las sedes asociadas a cada clínica, con su dirección, teléfono, horarios y estado operativo; physiotherapist_profiles conserva la información profesional y laboral del fisioterapeuta, como colegiatura, especialidad, experiencia, sede principal y estado del perfil; y patient_profiles mantiene la información demográfica y clínica resumida del paciente, así como su asignación al fisioterapeuta responsable, contacto de emergencia y datos de seguro. Adicionalmente, pueden considerarse tablas de apoyo o catálogos para normalizar estados como clinic_statuses, branch_statuses, profile_statuses y admin_scopes. Los índices priorizan búsquedas por tax_id, por clinic_id, por user_id y por relaciones de asignación clínica, a fin de optimizar consultas operativas frecuentes. De manera coherente con el enfoque de bounded contexts, las referencias hacia elementos gestionados en otros contextos, como usuarios del BC IAM, se mantienen como referencias lógicas y no como foreign keys duras cruzadas entre dominios.
+
+<div style="text-align: center;"> <img src="assets/diagrams/database/erd/out/organization-erd.png" alt="uFlex — Organization Bounded Context Database ER Diagram" style="max-width: 100%; height: auto;"> </div>
+
+Figura 4.2.3.6.2. Diagrama entidad-relación del Bounded Context Organization.
+
 <hr class="page-break">
+
 
 ### 4.2.4. Bounded Context: Device
 
