@@ -3327,7 +3327,557 @@ El esquema físico del BC Subscription en Azure Database for PostgreSQL está co
 
 ### 4.2.3. Bounded Context: Organization
 
+<h3 id="4-2-3-bounded-context-organization">4.2.3. Bounded Context: Organization</h3>
 
+<p>El bounded context <strong>Organization</strong> concentra la información organizacional y el perfil enriquecido de cada actor clínico registrado en uFlex. Mientras que el BC IAM resuelve la identidad técnica del usuario (autenticación, roles y ciclo de vida de la cuenta) y el BC Subscription gobierna el contrato comercial del tenant, el BC Organization se encarga de representar a la <em>clínica como organización</em> (denominación legal, RUC, sedes, datos de contacto, logotipo, horarios) y de mantener el <em>perfil personal y clínico</em> de los usuarios asociados a esa clínica (fisioterapeutas con su número de colegiatura y especialidad, pacientes con sus datos demográficos, contacto de emergencia y breve historial clínico, y administradores con su ámbito de gestión). Este contexto es, por tanto, la fuente autoritativa del <code>ClinicId</code> referenciado lógicamente por el resto de bounded contexts y del árbol de <code>Branches</code> (sedes) sobre el que operan Planning, Device y Therapy. Los comandos y eventos principales (<code>RegisterClinicCommand</code>, <code>AddBranchCommand</code>, <code>RegisterPhysiotherapistProfileCommand</code>, <code>RegisterPatientProfileCommand</code>, <code>AssignPatientToPhysiotherapistCommand</code>, <code>ClinicRegisteredEvent</code>, <code>ClinicActivatedEvent</code>, <code>BranchAddedEvent</code>, <code>PhysiotherapistProfileRegisteredEvent</code>, <code>PatientProfileRegisteredEvent</code>, <code>PatientAssignedToPhysiotherapistEvent</code>) fueron identificados durante el Design-Level EventStorming.</p>
+
+<h4 id="4-2-3-1-domain-layer">4.2.3.1. Domain Layer</h4>
+
+<p>En esta sección se describen los elementos del Domain Layer del contexto de Organization, que modelan la estructura interna de la clínica multi-tenant y el perfil enriquecido de sus usuarios. Las invariantes clave son: una clínica no puede registrarse sin al menos una sede principal, el RUC de una clínica es único dentro de la plataforma, un paciente debe pertenecer a una única clínica a la vez y sólo puede ser asignado a un fisioterapeuta que forme parte de la misma clínica, y el perfil clínico del fisioterapeuta exige un número de colegiatura válido antes de pasar al estado <code>ACTIVE</code>.</p>
+
+<p><strong>1. Clinic (Aggregate Root)</strong></p>
+
+<p>Representa a la clínica (tenant) dentro del dominio: su identidad organizacional, sus datos fiscales y de contacto, sus sedes y el estado operativo. Encapsula la política de multi-sede y es la raíz a partir de la cual se accede a <code>Branch</code> y al directorio de perfiles clínicos.</p>
+
+<p>Atributos principales:</p>
+
+<table>
+  <thead>
+    <tr><th>Atributo</th><th>Tipo</th><th>Visibilidad</th><th>Descripción</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><code>id</code></td><td><code>ClinicId</code></td><td>private</td><td>Identificador único de la clínica (UUID). Es el valor que el resto de bounded contexts referencia de forma lógica.</td></tr>
+    <tr><td><code>legalName</code></td><td><code>LegalName</code></td><td>private</td><td>Razón social registrada de la clínica.</td></tr>
+    <tr><td><code>commercialName</code></td><td><code>CommercialName</code></td><td>private</td><td>Nombre comercial visible al paciente en la PWA y en la app móvil.</td></tr>
+    <tr><td><code>taxId</code></td><td><code>TaxId</code></td><td>private</td><td>RUC (u otro identificador tributario) de la clínica; único por tenant.</td></tr>
+    <tr><td><code>contactInfo</code></td><td><code>ContactInfo</code></td><td>private</td><td>Correo corporativo, teléfono y sitio web públicos de la clínica.</td></tr>
+    <tr><td><code>logoUrl</code></td><td><code>LogoUrl</code></td><td>private</td><td>URL del logotipo en Azure Blob Storage, utilizado para personalizar la PWA.</td></tr>
+    <tr><td><code>branches</code></td><td><code>List&lt;Branch&gt;</code></td><td>private</td><td>Sedes físicas operadas por la clínica; al menos una es <code>isHeadquarters = true</code>.</td></tr>
+    <tr><td><code>status</code></td><td><code>ClinicStatus</code></td><td>private</td><td>Estado del tenant (<code>PENDING_ACTIVATION</code>, <code>ACTIVE</code>, <code>SUSPENDED</code>, <code>ARCHIVED</code>).</td></tr>
+    <tr><td><code>createdBy</code></td><td><code>UserId</code></td><td>private</td><td>Identificador del <em>Administrador de Clínica</em> (BC IAM) que realizó el registro inicial.</td></tr>
+    <tr><td><code>createdAt</code></td><td><code>Instant</code></td><td>private</td><td>Fecha y hora de alta del tenant.</td></tr>
+    <tr><td><code>updatedAt</code></td><td><code>Instant</code></td><td>private</td><td>Fecha y hora de la última actualización organizativa.</td></tr>
+  </tbody>
+</table>
+
+<p>Métodos principales:</p>
+
+<table>
+  <thead>
+    <tr><th>Método</th><th>Tipo Retorno</th><th>Visibilidad</th><th>Descripción</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><code>Clinic()</code></td><td>Constructor</td><td>public</td><td>Constructor vacío requerido por JPA.</td></tr>
+    <tr><td><code>Clinic(LegalName, CommercialName, TaxId, ContactInfo, UserId createdBy)</code></td><td>Constructor</td><td>public</td><td>Registra una clínica en estado <code>PENDING_ACTIVATION</code> y publica <code>ClinicRegisteredEvent</code>.</td></tr>
+    <tr><td><code>addBranch(Branch branch)</code></td><td><code>void</code></td><td>public</td><td>Agrega una nueva sede; valida unicidad del nombre dentro del tenant y publica <code>BranchAddedEvent</code>.</td></tr>
+    <tr><td><code>designateHeadquarters(BranchId branchId)</code></td><td><code>void</code></td><td>public</td><td>Marca una sede existente como sede central; sólo una sede puede ser <code>isHeadquarters = true</code> simultáneamente.</td></tr>
+    <tr><td><code>activate()</code></td><td><code>void</code></td><td>public</td><td>Cambia el estado a <code>ACTIVE</code> al confirmarse la suscripción; publica <code>ClinicActivatedEvent</code>.</td></tr>
+    <tr><td><code>suspend(String reason)</code></td><td><code>void</code></td><td>public</td><td>Cambia el estado a <code>SUSPENDED</code> (por ejemplo, ante una suscripción <code>PAST_DUE</code>); publica <code>ClinicSuspendedEvent</code>.</td></tr>
+    <tr><td><code>updateContactInfo(ContactInfo contactInfo)</code></td><td><code>void</code></td><td>public</td><td>Actualiza los datos de contacto públicos de la clínica.</td></tr>
+    <tr><td><code>updateLogo(LogoUrl logoUrl)</code></td><td><code>void</code></td><td>public</td><td>Reemplaza la URL del logotipo tras un upload válido al blob.</td></tr>
+    <tr><td><code>archive()</code></td><td><code>void</code></td><td>public</td><td>Transición final al estado <code>ARCHIVED</code>; bloquea todo acceso operativo.</td></tr>
+  </tbody>
+</table>
+
+<p><strong>2. Branch (Entity)</strong></p>
+
+<p>Representa una sede física de la clínica. Es una Entity dentro del aggregate <code>Clinic</code>, por lo que su ciclo de vida se gobierna desde el aggregate root.</p>
+
+<table>
+  <thead>
+    <tr><th>Atributo</th><th>Tipo</th><th>Visibilidad</th><th>Descripción</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><code>id</code></td><td><code>BranchId</code></td><td>private</td><td>Identificador único de la sede.</td></tr>
+    <tr><td><code>name</code></td><td><code>BranchName</code></td><td>private</td><td>Nombre operativo (por ejemplo, "Sede San Isidro").</td></tr>
+    <tr><td><code>address</code></td><td><code>Address</code></td><td>private</td><td>Dirección estructurada (calle, distrito, provincia, departamento, país, código postal).</td></tr>
+    <tr><td><code>phoneNumber</code></td><td><code>PhoneNumber</code></td><td>private</td><td>Teléfono local de la sede.</td></tr>
+    <tr><td><code>openingHours</code></td><td><code>OpeningHours</code></td><td>private</td><td>Horario de atención por día de la semana.</td></tr>
+    <tr><td><code>isHeadquarters</code></td><td><code>boolean</code></td><td>private</td><td>Indica si la sede es la central.</td></tr>
+    <tr><td><code>status</code></td><td><code>BranchStatus</code></td><td>private</td><td>Estado operativo (<code>ACTIVE</code>, <code>INACTIVE</code>).</td></tr>
+  </tbody>
+</table>
+
+<p><strong>3. PhysiotherapistProfile (Aggregate Root)</strong></p>
+
+<p>Representa el perfil clínico-personal de un fisioterapeuta dentro de la clínica. El <code>userId</code> referencia lógicamente al usuario en el BC IAM; aquí se añaden los datos que hacen al especialista profesional y laboralmente reconocible.</p>
+
+<table>
+  <thead>
+    <tr><th>Atributo</th><th>Tipo</th><th>Visibilidad</th><th>Descripción</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><code>id</code></td><td><code>PhysiotherapistProfileId</code></td><td>private</td><td>Identificador del perfil.</td></tr>
+    <tr><td><code>userId</code></td><td><code>UserId</code></td><td>private</td><td>Referencia lógica al usuario en el BC IAM.</td></tr>
+    <tr><td><code>clinicId</code></td><td><code>ClinicId</code></td><td>private</td><td>Clínica a la que pertenece el fisioterapeuta.</td></tr>
+    <tr><td><code>primaryBranchId</code></td><td><code>BranchId</code></td><td>private</td><td>Sede principal en la que atiende.</td></tr>
+    <tr><td><code>personalInfo</code></td><td><code>PersonalInfo</code></td><td>private</td><td>Nombre completo, DNI, fecha de nacimiento, género y teléfono de contacto.</td></tr>
+    <tr><td><code>licenseNumber</code></td><td><code>LicenseNumber</code></td><td>private</td><td>Número de colegiatura (CMP/CTTMP); validado antes de activar.</td></tr>
+    <tr><td><code>specialty</code></td><td><code>Specialty</code></td><td>private</td><td>Especialidad principal (traumatológica, neurológica, deportiva).</td></tr>
+    <tr><td><code>yearsOfExperience</code></td><td><code>int</code></td><td>private</td><td>Años acreditados de ejercicio profesional.</td></tr>
+    <tr><td><code>hireDate</code></td><td><code>LocalDate</code></td><td>private</td><td>Fecha de ingreso a la clínica.</td></tr>
+    <tr><td><code>status</code></td><td><code>ProfileStatus</code></td><td>private</td><td>Estado del perfil (<code>PENDING_VALIDATION</code>, <code>ACTIVE</code>, <code>SUSPENDED</code>, <code>ARCHIVED</code>).</td></tr>
+  </tbody>
+</table>
+
+<p>Métodos principales:</p>
+
+<table>
+  <thead>
+    <tr><th>Método</th><th>Tipo Retorno</th><th>Visibilidad</th><th>Descripción</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><code>PhysiotherapistProfile()</code></td><td>Constructor</td><td>public</td><td>Constructor vacío requerido por JPA.</td></tr>
+    <tr><td><code>PhysiotherapistProfile(UserId, ClinicId, BranchId, PersonalInfo, LicenseNumber, Specialty)</code></td><td>Constructor</td><td>public</td><td>Crea el perfil en estado <code>PENDING_VALIDATION</code> y publica <code>PhysiotherapistProfileRegisteredEvent</code>.</td></tr>
+    <tr><td><code>validate()</code></td><td><code>void</code></td><td>public</td><td>Marca el perfil como <code>ACTIVE</code> tras la verificación del <code>licenseNumber</code>; publica <code>PhysiotherapistProfileActivatedEvent</code>.</td></tr>
+    <tr><td><code>assignToBranch(BranchId branchId)</code></td><td><code>void</code></td><td>public</td><td>Actualiza la sede principal del fisioterapeuta.</td></tr>
+    <tr><td><code>updatePersonalInfo(PersonalInfo personalInfo)</code></td><td><code>void</code></td><td>public</td><td>Actualiza el bloque de datos personales del especialista.</td></tr>
+    <tr><td><code>suspend(String reason)</code></td><td><code>void</code></td><td>public</td><td>Cambia el estado a <code>SUSPENDED</code>.</td></tr>
+    <tr><td><code>archive()</code></td><td><code>void</code></td><td>public</td><td>Archiva el perfil al cesar la relación laboral.</td></tr>
+  </tbody>
+</table>
+
+<p><strong>4. PatientProfile (Aggregate Root)</strong></p>
+
+<p>Representa el perfil personal y clínico del paciente. Incluye datos demográficos, contacto de emergencia y un resumen clínico breve; el historial detallado de tratamientos vive en el BC Planning, no aquí.</p>
+
+<table>
+  <thead>
+    <tr><th>Atributo</th><th>Tipo</th><th>Visibilidad</th><th>Descripción</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><code>id</code></td><td><code>PatientProfileId</code></td><td>private</td><td>Identificador del perfil de paciente.</td></tr>
+    <tr><td><code>userId</code></td><td><code>UserId</code></td><td>private</td><td>Referencia lógica al usuario en el BC IAM.</td></tr>
+    <tr><td><code>clinicId</code></td><td><code>ClinicId</code></td><td>private</td><td>Clínica a la que pertenece el paciente.</td></tr>
+    <tr><td><code>branchId</code></td><td><code>BranchId</code></td><td>private</td><td>Sede de atención habitual.</td></tr>
+    <tr><td><code>assignedPhysiotherapistId</code></td><td><code>PhysiotherapistProfileId</code></td><td>private</td><td>Fisioterapeuta responsable; puede quedar sin asignar hasta que el Administrador complete el onboarding.</td></tr>
+    <tr><td><code>personalInfo</code></td><td><code>PersonalInfo</code></td><td>private</td><td>Datos demográficos del paciente.</td></tr>
+    <tr><td><code>emergencyContact</code></td><td><code>EmergencyContact</code></td><td>private</td><td>Persona de contacto en caso de emergencia (nombre, parentesco, teléfono).</td></tr>
+    <tr><td><code>insurance</code></td><td><code>InsuranceInfo</code></td><td>private</td><td>Datos del seguro o convenio aplicable (opcional).</td></tr>
+    <tr><td><code>clinicalSummary</code></td><td><code>ClinicalSummary</code></td><td>private</td><td>Resumen clínico breve: diagnóstico principal, alergias y observaciones relevantes.</td></tr>
+    <tr><td><code>status</code></td><td><code>ProfileStatus</code></td><td>private</td><td>Estado del perfil (<code>ACTIVE</code>, <code>DISCHARGED</code>, <code>ARCHIVED</code>).</td></tr>
+  </tbody>
+</table>
+
+<p>Métodos principales:</p>
+
+<table>
+  <thead>
+    <tr><th>Método</th><th>Tipo Retorno</th><th>Visibilidad</th><th>Descripción</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><code>PatientProfile()</code></td><td>Constructor</td><td>public</td><td>Constructor vacío requerido por JPA.</td></tr>
+    <tr><td><code>PatientProfile(UserId, ClinicId, BranchId, PersonalInfo, EmergencyContact)</code></td><td>Constructor</td><td>public</td><td>Crea el perfil del paciente en estado <code>ACTIVE</code>; publica <code>PatientProfileRegisteredEvent</code>.</td></tr>
+    <tr><td><code>assignPhysiotherapist(PhysiotherapistProfileId id)</code></td><td><code>void</code></td><td>public</td><td>Asocia un fisioterapeuta responsable (mismo <code>clinicId</code>); publica <code>PatientAssignedToPhysiotherapistEvent</code>.</td></tr>
+    <tr><td><code>updateClinicalSummary(ClinicalSummary summary)</code></td><td><code>void</code></td><td>public</td><td>Actualiza el resumen clínico (invocado por el fisioterapeuta).</td></tr>
+    <tr><td><code>updateInsurance(InsuranceInfo insurance)</code></td><td><code>void</code></td><td>public</td><td>Actualiza los datos del seguro/convenio.</td></tr>
+    <tr><td><code>discharge(String reason)</code></td><td><code>void</code></td><td>public</td><td>Marca el paciente como <code>DISCHARGED</code> al finalizar el tratamiento.</td></tr>
+    <tr><td><code>archive()</code></td><td><code>void</code></td><td>public</td><td>Transición final al estado <code>ARCHIVED</code>.</td></tr>
+  </tbody>
+</table>
+
+<p><strong>5. ClinicAdminProfile (Entity)</strong></p>
+
+<p>Perfil del Administrador de Clínica. Extiende el rol <code>CLINIC_ADMIN</code> del BC IAM con datos de contacto operativo y nivel de alcance (sede única vs. todas las sedes).</p>
+
+<table>
+  <thead>
+    <tr><th>Atributo</th><th>Tipo</th><th>Visibilidad</th><th>Descripción</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><code>id</code></td><td><code>ClinicAdminProfileId</code></td><td>private</td><td>Identificador del perfil administrativo.</td></tr>
+    <tr><td><code>userId</code></td><td><code>UserId</code></td><td>private</td><td>Referencia al usuario en el BC IAM.</td></tr>
+    <tr><td><code>clinicId</code></td><td><code>ClinicId</code></td><td>private</td><td>Clínica administrada.</td></tr>
+    <tr><td><code>scope</code></td><td><code>AdminScope</code></td><td>private</td><td>Alcance administrativo (<code>CLINIC_WIDE</code> o <code>BRANCH_SCOPED</code>).</td></tr>
+    <tr><td><code>managedBranchIds</code></td><td><code>Set&lt;BranchId&gt;</code></td><td>private</td><td>Sedes bajo su responsabilidad cuando el alcance es <code>BRANCH_SCOPED</code>.</td></tr>
+    <tr><td><code>personalInfo</code></td><td><code>PersonalInfo</code></td><td>private</td><td>Datos personales y de contacto operativo.</td></tr>
+  </tbody>
+</table>
+
+<p><strong>6. Value Objects</strong></p>
+
+<table>
+  <thead>
+    <tr><th>Value Object</th><th>Atributos</th><th>Descripción</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><code>ClinicId</code></td><td><code>value: UUID</code></td><td>Identificador único y compartido lógicamente con el resto de bounded contexts.</td></tr>
+    <tr><td><code>BranchId</code></td><td><code>value: UUID</code></td><td>Identificador de sede.</td></tr>
+    <tr><td><code>PhysiotherapistProfileId</code></td><td><code>value: UUID</code></td><td>Identificador del perfil del fisioterapeuta.</td></tr>
+    <tr><td><code>PatientProfileId</code></td><td><code>value: UUID</code></td><td>Identificador del perfil del paciente.</td></tr>
+    <tr><td><code>LegalName</code> / <code>CommercialName</code></td><td><code>value: String</code></td><td>Denominaciones de la clínica con validación de longitud y caracteres.</td></tr>
+    <tr><td><code>TaxId</code></td><td><code>value: String</code></td><td>RUC peruano de 11 dígitos; valida prefijo y dígito verificador.</td></tr>
+    <tr><td><code>Address</code></td><td><code>street, district, province, department, country, postalCode</code></td><td>Dirección estructurada.</td></tr>
+    <tr><td><code>ContactInfo</code></td><td><code>email, phone, website</code></td><td>Canal público de contacto de la clínica.</td></tr>
+    <tr><td><code>PhoneNumber</code></td><td><code>countryCode, number</code></td><td>Teléfono con validación E.164.</td></tr>
+    <tr><td><code>OpeningHours</code></td><td><code>Map&lt;DayOfWeek, TimeRange&gt;</code></td><td>Horario semanal de atención.</td></tr>
+    <tr><td><code>LogoUrl</code></td><td><code>value: URI</code></td><td>URL del logo en Azure Blob Storage.</td></tr>
+    <tr><td><code>PersonalInfo</code></td><td><code>fullName, documentNumber, birthDate, gender, phone</code></td><td>Datos personales comunes a pacientes, fisioterapeutas y administradores.</td></tr>
+    <tr><td><code>EmergencyContact</code></td><td><code>fullName, relationship, phone</code></td><td>Contacto de emergencia del paciente.</td></tr>
+    <tr><td><code>InsuranceInfo</code></td><td><code>provider, policyNumber, coverage</code></td><td>Datos opcionales del seguro/convenio.</td></tr>
+    <tr><td><code>ClinicalSummary</code></td><td><code>primaryDiagnosis, allergies, notes</code></td><td>Resumen clínico de alto nivel del paciente.</td></tr>
+    <tr><td><code>LicenseNumber</code></td><td><code>value: String</code></td><td>Colegiatura del fisioterapeuta (CMP/CTTMP).</td></tr>
+    <tr><td><code>Specialty</code></td><td><code>Enum</code></td><td>Especialidad: <code>TRAUMATOLOGICAL</code>, <code>NEUROLOGICAL</code>, <code>SPORTS</code>, <code>GENERAL</code>.</td></tr>
+    <tr><td><code>ClinicStatus</code></td><td><code>Enum</code></td><td><code>PENDING_ACTIVATION</code>, <code>ACTIVE</code>, <code>SUSPENDED</code>, <code>ARCHIVED</code>.</td></tr>
+    <tr><td><code>BranchStatus</code></td><td><code>Enum</code></td><td><code>ACTIVE</code>, <code>INACTIVE</code>.</td></tr>
+    <tr><td><code>ProfileStatus</code></td><td><code>Enum</code></td><td><code>PENDING_VALIDATION</code>, <code>ACTIVE</code>, <code>SUSPENDED</code>, <code>DISCHARGED</code>, <code>ARCHIVED</code>.</td></tr>
+    <tr><td><code>AdminScope</code></td><td><code>Enum</code></td><td><code>CLINIC_WIDE</code>, <code>BRANCH_SCOPED</code>.</td></tr>
+  </tbody>
+</table>
+
+<p><strong>7. Domain Events</strong></p>
+
+<table>
+  <thead>
+    <tr><th>Evento</th><th>Payload</th><th>Descripción</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><code>ClinicRegisteredEvent</code></td><td><code>clinicId, legalName, taxId, createdBy, occurredAt</code></td><td>Se emite al crear una clínica en estado <code>PENDING_ACTIVATION</code>. Lo consume el BC Subscription para inicializar la suscripción base.</td></tr>
+    <tr><td><code>ClinicActivatedEvent</code></td><td><code>clinicId, activatedAt</code></td><td>Se emite al pasar el tenant a <code>ACTIVE</code> tras confirmar la suscripción; lo consume el BC IAM para habilitar el login de los usuarios y el BC Device para habilitar el provisioning del kit.</td></tr>
+    <tr><td><code>ClinicSuspendedEvent</code></td><td><code>clinicId, reason, occurredAt</code></td><td>Bloquea operaciones mientras dure la suspensión.</td></tr>
+    <tr><td><code>BranchAddedEvent</code></td><td><code>clinicId, branchId, branchName, isHeadquarters, occurredAt</code></td><td>Nueva sede disponible para asignación de usuarios y dispositivos.</td></tr>
+    <tr><td><code>PhysiotherapistProfileRegisteredEvent</code></td><td><code>profileId, userId, clinicId, primaryBranchId, occurredAt</code></td><td>Se publica al crear el perfil; permite al BC Planning habilitar la creación de <code>TreatmentPlan</code> por parte del fisioterapeuta.</td></tr>
+    <tr><td><code>PhysiotherapistProfileActivatedEvent</code></td><td><code>profileId, userId, clinicId, occurredAt</code></td><td>Se publica tras la validación de la colegiatura.</td></tr>
+    <tr><td><code>PatientProfileRegisteredEvent</code></td><td><code>profileId, userId, clinicId, branchId, occurredAt</code></td><td>El paciente queda habilitado para recibir un plan de tratamiento.</td></tr>
+    <tr><td><code>PatientAssignedToPhysiotherapistEvent</code></td><td><code>patientProfileId, physiotherapistProfileId, clinicId, occurredAt</code></td><td>Relación clínica establecida; consumido por Planning y Therapy.</td></tr>
+    <tr><td><code>ClinicArchivedEvent</code></td><td><code>clinicId, occurredAt</code></td><td>Cierre definitivo del tenant.</td></tr>
+  </tbody>
+</table>
+
+<p><strong>8. Commands</strong></p>
+
+<table>
+  <thead>
+    <tr><th>Command</th><th>Atributos</th><th>Descripción</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><code>RegisterClinicCommand</code></td><td><code>legalName, commercialName, taxId, contactInfo, headquartersAddress, createdBy</code></td><td>Crea la clínica y su sede central en una misma transacción.</td></tr>
+    <tr><td><code>ActivateClinicCommand</code></td><td><code>clinicId</code></td><td>Activa el tenant al confirmarse la suscripción.</td></tr>
+    <tr><td><code>SuspendClinicCommand</code></td><td><code>clinicId, reason</code></td><td>Suspende el tenant.</td></tr>
+    <tr><td><code>AddBranchCommand</code></td><td><code>clinicId, name, address, phoneNumber, openingHours, isHeadquarters</code></td><td>Agrega una nueva sede.</td></tr>
+    <tr><td><code>UpdateClinicContactInfoCommand</code></td><td><code>clinicId, contactInfo</code></td><td>Actualiza los datos públicos de la clínica.</td></tr>
+    <tr><td><code>RegisterPhysiotherapistProfileCommand</code></td><td><code>userId, clinicId, primaryBranchId, personalInfo, licenseNumber, specialty, yearsOfExperience</code></td><td>Crea el perfil clínico del fisioterapeuta.</td></tr>
+    <tr><td><code>ValidatePhysiotherapistLicenseCommand</code></td><td><code>profileId</code></td><td>Marca la colegiatura como validada y activa el perfil.</td></tr>
+    <tr><td><code>RegisterPatientProfileCommand</code></td><td><code>userId, clinicId, branchId, personalInfo, emergencyContact, insurance</code></td><td>Crea el perfil del paciente.</td></tr>
+    <tr><td><code>AssignPatientToPhysiotherapistCommand</code></td><td><code>patientProfileId, physiotherapistProfileId</code></td><td>Asigna responsable clínico.</td></tr>
+    <tr><td><code>UpdatePatientClinicalSummaryCommand</code></td><td><code>patientProfileId, clinicalSummary</code></td><td>Actualiza el resumen clínico del paciente.</td></tr>
+    <tr><td><code>DischargePatientCommand</code></td><td><code>patientProfileId, reason</code></td><td>Marca el alta del paciente.</td></tr>
+  </tbody>
+</table>
+
+<p><strong>9. Queries</strong></p>
+
+<table>
+  <thead>
+    <tr><th>Query</th><th>Atributos</th><th>Retorno</th><th>Descripción</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><code>GetClinicByIdQuery</code></td><td><code>clinicId</code></td><td><code>Optional&lt;Clinic&gt;</code></td><td>Recupera la clínica con sus sedes.</td></tr>
+    <tr><td><code>GetClinicByTaxIdQuery</code></td><td><code>taxId</code></td><td><code>Optional&lt;Clinic&gt;</code></td><td>Resuelve clínica por RUC (usado en onboarding).</td></tr>
+    <tr><td><code>GetBranchesByClinicIdQuery</code></td><td><code>clinicId</code></td><td><code>List&lt;Branch&gt;</code></td><td>Lista las sedes de una clínica.</td></tr>
+    <tr><td><code>GetPhysiotherapistProfileByUserIdQuery</code></td><td><code>userId</code></td><td><code>Optional&lt;PhysiotherapistProfile&gt;</code></td><td>Perfil clínico del fisioterapeuta autenticado.</td></tr>
+    <tr><td><code>GetPhysiotherapistsByClinicIdQuery</code></td><td><code>clinicId, branchId?</code></td><td><code>List&lt;PhysiotherapistProfile&gt;</code></td><td>Directorio de fisioterapeutas por clínica y sede.</td></tr>
+    <tr><td><code>GetPatientProfileByUserIdQuery</code></td><td><code>userId</code></td><td><code>Optional&lt;PatientProfile&gt;</code></td><td>Perfil clínico del paciente autenticado.</td></tr>
+    <tr><td><code>GetPatientsByPhysiotherapistIdQuery</code></td><td><code>physiotherapistProfileId</code></td><td><code>List&lt;PatientProfile&gt;</code></td><td>Pacientes asignados a un fisioterapeuta.</td></tr>
+    <tr><td><code>GetPatientsByClinicIdQuery</code></td><td><code>clinicId, branchId?</code></td><td><code>List&lt;PatientProfile&gt;</code></td><td>Pacientes de una clínica (vista del Administrador).</td></tr>
+  </tbody>
+</table>
+
+<p><strong>10. Domain Exceptions</strong></p>
+
+<table>
+  <thead>
+    <tr><th>Excepción</th><th>Descripción</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><code>ClinicAlreadyRegisteredException</code></td><td>Se lanza cuando ya existe una clínica con el mismo <code>taxId</code>.</td></tr>
+    <tr><td><code>ClinicNotActiveException</code></td><td>Se lanza al intentar operar sobre un tenant que no está en estado <code>ACTIVE</code>.</td></tr>
+    <tr><td><code>BranchNotFoundException</code></td><td>Sede inexistente dentro del aggregate <code>Clinic</code>.</td></tr>
+    <tr><td><code>DuplicateHeadquartersException</code></td><td>Se intenta designar más de una sede central simultáneamente.</td></tr>
+    <tr><td><code>PhysiotherapistLicenseInvalidException</code></td><td>Número de colegiatura inválido o duplicado.</td></tr>
+    <tr><td><code>PatientAlreadyRegisteredException</code></td><td>Se intenta registrar un perfil de paciente para un <code>userId</code> que ya tiene uno activo.</td></tr>
+    <tr><td><code>CrossClinicAssignmentException</code></td><td>Se intenta asignar un paciente a un fisioterapeuta de otra clínica.</td></tr>
+    <tr><td><code>InvalidTaxIdException</code></td><td>RUC mal formado o con dígito verificador inválido.</td></tr>
+  </tbody>
+</table>
+
+<h4 id="4-2-3-2-interface-layer">4.2.3.2. Interface Layer</h4>
+
+<p><strong>1. ClinicController (REST Controller)</strong></p>
+
+<p>Expone las operaciones de registro y administración del tenant. Sólo accesible por usuarios con rol <code>CLINIC_ADMIN</code>, salvo la lectura pública del perfil comercial.</p>
+
+<table>
+  <thead>
+    <tr><th>Método</th><th>Ruta base</th><th>HTTP</th><th>Descripción</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><code>registerClinic</code></td><td><code>/api/v1/clinics</code></td><td>POST</td><td>Registra una nueva clínica y su sede central.</td></tr>
+    <tr><td><code>getClinicById</code></td><td><code>/api/v1/clinics/{clinicId}</code></td><td>GET</td><td>Obtiene el perfil organizacional de la clínica.</td></tr>
+    <tr><td><code>updateContactInfo</code></td><td><code>/api/v1/clinics/{clinicId}/contact-info</code></td><td>PATCH</td><td>Actualiza correo, teléfono y web de la clínica.</td></tr>
+    <tr><td><code>uploadLogo</code></td><td><code>/api/v1/clinics/{clinicId}/logo</code></td><td>POST</td><td>Sube un nuevo logotipo al blob y actualiza la URL.</td></tr>
+    <tr><td><code>suspendClinic</code></td><td><code>/api/v1/clinics/{clinicId}/suspend</code></td><td>POST</td><td>Suspende el tenant (uso administrativo interno).</td></tr>
+  </tbody>
+</table>
+
+<p><strong>2. BranchController (REST Controller)</strong></p>
+
+<table>
+  <thead>
+    <tr><th>Método</th><th>Ruta base</th><th>HTTP</th><th>Descripción</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><code>addBranch</code></td><td><code>/api/v1/clinics/{clinicId}/branches</code></td><td>POST</td><td>Agrega una sede a la clínica.</td></tr>
+    <tr><td><code>getBranchesByClinic</code></td><td><code>/api/v1/clinics/{clinicId}/branches</code></td><td>GET</td><td>Lista las sedes del tenant.</td></tr>
+    <tr><td><code>updateBranch</code></td><td><code>/api/v1/clinics/{clinicId}/branches/{branchId}</code></td><td>PATCH</td><td>Actualiza datos de la sede (dirección, horarios, teléfono).</td></tr>
+    <tr><td><code>deactivateBranch</code></td><td><code>/api/v1/clinics/{clinicId}/branches/{branchId}/deactivate</code></td><td>POST</td><td>Inactiva la sede sin eliminarla.</td></tr>
+  </tbody>
+</table>
+
+<p><strong>3. PhysiotherapistProfileController (REST Controller)</strong></p>
+
+<table>
+  <thead>
+    <tr><th>Método</th><th>Ruta base</th><th>HTTP</th><th>Descripción</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><code>registerPhysiotherapist</code></td><td><code>/api/v1/physiotherapists</code></td><td>POST</td><td>Crea el perfil clínico del fisioterapeuta tras su alta en IAM.</td></tr>
+    <tr><td><code>validateLicense</code></td><td><code>/api/v1/physiotherapists/{id}/validate-license</code></td><td>POST</td><td>Activa el perfil tras verificar la colegiatura.</td></tr>
+    <tr><td><code>getPhysiotherapistById</code></td><td><code>/api/v1/physiotherapists/{id}</code></td><td>GET</td><td>Obtiene el perfil del fisioterapeuta.</td></tr>
+    <tr><td><code>getPhysiotherapistsByClinic</code></td><td><code>/api/v1/physiotherapists?clinicId={id}&amp;branchId={id}</code></td><td>GET</td><td>Lista los fisioterapeutas del tenant (y opcionalmente por sede).</td></tr>
+    <tr><td><code>updatePhysiotherapistProfile</code></td><td><code>/api/v1/physiotherapists/{id}</code></td><td>PATCH</td><td>Actualiza datos personales o sede principal.</td></tr>
+  </tbody>
+</table>
+
+<p><strong>4. PatientProfileController (REST Controller)</strong></p>
+
+<table>
+  <thead>
+    <tr><th>Método</th><th>Ruta base</th><th>HTTP</th><th>Descripción</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><code>registerPatient</code></td><td><code>/api/v1/patients</code></td><td>POST</td><td>Crea el perfil del paciente.</td></tr>
+    <tr><td><code>assignPhysiotherapist</code></td><td><code>/api/v1/patients/{id}/physiotherapist</code></td><td>PATCH</td><td>Asigna fisioterapeuta responsable.</td></tr>
+    <tr><td><code>updateClinicalSummary</code></td><td><code>/api/v1/patients/{id}/clinical-summary</code></td><td>PATCH</td><td>Actualiza el resumen clínico (rol fisioterapeuta).</td></tr>
+    <tr><td><code>getPatientById</code></td><td><code>/api/v1/patients/{id}</code></td><td>GET</td><td>Obtiene el perfil del paciente.</td></tr>
+    <tr><td><code>getPatientsByPhysiotherapist</code></td><td><code>/api/v1/patients?physiotherapistId={id}</code></td><td>GET</td><td>Lista pacientes asignados a un fisioterapeuta.</td></tr>
+    <tr><td><code>dischargePatient</code></td><td><code>/api/v1/patients/{id}/discharge</code></td><td>POST</td><td>Marca al paciente como dado de alta.</td></tr>
+  </tbody>
+</table>
+
+<p><strong>5. Resources (DTOs)</strong></p>
+
+<p>DTOs modelados como Java Records para la comunicación REST.</p>
+
+<table>
+  <thead>
+    <tr><th>Resource</th><th>Atributos principales</th><th>Descripción</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><code>RegisterClinicResource</code></td><td><code>legalName, commercialName, taxId, contactInfo, headquartersAddress</code></td><td>Payload de registro de clínica.</td></tr>
+    <tr><td><code>ClinicResource</code></td><td><code>id, legalName, commercialName, taxId, contactInfo, logoUrl, status, branches: List&lt;BranchResource&gt;</code></td><td>Representación pública de la clínica.</td></tr>
+    <tr><td><code>AddBranchResource</code></td><td><code>name, address, phoneNumber, openingHours, isHeadquarters</code></td><td>Payload para agregar sede.</td></tr>
+    <tr><td><code>BranchResource</code></td><td><code>id, name, address, phoneNumber, openingHours, isHeadquarters, status</code></td><td>Representación de la sede.</td></tr>
+    <tr><td><code>RegisterPhysiotherapistProfileResource</code></td><td><code>userId, clinicId, primaryBranchId, personalInfo, licenseNumber, specialty, yearsOfExperience</code></td><td>Payload de alta del fisioterapeuta.</td></tr>
+    <tr><td><code>PhysiotherapistProfileResource</code></td><td><code>id, userId, clinicId, primaryBranchId, personalInfo, licenseNumber, specialty, yearsOfExperience, status</code></td><td>Representación REST del perfil.</td></tr>
+    <tr><td><code>RegisterPatientProfileResource</code></td><td><code>userId, clinicId, branchId, personalInfo, emergencyContact, insurance</code></td><td>Payload de alta del paciente.</td></tr>
+    <tr><td><code>PatientProfileResource</code></td><td><code>id, userId, clinicId, branchId, assignedPhysiotherapistId, personalInfo, emergencyContact, insurance, clinicalSummary, status</code></td><td>Representación REST del perfil de paciente.</td></tr>
+    <tr><td><code>AssignPhysiotherapistResource</code></td><td><code>physiotherapistProfileId</code></td><td>Payload para asignación.</td></tr>
+    <tr><td><code>UpdateContactInfoResource</code></td><td><code>email, phone, website</code></td><td>Datos actualizables de contacto.</td></tr>
+    <tr><td><code>UpdateClinicalSummaryResource</code></td><td><code>primaryDiagnosis, allergies, notes</code></td><td>Payload del fisioterapeuta.</td></tr>
+  </tbody>
+</table>
+
+<p><strong>6. Transform (Assemblers)</strong></p>
+
+<table>
+  <thead>
+    <tr><th>Assembler</th><th>Entrada</th><th>Salida</th><th>Descripción</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><code>RegisterClinicCommandFromResourceAssembler</code></td><td><code>RegisterClinicResource</code></td><td><code>RegisterClinicCommand</code></td><td>Construye el command de alta de clínica.</td></tr>
+    <tr><td><code>ClinicResourceFromEntityAssembler</code></td><td><code>Clinic</code></td><td><code>ClinicResource</code></td><td>Expone el aggregate con sus sedes.</td></tr>
+    <tr><td><code>AddBranchCommandFromResourceAssembler</code></td><td><code>AddBranchResource, clinicId</code></td><td><code>AddBranchCommand</code></td><td>Construye el command de alta de sede.</td></tr>
+    <tr><td><code>BranchResourceFromEntityAssembler</code></td><td><code>Branch</code></td><td><code>BranchResource</code></td><td>Mapeo entidad → DTO.</td></tr>
+    <tr><td><code>RegisterPhysiotherapistProfileCommandFromResourceAssembler</code></td><td><code>RegisterPhysiotherapistProfileResource</code></td><td><code>RegisterPhysiotherapistProfileCommand</code></td><td>Construye el command del perfil.</td></tr>
+    <tr><td><code>PhysiotherapistProfileResourceFromEntityAssembler</code></td><td><code>PhysiotherapistProfile</code></td><td><code>PhysiotherapistProfileResource</code></td><td>Mapeo entidad → DTO.</td></tr>
+    <tr><td><code>RegisterPatientProfileCommandFromResourceAssembler</code></td><td><code>RegisterPatientProfileResource</code></td><td><code>RegisterPatientProfileCommand</code></td><td>Construye el command del perfil del paciente.</td></tr>
+    <tr><td><code>PatientProfileResourceFromEntityAssembler</code></td><td><code>PatientProfile</code></td><td><code>PatientProfileResource</code></td><td>Mapeo entidad → DTO.</td></tr>
+    <tr><td><code>AssignPatientToPhysiotherapistCommandFromResourceAssembler</code></td><td><code>AssignPhysiotherapistResource, patientProfileId</code></td><td><code>AssignPatientToPhysiotherapistCommand</code></td><td>Construye el command de asignación.</td></tr>
+  </tbody>
+</table>
+
+<h4 id="4-2-3-3-application-layer">4.2.3.3. Application Layer</h4>
+
+<p><strong>1. OrganizationContextFacadeImpl (ACL Facade)</strong></p>
+
+<p>Fachada consumida por los BC hermanos (Planning, Device, Therapy, Subscription) que necesitan resolver datos organizacionales sin conocer el modelo interno.</p>
+
+<table>
+  <thead>
+    <tr><th>Atributo</th><th>Tipo</th><th>Visibilidad</th><th>Descripción</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><code>clinicQueryService</code></td><td><code>ClinicQueryService</code></td><td>private</td><td>Consultas del aggregate <code>Clinic</code>.</td></tr>
+    <tr><td><code>physiotherapistQueryService</code></td><td><code>PhysiotherapistProfileQueryService</code></td><td>private</td><td>Consultas de perfiles de fisioterapeutas.</td></tr>
+    <tr><td><code>patientQueryService</code></td><td><code>PatientProfileQueryService</code></td><td>private</td><td>Consultas de perfiles de pacientes.</td></tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr><th>Método</th><th>Tipo Retorno</th><th>Visibilidad</th><th>Descripción</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><code>fetchClinicSummaryById(UUID clinicId)</code></td><td><code>Optional&lt;ClinicSummaryDto&gt;</code></td><td>public</td><td>DTO ligero con nombre, estado y RUC del tenant.</td></tr>
+    <tr><td><code>fetchActiveBranchIds(UUID clinicId)</code></td><td><code>List&lt;UUID&gt;</code></td><td>public</td><td>Lista de sedes activas (usado por Device al provisionar kits).</td></tr>
+    <tr><td><code>fetchPhysiotherapistClinicId(UUID userId)</code></td><td><code>Optional&lt;UUID&gt;</code></td><td>public</td><td>Devuelve el <code>clinicId</code> al que pertenece un fisioterapeuta; usado por Planning para validar la creación de planes.</td></tr>
+    <tr><td><code>fetchPatientContextByUserId(UUID userId)</code></td><td><code>Optional&lt;PatientContextDto&gt;</code></td><td>public</td><td>Devuelve <code>patientProfileId</code>, <code>clinicId</code>, <code>branchId</code> y <code>assignedPhysiotherapistId</code>.</td></tr>
+  </tbody>
+</table>
+
+<p><strong>2. ClinicCommandServiceImpl (Command Service Implementation)</strong></p>
+
+<table>
+  <thead>
+    <tr><th>Atributo</th><th>Tipo</th><th>Visibilidad</th><th>Descripción</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><code>clinicRepository</code></td><td><code>ClinicRepository</code></td><td>private</td><td>Persistencia del aggregate <code>Clinic</code>.</td></tr>
+    <tr><td><code>taxIdValidationPort</code></td><td><code>TaxIdValidationPort</code></td><td>private</td><td>ACL contra el servicio externo de validación de RUC (SUNAT).</td></tr>
+    <tr><td><code>blobStoragePort</code></td><td><code>BlobStoragePort</code></td><td>private</td><td>Puerto de Azure Blob Storage para logos.</td></tr>
+    <tr><td><code>eventPublisher</code></td><td><code>ApplicationEventPublisher</code></td><td>private</td><td>Publicación de domain events.</td></tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr><th>Método</th><th>Tipo Retorno</th><th>Visibilidad</th><th>Descripción</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><code>handle(RegisterClinicCommand)</code></td><td><code>Optional&lt;Clinic&gt;</code></td><td>public</td><td>Valida el RUC, registra la clínica con su sede central y publica <code>ClinicRegisteredEvent</code>.</td></tr>
+    <tr><td><code>handle(ActivateClinicCommand)</code></td><td><code>void</code></td><td>public</td><td>Activa el tenant y publica <code>ClinicActivatedEvent</code>.</td></tr>
+    <tr><td><code>handle(SuspendClinicCommand)</code></td><td><code>void</code></td><td>public</td><td>Suspende el tenant.</td></tr>
+    <tr><td><code>handle(AddBranchCommand)</code></td><td><code>Optional&lt;Branch&gt;</code></td><td>public</td><td>Agrega una sede al tenant.</td></tr>
+    <tr><td><code>handle(UpdateClinicContactInfoCommand)</code></td><td><code>void</code></td><td>public</td><td>Actualiza los datos de contacto.</td></tr>
+    <tr><td><code>handle(UploadClinicLogoCommand)</code></td><td><code>String</code></td><td>public</td><td>Sube el archivo al blob y devuelve la nueva URL.</td></tr>
+  </tbody>
+</table>
+
+<p><strong>3. ClinicQueryServiceImpl (Query Service Implementation)</strong></p>
+
+<table>
+  <thead>
+    <tr><th>Método</th><th>Tipo Retorno</th><th>Visibilidad</th><th>Descripción</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><code>handle(GetClinicByIdQuery)</code></td><td><code>Optional&lt;Clinic&gt;</code></td><td>public</td><td>Recupera el aggregate por su identificador.</td></tr>
+    <tr><td><code>handle(GetClinicByTaxIdQuery)</code></td><td><code>Optional&lt;Clinic&gt;</code></td><td>public</td><td>Resuelve clínica por RUC.</td></tr>
+    <tr><td><code>handle(GetBranchesByClinicIdQuery)</code></td><td><code>List&lt;Branch&gt;</code></td><td>public</td><td>Lista las sedes del tenant.</td></tr>
+  </tbody>
+</table>
+
+<p><strong>4. PhysiotherapistProfileCommandServiceImpl (Command Service Implementation)</strong></p>
+
+<table>
+  <thead>
+    <tr><th>Atributo</th><th>Tipo</th><th>Visibilidad</th><th>Descripción</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><code>physiotherapistRepository</code></td><td><code>PhysiotherapistProfileRepository</code></td><td>private</td><td>Persistencia del aggregate.</td></tr>
+    <tr><td><code>licenseValidationPort</code></td><td><code>LicenseValidationPort</code></td><td>private</td><td>ACL contra el registro de colegiatura (CMP/CTTMP).</td></tr>
+    <tr><td><code>iamContextFacade</code></td><td><code>IamContextFacade</code></td><td>private</td><td>Verifica que el <code>userId</code> exista y tenga rol <code>PHYSIOTHERAPIST</code>.</td></tr>
+    <tr><td><code>eventPublisher</code></td><td><code>ApplicationEventPublisher</code></td><td>private</td><td>Publicación de domain events.</td></tr>
+  </tbody>
+</table>
+
+<p><strong>5. PatientProfileCommandServiceImpl (Command Service Implementation)</strong></p>
+
+<table>
+  <thead>
+    <tr><th>Atributo</th><th>Tipo</th><th>Visibilidad</th><th>Descripción</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><code>patientRepository</code></td><td><code>PatientProfileRepository</code></td><td>private</td><td>Persistencia del aggregate <code>PatientProfile</code>.</td></tr>
+    <tr><td><code>physiotherapistRepository</code></td><td><code>PhysiotherapistProfileRepository</code></td><td>private</td><td>Permite validar la asignación dentro de la misma clínica.</td></tr>
+    <tr><td><code>iamContextFacade</code></td><td><code>IamContextFacade</code></td><td>private</td><td>Verifica que el <code>userId</code> exista y tenga rol <code>PATIENT</code>.</td></tr>
+    <tr><td><code>eventPublisher</code></td><td><code>ApplicationEventPublisher</code></td><td>private</td><td>Publicador de eventos del dominio.</td></tr>
+  </tbody>
+</table>
+
+<h4 id="4-2-3-4-infrastructure-layer">4.2.3.4. Infrastructure Layer</h4>
+
+<p><strong>1. ClinicRepository (Repository Interface)</strong></p>
+
+<p>Interfaz de acceso a datos para el aggregate <code>Clinic</code>, implementada por Spring Data JPA sobre Azure Database for PostgreSQL.</p>
+
+<table>
+  <thead>
+    <tr><th>Método</th><th>Tipo Retorno</th><th>Visibilidad</th><th>Descripción</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><code>findById(ClinicId id)</code></td><td><code>Optional&lt;Clinic&gt;</code></td><td>public</td><td>Busca la clínica por su identificador.</td></tr>
+    <tr><td><code>save(Clinic clinic)</code></td><td><code>Clinic</code></td><td>public</td><td>Persiste o actualiza la clínica y sus sedes.</td></tr>
+    <tr><td><code>findByTaxId(TaxId taxId)</code></td><td><code>Optional&lt;Clinic&gt;</code></td><td>public</td><td>Resuelve clínica por RUC.</td></tr>
+    <tr><td><code>existsByTaxId(TaxId taxId)</code></td><td><code>boolean</code></td><td>public</td><td>Verifica duplicidad de RUC.</td></tr>
+    <tr><td><code>findAllByStatus(ClinicStatus status)</code></td><td><code>List&lt;Clinic&gt;</code></td><td>public</td><td>Lista clínicas por estado (uso interno de mantenimiento).</td></tr>
+  </tbody>
+</table>
+
+<p><strong>2. BranchRepository (Repository Interface)</strong></p>
+
+<table>
+  <thead>
+    <tr><th>Método</th><th>Tipo Retorno</th><th>Visibilidad</th><th>Descripción</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><code>findAllByClinicId(ClinicId clinicId)</code></td><td><code>List&lt;Branch&gt;</code></td><td>public</td><td>Lista sedes de un tenant.</td></tr>
+    <tr><td><code>findByIdAndClinicId(BranchId id, ClinicId clinicId)</code></td><td><code>Optional&lt;Branch&gt;</code></td><td>public</td><td>Obtiene una sede específica del tenant.</td></tr>
+  </tbody>
+</table>
+
+<p><strong>3. PhysiotherapistProfileRepository (Repository Interface)</strong></p>
+
+<table>
+  <thead>
+    <tr><th>Método</th><th>Tipo Retorno</th><th>Visibilidad</th><th>Descripción</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><code>findById(PhysiotherapistProfileId id)</code></td><td><code>Optional&lt;PhysiotherapistProfile&gt;</code></td><td>public</td><td>Busca perfil por ID.</td></tr>
+    <tr><td><code>findByUserId(UserId userId)</code></td><td><code>Optional&lt;PhysiotherapistProfile&gt;</code></td><td>public</td><td>Resuelve el perfil del usuario autenticado.</td></tr>
+    <tr><td><code>findAllByClinicId(ClinicId clinicId)</code></td><td><code>List&lt;PhysiotherapistProfile&gt;</code></td><td>public</td><td>Lista fisioterapeutas de la clínica.</td></tr>
+    <tr><td><code>findAllByClinicIdAndPrimaryBranchId(ClinicId clinicId, BranchId branchId)</code></td><td><code>List&lt;PhysiotherapistProfile&gt;</code></td><td>public</td><td>Filtra fisioterapeutas por sede.</td></tr>
+    <tr><td><code>existsByLicenseNumber(LicenseNumber licenseNumber)</code></td><td><code>boolean</code></td><td>public</td><td>Verifica duplicidad de colegiatura.</td></tr>
+  </tbody>
+</table>
+
+<p><strong>4. PatientProfileRepository (Repository Interface)</strong></p>
+
+<table>
+  <thead>
+    <tr><th>Método</th><th>Tipo Retorno</th><th>Visibilidad</th><th>Descripción</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><code>findById(PatientProfileId id)</code></td><td><code>Optional&lt;PatientProfile&gt;</code></td><td>public</td><td>Busca paciente por ID.</td></tr>
+    <tr><td><code>findByUserId(UserId userId)</code></td><td><code>Optional&lt;PatientProfile&gt;</code></td><td>public</td><td>Resuelve el perfil del usuario autenticado.</td></tr>
+    <tr><td><code>findAllByClinicId(ClinicId clinicId)</code></td><td><code>List&lt;PatientProfile&gt;</code></td><td>public</td><td>Lista pacientes del tenant.</td></tr>
+    <tr><td><code>findAllByAssignedPhysiotherapistId(PhysiotherapistProfileId id)</code></td><td><code>List&lt;PatientProfile&gt;</code></td><td>public</td><td>Lista pacientes asignados a un fisioterapeuta.</td></tr>
+    <tr><td><code>existsByUserId(UserId userId)</code></td><td><code>boolean</code></td><td>public</td><td>Evita duplicidad de perfil por usuario.</td></tr>
+  </tbody>
+</table>
+
+<p><strong>5. External Adapters</strong></p>
+
+<table>
+  <thead>
+    <tr><th>Adapter</th><th>Responsabilidad</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><code>SunatTaxIdAdapter</code></td><td>Valida el RUC de la clínica contra un servicio externo.</td></tr>
+    <tr><td><code>LicenseRegistryAdapter</code></td><td>Valida la colegiatura del fisioterapeuta en el registro profesional correspondiente.</td></tr>
+    <tr><td><code>AzureBlobStorageAdapter</code></td><td>Gestiona la carga y recuperación de logos y adjuntos clínicos.</td></tr>
+  </tbody>
+</table>
 
 <hr class="page-break">
 
