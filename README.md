@@ -1675,7 +1675,15 @@ A partir del análisis de los segmentos objetivo, las entrevistas, las hipótesi
 
 ## 3.2. Impact Mapping
 
+Para asegurar que los esfuerzos de ingeniería de uFlex generen valor tangible para el negocio, hemos utilizado la técnica de Impact Mapping. Esta herramienta nos permite visualizar la relación causa-efecto entre nuestros objetivos estratégicos y los entregables técnicos, evitando el desarrollo de funcionalidades innecesarias y manteniendo al equipo alineado con las necesidades reales de nuestros usuarios.
 
+A continuación, se presenta nuestro Impact Map, estructurado sobre dos objetivos de negocio (Business Goals) críticos, definidos bajo criterios SMART:
+
+- Expansión Comercial: Lograr que 15 clínicas de rehabilitación en Lima se suscriban al plan 'uFlex' en los primeros 10 meses de lanzamiento.
+
+- Retención de Clientes: Reducir la tasa de abandono del tratamiento en un 25% durante el primer año mediante el uso de biofeedback IoT.
+
+<img src="assets/requirements/maps/impact-maps/impact-mapping.png" alt="Impact Mapping" width="900">
 
 <hr class="page-break">
 
