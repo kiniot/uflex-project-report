@@ -1807,9 +1807,9 @@ Se priorizó Start-with-Value para ubicar primero los flujos que diferencian a u
 
 El proceso se organizó en tres pasos documentados:
 
-1. **Identificación de valor estratégico:** se trabajó inicialmente con los eventos de dominio (post-its naranjas) para responder qué partes del flujo generan valor directo para la clínica, el fisioterapeuta y el paciente.
+1. **Identificación de valor estratégico:** cada miembro del equipo respondió a la pregunta: “¿Qué parte del sistema genera directamente valor para los usuarios y diferencia la solución de otras similares?”. 
 
-   ![Identificación de valor estratégico](assets/diagrams/ddd/candidate-context-discovery/candidate-context-discovery-step1-v1.jpg)
+   ![Identificación de valor estratégico](assets/diagrams/ddd/candidate-context-discovery/candidate-context-discovery-step1-v1.png)
 
 2. **Agrupación de eventos en torno al valor:** luego se agruparon los eventos por afinidad de negocio y cohesión funcional, emergiendo clústeres naturales alrededor de identidad y acceso, organización clínica, suscripción, planificación terapéutica, ciclo de vida de dispositivos y ejecución de terapia.
 
