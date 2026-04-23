@@ -342,8 +342,8 @@ Ser reconocidos en el 2030 como la startup líder en telemonitoreo biomecánico 
   </thead>
   <tbody>
     <tr>
-      <td><strong>Crispín Ramos, Daniel Franco</strong><br> [COMPLETAR: descripción]</td>
-      <td><img src="img/[COMPLETAR].jpg" alt="daniel image" width="200"></td>
+      <td><strong>Crispín Ramos, Daniel Franco</strong><br> Soy Daniel. Tengo interés por la arquitectura de sistemas y el diseño de soluciones. Me entusiasma profundizar en metodologías como Domain-Driven Design y patrones de diseño para entender cómo construir aplicaciones escalables y mantenibles. Soy una persona responsable, comprometida y con facilidad para trabajar en equipo.</td>
+      <td><img src="assets/images/photos/daniel-photo.jpg" alt="daniel image" width="200"></td>
     </tr>
     <tr>
       <td><strong>Ramirez Mestanza, Salim Ignacio</strong><br> Soy Salim, estudiante de Ingenieria de Software, con entusiasmo por el desarrollo backend, la arquitectura de software y el cloud. Me enfoco en tomar decisiones tecnicas complejas que generen impacto directo en los resultados del proyecto y aporten a los atributos de calidad esperados del software. Me considero perseverante, no me rindo ante los retos y siempre busco la colaboracion del equipo para avanzar. Tambien asumo un rol de liderazgo, porque creo firmemente que cada integrante es una parte indispensable para el exito del proyecto.</td>
