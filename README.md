@@ -4,21 +4,19 @@
 
 <h2 style="text-align: center;"> Universidad Peruana de Ciencias Aplicadas </h2>
 
-<h4 style="text-align: center"> Ingeniería de Software </h4>
+<h4 style="text-align: center"> Facultad de Ingeniería </h4>
 
-<h4 style="text-align: center"> Periodo: 202610 </h4>
-
-<h4 style="text-align: center"> 1ASI0572 | Desarrollo de Soluciones IOT </h4>
+<h4 style="text-align: center"> Curso: 1ASI0572 - Desarrollo de Soluciones IOT </h4>
 
 <h4 style="text-align: center"> NRC: 17755  </h4>
 
-<h4 style="text-align: center"> Docente: Marco Antonio León Baca </h4>
+<h4 style="text-align: center"> Nombre del profesor: Marco Antonio León Baca </h4>
 
-<h3 style="text-align: center;"> Informe del Trabajo Final </h3>
+<h3 style="text-align: center;"> "Informe del Trabajo Final" </h3>
 
-<h4 style="text-align: center"> Startup: KinIoT </h4>
+<h4 style="text-align: center"> Nombre del grupo: KinIoT </h4>
 
-<h4 style="text-align: center"> Producto: uFlex </h4>
+<h4 style="text-align: center"> Nombre del producto: uFlex </h4>
 
 <h4 style="text-align: center">Integrantes:</h4>
 
@@ -53,7 +51,7 @@
 
 <br>
 
-<h5 style="text-align: center; font-style: italic;"> Abril 2026 </h5>
+<h5 style="text-align: center; font-style: italic;"> Lima – Abril 2026 </h5>
 
 <hr class="page-break">
 
@@ -99,14 +97,21 @@ Se usó el flujo de trabajo **GitFlow**, que incluye las siguientes ramas princi
 - **release/vX.X.X:** Rama creada para preparar versiones candidatas al reporte final, siguiendo *Semantic Versioning 2.0.0*. En esta rama se realizan ajustes finales como correcciones menores y revisiones antes de integrarla a `main`.
 - **hotfix/fix-name:** Rama utilizada para aplicar correcciones críticas directamente sobre `main`, asegurando la estabilidad de la versión publicada.
 
+<hr class="page-break">
+
 ## TB1
 
 **Tareas**
 
 Para el desarrollo del TB1, cada participante del equipo realizó las siguientes tareas:
 
-| Integrantes                      | Tarea asignada                                                                                                                                                                                                                                                                 |
-|----------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Integrantes                         | Tarea asignada                                                                                               |
+|-------------------------------------|--------------------------------------------------------------------------------------------------------------|
+| Ramirez Mestanza, Salim Ignacio     | - Ubiquitous Language <br> - User Stories <br> - Product Backlog <br> - Domain Message Flows Modeling        |
+| Sulca Gonzales, Paúl Fernando       | - User Task Matrix <br> - User Journey Mapping <br> - Empathy Mapping <br> - Candidate Context Discovery     |
+| Crispin Ramos, Daniel Franco        | - Registro de entrevistas <br> - Análisis de Entrevistas <br> - Impact Mapping <br> - Context Mapping        |
+| Varela Bustinza, Marcelo Alessandro | - Startup Profile <br> - Solution Profile <br> - Antecedentes y problemática <br> - Bounded Context Canvases |
+| Rivera Sosa, Eduardo Gael           | - Segmentos Objetivo <br> - Competidores <br> - User Personas <br> - Software Architecture                   |
 
 **GitHub Collaboration Insights**
 
@@ -251,6 +256,9 @@ Análisis de cantidad de commits realizados por semana.
 - [Conclusiones](#conclusiones)
    - [Conclusiones y recomendaciones](#conclusiones-y-recomendaciones)
 - [Bibliografía](#bibliografía)
+- [Anexos](#anexos)
+    - [Anexo A: Código Fuente](#anexo-a-código-fuente)
+    - [Anexo B: Videos en Microsoft Streams](#anexo-b-videos-en-microsoft-streams)
 
 <hr class="page-break">
 
@@ -3667,11 +3675,7 @@ El esquema físico del BC Subscription en Azure Database for PostgreSQL está co
 
 <hr class="page-break">
 
-<hr class="page-break">
-
 ### 4.2.3. Bounded Context: Organization
-
-<h3 id="4-2-3-bounded-context-organization">4.2.3. Bounded Context: Organization</h3>
 
 <p>El bounded context <strong>Organization</strong> concentra la información organizacional y el perfil enriquecido de cada actor clínico registrado en uFlex. Mientras que el BC IAM resuelve la identidad técnica del usuario (autenticación, roles y ciclo de vida de la cuenta) y el BC Subscription gobierna el contrato comercial del tenant, el BC Organization se encarga de representar a la <em>clínica como organización</em> (denominación legal, RUC, sedes, datos de contacto, logotipo, horarios) y de mantener el <em>perfil personal y clínico</em> de los usuarios asociados a esa clínica (fisioterapeutas con su número de colegiatura y especialidad, pacientes con sus datos demográficos, contacto de emergencia y breve historial clínico, y administradores con su ámbito de gestión). Este contexto es, por tanto, la fuente autoritativa del <code>ClinicId</code> referenciado lógicamente por el resto de bounded contexts y del árbol de <code>Branches</code> (sedes) sobre el que operan Planning, Device y Therapy. Los comandos y eventos principales (<code>RegisterClinicCommand</code>, <code>AddBranchCommand</code>, <code>RegisterPhysiotherapistProfileCommand</code>, <code>RegisterPatientProfileCommand</code>, <code>AssignPatientToPhysiotherapistCommand</code>, <code>ClinicRegisteredEvent</code>, <code>ClinicActivatedEvent</code>, <code>BranchAddedEvent</code>, <code>PhysiotherapistProfileRegisteredEvent</code>, <code>PatientProfileRegisteredEvent</code>, <code>PatientAssignedToPhysiotherapistEvent</code>) fueron identificados durante el Design-Level EventStorming.</p>
 
@@ -4657,8 +4661,6 @@ El esquema físico del BC Planning en Azure Database for PostgreSQL consta de un
 
 <hr class="page-break">
 
-<hr class="page-break">
-
 ### 4.2.6. Bounded Context: Therapy
 
 El Bounded Context **Therapy** encapsula toda la logica de negocio relacionada con la ejecucion de sesiones de terapia fisica asistida por dispositivos IoT dentro de uFlex. Su responsabilidad central es orquestar el ciclo de vida completo de una sesion terapeutica: desde la preparacion del hardware y la identificacion de la rutina diaria, pasando por la ejecucion y validacion de series de ejercicios con captura de datos de movimiento articular en tiempo real, hasta la finalizacion y cierre de la sesion.
@@ -5202,48 +5204,84 @@ En integridad y rendimiento, el diseño incorpora reglas alineadas al dominio: �
 
 # Conclusiones
 
-
+En esta sección se presentan las conclusiones y recomendaciones derivadas del desarrollo del proyecto. Se analizan los resultados obtenidos, los desafíos enfrentados y las lecciones aprendidas durante el proceso. Además, se proponen acciones futuras para mejorar y optimizar la plataforma uFlex.
 
 ## Conclusiones y recomendaciones
 
+Se identificaron las siguientes conclusiones y recomendaciones basadas en el desarrollo del proyecto:
 
+### Conclusiones
+
+La revisión del informe evidencia que uFlex responde a una necesidad real y relevante en el contexto peruano: la falta de seguimiento objetivo en la rehabilitación domiciliaria de miembro superior. El problema está bien sustentado en términos clínicos y operativos, especialmente por la dependencia actual de reportes subjetivos, los riesgos de mala ejecución y la discontinuidad entre sesiones presenciales. En ese sentido, el planteamiento del proyecto muestra una oportunidad clara de impacto para pacientes, fisioterapeutas y clínicas.
+
+También se concluye que la propuesta de solución está bien orientada desde negocio y experiencia de usuario, al integrar hardware IoT vestible con una plataforma SaaS multitenant y flujos diferenciados para cada actor. El uso de Lean UX permite conectar hipótesis de valor con métricas concretas (adherencia, confianza clínica, reducción de tiempos de evaluación y eficiencia de onboarding), lo cual fortalece la trazabilidad entre problema, funcionalidad y resultado esperado. Esto aporta coherencia estratégica para fases de validación posteriores.
+
+Finalmente, el diseño técnico presenta una base sólida para escalar el producto de forma mantenible, gracias al enfoque DDD estratégico y táctico, la identificación de bounded contexts y la protección del core clínico (Planning y Therapy). Decisiones como separar Device mediante ACL y estructurar la arquitectura por capas (edge, clientes, cloud) reducen acoplamientos y riesgos de evolución tecnológica. En conjunto, el informe deja una arquitectura consistente para avanzar hacia implementación y pruebas en entorno real.
+
+### Recomendaciones
+
+Se recomienda priorizar un piloto controlado con clínicas objetivo de Lima para validar tempranamente las hipótesis principales del Lean UX, antes de ampliar el alcance comercial. Este piloto debe medir, al menos, adherencia del paciente, calidad de ejecución de ejercicios, confianza del fisioterapeuta para ajustar planes y tiempos de configuración del kit. Con ello, el equipo podrá convertir supuestos de valor en evidencia operativa y clínica.
+
+También es clave reforzar la estrategia de adopción para reducir la resistencia al cambio identificada en el propio informe. Para ello, conviene implementar onboarding guiado, tutoriales contextuales y soporte técnico inicial para administradores y especialistas, junto con una experiencia móvil simple para pacientes. Esta línea de trabajo puede ser determinante para sostener uso continuo y evitar abandono por fricción tecnológica.
+
+Por último, se sugiere institucionalizar un marco de seguimiento de producto con KPIs y revisiones periódicas por contexto de dominio (Therapy, Planning, Device, etc.), asegurando decisiones basadas en datos. En paralelo, sería conveniente preparar desde etapas tempranas requisitos de interoperabilidad clínica (por ejemplo, exportación a EHR), privacidad y seguridad operativa para facilitar futuras integraciones. Esto permitirá que el crecimiento técnico y comercial ocurra sin perder foco clínico ni calidad del servicio.
 
 <hr class="page-break">
 
 # Bibliografía
 
-1. Andina. (2023). *Cenate brindó más de 3,200 sesiones de telerehabilitación física en lo que va del 2023*. https://andina.pe/agencia/noticia-cenate-brindo-mas-3200-sesiones-telerehabilitacion-fisica-lo-va-del-2023-938058.aspx
+1. Andina. (2023). *Cenate brindó más de 3,200 sesiones de telerehabilitación física en lo que va del 2023*. [https://andina.pe/agencia/noticia-cenate-brindo-mas-3200-sesiones-telerehabilitacion-fisica-lo-va-del-2023-938058.aspx](https://andina.pe/agencia/noticia-cenate-brindo-mas-3200-sesiones-telerehabilitacion-fisica-lo-va-del-2023-938058.aspx)
 
-2. Arias Tolentino, E. (2022). *Fracturas expuestas en pacientes atendidos en el Hospital Carlos Lanfranco La Hoz en el 2021* [Proyecto de investigación de segunda especialidad, Universidad Privada San Juan Bautista]. Repositorio Institucional UPSJB. https://repositorio.upsjb.edu.pe/backend/api/core/bitstreams/e7625b29-4ecd-4401-b26e-a9e7dfcc23e9/content
+2. Arias Tolentino, E. (2022). *Fracturas expuestas en pacientes atendidos en el Hospital Carlos Lanfranco La Hoz en el 2021* [Proyecto de investigación de segunda especialidad, Universidad Privada San Juan Bautista]. Repositorio Institucional UPSJB. [https://repositorio.upsjb.edu.pe/backend/api/core/bitstreams/e7625b29-4ecd-4401-b26e-a9e7dfcc23e9/content](https://repositorio.upsjb.edu.pe/backend/api/core/bitstreams/e7625b29-4ecd-4401-b26e-a9e7dfcc23e9/content)
 
-3. Carbajal Galarza, M. M., Chinchihualpa Paredes, N. O., & Abanto Perez, S. A. (2021). *Eficacia de las intervenciones tecnológicas para mejorar la función motora del miembro superior de personas que han sufrido un accidente cerebrovascular en países de bajos y medianos ingresos: revisión sistemática y metaanálisis* [Trabajo de investigación para optar por el título profesional de Médico Cirujano, Universidad Peruana Cayetano Heredia]. Repositorio Institucional UPCH. https://hdl.handle.net/20.500.12866/9440
+3. Carbajal Galarza, M. M., Chinchihualpa Paredes, N. O., & Abanto Perez, S. A. (2021). *Eficacia de las intervenciones tecnológicas para mejorar la función motora del miembro superior de personas que han sufrido un accidente cerebrovascular en países de bajos y medianos ingresos: revisión sistemática y metaanálisis* [Trabajo de investigación para optar por el título profesional de Médico Cirujano, Universidad Peruana Cayetano Heredia]. Repositorio Institucional UPCH. [https://hdl.handle.net/20.500.12866/9440](https://hdl.handle.net/20.500.12866/9440)
 
-4. Castro Villanueva, D. (2023). *Diseño mecatrónico de un dispositivo para la rehabilitación pasiva de la rodilla* [Tesis de título profesional, Pontificia Universidad Católica del Perú]. Repositorio Institucional PUCP. http://hdl.handle.net/20.500.12404/26882
+4. Castro Villanueva, D. (2023). *Diseño mecatrónico de un dispositivo para la rehabilitación pasiva de la rodilla* [Tesis de título profesional, Pontificia Universidad Católica del Perú]. Repositorio Institucional PUCP. [http://hdl.handle.net/20.500.12404/26882](http://hdl.handle.net/20.500.12404/26882)
 
-5. Fernandez Agurto, P. E., Yenque Zavalaga, K. M. J., & Yucra Castro, K. F. (2025). *Programas de telerehabilitación en atención domiciliaria en adultos y adultos mayores con EPOC: Un scoping review* [Tesis de licenciatura, Universidad Peruana Cayetano Heredia]. Repositorio Institucional UPCH. https://repositorio.upch.edu.pe/bitstream/handle/20.500.12866/17596/Programas_FernandezAgurto_Paola.pdf?sequence=1&isAllowed=y
+5. Fernandez Agurto, P. E., Yenque Zavalaga, K. M. J., & Yucra Castro, K. F. (2025). *Programas de telerehabilitación en atención domiciliaria en adultos y adultos mayores con EPOC: Un scoping review* [Tesis de licenciatura, Universidad Peruana Cayetano Heredia]. Repositorio Institucional UPCH. [https://repositorio.upch.edu.pe/bitstream/handle/20.500.12866/17596/Programas_FernandezAgurto_Paola.pdf?sequence=1&isAllowed=y](https://repositorio.upch.edu.pe/bitstream/handle/20.500.12866/17596/Programas_FernandezAgurto_Paola.pdf?sequence=1&isAllowed=y)
 
-6. Fisiofix. (2025). *¿Cuánto cuesta una sesión de fisioterapia en Lima?* https://fisiofix.pe/cuanto-cuesta-una-sesion-de-fisioterapia-en-lima/
+6. Fisiofix. (2025). *¿Cuánto cuesta una sesión de fisioterapia en Lima?* [https://fisiofix.pe/cuanto-cuesta-una-sesion-de-fisioterapia-en-lima/](https://fisiofix.pe/cuanto-cuesta-una-sesion-de-fisioterapia-en-lima/)
 
-7. Instituto Nacional de Estadística e Informática. (2022). *En el Perú 1 millón 575 mil personas presentan algún tipo de discapacidad*. https://m.inei.gob.pe/prensa/noticias/en-el-peru-1-millon-575-mil-personas-presentan-alg/
+7. Instituto Nacional de Estadística e Informática. (2022). *En el Perú 1 millón 575 mil personas presentan algún tipo de discapacidad*. [https://m.inei.gob.pe/prensa/noticias/en-el-peru-1-millon-575-mil-personas-presentan-alg/](https://m.inei.gob.pe/prensa/noticias/en-el-peru-1-millon-575-mil-personas-presentan-alg/)
 
-8. Instituto Nacional de Estadística e Informática. (2025). *Uso de Internet y teléfonos celulares en Perú, tercer trimestre de 2025*. https://www.gob.pe/institucion/inei/noticias/1342293-en-el-tercer-trimestre-de-2025-el-91-3-de-la-poblacion-de-6-y-mas-anos-de-e
+8. Instituto Nacional de Estadística e Informática. (2025). *Uso de Internet y teléfonos celulares en Perú, tercer trimestre de 2025*. [https://www.gob.pe/institucion/inei/noticias/1342293-en-el-tercer-trimestre-de-2025-el-91-3-de-la-poblacion-de-6-y-mas-anos-de-e](https://www.gob.pe/institucion/inei/noticias/1342293-en-el-tercer-trimestre-de-2025-el-91-3-de-la-poblacion-de-6-y-mas-anos-de-e)
 
-9. Instituto Nacional de Rehabilitación. (2025). *Efecto del uso de la férula de neopreno "Madey" sobre la capacidad funcional de los miembros superiores en las actividades de vida diaria de los pacientes adultos con artritis reumatoide del Instituto Nacional de Rehabilitación*. https://app.inr.gob.pe/investigacion/media/BancoInvestigacion/BI_Institucional/extrainstitucional_25.pdf
+9. Instituto Nacional de Rehabilitación. (2025). *Efecto del uso de la férula de neopreno "Madey" sobre la capacidad funcional de los miembros superiores en las actividades de vida diaria de los pacientes adultos con artritis reumatoide del Instituto Nacional de Rehabilitación*. [https://app.inr.gob.pe/investigacion/media/BancoInvestigacion/BI_Institucional/extrainstitucional_25.pdf](https://app.inr.gob.pe/investigacion/media/BancoInvestigacion/BI_Institucional/extrainstitucional_25.pdf)
 
-10. León, M. (2023). *Diseño de un dispositivo de habilitación portátil de codo para personas con epicondilitis lateral* [Tesis título profesional, Pontificia Universidad Católica del Perú]. Repositorio Institucional PUCP. http://hdl.handle.net/20.500.12404/26570
+10. León, M. (2023). *Diseño de un dispositivo de habilitación portátil de codo para personas con epicondilitis lateral* [Tesis título profesional, Pontificia Universidad Católica del Perú]. Repositorio Institucional PUCP. [http://hdl.handle.net/20.500.12404/26570](http://hdl.handle.net/20.500.12404/26570)
 
-11. Ministerio de Salud. (2019). *Prevención y manejo de condiciones secundarias de salud en personas con discapacidad*. https://www.minsa.gob.pe/presupuestales/doc2019/pp/anexo/ANEXO2_8.pdf
+11. Ministerio de Salud. (2019). *Prevención y manejo de condiciones secundarias de salud en personas con discapacidad*. [https://www.minsa.gob.pe/presupuestales/doc2019/pp/anexo/ANEXO2_8.pdf](https://www.minsa.gob.pe/presupuestales/doc2019/pp/anexo/ANEXO2_8.pdf)
 
-12. Ministerio de Salud. (2025a). *Más de 3,4 millones de atenciones por telemedicina en Perú (enero 2024 – marzo 2025)*. Ministerio de Salud del Perú. https://www.gob.pe/institucion/minsa/noticias/1132597-mas-de-3-4-millones-de-atenciones-por-telemedicina-un-hito-en-la-atencion-
+12. Ministerio de Salud. (2025a). *Más de 3,4 millones de atenciones por telemedicina en Perú (enero 2024 – marzo 2025)*. Ministerio de Salud del Perú. [https://www.gob.pe/institucion/minsa/noticias/1132597-mas-de-3-4-millones-de-atenciones-por-telemedicina-un-hito-en-la-atencion-](https://www.gob.pe/institucion/minsa/noticias/1132597-mas-de-3-4-millones-de-atenciones-por-telemedicina-un-hito-en-la-atencion-)
 
-13. Ministerio de Salud. (2025b). *Instituto Nacional de Rehabilitación brindó 276 893 atenciones en consulta, procedimientos médicos y terapias durante el 2024*. https://www.gob.pe/institucion/minsa/noticias/1093672-instituto-nacional-de-rehabilitacion-brindo-276-893-atenciones-en-consulta-procedimientos-medicos-y-terapias-durante-el-2024
+13. Ministerio de Salud. (2025b). *Instituto Nacional de Rehabilitación brindó 276 893 atenciones en consulta, procedimientos médicos y terapias durante el 2024*. [https://www.gob.pe/institucion/minsa/noticias/1093672-instituto-nacional-de-rehabilitacion-brindo-276-893-atenciones-en-consulta-procedimientos-medicos-y-terapias-durante-el-2024](https://www.gob.pe/institucion/minsa/noticias/1093672-instituto-nacional-de-rehabilitacion-brindo-276-893-atenciones-en-consulta-procedimientos-medicos-y-terapias-durante-el-2024)
 
-14. Ministerio de Vivienda, Construcción y Saneamiento. (2022). *Más del 30% de peruanos con discapacidad tiene problemas para su desarrollo profesional debido a barreras en sus ciudades*. https://www.gob.pe/institucion/vivienda/noticias/658298-mas-del-30-de-peruanos-con-discapacidad-tiene-problemas-para-su-desarrollo-profesional-debido-a-barreras-en-sus-ciudades
+14. Ministerio de Vivienda, Construcción y Saneamiento. (2022). *Más del 30% de peruanos con discapacidad tiene problemas para su desarrollo profesional debido a barreras en sus ciudades*. [https://www.gob.pe/institucion/vivienda/noticias/658298-mas-del-30-de-peruanos-con-discapacidad-tiene-problemas-para-su-desarrollo-profesional-debido-a-barreras-en-sus-ciudades](https://www.gob.pe/institucion/vivienda/noticias/658298-mas-del-30-de-peruanos-con-discapacidad-tiene-problemas-para-su-desarrollo-profesional-debido-a-barreras-en-sus-ciudades)
 
-15. OSIPTEL. (2024). *Encuesta Residencial de Servicios de Telecomunicaciones (ERESTEL) – 94,8% de hogares peruanos cuenta con un smartphone*. Organismo Supervisor de Inversión Privada en Telecomunicaciones. https://www.osiptel.gob.pe/portal-del-usuario/noticias/erestel-el-94-8-de-hogares-peruanos-cuenta-con-un-smartphone/
+15. OSIPTEL. (2024). *Encuesta Residencial de Servicios de Telecomunicaciones (ERESTEL) – 94,8% de hogares peruanos cuenta con un smartphone*. Organismo Supervisor de Inversión Privada en Telecomunicaciones. [https://www.osiptel.gob.pe/portal-del-usuario/noticias/erestel-el-94-8-de-hogares-peruanos-cuenta-con-un-smartphone/](https://www.osiptel.gob.pe/portal-del-usuario/noticias/erestel-el-94-8-de-hogares-peruanos-cuenta-con-un-smartphone/)
 
-16. Pelvicare. (2022). *Telerehabilitación*. https://pelvicare.pe/tratamientos/telerehabilitacion/
+16. Pelvicare. (2022). *Telerehabilitación*. [https://pelvicare.pe/tratamientos/telerehabilitacion/](https://pelvicare.pe/tratamientos/telerehabilitacion/)
 
-17. Rosales, F., Gutiérrez, D., y Valencia, J. (2023). Características laborales y uso de la práctica digital de fisioterapeutas en Lima Metropolitana y el Callao-Perú durante la pandemia de la COVID-19. *Revista Peruana de Rehabilitación y Salud Humana, 5*(1), 1-12. https://revistas.upch.edu.pe/index.php/RHR/article/view/5034
+17. Rosales, F., Gutiérrez, D., y Valencia, J. (2023). Características laborales y uso de la práctica digital de fisioterapeutas en Lima Metropolitana y el Callao-Perú durante la pandemia de la COVID-19. *Revista Peruana de Rehabilitación y Salud Humana, 5*(1), 1-12. [https://revistas.upch.edu.pe/index.php/RHR/article/view/5034](https://revistas.upch.edu.pe/index.php/RHR/article/view/5034)
 
 <hr class="page-break">
+
+# Anexos
+
+En esta sección se incluyen materiales adicionales que complementan el contenido del informe principal. Se incluyen además, enlaces a repositorios, diagramas, documentos, y otros recursos que son de utilidad.
+
+## Anexo A: Código Fuente
+
+El código fuente del proyecto está disponible en el siguiente repositorio de GitHub:
+
+1. Organización de GitHub: [https://github.com/kiniot](https://github.com/kiniot)
+2. Repositorio del reporte en GitHub: [https://github.com/kiniot/uflex-project-report](https://github.com/kiniot/uflex-project-report)
+
+<hr class="page-break">
+
+## Anexo B: Videos en Microsoft Streams
+
+Los videos de entrevistas para *needfinding*, exposiciones, y otros videos sobre avances del proyecto están disponibles en Microsoft Streams:
+
+1. Entrevistas para Needfinding: [https://upcedupe-my.sharepoint.com/:v:/g/personal/u20201e843_upc_edu_pe/IQBi9_cKZMuRQaK0-UbxF7MIAZnukHun0vDhy1qki_eRsUs?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=JVqpgO](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20201e843_upc_edu_pe/IQBi9_cKZMuRQaK0-UbxF7MIAZnukHun0vDhy1qki_eRsUs?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=JVqpgO)
+2. Exposición A V1: [https://upcedupe-my.sharepoint.com/:v:/g/personal/u20201e843_upc_edu_pe/IQD2BLK_kG3WTLABTiNdeqlcAY6m3IeQq8Sy6AZInrFMkR8?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=puz5qK](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20201e843_upc_edu_pe/IQD2BLK_kG3WTLABTiNdeqlcAY6m3IeQq8Sy6AZInrFMkR8?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=puz5qK)
