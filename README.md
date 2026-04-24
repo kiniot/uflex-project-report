@@ -4027,7 +4027,7 @@ El esquema físico del BC Subscription en Azure Database for PostgreSQL está co
 
 El diagrama de componentes (C4 Nivel 3) muestra cómo se organiza internamente el contenedor Organization API (Java/Spring Boot). Se distinguen como piezas centrales los controladores ClinicController, BranchController, PhysiotherapistProfileController y PatientProfileController como puntos de entrada REST; los application services ClinicCommandServiceImpl, ClinicQueryServiceImpl, PhysiotherapistProfileCommandServiceImpl y PatientProfileCommandServiceImpl como responsables de materializar la lógica de aplicación; la fachada OrganizationContextFacadeImpl como ACL consumida por bounded contexts hermanos; los repositorios ClinicRepository, PhysiotherapistProfileRepository y PatientProfileRepository como abstracciones de persistencia; y los adaptadores SunatTaxIdAdapter, LicenseRegistryAdapter y AzureBlobStorageAdapter para integrarse con servicios externos de validación y almacenamiento. Todos estos componentes viven dentro del Container Boundary del Planning Service; el API Gateway queda fuera como mecanismo de enrutamiento y validación JWT, y la Organization DB también se modela externamente como Azure Database for PostgreSQL.
 
-<div style="text-align: center;"> <img src="assets/diagrams/software-architecture/components/out/diagram-organization.png" alt="uFlex — Organization Bounded Context Component Diagram" style="max-width: 100%; height: auto;"> </div>
+<div style="text-align: center;"> <img src="assets/diagrams/software-architecture/components/out/organization.png" alt="uFlex — Organization Bounded Context Component Diagram" style="max-width: 100%; height: auto;"> </div>
 
 Figura 4.2.3.5. Diagrama de componentes (C4 Nivel 3) del Bounded Context Organization.
 
