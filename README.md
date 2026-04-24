@@ -4377,6 +4377,30 @@ El diagrama de componentes (C4 Nivel 3) muestra cómo se organiza internamente e
 
 <hr class="page-break">
 
+#### 4.2.4.6. Bounded Context Software Architecture Code Level Diagrams
+
+##### 4.2.4.6.1. Bounded Context Domain Layer Class Diagrams
+
+El diagrama de clases del Domain Layer del BC Device modela exclusivamente los conceptos centrales de la gestión de hardware IoT, sin incluir las capas de application ni infrastructure. El paquete domain.model.aggregates contiene al Aggregate Root IotKit; domain.model.valueobjects agrupa los Value Objects (IotKitId, SerialNumber, BatteryLevel, CalibrationData) y el enumerado (KitStatus); domain.model.events encapsula los Domain Events publicados por el aggregate (IotKitRegisteredEvent, IotKitCalibratedEvent, BatteryLevelChangedEvent, IotKitStatusChangedEvent); y domain.exceptions reúne las excepciones de negocio que protegen las invariantes del dominio (por ejemplo, evitar la duplicidad de registros o calibraciones en estados inválidos). Las flechas con línea continua marcan composición (el IotKit contiene sus Value Objects de estado y calibración), las flechas con línea punteada marcan dependencias semánticas (eventos publicados y excepciones lanzadas).
+
+<div style="text-align: center;">
+  <img src="assets/diagrams/uml/class/out/device.png" alt="uFlex — Device Bounded Context Domain Class Diagram" style="max-width: 100%; height: auto;">
+</div>
+
+*Figura 4.2.4.6.1. Diagrama de clases del dominio del Bounded Context Device.*
+
+##### 4.2.4.6.2. Bounded Context Database Design Diagram
+
+El esquema físico del BC Device en Azure Database for PostgreSQL consta de una tabla principal iot_kits que almacena el estado operativo y de salud del sensor (identificador único, serial_number, status_code, nivel de batería, versión de firmware, datos de calibración y timestamps de auditoría), y una tabla de catálogo kit_statuses para normalizar los estados permitidos del ciclo de vida del hardware (REGISTERED, LINKED, CALIBRATING, DISCONNECTED). Los índices incluyen búsquedas por serial_number para validar la unicidad y trazabilidad física del equipo, y por status_code para monitorear rápidamente flotas de dispositivos disponibles o en error. Se optó deliberadamente por no declarar foreign keys duras hacia tablas de otros bounded contexts para mantener la autonomía entre módulos, gestionando la relación lógica del kit con los pacientes y terapeutas a través de los servicios de aplicación.
+
+<div style="text-align: center;">
+  <img src="assets/diagrams/database/erd/out/device-erd.png" alt="uFlex — Device Bounded Context Database ER Diagram" style="max-width: 100%; height: auto;">
+</div>
+
+*Figura 4.2.4.6.2. Diagrama entidad-relación del Bounded Context Device.*
+
+<hr class="page-break">
+
 ### 4.2.5. Bounded Context: Planning
 
 #### 4.2.5.1. Domain Layer
