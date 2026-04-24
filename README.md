@@ -4,21 +4,19 @@
 
 <h2 style="text-align: center;"> Universidad Peruana de Ciencias Aplicadas </h2>
 
-<h4 style="text-align: center"> Ingeniería de Software </h4>
+<h4 style="text-align: center"> Facultad de Ingeniería </h4>
 
-<h4 style="text-align: center"> Periodo: 202610 </h4>
-
-<h4 style="text-align: center"> 1ASI0572 | Desarrollo de Soluciones IOT </h4>
+<h4 style="text-align: center"> Curso: 1ASI0572 - Desarrollo de Soluciones IOT </h4>
 
 <h4 style="text-align: center"> NRC: 17755  </h4>
 
-<h4 style="text-align: center"> Docente: Marco Antonio León Baca </h4>
+<h4 style="text-align: center"> Nombre del profesor: Marco Antonio León Baca </h4>
 
-<h3 style="text-align: center;"> Informe del Trabajo Final </h3>
+<h3 style="text-align: center;"> "Informe del Trabajo Final" </h3>
 
-<h4 style="text-align: center"> Startup: KinIoT </h4>
+<h4 style="text-align: center"> Nombre del grupo: KinIoT </h4>
 
-<h4 style="text-align: center"> Producto: uFlex </h4>
+<h4 style="text-align: center"> Nombre del producto: uFlex </h4>
 
 <h4 style="text-align: center">Integrantes:</h4>
 
@@ -53,7 +51,7 @@
 
 <br>
 
-<h5 style="text-align: center; font-style: italic;"> Abril 2026 </h5>
+<h5 style="text-align: center; font-style: italic;"> Lima – Abril 2026 </h5>
 
 <hr class="page-break">
 
