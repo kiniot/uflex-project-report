@@ -13,8 +13,7 @@ skinparam ranksep 55
 
 ' ---- Tags ----
 ' Clients (each with its own brand colour)
-AddContainerTag("iosApp",     $bgColor="#1168BD", $fontColor="#ffffff", $borderColor="#0B4884", $legendText="iOS Mobile App")
-AddContainerTag("androidApp", $bgColor="#A3C43E", $fontColor="#000000", $borderColor="#6E8C20", $legendText="Android Mobile App")
+AddContainerTag("androidApp", $bgColor="#A3C43E", $fontColor="#000000", $borderColor="#6E8C20", $legendText="KMP Mobile App")
 AddContainerTag("webApp",     $bgColor="#438DD5", $fontColor="#ffffff", $borderColor="#2E6295", $legendText="Web Client App PWA")
 AddContainerTag("edgeApp",    $bgColor="#8E44AD", $fontColor="#ffffff", $borderColor="#5B2C6F", $legendText="IoT Edge App")
 
@@ -36,7 +35,6 @@ title Component Diagram — Therapy Bounded Context
 ' Clients
 ' =========================================================
 Container(androidApp, "Android Mobile App",  "Kotlin / Android SDK",     "Aplicación nativa Android para pacientes que ejecutan sus sesiones de terapia", $tags="androidApp")
-Container(iosApp,     "iOS Mobile App",      "Swift / iOS SDK",          "Aplicación nativa iOS para pacientes que ejecutan sus sesiones de terapia",     $tags="iosApp")
 Container(webApp,     "Web Client App",      "TypeScript / Angular PWA", "PWA para fisioterapeutas que supervisan sesiones en tiempo real",               $tags="webApp")
 Container(edgeApp,    "IoT Edge App",        "C++ / ESP-IDF",            "Edge App embebido en el dispositivo IoT que pre-procesa telemetría articular",  $tags="edgeApp")
 
@@ -62,7 +60,6 @@ ContainerDb(therapyDB,     "Therapy Relational SQL Database","Container: Azure D
 ' Relations — vertical flow
 ' =========================================================
 Rel(androidApp, interfaceLayer, "Hace llamadas API hacia",                "JSON/HTTPS")
-Rel(iosApp,     interfaceLayer, "Hace llamadas API hacia",                "JSON/HTTPS")
 Rel(webApp,     interfaceLayer, "Hace llamadas API y recibe actualizaciones en tiempo real", "JSON/HTTPS + WSS/STOMP")
 Rel(edgeApp,    interfaceLayer, "Reporta telemetría pre-procesada de repeticiones",          "JSON/HTTPS")
 
