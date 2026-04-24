@@ -4365,6 +4365,15 @@ Interfaz de persistencia para el agregado `IotKit` usando Spring Data JPA.
 | `save(IotKit kit)` | `IotKit` | public | Persiste el estado del kit. |
 | `existsBySerialNumber(String sn)` | `boolean` | public | Valida existencia de serial para evitar duplicados. |
 
+#### 4.2.4.5. Bounded Context Software Architecture Component Level Diagrams
+
+El diagrama de componentes (C4 Nivel 3) muestra cómo se organiza internamente el contenedor Device Service (Java/Spring Boot). Se distinguen componentes clave: el IotKitController y el TelemetryController como puntos de entrada REST para la gestión administrativa y la recepción de telemetría, los application services IotKitCommandServiceImpl e IotKitQueryServiceImpl que materializan el patrón CQRS para separar la lógica de modificación del estado del hardware de las consultas de inventario, el IotKitRepository (JPA) como abstracción de persistencia y el DeviceContextFacade como ACL para exponer la disponibilidad y salud de los kits IoT a otros contextos como Planning o Therapy.
+
+<div style="text-align: center;">
+  <img src="assets/diagrams/software-architecture/components/out/device.png" alt="uFlex — Device Bounded Context Component Diagram" style="max-width: 100%; height: auto;">
+</div>
+
+*Figura 4.2.4.5. Diagrama de componentes (C4 Nivel 3) del Bounded Context Device.*
 
 <hr class="page-break">
 
