@@ -4609,19 +4609,19 @@ Orquesta la lógica de creación, actualización y cierre de planes. Coordina la
 | `handle(GetActivePlanByPatientIdQuery)` | `Optional<TreatmentPlan>` | public | Recupera el plan vigente para el paciente. |
 | `handle(GetClinicalHistoryQuery)` | `List<TreatmentPlan>` | public | Lista todos los planes históricos asociados a un `PatientId`. |
 
-#### 4.2.5.4. Infrastructure Layer
+  #### 4.2.5.4. Infrastructure Layer
 
-**1. TreatmentPlanRepository (Repository Interface)**
+  **1. TreatmentPlanRepository (Repository Interface)**
 
-Interfaz de acceso a datos para los planes de tratamiento, utilizando Spring Data JPA sobre PostgreSQL.
+  Interfaz de acceso a datos para los planes de tratamiento, utilizando Spring Data JPA sobre PostgreSQL.
 
-| Método | Tipo Retorno | Visibilidad | Descripción |
-|---|---|---|---|
-| `findById(TreatmentPlanId id)` | `Optional<TreatmentPlan>` | public | Recupera un plan por su identificador único. |
-| `save(TreatmentPlan plan)` | `TreatmentPlan` | public | Persiste o actualiza el estado del aggregate. |
-| `findByPatientIdAndStatus(PatientId pId, PlanStatus s)` | `Optional<TreatmentPlan>` | public | Busca un plan específico de un paciente por su estado (por ejemplo, `ACTIVE`). |
-| `findAllByPatientId(PatientId patientId)` | `List<TreatmentPlan>` | public | Obtiene el historial completo de tratamientos del paciente. |
-| `existsByPatientIdAndStatus(PatientId pId, PlanStatus s)` | `boolean` | public | Invariante: verifica si ya hay un plan activo para evitar duplicidad. |
+  | Método | Tipo Retorno | Visibilidad | Descripción |
+  |---|---|---|---|
+  | `findById(TreatmentPlanId id)` | `Optional<TreatmentPlan>` | public | Recupera un plan por su identificador único. |
+  | `save(TreatmentPlan plan)` | `TreatmentPlan` | public | Persiste o actualiza el estado del aggregate. |
+  | `findByPatientIdAndStatus(PatientId pId, PlanStatus s)` | `Optional<TreatmentPlan>` | public | Busca un plan específico de un paciente por su estado (por ejemplo, `ACTIVE`). |
+  | `findAllByPatientId(PatientId patientId)` | `List<TreatmentPlan>` | public | Obtiene el historial completo de tratamientos del paciente. |
+  | `existsByPatientIdAndStatus(PatientId pId, PlanStatus s)` | `boolean` | public | Invariante: verifica si ya hay un plan activo para evitar duplicidad. |
 
 #### 4.2.5.5. Bounded Context Software Architecture Component Level Diagrams
 
@@ -4661,6 +4661,541 @@ El esquema físico del BC Planning en Azure Database for PostgreSQL consta de un
 
 ### 4.2.6. Bounded Context: Therapy
 
+El Bounded Context **Therapy** encapsula toda la logica de negocio relacionada con la ejecucion de sesiones de terapia fisica asistida por dispositivos IoT dentro de uFlex. Su responsabilidad central es orquestar el ciclo de vida completo de una sesion terapeutica: desde la preparacion del hardware y la identificacion de la rutina diaria, pasando por la ejecucion y validacion de series de ejercicios con captura de datos de movimiento articular en tiempo real, hasta la finalizacion y cierre de la sesion.
+
+Este contexto modela la interaccion entre el paciente, los sensores IoT y las reglas clinicas que determinan si un movimiento fue ejecutado correctamente, si se alcanzo un umbral angular prescrito o si corresponde emitir una alerta por movimiento excesivo o anomalo. Por ello, la integridad de la sesion terapeutica y la trazabilidad de cada repeticion validada son responsabilidades exclusivas del contexto Therapy.
+
+Desde una perspectiva de integracion entre bounded contexts, Therapy se comunica con **Planning** para obtener la rutina diaria y los parametros clinicos asignados al paciente, y se integra con **Device** para confirmar disponibilidad, estado y posicionamiento correcto del kit IoT antes y durante la ejecucion. Esta separacion de responsabilidades permite mantener un modelo de dominio cohesivo, centrado en el valor diferencial de uFlex: monitoreo biomecanico en tiempo real con retroalimentacion clinica continua.
+
+#### 4.2.6.1. Domain Layer
+
+En esta sección se describen los elementos iniciales del Domain Layer del contexto de Therapy, que modelan la ejecución de la sesión terapéutica y las invariantes clínicas asociadas al monitoreo biomecánico en tiempo real.
+
+**1. TherapySession (Aggregate Root)**
+
+Es el núcleo del proceso terapéutico remoto. Controla el ciclo de vida completo de una sesión: preparación del hardware, inicio de rutina, registro de dolor, validación de repeticiones, detección de movimientos anómalos y cierre formal. Como aggregate root, protege las invariantes para evitar transiciones inválidas de estado y asegurar la trazabilidad clínica de cada sesión.
+
+**Atributos principales:**
+
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| `id` | `TherapySessionId` | private | Identificador único de la sesión. |
+| `patientId` | `PatientId` | private | Referencia al paciente que ejecuta la sesión. |
+| `treatmentPlanId` | `TreatmentPlanId` | private | Referencia desnormalizada al plan de tratamiento origen para trazabilidad clínica. |
+| `iotDeviceId` | `DeviceId` | private | Referencia al dispositivo IoT que reporta telemetría en tiempo real. |
+| `routine` | `Routine` | private | Rutina asignada a ejecutar en la sesión. |
+| `sensorSnapshot` | `IoTSensorSnapshot` | private | Estado del posicionamiento de sensores al iniciar. |
+| `painLevelReported` | `PainLevel` | private | Nivel de dolor reportado por el paciente durante la sesión. |
+| `status` | `SessionStatus` | private | Estado actual de la sesión (`Pending`, `Ready`, `InProgress`, `Completed`, `Cancelled`). |
+| `startedAt` | `DateTime` | private | Fecha y hora de inicio de la sesión. |
+| `finalizedAt` | `DateTime` | private | Fecha y hora de cierre de la sesión. |
+
+**Métodos principales:**
+
+| Método | Tipo Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| `initiatePreparation(patientId, treatmentPlanId, iotDeviceId, routine)` | `TherapySession` | public | Crea la sesión con los datos base y la deja en estado `Pending`. |
+| `confirmHardwareReadiness(snapshot)` | `void` | public | Registra el snapshot de sensores y avanza el estado a `Ready`. |
+| `startRoutine()` | `void` | public | Inicia la ejecución de la rutina y cambia el estado a `InProgress`. |
+| `reportPainLevel(painLevel)` | `void` | public | Registra el nivel de dolor reportado por el paciente. |
+| `recordAnomalousMovement(alertType)` | `void` | public | Registra la anomalía detectada y publica el evento de dominio correspondiente (`ExcessiveMovementAlertIssued` o `AnomalousMovementDetected`). |
+| `recordValidRepetition(serieId)` | `void` | public | Registra una repetición válida en la serie indicada, delega en `Routine`/`Serie` y actualiza el estado de validación de la rutina según corresponda. |
+| `finalizeSession()` | `void` | public | Cierra la sesión exitosamente; valida que la rutina esté `Completed` y cambia estado a `Completed`. |
+| `cancelSession()` | `void` | public | Cancela la sesión antes de completarse y cambia estado a `Cancelled`. |
+| `ensureHardwareReady()` | `void` | private | Invariante: no se puede iniciar la rutina si el estado no es `Ready`. |
+| `ensureSensorsPlaced()` | `void` | private | Invariante: el snapshot debe confirmar que los sensores están posicionados correctamente. |
+| `ensureRoutineAssigned()` | `void` | private | Invariante: debe existir una rutina asociada antes de iniciar. |
+| `ensureNotFinalized()` | `void` | private | Invariante: una sesión en estado `Completed` o `Cancelled` no acepta más operaciones. |
+
+**Notas de diseño:**
+
+- `recordAnomalousMovement` mantiene el dominio puro: el aggregate registra el hecho y publica el evento; la ejecución física de la respuesta (vibración/alerta visual) se resuelve en handlers de capas superiores.
+- `recordValidRepetition` conecta la validación de repeticiones con el estado de la sesión: el aggregate delega en `Routine` y `Serie`, y propaga el cierre de serie/rutina cuando se alcanzan los objetivos.
+
+**2. Routine (Entity)**
+
+Entidad con identidad local dentro de la sesión. Agrupa y ordena las series de ejercicios a ejecutar. Su ciclo de vida depende completamente de `TherapySession`; si la sesión se cancela, la rutina deja de tener validez operativa.
+
+**Atributos principales:**
+
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| `id` | `RoutineId` | private | Identificador local dentro de la sesión. |
+| `name` | `String` | private | Nombre descriptivo (por ejemplo, `Rutina 1`). |
+| `series` | `List<Serie>` | private | Lista ordenada de series que componen la rutina. |
+| `status` | `RoutineStatus` | private | Estado de ejecución (`Pending`, `Started`, `Completed`). |
+
+**Métodos principales:**
+
+| Método | Tipo Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| `start()` | `void` | public | Marca la rutina como iniciada. |
+| `startNextSerie()` | `void` | public | Inicia la siguiente serie pendiente en orden. |
+| `recordValidRepetitionInSerie(serieId)` | `void` | public | Delega el registro de repetición válida en la serie correspondiente; si la serie se completa, evalúa si toda la rutina está completada. |
+| `isCompleted()` | `boolean` | public | Retorna `true` si todas las series están en estado `Validated`. |
+| `currentSerie()` | `Optional<Serie>` | public | Retorna la serie actualmente en ejecución. |
+| `markAsCompleted()` | `void` | private | Cambia el estado a `Completed` cuando todas las series están validadas. |
+| `findSerie(serieId)` | `Serie` | private | Localiza una serie por su id local; lanza `SerieNotFoundException` si no existe. |
+
+**3. Serie (Entity)**
+
+Unidad de ejecución dentro de una rutina. Combina una referencia al ejercicio base con sus parámetros clínicos de ejecución. Mantiene estado mutable: contador de repeticiones válidas acumuladas y estado de progreso.
+
+**Atributos principales:**
+
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| `id` | `SerieId` | private | Identificador local dentro de la rutina. |
+| `exerciseId` | `ExerciseId` | private | Referencia al identificador del ejercicio en el catálogo maestro. |
+| `targetRepetitions` | `RepetitionCount` | private | Número de repeticiones objetivo. |
+| `angleThreshold` | `AngleThreshold` | private | Rango angular válido para esta serie. |
+| `instructionalVideoUrl` | `String` | private | URL del video instruccional asociado. |
+| `currentRepetitions` | `int` | private | Contador de repeticiones válidas acumuladas. |
+| `completedRepetitions` | `List<CompletedRepetition>` | private | Historial inmutable de repeticiones validadas. |
+| `status` | `SerieStatus` | private | Estado de la serie (`Pending`, `Started`, `Validated`, `Failed`). |
+
+**Métodos principales:**
+
+| Método | Tipo Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| `start()` | `void` | public | Inicia la serie y cambia estado a `Started`. |
+| `playInstructionalVideo()` | `void` | public | Registra que el video instruccional fue reproducido. |
+| `recordValidRepetition(completedRepetition)` | `void` | public | Incrementa `currentRepetitions` y agrega el `CompletedRepetition`; si se alcanza el objetivo, invoca `markAsAchieved()`. |
+| `isValidated()` | `boolean` | public | Retorna `true` si el estado es `Validated`. |
+| `markAsAchieved()` | `void` | private | Cambia el estado a `Validated` cuando `hasReachedTarget()` es verdadero. |
+| `hasReachedTarget()` | `boolean` | private | Retorna `true` si `currentRepetitions >= targetRepetitions.value`. |
+
+**4. ExerciseId (Value Object)**
+
+Identificador del ejercicio definido en el catálogo maestro (bounded context externo). El dominio Therapy sólo requiere esta referencia para operar; los datos visuales del ejercicio pertenecen al read model.
+
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| `value` | `UUID` | private | Identificador único del ejercicio en el catálogo maestro. |
+
+**5. CompletedRepetition (Value Object)**
+
+Registro inmutable de una repetición ya ejecutada y validada por el Edge App. Representa un hecho consumado y no cambia una vez persistido.
+
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| `achievedAngle` | `Float` | private | Ángulo articular final alcanzado en la repetición. |
+| `wasWithinThreshold` | `Boolean` | private | Indica si el ángulo estuvo dentro del `AngleThreshold` definido. |
+| `recordedAt` | `DateTime` | private | Timestamp de la captura validada. |
+
+**6. IoTSensorSnapshot (Value Object)**
+
+Instantánea inmutable del estado de posicionamiento de sensores IoT al momento de confirmar el hardware para inicio de sesión.
+
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| `deviceId` | `String` | private | Identificador del dispositivo IoT confirmado. |
+| `sensorsPlaced` | `Boolean` | private | Indica si todos los sensores están correctamente posicionados. |
+| `recordedAt` | `DateTime` | private | Timestamp del momento de confirmación. |
+
+**7. AngleThreshold (Value Object)**
+
+Define el rango angular aceptable para validar el movimiento de una repetición.
+
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| `minAngle` | `Float` | private | Ángulo mínimo aceptable en grados. |
+| `maxAngle` | `Float` | private | Ángulo máximo aceptable en grados. |
+
+| Método | Tipo Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| `isWithinRange(angle)` | `boolean` | public | Retorna `true` si el ángulo recibido está dentro del rango definido. |
+
+**8. PainLevel (Value Object)**
+
+Nivel de dolor autorreportado por el paciente sobre una escala clínica acotada.
+
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| `value` | `Integer` | private | Valor entre `0` y `10`. |
+
+| Método | Tipo Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| `isValid()` | `boolean` | public | Retorna `true` si el valor está en el rango `[0, 10]`. |
+
+**9. RepetitionCount (Value Object)**
+
+Número de repeticiones objetivo para una serie. Garantiza que el valor sea positivo.
+
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| `value` | `Integer` | private | Cantidad de repeticiones objetivo (`> 0`). |
+
+**10. SessionStatus (Value Object)**
+
+Estado del ciclo de vida de la sesión terapéutica.
+
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| `Pending` | Enum | public | Sesión creada, pendiente de preparación de hardware. |
+| `Ready` | Enum | public | Hardware y sensores confirmados; lista para iniciar. |
+| `InProgress` | Enum | public | Rutina en ejecución activa. |
+| `Completed` | Enum | public | Rutina finalizada y sesión cerrada correctamente. |
+| `Cancelled` | Enum | public | Sesión cancelada antes de completarse. |
+
+**11. RoutineStatus (Value Object)**
+
+Estado de ejecución de la rutina.
+
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| `Pending` | Enum | public | Rutina creada pero aún no iniciada. |
+| `Started` | Enum | public | Rutina en ejecución. |
+| `Completed` | Enum | public | Rutina validada en su totalidad. |
+
+**12. SerieStatus (Value Object)**
+
+Estado de ejecución de una serie.
+
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| `Pending` | Enum | public | Serie pendiente de ejecución. |
+| `Started` | Enum | public | Serie iniciada. |
+| `Validated` | Enum | public | Serie completada y validada clínicamente. |
+| `Failed` | Enum | public | Serie finalizada con incumplimiento de criterios clínicos. |
+
+**13. MovementAlertType (Value Object)**
+
+Tipo de alerta de movimiento registrada durante la sesión y propagada como evento de dominio.
+
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| `ExcessiveMovement` | Enum | public | Alerta por exceso de rango o intensidad de movimiento. |
+| `AnomalousMovement` | Enum | public | Alerta por patrón de movimiento compensatorio o atípico. |
+
+**14. IDs (Value Objects)**
+
+Todos los identificadores del dominio (`TherapySessionId`, `PatientId`, `TreatmentPlanId`, `DeviceId`, `RoutineId`, `SerieId`) envuelven un `UUID` para garantizar type safety y evitar intercambios incorrectos de tipos en operaciones del dominio.
+
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| `value` | `UUID` | private | Identificador inmutable tipado para cada concepto del dominio. |
+
+**15. MotionAnalysisService (Domain Service)**
+
+Analiza los datos de movimiento articular capturados y preprocesados por el Edge App para determinar si existe movimiento excesivo o anómalo. Esta lógica se modela como servicio de dominio porque evalúa reglas clínicas transversales que no pertenecen a una sola entidad.
+
+| Método | Tipo Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| `analyze(motionData, threshold)` | `Optional<MovementAlertType>` | public | Evalúa los datos de movimiento contra el `AngleThreshold` de la serie activa; retorna un `MovementAlertType` si detecta anomalía o vacío si el movimiento es normal. |
+| `isAnomalous(motionData, threshold)` | `boolean` | private | Determina si el ángulo medido está fuera del rango seguro definido por el threshold. |
+| `isExcessive(motionData)` | `boolean` | private | Determina si la amplitud del movimiento supera límites de seguridad absolutos, independientemente del threshold de la serie. |
+
+**16. RepetitionValidationService (Domain Service)**
+
+Evalúa si una repetición procesada por el Edge App cumple el `AngleThreshold` definido en la serie y retorna un `CompletedRepetition` listo para registrarse. Centraliza la regla clínica de aceptación de repetición fuera de las entidades.
+
+| Método | Tipo Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| `validate(achievedAngle, threshold)` | `CompletedRepetition` | public | Compara el ángulo alcanzado con el `AngleThreshold` y retorna un `CompletedRepetition` con `wasWithinThreshold` resuelto. |
+
+**17. Commands**
+
+| Command | Atributos principales | Descripción |
+|---|---|---|
+| `InitiateTherapyPreparationCommand` | `patientId`, `treatmentPlanId`, `iotDeviceId`, `routineId` | Crea y prepara la sesión de terapia dejándola en estado `Pending`. |
+| `ConfirmHardwareReadinessCommand` | `sessionId`, `deviceId`, `sensorsPlaced` | Confirma hardware y sensores; avanza la sesión a `Ready`. |
+| `StartRoutineCommand` | `sessionId` | Inicia la ejecución de la rutina asignada; avanza la sesión a `InProgress`. |
+| `StartSerieCommand` | `sessionId`, `serieId` | Inicia una serie específica dentro de la rutina. |
+| `RecordValidRepetitionCommand` | `sessionId`, `serieId`, `achievedAngle`, `recordedAt` | Registra una repetición validada por el Edge App en la serie indicada. |
+| `RecordAnomalousMovementCommand` | `sessionId`, `alertType` | Registra una anomalía de movimiento y emite el evento correspondiente. |
+| `ReportPainLevelCommand` | `sessionId`, `painLevel` | Registra el nivel de dolor reportado por el paciente. |
+| `FinalizeTherapySessionCommand` | `sessionId` | Cierra y finaliza formalmente la sesión; valida que la rutina esté `Completed`. |
+| `CancelTherapySessionCommand` | `sessionId`, `reason` | Cancela la sesión en cualquier punto antes de completarse. |
+
+**18. Queries**
+
+| Query | Atributos principales | Descripción |
+|---|---|---|
+| `GetDailyTherapyScheduleQuery` | `patientId`, `date` | Obtiene la rutina asignada al paciente para el día consultado. |
+| `GetSessionProgressQuery` | `sessionId` | Retorna el estado de la sesión: serie activa, repeticiones por serie y estado general. |
+| `GetPainLevelHistoryQuery` | `patientId` | Retorna el historial de niveles de dolor reportados por el paciente. |
+| `GetSerieDetailsQuery` | `sessionId`, `serieId` | Retorna parámetros clínicos y progreso de una serie específica. |
+| `GetSessionSummaryQuery` | `sessionId` | Retorna resumen de sesión finalizada: repeticiones por serie, alertas, dolor y duración total. |
+| `GetActiveSessionByPatientQuery` | `patientId` | Retorna la sesión actualmente en progreso para un paciente, si existe. |
+
+**19. Domain Exceptions**
+
+| Excepción | Descripción |
+|---|---|
+| `HardwareNotReadyException` | Se lanza cuando se intenta iniciar la rutina sin hardware confirmado (`status != Ready`). |
+| `IoTSensorsNotPlacedException` | Se lanza cuando el snapshot indica que los sensores no están correctamente posicionados. |
+| `RoutineNotAssignedToSessionException` | Se lanza al iniciar rutina sin una rutina asociada a la sesión. |
+| `TherapySessionAlreadyFinalizedException` | Se lanza al intentar operar sobre una sesión en estado `Completed` o `Cancelled`. |
+| `SerieNotFoundException` | Se lanza al referenciar un `SerieId` inexistente dentro de la rutina. |
+| `SerieNotStartedException` | Se lanza al intentar registrar una repetición en una serie aún no iniciada. |
+| `SerieAlreadyAchievedException` | Se lanza al intentar registrar una repetición en una serie ya marcada como `Validated`. |
+| `InvalidPainLevelException` | Se lanza cuando el valor de dolor está fuera del rango permitido `[0, 10]`. |
+| `InvalidAngleThresholdException` | Se lanza cuando `minAngle` es mayor o igual a `maxAngle`. |
+| `InvalidRepetitionCountException` | Se lanza cuando el número de repeticiones objetivo es menor o igual a cero. |
+
+#### 4.2.6.2. Interface Layer
+
+En esta sección se describen los elementos del Interface Layer del bounded context de Therapy. Esta capa expone las capacidades de ejecución terapéutica mediante contratos REST claros para la aplicación móvil del paciente y para el Edge App que reporta la telemetría de movimiento en tiempo real.
+
+**1. TherapySessionController (REST Controller)**
+
+Controlador principal del ciclo de vida de la sesión terapéutica. Permite al paciente iniciar, ejecutar y cerrar su sesión diaria, y al fisioterapeuta consultar el progreso y resumen de cada sesión.
+
+| Método | Ruta base | HTTP | Descripción |
+|---|---|---|---|
+| `initiatePreparation` | `/api/v1/therapy-sessions` | POST | Crea y prepara una nueva sesión de terapia para un paciente, dejándola en estado `Pending`. |
+| `confirmHardwareReadiness` | `/api/v1/therapy-sessions/{id}/hardware` | PATCH | Confirma el posicionamiento correcto de los sensores IoT; avanza la sesión a `Ready`. |
+| `startRoutine` | `/api/v1/therapy-sessions/{id}/start` | PATCH | Inicia la ejecución de la rutina asignada; avanza la sesión a `InProgress`. |
+| `getSessionProgress` | `/api/v1/therapy-sessions/{id}/progress` | GET | Retorna el estado actual de la sesión: serie activa, repeticiones completadas por serie y estado general. |
+| `getActiveSessionByPatient` | `/api/v1/therapy-sessions/active/{patientId}` | GET | Retorna la sesión actualmente en progreso para un paciente dado. |
+| `getSessionSummary` | `/api/v1/therapy-sessions/{id}/summary` | GET | Retorna el resumen completo de una sesión finalizada. |
+| `finalizeSession` | `/api/v1/therapy-sessions/{id}/finalize` | PATCH | Cierra formalmente la sesión una vez completada la rutina. |
+| `cancelSession` | `/api/v1/therapy-sessions/{id}/cancel` | PATCH | Cancela la sesión antes de completarse. |
+
+**2. TherapyExecutionController (REST Controller)**
+
+Controlador especializado en la ejecución en tiempo real de series y registro de progreso durante la sesión activa. Recibe los datos procesados por el Edge App y los reportes del paciente.
+
+| Método | Ruta base | HTTP | Descripción |
+|---|---|---|---|
+| `startSerie` | `/api/v1/therapy-sessions/{id}/series/{serieId}/start` | PATCH | Inicia una serie específica dentro de la rutina activa. |
+| `recordValidRepetition` | `/api/v1/therapy-sessions/{id}/series/{serieId}/repetitions` | POST | Registra una repetición válida procesada y enviada por el Edge App. |
+| `recordAnomalousMovement` | `/api/v1/therapy-sessions/{id}/anomalies` | POST | Registra una anomalía de movimiento detectada durante la ejecución de la serie. |
+| `reportPainLevel` | `/api/v1/therapy-sessions/{id}/pain` | PATCH | Registra el nivel de dolor autorreportado por el paciente. |
+| `getSerieDetails` | `/api/v1/therapy-sessions/{id}/series/{serieId}` | GET | Retorna los parámetros clínicos y el progreso actual de una serie específica. |
+| `getDailySchedule` | `/api/v1/therapy-sessions/schedule/{patientId}` | GET | Obtiene la rutina asignada al paciente para el día consultado. |
+
+**3. Resources (DTOs)**
+
+Representaciones de datos optimizadas para la comunicación externa, implementadas como Java Records.
+
+| Resource | Atributos principales | Descripción |
+|---|---|---|
+| `InitiateTherapyPreparationResource` | `patientId: UUID`, `treatmentPlanId: UUID`, `iotDeviceId: String`, `routineId: UUID` | Datos necesarios para crear e iniciar la preparación de una sesión. |
+| `ConfirmHardwareReadinessResource` | `deviceId: String`, `sensorsPlaced: Boolean` | Datos del snapshot de posicionamiento de sensores para confirmar el hardware. |
+| `RecordValidRepetitionResource` | `achievedAngle: Double`, `recordedAt: DateTime` | Datos de una repetición procesada por el Edge App listos para registrar. |
+| `RecordAnomalousMovementResource` | `alertType: String` | Tipo de anomalía detectada durante la ejecución (`ExcessiveMovement`, `AnomalousMovement`). |
+| `ReportPainLevelResource` | `painLevel: Integer` | Nivel de dolor autorreportado por el paciente en escala `[0, 10]`. |
+| `CancelTherapySessionResource` | `reason: String` | Motivo de cancelación de la sesión. |
+| `TherapySessionResource` | `id: UUID`, `patientId: UUID`, `treatmentPlanId: UUID`, `iotDeviceId: String`, `status: String`, `startedAt: DateTime`, `finalizedAt: DateTime` | Representación completa de la sesión para consulta. |
+| `SessionProgressResource` | `sessionId: UUID`, `status: String`, `currentSerieId: UUID`, `seriesProgress: List<SerieProgressResource>` | Estado de avance de la sesión con detalle por serie. |
+| `SerieProgressResource` | `serieId: UUID`, `exerciseId: UUID`, `currentRepetitions: Integer`, `targetRepetitions: Integer`, `status: String` | Estado de avance de una serie individual. |
+| `SerieDetailsResource` | `serieId: UUID`, `exerciseId: UUID`, `targetRepetitions: Integer`, `minAngle: Double`, `maxAngle: Double`, `instructionalVideoUrl: String`, `status: String` | Parámetros clínicos completos de una serie. |
+| `SessionSummaryResource` | `sessionId: UUID`, `patientId: UUID`, `totalSeries: Integer`, `completedSeries: Integer`, `painLevel: Integer`, `anomaliesDetected: Integer`, `startedAt: DateTime`, `finalizedAt: DateTime` | Resumen ejecutivo de una sesión finalizada. |
+| `DailyScheduleResource` | `patientId: UUID`, `date: Date`, `routineId: UUID`, `totalSeries: Integer`, `estimatedDurationMinutes: Integer` | Rutina asignada al paciente para el día consultado. |
+
+**4. Transform (Assemblers)**
+
+Componentes encargados de la traducción entre el modelo de dominio y la representación externa.
+
+| Assembler | Entrada | Salida | Descripción |
+|---|---|---|---|
+| `InitiateTherapyPreparationCommandFromResourceAssembler` | `InitiateTherapyPreparationResource` | `InitiateTherapyPreparationCommand` | Transforma el JSON de creación en el command de dominio correspondiente. |
+| `ConfirmHardwareReadinessCommandFromResourceAssembler` | `ConfirmHardwareReadinessResource` | `ConfirmHardwareReadinessCommand` | Mapea los datos del snapshot de sensores al command de confirmación de hardware. |
+| `RecordValidRepetitionCommandFromResourceAssembler` | `RecordValidRepetitionResource` | `RecordValidRepetitionCommand` | Traduce los datos de repetición enviados por el Edge App al command de dominio. |
+| `RecordAnomalousMovementCommandFromResourceAssembler` | `RecordAnomalousMovementResource` | `RecordAnomalousMovementCommand` | Mapea el tipo de alerta al command de registro de anomalía. |
+| `ReportPainLevelCommandFromResourceAssembler` | `ReportPainLevelResource` | `ReportPainLevelCommand` | Traduce el nivel de dolor reportado al command de dominio. |
+| `CancelTherapySessionCommandFromResourceAssembler` | `CancelTherapySessionResource` | `CancelTherapySessionCommand` | Mapea el motivo de cancelación al command correspondiente. |
+| `TherapySessionResourceFromEntityAssembler` | `TherapySession` | `TherapySessionResource` | Convierte el aggregate root en su representación REST para consulta. |
+| `SessionProgressResourceFromEntityAssembler` | `TherapySession` | `SessionProgressResource` | Construye la vista de progreso de la sesión a partir del estado interno del agregado y su rutina. |
+| `SerieDetailsResourceFromEntityAssembler` | `Serie` | `SerieDetailsResource` | Mapea los parámetros clínicos y el estado de una serie a su representación REST. |
+| `SessionSummaryResourceFromEntityAssembler` | `TherapySession` | `SessionSummaryResource` | Construye el resumen ejecutivo de la sesión finalizada a partir del agregado completo. |
+
+#### 4.2.6.3. Application Layer
+
+En esta sección se explican las clases responsables de orquestar los casos de uso del Bounded Context de Therapy. Esta capa recibe los Commands y Queries de la Interface Layer, coordina la validación con los Domain Services, recupera el Aggregate Root desde la base de datos y publica los Domain Events correspondientes.
+
+**1. TherapyContextFacadeImpl (ACL Facade)**
+
+Actúa como una capa anticorrupción (Anti-Corruption Layer) y punto de entrada simplificado para que otros bounded contexts (como Planning o Gamification) puedan consultar datos de la sesión sin acoplarse al modelo interno de Therapy.
+
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| `therapyQueryService` | `TherapyQueryService` | private | Servicio interno de consultas del dominio Therapy. |
+
+**Métodos principales:**
+
+| Método | Tipo Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| `isPatientInActiveSession(UUID patientId)` | `boolean` | public | Verifica si el paciente tiene una sesión en estado `Ready` o `InProgress` para evitar duplicidades. |
+| `fetchLastSessionSummary(UUID patientId)` | `Optional<SessionSummaryDto>` | public | Retorna el reporte de la última sesión para que Planning pueda actualizar el historial clínico general. |
+| `countCompletedSessionsByPlan(UUID planId)` | `int` | public | Retorna el número de sesiones completadas asociadas a un plan de tratamiento, útil para calcular el avance macro. |
+
+**2. TherapySessionCommandServiceImpl (Command Service)**
+
+Orquesta los casos de uso relacionados con el ciclo de vida general de la sesión (preparación, inicio, cancelación y cierre).
+
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| `sessionRepository` | `TherapySessionRepository` | private | Puerto para acceder a la persistencia del aggregate root. |
+| `eventPublisher` | `ApplicationEventPublisher` | private | Publicador de eventos de dominio hacia el bus de eventos. |
+
+**Métodos principales:**
+
+| Método | Tipo Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| `handle(InitiateTherapyPreparationCommand)` | `UUID` | public | Instancia el agregado `TherapySession` en estado `Pending` y lo persiste. |
+| `handle(ConfirmHardwareReadinessCommand)` | `void` | public | Recupera la sesión, invoca `confirmHardwareReadiness()`, guarda el snapshot y publica `HardwareReadinessConfirmed`. |
+| `handle(StartRoutineCommand)` | `void` | public | Cambia el estado a `InProgress`, inicia la rutina y publica `RoutineStarted`. |
+| `handle(ReportPainLevelCommand)` | `void` | public | Recupera la sesión, registra el dolor del paciente y publica `PainLevelReported`. |
+| `handle(FinalizeTherapySessionCommand)` | `void` | public | Ejecuta `finalizeSession()`, persiste el estado `Completed` y publica `TherapySessionCompleted`. |
+| `handle(CancelTherapySessionCommand)` | `void` | public | Recupera la sesión, invoca `cancelSession()` con el motivo indicado, persiste estado `Cancelled` y publica `TherapySessionCancelled`. |
+
+**3. TherapyExecutionCommandServiceImpl (Command Service)**
+
+Orquesta los casos de uso de alta frecuencia (ejecución en tiempo real). En este servicio se inyectan los domain services para procesar la lógica clínica antes de afectar al agregado.
+
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| `sessionRepository` | `TherapySessionRepository` | private | Puerto para acceder a la persistencia del agregado. |
+| `motionAnalysisService` | `MotionAnalysisService` | private | Domain service que evalúa si el movimiento infringe límites de seguridad. |
+| `validationService` | `RepetitionValidationService` | private | Domain service que valida si el ángulo alcanzado califica como repetición útil. |
+| `eventPublisher` | `ApplicationEventPublisher` | private | Publicador de eventos de dominio en tiempo real. |
+
+**Métodos principales:**
+
+| Método | Tipo Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| `handle(StartSerieCommand)` | `void` | public | Busca la rutina activa, inicia la serie indicada y publica `SerieStarted`. |
+| `handle(RecordValidRepetitionCommand)` | `void` | public | Recupera la sesión, evalúa movimiento con `MotionAnalysisService`, valida repetición con `RepetitionValidationService`, registra en el agregado y publica `RepetitionRecorded`. |
+| `handle(RecordAnomalousMovementCommand)` | `void` | public | Registra la anomalía en la sesión y publica (`AnomalousMovementDetected` o `ExcessiveMovementAlertIssued`) para gatillar alertas físicas. |
+
+**4. TherapyQueryServiceImpl (Query Service)**
+
+Encargado de resolver consultas para las pantallas del Frontend y el Edge App, accediendo a proyecciones o al modelo de lectura optimizado.
+
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| `sessionReadRepository` | `TherapySessionReadRepository` | private | Acceso optimizado para lectura de datos (Read Model). |
+
+**Métodos principales:**
+
+| Método | Tipo Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| `handle(GetSessionProgressQuery)` | `SessionProgressDto` | public | Recupera el estado de avance en vivo (serie actual, conteos) para la UI de ejecución. |
+| `handle(GetSessionSummaryQuery)` | `SessionSummaryDto` | public | Recupera la información consolidada tras el cierre de la sesión. |
+| `handle(GetDailyTherapyScheduleQuery)` | `DailyScheduleDto` | public | Consulta la rutina proyectada para el paciente en una fecha específica. |
+
+**5. TherapyEventHandlers (Event Handlers)**
+
+Componentes de la capa de aplicación que escuchan de forma asíncrona los eventos emitidos por el dominio para ejecutar efectos secundarios en la infraestructura, actualizar la UI o comunicarse con otros bounded contexts.
+
+| Event Handler | Evento Escuchado | Descripción |
+|---|---|---|
+| `IoTFeedbackEventHandler` | `AnomalousMovementDetected`, `ExcessiveMovementAlertIssued` | Usa `IoTHardwareGateway` para enviar señal de vibración y alerta visual al dispositivo IoT del paciente. |
+| `InstructionalVideoEventHandler` | `SerieStarted` | Escucha el inicio de una serie y gatilla la reproducción del video instruccional en la app móvil. |
+| `SessionProgressNotificationHandler` | `RepetitionRecorded`, `SerieAchieved` | Notifica vía WebSocket a la app del paciente y dashboard del fisioterapeuta cambios de progreso en tiempo real. |
+| `SessionClosureEventHandler` | `TherapySessionCompleted` | Escucha la finalización exitosa de la sesión y notifica asíncronamente al contexto de Planning. |
+| `SessionCancellationEventHandler` | `TherapySessionCancelled` | Notifica a Planning la cancelación de la sesión y solicita la liberación del dispositivo IoT para su reutilización. |
+
+**Notas adicionales de diseño arquitectónico:**
+
+- **Publicación de eventos post-commit con `ApplicationEventPublisher`:** Los Domain Events se publican con el mecanismo nativo de Spring después del commit de la transacción. Es una decisión pragmática orientada a simplicidad operacional para el alcance actual del proyecto.
+- **Idempotencia de telemetría:** Los commands originados por el Edge App (por ejemplo, `RecordValidRepetitionCommand`) incluyen un `edgeSequenceId` para evitar duplicidad de repeticiones ante reintentos de red.
+- **Convención DTO vs Resource:** En Interface Layer se usa el sufijo `Resource` para contratos REST; en Application Layer se usa `Dto` para modelos internos de lectura retornados por Query Services y consumidos por el ACL Facade.
+
+#### 4.2.6.4. Infrastructure Layer
+
+En esta capa se ubican los componentes que acceden a servicios externos: base de datos PostgreSQL para la persistencia del agregado, gateway hacia el dispositivo IoT para feedback físico, publicador WebSocket para actualizaciones en tiempo real e integración con otros bounded contexts mediante ACL clients. Aquí se encuentran las implementaciones concretas de las interfaces definidas en la Domain Layer (Repositories) y en la Application Layer (Gateways, Publishers, ACL Clients).
+
+**1. TherapySessionRepository (Repository Interface)**
+
+Interfaz única de acceso a datos para el aggregate root `TherapySession`, implementada con Spring Data JPA sobre PostgreSQL. Maneja operaciones de escritura y lectura transaccional para Command Services y Query Services.
+
+| Método | Tipo Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| `findById(TherapySessionId id)` | `Optional<TherapySession>` | public | Recupera la sesión completa con su rutina y series por identificador. |
+| `save(TherapySession session)` | `TherapySession` | public | Persiste o actualiza el estado completo del aggregate. |
+| `findByPatientIdAndStatusIn(PatientId pId, List<SessionStatus> statuses)` | `Optional<TherapySession>` | public | Retorna la sesión en progreso (`Ready`, `InProgress`) para un paciente. |
+| `findAllByPatientId(PatientId patientId)` | `List<TherapySession>` | public | Obtiene el historial completo de sesiones del paciente. |
+| `findAllByTreatmentPlanId(TreatmentPlanId planId)` | `List<TherapySession>` | public | Obtiene sesiones asociadas a un plan para trazabilidad clínica. |
+| `findByPatientIdAndDate(PatientId pId, LocalDate date)` | `Optional<TherapySession>` | public | Recupera la sesión programada del paciente para una fecha específica. |
+| `existsByPatientIdAndStatusIn(PatientId pId, List<SessionStatus> statuses)` | `boolean` | public | Invariante: verifica si existe una sesión activa para evitar duplicidades. |
+| `countByTreatmentPlanIdAndStatus(TreatmentPlanId planId, SessionStatus status)` | `int` | public | Cuenta sesiones completadas de un plan, consumido por el ACL Facade. |
+
+**2. IoTHardwareGateway (Infrastructure Port)**
+
+Puerto de salida hacia el dispositivo IoT. Implementa la respuesta a eventos de dominio capturados por `IoTFeedbackEventHandler` mediante MQTT sobre broker Mosquitto.
+
+| Método | Tipo Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| `triggerVibrationFeedback(DeviceId deviceId)` | `void` | public | Publica un mensaje MQTT solicitando feedback de vibración al dispositivo. |
+| `triggerVisualAlert(DeviceId deviceId, AlertColor color)` | `void` | public | Envía señal de alerta visual (por ejemplo, luz roja ante movimiento anómalo). |
+| `playInstructionalVideo(DeviceId deviceId, String videoUrl)` | `void` | public | Solicita al Edge App la reproducción del video instruccional de la serie. |
+| `releaseDevice(DeviceId deviceId)` | `void` | public | Libera el dispositivo al cancelar o finalizar la sesión para su reutilización. |
+
+**3. SessionProgressWebSocketPublisher (WebSocket Publisher)**
+
+Publicador en tiempo real hacia clientes conectados (app móvil del paciente y dashboard clínico del fisioterapeuta), sobre WebSocket/STOMP con Spring WebSocket.
+
+| Método | Tipo Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| `broadcastProgressUpdate(UUID sessionId, SessionProgressDto progress)` | `void` | public | Emite el progreso actualizado al tópico STOMP de la sesión activa. |
+| `broadcastAnomalyAlert(UUID sessionId, MovementAlertType alertType)` | `void` | public | Notifica al fisioterapeuta supervisor sobre una anomalía detectada. |
+| `broadcastSessionClosed(UUID sessionId)` | `void` | public | Notifica a los clientes suscritos que la sesión fue finalizada o cancelada. |
+
+**4. PlanningContextClient (ACL Client)**
+
+Cliente saliente hacia el bounded context de Planning. Permite comunicar cierre y cancelación de sesiones sin acoplamiento directo, vía HTTP/REST con tolerancia a fallos usando Resilience4j.
+
+| Método | Tipo Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| `notifySessionCompleted(UUID treatmentPlanId, SessionSummaryDto summary)` | `void` | public | Informa a Planning que una sesión fue completada para actualizar avance del plan. |
+| `notifySessionCancelled(UUID treatmentPlanId, UUID sessionId, String reason)` | `void` | public | Informa la cancelación para que Planning ajuste cronograma y libere recursos. |
+| `requestRoutineForDate(UUID patientId, LocalDate date)` | `Optional<RoutineSnapshotDto>` | public | Solicita a Planning la rutina asignada al paciente para una fecha específica. |
+
+**Notas de diseño de esta capa:**
+
+- **Repositorio único de lectura y escritura:** Se mantiene un solo `TherapySessionRepository` para reducir complejidad y acelerar la implementación inicial.
+- **Persistencia directa del agregado con anotaciones JPA:** `TherapySession`, `Routine` y `Serie` se anotan directamente con JPA, priorizando velocidad de desarrollo sobre separación estricta de mapeo.
+- **Publicación de eventos post-commit con Spring:** Se usa `ApplicationEventPublisher` sin bus externo ni Outbox, aceptando como riesgo acotado la posible pérdida de evento ante caída del publicador justo después del commit.
+- **MQTT para comunicación con IoT:** Se adopta MQTT/Mosquitto por baja latencia y eficiencia energética en dispositivos de borde.
+- **ACL Client con circuit breaker:** Resilience4j permite que el flujo clínico principal continúe disponible aunque Planning esté temporalmente no disponible.
+
+#### 4.2.6.5. Bounded Context Software Architecture Component Level Diagrams
+
+El diagrama de componentes (C4 Nivel 3) describe la organización interna del **Therapy Service** (Java 25 / Spring Boot 4). Dentro del *Container Boundary* se distinguen cinco bloques: **Interface Layer** (controladores REST), **Application Layer** (CQRS con command/query services y event handlers), **Planning Context ACL** (adaptador de salida), **Domain Layer** (aggregate, entidades, value objects y domain services) e **Infrastructure Layer** (repositorio JPA, gateway MQTT, publicador WebSocket/STOMP y `ApplicationEventPublisher`).
+
+Los clientes externos acceden por HTTPS: apps móviles nativas (Android/iOS), PWA clínica (Angular) e IoT Edge App (C++/ESP-IDF). La PWA mantiene además un canal WebSocket/STOMP para progreso y alertas en tiempo real, mientras el Edge App reporta telemetría preprocesada y recibe comandos de feedback por MQTT.
+
+Fuera del *Container Boundary* quedan tres dependencias: broker **Mosquitto** (MQTT/TLS), bounded context **Planning** consumido vía ACL REST con Resilience4j, y **Therapy Relational SQL Database** (Azure PostgreSQL por JDBC/SSL). El flujo de dependencias mantiene la estructura táctica: `Interface -> Application -> (Domain + Infrastructure)`.
+
+<div style="text-align: center;">
+  <img src="assets/diagrams/software-architecture/components/out/therapy.png" alt="uFlex — Therapy Bounded Context Component Diagram" style="max-width: 100%; height: auto;">
+</div>
+
+*Figura 4.2.6.5. Diagrama de componentes (C4 Nivel 3) del Bounded Context Therapy.*
+
+#### 4.2.6.6. Bounded Context Software Architecture Code Level Diagrams
+
+##### 4.2.6.6.1. Bounded Context Domain Layer Class Diagrams
+
+El diagrama de clases del Domain Layer del BC Therapy modela los conceptos centrales de la ejecución terapéutica, sin incluir application ni infrastructure. `domain.model.aggregates` contiene al Aggregate Root `TherapySession`; `domain.model.entities` incorpora `Routine` y `Serie`; `domain.model.valueobjects` agrupa IDs tipados, estados (`SessionStatus`, `RoutineStatus`, `SerieStatus`, `MovementAlertType`) y objetos inmutables como `AngleThreshold`, `PainLevel`, `CompletedRepetition` e `IoTSensorSnapshot`; `domain.model.events` encapsula los Domain Events de ciclo de vida y ejecución; y `domain.exceptions` reúne las excepciones que protegen invariantes.
+
+En la estructura del modelo, `TherapySession` compone a `Routine` (`1..1`), `Routine` agrega `Serie` (`1..*`) y cada `Serie` contiene `CompletedRepetition` como hechos inmutables validados por el Edge App. Esto preserva trazabilidad clínica desde sesión hasta repetición.
+
+Los Domain Services (`MotionAnalysisService`, `RepetitionValidationService`) se modelan como interfaces en `domain.services`, siguiendo inversión de dependencias: el dominio define contratos y las implementaciones se resuelven en capas superiores. Ambos usan `AngleThreshold` como referencia clínica común. En la notación, líneas continuas indican composición/agregación, líneas punteadas dependencias semánticas (eventos y excepciones) y la paleta distingue aggregate root, entities, value objects, domain events, domain services y domain exceptions.
+
+<div style="text-align: center;">
+  <img src="assets/diagrams/uml/class/out/therapy.png" alt="uFlex — Therapy Bounded Context Domain Class Diagram" style="max-width: 100%; height: auto;">
+</div>
+
+*Figura 4.2.6.6.1. Diagrama de clases del dominio del Bounded Context Therapy.*
+
+##### 4.2.6.6.2. Bounded Context Database Design Diagram
+
+El diagrama de base de datos del BC Therapy modela la persistencia relacional del agregado `TherapySession` y su jerarquía clínica (`Routine`, `Serie`, `CompletedRepetition`) sobre Azure Database for PostgreSQL. El esquema se organiza en cinco tablas operativas (`therapy_sessions`, `routines`, `series`, `completed_repetitions`, `movement_alerts`) y cuatro catálogos de estado (`session_statuses`, `routine_statuses`, `serie_statuses`, `movement_alert_types`).
+
+`therapy_sessions` es la raíz persistente del agregado e incluye referencias lógicas a otros bounded contexts (`patient_id`, `treatment_plan_id`, `iot_device_id`), junto con el snapshot de sensores embebido como columnas y los timestamps del ciclo de vida. `routines` mantiene relación 1:1 con la sesión, mientras que `series` se relaciona 1:N con `routines`, conservando orden clínico (`sequence_order`), parámetros terapéuticos (`target_repetitions`, `min_angle`, `max_angle`) y progreso (`current_repetitions`). `completed_repetitions` registra hechos inmutables de ejecución (sin operaciones de update) y `movement_alerts` almacena alertas clínicas para auditoría y trazabilidad.
+
+En integridad y rendimiento, el diseño incorpora reglas alineadas al dominio: índice único por paciente y fecha para evitar sesiones duplicadas por día, índice parcial por `iot_device_id` para identificar dispositivos en uso (`READY`, `IN_PROGRESS`), y constraints para proteger invariantes de serie (`current_repetitions <= target_repetitions`, `min_angle < max_angle`). Se mantiene, además, la estrategia de autonomía entre contexts: las referencias externas son lógicas (sin foreign keys duras hacia IAM, Planning o Device).
+
+<div style="text-align: center;">
+  <img src="assets/diagrams/database/erd/out/therapy-erd.png" alt="uFlex — Therapy Bounded Context Database ER Diagram" style="max-width: 100%; height: auto;">
+</div>
+
+*Figura 4.2.6.6.2. Diagrama entidad-relación del Bounded Context Therapy.*
 
 
 <hr class="page-break">

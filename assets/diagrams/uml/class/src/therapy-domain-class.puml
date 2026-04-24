@@ -1,0 +1,374 @@
+@startuml uflex-therapy-domain-class
+' Domain Layer Class Diagram — Therapy Bounded Context (uFlex)
+
+skinparam shadowing false
+skinparam defaultFontName Arial
+skinparam classFontSize 12
+skinparam classAttributeIconSize 0
+skinparam packageStyle rectangle
+skinparam linetype ortho
+skinparam nodesep 30
+skinparam ranksep 55
+
+hide empty members
+
+' Stereotype palette
+skinparam class {
+  BackgroundColor<<AggregateRoot>>     #1168BD
+  FontColor<<AggregateRoot>>           #FFFFFF
+  BorderColor<<AggregateRoot>>         #0B4884
+
+  BackgroundColor<<Entity>>            #438DD5
+  FontColor<<Entity>>                  #FFFFFF
+  BorderColor<<Entity>>                #2E6295
+
+  BackgroundColor<<ValueObject>>       #85BBF0
+  FontColor<<ValueObject>>             #000000
+  BorderColor<<ValueObject>>           #438DD5
+
+  BackgroundColor<<Command>>           #F5A97F
+  FontColor<<Command>>                 #000000
+  BorderColor<<Command>>               #C87A4C
+
+  BackgroundColor<<Query>>             #EED49F
+  FontColor<<Query>>                   #000000
+  BorderColor<<Query>>                 #B89A5A
+
+  BackgroundColor<<DomainEvent>>       #F28FAD
+  FontColor<<DomainEvent>>             #000000
+  BorderColor<<DomainEvent>>           #B56580
+
+  BackgroundColor<<DomainService>>     #6BA3DC
+  FontColor<<DomainService>>           #000000
+  BorderColor<<DomainService>>         #438DD5
+
+  BackgroundColor<<Port>>              #B8C4CE
+  FontColor<<Port>>                    #000000
+  BorderColor<<Port>>                  #7D98B5
+
+  BackgroundColor<<Exception>>         #CDA1A1
+  FontColor<<Exception>>               #000000
+  BorderColor<<Exception>>             #8F6262
+}
+
+title Domain Layer Class Diagram — Therapy Bounded Context (uFlex)
+
+' =========================================================
+' DOMAIN LAYER — Aggregates & Entities
+' =========================================================
+package "domain.model.aggregates" {
+  class TherapySession <<AggregateRoot>> {
+    - id: TherapySessionId
+    - patientId: PatientId
+    - treatmentPlanId: TreatmentPlanId
+    - iotDeviceId: DeviceId
+    - routine: Routine
+    - sensorSnapshot: IoTSensorSnapshot
+    - painLevelReported: PainLevel
+    - status: SessionStatus
+    - startedAt: LocalDateTime
+    - finalizedAt: LocalDateTime
+    --
+    + TherapySession()
+    + initiatePreparation(patientId, treatmentPlanId, iotDeviceId, routine): void
+    + confirmHardwareReadiness(snapshot: IoTSensorSnapshot): void
+    + startRoutine(): void
+    + reportPainLevel(painLevel: PainLevel): void
+    + recordAnomalousMovement(alertType: MovementAlertType): void
+    + recordValidRepetition(serieId: SerieId, rep: CompletedRepetition): void
+    + finalizeSession(): void
+    + cancelSession(reason: String): void
+    - ensureHardwareReady(): void
+    - ensureSensorsPlaced(): void
+    - ensureRoutineAssigned(): void
+    - ensureNotFinalized(): void
+  }
+}
+
+package "domain.model.entities" {
+  class Routine <<Entity>> {
+    - id: RoutineId
+    - name: String
+    - series: List<Serie>
+    - status: RoutineStatus
+    --
+    + Routine()
+    + start(): void
+    + startNextSerie(): void
+    + recordValidRepetitionInSerie(serieId: SerieId, rep: CompletedRepetition): void
+    + isCompleted(): boolean
+    + currentSerie(): Serie
+    - markAsCompleted(): void
+    - findSerie(serieId: SerieId): Serie
+  }
+
+  class Serie <<Entity>> {
+    - id: SerieId
+    - exerciseId: ExerciseId
+    - targetRepetitions: RepetitionCount
+    - angleThreshold: AngleThreshold
+    - instructionalVideoUrl: String
+    - currentRepetitions: int
+    - completedRepetitions: List<CompletedRepetition>
+    - status: SerieStatus
+    --
+    + Serie()
+    + start(): void
+    + playInstructionalVideo(): void
+    + recordValidRepetition(rep: CompletedRepetition): void
+    + isValidated(): boolean
+    - markAsAchieved(): void
+    - hasReachedTarget(): boolean
+  }
+}
+
+' =========================================================
+' DOMAIN LAYER — Value Objects
+' =========================================================
+package "domain.model.valueobjects" {
+  class TherapySessionId <<ValueObject>> {
+    - value: UUID
+  }
+  class PatientId <<ValueObject>> {
+    - value: UUID
+  }
+  class TreatmentPlanId <<ValueObject>> {
+    - value: UUID
+  }
+  class DeviceId <<ValueObject>> {
+    - value: String
+  }
+  class RoutineId <<ValueObject>> {
+    - value: UUID
+  }
+  class SerieId <<ValueObject>> {
+    - value: UUID
+  }
+  class ExerciseId <<ValueObject>> {
+    - value: UUID
+  }
+  class AngleThreshold <<ValueObject>> {
+    - minAngle: double
+    - maxAngle: double
+    + isWithinRange(angle: double): boolean
+  }
+  class CompletedRepetition <<ValueObject>> {
+    - achievedAngle: double
+    - wasWithinThreshold: boolean
+    - recordedAt: LocalDateTime
+  }
+  class IoTSensorSnapshot <<ValueObject>> {
+    - deviceId: String
+    - sensorsPlaced: boolean
+    - recordedAt: LocalDateTime
+  }
+  class PainLevel <<ValueObject>> {
+    - value: int
+    + isValid(): boolean
+  }
+  class RepetitionCount <<ValueObject>> {
+    - value: int
+  }
+  enum SessionStatus <<ValueObject>> {
+    PENDING
+    READY
+    IN_PROGRESS
+    COMPLETED
+    CANCELLED
+  }
+  enum RoutineStatus <<ValueObject>> {
+    PENDING
+    STARTED
+    COMPLETED
+  }
+  enum SerieStatus <<ValueObject>> {
+    PENDING
+    STARTED
+    VALIDATED
+    FAILED
+  }
+  enum MovementAlertType <<ValueObject>> {
+    EXCESSIVE_MOVEMENT
+    ANOMALOUS_MOVEMENT
+  }
+}
+
+' =========================================================
+' DOMAIN LAYER — Domain Events
+' =========================================================
+package "domain.model.events" {
+  class TherapySessionInitiatedEvent <<DomainEvent>> {
+    + sessionId: UUID
+    + patientId: UUID
+    + treatmentPlanId: UUID
+    + iotDeviceId: String
+    + occurredOn: LocalDateTime
+  }
+  class HardwareReadinessConfirmedEvent <<DomainEvent>> {
+    + sessionId: UUID
+    + deviceId: String
+    + sensorsPlaced: boolean
+    + occurredOn: LocalDateTime
+  }
+  class RoutineStartedEvent <<DomainEvent>> {
+    + sessionId: UUID
+    + routineId: UUID
+    + occurredOn: LocalDateTime
+  }
+  class SerieStartedEvent <<DomainEvent>> {
+    + sessionId: UUID
+    + routineId: UUID
+    + serieId: UUID
+    + exerciseId: UUID
+    + occurredOn: LocalDateTime
+  }
+  class InstructionalVideoPlayedEvent <<DomainEvent>> {
+    + sessionId: UUID
+    + serieId: UUID
+    + videoUrl: String
+    + occurredOn: LocalDateTime
+  }
+  class RepetitionRecordedEvent <<DomainEvent>> {
+    + sessionId: UUID
+    + serieId: UUID
+    + achievedAngle: double
+    + wasWithinThreshold: boolean
+    + currentRepetitions: int
+    + occurredOn: LocalDateTime
+  }
+  class SerieAchievedEvent <<DomainEvent>> {
+    + sessionId: UUID
+    + routineId: UUID
+    + serieId: UUID
+    + totalRepetitions: int
+    + occurredOn: LocalDateTime
+  }
+  class RoutineCompletedEvent <<DomainEvent>> {
+    + sessionId: UUID
+    + routineId: UUID
+    + occurredOn: LocalDateTime
+  }
+  class AnomalousMovementDetectedEvent <<DomainEvent>> {
+    + sessionId: UUID
+    + alertType: MovementAlertType
+    + occurredOn: LocalDateTime
+  }
+  class ExcessiveMovementAlertIssuedEvent <<DomainEvent>> {
+    + sessionId: UUID
+    + alertType: MovementAlertType
+    + occurredOn: LocalDateTime
+  }
+  class PainLevelReportedEvent <<DomainEvent>> {
+    + sessionId: UUID
+    + patientId: UUID
+    + painLevel: int
+    + occurredOn: LocalDateTime
+  }
+  class TherapySessionCompletedEvent <<DomainEvent>> {
+    + sessionId: UUID
+    + patientId: UUID
+    + routineId: UUID
+    + occurredOn: LocalDateTime
+  }
+  class TherapySessionCancelledEvent <<DomainEvent>> {
+    + sessionId: UUID
+    + patientId: UUID
+    + reason: String
+    + occurredOn: LocalDateTime
+  }
+}
+
+' =========================================================
+' DOMAIN LAYER — Domain Services
+' =========================================================
+package "domain.services" {
+  interface MotionAnalysisService <<DomainService>> {
+    + analyze(data, th): MovementAlertType
+  }
+  interface RepetitionValidationService <<DomainService>> {
+    + validate(angle, th): CompletedRepetition
+  }
+
+  MotionAnalysisService -[hidden]down- RepetitionValidationService
+}
+
+' =========================================================
+' Domain Exceptions
+' =========================================================
+package "domain.exceptions" {
+  class HardwareNotReadyException <<Exception>>
+  class IoTSensorsNotPlacedException <<Exception>>
+  class RoutineNotAssignedToSessionException <<Exception>>
+  class TherapySessionAlreadyFinalizedException <<Exception>>
+  class SerieNotFoundException <<Exception>>
+  class SerieNotStartedException <<Exception>>
+  class SerieAlreadyAchievedException <<Exception>>
+  class InvalidPainLevelException <<Exception>>
+  class InvalidAngleThresholdException <<Exception>>
+  class InvalidRepetitionCountException <<Exception>>
+
+  HardwareNotReadyException -[hidden]down- IoTSensorsNotPlacedException
+  IoTSensorsNotPlacedException -[hidden]down- RoutineNotAssignedToSessionException
+  RoutineNotAssignedToSessionException -[hidden]down- TherapySessionAlreadyFinalizedException
+  TherapySessionAlreadyFinalizedException -[hidden]down- SerieNotFoundException
+  SerieNotFoundException -[hidden]down- SerieNotStartedException
+  SerieNotStartedException -[hidden]down- SerieAlreadyAchievedException
+  SerieAlreadyAchievedException -[hidden]down- InvalidPainLevelException
+  InvalidPainLevelException -[hidden]down- InvalidAngleThresholdException
+  InvalidAngleThresholdException -[hidden]down- InvalidRepetitionCountException
+}
+
+' =========================================================
+' Composition & relationships
+' =========================================================
+TherapySession *-- TherapySessionId
+TherapySession *-- PatientId
+TherapySession *-- TreatmentPlanId
+TherapySession *-- DeviceId
+TherapySession *-- SessionStatus
+TherapySession *-- IoTSensorSnapshot
+TherapySession *-- PainLevel
+TherapySession "1" *-- "1" Routine
+
+Routine *-- RoutineId
+Routine *-- RoutineStatus
+Routine "1" *-- "*" Serie
+
+Serie *-- SerieId
+Serie *-- ExerciseId
+Serie *-- AngleThreshold
+Serie *-- RepetitionCount
+Serie *-- SerieStatus
+Serie "1" *-- "*" CompletedRepetition
+
+TherapySession ..> TherapySessionInitiatedEvent : publishes
+TherapySession ..> HardwareReadinessConfirmedEvent : publishes
+TherapySession ..> RoutineStartedEvent : publishes
+TherapySession ..> AnomalousMovementDetectedEvent : publishes
+TherapySession ..> ExcessiveMovementAlertIssuedEvent : publishes
+TherapySession ..> PainLevelReportedEvent : publishes
+TherapySession ..> TherapySessionCompletedEvent : publishes
+TherapySession ..> TherapySessionCancelledEvent : publishes
+Routine ..> RoutineCompletedEvent : publishes
+Serie ..> SerieStartedEvent : publishes
+Serie ..> InstructionalVideoPlayedEvent : publishes
+Serie ..> RepetitionRecordedEvent : publishes
+Serie ..> SerieAchievedEvent : publishes
+
+TherapySession ..> HardwareNotReadyException : throws
+TherapySession ..> IoTSensorsNotPlacedException : throws
+TherapySession ..> RoutineNotAssignedToSessionException : throws
+TherapySession ..> TherapySessionAlreadyFinalizedException : throws
+Routine ..> SerieNotFoundException : throws
+Serie ..> SerieNotStartedException : throws
+Serie ..> SerieAlreadyAchievedException : throws
+PainLevel ..> InvalidPainLevelException : throws
+AngleThreshold ..> InvalidAngleThresholdException : throws
+RepetitionCount ..> InvalidRepetitionCountException : throws
+
+MotionAnalysisService ..> AngleThreshold
+MotionAnalysisService ..> MovementAlertType
+RepetitionValidationService ..> AngleThreshold
+RepetitionValidationService ..> CompletedRepetition
+
+@enduml
