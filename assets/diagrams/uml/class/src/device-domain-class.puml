@@ -1,0 +1,148 @@
+@startuml arthrotech-device-domain-class
+' Domain Layer Class Diagram — Device Bounded Context (uFlex)
+
+skinparam shadowing false
+skinparam defaultFontName Arial
+skinparam classFontSize 12
+skinparam classAttributeIconSize 0
+skinparam packageStyle rectangle
+skinparam linetype ortho
+skinparam nodesep 30
+skinparam ranksep 55
+
+hide empty members
+
+' Stereotype palette
+skinparam class {
+  BackgroundColor<<AggregateRoot>>     #1168BD
+  FontColor<<AggregateRoot>>           #FFFFFF
+  BorderColor<<AggregateRoot>>         #0B4884
+
+  BackgroundColor<<Entity>>            #438DD5
+  FontColor<<Entity>>                  #FFFFFF
+  BorderColor<<Entity>>                #2E6295
+
+  BackgroundColor<<ValueObject>>       #85BBF0
+  FontColor<<ValueObject>>             #000000
+  BorderColor<<ValueObject>>           #438DD5
+
+  BackgroundColor<<DomainEvent>>       #F28FAD
+  FontColor<<DomainEvent>>             #000000
+  BorderColor<<DomainEvent>>           #B56580
+
+  BackgroundColor<<Exception>>         #CDA1A1
+  FontColor<<Exception>>               #000000
+  BorderColor<<Exception>>             #8F6262
+}
+
+title Domain Layer Class Diagram — Device Bounded Context (uFlex)
+
+' =========================================================
+' DOMAIN LAYER — Aggregates
+' =========================================================
+package "domain.model.aggregates" {
+  class IotKit <<AggregateRoot>> {
+    - id: IotKitId
+    - serialNumber: SerialNumber
+    - status: KitStatus
+    - batteryLevel: BatteryLevel
+    - calibrationData: CalibrationData
+    - firmwareVersion: String
+    --
+    + IotKit()
+    + register(serialNumber: SerialNumber): IotKit
+    + calibrate(data: CalibrationData): void
+    + updateBattery(level: BatteryLevel): void
+    + link(): void
+    + disconnect(): void
+    + updateFirmware(version: String): void
+  }
+}
+
+' =========================================================
+' DOMAIN LAYER — Value Objects
+' =========================================================
+package "domain.model.valueobjects" {
+  class IotKitId <<ValueObject>> {
+    - value: UUID
+  }
+  class SerialNumber <<ValueObject>> {
+    - value: String
+    + validate(): void
+  }
+  class BatteryLevel <<ValueObject>> {
+    - level: Integer
+    + isLow(): boolean
+  }
+  class CalibrationData <<ValueObject>> {
+    - offset: Double
+    - lastCalibrationDate: LocalDateTime
+  }
+  enum KitStatus <<ValueObject>> {
+    REGISTERED
+    LINKED
+    CALIBRATING
+    DISCONNECTED
+  }
+}
+
+' =========================================================
+' DOMAIN LAYER — Domain Events
+' =========================================================
+package "domain.model.events" {
+  class IotKitRegisteredEvent <<DomainEvent>> {
+    + iotKitId: UUID
+    + serialNumber: String
+    + occurredOn: Instant
+  }
+  class IotKitCalibratedEvent <<DomainEvent>> {
+    + iotKitId: UUID
+    + calibrationDate: LocalDateTime
+  }
+  class BatteryLevelChangedEvent <<DomainEvent>> {
+    + iotKitId: UUID
+    + newLevel: Integer
+  }
+  class IotKitStatusChangedEvent <<DomainEvent>> {
+    + iotKitId: UUID
+    + newStatus: KitStatus
+  }
+}
+
+' =========================================================
+' Domain Exceptions
+' =========================================================
+package "domain.exceptions" {
+  class IotKitNotFoundException <<Exception>>
+  class KitAlreadyRegisteredException <<Exception>>
+  class InvalidCalibrationException <<Exception>>
+  class DeviceNotAvailableException <<Exception>>
+  class LowBatteryCriticalException <<Exception>>
+
+  IotKitNotFoundException -[hidden]down- KitAlreadyRegisteredException
+  KitAlreadyRegisteredException -[hidden]down- InvalidCalibrationException
+  InvalidCalibrationException -[hidden]down- DeviceNotAvailableException
+  DeviceNotAvailableException -[hidden]down- LowBatteryCriticalException
+}
+
+' =========================================================
+' Composition & relationships
+' =========================================================
+IotKit *-- IotKitId
+IotKit *-- SerialNumber
+IotKit *-- KitStatus
+IotKit *-- BatteryLevel
+IotKit *-- CalibrationData
+
+IotKit ..> IotKitRegisteredEvent : publishes
+IotKit ..> IotKitCalibratedEvent : publishes
+IotKit ..> BatteryLevelChangedEvent : publishes
+IotKit ..> IotKitStatusChangedEvent : publishes
+
+IotKit ..> KitAlreadyRegisteredException : throws
+IotKit ..> InvalidCalibrationException : throws
+IotKit ..> DeviceNotAvailableException : throws
+IotKit ..> LowBatteryCriticalException : throws
+IotKit ..> IotKitNotFoundException : throws
+
+@enduml

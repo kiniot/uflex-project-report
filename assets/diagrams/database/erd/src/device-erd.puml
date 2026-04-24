@@ -1,0 +1,48 @@
+@startuml uFlex-device-erd
+skinparam shadowing false
+skinparam defaultFontName Arial
+skinparam linetype ortho
+
+!define table(x) entity x << (T,#438DD5) >>
+!define enum(x)  entity x << (E,#85BBF0) >>
+
+hide circle
+hide empty members
+
+title Database Design — Device Bounded Context
+
+table(iot_kits) {
+  * id                   : UUID <<PK>>
+  --
+  * serial_number        : VARCHAR(50) <<Unique>>
+  * status_code          : VARCHAR(20) <<FK → kit_statuses.code>>
+  * battery_level        : INT
+  * firmware_version     : VARCHAR(20)
+  * calibration_offset   : DECIMAL(5,2)
+  * created_at           : TIMESTAMP
+  * updated_at           : TIMESTAMP
+}
+
+enum(kit_statuses) {
+  * code                 : VARCHAR(20) <<PK>>
+  --
+  * description          : VARCHAR(100)
+}
+
+note right of kit_statuses
+  Values:
+  - REGISTERED
+  - LINKED
+  - CALIBRATING
+  - DISCONNECTED
+end note
+
+iot_kits }o--|| kit_statuses : "has state"
+
+note bottom of iot_kits
+  Indices:
+  - INDEX (serial_number)
+  - INDEX (status_code)
+end note
+
+@enduml

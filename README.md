@@ -4253,7 +4253,151 @@ Figura 4.2.3.6.2. Diagrama entidad-relación del Bounded Context Organization.
 
 ### 4.2.4. Bounded Context: Device
 
+#### 4.2.4.1. Domain Layer
 
+En esta sección se describen los elementos del Domain Layer del contexto de Device, los cuales gestionan el ciclo de vida del hardware IoT. Este componente asegura la integridad operativa de los kits de sensores, permitiendo su registro, calibración y monitoreo de salud antes de ser vinculados a un plan terapéutico.
+
+**1. IotKit (Aggregate Root)**
+
+Es el componente central que encapsula el estado físico del dispositivo IoT. Controla las invariantes de negocio, asegurando que un kit no pueda ser vinculado si no está en estado `REGISTERED` o si presenta fallos de calibración críticos.
+
+**Atributos principales:**
+
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| `id` | `IotKitId` | private | Identificador único del dispositivo. |
+| `serialNumber` | `SerialNumber` | private | Código de fabricante único del hardware. |
+| `status` | `KitStatus` | private | Estado operativo (`REGISTERED`, `LINKED`, `CALIBRATING`, `DISCONNECTED`). |
+| `batteryLevel` | `BatteryLevel` | private | Porcentaje de carga actual (0-100%). |
+| `firmwareVersion` | `String` | private | Versión del firmware instalado. |
+| `createdAt` | `LocalDateTime` | private | Fecha de alta en el sistema. |
+
+**Métodos principales:**
+
+| Método | Tipo Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| `IotKit()` | Constructor | public | Constructor para persistencia. |
+| `register(SerialNumber)` | `IotKit` | public | Crea un nuevo kit con estado `REGISTERED`. |
+| `calibrate(CalibrationData)` | `void` | public | Actualiza parámetros de calibración y publica `IotKitCalibrated`. |
+| `link()` | `void` | public | Cambia estado a `LINKED`. |
+| `updateBattery(BatteryLevel)` | `void` | public | Registra nivel de batería y dispara alerta si es < 15%. |
+| `disconnect()` | `void` | public | Cambia estado a `DISCONNECTED` y publica `IotKitDisconnected`. |
+
+**2. CalibrationData (Value Object)**
+
+Define los parámetros de ajuste necesarios para que el sensor IoT sea preciso durante la terapia.
+
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| `offset` | `Double` | private | Valor de corrección de ángulo del sensor. |
+| `lastCalibrationDate` | `LocalDateTime` | private | Fecha del último ajuste. |
+
+**3. KitStatus (Value Object - Enum)**
+
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| `REGISTERED` | Enum | public | Kit disponible en inventario. |
+| `LINKED` | Enum | public | Kit en uso activo por un paciente. |
+| `CALIBRATING` | Enum | public | Proceso de calibración en curso. |
+| `DISCONNECTED` | Enum | public | Kit fuera de línea o sin señal. |
+
+**4. DeviceCommandService (Domain Service)**
+
+Coordina la lógica compleja de estados del hardware.
+
+| Método | Tipo Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| `handle(RegisterIotKitCommand)` | `UUID` | public | Registra un nuevo kit validando que el serial sea único. |
+| `handle(CalibrateKitCommand)` | `void` | public | Ejecuta la calibración en el agregado `IotKit`. |
+
+#### 4.2.4.2. Interface Layer
+
+En esta sección se presentan los contratos REST para la gestión de inventario de hardware y telemetría de sensores.
+
+**1. IotKitController (REST Controller)**
+
+| Método | Ruta | HTTP | Descripción |
+|---|---|---|---|
+| `register` | `/api/v1/devices` | POST | Registra un nuevo kit IoT en el sistema. |
+| `getById` | `/api/v1/devices/{id}` | GET | Obtiene el estado y salud de un kit específico. |
+| `updateBattery` | `/api/v1/devices/{id}/battery` | PATCH | Endpoint para telemetría de batería (usado por el sensor). |
+| `calibrate` | `/api/v1/devices/{id}/calibrate` | POST | Inicia el proceso de calibración técnica. |
+
+**2. Resources (DTOs)**
+
+| Resource | Atributos principales | Descripción |
+|---|---|---|
+| `RegisterIotKitResource` | `serialNumber: String` | Datos requeridos para dar de alta un kit. |
+| `IotKitResource` | `id: UUID`, `serialNumber: String`, `status: String` | Representación pública del kit. |
+
+**3. Transform (Assemblers)**
+
+| Assembler | Entrada | Salida | Descripción |
+|---|---|---|---|
+| `IotKitFromResourceAssembler` | `RegisterIotKitResource` | `RegisterIotKitCommand` | Mapea el request a comando de dominio. |
+| `IotKitResourceFromEntityAssembler` | `IotKit` | `IotKitResource` | Convierte entidad a DTO de salida. |
+
+#### 4.2.4.3. Application Layer
+
+**1. IotKitCommandServiceImpl (Command Service)**
+
+| Método | Tipo Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| `handle(RegisterIotKitCommand)` | `UUID` | public | Persiste el nuevo kit y valida duplicidad de serial. |
+| `handle(UpdateBatteryCommand)` | `void` | public | Procesa telemetría de batería y publica eventos de mantenimiento. |
+
+**2. IotKitQueryServiceImpl (Query Service)**
+
+| Método | Tipo Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| `handle(GetAllKitsQuery)` | `List<IotKit>` | public | Retorna inventario completo de kits. |
+
+#### 4.2.4.4. Infrastructure Layer
+
+**1. IotKitRepository (Repository Interface)**
+
+Interfaz de persistencia para el agregado `IotKit` usando Spring Data JPA.
+
+| Método | Tipo Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| `findById(IotKitId id)` | `Optional<IotKit>` | public | Busca kit por ID. |
+| `findBySerialNumber(String sn)` | `Optional<IotKit>` | public | Busca kit por número de serie físico. |
+| `save(IotKit kit)` | `IotKit` | public | Persiste el estado del kit. |
+| `existsBySerialNumber(String sn)` | `boolean` | public | Valida existencia de serial para evitar duplicados. |
+
+#### 4.2.4.5. Bounded Context Software Architecture Component Level Diagrams
+
+El diagrama de componentes (C4 Nivel 3) muestra cómo se organiza internamente el contenedor Device Service (Java/Spring Boot). Se distinguen componentes clave: el IotKitController y el TelemetryController como puntos de entrada REST para la gestión administrativa y la recepción de telemetría, los application services IotKitCommandServiceImpl e IotKitQueryServiceImpl que materializan el patrón CQRS para separar la lógica de modificación del estado del hardware de las consultas de inventario, el IotKitRepository (JPA) como abstracción de persistencia y el DeviceContextFacade como ACL para exponer la disponibilidad y salud de los kits IoT a otros contextos como Planning o Therapy.
+
+<div style="text-align: center;">
+  <img src="assets/diagrams/software-architecture/components/out/device.png" alt="uFlex — Device Bounded Context Component Diagram" style="max-width: 100%; height: auto;">
+</div>
+
+*Figura 4.2.4.5. Diagrama de componentes (C4 Nivel 3) del Bounded Context Device.*
+
+<hr class="page-break">
+
+#### 4.2.4.6. Bounded Context Software Architecture Code Level Diagrams
+
+##### 4.2.4.6.1. Bounded Context Domain Layer Class Diagrams
+
+El diagrama de clases del Domain Layer del BC Device modela exclusivamente los conceptos centrales de la gestión de hardware IoT, sin incluir las capas de application ni infrastructure. El paquete domain.model.aggregates contiene al Aggregate Root IotKit; domain.model.valueobjects agrupa los Value Objects (IotKitId, SerialNumber, BatteryLevel, CalibrationData) y el enumerado (KitStatus); domain.model.events encapsula los Domain Events publicados por el aggregate (IotKitRegisteredEvent, IotKitCalibratedEvent, BatteryLevelChangedEvent, IotKitStatusChangedEvent); y domain.exceptions reúne las excepciones de negocio que protegen las invariantes del dominio (por ejemplo, evitar la duplicidad de registros o calibraciones en estados inválidos). Las flechas con línea continua marcan composición (el IotKit contiene sus Value Objects de estado y calibración), las flechas con línea punteada marcan dependencias semánticas (eventos publicados y excepciones lanzadas).
+
+<div style="text-align: center;">
+  <img src="assets/diagrams/uml/class/out/device.png" alt="uFlex — Device Bounded Context Domain Class Diagram" style="max-width: 100%; height: auto;">
+</div>
+
+*Figura 4.2.4.6.1. Diagrama de clases del dominio del Bounded Context Device.*
+
+##### 4.2.4.6.2. Bounded Context Database Design Diagram
+
+El esquema físico del BC Device en Azure Database for PostgreSQL consta de una tabla principal iot_kits que almacena el estado operativo y de salud del sensor (identificador único, serial_number, status_code, nivel de batería, versión de firmware, datos de calibración y timestamps de auditoría), y una tabla de catálogo kit_statuses para normalizar los estados permitidos del ciclo de vida del hardware (REGISTERED, LINKED, CALIBRATING, DISCONNECTED). Los índices incluyen búsquedas por serial_number para validar la unicidad y trazabilidad física del equipo, y por status_code para monitorear rápidamente flotas de dispositivos disponibles o en error. Se optó deliberadamente por no declarar foreign keys duras hacia tablas de otros bounded contexts para mantener la autonomía entre módulos, gestionando la relación lógica del kit con los pacientes y terapeutas a través de los servicios de aplicación.
+
+<div style="text-align: center;">
+  <img src="assets/diagrams/database/erd/out/device-erd.png" alt="uFlex — Device Bounded Context Database ER Diagram" style="max-width: 100%; height: auto;">
+</div>
+
+*Figura 4.2.4.6.2. Diagrama entidad-relación del Bounded Context Device.*
 
 <hr class="page-break">
 
