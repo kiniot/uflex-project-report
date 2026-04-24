@@ -256,6 +256,9 @@ Análisis de cantidad de commits realizados por semana.
 - [Conclusiones](#conclusiones)
    - [Conclusiones y recomendaciones](#conclusiones-y-recomendaciones)
 - [Bibliografía](#bibliografía)
+- [Anexos](#anexos)
+    - [Anexo A: Código Fuente](#anexo-a-código-fuente)
+    - [Anexo B: Videos en Microsoft Streams](#anexo-b-videos-en-microsoft-streams)
 
 <hr class="page-break">
 
@@ -4587,5 +4590,26 @@ Por último, se sugiere institucionalizar un marco de seguimiento de producto co
 16. Pelvicare. (2022). *Telerehabilitación*. [https://pelvicare.pe/tratamientos/telerehabilitacion/](https://pelvicare.pe/tratamientos/telerehabilitacion/)
 
 17. Rosales, F., Gutiérrez, D., y Valencia, J. (2023). Características laborales y uso de la práctica digital de fisioterapeutas en Lima Metropolitana y el Callao-Perú durante la pandemia de la COVID-19. *Revista Peruana de Rehabilitación y Salud Humana, 5*(1), 1-12. [https://revistas.upch.edu.pe/index.php/RHR/article/view/5034](https://revistas.upch.edu.pe/index.php/RHR/article/view/5034)
+
+<hr class="page-break">
+
+# Anexos
+
+En esta sección se incluyen materiales adicionales que complementan el contenido del informe principal. Se incluyen además, enlaces a repositorios, diagramas, documentos, y otros recursos que son de utilidad.
+
+## Anexo A: Código Fuente
+
+El código fuente del proyecto está disponible en el siguiente repositorio de GitHub:
+
+1. [Organización de GitHub](https://github.com/kiniot)
+2. [Repositorio del reporte en GitHub](https://github.com/kiniot/uflex-project-report)
+
+<hr class="page-break">
+
+## Anexo B: Videos en Microsoft Streams
+
+Los videos de entrevistas para *needfinding*, exposiciones, y otros videos sobre avances del proyecto están disponibles en Microsoft Streams:
+
+1. [Entrevistas para Needfinding](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20201e843_upc_edu_pe/IQBi9_cKZMuRQaK0-UbxF7MIAZnukHun0vDhy1qki_eRsUs?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=JVqpgO)
 
 <hr class="page-break">
