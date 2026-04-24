@@ -4528,11 +4528,27 @@ El esquema físico del BC Planning en Azure Database for PostgreSQL consta de un
 
 # Conclusiones
 
-
+En esta sección se presentan las conclusiones y recomendaciones derivadas del desarrollo del proyecto. Se analizan los resultados obtenidos, los desafíos enfrentados y las lecciones aprendidas durante el proceso. Además, se proponen acciones futuras para mejorar y optimizar la plataforma uFlex.
 
 ## Conclusiones y recomendaciones
 
+Se identificaron las siguientes conclusiones y recomendaciones basadas en el desarrollo del proyecto:
 
+### Conclusiones
+
+La revisión del informe evidencia que uFlex responde a una necesidad real y relevante en el contexto peruano: la falta de seguimiento objetivo en la rehabilitación domiciliaria de miembro superior. El problema está bien sustentado en términos clínicos y operativos, especialmente por la dependencia actual de reportes subjetivos, los riesgos de mala ejecución y la discontinuidad entre sesiones presenciales. En ese sentido, el planteamiento del proyecto muestra una oportunidad clara de impacto para pacientes, fisioterapeutas y clínicas.
+
+También se concluye que la propuesta de solución está bien orientada desde negocio y experiencia de usuario, al integrar hardware IoT vestible con una plataforma SaaS multitenant y flujos diferenciados para cada actor. El uso de Lean UX permite conectar hipótesis de valor con métricas concretas (adherencia, confianza clínica, reducción de tiempos de evaluación y eficiencia de onboarding), lo cual fortalece la trazabilidad entre problema, funcionalidad y resultado esperado. Esto aporta coherencia estratégica para fases de validación posteriores.
+
+Finalmente, el diseño técnico presenta una base sólida para escalar el producto de forma mantenible, gracias al enfoque DDD estratégico y táctico, la identificación de bounded contexts y la protección del core clínico (Planning y Therapy). Decisiones como separar Device mediante ACL y estructurar la arquitectura por capas (edge, clientes, cloud) reducen acoplamientos y riesgos de evolución tecnológica. En conjunto, el informe deja una arquitectura consistente para avanzar hacia implementación y pruebas en entorno real.
+
+### Recomendaciones
+
+Se recomienda priorizar un piloto controlado con clínicas objetivo de Lima para validar tempranamente las hipótesis principales del Lean UX, antes de ampliar el alcance comercial. Este piloto debe medir, al menos, adherencia del paciente, calidad de ejecución de ejercicios, confianza del fisioterapeuta para ajustar planes y tiempos de configuración del kit. Con ello, el equipo podrá convertir supuestos de valor en evidencia operativa y clínica.
+
+También es clave reforzar la estrategia de adopción para reducir la resistencia al cambio identificada en el propio informe. Para ello, conviene implementar onboarding guiado, tutoriales contextuales y soporte técnico inicial para administradores y especialistas, junto con una experiencia móvil simple para pacientes. Esta línea de trabajo puede ser determinante para sostener uso continuo y evitar abandono por fricción tecnológica.
+
+Por último, se sugiere institucionalizar un marco de seguimiento de producto con KPIs y revisiones periódicas por contexto de dominio (Therapy, Planning, Device, etc.), asegurando decisiones basadas en datos. En paralelo, sería conveniente preparar desde etapas tempranas requisitos de interoperabilidad clínica (por ejemplo, exportación a EHR), privacidad y seguridad operativa para facilitar futuras integraciones. Esto permitirá que el crecimiento técnico y comercial ocurra sin perder foco clínico ni calidad del servicio.
 
 <hr class="page-break">
 
