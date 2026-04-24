@@ -3675,11 +3675,7 @@ El esquema físico del BC Subscription en Azure Database for PostgreSQL está co
 
 <hr class="page-break">
 
-<hr class="page-break">
-
 ### 4.2.3. Bounded Context: Organization
-
-<h3 id="4-2-3-bounded-context-organization">4.2.3. Bounded Context: Organization</h3>
 
 <p>El bounded context <strong>Organization</strong> concentra la información organizacional y el perfil enriquecido de cada actor clínico registrado en uFlex. Mientras que el BC IAM resuelve la identidad técnica del usuario (autenticación, roles y ciclo de vida de la cuenta) y el BC Subscription gobierna el contrato comercial del tenant, el BC Organization se encarga de representar a la <em>clínica como organización</em> (denominación legal, RUC, sedes, datos de contacto, logotipo, horarios) y de mantener el <em>perfil personal y clínico</em> de los usuarios asociados a esa clínica (fisioterapeutas con su número de colegiatura y especialidad, pacientes con sus datos demográficos, contacto de emergencia y breve historial clínico, y administradores con su ámbito de gestión). Este contexto es, por tanto, la fuente autoritativa del <code>ClinicId</code> referenciado lógicamente por el resto de bounded contexts y del árbol de <code>Branches</code> (sedes) sobre el que operan Planning, Device y Therapy. Los comandos y eventos principales (<code>RegisterClinicCommand</code>, <code>AddBranchCommand</code>, <code>RegisterPhysiotherapistProfileCommand</code>, <code>RegisterPatientProfileCommand</code>, <code>AssignPatientToPhysiotherapistCommand</code>, <code>ClinicRegisteredEvent</code>, <code>ClinicActivatedEvent</code>, <code>BranchAddedEvent</code>, <code>PhysiotherapistProfileRegisteredEvent</code>, <code>PatientProfileRegisteredEvent</code>, <code>PatientAssignedToPhysiotherapistEvent</code>) fueron identificados durante el Design-Level EventStorming.</p>
 
@@ -4521,8 +4517,6 @@ El esquema físico del BC Planning en Azure Database for PostgreSQL consta de un
 
 <hr class="page-break">
 
-<hr class="page-break">
-
 ### 4.2.6. Bounded Context: Therapy
 
 
@@ -4601,8 +4595,8 @@ En esta sección se incluyen materiales adicionales que complementan el contenid
 
 El código fuente del proyecto está disponible en el siguiente repositorio de GitHub:
 
-1. [Organización de GitHub](https://github.com/kiniot)
-2. [Repositorio del reporte en GitHub](https://github.com/kiniot/uflex-project-report)
+1. Organización de GitHub: [https://github.com/kiniot](https://github.com/kiniot)
+2. Repositorio del reporte en GitHub: [https://github.com/kiniot/uflex-project-report](https://github.com/kiniot/uflex-project-report)
 
 <hr class="page-break">
 
@@ -4610,6 +4604,5 @@ El código fuente del proyecto está disponible en el siguiente repositorio de G
 
 Los videos de entrevistas para *needfinding*, exposiciones, y otros videos sobre avances del proyecto están disponibles en Microsoft Streams:
 
-1. [Entrevistas para Needfinding](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20201e843_upc_edu_pe/IQBi9_cKZMuRQaK0-UbxF7MIAZnukHun0vDhy1qki_eRsUs?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=JVqpgO)
-
-<hr class="page-break">
+1. Entrevistas para Needfinding: [https://upcedupe-my.sharepoint.com/:v:/g/personal/u20201e843_upc_edu_pe/IQBi9_cKZMuRQaK0-UbxF7MIAZnukHun0vDhy1qki_eRsUs?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=JVqpgO](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20201e843_upc_edu_pe/IQBi9_cKZMuRQaK0-UbxF7MIAZnukHun0vDhy1qki_eRsUs?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=JVqpgO)
+2. Exposición A V1: [https://upcedupe-my.sharepoint.com/:v:/g/personal/u20201e843_upc_edu_pe/IQD2BLK_kG3WTLABTiNdeqlcAY6m3IeQq8Sy6AZInrFMkR8?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=puz5qK](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20201e843_upc_edu_pe/IQD2BLK_kG3WTLABTiNdeqlcAY6m3IeQq8Sy6AZInrFMkR8?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=puz5qK)
