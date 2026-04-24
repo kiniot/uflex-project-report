@@ -97,14 +97,21 @@ Se usó el flujo de trabajo **GitFlow**, que incluye las siguientes ramas princi
 - **release/vX.X.X:** Rama creada para preparar versiones candidatas al reporte final, siguiendo *Semantic Versioning 2.0.0*. En esta rama se realizan ajustes finales como correcciones menores y revisiones antes de integrarla a `main`.
 - **hotfix/fix-name:** Rama utilizada para aplicar correcciones críticas directamente sobre `main`, asegurando la estabilidad de la versión publicada.
 
+<hr class="page-break">
+
 ## TB1
 
 **Tareas**
 
 Para el desarrollo del TB1, cada participante del equipo realizó las siguientes tareas:
 
-| Integrantes                      | Tarea asignada                                                                                                                                                                                                                                                                 |
-|----------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Integrantes                         | Tarea asignada                                                                                               |
+|-------------------------------------|--------------------------------------------------------------------------------------------------------------|
+| Ramirez Mestanza, Salim Ignacio     | - Ubiquitous Language <br> - User Stories <br> - Product Backlog <br> - Domain Message Flows Modeling        |
+| Sulca Gonzales, Paúl Fernando       | - User Task Matrix <br> - User Journey Mapping <br> - Empathy Mapping <br> - Candidate Context Discovery     |
+| Crispin Ramos, Daniel Franco        | - Registro de entrevistas <br> - Análisis de Entrevistas <br> - Impact Mapping <br> - Context Mapping        |
+| Varela Bustinza, Marcelo Alessandro | - Startup Profile <br> - Solution Profile <br> - Antecedentes y problemática <br> - Bounded Context Canvases |
+| Rivera Sosa, Eduardo Gael           | - Segmentos Objetivo <br> - Competidores <br> - User Personas <br> - Software Architecture                   |
 
 **GitHub Collaboration Insights**
 
