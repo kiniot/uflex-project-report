@@ -1,0 +1,62 @@
+@startuml arthrotech-device-component
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+
+' Styling (Mantenemos la coherencia con el ejemplo de Planning)
+skinparam shadowing false
+skinparam defaultFontName Arial
+skinparam wrapWidth 200
+skinparam nodesep 40
+skinparam ranksep 60
+
+' ---- Tags ----
+AddContainerTag("webApp",     $bgColor="#438DD5", $fontColor="#ffffff", $borderColor="#2E6295", $legendText="Web Client App")
+AddContainerTag("iotGateway", $bgColor="#2E6295", $fontColor="#ffffff", $borderColor="#1C4E80", $legendText="IoT Edge/Gateway")
+
+AddComponentTag("interface",      $bgColor="#1168BD", $fontColor="#ffffff", $borderColor="#0B4884", $legendText="Interface Layer REST")
+AddComponentTag("application",    $bgColor="#1168BD", $fontColor="#ffffff", $borderColor="#0B4884", $legendText="Application Layer CQRS")
+AddComponentTag("domain",         $bgColor="#0B4884", $fontColor="#ffffff", $borderColor="#062F5A", $legendText="Domain Layer")
+AddComponentTag("infrastructure", $bgColor="#6BA3DC", $fontColor="#000000", $borderColor="#438DD5", $legendText="Infrastructure Layer")
+AddComponentTag("acl",            $bgColor="#F5A97F", $fontColor="#000000", $borderColor="#C87A4C", $legendText="External ACL")
+
+AddContainerTag("database",  $bgColor="#20B2AA", $fontColor="#ffffff", $borderColor="#148F89", $legendText="Relational SQL Database")
+
+title Component Diagram — Device Bounded Context
+
+' =========================================================
+' Clients
+' =========================================================
+Container(webApp, "Web Client App", "TypeScript / Angular", "Gestión de inventario y monitoreo de salud IoT", $tags="webApp")
+Container(iotGateway, "IoT Edge Gateway", "Python / MQTT", "Ingesta de telemetría desde sensores IMU", $tags="iotGateway")
+
+' =========================================================
+' Device Service internal layers
+' =========================================================
+Container_Boundary(deviceService, "Device Service — RESTful API") {
+  Component(interfaceLayer,      "Device Interface Layer",   "Component: Spring Boot 3", "Controllers: IotKit, Calibration, Telemetry", $tags="interface")
+  Component(applicationLayer,    "Device Application Layer", "Component: Spring Boot 3", "Handlers de Commands (Register, Calibrate)", $tags="application")
+  Component(deviceFacade,        "Device Context Facade",    "Component: Spring Boot 3", "Fachada para validación de kits (Planning, Therapy)", $tags="acl")
+  Component(domainLayer,         "Device Domain Layer",      "Component: Spring Boot 3", "Aggregate IotKit, VO KitStatus, CalibrationData", $tags="domain")
+  Component(infrastructureLayer, "Device Infra Layer",       "Component: Spring Boot 3", "Repositorios JPA y Adaptadores de Persistencia", $tags="infrastructure")
+}
+
+' =========================================================
+' External systems & database
+' =========================================================
+ContainerDb(deviceDB, "Device SQL Database", "Azure Database for PostgreSQL", "Almacena inventario, estados y calibración", $tags="database")
+
+' =========================================================
+' Relations
+' =========================================================
+Rel(webApp, interfaceLayer, "Gestiona inventario y status", "JSON/HTTPS")
+Rel(iotGateway, interfaceLayer, "Envía telemetría de salud (batería/estado)", "HTTPS")
+
+Rel(interfaceLayer, applicationLayer, "Invoca servicios de aplicación")
+Rel(applicationLayer, domainLayer, "Orquesta cambios de estado del dispositivo")
+Rel(applicationLayer, infrastructureLayer, "Persistencia y eventos")
+
+Rel(deviceFacade, applicationLayer, "Expone disponibilidad de dispositivos", "in-process")
+Rel(infrastructureLayer, deviceDB, "Persistencia de datos", "JDBC/SSL")
+
+SHOW_LEGEND()
+@enduml
