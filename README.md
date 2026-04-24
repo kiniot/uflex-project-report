@@ -1970,6 +1970,33 @@ Encargado de orquestar cada sesión de cada terapia física ejecutada por el pac
 
 ### 4.1.2. Context Mapping
 
+Como equipo, realizamos sesiones de trabajo colaborativo para definir las relaciones estructurales entre nuestros *Bounded Contexts*. Para garantizar una arquitectura robusta, cuestionamos nuestras decisiones iniciales mediante un análisis de tipo "What-if":
+
+* **¿Qué pasaría si fusionamos el contexto de *Device* con el de *Therapy*?**
+    * *Análisis:* Se descartó esta opción. El contexto de *Device* maneja telemetría cruda y protocolos de hardware que son volátiles. Fusionarlos contaminaría nuestro *Core Domain* (*Therapy*) con detalles técnicos innecesarios, dificultando el mantenimiento a largo plazo.
+* **¿Qué pasaría si creamos un *Shared Kernel* para los datos de pacientes entre *Organization* y *Therapy*?**
+    * *Análisis:* Se decidió no aplicar esta alternativa. El uso de un *Shared Kernel* implica un acoplamiento excesivo entre equipos de desarrollo. Preferimos establecer una relación *Customer/Supplier* para mantener la independencia entre los dominios.
+* **¿Qué pasaría si el contexto de *Subscription* expusiera un servicio directo a *Therapy*?**
+    * *Análisis:* Se concluyó que no es necesario. *Planning* actúa como un filtro natural y validador de los estados de suscripción antes de permitir la ejecución de una rutina. Esto mantiene a *Therapy* enfocado exclusivamente en la ejecución clínica.
+* **¿Qué pasaría si *IAM* gestionara permisos personalizados dentro de cada contexto?**
+    * *Análisis:* Se descartó por redundancia. Se optó por una interfaz centralizada para evitar la duplicidad de lógica de seguridad en todo el sistema.
+
+A continuación, se describen las relaciones establecidas en nuestro diseño:
+
+* **IAM hacia Todos los contextos (Patrón: Open Host Service - OHS):**
+    * *IAM* actúa como un servicio base unificado. Todos los demás contextos consumen su API para la validación de identidad. El uso de *OHS* garantiza que la interfaz de autenticación sea estable y transversal, sin exponer la lógica interna de almacenamiento de credenciales.
+* **Organization hacia Planning / Therapy (Patrón: Customer/Supplier - C/S):**
+    * *Organization* provee los perfiles clínicos (pacientes y especialistas). *Planning* y *Therapy* actúan como consumidores (*Customers*) que requieren estos datos para operar. Sin estos perfiles, los contextos *Core* no tienen contexto de sobre quién ejecutar la terapia.
+* **Subscription hacia Planning (Patrón: Customer/Supplier - C/S):**
+    * El contexto de *Planning* valida el estado comercial del cliente antes de permitir la creación de nuevos planes terapéuticos. Esta relación asegura que el acceso al servicio esté alineado con el plan contratado.
+* **Device hacia Therapy (Patrón: Anti-corruption Layer - ACL):**
+    * Esta es una relación crítica para proteger nuestro *Core Domain*. La capa *ACL* actúa como un traductor que convierte las señales técnicas crudas (voltaje, frecuencia) provenientes de los dispositivos IoT en conceptos clínicos (ángulos de articulación, validación de repeticiones) que *Therapy* puede procesar.
+* **Planning hacia Therapy (Patrón: Customer/Supplier - C/S):**
+    * *Planning* entrega la configuración y *Therapy* la ejecuta. Existe una separación clara de responsabilidades: uno gestiona la estrategia clínica y el otro la ejecución en tiempo real.
+
+<img src="assets/diagrams/ddd/context-maps/context-mapping.jpg" alt="Context Mapping uFlex" width="800">
+
+Como se observa en el diagrama, hemos priorizado la protección de nuestros contextos *Core* (*Therapy* y *Planning*). La implementación de un *Anti-corruption Layer* (ACL) entre *Device* y *Therapy* es fundamental. Esto evita que cualquier cambio futuro en el hardware del dispositivo impacte nuestra lógica de negocio principal, permitiendo que *uFlex* evolucione su tecnología sin corromper su modelo clínico.
 
 
 <hr class="page-break">
