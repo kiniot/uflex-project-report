@@ -1,0 +1,195 @@
+@startuml uflex-therapy-erd
+' Database Design Diagram — Therapy Bounded Context (uFlex)
+' Target: Azure Database for PostgreSQL — Flexible Server
+
+skinparam shadowing false
+skinparam defaultFontName Arial
+skinparam linetype ortho
+
+!define table(x) entity x << (T,#438DD5) >>
+!define enum(x)  entity x << (E,#85BBF0) >>
+
+hide circle
+hide empty members
+
+title Database Design — Therapy Bounded Context
+
+' =========================================================
+' Tables
+' =========================================================
+table(therapy_sessions) {
+  * id                       : UUID <<PK>>
+  --
+  * patient_id               : UUID <<Ref IAM>>
+  * treatment_plan_id        : UUID <<Ref Planning>>
+  * iot_device_id            : VARCHAR(50) <<Ref IoT Inventory>>
+  * status                   : VARCHAR(20) <<FK → session_statuses.code>>
+    pain_level               : SMALLINT
+    sensors_placed           : BOOLEAN
+    snapshot_device_id       : VARCHAR(50)
+    snapshot_recorded_at     : TIMESTAMP
+    started_at               : TIMESTAMP
+    finalized_at             : TIMESTAMP
+    cancellation_reason      : VARCHAR(255)
+  * created_at               : TIMESTAMP
+  * updated_at               : TIMESTAMP
+}
+
+table(routines) {
+  * id                       : UUID <<PK>>
+  --
+  * therapy_session_id       : UUID <<FK → therapy_sessions.id>>
+  * name                     : VARCHAR(100)
+  * status                   : VARCHAR(20) <<FK → routine_statuses.code>>
+  * created_at               : TIMESTAMP
+  * updated_at               : TIMESTAMP
+}
+
+table(series) {
+  * id                       : UUID <<PK>>
+  --
+  * routine_id               : UUID <<FK → routines.id>>
+  * exercise_id              : UUID <<Ref Exercise Catalog>>
+  * target_repetitions       : SMALLINT
+  * min_angle                : DECIMAL(5,2)
+  * max_angle                : DECIMAL(5,2)
+    instructional_video_url  : VARCHAR(500)
+  * current_repetitions      : SMALLINT
+  * status                   : VARCHAR(20) <<FK → serie_statuses.code>>
+  * sequence_order           : SMALLINT
+  * created_at               : TIMESTAMP
+  * updated_at               : TIMESTAMP
+}
+
+table(completed_repetitions) {
+  * id                       : BIGINT <<PK>>
+  --
+  * serie_id                 : UUID <<FK → series.id>>
+  * achieved_angle           : DECIMAL(5,2)
+  * was_within_threshold     : BOOLEAN
+  * recorded_at              : TIMESTAMP
+}
+
+table(movement_alerts) {
+  * id                       : BIGINT <<PK>>
+  --
+  * therapy_session_id       : UUID <<FK → therapy_sessions.id>>
+  * alert_type               : VARCHAR(30) <<FK → movement_alert_types.code>>
+  * occurred_at              : TIMESTAMP
+}
+
+' =========================================================
+' Enum tables
+' =========================================================
+enum(session_statuses) {
+  * code                     : VARCHAR(20) <<PK>>
+  --
+  * description              : VARCHAR(100)
+}
+note right of session_statuses
+  Values:
+  - PENDING
+  - READY
+  - IN_PROGRESS
+  - COMPLETED
+  - CANCELLED
+end note
+
+enum(routine_statuses) {
+  * code                     : VARCHAR(20) <<PK>>
+  --
+  * description              : VARCHAR(100)
+}
+note right of routine_statuses
+  Values:
+  - PENDING
+  - STARTED
+  - COMPLETED
+end note
+
+enum(serie_statuses) {
+  * code                     : VARCHAR(20) <<PK>>
+  --
+  * description              : VARCHAR(100)
+}
+note right of serie_statuses
+  Values:
+  - PENDING
+  - STARTED
+  - VALIDATED
+  - FAILED
+end note
+
+enum(movement_alert_types) {
+  * code                     : VARCHAR(30) <<PK>>
+  --
+  * description              : VARCHAR(100)
+}
+note right of movement_alert_types
+  Values:
+  - EXCESSIVE_MOVEMENT
+  - ANOMALOUS_MOVEMENT
+end note
+
+' =========================================================
+' Relationships
+' =========================================================
+therapy_sessions ||--|| routines                 : "executes"
+routines ||--o{ series                            : "contains"
+series ||--o{ completed_repetitions               : "records"
+therapy_sessions ||--o{ movement_alerts           : "raises"
+
+therapy_sessions }o--|| session_statuses          : "current state"
+routines }o--|| routine_statuses                  : "current state"
+series }o--|| serie_statuses                      : "current state"
+movement_alerts }o--|| movement_alert_types      : "classified as"
+
+' =========================================================
+' Notes
+' =========================================================
+note bottom of therapy_sessions
+  Indices:
+  - INDEX (patient_id, status)
+  - INDEX (treatment_plan_id)
+  - INDEX (iot_device_id) WHERE status IN ('READY','IN_PROGRESS')
+  - UNIQUE (patient_id, started_at::DATE)
+    → una sesión por paciente por día
+
+  Referencias lógicas a otros BC:
+  - patient_id → IAM BC
+  - treatment_plan_id → Planning BC
+  - iot_device_id → IoT Inventory BC
+end note
+
+note bottom of routines
+  Relación 1:1 con therapy_sessions.
+  Se crea al iniciar la preparación
+  y su ciclo de vida muere con la sesión.
+end note
+
+note bottom of series
+  Indices:
+  - INDEX (routine_id, sequence_order)
+  - CHECK (current_repetitions <= target_repetitions)
+  - CHECK (min_angle < max_angle)
+
+  sequence_order garantiza el orden
+  de ejecución clínica de las series.
+end note
+
+note bottom of completed_repetitions
+  Registro histórico inmutable.
+  Indices:
+  - INDEX (serie_id, recorded_at)
+
+  Una vez insertada, no se actualiza
+  (hecho consumado del Edge App).
+end note
+
+note bottom of movement_alerts
+  Registro auditable de alertas clínicas
+  emitidas durante la sesión para análisis
+  posterior del fisioterapeuta.
+end note
+
+@enduml

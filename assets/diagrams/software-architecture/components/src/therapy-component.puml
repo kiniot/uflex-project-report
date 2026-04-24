@@ -1,0 +1,78 @@
+@startuml uflex-therapy-component
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+
+' Styling
+skinparam shadowing false
+skinparam defaultFontName Arial
+skinparam Handwritten false
+skinparam Padding 3
+skinparam wrapWidth 200
+skinparam nodesep 35
+skinparam ranksep 55
+
+' ---- Tags ----
+' Clients (each with its own brand colour)
+AddContainerTag("androidApp", $bgColor="#A3C43E", $fontColor="#000000", $borderColor="#6E8C20", $legendText="KMP Mobile App")
+AddContainerTag("webApp",     $bgColor="#438DD5", $fontColor="#ffffff", $borderColor="#2E6295", $legendText="Web Client App PWA")
+AddContainerTag("edgeApp",    $bgColor="#8E44AD", $fontColor="#ffffff", $borderColor="#5B2C6F", $legendText="IoT Edge App")
+
+' Therapy internal layers
+AddComponentTag("interface",      $bgColor="#1168BD", $fontColor="#ffffff", $borderColor="#0B4884", $legendText="Interface Layer REST")
+AddComponentTag("application",    $bgColor="#1168BD", $fontColor="#ffffff", $borderColor="#0B4884", $legendText="Application Layer CQRS")
+AddComponentTag("domain",         $bgColor="#0B4884", $fontColor="#ffffff", $borderColor="#062F5A", $legendText="Domain Layer")
+AddComponentTag("infrastructure", $bgColor="#6BA3DC", $fontColor="#000000", $borderColor="#438DD5", $legendText="Infrastructure Layer")
+AddComponentTag("acl",            $bgColor="#F5A97F", $fontColor="#000000", $borderColor="#C87A4C", $legendText="External ACL")
+
+' External systems & database
+AddSystemTag("externalMqtt",    $bgColor="#E63946", $fontColor="#ffffff", $borderColor="#9B1E28", $legendText="External MQTT Broker")
+AddSystemTag("externalService", $bgColor="#999999", $fontColor="#ffffff", $borderColor="#6B6B6B", $legendText="External Bounded Context")
+AddContainerTag("database",     $bgColor="#20B2AA", $fontColor="#ffffff", $borderColor="#148F89", $legendText="Relational SQL Database")
+
+title Component Diagram — Therapy Bounded Context
+
+' =========================================================
+' Clients
+' =========================================================
+Container(androidApp, "Android Mobile App",  "Kotlin / Android SDK",     "Aplicación nativa Android para pacientes que ejecutan sus sesiones de terapia", $tags="androidApp")
+Container(webApp,     "Web Client App",      "TypeScript / Angular PWA", "PWA para fisioterapeutas que supervisan sesiones en tiempo real",               $tags="webApp")
+Container(edgeApp,    "IoT Edge App",        "C++ / ESP-IDF",            "Edge App embebido en el dispositivo IoT que pre-procesa telemetría articular",  $tags="edgeApp")
+
+' =========================================================
+' Therapy Service internal layers
+' =========================================================
+Container_Boundary(therapyService, "Therapy Service — RESTful API") {
+  Component(interfaceLayer,      "Therapy Interface Layer",         "Component: Java 25 / Spring Boot 4", "Controllers REST — TherapySessionController y TherapyExecutionController; expone endpoints para ciclo de vida y ejecución en tiempo real",                    $tags="interface")
+  Component(applicationLayer,    "Therapy Application Layer",       "Component: Java 25 / Spring Boot 4", "Servicios CQRS que coordinan commands, queries y event handlers; orquesta el ciclo de vida de la sesión y la ejecución de repeticiones",                     $tags="application")
+  Component(planningAcl,         "Planning Context ACL",            "Component: Java 25 / Spring Boot 4", "Fachada ACL hacia el bounded context de Planning para obtener rutinas asignadas y notificar cierre/cancelación de sesiones",                                 $tags="acl")
+  Component(domainLayer,         "Therapy Domain Layer",            "Component: Java 25 / Spring Boot 4", "Aggregate TherapySession, entidades Routine y Serie, value objects, domain services (MotionAnalysis, RepetitionValidation) y domain events",                 $tags="domain")
+  Component(infrastructureLayer, "Therapy Infrastructure Layer",    "Component: Java 25 / Spring Boot 4", "Repositorio JPA, IoTHardwareGateway vía MQTT, WebSocket publisher para progreso en tiempo real y ApplicationEventPublisher de Spring",                      $tags="infrastructure")
+}
+
+' =========================================================
+' External systems & database
+' =========================================================
+System_Ext(mqttBroker,     "Mosquitto — MQTT Broker",        "Broker MQTT para comunicación de baja latencia con el dispositivo IoT", $tags="externalMqtt")
+System_Ext(planningCtx,    "Planning Bounded Context",       "Contexto externo que gestiona planes de tratamiento y rutinas",         $tags="externalService")
+ContainerDb(therapyDB,     "Therapy Relational SQL Database","Container: Azure Database for PostgreSQL", "Almacena sesiones de terapia, rutinas, series y repeticiones completadas", $tags="database")
+
+' =========================================================
+' Relations — vertical flow
+' =========================================================
+Rel(androidApp, interfaceLayer, "Hace llamadas API hacia",                "JSON/HTTPS")
+Rel(webApp,     interfaceLayer, "Hace llamadas API y recibe actualizaciones en tiempo real", "JSON/HTTPS + WSS/STOMP")
+Rel(edgeApp,    interfaceLayer, "Reporta telemetría pre-procesada de repeticiones",          "JSON/HTTPS")
+
+Rel(interfaceLayer,   applicationLayer,    "Invoca servicios de la capa de aplicación")
+
+Rel(applicationLayer, planningAcl,         "Delega obtención de rutinas y notificaciones al contexto de Planning", "in-process call")
+Rel(applicationLayer, domainLayer,         "Orquesta casos de uso del dominio")
+Rel(applicationLayer, infrastructureLayer, "Usa infraestructura — repos JPA, gateway IoT y publisher WebSocket")
+
+Rel(planningAcl,         planningCtx, "Consulta rutinas y notifica cierre/cancelación de sesiones", "HTTPS/REST")
+Rel(infrastructureLayer, mqttBroker,  "Publica comandos de vibración, alerta visual y video instruccional", "MQTT/TLS")
+Rel(infrastructureLayer, therapyDB,   "Persistencia — commands y queries del agregado",                    "JDBC/SSL")
+Rel(mqttBroker,          edgeApp,     "Entrega comandos de feedback al dispositivo IoT",                   "MQTT/TLS")
+
+SHOW_LEGEND()
+@enduml
