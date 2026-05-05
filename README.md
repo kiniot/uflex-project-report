@@ -2254,23 +2254,21 @@ Como se observa en el diagrama, hemos priorizado la protección de nuestros cont
 
 #### 4.1.3.1. Software Architecture System Landscape Diagram
 
-El System Landscape Diagram presenta una vista de alto nivel del ecosistema tecnológico en el que opera uFlex, el producto insignia de la startup KinIoT. A diferencia del Context Diagram —que enfoca a uFlex como un único sistema— el Landscape descompone a uFlex en los cuatro sub-sistemas que conforman su portafolio técnico y muestra cómo estos interactúan entre sí y con el ecosistema externo. Su propósito es ofrecer a cualquier lector, técnico o no, una comprensión rápida y completa del alcance del producto y sus integraciones.
+El System Landscape Diagram ubica a uFlex como un único sistema dentro del ecosistema tecnológico de la clínica que lo adopta. Su propósito es mostrar cómo uFlex se relaciona con los demás sistemas que la clínica ya utiliza para operar (HCE, Operaciones, Finanzas, RRHH, Stock y CRM).
 
-Dentro del *Enterprise Boundary* de KinIoT se distinguen cuatro sistemas propios: **uFlex Web Platform** (landing público y PWA clínica desplegados en Vercel, usados por fisioterapeutas y administradores de clínica), **uFlex Mobile Platform** (apps nativas iOS y Android por las cuales el paciente ejecuta sus rutinas y recibe retroalimentación biomecánica), **uFlex Wearable Platform** (hardware propio de KinIoT: el sensor IMU vestible junto con su firmware embebido en C++ y la capa edge en Python que procesa las señales en tiempo real) y **uFlex Clinical Cloud** (los microservicios Spring Boot y las bases de datos Azure que orquestan sesiones clínicas, suscripciones multi-tenant, analítica y notificaciones). Las interacciones internas se visualizan explícitamente: la Mobile Platform se comunica con el Wearable vía BLE y con el Clinical Cloud vía HTTPS; la Web Platform también consume las APIs clínicas; y el Wearable envía datos anonimizados directamente al Cloud.
+Dentro del *Enterprise Boundary* de la clínica se identifican: **uFlex** (la plataforma IoT/SaaS de telerehabilitación, en foco), **HCE** que custodia el expediente clínico del paciente, **Operaciones** que gestiona la agenda de citas, **Finanzas** que centraliza facturación y cobros, **RRHH** que administra al personal, **Stock** que controla insumos y equipos, y **CRM / Marketing** que mantiene la comunicación con los pacientes. uFlex se integra con cada uno de ellos: adjunta informes biomecánicos al expediente (HCE), consulta y reserva sesiones (Operaciones), reporta sesiones facturables (Finanzas), consulta el roster de fisioterapeutas (RRHH), reserva equipos (Stock) y comparte el progreso para campañas de adherencia (CRM).
 
-El ecosistema externo se agrupa en tres categorías diferenciadas por color para que el lector identifique de un vistazo el rol de cada proveedor. En gris se encuentran los **SaaS core** (Supabase para autenticación OAuth e identidad, Culqi para pagos de suscripción y Resend para correos transaccionales), integraciones de negocio sin las cuales uFlex no puede operar. En azul-grisáceo se muestran los **servicios de plataforma y observabilidad** (FCM/APNs para notificaciones push al paciente y Azure Monitor / Application Insights para telemetría del backend), que soportan la operación técnica sin ser parte del dominio. En un gris azulado más claro aparece la **integración planificada** con el EHR de la clínica, representando en el roadmap la futura exportación de informes biomecánicos al expediente oficial del paciente.
-
-Los tres actores que interactúan con uFlex en este nivel son el **paciente** (toca tres sistemas: navega el landing antes de registrarse, usa la app móvil para las rutinas y el sensor vestible durante los ejercicios), el **fisioterapeuta** (accede a la PWA para supervisar sesiones y ajustar protocolos) y el **administrador de clínica** (gestiona sedes, usuarios y suscripción desde la misma PWA). Esta distribución refleja la realidad clínica: el paciente es quien genera los datos en casa, mientras que el staff clínico los consume y los convierte en decisiones terapéuticas.
+Los tres actores que interactúan con uFlex son el **paciente** (ejecuta sus rutinas y consulta su progreso), el **fisioterapeuta** (supervisa sesiones y ajusta protocolos) y el **administrador de clínica** (gestiona usuarios, suscripción y operación general).
 
 <div style="text-align: center;">
   <img src="assets/diagrams/software-architecture/landscape/out/uflex-landscape-diagram.png" alt="uFlex — Software Architecture System Landscape Diagram" style="max-width: 100%; height: auto;">
 </div>
 
-*Figura 4.1.3.1. Diagrama de Paisaje (System Landscape) del ecosistema KinIoT — uFlex descompuesto en sus cuatro sub-sistemas, junto a sus proveedores SaaS, servicios de plataforma e integraciones planificadas.*
+*Figura 4.1.3.1. Diagrama de Paisaje (System Landscape) — uFlex en el ecosistema de la clínica, junto a los demás sistemas internos (HCE, Operaciones, Finanzas, RRHH, Stock, CRM).*
 
 #### 4.1.3.2. Software Architecture Context Level Diagrams
 
-El diagrama de contexto de uFlex muestra a los tres actores operativos que interactúan directamente con la plataforma (paciente, fisioterapeuta y administrador de clínica), el sistema uFlex como unidad en foco —que encapsula los sensores IMU vestibles, el firmware embebido, la app móvil y el backend cloud— y los tres servicios externos con los que se integra: Supabase (OAuth), Culqi (pagos) y Resend (correos transaccionales).
+El diagrama de contexto de uFlex muestra a los tres actores que interactúan directamente con la plataforma (paciente, fisioterapeuta y administrador de clínica), el sistema uFlex como unidad en foco (que encapsula el firmware embebido, la app móvil y el backend monolítico) y los sistemas externos con los que se integra: el Hardware uFlex (wearable con sensores IMU y actuadores hápticos), Culqi (pagos) y Resend (correos transaccionales).
 
 <div style="text-align: center;">
   <img src="assets/diagrams/software-architecture/context/out/uflex-context-diagram.png" alt="uFlex — Software Architecture Context Level Diagram" style="max-width: 100%; height: auto;">
@@ -2280,7 +2278,7 @@ El diagrama de contexto de uFlex muestra a los tres actores operativos que inter
 
 #### 4.1.3.3. Software Architecture Container Level Diagrams
 
-El diagrama de contenedores detalla la arquitectura interna de uFlex, organizada en tres capas: la capa IoT & Edge (sensor IMU vestible, firmware embebido, procesamiento biomecánico en el edge y buffer local), la capa de aplicaciones cliente (app móvil nativa del paciente y PWA web para fisioterapeutas y administradores de clínica) y la capa de servicios backend (microservicios de identidad, sesiones de terapia, tendencias clínicas, suscripciones, analítica y notificaciones, cada uno con su base de datos). El IAM Service actúa como capa delgada sobre Supabase para enriquecer los perfiles con rol clínico y clínica asociada. El API Gateway centraliza el enrutamiento entre clientes y servicios, y las integraciones externas con Supabase (OAuth), Culqi (pagos) y Resend (correos) se muestran fuera del límite del sistema.
+El diagrama de contenedores detalla la arquitectura interna de uFlex, organizada en tres capas: la capa **IoT & Edge** (firmware embebido en C++ que se comunica con el Hardware uFlex (sistema externo) por BLE, y la Edge App en Python con su buffer local en SQLite), la capa de **aplicaciones cliente** (Landing Page pública, Mobile App nativa del paciente con caché local en SQLite y PWA web para fisioterapeutas y administradores de clínica) y el **backend monolítico**, implementado como un único **REST API** en Java + Spring Boot que expone todos los endpoints de uFlex (identidad, terapia, tendencias, suscripciones, analítica y notificaciones) y gestiona la autenticación mediante JWT. La persistencia se concentra en una **única base de datos PostgreSQL (hospedada en Supabase)** organizada en múltiples esquemas. Los sistemas externos son Hardware uFlex (sensores IMU y actuadores hápticos), Culqi (pagos) y Resend (correos transaccionales).
 
 <div style="text-align: center;">
   <img src="assets/diagrams/software-architecture/containers/out/uflex-containers-diagram.png" alt="uFlex — Software Architecture Container Level Diagram" style="max-width: 100%; height: auto;">
@@ -2314,7 +2312,7 @@ Cada bounded context contará con su propio apartado, donde se detallará cómo 
 
 ### 4.2.1. Bounded Context: IAM
 
-El bounded context **IAM (Identity and Access Management)** concentra todo lo relacionado con la identidad de los usuarios de uFlex y su rol dentro del ecosistema clínico. A diferencia de Supabase —que actúa como identity provider externo y responsable de la autenticación OAuth— el BC IAM se encarga del **perfil enriquecido** del usuario dentro del dominio: su rol clínico (Paciente, Fisioterapeuta o Administrador de Clínica), su clínica asociada y su ciclo de vida (pendiente de verificación, verificado, suspendido). La relación con Supabase se implementa mediante un Anti-Corruption Layer (ACL), de modo que un cambio en la API de Supabase no contamine el modelo de dominio. Los comandos y eventos emitidos por este BC (`CreateUserCommand`, `VerifyUserCommand`, `UserCreatedEvent`, `UserVerifiedEvent`) fueron identificados durante el Design-Level EventStorming.
+El bounded context **IAM (Identity and Access Management)** concentra todo lo relacionado con la identidad de los usuarios de uFlex y su rol dentro del ecosistema clínico. Este BC se encarga tanto de la **autenticación** (registro, inicio de sesión, hashing de contraseñas con bcrypt y emisión/validación de JWT propios) como del **perfil enriquecido** del usuario dentro del dominio: su rol clínico (Paciente, Fisioterapeuta o Administrador de Clínica), su clínica asociada y su ciclo de vida (pendiente de verificación, verificado, suspendido). Al ser un monolito, uFlex gestiona internamente sus credenciales y tokens sin depender de un identity provider externo. Los comandos y eventos emitidos por este BC (`SignUpCommand`, `SignInCommand`, `VerifyUserCommand`, `UserCreatedEvent`, `UserVerifiedEvent`) fueron identificados durante el Design-Level EventStorming.
 
 #### 4.2.1.1. Domain Layer
 
@@ -2322,15 +2320,15 @@ En esta sección se describen los elementos del Domain Layer del contexto de IAM
 
 **1. User (Aggregate Root)**
 
-Representa al usuario del sistema, con su identidad enriquecida, roles clínicos y asociación al tenant (clínica). La autenticación real (contraseña/OAuth) vive en Supabase; por eso el aggregate guarda `supabaseUserId` como referencia externa en lugar de almacenar la contraseña.
+Representa al usuario del sistema, con su identidad, credenciales, roles clínicos y asociación al tenant (clínica). El aggregate guarda el hash de la contraseña (bcrypt) calculado por el monolito; uFlex emite y valida sus propios JWT.
 
 **Atributos principales:**
 
 | Atributo             | Tipo                 | Visibilidad | Descripción                                                                                                        |
 |----------------------|----------------------|-------------|--------------------------------------------------------------------------------------------------------------------|
 | `id`                 | `UserId`             | private     | Identificador interno del usuario.                                                                                 |
-| `supabaseUserId`     | `String`             | private     | Identificador del usuario en Supabase (UUID emitido por el OAuth provider). Inmutable tras la creación.            |
 | `emailAddress`       | `EmailAddress`       | private     | Correo del usuario (VO compartido con otros BCs).                                                                  |
+| `passwordHash`       | `PasswordHash`       | private     | Hash bcrypt de la contraseña; nunca se expone fuera del aggregate.                                                 |
 | `fullName`           | `FullName`           | private     | Nombre completo del usuario.                                                                                       |
 | `roles`              | `Set<Role>`          | private     | Conjunto de roles clínicos asignados.                                                                              |
 | `verificationStatus` | `VerificationStatus` | private     | Estado de verificación de correo (`NOT_VERIFIED` / `VERIFIED`).                                                    |
@@ -2343,8 +2341,8 @@ Representa al usuario del sistema, con su identidad enriquecida, roles clínicos
 | Método                                                                         | Tipo Retorno | Visibilidad | Descripción                                                                             |
 |--------------------------------------------------------------------------------|--------------|-------------|-----------------------------------------------------------------------------------------|
 | `User()`                                                                       | Constructor  | public      | Constructor vacío requerido por JPA.                                                    |
-| `User(EmailAddress, String supabaseUserId, VerificationCode)`                  | Constructor  | public      | Crea un usuario en estado `PENDING` y `NOT_VERIFIED`, con `clinicId` vacío y sin roles. |
-| `User(EmailAddress, String supabaseUserId, VerificationCode, List<Role>)`      | Constructor  | public      | Crea usuario e inicializa roles usando `validateRoleSet`.                               |
+| `User(EmailAddress, PasswordHash, FullName, VerificationCode)`                 | Constructor  | public      | Crea un usuario en estado `PENDING` y `NOT_VERIFIED`, con `clinicId` vacío y sin roles. |
+| `User(EmailAddress, PasswordHash, FullName, VerificationCode, List<Role>)`     | Constructor  | public      | Crea usuario e inicializa roles usando `validateRoleSet`.                               |
 | `addRole(Role role)`                                                           | `User`       | public      | Agrega un rol al conjunto y valida la coherencia con el tenant.                         |
 | `addRoles(List<Role> roles)`                                                   | `User`       | public      | Valida y agrega múltiples roles.                                                        |
 | `isVerified()`                                                                 | `boolean`    | public      | Devuelve `true` si `verificationStatus == VERIFIED`.                                    |
@@ -2458,36 +2456,51 @@ Nombre completo del usuario, compuesto por nombre y apellidos.
 | `firstName` | `String` | private     | Nombre(s) del usuario. |
 | `lastName`  | `String` | private     | Apellidos del usuario. |
 
-**10. SignUpCommand (Command)**
+**10. PasswordHash (Value Object)**
 
-Comando para registrar un nuevo usuario en uFlex tras el flujo OAuth de Supabase.
+Encapsula el hash bcrypt de la contraseña. La contraseña en texto plano nunca cruza la frontera del dominio: se hashea en el application layer (vía `HashingService`) antes de construir el VO.
+
+| Atributo | Tipo     | Visibilidad | Descripción                                          |
+|----------|----------|-------------|------------------------------------------------------|
+| `value`  | `String` | private     | Hash bcrypt resultante (no se persiste en claro).    |
+
+**Métodos principales:**
+
+| Método                       | Tipo Retorno | Visibilidad | Descripción                                                       |
+|------------------------------|--------------|-------------|-------------------------------------------------------------------|
+| `PasswordHash(String value)` | Constructor  | public      | Valida que el hash no sea nulo ni vacío y tenga formato bcrypt.   |
+
+**11. SignUpCommand (Command)**
+
+Comando para registrar un nuevo usuario en uFlex.
 
 | Atributo         | Tipo           | Visibilidad | Descripción                                                     |
 |------------------|----------------|-------------|-----------------------------------------------------------------|
-| `supabaseUserId` | `String`       | public      | ID del usuario emitido por Supabase.                            |
 | `emailAddress`   | `EmailAddress` | public      | Correo del usuario.                                             |
+| `password`       | `String`       | public      | Contraseña en texto plano (será hasheada por el service).       |
 | `fullName`       | `FullName`     | public      | Nombre completo.                                                |
 | `roles`          | `List<Role>`   | public      | Roles iniciales (validados por `validateRoleSet`).              |
 | `clinicId`       | `ClinicId`     | public      | Clínica a la que se asocia (opcional en el onboarding inicial). |
 
-**11. SignInCommand (Command)**
+**12. SignInCommand (Command)**
 
-Comando para iniciar sesión. En uFlex la autenticación la realiza Supabase; este comando valida el JWT emitido por Supabase y carga el contexto clínico.
+Comando para iniciar sesión validando email y contraseña; tras la validación uFlex emite un JWT propio.
 
-| Atributo      | Tipo     | Visibilidad | Descripción                                              |
-|---------------|----------|-------------|----------------------------------------------------------|
-| `supabaseJwt` | `String` | public      | Token JWT emitido por Supabase tras autenticación OAuth. |
+| Atributo       | Tipo           | Visibilidad | Descripción                                          |
+|----------------|----------------|-------------|------------------------------------------------------|
+| `emailAddress` | `EmailAddress` | public      | Correo del usuario.                                  |
+| `password`     | `String`       | public      | Contraseña en texto plano para validar contra hash.  |
 
-**12. VerifyUserCommand (Command)**
+**13. VerifyUserCommand (Command)**
 
-Comando para verificar un usuario mediante código (verificación clínica adicional aparte de la verificación de correo de Supabase).
+Comando para verificar un usuario mediante el código enviado por correo.
 
 | Atributo | Tipo     | Visibilidad | Descripción                                 |
 |----------|----------|-------------|---------------------------------------------|
 | `email`  | `String` | public      | Correo del usuario a verificar.             |
 | `code`   | `String` | public      | Código de verificación recibido por correo. |
 
-**13. ResendVerificationCodeCommand (Command)**
+**14. ResendVerificationCodeCommand (Command)**
 
 Comando para reenviar un código de verificación.
 
@@ -2495,7 +2508,7 @@ Comando para reenviar un código de verificación.
 |----------|----------|-------------|--------------------------------------------------------|
 | `email`  | `String` | public      | Correo válido del usuario al que se reenvía el código. |
 
-**14. AssignUserClinicIdCommand (Command)**
+**15. AssignUserClinicIdCommand (Command)**
 
 Comando para asociar un usuario a una clínica (tenant). Es emitido típicamente por el BC Subscription cuando se activa el plan de la clínica y el administrador invita a sus fisioterapeutas.
 
@@ -2504,7 +2517,7 @@ Comando para asociar un usuario a una clínica (tenant). Es emitido típicamente
 | `userId`   | `Long` | public      | ID del usuario objetivo.    |
 | `clinicId` | `UUID` | public      | ID de la clínica a asociar. |
 
-**15. SeedRolesCommand (Command)**
+**16. SeedRolesCommand (Command)**
 
 Comando utilizado al arranque del servicio para sembrar los roles clínicos base si aún no existen en la base de datos.
 
@@ -2512,7 +2525,7 @@ Comando utilizado al arranque del servicio para sembrar los roles clínicos base
 |-------------|------|-------------|---------------------------------------------------------------------------------------------------|
 | *(ninguno)* | —    | —           | No requiere atributos; su ejecución crea los roles `PATIENT`, `PHYSIOTHERAPIST` y `CLINIC_ADMIN`. |
 
-**16. GetAuthenticatedUserClinicIdQuery (Query)**
+**17. GetAuthenticatedUserClinicIdQuery (Query)**
 
 Consulta para obtener el `ClinicId` del usuario autenticado en el contexto de seguridad.
 
@@ -2520,7 +2533,7 @@ Consulta para obtener el `ClinicId` del usuario autenticado en el contexto de se
 |-------------|------|-------------|----------------------------------------------------------------------------------------------|
 | *(ninguno)* | —    | —           | No requiere atributos; retorna el `ClinicId` del usuario autenticado a partir del token JWT. |
 
-**17. GetUserByIdQuery (Query)**
+**18. GetUserByIdQuery (Query)**
 
 Consulta un usuario por su identificador interno.
 
@@ -2528,7 +2541,7 @@ Consulta un usuario por su identificador interno.
 |----------|--------|-------------|-------------------------|
 | `userId` | `Long` | public      | ID interno del usuario. |
 
-**18. GetUsersByClinicIdQuery (Query)**
+**19. GetUsersByClinicIdQuery (Query)**
 
 Lista los usuarios asociados a una clínica (útil para la PWA del Administrador de Clínica).
 
@@ -2536,7 +2549,7 @@ Lista los usuarios asociados a una clínica (útil para la PWA del Administrador
 |------------|--------|-------------|-------------------|
 | `clinicId` | `UUID` | public      | ID de la clínica. |
 
-**19. GetUsersByRoleQuery (Query)**
+**20. GetUsersByRoleQuery (Query)**
 
 Lista los usuarios de una clínica filtrados por rol (p. ej. todos los fisioterapeutas de una sede).
 
@@ -2545,18 +2558,17 @@ Lista los usuarios de una clínica filtrados por rol (p. ej. todos los fisiotera
 | `clinicId` | `UUID`  | public      | ID de la clínica sobre la que se filtra. |
 | `role`     | `Roles` | public      | Rol a filtrar.                           |
 
-**20. UserCreatedEvent (Domain Event)**
+**21. UserCreatedEvent (Domain Event)**
 
 Evento publicado al crear un usuario. Permite al BC Subscription u otros reaccionar (por ejemplo, asignar un asiento del plan).
 
-| Atributo         | Tipo      | Visibilidad | Descripción                |
-|------------------|-----------|-------------|----------------------------|
-| `userId`         | `Long`    | private     | ID del usuario creado.     |
-| `supabaseUserId` | `String`  | private     | ID en Supabase.            |
-| `emailAddress`   | `String`  | private     | Correo del usuario.        |
-| `occurredOn`     | `Instant` | private     | Marca temporal del evento. |
+| Atributo       | Tipo      | Visibilidad | Descripción                |
+|----------------|-----------|-------------|----------------------------|
+| `userId`       | `Long`    | private     | ID del usuario creado.     |
+| `emailAddress` | `String`  | private     | Correo del usuario.        |
+| `occurredOn`   | `Instant` | private     | Marca temporal del evento. |
 
-**21. UserVerifiedEvent (Domain Event)**
+**22. UserVerifiedEvent (Domain Event)**
 
 Evento publicado cuando el usuario completa la verificación.
 
@@ -2565,7 +2577,7 @@ Evento publicado cuando el usuario completa la verificación.
 | `userId`     | `Long`    | private     | ID del usuario verificado.         |
 | `verifiedAt` | `Instant` | private     | Marca temporal de la verificación. |
 
-**22. UserVerificationCodeAssignedEvent (Domain Event)**
+**23. UserVerificationCodeAssignedEvent (Domain Event)**
 
 Evento publicado al asignar un código de verificación; es consumido por un handler que dispara el envío del correo vía Resend.
 
@@ -2576,19 +2588,19 @@ Evento publicado al asignar un código de verificación; es consumido por un han
 | `code`              | `String`  | private     | Código generado.                               |
 | `expirationMinutes` | `Integer` | private     | Minutos hasta la expiración.                   |
 
-**23. UserCommandService (Domain Service)**
+**24. UserCommandService (Domain Service)**
 
 Maneja los commands relacionados con usuarios.
 
-| Método                                  | Tipo Retorno                            | Visibilidad | Descripción                                                                          |
-|-----------------------------------------|-----------------------------------------|-------------|--------------------------------------------------------------------------------------|
-| `handle(SignInCommand)`                 | `Optional<ImmutablePair<User, String>>` | public      | Valida el JWT de Supabase y retorna el par (usuario, token enriquecido con clínica). |
-| `handle(SignUpCommand)`                 | `Optional<User>`                        | public      | Registra un usuario nuevo en uFlex tras el OAuth de Supabase.                        |
-| `handle(VerifyUserCommand)`             | `boolean`                               | public      | Verifica el usuario por código y activa la cuenta.                                   |
-| `handle(ResendVerificationCodeCommand)` | `boolean`                               | public      | Reenvía el código de verificación si el usuario aún no está verificado.              |
-| `handle(AssignUserClinicIdCommand)`     | `void`                                  | public      | Asocia un usuario a una clínica.                                                     |
+| Método                                  | Tipo Retorno                            | Visibilidad | Descripción                                                                                            |
+|-----------------------------------------|-----------------------------------------|-------------|--------------------------------------------------------------------------------------------------------|
+| `handle(SignInCommand)`                 | `Optional<ImmutablePair<User, String>>` | public      | Valida email/contraseña y retorna el par (usuario, JWT emitido por uFlex).                             |
+| `handle(SignUpCommand)`                 | `Optional<User>`                        | public      | Registra un usuario nuevo en uFlex hasheando la contraseña y generando un código de verificación.      |
+| `handle(VerifyUserCommand)`             | `boolean`                               | public      | Verifica el usuario por código y activa la cuenta.                                                     |
+| `handle(ResendVerificationCodeCommand)` | `boolean`                               | public      | Reenvía el código de verificación si el usuario aún no está verificado.                                |
+| `handle(AssignUserClinicIdCommand)`     | `void`                                  | public      | Asocia un usuario a una clínica.                                                                       |
 
-**24. UserQueryService (Domain Service)**
+**25. UserQueryService (Domain Service)**
 
 Maneja las queries relacionadas con usuarios.
 
@@ -2599,7 +2611,7 @@ Maneja las queries relacionadas con usuarios.
 | `handle(GetUsersByClinicIdQuery)`           | `List<User>`         | public      | Lista los usuarios asociados a una clínica.          |
 | `handle(GetUsersByRoleQuery)`               | `List<User>`         | public      | Lista los usuarios de una clínica filtrados por rol. |
 
-**25. RoleCommandService (Domain Service)**
+**26. RoleCommandService (Domain Service)**
 
 Maneja los commands relacionados con la gestión de roles.
 
@@ -2611,16 +2623,16 @@ Maneja los commands relacionados con la gestión de roles.
 
 **1. AuthenticationController (REST Controller)**
 
-Expone las funcionalidades de autenticación y registro a través de endpoints HTTP. Internamente delega la autenticación a Supabase y enriquece la respuesta con el perfil clínico local.
+Expone las funcionalidades de autenticación y registro a través de endpoints HTTP. Toda la lógica de autenticación (hashing, validación de credenciales y emisión de JWT) corre dentro del monolito de uFlex.
 
 **Endpoints principales:**
 
-| Método       | Ruta base                            | HTTP | Descripción                                                                                        |
-|--------------|--------------------------------------|------|----------------------------------------------------------------------------------------------------|
-| `signIn`     | `/api/v1/authentication/sign-in`     | POST | Recibe el JWT de Supabase, lo valida y retorna la sesión enriquecida con rol clínico y `clinicId`. |
-| `signUp`     | `/api/v1/authentication/sign-up`     | POST | Registra un nuevo usuario local tras el signup en Supabase.                                        |
-| `verify`     | `/api/v1/authentication/verify`      | POST | Verifica al usuario con el código clínico enviado por correo.                                      |
-| `resendCode` | `/api/v1/authentication/resend-code` | POST | Reenvía el código de verificación al correo del usuario.                                           |
+| Método       | Ruta base                            | HTTP | Descripción                                                                                                          |
+|--------------|--------------------------------------|------|----------------------------------------------------------------------------------------------------------------------|
+| `signIn`     | `/api/v1/authentication/sign-in`     | POST | Recibe email y contraseña, valida las credenciales contra el hash bcrypt y retorna el JWT emitido por uFlex.         |
+| `signUp`     | `/api/v1/authentication/sign-up`     | POST | Registra un nuevo usuario hasheando la contraseña con bcrypt y generando el código de verificación.                  |
+| `verify`     | `/api/v1/authentication/verify`      | POST | Verifica al usuario con el código clínico enviado por correo.                                                        |
+| `resendCode` | `/api/v1/authentication/resend-code` | POST | Reenvía el código de verificación al correo del usuario.                                                             |
 
 **2. UserController (REST Controller)**
 
@@ -2641,9 +2653,9 @@ DTOs utilizados para la comunicación REST, modelados como Java Records.
 
 | Resource                         | Atributos principales                                                                                                    | Descripción                                                                |
 |----------------------------------|--------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------|
-| `AuthenticatedUserResource`      | `id: Long`, `emailAddress: String`, `roles: List<String>`, `clinicId: UUID`, `token: String`                             | Respuesta del sign-in (perfil enriquecido + token).                        |
-| `SignInResource`                 | `supabaseJwt: String`                                                                                                    | Token JWT emitido por Supabase que se envía para canjear por sesión local. |
-| `SignUpResource`                 | `supabaseUserId: String`, `emailAddress: String`, `fullName: String`, `roles: List<String>`, `clinicId: UUID`            | Datos mínimos para crear el perfil local.                                  |
+| `AuthenticatedUserResource`      | `id: Long`, `emailAddress: String`, `roles: List<String>`, `clinicId: UUID`, `token: String`                             | Respuesta del sign-in (perfil enriquecido + JWT emitido por uFlex).        |
+| `SignInResource`                 | `emailAddress: String`, `password: String`                                                                               | Credenciales que el cliente envía para iniciar sesión.                     |
+| `SignUpResource`                 | `emailAddress: String`, `password: String`, `fullName: String`, `roles: List<String>`, `clinicId: UUID`                  | Datos mínimos para crear un usuario nuevo en uFlex.                        |
 | `VerifyUserResource`             | `email: String`, `code: String`                                                                                          | Verificación de usuario por código.                                        |
 | `ResendVerificationCodeResource` | `email: String`                                                                                                          | Solicita reenviar el código de verificación.                               |
 | `UserResource`                   | `id: Long`, `emailAddress: String`, `fullName: String`, `roles: List<String>`, `clinicId: UUID`, `accountStatus: String` | Usuario expuesto por la API de consulta.                                   |
@@ -2655,8 +2667,8 @@ Convierten entre entidades del dominio y recursos REST, así como entre recursos
 
 | Assembler                                            | Entrada                          | Salida                          | Descripción                                                                          |
 |------------------------------------------------------|----------------------------------|---------------------------------|--------------------------------------------------------------------------------------|
-| `AuthenticatedUserResourceFromEntityAssembler`       | `User`, `token: String`          | `AuthenticatedUserResource`     | Mapea el aggregate `User` y el token enriquecido al recurso de respuesta de sign-in. |
-| `SignInCommandFromResourceAssembler`                 | `SignInResource`                 | `SignInCommand`                 | Construye el command de sign-in a partir del JWT recibido.                           |
+| `AuthenticatedUserResourceFromEntityAssembler`       | `User`, `token: String`          | `AuthenticatedUserResource`     | Mapea el aggregate `User` y el JWT al recurso de respuesta de sign-in.               |
+| `SignInCommandFromResourceAssembler`                 | `SignInResource`                 | `SignInCommand`                 | Construye el command de sign-in con email y contraseña.                              |
 | `SignUpCommandFromResourceAssembler`                 | `SignUpResource`                 | `SignUpCommand`                 | Construye el command de registro, mapeando `List<String>` a `List<Role>`.            |
 | `VerifyUserCommandFromResourceAssembler`             | `VerifyUserResource`             | `VerifyUserCommand`             | Construye el command de verificación por código.                                     |
 | `ResendVerificationCodeCommandFromResourceAssembler` | `ResendVerificationCodeResource` | `ResendVerificationCodeCommand` | Construye el command de reenvío de código.                                           |
@@ -2694,23 +2706,23 @@ Implementa la fachada que otros bounded contexts (Subscription, Therapy, Trends,
 
 **3. UserCommandServiceImpl (Command Service Implementation)**
 
-Orquesta registro, validación de sesión, verificación y asociación de clínica. No gestiona contraseñas (eso vive en Supabase).
+Orquesta registro, autenticación, verificación y asociación de clínica. Hashea contraseñas con bcrypt, valida credenciales y emite JWT internos.
 
-| Atributo              | Tipo                        | Visibilidad | Descripción                                         |
-|-----------------------|-----------------------------|-------------|-----------------------------------------------------|
-| `userRepository`      | `UserRepository`            | private     | Persistencia de usuarios.                           |
-| `supabaseAuthPort`    | `SupabaseAuthPort`          | private     | ACL contra el OAuth provider externo.               |
-| `jwtValidationPort`   | `JwtValidationPort`         | private     | Validación de los JWT emitidos por Supabase.        |
-| `verificationService` | `VerificationService`       | private     | Generación y validación de códigos de verificación. |
-| `roleRepository`      | `RoleRepository`            | private     | Resolución de roles por nombre.                     |
-| `eventPublisher`      | `ApplicationEventPublisher` | private     | Publicación de domain events.                       |
+| Atributo              | Tipo                        | Visibilidad | Descripción                                                                            |
+|-----------------------|-----------------------------|-------------|----------------------------------------------------------------------------------------|
+| `userRepository`      | `UserRepository`            | private     | Persistencia de usuarios.                                                              |
+| `hashingService`      | `HashingService`            | private     | Hashea contraseñas con bcrypt y compara hashes contra texto plano.                     |
+| `tokenService`        | `TokenService`              | private     | Emite y valida los JWT propios de uFlex.                                               |
+| `verificationService` | `VerificationService`       | private     | Generación y validación de códigos de verificación.                                    |
+| `roleRepository`      | `RoleRepository`            | private     | Resolución de roles por nombre.                                                        |
+| `eventPublisher`      | `ApplicationEventPublisher` | private     | Publicación de domain events.                                                          |
 
 **Métodos principales:**
 
 | Método                                  | Tipo Retorno                            | Visibilidad | Descripción                                                                                               |
 |-----------------------------------------|-----------------------------------------|-------------|-----------------------------------------------------------------------------------------------------------|
-| `handle(SignInCommand)`                 | `Optional<ImmutablePair<User, String>>` | public      | Valida el JWT de Supabase, carga el perfil local y retorna `(user, token enriquecido con clinicId)`.      |
-| `handle(SignUpCommand)`                 | `Optional<User>`                        | public      | Crea el perfil local tras el signup en Supabase, asigna roles y genera el código de verificación clínica. |
+| `handle(SignInCommand)`                 | `Optional<ImmutablePair<User, String>>` | public      | Valida email/contraseña contra el hash bcrypt y retorna `(user, JWT enriquecido con clinicId)`.           |
+| `handle(SignUpCommand)`                 | `Optional<User>`                        | public      | Crea el perfil local hasheando la contraseña con bcrypt, asigna roles y genera el código de verificación. |
 | `handle(VerifyUserCommand)`             | `boolean`                               | public      | Valida el código y activa la cuenta.                                                                      |
 | `handle(ResendVerificationCodeCommand)` | `boolean`                               | public      | Reenvía el código de verificación si el usuario no está verificado.                                       |
 | `handle(AssignUserClinicIdCommand)`     | `void`                                  | public      | Asocia la clínica al usuario objetivo.                                                                    |
@@ -2770,41 +2782,40 @@ Interfaz para envío de correos (implementada contra Resend en la Infrastructure
 | Método                                                                  | Tipo Retorno | Visibilidad | Descripción                                                                   |
 |-------------------------------------------------------------------------|--------------|-------------|-------------------------------------------------------------------------------|
 | `sendVerificationEmail(String to, String code, int expirationMinutes)`  | `void`       | public      | Envía un correo de verificación.                                              |
-| `sendPasswordResetEmail(String to, String link)`                        | `void`       | public      | Envía un correo de restablecimiento (delegado a Supabase que genera el link). |
+| `sendPasswordResetEmail(String to, String link)`                        | `void`       | public      | Envía un correo de restablecimiento de contraseña con un link tokenizado.     |
 | `sendClinicInvitationEmail(String to, String clinicName, String token)` | `void`       | public      | Envía invitación a fisioterapeuta para unirse a una clínica.                  |
 
-**9. SupabaseAuthPort (Outbound Service Port — ACL)**
+**9. HashingService (Outbound Service Port)**
 
-Puerto hacia Supabase Auth. Reemplaza al `HashingService` y `TokenService` del ejemplo clásico (Supabase gestiona contraseñas y emite tokens).
+Hashea contraseñas con bcrypt y verifica una contraseña en texto plano contra un hash existente.
 
-| Método                                     | Tipo Retorno | Visibilidad | Descripción                                                               |
-|--------------------------------------------|--------------|-------------|---------------------------------------------------------------------------|
-| `createIdentity(EmailAddress, FullName)`   | `String`     | public      | Crea una identidad en Supabase y retorna el `supabaseUserId`.             |
-| `resendSupabaseVerification(EmailAddress)` | `void`       | public      | Solicita a Supabase reenviar el correo de verificación de su lado.        |
-| `disableIdentity(String supabaseUserId)`   | `void`       | public      | Inhabilita la identidad en Supabase al eliminar/bloquear el perfil local. |
+| Método                                          | Tipo Retorno | Visibilidad | Descripción                                                       |
+|-------------------------------------------------|--------------|-------------|-------------------------------------------------------------------|
+| `hash(String rawPassword)`                      | `String`     | public      | Devuelve el hash bcrypt de la contraseña en texto plano.          |
+| `matches(String rawPassword, String hash)`      | `boolean`    | public      | `true` si el hash bcrypt corresponde a la contraseña recibida.    |
 
-**10. JwtValidationPort (Outbound Service Port)**
+**10. TokenService (Outbound Service Port)**
 
-Valida los JWT emitidos por Supabase y extrae claims. uFlex **no emite** tokens propios.
+Emite y valida los JWT propios de uFlex y extrae sus claims.
 
-| Método                                   | Tipo Retorno       | Visibilidad | Descripción                                            |
-|------------------------------------------|--------------------|-------------|--------------------------------------------------------|
-| `validateToken(String jwt)`              | `boolean`          | public      | Valida firma, emisor y expiración del JWT de Supabase. |
-| `getSupabaseUserIdFromToken(String jwt)` | `Optional<String>` | public      | Extrae el claim `sub` (UUID de Supabase).              |
-| `getEmailFromToken(String jwt)`          | `Optional<String>` | public      | Extrae el claim `email`.                               |
+| Método                          | Tipo Retorno       | Visibilidad | Descripción                                                                  |
+|---------------------------------|--------------------|-------------|------------------------------------------------------------------------------|
+| `generateToken(User user)`      | `String`           | public      | Genera un JWT firmado con los claims `sub`, `email`, `roles` y `clinicId`.   |
+| `validateToken(String jwt)`     | `boolean`          | public      | Valida firma, emisor y expiración del JWT.                                   |
+| `getUserIdFromToken(String jwt)`| `Optional<Long>`   | public      | Extrae el claim `sub` (ID interno del usuario).                              |
+| `getEmailFromToken(String jwt)` | `Optional<String>` | public      | Extrae el claim `email`.                                                     |
 
 **11. IdentityService (Outbound Service Port)**
 
-Interfaz para obtener los datos del contexto de seguridad actual (principalmente leídos del JWT tras su validación por el filtro de seguridad).
+Interfaz para obtener los datos del contexto de seguridad actual (leídos del JWT tras su validación por el filtro de seguridad).
 
 | Método                | Tipo Retorno       | Visibilidad | Descripción                                                                           |
 |-----------------------|--------------------|-------------|---------------------------------------------------------------------------------------|
 | `getUserId()`         | `Optional<Long>`   | public      | ID interno del usuario autenticado.                                                   |
-| `getSupabaseUserId()` | `Optional<String>` | public      | ID en Supabase del usuario autenticado.                                               |
 | `getEmail()`          | `Optional<String>` | public      | Email del contexto.                                                                   |
 | `getRoles()`          | `Set<String>`      | public      | Roles del contexto.                                                                   |
 | `getClinicId()`       | `Optional<UUID>`   | public      | Clínica asociada al usuario actual.                                                   |
-| `isServiceAccount()`  | `boolean`          | public      | Indica si el caller es una service account (por ejemplo, otro microservicio interno). |
+| `isServiceAccount()`  | `boolean`          | public      | Indica si el caller es una service account (por ejemplo, un job interno).             |
 
 **12. VerificationService (Outbound Service Port)**
 
@@ -2828,7 +2839,6 @@ Interfaz de acceso a datos para usuarios, implementada por Spring Data JPA sobre
 | `findById(Long id)`                                   | `Optional<User>` | public      | Busca un usuario por su identificador interno.   |
 | `save(User user)`                                     | `User`           | public      | Persiste o actualiza un usuario.                 |
 | `findByEmailAddress(EmailAddress email)`              | `Optional<User>` | public      | Obtiene un usuario por su correo.                |
-| `findBySupabaseUserId(String supabaseUserId)`         | `Optional<User>` | public      | Obtiene un usuario por su ID en Supabase.        |
 | `existsByEmailAddress(EmailAddress email)`            | `boolean`        | public      | Verifica la existencia de un usuario por correo. |
 | `findAllByClinicId(UUID clinicId)`                    | `List<User>`     | public      | Lista usuarios por clínica.                      |
 | `findAllByClinicIdAndRole(UUID clinicId, Roles role)` | `List<User>`     | public      | Lista usuarios por clínica y rol.                |
@@ -2844,21 +2854,22 @@ Interfaz de acceso a datos para usuarios, implementada por Spring Data JPA sobre
 
 **3. WebSecurityConfiguration (Security Config)**
 
-Configuración de Spring Security stateless con validación del JWT emitido por Supabase (no se emiten tokens propios).
+Configuración de Spring Security stateless con validación del JWT emitido internamente por uFlex.
 
-| Método/Bean                      | Tipo Retorno                      | Visibilidad | Descripción                                                                                    |
-|----------------------------------|-----------------------------------|-------------|------------------------------------------------------------------------------------------------|
-| `supabaseJwtFilter()`            | `SupabaseJwtAuthenticationFilter` | public      | Filtro que extrae y valida el JWT emitido por Supabase y autentica el request.                 |
-| `authenticationManager(config)`  | `AuthenticationManager`           | public      | Expone el `AuthenticationManager` de Spring Security.                                          |
-| `filterChain(HttpSecurity http)` | `SecurityFilterChain`             | public      | CORS, CSRF off, handler 401, stateless; `permitAll` a `/api/v1/authentication/**` y a Swagger. |
+| Método/Bean                      | Tipo Retorno                | Visibilidad | Descripción                                                                                    |
+|----------------------------------|-----------------------------|-------------|------------------------------------------------------------------------------------------------|
+| `jwtAuthenticationFilter()`      | `JwtAuthenticationFilter`   | public      | Filtro que extrae y valida el JWT emitido por uFlex y autentica el request.                    |
+| `passwordEncoder()`              | `PasswordEncoder`           | public      | Bean `BCryptPasswordEncoder` consumido por el `BcryptHashingService`.                          |
+| `authenticationManager(config)`  | `AuthenticationManager`     | public      | Expone el `AuthenticationManager` de Spring Security.                                          |
+| `filterChain(HttpSecurity http)` | `SecurityFilterChain`       | public      | CORS, CSRF off, handler 401, stateless; `permitAll` a `/api/v1/authentication/**` y a Swagger. |
 
-**4. SupabaseJwtAuthenticationFilter (Security Filter)**
+**4. JwtAuthenticationFilter (Security Filter)**
 
-Filtro que autentica requests a partir del JWT Bearer emitido por Supabase.
+Filtro que autentica requests a partir del JWT Bearer emitido por uFlex.
 
-| Método                                       | Tipo Retorno | Visibilidad | Descripción                                                                                                       |
-|----------------------------------------------|--------------|-------------|-------------------------------------------------------------------------------------------------------------------|
-| `doFilterInternal(request, response, chain)` | `void`       | protected   | Extrae el token, lo valida contra `JwtValidationPort`, carga el `UserDetails` local y establece la autenticación. |
+| Método                                       | Tipo Retorno | Visibilidad | Descripción                                                                                                |
+|----------------------------------------------|--------------|-------------|------------------------------------------------------------------------------------------------------------|
+| `doFilterInternal(request, response, chain)` | `void`       | protected   | Extrae el token, lo valida contra `TokenService`, carga el `UserDetails` local y establece la autenticación.|
 
 **5. UnauthorizedRequestHandlerEntryPoint (Auth EntryPoint)**
 
@@ -2870,11 +2881,12 @@ Maneja las respuestas 401 no autorizadas.
 
 **6. UserDetailsServiceImpl (UserDetailsService)**
 
-Carga el perfil local a partir del `supabaseUserId` extraído del JWT.
+Carga el perfil local a partir del email o del ID interno extraído del JWT.
 
-| Método                                        | Tipo Retorno  | Visibilidad | Descripción                                        |
-|-----------------------------------------------|---------------|-------------|----------------------------------------------------|
-| `loadUserBySupabaseId(String supabaseUserId)` | `UserDetails` | public      | Carga el perfil local a partir del ID de Supabase. |
+| Método                              | Tipo Retorno  | Visibilidad | Descripción                                          |
+|-------------------------------------|---------------|-------------|------------------------------------------------------|
+| `loadUserByUsername(String email)`  | `UserDetails` | public      | Carga el perfil local a partir del email del usuario.|
+| `loadUserById(Long userId)`         | `UserDetails` | public      | Carga el perfil local a partir del ID interno.       |
 
 **7. UserDetailsImpl (Security Model)**
 
@@ -2919,31 +2931,34 @@ Implementación de `EmailService` contra la API de Resend.
 | `sendPasswordResetEmail(String to, String link)`                        | `void`       | public      | Envía correo de reseteo con plantilla.   |
 | `sendClinicInvitationEmail(String to, String clinicName, String token)` | `void`       | public      | Envía correo de invitación a clínica.    |
 
-**11. SupabaseAuthAdapter (ACL Adapter)**
+**11. BcryptHashingService (Hashing Adapter)**
 
-Implementa `SupabaseAuthPort`. Único componente que conoce el vocabulario de Supabase; consume además los webhooks de signup/verificación emitidos por Supabase.
+Implementa `HashingService` sobre `BCryptPasswordEncoder` de Spring Security.
 
-| Atributo             | Tipo                 | Visibilidad | Descripción                                                          |
-|----------------------|----------------------|-------------|----------------------------------------------------------------------|
-| `supabaseClient`     | `SupabaseHttpClient` | private     | Cliente HTTP hacia la Admin API de Supabase.                         |
-| `userCommandService` | `UserCommandService` | private     | Se invoca desde el handler de webhook para disparar `SignUpCommand`. |
+| Atributo          | Tipo                | Visibilidad | Descripción                          |
+|-------------------|---------------------|-------------|--------------------------------------|
+| `passwordEncoder` | `PasswordEncoder`   | private     | Encoder bcrypt configurado por Spring|
 
-| Método                                     | Tipo Retorno | Visibilidad | Descripción                                                                                |
-|--------------------------------------------|--------------|-------------|--------------------------------------------------------------------------------------------|
-| `createIdentity(EmailAddress, FullName)`   | `String`     | public      | Crea identidad en Supabase vía Admin API y retorna su `id`.                                |
-| `resendSupabaseVerification(EmailAddress)` | `void`       | public      | Llama al endpoint `/auth/v1/resend` de Supabase.                                           |
-| `disableIdentity(String supabaseUserId)`   | `void`       | public      | Inhabilita la identidad en Supabase.                                                       |
-| `onSignupWebhook(SupabaseSignupPayload)`   | `void`       | public      | Endpoint de webhook que recibe el evento de signup y dispara `SignUpCommand` internamente. |
+| Método                                     | Tipo Retorno | Visibilidad | Descripción                                                       |
+|--------------------------------------------|--------------|-------------|-------------------------------------------------------------------|
+| `hash(String rawPassword)`                 | `String`     | public      | Devuelve el hash bcrypt de la contraseña en texto plano.          |
+| `matches(String rawPassword, String hash)` | `boolean`    | public      | `true` si el hash bcrypt corresponde a la contraseña recibida.    |
 
-**12. SupabaseJwtValidator (JWT Validation Adapter)**
+**12. JjwtTokenService (JWT Adapter)**
 
-Implementa `JwtValidationPort` sobre la librería `jjwt`, cargando la JWKS pública de Supabase.
+Implementa `TokenService` usando la librería `jjwt`. Firma los tokens con la clave privada de uFlex y valida los tokens entrantes contra la misma clave.
 
-| Método                                   | Tipo Retorno       | Visibilidad | Descripción                                                   |
-|------------------------------------------|--------------------|-------------|---------------------------------------------------------------|
-| `validateToken(String jwt)`              | `boolean`          | public      | Valida firma, issuer y expiración contra la JWKS de Supabase. |
-| `getSupabaseUserIdFromToken(String jwt)` | `Optional<String>` | public      | Extrae el claim `sub`.                                        |
-| `getEmailFromToken(String jwt)`          | `Optional<String>` | public      | Extrae el claim `email`.                                      |
+| Atributo        | Tipo               | Visibilidad | Descripción                                              |
+|-----------------|--------------------|-------------|----------------------------------------------------------|
+| `signingKey`    | `SecretKey`        | private     | Clave HMAC con la que se firman y verifican los tokens.  |
+| `tokenProperties`| `TokenProperties` | private     | Issuer, expiración por defecto y otros parámetros.       |
+
+| Método                          | Tipo Retorno       | Visibilidad | Descripción                                                                  |
+|---------------------------------|--------------------|-------------|------------------------------------------------------------------------------|
+| `generateToken(User user)`      | `String`           | public      | Construye y firma un JWT con `sub`, `email`, `roles` y `clinicId`.           |
+| `validateToken(String jwt)`     | `boolean`          | public      | Valida firma, issuer y expiración del JWT.                                   |
+| `getUserIdFromToken(String jwt)`| `Optional<Long>`   | public      | Extrae el claim `sub`.                                                       |
+| `getEmailFromToken(String jwt)` | `Optional<String>` | public      | Extrae el claim `email`.                                                     |
 
 **13. CurrentUserProviderImpl (Identity Adapter)**
 
@@ -2952,7 +2967,6 @@ Implementa `IdentityService` leyendo el contexto de `SecurityContextHolder` de S
 | Método                | Tipo Retorno       | Visibilidad | Descripción                                  |
 |-----------------------|--------------------|-------------|----------------------------------------------|
 | `getUserId()`         | `Optional<Long>`   | public      | ID interno del usuario autenticado.          |
-| `getSupabaseUserId()` | `Optional<String>` | public      | ID en Supabase del usuario autenticado.      |
 | `getEmail()`          | `Optional<String>` | public      | Email del contexto.                          |
 | `getRoles()`          | `Set<String>`      | public      | Authorities del contexto.                    |
 | `getClinicId()`       | `Optional<UUID>`   | public      | `clinicId` del contexto.                     |
@@ -2960,7 +2974,7 @@ Implementa `IdentityService` leyendo el contexto de `SecurityContextHolder` de S
 
 #### 4.2.1.5. Bounded Context Software Architecture Component Level Diagrams
 
-El diagrama de componentes (C4 Nivel 3) muestra cómo se organiza internamente el contenedor `IAM Service` (Java/Spring Boot). Se distinguen cinco componentes principales: el `User Controller` como punto de entrada REST, los dos application services `User Command Service` y `User Query Service` que materializan el patrón CQRS, el `User Repository (JPA)` como abstracción de persistencia y el `Supabase Auth Adapter` como ACL contra el identity provider externo. Todos los componentes viven dentro del *Container Boundary* del IAM Service; el API Gateway queda fuera (delega tráfico), la `IAM DB` también (Azure Database for PostgreSQL, consumida por JDBC/SSL) y Supabase aparece como sistema externo con doble flujo (el adapter lo consulta vía HTTPS y Supabase lo notifica vía webhook).
+El diagrama de componentes (C4 Nivel 3) muestra cómo se organiza internamente el módulo IAM dentro del monolito (Java/Spring Boot). Se distinguen seis componentes principales: el `Authentication Controller` y el `User Controller` como puntos de entrada REST, los dos application services `User Command Service` y `User Query Service` que materializan el patrón CQRS, el `User Repository (JPA)` como abstracción de persistencia, y los adapters de seguridad `Bcrypt Hashing Service` (hashing de contraseñas) y `JJWT Token Service` (emisión y validación de los JWT propios de uFlex). Todos los componentes viven dentro del *Container Boundary* del REST API (monolito); la `uFlex DB` queda fuera (PostgreSQL en Supabase, consumida por JDBC/SSL).
 
 <div style="text-align: center;">
   <img src="assets/diagrams/software-architecture/components/out/iam-components-diagram.png" alt="uFlex — IAM Bounded Context Component Diagram" style="max-width: 100%; height: auto;">
@@ -2972,7 +2986,7 @@ El diagrama de componentes (C4 Nivel 3) muestra cómo se organiza internamente e
 
 ##### 4.2.1.6.1. Bounded Context Domain Layer Class Diagrams
 
-El diagrama de clases del Domain Layer del BC IAM modela exclusivamente los conceptos centrales del dominio, sin incluir las capas de application ni infrastructure. El paquete `domain.model.aggregates` contiene al Aggregate Root `User` y a la Entity `Role`; `domain.model.valueobjects` agrupa los Value Objects (`UserId`, `EmailAddress`, `FullName`, `ClinicId`, `VerificationCode`) y los enumerados (`Roles`, `AccountStatus`, `VerificationStatus`); `domain.model.events` encapsula los Domain Events publicados por el aggregate (`UserCreatedEvent`, `UserVerifiedEvent`, `UserVerificationCodeAssignedEvent`); y `domain.exceptions` reúne las excepciones de negocio que protegen las invariantes del dominio. Las flechas con línea continua marcan composición (el `User` contiene sus Value Objects), las flechas con línea punteada marcan dependencias semánticas (eventos publicados y excepciones lanzadas) y los rombos vacíos indican agregación con cardinalidad opcional o múltiple (relación de `User` con `ClinicId` y con `Role`).
+El diagrama de clases del Domain Layer del BC IAM modela exclusivamente los conceptos centrales del dominio, sin incluir las capas de application ni infrastructure. El paquete `domain.model.aggregates` contiene al Aggregate Root `User` y a la Entity `Role`; `domain.model.valueobjects` agrupa los Value Objects (`UserId`, `EmailAddress`, `PasswordHash`, `FullName`, `ClinicId`, `VerificationCode`) y los enumerados (`Roles`, `AccountStatus`, `VerificationStatus`); `domain.model.events` encapsula los Domain Events publicados por el aggregate (`UserCreatedEvent`, `UserVerifiedEvent`, `UserVerificationCodeAssignedEvent`); y `domain.exceptions` reúne las excepciones de negocio que protegen las invariantes del dominio. Las flechas con línea continua marcan composición (el `User` contiene sus Value Objects), las flechas con línea punteada marcan dependencias semánticas (eventos publicados y excepciones lanzadas) y los rombos vacíos indican agregación con cardinalidad opcional o múltiple (relación de `User` con `ClinicId` y con `Role`).
 
 <div style="text-align: center;">
   <img src="assets/diagrams/uml/class/out/iam-domain-layer-class-diagram.png" alt="uFlex — IAM Bounded Context Domain Class Diagram" style="max-width: 100%; height: auto;">
@@ -2982,7 +2996,7 @@ El diagrama de clases del Domain Layer del BC IAM modela exclusivamente los conc
 
 ##### 4.2.1.6.2. Bounded Context Database Design Diagram
 
-El esquema físico del BC IAM en Azure Database for PostgreSQL consta de una tabla principal `users` que almacena el perfil enriquecido (identificador interno, referencia al usuario en Supabase, email único, nombre completo, rol, estado, clínica asociada y timestamps de auditoría), dos tablas de catálogo `user_roles` y `user_statuses` para mantener normalizados los valores permitidos (usadas también para internacionalizar descripciones en el futuro) y una tabla `user_audit_events` que registra los eventos significativos del ciclo de vida del usuario (creación, verificación, cambios de rol, suspensiones) con un payload JSONB flexible. Los índices incluyen unicidad sobre `email` y `supabase_user_id`, e índices compuestos por `(role, clinic_id)` y `(clinic_id)` para soportar las queries más frecuentes de la Web Client App (listado por clínica y por rol). Se optó deliberadamente por **no** declarar una foreign key dura sobre `clinic_id` hacia la tabla de clínicas del BC Subscription: cada bounded context aísla su schema y la referencia es lógica, respetando la autonomía entre contextos.
+El esquema físico del BC IAM (esquema `iam` dentro de la base PostgreSQL hospedada en Supabase) consta de una tabla principal `users` que almacena el perfil enriquecido (identificador interno, email único, hash bcrypt de la contraseña, nombre completo, rol, estado, clínica asociada y timestamps de auditoría), dos tablas de catálogo `user_roles` y `user_statuses` para mantener normalizados los valores permitidos (usadas también para internacionalizar descripciones en el futuro) y una tabla `user_audit_events` que registra los eventos significativos del ciclo de vida del usuario (creación, verificación, cambios de rol, suspensiones) con un payload JSONB flexible. Los índices incluyen unicidad sobre `email` e índices compuestos por `(role, clinic_id)` y `(clinic_id)` para soportar las queries más frecuentes de la Web Client App (listado por clínica y por rol). Se optó deliberadamente por **no** declarar una foreign key dura sobre `clinic_id` hacia la tabla de clínicas del BC Subscription: cada bounded context aísla su schema y la referencia es lógica, respetando la autonomía entre contextos.
 
 <div style="text-align: center;">
   <img src="assets/diagrams/database/erd/out/iam-database-design-diagram.png" alt="uFlex — IAM Bounded Context Database ER Diagram" style="max-width: 100%; height: auto;">
