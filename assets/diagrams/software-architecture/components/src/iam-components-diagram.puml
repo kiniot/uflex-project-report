@@ -22,10 +22,9 @@ AddComponentTag("interface",      $bgColor="#1168BD", $fontColor="#ffffff", $bor
 AddComponentTag("application",    $bgColor="#1168BD", $fontColor="#ffffff", $borderColor="#0B4884", $legendText="Application Layer CQRS")
 AddComponentTag("domain",         $bgColor="#0B4884", $fontColor="#ffffff", $borderColor="#062F5A", $legendText="Domain Layer")
 AddComponentTag("infrastructure", $bgColor="#6BA3DC", $fontColor="#000000", $borderColor="#438DD5", $legendText="Infrastructure Layer")
-AddComponentTag("acl",            $bgColor="#F5A97F", $fontColor="#000000", $borderColor="#C87A4C", $legendText="External ACL")
+AddComponentTag("security",       $bgColor="#F5A97F", $fontColor="#000000", $borderColor="#C87A4C", $legendText="Security Adapters (bcrypt + JWT)")
 
 ' External systems & database
-AddSystemTag("externalAuth", $bgColor="#E63946", $fontColor="#ffffff", $borderColor="#9B1E28", $legendText="External OAuth Provider")
 AddSystemTag("externalMail", $bgColor="#999999", $fontColor="#ffffff", $borderColor="#6B6B6B", $legendText="External Email Delivery")
 AddContainerTag("database",  $bgColor="#20B2AA", $fontColor="#ffffff", $borderColor="#148F89", $legendText="Relational SQL Database")
 
@@ -39,22 +38,22 @@ Container(iosApp,     "iOS Mobile App",      "Swift / iOS SDK",            "Apli
 Container(webApp,     "Web Client App",      "TypeScript / Angular PWA",   "PWA para fisioterapeutas y administradores de clínica", $tags="webApp")
 
 ' =========================================================
-' IAM Service internal layers
+' IAM module — internal components inside the uFlex monolith
 ' =========================================================
-Container_Boundary(iamService, "IAM Service — RESTful API") {
-  Component(interfaceLayer,      "IAM Interface Layer",        "Component: Java 17 / Spring Boot 3", "Controllers y endpoints REST — Authentication, Users, Roles",                             $tags="interface")
-  Component(applicationLayer,    "IAM Application Layer",      "Component: Java 17 / Spring Boot 3", "Servicios CQRS que coordinan commands, queries y event handlers del dominio IAM",          $tags="application")
-  Component(supabaseAcl,         "Supabase Auth Service ACL",  "Component: Java 17 / Spring Boot 3", "Fachada ACL hacia Supabase para crear identidades, validar JWT y consumir webhooks",       $tags="acl")
-  Component(domainLayer,         "IAM Domain Layer",           "Component: Java 17 / Spring Boot 3", "Aggregate User, Entity Role, Value Objects y eventos de dominio",                          $tags="domain")
-  Component(infrastructureLayer, "IAM Infrastructure Layer",   "Component: Java 17 / Spring Boot 3", "Repositorios JPA, integración con Resend, Spring Security y validación de JWT de Supabase",$tags="infrastructure")
+Container_Boundary(iamService, "IAM Module — within uFlex REST API (Monolith)") {
+  Component(interfaceLayer,      "IAM Interface Layer",       "Component: Java 17 / Spring Boot 3", "Controllers y endpoints REST — Authentication, Users, Roles",                                $tags="interface")
+  Component(applicationLayer,    "IAM Application Layer",     "Component: Java 17 / Spring Boot 3", "Servicios CQRS que coordinan commands, queries y event handlers del dominio IAM",             $tags="application")
+  Component(hashingService,      "Bcrypt Hashing Service",    "Component: Java 17 / Spring Boot 3", "Hashea contraseñas con bcrypt y verifica credenciales en el sign-in",                         $tags="security")
+  Component(tokenService,        "JJWT Token Service",        "Component: Java 17 / Spring Boot 3", "Emite y valida los JWT propios de uFlex (claims sub, email, roles, clinicId)",                $tags="security")
+  Component(domainLayer,         "IAM Domain Layer",          "Component: Java 17 / Spring Boot 3", "Aggregate User, Entity Role, Value Objects (incluyendo PasswordHash) y eventos de dominio",   $tags="domain")
+  Component(infrastructureLayer, "IAM Infrastructure Layer",  "Component: Java 17 / Spring Boot 3", "Repositorios JPA, integración con Resend, Spring Security y filtro de JWT propio",            $tags="infrastructure")
 }
 
 ' =========================================================
 ' External systems & database
 ' =========================================================
-System_Ext(supabase,   "Supabase — OAuth + Identity DB", "Sistema externo de identidad y autenticación OAuth",  $tags="externalAuth")
 System_Ext(resend,     "Resend — Email Delivery",        "Sistema externo de envío de correos transaccionales", $tags="externalMail")
-ContainerDb(iamDB,     "IAM Relational SQL Database",    "Container: Azure Database for PostgreSQL", "Almacena perfiles clínicos del contexto IAM — users, roles, audit events", $tags="database")
+ContainerDb(uflexDB,   "uFlex Relational SQL Database",  "Container: PostgreSQL (Supabase)", "Base de datos del monolito — esquema iam: users, roles, audit events", $tags="database")
 
 ' =========================================================
 ' Relations — vertical flow
@@ -65,13 +64,13 @@ Rel(webApp,     interfaceLayer, "Hace llamadas API hacia", "JSON/HTTPS")
 
 Rel(interfaceLayer,   applicationLayer,    "Invoca servicios de la capa de aplicación")
 
-Rel(applicationLayer, supabaseAcl,         "Delega autenticación y sincronización de identidad", "in-process call")
+Rel(applicationLayer, hashingService,      "Hashea y verifica contraseñas (bcrypt)",                "in-process call")
+Rel(applicationLayer, tokenService,        "Emite y valida JWT propios",                            "in-process call")
 Rel(applicationLayer, domainLayer,         "Orquesta casos de uso del dominio")
 Rel(applicationLayer, infrastructureLayer, "Usa infraestructura — repos JPA e integraciones")
 
-Rel(supabaseAcl,         supabase, "Valida JWT, crea identidades y consume webhooks", "HTTPS")
-Rel(infrastructureLayer, resend,   "Envía correos transaccionales",                    "HTTPS")
-Rel(infrastructureLayer, iamDB,    "Persistencia — commands y queries",                "JDBC/SSL")
+Rel(infrastructureLayer, resend,   "Envía correos transaccionales",     "HTTPS")
+Rel(infrastructureLayer, uflexDB,  "Persistencia — commands y queries", "JDBC/SSL")
 
 SHOW_LEGEND()
 @enduml

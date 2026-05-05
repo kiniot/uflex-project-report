@@ -59,8 +59,8 @@ title Domain Layer Class Diagram — IAM Bounded Context (uFlex)
 package "domain.model.aggregates" {
   class User <<AggregateRoot>> {
     - id: UserId
-    - supabaseUserId: String
     - emailAddress: EmailAddress
+    - passwordHash: PasswordHash
     - fullName: FullName
     - roles: Set<Role>
     - verificationStatus: VerificationStatus
@@ -69,8 +69,8 @@ package "domain.model.aggregates" {
     - clinicId: ClinicId
     --
     + User()
-    + User(email, supabaseId, code)
-    + User(email, supabaseId, code, roles)
+    + User(email, passwordHash, fullName, code)
+    + User(email, passwordHash, fullName, code, roles)
     + addRole(role: Role): User
     + addRoles(roles: List<Role>): User
     + isVerified(): boolean
@@ -109,6 +109,9 @@ package "domain.model.valueobjects" {
     - firstName: String
     - lastName: String
   }
+  class PasswordHash <<ValueObject>> {
+    - value: String
+  }
   class ClinicId <<ValueObject>> {
     - clinicId: UUID
     + isAssigned(): boolean
@@ -142,7 +145,6 @@ package "domain.model.valueobjects" {
 package "domain.model.events" {
   class UserCreatedEvent <<DomainEvent>> {
     + userId: Long
-    + supabaseUserId: String
     + emailAddress: String
     + occurredOn: Instant
   }
@@ -178,6 +180,7 @@ package "domain.exceptions" {
 ' =========================================================
 User *-- UserId
 User *-- EmailAddress
+User *-- PasswordHash
 User *-- FullName
 User *-- AccountStatus
 User *-- VerificationStatus
