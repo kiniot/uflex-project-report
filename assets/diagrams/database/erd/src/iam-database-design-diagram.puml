@@ -1,6 +1,6 @@
 @startuml uflex-iam-erd
 ' Database Design Diagram — IAM Bounded Context (uFlex)
-' Target: Azure Database for PostgreSQL — Flexible Server
+' Target: PostgreSQL hosted on Supabase — schema "iam"
 
 skinparam shadowing false
 skinparam defaultFontName Arial
@@ -18,8 +18,8 @@ hide empty members
 table(users) {
   * id                 : UUID <<PK>>
   --
-  * supabase_user_id   : VARCHAR(64) <<UNIQUE>>
   * email              : VARCHAR(254) <<UNIQUE>>
+  * password_hash      : VARCHAR(72)
   * full_name          : VARCHAR(160)
   * role               : VARCHAR(32)  <<FK → user_roles.code>>
   * status             : VARCHAR(32)  <<FK → user_statuses.code>>
@@ -71,9 +71,12 @@ users ||--o{ user_audit_events : "triggers"
 note bottom of users
   Indices:
   - UNIQUE (email)
-  - UNIQUE (supabase_user_id)
   - INDEX (role, clinic_id)
   - INDEX (clinic_id)
+
+  password_hash stores the bcrypt hash
+  produced by the monolith (never the
+  plain password).
 
   clinic_id is a logical reference to the
   Subscription BC (no hard FK: bounded
