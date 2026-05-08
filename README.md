@@ -5450,10 +5450,65 @@ A continuacion se presentan los productos de software seleccionados para apoyar 
 | **Conventional Commits** | Estandar de nombres de commits para trazabilidad. | [https://www.conventionalcommits.org](https://www.conventionalcommits.org) |
 | **Semantic Versioning** | Sistema de versionado para releases coherentes. | [https://semver.org](https://semver.org) |
 
-
-
 #### 6.1.2. Source Code Management
 
+El equipo utilizara **GitHub** como plataforma de alojamiento y **Git** como control de versiones para todos los productos del proyecto uFlex, aplicando la estrategia de ramificacion **GitFlow Workflow**, con estandares de versionado **Semantic Versioning** y mensajes estructurados mediante **Conventional Commits**.
+
+**Repositorios del Proyecto**
+
+| Repository                                                                 | Description                                                         |
+|:---------------------------------------------------------------------------|:--------------------------------------------------------------------|
+| [**uflex-project-report**](https://github.com/KinIoT/uflex-project-report) | Comprehensive project documentation and final technical reports.    |
+| [**uflex-landing-page**](https://github.com/KinIoT/uflex-landing-page)     | Official landing page for user acquisition and marketing.           |
+| [**uflex-clinic-web**](https://github.com/KinIoT/uflex-clinic-web)         | Web platform for clinics and rehabilitation professionals.          |
+| [**uflex-patient-mobile**](https://github.com/KinIoT/uflex-patient-mobile) | Mobile application for patient monitoring and therapy guidance.     |
+| [**uflex-rest-api**](https://github.com/KinIoT/uflex-rest-api)             | Main REST API handling core business logic and database management. |
+| [**uflex-edge-api**](https://github.com/KinIoT/uflex-edge-api)             | Edge computing API for optimized data pre-processing.               |
+| [**uflex-embedded-app**](https://github.com/KinIoT/uflex-embedded-app)     | Embedded software for IoT devices and biomechanical sensors.        |
+
+**GitFlow Workflow**
+
+![gitflow](assets/images/figures/gitflow-example.png)
+
+Se seguira el modelo propuesto por Vincent Driessen, el cual define las siguientes ramas principales:
+
+- **main**: Rama principal, contiene las versiones estables en produccion.
+- **develop**: Rama de desarrollo, donde se integran nuevas funcionalidades antes de pasar a produccion.
+
+**Branches usados en GitFlow**
+
+| **Tipo de rama** | **Proposito** | **Convencion de nombres** | **Ejemplo** |
+|---|---|---|---|
+| **feature** | Desarrollo de nuevas funcionalidades. | `feature/<nombre-descriptivo>` | `feature/profile-management` |
+| **release** | Preparacion de una nueva version de produccion. | `release/vX.Y.Z` | `release/v1.0.0` |
+| **hotfix** | Correccion urgente en produccion. | `hotfix/<problema>` | `hotfix/fix-crash-navbar` |
+
+**Semantic Versioning**
+
+Se aplicara el esquema de versionado semantico 2.0.0, con el siguiente formato:
+
+`vMAJOR.MINOR.PATCH`
+
+- **MAJOR**: Cambios incompatibles con versiones anteriores.
+- **MINOR**: Nuevas funcionalidades compatibles con versiones anteriores.
+- **PATCH**: Correcciones de errores o mejoras menores.
+
+**Conventional Commits**
+
+Para los mensajes de commit, se utilizara el estandar Conventional Commits, que permite mayor trazabilidad y generacion automatica de changelogs.
+
+**Formato general**:
+
+`<tipo>(opcional-scope): descripcion breve`
+
+**Tipos a usar**:
+- `feat`: una nueva funcionalidad
+- `fix`: correccion de errores
+- `docs`: cambios en documentacion
+- `style`: formato (espacios, punto y coma, etc.)
+- `refactor`: cambios de codigo que no corrigen errores ni agregan funciones
+- `test`: agregar o modificar pruebas
+- `chore`: tareas generales o mantenimiento
 
 
 #### 6.1.3. Source Code Style Guide & Conventions
