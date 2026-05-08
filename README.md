@@ -99,11 +99,11 @@ Se usó el flujo de trabajo **GitFlow**, que incluye las siguientes ramas princi
 
 <hr class="page-break">
 
-## TB1
+## AV1
 
 **Tareas**
 
-Para el desarrollo del TB1, cada participante del equipo realizó las siguientes tareas:
+Para el desarrollo del AV1, cada participante del equipo realizó las siguientes tareas:
 
 | Integrantes                         | Tarea asignada                                                                                               |
 |-------------------------------------|--------------------------------------------------------------------------------------------------------------|
