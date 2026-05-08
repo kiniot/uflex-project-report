@@ -5346,7 +5346,33 @@ El lenguaje aplicado en las interfaces de uFlex se caracteriza por ser **Respetu
 
 #### 5.1.2. Web, Mobile and IoT Style Guidelines
 
+**Web Style Guidelines**
 
+Para la interfaz web de uFlex, orientada principalmente a administradores y fisioterapeutas, se han adoptado los estándares de **Material Design 3**. Esta decisión asegura una navegación intuitiva y una jerarquía visual clara, facilitando la gestión de grandes volúmenes de datos clínicos y la configuración de terapias.
+
+- **Buttons:** Los botones utilizan esquinas redondeadas y estados claros (hover, focused, disabled) para indicar interactividad. Se prioriza el uso del color primario Azul Petróleo para acciones principales y variantes en "outline" para acciones secundarias, optimizando la toma de decisiones del especialista.
+
+    ![Botones de uFlex Web](./assets/design/style-guidelines/web/uflex-web-buttons.png)
+
+- **TextField:** Los campos de texto están diseñados para maximizar la legibilidad durante el ingreso de historias clínicas o datos de registro. Incluyen etiquetas flotantes y mensajes de error en Rojo Coral para proporcionar feedback inmediato al usuario.
+
+    ![Campos de texto de uFlex Web](./assets/design/style-guidelines/web/uflex-web-textfields.png)
+
+- **Select:** Este componente se utiliza para la selección de protocolos de tratamiento o asignación de pacientes. Su diseño desplegable permite una navegación eficiente dentro de formularios complejos sin perder el contexto de la página.
+
+    ![Select de uFlex Web](./assets/design/style-guidelines/web/uflex-web-select.png)
+
+- **Slider:** Esencial para la visualización y ajuste de rangos de movimiento (ROM) o metas de repeticiones. El slider permite un control granular y visual de parámetros numéricos, facilitando al fisioterapeuta la personalización del tratamiento.
+
+    ![Slider de uFlex Web](./assets/design/style-guidelines/web/uflex-web-slider.png)
+
+- **Checkbox:** Se emplean en las listas de tareas y selección múltiple de ejercicios dentro del plan de rehabilitación. Su diseño minimalista en Verde Menta confirma visualmente las selecciones del administrador de forma rápida.
+
+    ![Checkbox de uFlex Web](./assets/design/style-guidelines/web/uflex-web-checkbox.png)
+
+- **Chip:** Utilizados para categorizar el estado de los pacientes (ej. "En progreso", "Finalizado") o filtrar etiquetas en el inventario de equipos KinIoT. Son elementos compactos que ayudan a organizar la información sin saturar visualmente el dashboard.
+
+    ![Chip de uFlex Web](./assets/design/style-guidelines/web/uflex-web-chip.png)
 
 <hr class="page-break">
 
