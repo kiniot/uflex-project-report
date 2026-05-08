@@ -5257,15 +5257,92 @@ En integridad y rendimiento, el diseño incorpora reglas alineadas al dominio: �
 
 ## Capítulo V: Solution UI/UX Design
 
-
+El capítulo presenta el diseño de la interfaz de usuario (UI) y la experiencia de usuario (UX) de la plataforma uFlex. Se detallan los principios de diseño, la arquitectura de la información, los wireframes y prototipos de las principales pantallas de la aplicación. Además, se describen las herramientas y tecnologías utilizadas para el desarrollo del diseño UI/UX.
 
 ### 5.1. Style Guidelines
 
-
+La guía de estilos sienta las bases de diseño para la plataforma uFlex, asegurando una experiencia de usuario coherente y atractiva. En esta sección se detallan los colores, tipografías, iconografía y otros elementos visuales que conforman la identidad de la marca.
 
 #### 5.1.1. General Style Guidelines
 
+La identidad visual de uFlex ha sido diseñada para transmitir confianza, precisión técnica y bienestar clínico. Dado que el ecosistema integra hardware (sensores) y software (SaaS), la paleta de colores busca equilibrar la sobriedad necesaria para una herramienta de grado médico con la calidez requerida para reducir la "kinesiofobia" (miedo al movimiento) en el paciente durante su rehabilitación en casa.
 
+El estilo visual se basa en una estética limpia y moderna, diseñada para garantizar la legibilidad en diversos entornos, desde la pantalla de un smartphone en un hogar con iluminación variable hasta un dashboard clínico en una clínica.
+
+**Color**
+
+Los colores juegan un papel clave en la primera impresión que los usuarios tienen de uFlex. Se han seleccionado tonos que facilitan la jerarquía visual y reducen la carga cognitiva, permitiendo que el paciente se enfoque en la ejecución correcta de sus ejercicios. A continuación, se detalla la paleta de colores de uFlex y su sustento:
+
+- **Color Primario:** #074D61 (Azul Petróleo): Este tono actúa como el pilar de la identidad de la marca. Se seleccionó para evocar profesionalismo, seguridad y estabilidad. Al ser un color profundo, proporciona un contraste excelente para elementos de navegación, transmitiendo la robustez de un sistema que gestiona datos críticos de salud.
+- **Color Secundario:** #48CBB6 (Verde Menta): Funciona como el acento principal de la interfaz, aportando frescura y una sensación de renovación física. Su uso está destinado a elementos interactivos y llamadas a la acción (CTAs), asociando la tecnología de KinIoT con la vitalidad y el progreso del proceso terapéutico.
+- **Color de Fondo:** #F7F5ED (Blanco Hueso): A diferencia de un blanco puro, este tono reduce la fatiga visual, especialmente importante para los fisioterapeutas que pasan largas jornadas revisando métricas. Crea una atmósfera orgánica y acogedora que suaviza la naturaleza estéril de las aplicaciones médicas tradicionales.
+- **Color de Información:** #00B4D8 (Azul Claro): Se reserva para estados neutrales, guías de usuario y visualización de datos informativos. Su claridad ayuda a distinguir instrucciones de soporte sin generar una alerta innecesaria en el paciente.
+- **Color de Éxito:** #3BC48E (Verde Esmeralda): Utilizado para validar el cumplimiento de metas, como el alcance del ángulo de ROM deseado o la finalización de una serie. Este verde refuerza positivamente el comportamiento del usuario mediante una retroalimentación visual clara.
+- **Color de Advertencia:** #FFAD33 (Naranja): Actúa como una señal preventiva. En uFlex, es crucial para indicar cuando un paciente realiza un movimiento que se desvía ligeramente del patrón correcto o cuando la batería de los sensores IoT está próxima a agotarse.
+- **Color de Error:** #EF5350 (Rojo Coral): Destinado a situaciones críticas, como la pérdida de conexión Bluetooth con los sensores o la ejecución de movimientos peligrosos que podrían comprometer la lesión. Es un tono vibrante que asegura una atención inmediata por parte del usuario.
+
+![Paleta de colores de uFlex](./assets/design/style-guidelines/uflex-color-palette.png)
+
+**Tipografía**
+
+La tipografía es otro componente esencial de la identidad visual de una marca. La elección de fuentes tipográficas debe reflejar la personalidad de la marca y garantizar la legibilidad en todos los dispositivos, desde los dashboards complejos del especialista hasta la interfaz móvil del paciente.
+
+En el caso de uFlex, se seleccionaron las siguientes fuentes:
+
+- **Títulos y Encabezados:** *Plus Jakarta Sans* – Se eligió esta fuente por su geometría moderna y su aire tecnológico, lo cual se alinea con la identidad de KinIoT como innovadora en IoT. Al ser una tipografía diseñada específicamente para pantallas modernas, ofrece una excelente distinción de jerarquías en los encabezados, aportando un carácter dinámico y profesional que guía la vista del usuario hacia la información más relevante de manera inmediata.
+- **Cuerpo de Texto:** *Inter* – Esta tipografía es el estándar para interfaces de usuario debido a su altísima legibilidad en tamaños pequeños. Su diseño optimiza el espacio entre caracteres, lo que facilita que los pacientes lean sus instrucciones de rehabilitación sin esfuerzo visual y que los especialistas interpreten rápidamente los datos numéricos y reportes clínicos en el sistema multitenant.
+
+Con estas elecciones tipográficas, uFlex logra un equilibrio entre una estética vanguardista y una funcionalidad clínica superior. La combinación de ambas asegura que la plataforma sea percibida como una herramienta de alta precisión técnica, pero accesible y amigable para el proceso de recuperación del paciente.
+
+![Tipografía uFlex Títulos](./assets/design/style-guidelines/uflex-typography-headings.png)
+
+![Tipografía uFlex Cuerpo de Texto](./assets/design/style-guidelines/uflex-typography-body.png)
+
+**Iconografía**
+
+La iconografía utilizada en uFlex sigue un estilo lineal y minimalista, alineado con las tendencias actuales de diseño. Los iconos son simples, claros y fácilmente reconocibles, lo que facilita la navegación y la comprensión de las funciones de la plataforma.
+
+Además, se sigue el estilo de Material Design Icons, adaptando los iconos a la paleta de colores de uFlex para mantener la coherencia visual. Los iconos se utilizan para representar acciones comunes, como iniciar una sesión, reportar un nivel de dolor o cancelar una sesión, lo que mejora la experiencia del usuario al proporcionar señales visuales claras.
+
+![Iconografía de uFlex](./assets/design/style-guidelines/uflex-iconography.png)
+
+**Sistema de Cuadrículas**
+
+El diseño de la interfaz de usuario de uFlex se basa en un sistema de cuadrículas flexible que asegura una disposición ordenada y coherente de los elementos visuales. Este sistema facilita la alineación y el espaciado, mejorando la legibilidad y la estética general de la plataforma.
+
+![Sistema de cuadrículas de uFlex](./assets/design/style-guidelines/uflex-grid-system.png)
+
+**Espaciado**
+
+El espaciado entre los elementos es crucial para evitar la saturación visual y mejorar la experiencia del usuario. En uFlex, se utiliza un sistema de espaciado consistente basado en unidades de 8px, lo que permite una distribución equilibrada y armoniosa de los componentes en la interfaz.
+
+![Espaciado de uFlex](./assets/design/style-guidelines/uflex-spacing.png)
+
+**Branding**
+
+Para uFlex, se optó por un imagotipo que combina tanto un logotipo (el nombre de la marca) con un isotipo (un símbolo o icono) en una sola unidad coherente. Este enfoque permite que la marca sea fácilmente reconocible y memorable, ya que el símbolo gráfico puede ser utilizado de manera independiente en ciertos contextos, mientras que el nombre de la marca refuerza la identidad verbal.
+
+![Branding de uFlex](./assets/design/style-guidelines/uflex-branding.png)
+
+El imagotipo de uFlex se compone por un isotipo abstracto que fusiona la letra "U" con una representación esquemática de una articulación humana. La estructura se divide en dos segmentos curvos unidos por nodos circulares, los cuales simbolizan los puntos de conexión y flexibilidad del miembro superior (codo o muñeca). El uso del degradado visual entre el verde menta y el azul petróleo en los diferentes segmentos representa la transición de una lesión hacia la recuperación total, mientras que las formas redondeadas eliminan la rigidez, transmitiendo una sensación de movimiento fluido y natural, objetivo principal de la telerehabilitación.
+
+Además, el imagotipo incluye el nombre "uFlex" en una tipografía moderna y legible, utilizando la fuente Plus Jakarta Sans en un peso semi-bold para aportar solidez visual y equilibrio al conjunto. La aplicación del Azul Petróleo (#074D61) en el texto garantiza que la marca tenga suficiente peso visual en interfaces digitales. La minúscula inicial "u" resalta la cercanía con el usuario (user-centric) y su naturaleza tecnológica, mientras que la "F" mayúscula enfatiza el concepto de "Flexibilidad", creando un ritmo visual que facilita la recordación del nombre comercial.
+
+**Tono de Comunicación**
+
+El tono de comunicación de uFlex se define como **Empático**, **Profesional** y **Alentador**. Dado que el usuario principal suele atravesar un proceso de recuperación física que puede ser frustrante o doloroso, la plataforma debe actuar no solo como una herramienta de medición, sino como un acompañante en su rehabilitación.
+
+- **Empatía:** El sistema reconoce el esfuerzo del usuario. No se limita a entregar datos técnicos, sino que utiliza mensajes que validan el progreso del paciente.
+- **Profesionalismo:** Al ser una solución que gestiona datos de salud y biomecánica, la comunicación mantiene una base seria y precisa, evitando ambigüedades que puedan generar dudas sobre el estado clínico.
+- **Aliento:** Se utiliza un enfoque positivo (sin llegar a ser excesivamente informal) para motivar al paciente a completar sus rutinas diarias, transformando la percepción de la terapia de una obligación a un logro alcanzable.
+
+**Lenguaje Aplicado**
+
+El lenguaje aplicado en las interfaces de uFlex se caracteriza por ser **Respetuoso** y **Sereno**, manteniendo un equilibrio entre lo formal y lo casual según el contexto:
+
+- **Claridad Técnica:** En el dashboard del especialista, el lenguaje es preciso y utiliza la terminología del dominio (como ROM, flexión o supinación) definida en nuestro *Ubiquitous Language*.
+- **Accesibilidad Cognitiva:** En la interfaz del paciente, se evita la jerga médica compleja en favor de instrucciones directas y fáciles de seguir (ej. "Mueve tu muñeca hacia arriba" en lugar de "Realiza una extensión de carpo").
+- **Microcopy Predictivo:** Los botones y etiquetas están diseñados para reducir la incertidumbre. En lugar de usar términos genéricos como "Enviar", se utilizan frases de acción clara como "Finalizar Sesión" o "Reportar Dolor", alineándose con el objetivo de KinIoT de eliminar la incertidumbre en las terapias remotas.
 
 #### 5.1.2. Web, Mobile and IoT Style Guidelines
 
