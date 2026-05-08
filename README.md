@@ -5355,6 +5355,101 @@ En integridad y rendimiento, el dise√±o incorpora reglas alineadas al dominio: √
 
 #### 6.1.1. Software Development Environment Configuration
 
+A continuacion se presentan los productos de software seleccionados para apoyar cada etapa del ciclo de vida del producto digital. Se detallan sus nombres, propositos dentro del proyecto y enlaces de acceso o descarga, diferenciando entre soluciones SaaS y software instalable.
+
+**Project Management**
+
+| **Herramienta** | **Proposito** | **Enlace / Ruta de Acceso** |
+|---|---|---|
+| **Trello** | Gestion agil de tareas y tableros para organizar entregables, tareas individuales y por modulo. | [https://trello.com](https://trello.com) |
+
+<br>
+
+**Requirements Management**
+
+| **Herramienta** | **Proposito** | **Enlace / Ruta de Acceso** |
+|---|---|---|
+| **UXPressia** | Creacion de User Personas, Empathy Maps, Journey Maps e Impact Maps. | [https://uxpressia.com](https://uxpressia.com) |
+
+<br>
+
+**Domain-Driven Design Approach**
+
+| **Herramienta** | **Proposito** | **Enlace / Ruta de Acceso** |
+|---|---|---|
+| **Miro** | Creacion de Event Storming, Candidate Context Discovery, Domain Message Flows, Bounded Context Canvases y Context Maps. | [https://miro.com](https://miro.com) |
+
+<br>
+
+**Software Architecture Design**
+
+| **Herramienta** | **Proposito** | **Enlace / Ruta de Acceso** |
+|---|---|---|
+| **PlantUML** | Diagramas C4 y UML usando enfoque Diagrams-as-Code compatible con Markdown y documentacion tecnica. | [https://plantuml.com](https://plantuml.com) |
+
+<br>
+
+**Product UX/UI Design**
+
+| **Herramienta** | **Proposito** | **Enlace / Ruta de Acceso** |
+|---|---|---|
+| **Figma** | Diseno colaborativo de wireframes, mockups y prototipos interactivos. | [https://figma.com](https://figma.com) |
+| **Lucidchart** | Creacion de wireflows y user flows. | [https://lucidchart.com](https://lucidchart.com) |
+
+<br>
+
+**Software Development**
+
+| **Herramienta / Tecnologia** | **Proposito** | **Enlace / Ruta de Descarga** |
+|---|---|---|
+| **WebStorm** | Desarrollo de la landing page y web application usando HTML5, CSS3, JavaScript, Tailwind CSS y DaisyUI. | [https://www.jetbrains.com/webstorm](https://www.jetbrains.com/webstorm) |
+| **IntelliJ IDEA** | Desarrollo del servicio REST API. | [https://www.jetbrains.com/idea](https://www.jetbrains.com/idea) |
+| **Android Studio** | Desarrollo de la aplicacion movil Android con Kotlin Multiplatform y Jetpack Compose. | [https://developer.android.com/studio](https://developer.android.com/studio) |
+| **Visual Studio Code** | Desarrollo de la documentacion en Markdown. | [https://code.visualstudio.com](https://code.visualstudio.com) |
+| **HTML5** | Lenguaje de marcado para la estructura semantica de la landing page. | [https://developer.mozilla.org/docs/Web/HTML](https://developer.mozilla.org/docs/Web/HTML) |
+| **CSS3** | Lenguaje de estilos para la apariencia visual de la landing page. | [https://developer.mozilla.org/docs/Web/CSS](https://developer.mozilla.org/docs/Web/CSS) |
+| **JavaScript** | Lenguaje para manipular el DOM e internacionalizar el contenido en la landing page. | [https://developer.mozilla.org/docs/Web/JavaScript](https://developer.mozilla.org/docs/Web/JavaScript) |
+| **Tailwind CSS** | Framework de estilos para construir la landing page de manera eficiente. | [https://tailwindcss.com](https://tailwindcss.com) |
+| **DaisyUI** | Biblioteca de componentes sobre Tailwind CSS para la UI de la landing page. | [https://daisyui.com](https://daisyui.com) |
+| **Java** | Lenguaje para el backend del servicio REST API. | [https://www.oracle.com/java](https://www.oracle.com/java) |
+| **Spring Boot** | Framework Java para construir el servicio REST API. | [https://spring.io/projects/spring-boot](https://spring.io/projects/spring-boot) |
+| **Kotlin** | Lenguaje para la aplicacion movil Android. | [https://kotlinlang.org](https://kotlinlang.org) |
+| **Jetpack Compose** | Toolkit declarativo para UI nativa en Android. | [https://developer.android.com/jetpack/compose](https://developer.android.com/jetpack/compose) |
+
+<br>
+
+**Software Testing**
+
+| **Herramienta / Tecnologia** | **Proposito** | **Enlace / Ruta de Descarga** |
+|---|---|---|
+| **Gherkin** | Lenguaje para escribir criterios de aceptacion de las User Stories. | [https://cucumber.io/docs/gherkin](https://cucumber.io/docs/gherkin) |
+
+<br>
+
+**Software Deployment**
+
+| **Herramienta / Plataforma** | **Proposito** | **Enlace / Ruta de Acceso** |
+|---|---|---|
+| **Netlify** | Despliegue automatico y gratuito de la landing page. | [https://www.netlify.com](https://www.netlify.com) |
+| **Railway** | Despliegue automatico del servicio REST API. | [https://railway.app](https://railway.app) |
+| **Firebase** | Despliegue automatico de la aplicacion movil. | [https://firebase.google.com](https://firebase.google.com) |
+| **Supabase** | Despliegue automatico de la base de datos PostgreSQL. | [https://supabase.com](https://supabase.com) |
+
+<br>
+
+**Software Documentation**
+
+| **Herramienta / Recurso** | **Proposito** | **Enlace / Ruta de Acceso** |
+|---|---|---|
+| **IntelliJ IDEA** | Edicion del README.md y visualizacion previa de diagramas PlantUML. | [https://www.jetbrains.com/idea](https://www.jetbrains.com/idea) |
+| **Visual Studio Code** | Edicion del README.md y exportacion formateada de Markdown a PDF. | [https://code.visualstudio.com](https://code.visualstudio.com) |
+| **Markdown** | Lenguaje de marcado ligero para documentacion tecnica. | [https://www.markdownguide.org](https://www.markdownguide.org) |
+| **Git** | Control de versiones distribuido para gestionar el codigo fuente. | [https://git-scm.com](https://git-scm.com) |
+| **GitHub** | Repositorio con control de versiones y soporte de issues y PRs. | [https://github.com](https://github.com) |
+| **GitFlow Workflow** | Estrategia de ramificacion para organizar codigo y documentacion. | [https://nvie.com/posts/a-successful-git-branching-model](https://nvie.com/posts/a-successful-git-branching-model) |
+| **Conventional Commits** | Estandar de nombres de commits para trazabilidad. | [https://www.conventionalcommits.org](https://www.conventionalcommits.org) |
+| **Semantic Versioning** | Sistema de versionado para releases coherentes. | [https://semver.org](https://semver.org) |
+
 
 
 #### 6.1.2. Source Code Management
