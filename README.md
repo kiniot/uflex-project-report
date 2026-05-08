@@ -5513,6 +5513,115 @@ Para los mensajes de commit, se utilizara el estandar Conventional Commits, que 
 
 #### 6.1.3. Source Code Style Guide & Conventions
 
+Con el fin de asegurar un codigo limpio, mantenible y coherente entre todos los miembros del equipo, se adoptan las siguientes convenciones de estilo y nomenclatura. Todas las variables, funciones, clases, archivos y elementos siguen una nomenclatura en ingles.
+
+**Nomenclature General**
+
+- Se utiliza ingles como idioma unico para nombres de variables, funciones, clases, comentarios y documentacion.
+- Se evitan abreviaciones innecesarias y nombres genericos como `data1`, `temp`, `info`.
+
+**HTML**
+
+Basado en las convenciones de HTML y buenas practicas de MDN, se aplican las siguientes reglas:
+
+- Atributos en minusculas y nombres de clase en **kebab-case** (`section-title`, `main-container`).
+- Uso de comillas dobles para atributos (`class="example"`).
+- Estructura semantica clara con `<header>`, `<nav>`, `<main>`, `<section>`, `<footer>`.
+- Sangria con 2 espacios.
+- Atributos ordenados de manera logica: `id`, `class`, `type`, `name`, `placeholder`, `value`, `required`.
+- Uso adecuado de etiquetas auto-cerradas (`<img />`, `<input />`).
+
+**CSS / Tailwind CSS**
+
+Basado en convenciones de CSS y buenas practicas de Tailwind CSS:
+
+- Nombres de clases en minusculas.
+- Para clases personalizadas: **kebab-case**.
+- Se prioriza Tailwind CSS sobre CSS puro para la landing page.
+- Para clases de utilidad de Tailwind: **snake_case** (`text_center`, `bg_blue_500`).
+- Se agrupan clases por orden logico (layout -> spacing -> color -> typography).
+
+**Google JavaScript Style Guide**
+
+Basado en el Google JavaScript Style Guide:
+
+- **camelCase** para variables, funciones y parametros.
+- **PascalCase** para clases y constructores.
+- Constantes con `UPPER_CASE_WITH_UNDERSCORES` si son globales.
+- Imports explicitos y ordenados: primero externas, luego internas.
+- Evitar `default exports`, usar `export const` o `export class`.
+- Preferir `const` sobre `let` y evitar `var`.
+- Evitar usar `this` fuera de clases.
+- No mezclar logica en componentes; delegar a servicios.
+
+**Java & Spring Boot**
+
+Basado en las convenciones de Java y buenas practicas de Spring:
+
+- **camelCase** para variables, metodos y parametros.
+- **PascalCase** para clases e interfaces.
+- Paquetes en minusculas y separados por puntos (`com.example.project`).
+- Constantes en `UPPER_CASE_WITH_UNDERSCORES`.
+- Cada clase en su propio archivo.
+- Metodos cortos y enfocados en una sola responsabilidad.
+- Uso de anotaciones de Spring para inyeccion de dependencias y configuracion.
+- Evitar logica de negocio en controladores; usar servicios.
+- Manejo de excepciones con `@ControllerAdvice`.
+- Documentacion de APIs REST con Swagger/OpenAPI.
+
+**Kotlin & Jetpack Compose**
+
+Basado en convenciones de Kotlin y buenas practicas de Jetpack Compose:
+
+- **camelCase** para variables, funciones y parametros.
+- **PascalCase** para clases y objetos.
+- Paquetes en minusculas y separados por puntos (`com.example.project`).
+- Constantes en `UPPER_CASE_WITH_UNDERSCORES`.
+- Cada clase y objeto en su propio archivo.
+- Funciones cortas y enfocadas en una sola responsabilidad.
+- Uso de `@Composable` para funciones de UI.
+- Evitar logica de negocio en composables; usar ViewModels.
+- Manejo de estado con `State` y `MutableState`.
+- Documentar funciones publicas con KDoc.
+
+**C++ (Embedded App)**
+
+Basado en convenciones de C++ y criterios de desarrollo embebido:
+
+- Ingles obligatorio para todos los elementos del codigo.
+- Archivos en `kebab-case` o `PascalCase` segun el modulo (`wifi-manager.cpp`, `DataRecord.h`).
+- **camelCase** para variables y funciones; **PascalCase** para clases/structs.
+- Constantes y macros en `UPPER_SNAKE_CASE` (por ejemplo, `WIFI_SSID`, `ENDPOINT_URL`).
+- Sangria de 2 espacios; sin tabuladores.
+- Llaves en la misma linea que la declaracion.
+- Comentarios con `//` para linea simple y `/* ... */` para bloques.
+- Uso de `JsonDocument` (ArduinoJson v7+) y validacion de objetos antes de iterar.
+- `HTTPClient.begin()` y `HTTPClient.end()` en cada request; validar `httpResponseCode` antes de leer el body.
+
+**Python (Edge API Service)**
+
+Basado en PEP 8 y estilo Python:
+
+- Ingles obligatorio en todo el codigo.
+- **snake_case** para variables, funciones y metodos; **PascalCase** para clases.
+- Constantes en `UPPER_SNAKE_CASE`.
+- Modulos y paquetes en minusculas (`interfaces`, `application`).
+- Sangria de 4 espacios; sin tabuladores.
+- Longitud de linea recomendada 79-88 caracteres.
+- Type hints obligatorios en funciones publicas.
+- Docstrings en formato Google (Args, Returns, Raises).
+- Distinguir entidades de dominio y modelos de persistencia.
+- Preferir carga explicita sobre lazy loading en entorno edge.
+
+**Pruebas / Gherkin**
+
+Basado en buenas practicas de Gherkin:
+
+- Archivos `.feature` en ingles.
+- Cada escenario debe ser independiente y autocontenido.
+- Nombres descriptivos para features y escenarios.
+- Estructura Given-When-Then.
+
 
 
 #### 6.1.4. Software Deployment Configuration
