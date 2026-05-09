@@ -5402,6 +5402,30 @@ Para la aplicación móvil de uFlex, el enfoque principal es la facilidad de uso
 
     ![Menu de uFlex Mobile](./assets/design/style-guidelines/mobile/uflex-mobile-menu.png)
 
+**IoT Style Guidelines**
+
+Estas directrices definen las características físicas y visuales de los dispositivos para asegurar que la captura de datos biomecánicos sea fiable y que la interacción con el paciente sea intuitiva y libre de fricción técnica.
+
+**Diseño físico y carcasa (Wearable Nodes):** El diseño de los tres nodos (Bíceps, Antebrazo y Dorso de la mano) prioriza la ergonomía y la higiene, factores críticos en entornos de rehabilitación.
+
+- **Material:** La carcasa está fabricada en polímero médico ligero, resistente a caídas accidentales y con propiedades hipoalergénicas para evitar irritaciones durante sesiones clínicas prolongadas.
+- **Color:** Se utiliza el Blanco Hueso (#F7F5ED) como base para transmitir limpieza y calma, con detalles en Azul Petróleo (#074D61) en los puntos de sujeción para mantener la coherencia con el branding de uFlex.
+- **Ergonomía:** Los nodos presentan una base cóncava para adaptarse a la curvatura de las extremidades. Los bordes son redondeados para no interferir con la ropa del paciente o causar molestias durante movimientos de Flexión o Extensión.
+- **Sujeción:** Cada nodo cuenta con ranuras para correas de velcro elástico de grado médico, permitiendo una fijación firme que evita el deslizamiento, lo cual es vital para que los sensores entreguen ángulos precisos sin ruido por movimiento relativo.
+
+**Componentes visuales y hápticos en campo:** Estos elementos permiten que el paciente conozca el estado del sistema sin necesidad de mirar constantemente la aplicación móvil, reduciendo la carga cognitiva.
+
+- **Indicadores de Estado (LED RGB):** Un único LED ubicado en el nodo central (controlado por el ESP32) comunica el estado operativo mediante códigos de color coherentes con la paleta de uFlex:
+    - **Azul Parpadeante:** Dispositivo en modo de emparejamiento Bluetooth.
+    - **Verde Fijo:** Conexión exitosa y sensores calibrados listos para iniciar la sesión clínica.
+    - **Rojo Fijo:** Nivel de batería crítica o fallo en la lectura de un sensor.
+- **Feedback Háptico (Motor Vibrador):** Es el canal de comunicación principal durante el ejercicio. El motor tipo moneda genera una vibración breve pero perceptible cuando el sistema detecta un Movimiento Compensatorio (ej. elevación excesiva del hombro) o cuando el paciente alcanza el límite de su Rango de Movimiento (ROM) prescrito en su protocolo terapéutico.
+
+**Gestión de Energía e Interfaz de Usuario Física:** Para facilitar la autonomía del paciente, los nodos cuentan con una batería recargable de larga duración y un puerto USB-C para carga rápida.
+
+- **Puerto de Carga:** Ubicado de forma lateral para no interferir con la sujeción, utiliza un estándar USB-C protegido por una solapa de silicona, conectado a un módulo de recarga de la batería de litio.
+- **Identificador de Nodo:** Cada nodo está grabado con su posición técnica (B, A, D) mediante serigrafía de alta durabilidad, asegurando que el paciente coloque correctamente el sensor de "Bíceps", "Antebrazo" o "Dorso" para no alterar la lógica de la Cadena Cinemática.
+
 <hr class="page-break">
 
 ### 5.2. Information Architecture
