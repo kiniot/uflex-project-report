@@ -5393,27 +5393,280 @@ En integridad y rendimiento, el diseño incorpora reglas alineadas al dominio: �
 
 ##### 6.2.1.4. Development Evidence for Sprint Review
 
+Durante el Sprint 1 nuestro equipo se enfocó en sentar la base de los dos productos digitales de **front-end** que abren el ecosistema uFlex hacia los usuarios: la **Landing Page** pública (sitio de captación dirigido a clínicas y pacientes) y la **Web Application** (PWA clínica para fisioterapeutas y administradores de clínica). Los Web Services REST quedan fuera del alcance de este Sprint y se trabajarán en el Sprint 2 cuando se implemente el monolito de uFlex. A continuación se presentan los commits realizados en cada repositorio relacionados con la implementación del alcance del Sprint 1.
 
+**Repositorio: Landing Page**
+
+URL del repositorio: https://github.com/kiniot/uflex-landing-page
+
+> El repositorio de la Landing Page fue creado en la organización `kiniot` durante el Sprint 1, pero todavía no contiene commits ni entregables: la implementación de este producto se priorizó para un sprint posterior. Por ello no se incluye tabla de commits para este repositorio en el presente Sprint Review.
+
+**Repositorio: Web Application (PWA)**
+
+URL del repositorio: https://github.com/kiniot/uflex-clinic-web
+
+| Repository              | Branch                       | Commit Id | Commit Message                                                                            | Commit Message Body                                                                                                                                  | Committed on (Date) |
+|-------------------------|------------------------------|-----------|-------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------|
+| kiniot/uflex-clinic-web | feature/initial-structure    | d87c18f   | fix: update .gitignore to include environment.ts                                          | —                                                                                                                                                    | 27/04/2026          |
+| kiniot/uflex-clinic-web | feature/initial-structure    | 9fa7ea3   | feat: add file replacements for development environment in angular.json                   | —                                                                                                                                                    | 27/04/2026          |
+| kiniot/uflex-clinic-web | feature/initial-structure    | 3687e61   | feat: add initial documentation and skills-lock configuration                             | —                                                                                                                                                    | 27/04/2026          |
+| kiniot/uflex-clinic-web | feature/initial-structure    | 9f872ff   | feat: add .npmignore to specify files to ignore when publishing                           | —                                                                                                                                                    | 27/04/2026          |
+| kiniot/uflex-clinic-web | feature/initial-structure    | 9d04bfa   | feat: enforce strict engine checks in .npmrc for Node.js compatibility                    | —                                                                                                                                                    | 27/04/2026          |
+| kiniot/uflex-clinic-web | feature/initial-structure    | 305e80d   | feat: add BaseEntity interface to define standard entity structure                        | —                                                                                                                                                    | 28/04/2026          |
+| kiniot/uflex-clinic-web | feature/initial-structure    | 6370165   | feat: add base classes for API services and error handling utilities                      | —                                                                                                                                                    | 28/04/2026          |
+| kiniot/uflex-clinic-web | feature/initial-structure    | dd38dfc   | feat: add BaseForm class for common form validation utilities                             | —                                                                                                                                                    | 28/04/2026          |
+| kiniot/uflex-clinic-web | feature/initial-structure    | f010f40   | feat(shared): add footer component with styling and translation support                   | —                                                                                                                                                    | 28/04/2026          |
+| kiniot/uflex-clinic-web | feature/initial-structure    | 9795def   | feat(shared): add language switcher component with language selection functionality       | —                                                                                                                                                    | 28/04/2026          |
+| kiniot/uflex-clinic-web | feature/initial-structure    | d052953   | feat(shared): add About, Home and Page Not Found components with translation support      | —                                                                                                                                                    | 28/04/2026          |
+| kiniot/uflex-clinic-web | feature/initial-structure    | de1e384   | feat(app): update title in index.html to reflect new branding                             | —                                                                                                                                                    | 28/04/2026          |
+| kiniot/uflex-clinic-web | feature/initial-structure    | 6f83a32   | feat(iam): add User entity implementation with ID and username properties                 | —                                                                                                                                                    | 28/04/2026          |
+| kiniot/uflex-clinic-web | feature/initial-structure    | f36fbe0   | feat(iam): add SignInCommand and SignUpCommand for user authentication                    | —                                                                                                                                                    | 28/04/2026          |
+| kiniot/uflex-clinic-web | feature/initial-structure    | 8151dcd   | feat(iam): implement IamApi service with sign-up and sign-in functionality                | —                                                                                                                                                    | 28/04/2026          |
+| kiniot/uflex-clinic-web | feature/initial-structure    | af8aac5   | feat(iam): add IamStore service for user authentication and state management              | —                                                                                                                                                    | 28/04/2026          |
+| kiniot/uflex-clinic-web | feature/initial-structure    | a0ca847   | feat(iam): add IAM guard and interceptor for authentication and authorization             | —                                                                                                                                                    | 28/04/2026          |
+| kiniot/uflex-clinic-web | feature/initial-structure    | 63813ba   | feat(iam): add authentication section component for user sign-in and sign-up              | —                                                                                                                                                    | 28/04/2026          |
+| kiniot/uflex-clinic-web | feature/initial-structure    | 6570c5b   | feat(iam): add sign-in and sign-up form components with validation                        | —                                                                                                                                                    | 28/04/2026          |
+| kiniot/uflex-clinic-web | feature/initial-structure    | 9435b32   | feat(iam): add routes for sign-in and sign-up forms                                       | —                                                                                                                                                    | 28/04/2026          |
+| kiniot/uflex-clinic-web | feature/initial-structure    | 7d6ace1   | feat(shared): implement main layout component with navigation and footer                  | —                                                                                                                                                    | 28/04/2026          |
+| kiniot/uflex-clinic-web | feature/initial-structure    | 67dcbd2   | feat(app): enhance application configuration with routing, translation, and layout components | —                                                                                                                                                | 28/04/2026          |
+| kiniot/uflex-clinic-web | feature/initial-structure    | d229614   | feat(i18n): add English and Spanish localization files for application content            | —                                                                                                                                                    | 28/04/2026          |
+| kiniot/uflex-clinic-web | feature/initial-structure    | 97a5cec   | feat(app): integrate PrimeNG with custom theme and update styles                          | —                                                                                                                                                    | 29/04/2026          |
+| kiniot/uflex-clinic-web | feature/initial-structure    | 15dbeda   | feat(app): implement custom theme preset and update font styles                           | —                                                                                                                                                    | 03/05/2026          |
+| kiniot/uflex-clinic-web | feature/initial-structure    | d859233   | feat(app): add theme switcher component and implement dark mode functionality             | —                                                                                                                                                    | 03/05/2026          |
+| kiniot/uflex-clinic-web | feature/initial-structure → main | dc5fdc4 | Merge pull request #1 from kiniot/feature/initial-structure                            | Feature/initial structure                                                                                                                            | 03/05/2026          |
+| kiniot/uflex-clinic-web | feature/auth-screens         | b2dc195   | feat(layout): hide chrome on auth routes                                                  | Oculta header y footer globales en rutas /iam para que sign-in y sign-up se rendericen full-screen al estilo del Figma; añade un toolbar flotante con language y theme switcher. | 07/05/2026          |
+| kiniot/uflex-clinic-web | feature/auth-screens         | ec6f858   | feat(iam): redesign sign-in to match figma                                                | Reemplaza el sign-in con la card centrada del Figma (brand block, p-inputText, p-password con toggleMask, p-checkbox de remember-me), añade keys i18n y conserva el flujo de SignInCommand. | 07/05/2026          |
+| kiniot/uflex-clinic-web | feature/auth-screens         | 6c4536e   | feat(iam): redesign sign-up to match figma                                                | Replica el layout del sign-in en sign-up con los cinco campos del Figma (full name, email, password, confirm-password y código de invitación con addon `#`); el store sigue recibiendo {username, password}. | 07/05/2026          |
+| kiniot/uflex-clinic-web | feature/auth-screens         | e7c616d   | feat(layout): place theme and language switchers above auth card                          | Coloca el auth toolbar arriba de la card en una columna flex centrada y alinea el theme switcher al borde izquierdo y el language switcher al derecho. | 07/05/2026          |
+| kiniot/uflex-clinic-web | feature/auth-screens         | 08a6051   | feat(iam): add role selector to sign-up                                                   | Reincorpora el "Select your role" pill toggle con los dos roles del Figma (physiotherapist / clinic admin), requerido en el form pero solo de presentación. | 07/05/2026          |
+| kiniot/uflex-clinic-web | feature/auth-screens → develop | d05d742 | Merge branch 'feature/auth-screens' into develop                                          | Trae los rediseños de sign-in y sign-up, el auth toolbar arriba de la card con switchers, el role selector y el opt-out de analytics del CLI.        | 07/05/2026          |
+| kiniot/uflex-clinic-web | feature/clinic-admin-screens | 0566c47   | feat: add environment pnpm start                                                          | —                                                                                                                                                    | 07/05/2026          |
+| kiniot/uflex-clinic-web | feature/clinic-admin-screens | 34d1b1b   | feat: add environment files testing pnpm start                                            | —                                                                                                                                                    | 07/05/2026          |
+| kiniot/uflex-clinic-web | feature/clinic-admin-screens | a5619d5   | feat(shared): add admin-shell, page-header, search-input, stat-card                       | Componentes genéricos para páginas tipo portal: AdminShell con sidebar+topbar dirigido por config, PageHeader con slot de acción, SearchInput basado en PrimeNG y StatCard reutilizable. | 07/05/2026          |
+| kiniot/uflex-clinic-web | feature/clinic-admin-screens | cff0770   | feat(structure): scaffold portals composing six bounded contexts                          | Define los portales de clinic-admin y physiotherapist como composiciones en presentation que montan rutas de iam, therapy, device, organization y subscription bajo el AdminShell. | 07/05/2026          |
+| kiniot/uflex-clinic-web | feature/clinic-admin-screens | 4b02ea4   | feat(therapy): exercise catalog with filters and registration view                        | Construye el bounded context Therapy: Exercise entity, RegisterExerciseCommand, TherapyStore con catálogo en señales, ExerciseCard, filtros y vista de registro full-page. | 07/05/2026          |
+| kiniot/uflex-clinic-web | feature/clinic-admin-screens | 580f5fb   | feat(device): inventory page with stat cards and fleet table                              | Construye el bounded context Device: Device entity con DeviceStatus/CalibrationStatus, DeviceStore con stats computadas y FleetTable con baterías, BLE, calibración y status pills. | 07/05/2026          |
+| kiniot/uflex-clinic-web | feature/clinic-admin-screens | 850af06   | feat(planning): scaffold patient bounded context                                          | Patient como bounded context propio de Planning (consumido por el flujo link-to-patient de Device) con la estructura estándar de capas dominio/aplicación/infraestructura. | 07/05/2026          |
+| kiniot/uflex-clinic-web | feature/clinic-admin-screens | 6f8614e   | feat(device): add calibrate, diagnostics, register and link views                         | Cuatro rutas hermanas a partir del inventario: live calibration, diagnostic run con terminal log, registro de hardware con checklist y link-to-patient con candidatos del Planning. | 07/05/2026          |
+| kiniot/uflex-clinic-web | feature/clinic-admin-screens | 3cd72b2   | feat(organization): add clinic and staff management                                       | Bounded context Organization con header de identidad de clínica, KPI cards (pacientes, fisioterapeutas, kits IoT), tabs/tabla de staff y sub-vista de enrolamiento de fisioterapeutas. | 07/05/2026          |
+| kiniot/uflex-clinic-web | feature/clinic-admin-screens | 4bd6681   | feat(subscription): add plan dashboard with billing history                               | Bounded context Subscription: card de plan activo con uso de licencias y storage, visual del método de pago, tabla de billing history y grid de planes disponibles.    | 07/05/2026          |
+| kiniot/uflex-clinic-web | feature/clinic-admin-screens | 285b7c3   | feat(iam): replace profile placeholder with user directory                                | Añade UserProfile entity, ProfileStore y la vista de gestión con action cards, métrica de usuarios activos y tabla paginada con rol, status, verificación y last-login. | 07/05/2026          |
+| kiniot/uflex-clinic-web | feature/clinic-admin-screens | 2c79148   | feat(i18n): add keys for new clinic-admin screens                                         | Traducciones EN/ES para sub-rutas de device (calibrate/diagnostics/register/link), organization, enrolamiento de fisioterapeutas, subscription y profile directory.    | 07/05/2026          |
+| kiniot/uflex-clinic-web | feature/clinic-admin-screens → develop | 14ae92e | Merge branch 'feature/clinic-admin-screens' into develop                            | Incorpora el portal completo del clinic-admin: shell de administración con stat cards y buscador, más seis bounded contexts (therapy, device, organization, planning, subscription, IAM profile directory) con sus vistas, sub-rutas y claves i18n. | 07/05/2026          |
+| kiniot/uflex-clinic-web | feature/physiotherapist-screens | 77caf29 | feat(planning): add dashboard signals and therapy roadmap                                  | Sesiones, alertas clínicas y snapshot de métricas para el dashboard del fisioterapeuta; añade Therapy Roadmap con indicador de cuatro fases, routine builder interactivo y trayectoria de largo plazo. | 07/05/2026          |
+| kiniot/uflex-clinic-web | feature/physiotherapist-screens | 460a653 | feat(therapy): add patient roster and library protocols                                    | Vista Therapy Management del fisioterapeuta (paciente-céntrica con KPIs y roster de casos activos) y proyección LibraryProtocol consumida por el Therapy Roadmap.       | 07/05/2026          |
+| kiniot/uflex-clinic-web | feature/physiotherapist-screens | 6034ef8 | feat(device): add physiotherapist inventory view                                           | Proyección InventoryDevice y value objects FleetSnapshot que dirigen la Device Inventory page del fisioterapeuta con conectividad, batería, tabla asignable y cards de mantenimiento. | 07/05/2026          |
+| kiniot/uflex-clinic-web | feature/physiotherapist-screens | 3ba691b | feat(organization): add physiotherapist organization view                                  | Cola de pacientes sin asignar, directorio de staff con progreso de caseload y KPIs de fleet-health + clinic-efficiency que dirigen la Organization page del fisioterapeuta. | 07/05/2026          |
+| kiniot/uflex-clinic-web | feature/physiotherapist-screens | 3dc6d6a | feat(physiotherapist): activate portal shell with dashboard                                | Reemplaza el placeholder por el shell basado en AdminShell (brand, sidebar, topbar con role pill) y conecta sub-rutas a cada contexto; default es el clinician dashboard. | 07/05/2026          |
+| kiniot/uflex-clinic-web | feature/physiotherapist-screens | 76cb5a9 | feat(i18n): add keys for physiotherapist screens                                           | Traducciones EN/ES para shell, dashboard, therapy roster, therapy roadmap, device inventory y organization view del fisioterapeuta.                  | 07/05/2026          |
+| kiniot/uflex-clinic-web | feature/physiotherapist-screens → develop | 66844ef | Merge branch 'feature/physiotherapist-screens' into develop                          | Incorpora el portal del fisioterapeuta: shell con sidebar, topbar de perfil con role pill y cinco vistas específicas del rol que componen datos de los bounded contexts Therapy, Planning, Device y Organization. | 07/05/2026          |
+| kiniot/uflex-clinic-web | feature/subscription         | c51c803   | feat(subscription): add subscription dashboard content view                               | —                                                                                                                                                    | 08/05/2026          |
+| kiniot/uflex-clinic-web | feature/subscription         | 05faac1   | feat: add presentation subscription and delete environment file                           | —                                                                                                                                                    | 08/05/2026          |
+| kiniot/uflex-clinic-web | feature/subscription         | f5f7bbc   | fix: solving merging problems subscription and develop roots                              | —                                                                                                                                                    | 08/05/2026          |
+| kiniot/uflex-clinic-web | feature/subscription         | d43aaf8   | feat: add subscription bounded context with DDD structure and testing development         | —                                                                                                                                                    | 08/05/2026          |
+| kiniot/uflex-clinic-web | feature/iam-integration      | f73fbfe   | feat(iam): integrate with backend and add user/password UI                                | Alinea DTOs con el contrato del backend (email, UUID, lista de roles), restaura sesión desde JWT, redirige por rol al login, añade modal de cambio de contraseña conectado a PUT /api/v1/users/me/password y refresca i18n keys. | 08/05/2026          |
+| kiniot/uflex-clinic-web | feature/iam-integration → develop | 487504f | Merge branch 'feature/iam-integration' into develop                                     | Integra la Web App con el monolito IAM del backend: alinea DTOs (email + UUID + lista de roles), restaura la sesión desde el JWT al refrescar, redirige por rol al iniciar sesión, agrega modal de cambio de contraseña conectado al API y refresca claves i18n de sign-in y topbar. | 08/05/2026          |
 
 ##### 6.2.1.5. Testing Suite Evidence for Sprint Review
 
+Para este Sprint el alcance de pruebas automatizadas se concentra en **Unit Tests** sobre la Web Application (PWA), implementados con **Vitest** sobre el builder oficial `@angular/build:unit-test` y **Angular TestBed**. Las pruebas cubren las capas de **dominio** (entidades y commands del bounded context IAM y Device) y **aplicación** (stores con signals y computed properties), aplicando el patrón de mocks vía `TestBed.configureTestingModule({ providers: [{ provide: …, useValue: … }] })` para aislar las dependencias de infraestructura (HTTP, Router). El repositorio de la Landing Page no incluye Unit Tests en este Sprint porque el repo aún no contiene implementación. Los **Integration Tests y Acceptance Tests bajo el enfoque BDD** (archivos `.feature` con Gherkin y Steps) **no aplican en el Sprint 1** y se incorporarán en el Sprint 2 cuando se conecte la Web App al monolito REST API en escenarios end-to-end.
 
+**Unit Tests — Landing Page**
+
+> El repositorio de la Landing Page todavía no contiene código fuente ni suite de pruebas. Las Unit Tests se incluirán cuando arranque la implementación de este producto.
+
+**Unit Tests — Web Application (PWA)**
+
+| Test File                                                    | Clase / Componente bajo prueba         | Comportamientos verificados                                                                                                                                                                                                                  |
+|--------------------------------------------------------------|----------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `iam/domain/model/user.entity.spec.ts`                       | `User` (Aggregate / BaseEntity)        | Construcción desde resource con `id`, `email` y `roles`; default de `roles` a arreglo vacío cuando no se proveen; mutación de campos vía setters.                                                                                            |
+| `iam/domain/model/sign-in.command.spec.ts`                   | `SignInCommand` (Command)              | Construcción a partir del resource `{email, password}`; actualización de credenciales por setters.                                                                                                                                           |
+| `iam/domain/model/change-password.command.spec.ts`           | `ChangePasswordCommand` (Command)      | Construcción con `currentPassword` y `newPassword`; reemplazo de ambos valores por setters.                                                                                                                                                  |
+| `iam/application/iam.store.spec.ts`                          | `IamStore` (Application Store)         | Estado signed-out por defecto; restauración de sesión desde JWT no expirado en `localStorage`; descarte de JWT expirado y limpieza del token; sign-in exitoso actualiza estado y redirige al home por rol; sign-in fallido limpia sesión; sign-out remueve token y redirige a `/iam/sign-in`. |
+| `device/domain/model/device.entity.spec.ts`                  | `Device` (BaseEntity)                  | Construcción con todos los campos del kit IoT; soporte de `linkedPatient = null` para kits sin asignar; mutación de campos operacionales (`batteryLevel`, `status`, `calibrationStatus`).                                                    |
+| `device/application/device.store.spec.ts`                    | `DeviceStore` (Application Store)      | Cómputo de `totalActiveKits` (status ≠ offline), `requiresCalibration` (calibrationStatus = expired), `onlinePercentage` (online / total redondeado) y `availableUnitsPct` sobre el snapshot del fleet, todo derivado del mock de 4 dispositivos. |
+| `app.spec.ts`                                                | `App` (root component)                 | Creación del componente raíz con providers de `TranslateModule.forRoot()` y `provideRouter([])`; verificación de que el `<app-layout>` raíz se renderiza dentro del DOM.                                                                     |
+
+> Resultado del último run: **22 tests pasando en 7 spec files** (`pnpm test --watch=false` ejecuta el builder `@angular/build:unit-test` con Vitest 4.1.5).
+
+**Commits relacionados con Testing — Landing Page**
+
+URL del repositorio: https://github.com/kiniot/uflex-landing-page
+
+> Sin commits de testing en este Sprint: el repositorio aún no contiene código fuente ni suite de pruebas.
+
+**Commits relacionados con Testing — Web Application (PWA)**
+
+URL del repositorio: https://github.com/kiniot/uflex-clinic-web
+
+| Repository              | Branch                            | Commit Id | Commit Message                                                | Commit Message Body                                                                                                                                                                                  | Committed on (Date) |
+|-------------------------|-----------------------------------|-----------|---------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------|
+| kiniot/uflex-clinic-web | feature/unit-tests                | 5d68883   | test(iam): cover entities, commands and store                 | Añade unit tests del bounded context IAM: constructores de `User` y los commands con sus getters/setters, más `IamStore` con restauración de sesión desde JWT, sign-in exitoso/fallido y sign-out. Los specs del store mockean `IamApi` vía TestBed para no depender de `HttpClient`. | 09/05/2026          |
+| kiniot/uflex-clinic-web | feature/unit-tests                | 21e2057   | test(device): cover entity and store computed signals         | Añade unit tests del bounded context Device: construcción y mutación de `Device` y los computed signals de `DeviceStore` (`totalActiveKits`, `requiresCalibration`, `onlinePercentage`, `availableUnitsPct`) calculados sobre el mock del fleet. | 09/05/2026          |
+| kiniot/uflex-clinic-web | feature/unit-tests                | bee573e   | test(app): fix root spec to provide translate and router      | El spec raíz fallaba porque `App` inyecta `TranslateService` y el layout usa `Router`. Provee `TranslateModule.forRoot()` y `provideRouter([])` en el módulo de test, y reemplaza el assertion obsoleto `Hello, uflex-clinic-web` por uno que verifica que el layout raíz se renderiza. | 09/05/2026          |
+| kiniot/uflex-clinic-web | feature/unit-tests → develop      | 6fa54c7   | Merge branch 'feature/unit-tests' into develop                | Incorpora la suite de Unit Tests del Sprint 1 cubriendo IAM (entities, commands y store) y Device (entity y store computed signals), más el fix del spec raíz para dejar la suite completa en verde. | 09/05/2026          |
 
 ##### 6.2.1.6. Execution Evidence for Sprint Review
 
+En este Sprint entregamos una primera versión navegable de la **Web Application (PWA)** de uFlex. El producto cubre el flujo de autenticación común (sign-in y sign-up) y dos portales diferenciados por rol: el portal del **Administrador de Clínica** (clinic-admin), con acceso a los bounded contexts de Therapy, Device, Organization, Subscription y Profile/IAM; y el portal del **Fisioterapeuta** (physiotherapist), con su propio dashboard y vistas de Therapy, Device, Organization y Planning. La **Landing Page** queda fuera del alcance ejecutable de este Sprint porque su repositorio aún no contiene implementación, y los Web Services se entregarán en el Sprint 2 (alcance del monolito REST API). A continuación se presentan las capturas de las principales vistas entregadas.
 
+**Landing Page — vistas principales**
+
+> No aplica en este Sprint Review: el repositorio de la Landing Page todavía no contiene implementación, por lo que no hay vistas ejecutables que capturar.
+
+**Web Application (PWA) — Autenticación**
+
+<div style="text-align: center;">
+  <img src="assets/images/screenshots/sprint-1/Sign-in.png" alt="Web App — Sign In" style="max-width: 100%; height: auto;">
+</div>
+
+*Figura 6.2.1.6.1. Web Application — Pantalla de inicio de sesión.*
+
+<div style="text-align: center;">
+  <img src="assets/images/screenshots/sprint-1/Sign-up.png" alt="Web App — Sign Up" style="max-width: 100%; height: auto;">
+</div>
+
+*Figura 6.2.1.6.2. Web Application — Pantalla de registro.*
+
+**Web Application (PWA) — Portal del Administrador de Clínica**
+
+<div style="text-align: center;">
+  <img src="assets/images/screenshots/sprint-1/Administrador-therapy-screen.png" alt="Clinic Admin — Therapy" style="max-width: 100%; height: auto;">
+</div>
+
+*Figura 6.2.1.6.3. Clinic Admin — Catálogo de Therapy (ejercicios y filtros).*
+
+<div style="text-align: center;">
+  <img src="assets/images/screenshots/sprint-1/Administrador-device-screen.png" alt="Clinic Admin — Device" style="max-width: 100%; height: auto;">
+</div>
+
+*Figura 6.2.1.6.4. Clinic Admin — Inventario de dispositivos IoT.*
+
+<div style="text-align: center;">
+  <img src="assets/images/screenshots/sprint-1/Administrador-organization-screen.png" alt="Clinic Admin — Organization" style="max-width: 100%; height: auto;">
+</div>
+
+*Figura 6.2.1.6.5. Clinic Admin — Gestión de la clínica y staff.*
+
+<div style="text-align: center;">
+  <img src="assets/images/screenshots/sprint-1/Administrador-subscription-screen.png" alt="Clinic Admin — Subscription" style="max-width: 100%; height: auto;">
+</div>
+
+*Figura 6.2.1.6.6. Clinic Admin — Plan, uso de licencias e historial de facturación.*
+
+<div style="text-align: center;">
+  <img src="assets/images/screenshots/sprint-1/Administrador-profile-screen.png" alt="Clinic Admin — Profile / IAM" style="max-width: 100%; height: auto;">
+</div>
+
+*Figura 6.2.1.6.7. Clinic Admin — Directorio de usuarios (IAM Profile).*
+
+**Web Application (PWA) — Portal del Fisioterapeuta**
+
+<div style="text-align: center;">
+  <img src="assets/images/screenshots/sprint-1/Physiotherapist-dashboard-screen.png" alt="Physiotherapist — Dashboard" style="max-width: 100%; height: auto;">
+</div>
+
+*Figura 6.2.1.6.8. Physiotherapist — Dashboard del día (sesiones, alertas y métricas clínicas).*
+
+<div style="text-align: center;">
+  <img src="assets/images/screenshots/sprint-1/Physiotherapist-therapy-screen.png" alt="Physiotherapist — Therapy" style="max-width: 100%; height: auto;">
+</div>
+
+*Figura 6.2.1.6.9. Physiotherapist — Gestión de pacientes y protocolos de terapia.*
+
+<div style="text-align: center;">
+  <img src="assets/images/screenshots/sprint-1/Physiotherapist-planning-screen.png" alt="Physiotherapist — Planning" style="max-width: 100%; height: auto;">
+</div>
+
+*Figura 6.2.1.6.10. Physiotherapist — Therapy Roadmap y routine builder.*
+
+<div style="text-align: center;">
+  <img src="assets/images/screenshots/sprint-1/Physiotherapist-device-screen.png" alt="Physiotherapist — Device" style="max-width: 100%; height: auto;">
+</div>
+
+*Figura 6.2.1.6.11. Physiotherapist — Inventario de kits IoT con conectividad y batería.*
+
+<div style="text-align: center;">
+  <img src="assets/images/screenshots/sprint-1/Physiotherapist-organization-screen.png" alt="Physiotherapist — Organization" style="max-width: 100%; height: auto;">
+</div>
+
+*Figura 6.2.1.6.12. Physiotherapist — Cola de pacientes sin asignar y KPIs operacionales.*
 
 ##### 6.2.1.7. Services Documentation Evidence for Sprint Review
 
-
+Esta sección **no aplica para el Sprint 1** porque el alcance entregado se concentró en los productos de front-end (Landing Page y Web Application), sin incluir Web Services. La implementación del **monolito REST API** de uFlex (Java + Spring Boot) está planificada para el **Sprint 2**, momento en el que se documentarán los endpoints con **OpenAPI/Swagger** siguiendo la estructura solicitada (verbo HTTP, sintaxis de llamada, parámetros, ejemplos de request/response, capturas de la UI de Swagger desplegada y commits asociados al repositorio del backend).
 
 ##### 6.2.1.8. Software Deployment Evidence for Sprint Review
 
+Durante este Sprint el equipo realizó las primeras actividades de despliegue de la **Web Application (PWA)** en **Vercel**, el proveedor cloud elegido para los productos de front-end. La **Landing Page** queda fuera del alcance de despliegue de este Sprint porque su repositorio aún no contiene implementación, y los **Web Services** se desplegarán en el Sprint 2 cuando se entregue el monolito REST API. A continuación se documenta el flujo de despliegue ejecutado.
 
+**Despliegue — Landing Page**
+
+> No aplica en este Sprint Review: el repositorio de la Landing Page todavía no contiene implementación, por lo tanto no hay artefacto que desplegar.
+
+**Despliegue — Web Application (PWA)**
+
+URL pública: <https://uflex-clinic-web.vercel.app/>
+
+Pasos realizados durante el Sprint:
+1. **Creación de la cuenta en Vercel.** Se registró la cuenta del integrante responsable usando "Continue with GitHub" para enlazar Vercel directamente con el usuario de GitHub que tiene acceso a la organización `kiniot`.
+2. **Importación del repositorio.** Desde el dashboard de Vercel se eligió "Add New… → Project" y se importó el repositorio `kiniot/uflex-clinic-web`. Para que Vercel pudiera detectarlo bajo el plan free (Hobby), el repositorio se cambió a visibilidad pública en GitHub, ya que el plan gratuito no permite desplegar repos privados de organizaciones.
+3. **Configuración del build.** Vercel detectó automáticamente Angular como framework. Se confirmaron los parámetros: `Install Command: pnpm install`, `Build Command: pnpm build`, `Output Directory: dist/uflex-clinic-web/browser` y la rama de producción configurada en `develop`.
+4. **Verificación del dominio público y navegación.** Tras finalizar el primer build, Vercel asignó la URL `https://uflex-clinic-web.vercel.app/`. Se validó que el sitio carga correctamente, que el redirect del path raíz (`/`) lleva a `/iam/sign-in` (gracias al fix introducido en el commit `0e7f0b1`) y que la PWA se instala desde el navegador.
+
+<div style="text-align: center;">
+  <img src="assets/images/screenshots/sprint-1/deploy-webapp-vercel.png" alt="Deploy Web App — Vercel" style="max-width: 100%; height: auto;">
+</div>
+
+*Figura 6.2.1.8.1. Vercel — proyecto y despliegue de la Web Application.*
 
 ##### 6.2.1.9. Team Collaboration Insights during Sprint
 
+Durante el Sprint 1 las actividades de implementación se distribuyeron de forma que **todos los integrantes del equipo tuvieran participación tanto en la Landing Page como en la Web Application (PWA)**, siguiendo la repartición de aspect leaders y collaborators acordada en la sesión de Sprint Planning. Coordinamos el avance con dailies cortos y revisiones de pull requests para garantizar consistencia entre ambos productos. A continuación se presentan las capturas de los analíticos de colaboración de GitHub para cada repositorio del Sprint, junto con la interpretación del equipo.
 
+**GitHub Insights — Landing Page**
+
+<div style="text-align: center;">
+  <img src="assets/images/screenshots/sprint-1/insights-landing-contributors.png" alt="Landing — Contributors" style="max-width: 100%; height: auto;">
+</div>
+
+*Figura 6.2.1.9.1. Landing Page — Contributors.* <!-- TODO: subir captura a assets/images/screenshots/sprint-1/insights-landing-contributors.png -->
+
+<div style="text-align: center;">
+  <img src="assets/images/screenshots/sprint-1/insights-landing-commits.png" alt="Landing — Commits" style="max-width: 100%; height: auto;">
+</div>
+
+*Figura 6.2.1.9.2. Landing Page — Commits over time.* <!-- TODO: subir captura a assets/images/screenshots/sprint-1/insights-landing-commits.png -->
+
+<div style="text-align: center;">
+  <img src="assets/images/screenshots/sprint-1/insights-landing-network.png" alt="Landing — Network graph" style="max-width: 100%; height: auto;">
+</div>
+
+*Figura 6.2.1.9.3. Landing Page — Network graph.* <!-- TODO: subir captura a assets/images/screenshots/sprint-1/insights-landing-network.png -->
+
+**GitHub Insights — Web Application (PWA)**
+
+<div style="text-align: center;">
+  <img src="assets/images/screenshots/sprint-1/insights-webapp-contributors.png" alt="Web App — Contributors" style="max-width: 100%; height: auto;">
+</div>
+
+*Figura 6.2.1.9.4. Web Application — Contributors.* <!-- TODO: subir captura a assets/images/screenshots/sprint-1/insights-webapp-contributors.png -->
+
+<div style="text-align: center;">
+  <img src="assets/images/screenshots/sprint-1/insights-webapp-commits.png" alt="Web App — Commits" style="max-width: 100%; height: auto;">
+</div>
+
+*Figura 6.2.1.9.5. Web Application — Commits over time.* <!-- TODO: subir captura a assets/images/screenshots/sprint-1/insights-webapp-commits.png -->
+
+<div style="text-align: center;">
+  <img src="assets/images/screenshots/sprint-1/insights-webapp-network.png" alt="Web App — Network graph" style="max-width: 100%; height: auto;">
+</div>
+
+*Figura 6.2.1.9.6. Web Application — Network graph.* <!-- TODO: subir captura a assets/images/screenshots/sprint-1/insights-webapp-network.png -->
+
+**Interpretación del equipo**
+
+<!-- TODO: redactar 1-2 párrafos interpretando los analíticos cuando ya se tengan las capturas. Sugerencia: comentar (a) la distribución de commits por integrante (¿quién lideró cada producto?, ¿hubo participación pareja?), (b) los picos de actividad y su correlación con los hitos del Sprint (planning, mid-sprint, review), y (c) cómo el network graph refleja la estrategia de ramas (feature → develop → main) y los merges con --no-ff que el equipo acordó. -->
 
 <hr class="page-break">
 
