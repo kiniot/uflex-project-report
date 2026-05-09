@@ -5430,11 +5430,24 @@ Estas directrices definen las características físicas y visuales de los dispos
 
 ### 5.2. Information Architecture
 
-
+En esta sección se describe la arquitectura de la información de la plataforma uFlex, la cual ha sido diseñada para estructurar, organizar y etiquetar el contenido de manera que los fisioterapeutas, administradores y pacientes encuentren la información clínica y operativa sin esfuerzo. El objetivo primordial es reducir la carga cognitiva mediante una jerarquía clara que facilite la toma de decisiones médicas y el cumplimiento de las rutinas de ejercicios.
 
 #### 5.2.1. Organization Systems
 
+Para garantizar que el contenido de uFlex sea accesible y lógico, se han aplicado diversos sistemas de organización adaptados a la naturaleza de los datos y al perfil de cada usuario:
 
+**Visual Organization Systems (Sistemas de Organización Visual):**
+
+- **Organización Jerárquica (Visual Hierarchy):** Se aplica de forma predominante en los dashboards de la plataforma web y la aplicación móvil. La información más crítica, como el estado de conexión de los Wearable Nodes y las métricas de ROM (Range of Motion), ocupa el nivel superior de la jerarquía visual mediante el uso de tarjetas (cards) destacadas y tipografía Plus Jakarta Sans en pesos mayores. Esto permite que el fisioterapeuta identifique anomalías en la rehabilitación de un vistazo.
+- **Organización Secuencial (Step-by-step):** Este sistema es el eje central de la experiencia del paciente durante las Clinical Sessions. El flujo de la terapia se organiza como un proceso lineal que guía al usuario desde el emparejamiento de los sensores, pasando por la ejecución guiada de cada ejercicio (Flexión, Extensión, etc.), hasta el reporte final de dolor y progreso.
+- **Organización Matricial:** Se utiliza en la sección de analítica avanzada para especialistas y administradores. Permite cruzar variables como la Adherencia del paciente frente a la mejora en los ángulos de movimiento a lo largo del tiempo, facilitando la comparación de múltiples datos complejos en una sola vista.
+
+**Content Categorization Schemes (Esquemas de Categorización de Contenido):**
+
+- **Según Audiencia (Grupos de Usuarios):** Es el esquema principal de la arquitectura de uFlex. El contenido se segmenta estrictamente según el rol: los Especialistas acceden a herramientas de prescripción y monitoreo técnico, los Administradores a la gestión multitenant de la clínica, y los Pacientes a su plan de entrenamiento personal y feedback biomecánico inmediato.
+- **Cronológico:** Aplicado en el historial de recuperación. Los datos capturados por los sensores BNO055 se organizan por fechas y sesiones, permitiendo al usuario y al médico observar la evolución de la Rigidez Articular desde el inicio del tratamiento hasta la fecha actual.
+- **Por Tópicos:** Se utiliza en la biblioteca de ejercicios y protocolos terapéuticos, categorizando el contenido por articulación (Codo o Muñeca) y tipo de movimiento (Pronación, Supinación, etc.), facilitando la búsqueda de ejercicios específicos para cada patología.
+- **Alfabético:** Este esquema se aplica de forma auxiliar en los listados de pacientes y en el inventario de dispositivos IoT de la clínica para facilitar la localización rápida de registros específicos en bases de datos extensas.
 
 #### 5.2.2. Labeling Systems
 
