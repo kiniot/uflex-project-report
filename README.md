@@ -5626,6 +5626,76 @@ Basado en buenas practicas de Gherkin:
 
 #### 6.1.4. Software Deployment Configuration
 
+Se utilizaran las siguientes plataformas para el despliegue de los diferentes productos del proyecto uFlex:
+
+| **Producto** | **Plataforma de Despliegue** | **Proposito** | **Enlace / Ruta de Acceso** |
+|---|---|---|---|
+| **Landing Page** | **Netlify** | Despliegue automatico y gratuito de la landing page. | [https://www.netlify.com](https://www.netlify.com) |
+| **REST API** | **Railway** | Despliegue automatico del servicio REST API. | [https://railway.app](https://railway.app) |
+| **Mobile App (Android)** | **Firebase** | Distribucion de builds y despliegue automatico para pruebas internas. | [https://firebase.google.com](https://firebase.google.com) |
+| **Mobile App (Android)** | **Google Play Console** | Publicacion y distribucion de la app nativa en Android. | [https://play.google.com/console](https://play.google.com/console) |
+| **Mobile App (iOS)** | **Apple App Store Connect** | Publicacion y distribucion de la app nativa en iOS. | [https://appstoreconnect.apple.com](https://appstoreconnect.apple.com) |
+| **Database** | **Supabase** | Despliegue automatico de la base de datos PostgreSQL. | [https://supabase.com](https://supabase.com) |
+
+**Netlify**
+
+Netlify es una plataforma de alojamiento y despliegue continuo para sitios web estaticos y aplicaciones frontend. Ofrece integracion con repositorios GitHub para despliegues automaticos.
+
+Para configurar el despliegue automatico de la landing page en Netlify:
+1. Crear una cuenta en [Netlify](https://www.netlify.com) y vincularla al repositorio de GitHub de la landing page.
+2. Configurar un nuevo sitio en Netlify, seleccionando el repositorio correspondiente.
+3. Definir la rama de despliegue (por ejemplo, `main`).
+4. Especificar comandos de construccion y carpeta de publicacion (por ejemplo, `npm run build` y `dist/`).
+5. Guardar la configuracion y ejecutar el primer despliegue.
+
+**Railway**
+
+Railway es una plataforma de despliegue y gestion de aplicaciones backend con integracion GitHub.
+
+Para configurar el despliegue automatico del servicio REST API en Railway:
+1. Crear una cuenta en [Railway](https://railway.app) y vincularla al repositorio del API.
+2. Crear un nuevo proyecto y seleccionar el repositorio correspondiente.
+3. Definir la rama de despliegue (por ejemplo, `main`).
+4. Configurar variables de entorno necesarias para la aplicacion.
+5. Guardar la configuracion y permitir el primer despliegue.
+
+**Firebase**
+
+Firebase permite distribuir builds y administrar despliegues de aplicaciones moviles para pruebas internas.
+
+Para configurar la distribucion automatica en Firebase:
+1. Crear un proyecto en [Firebase](https://firebase.google.com).
+2. Vincular el repositorio de la app movil con el proyecto.
+3. Configurar CI/CD con GitHub Actions o Firebase CLI.
+4. Definir comandos de construccion y distribucion (por ejemplo, `./gradlew assemble` y `firebase appdistribution:distribute`).
+5. Ejecutar el primer despliegue.
+
+**Google Play Console**
+
+Google Play Console es la plataforma oficial para publicar y gestionar aplicaciones Android.
+
+Para publicar la aplicacion Android:
+1. Crear una cuenta de desarrollador en [Google Play Console](https://play.google.com/console).
+2. Crear un nuevo proyecto de aplicacion con su metadata.
+3. Subir el archivo AAB generado por Android Studio.
+4. Completar la ficha de la aplicacion y politicas requeridas.
+5. Enviar a revision y publicacion.
+
+
+**Supabase**
+
+Supabase se utiliza para el despliegue automatizado de la base de datos PostgreSQL.
+
+Para configurar el despliegue de base de datos en Supabase:
+1. Crear un proyecto en [Supabase](https://supabase.com).
+2. Configurar el esquema inicial y las tablas requeridas.
+3. Definir variables de conexion seguras para los servicios backend.
+4. Validar conectividad desde el REST API.
+
+Adicionalmente, se incluye el diagrama de despliegue de la arquitectura del sistema, que ilustra como los diferentes componentes de uFlex interactuan entre si y con las plataformas de despliegue.
+
+![Software Deployment Configuration: Deployment Diagram](assets/diagrams/software-architecture/deployment/out/uflex-deployment-diagram.png)
+
 
 
 <hr class="page-break">
