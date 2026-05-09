@@ -5355,17 +5355,346 @@ En integridad y rendimiento, el dise√±o incorpora reglas alineadas al dominio: √
 
 #### 6.1.1. Software Development Environment Configuration
 
+A continuacion se presentan los productos de software seleccionados para apoyar cada etapa del ciclo de vida del producto digital. Se detallan sus nombres, propositos dentro del proyecto y enlaces de acceso o descarga, diferenciando entre soluciones SaaS y software instalable.
 
+**Project Management**
+
+| **Herramienta** | **Proposito** | **Enlace / Ruta de Acceso** |
+|---|---|---|
+| **Trello** | Gestion agil de tareas y tableros para organizar entregables, tareas individuales y por modulo. | [https://trello.com](https://trello.com) |
+
+<br>
+
+**Requirements Management**
+
+| **Herramienta** | **Proposito** | **Enlace / Ruta de Acceso** |
+|---|---|---|
+| **UXPressia** | Creacion de User Personas, Empathy Maps, Journey Maps e Impact Maps. | [https://uxpressia.com](https://uxpressia.com) |
+
+<br>
+
+**Domain-Driven Design Approach**
+
+| **Herramienta** | **Proposito** | **Enlace / Ruta de Acceso** |
+|---|---|---|
+| **Miro** | Creacion de Event Storming, Candidate Context Discovery, Domain Message Flows, Bounded Context Canvases y Context Maps. | [https://miro.com](https://miro.com) |
+
+<br>
+
+**Software Architecture Design**
+
+| **Herramienta** | **Proposito** | **Enlace / Ruta de Acceso** |
+|---|---|---|
+| **PlantUML** | Diagramas C4 y UML usando enfoque Diagrams-as-Code compatible con Markdown y documentacion tecnica. | [https://plantuml.com](https://plantuml.com) |
+
+<br>
+
+**Product UX/UI Design**
+
+| **Herramienta** | **Proposito** | **Enlace / Ruta de Acceso** |
+|---|---|---|
+| **Figma** | Diseno colaborativo de wireframes, mockups y prototipos interactivos. | [https://figma.com](https://figma.com) |
+| **Lucidchart** | Creacion de wireflows y user flows. | [https://lucidchart.com](https://lucidchart.com) |
+
+<br>
+
+**Software Development**
+
+| **Herramienta / Tecnologia** | **Proposito** | **Enlace / Ruta de Descarga** |
+|---|---|---|
+| **WebStorm** | Desarrollo de la landing page y web application usando HTML5, CSS3, JavaScript, Tailwind CSS y DaisyUI. | [https://www.jetbrains.com/webstorm](https://www.jetbrains.com/webstorm) |
+| **IntelliJ IDEA** | Desarrollo del servicio REST API. | [https://www.jetbrains.com/idea](https://www.jetbrains.com/idea) |
+| **Android Studio** | Desarrollo de la aplicacion movil Android con Kotlin Multiplatform y Jetpack Compose. | [https://developer.android.com/studio](https://developer.android.com/studio) |
+| **Visual Studio Code** | Desarrollo de la documentacion en Markdown. | [https://code.visualstudio.com](https://code.visualstudio.com) |
+| **HTML5** | Lenguaje de marcado para la estructura semantica de la landing page. | [https://developer.mozilla.org/docs/Web/HTML](https://developer.mozilla.org/docs/Web/HTML) |
+| **CSS3** | Lenguaje de estilos para la apariencia visual de la landing page. | [https://developer.mozilla.org/docs/Web/CSS](https://developer.mozilla.org/docs/Web/CSS) |
+| **JavaScript** | Lenguaje para manipular el DOM e internacionalizar el contenido en la landing page. | [https://developer.mozilla.org/docs/Web/JavaScript](https://developer.mozilla.org/docs/Web/JavaScript) |
+| **Tailwind CSS** | Framework de estilos para construir la landing page de manera eficiente. | [https://tailwindcss.com](https://tailwindcss.com) |
+| **DaisyUI** | Biblioteca de componentes sobre Tailwind CSS para la UI de la landing page. | [https://daisyui.com](https://daisyui.com) |
+| **Java** | Lenguaje para el backend del servicio REST API. | [https://www.oracle.com/java](https://www.oracle.com/java) |
+| **Spring Boot** | Framework Java para construir el servicio REST API. | [https://spring.io/projects/spring-boot](https://spring.io/projects/spring-boot) |
+| **Kotlin** | Lenguaje para la aplicacion movil Android. | [https://kotlinlang.org](https://kotlinlang.org) |
+| **Jetpack Compose** | Toolkit declarativo para UI nativa en Android. | [https://developer.android.com/jetpack/compose](https://developer.android.com/jetpack/compose) |
+
+<br>
+
+**Software Testing**
+
+| **Herramienta / Tecnologia** | **Proposito** | **Enlace / Ruta de Descarga** |
+|---|---|---|
+| **Gherkin** | Lenguaje para escribir criterios de aceptacion de las User Stories. | [https://cucumber.io/docs/gherkin](https://cucumber.io/docs/gherkin) |
+
+<br>
+
+**Software Deployment**
+
+| **Herramienta / Plataforma** | **Proposito** | **Enlace / Ruta de Acceso** |
+|---|---|---|
+| **Netlify** | Despliegue automatico y gratuito de la landing page. | [https://www.netlify.com](https://www.netlify.com) |
+| **Railway** | Despliegue automatico del servicio REST API. | [https://railway.app](https://railway.app) |
+| **Firebase** | Despliegue automatico de la aplicacion movil. | [https://firebase.google.com](https://firebase.google.com) |
+| **Supabase** | Despliegue automatico de la base de datos PostgreSQL. | [https://supabase.com](https://supabase.com) |
+
+<br>
+
+**Software Documentation**
+
+| **Herramienta / Recurso** | **Proposito** | **Enlace / Ruta de Acceso** |
+|---|---|---|
+| **IntelliJ IDEA** | Edicion del README.md y visualizacion previa de diagramas PlantUML. | [https://www.jetbrains.com/idea](https://www.jetbrains.com/idea) |
+| **Visual Studio Code** | Edicion del README.md y exportacion formateada de Markdown a PDF. | [https://code.visualstudio.com](https://code.visualstudio.com) |
+| **Markdown** | Lenguaje de marcado ligero para documentacion tecnica. | [https://www.markdownguide.org](https://www.markdownguide.org) |
+| **Git** | Control de versiones distribuido para gestionar el codigo fuente. | [https://git-scm.com](https://git-scm.com) |
+| **GitHub** | Repositorio con control de versiones y soporte de issues y PRs. | [https://github.com](https://github.com) |
+| **GitFlow Workflow** | Estrategia de ramificacion para organizar codigo y documentacion. | [https://nvie.com/posts/a-successful-git-branching-model](https://nvie.com/posts/a-successful-git-branching-model) |
+| **Conventional Commits** | Estandar de nombres de commits para trazabilidad. | [https://www.conventionalcommits.org](https://www.conventionalcommits.org) |
+| **Semantic Versioning** | Sistema de versionado para releases coherentes. | [https://semver.org](https://semver.org) |
 
 #### 6.1.2. Source Code Management
 
+El equipo utilizara **GitHub** como plataforma de alojamiento y **Git** como control de versiones para todos los productos del proyecto uFlex, aplicando la estrategia de ramificacion **GitFlow Workflow**, con estandares de versionado **Semantic Versioning** y mensajes estructurados mediante **Conventional Commits**.
+
+**Repositorios del Proyecto**
+
+| Repository                                                                 | Description                                                         |
+|:---------------------------------------------------------------------------|:--------------------------------------------------------------------|
+| [**uflex-project-report**](https://github.com/KinIoT/uflex-project-report) | Comprehensive project documentation and final technical reports.    |
+| [**uflex-landing-page**](https://github.com/KinIoT/uflex-landing-page)     | Official landing page for user acquisition and marketing.           |
+| [**uflex-clinic-web**](https://github.com/KinIoT/uflex-clinic-web)         | Web platform for clinics and rehabilitation professionals.          |
+| [**uflex-patient-mobile**](https://github.com/KinIoT/uflex-patient-mobile) | Mobile application for patient monitoring and therapy guidance.     |
+| [**uflex-rest-api**](https://github.com/KinIoT/uflex-rest-api)             | Main REST API handling core business logic and database management. |
+| [**uflex-edge-api**](https://github.com/KinIoT/uflex-edge-api)             | Edge computing API for optimized data pre-processing.               |
+| [**uflex-embedded-app**](https://github.com/KinIoT/uflex-embedded-app)     | Embedded software for IoT devices and biomechanical sensors.        |
+
+**GitFlow Workflow**
+
+![gitflow](assets/images/figures/gitflow-example.png)
+
+Se seguira el modelo propuesto por Vincent Driessen, el cual define las siguientes ramas principales:
+
+- **main**: Rama principal, contiene las versiones estables en produccion.
+- **develop**: Rama de desarrollo, donde se integran nuevas funcionalidades antes de pasar a produccion.
+
+**Branches usados en GitFlow**
+
+| **Tipo de rama** | **Proposito** | **Convencion de nombres** | **Ejemplo** |
+|---|---|---|---|
+| **feature** | Desarrollo de nuevas funcionalidades. | `feature/<nombre-descriptivo>` | `feature/profile-management` |
+| **release** | Preparacion de una nueva version de produccion. | `release/vX.Y.Z` | `release/v1.0.0` |
+| **hotfix** | Correccion urgente en produccion. | `hotfix/<problema>` | `hotfix/fix-crash-navbar` |
+
+**Semantic Versioning**
+
+Se aplicara el esquema de versionado semantico 2.0.0, con el siguiente formato:
+
+`vMAJOR.MINOR.PATCH`
+
+- **MAJOR**: Cambios incompatibles con versiones anteriores.
+- **MINOR**: Nuevas funcionalidades compatibles con versiones anteriores.
+- **PATCH**: Correcciones de errores o mejoras menores.
+
+**Conventional Commits**
+
+Para los mensajes de commit, se utilizara el estandar Conventional Commits, que permite mayor trazabilidad y generacion automatica de changelogs.
+
+**Formato general**:
+
+`<tipo>(opcional-scope): descripcion breve`
+
+**Tipos a usar**:
+- `feat`: una nueva funcionalidad
+- `fix`: correccion de errores
+- `docs`: cambios en documentacion
+- `style`: formato (espacios, punto y coma, etc.)
+- `refactor`: cambios de codigo que no corrigen errores ni agregan funciones
+- `test`: agregar o modificar pruebas
+- `chore`: tareas generales o mantenimiento
 
 
 #### 6.1.3. Source Code Style Guide & Conventions
 
+Con el fin de asegurar un codigo limpio, mantenible y coherente entre todos los miembros del equipo, se adoptan las siguientes convenciones de estilo y nomenclatura. Todas las variables, funciones, clases, archivos y elementos siguen una nomenclatura en ingles.
+
+**Nomenclature General**
+
+- Se utiliza ingles como idioma unico para nombres de variables, funciones, clases, comentarios y documentacion.
+- Se evitan abreviaciones innecesarias y nombres genericos como `data1`, `temp`, `info`.
+
+**HTML**
+
+Basado en las convenciones de HTML y buenas practicas de MDN, se aplican las siguientes reglas:
+
+- Atributos en minusculas y nombres de clase en **kebab-case** (`section-title`, `main-container`).
+- Uso de comillas dobles para atributos (`class="example"`).
+- Estructura semantica clara con `<header>`, `<nav>`, `<main>`, `<section>`, `<footer>`.
+- Sangria con 2 espacios.
+- Atributos ordenados de manera logica: `id`, `class`, `type`, `name`, `placeholder`, `value`, `required`.
+- Uso adecuado de etiquetas auto-cerradas (`<img />`, `<input />`).
+
+**CSS / Tailwind CSS**
+
+Basado en convenciones de CSS y buenas practicas de Tailwind CSS:
+
+- Nombres de clases en minusculas.
+- Para clases personalizadas: **kebab-case**.
+- Se prioriza Tailwind CSS sobre CSS puro para la landing page.
+- Para clases de utilidad de Tailwind: **snake_case** (`text_center`, `bg_blue_500`).
+- Se agrupan clases por orden logico (layout -> spacing -> color -> typography).
+
+**Google JavaScript Style Guide**
+
+Basado en el Google JavaScript Style Guide:
+
+- **camelCase** para variables, funciones y parametros.
+- **PascalCase** para clases y constructores.
+- Constantes con `UPPER_CASE_WITH_UNDERSCORES` si son globales.
+- Imports explicitos y ordenados: primero externas, luego internas.
+- Evitar `default exports`, usar `export const` o `export class`.
+- Preferir `const` sobre `let` y evitar `var`.
+- Evitar usar `this` fuera de clases.
+- No mezclar logica en componentes; delegar a servicios.
+
+**Java & Spring Boot**
+
+Basado en las convenciones de Java y buenas practicas de Spring:
+
+- **camelCase** para variables, metodos y parametros.
+- **PascalCase** para clases e interfaces.
+- Paquetes en minusculas y separados por puntos (`com.example.project`).
+- Constantes en `UPPER_CASE_WITH_UNDERSCORES`.
+- Cada clase en su propio archivo.
+- Metodos cortos y enfocados en una sola responsabilidad.
+- Uso de anotaciones de Spring para inyeccion de dependencias y configuracion.
+- Evitar logica de negocio en controladores; usar servicios.
+- Manejo de excepciones con `@ControllerAdvice`.
+- Documentacion de APIs REST con Swagger/OpenAPI.
+
+**Kotlin & Jetpack Compose**
+
+Basado en convenciones de Kotlin y buenas practicas de Jetpack Compose:
+
+- **camelCase** para variables, funciones y parametros.
+- **PascalCase** para clases y objetos.
+- Paquetes en minusculas y separados por puntos (`com.example.project`).
+- Constantes en `UPPER_CASE_WITH_UNDERSCORES`.
+- Cada clase y objeto en su propio archivo.
+- Funciones cortas y enfocadas en una sola responsabilidad.
+- Uso de `@Composable` para funciones de UI.
+- Evitar logica de negocio en composables; usar ViewModels.
+- Manejo de estado con `State` y `MutableState`.
+- Documentar funciones publicas con KDoc.
+
+**C++ (Embedded App)**
+
+Basado en convenciones de C++ y criterios de desarrollo embebido:
+
+- Ingles obligatorio para todos los elementos del codigo.
+- Archivos en `kebab-case` o `PascalCase` segun el modulo (`wifi-manager.cpp`, `DataRecord.h`).
+- **camelCase** para variables y funciones; **PascalCase** para clases/structs.
+- Constantes y macros en `UPPER_SNAKE_CASE` (por ejemplo, `WIFI_SSID`, `ENDPOINT_URL`).
+- Sangria de 2 espacios; sin tabuladores.
+- Llaves en la misma linea que la declaracion.
+- Comentarios con `//` para linea simple y `/* ... */` para bloques.
+- Uso de `JsonDocument` (ArduinoJson v7+) y validacion de objetos antes de iterar.
+- `HTTPClient.begin()` y `HTTPClient.end()` en cada request; validar `httpResponseCode` antes de leer el body.
+
+**Python (Edge API Service)**
+
+Basado en PEP 8 y estilo Python:
+
+- Ingles obligatorio en todo el codigo.
+- **snake_case** para variables, funciones y metodos; **PascalCase** para clases.
+- Constantes en `UPPER_SNAKE_CASE`.
+- Modulos y paquetes en minusculas (`interfaces`, `application`).
+- Sangria de 4 espacios; sin tabuladores.
+- Longitud de linea recomendada 79-88 caracteres.
+- Type hints obligatorios en funciones publicas.
+- Docstrings en formato Google (Args, Returns, Raises).
+- Distinguir entidades de dominio y modelos de persistencia.
+- Preferir carga explicita sobre lazy loading en entorno edge.
+
+**Pruebas / Gherkin**
+
+Basado en buenas practicas de Gherkin:
+
+- Archivos `.feature` en ingles.
+- Cada escenario debe ser independiente y autocontenido.
+- Nombres descriptivos para features y escenarios.
+- Estructura Given-When-Then.
+
 
 
 #### 6.1.4. Software Deployment Configuration
+
+Se utilizaran las siguientes plataformas para el despliegue de los diferentes productos del proyecto uFlex:
+
+| **Producto** | **Plataforma de Despliegue** | **Proposito** | **Enlace / Ruta de Acceso** |
+|---|---|---|---|
+| **Landing Page** | **Netlify** | Despliegue automatico y gratuito de la landing page. | [https://www.netlify.com](https://www.netlify.com) |
+| **REST API** | **Railway** | Despliegue automatico del servicio REST API. | [https://railway.app](https://railway.app) |
+| **Mobile App (Android)** | **Firebase** | Distribucion de builds y despliegue automatico para pruebas internas. | [https://firebase.google.com](https://firebase.google.com) |
+| **Mobile App (Android)** | **Google Play Console** | Publicacion y distribucion de la app nativa en Android. | [https://play.google.com/console](https://play.google.com/console) |
+| **Mobile App (iOS)** | **Apple App Store Connect** | Publicacion y distribucion de la app nativa en iOS. | [https://appstoreconnect.apple.com](https://appstoreconnect.apple.com) |
+| **Database** | **Supabase** | Despliegue automatico de la base de datos PostgreSQL. | [https://supabase.com](https://supabase.com) |
+
+**Netlify**
+
+Netlify es una plataforma de alojamiento y despliegue continuo para sitios web estaticos y aplicaciones frontend. Ofrece integracion con repositorios GitHub para despliegues automaticos.
+
+Para configurar el despliegue automatico de la landing page en Netlify:
+1. Crear una cuenta en [Netlify](https://www.netlify.com) y vincularla al repositorio de GitHub de la landing page.
+2. Configurar un nuevo sitio en Netlify, seleccionando el repositorio correspondiente.
+3. Definir la rama de despliegue (por ejemplo, `main`).
+4. Especificar comandos de construccion y carpeta de publicacion (por ejemplo, `npm run build` y `dist/`).
+5. Guardar la configuracion y ejecutar el primer despliegue.
+
+**Railway**
+
+Railway es una plataforma de despliegue y gestion de aplicaciones backend con integracion GitHub.
+
+Para configurar el despliegue automatico del servicio REST API en Railway:
+1. Crear una cuenta en [Railway](https://railway.app) y vincularla al repositorio del API.
+2. Crear un nuevo proyecto y seleccionar el repositorio correspondiente.
+3. Definir la rama de despliegue (por ejemplo, `main`).
+4. Configurar variables de entorno necesarias para la aplicacion.
+5. Guardar la configuracion y permitir el primer despliegue.
+
+**Firebase**
+
+Firebase permite distribuir builds y administrar despliegues de aplicaciones moviles para pruebas internas.
+
+Para configurar la distribucion automatica en Firebase:
+1. Crear un proyecto en [Firebase](https://firebase.google.com).
+2. Vincular el repositorio de la app movil con el proyecto.
+3. Configurar CI/CD con GitHub Actions o Firebase CLI.
+4. Definir comandos de construccion y distribucion (por ejemplo, `./gradlew assemble` y `firebase appdistribution:distribute`).
+5. Ejecutar el primer despliegue.
+
+**Google Play Console**
+
+Google Play Console es la plataforma oficial para publicar y gestionar aplicaciones Android.
+
+Para publicar la aplicacion Android:
+1. Crear una cuenta de desarrollador en [Google Play Console](https://play.google.com/console).
+2. Crear un nuevo proyecto de aplicacion con su metadata.
+3. Subir el archivo AAB generado por Android Studio.
+4. Completar la ficha de la aplicacion y politicas requeridas.
+5. Enviar a revision y publicacion.
+
+
+**Supabase**
+
+Supabase se utiliza para el despliegue automatizado de la base de datos PostgreSQL.
+
+Para configurar el despliegue de base de datos en Supabase:
+1. Crear un proyecto en [Supabase](https://supabase.com).
+2. Configurar el esquema inicial y las tablas requeridas.
+3. Definir variables de conexion seguras para los servicios backend.
+4. Validar conectividad desde el REST API.
+
+Adicionalmente, se incluye el diagrama de despliegue de la arquitectura del sistema, que ilustra como los diferentes componentes de uFlex interactuan entre si y con las plataformas de despliegue.
+
+![Software Deployment Configuration: Deployment Diagram](assets/diagrams/software-architecture/deployment/out/uflex-deployment-diagram.png)
 
 
 
