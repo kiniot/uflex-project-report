@@ -5451,7 +5451,15 @@ Para garantizar que el contenido de uFlex sea accesible y lógico, se han aplica
 
 #### 5.2.2. Labeling Systems
 
+En esta sección se definen las etiquetas utilizadas en la plataforma para representar conjuntos de información complejos mediante términos breves y significativos. El objetivo es facilitar la navegabilidad y asegurar que la asociación entre la etiqueta y el contenido sea inmediata, evitando la ambigüedad tanto en la interfaz médica como en la del usuario final.
 
+- **Terapia (o Sesión):** Esta etiqueta se utiliza en la aplicación móvil para agrupar el flujo de ejercicios diarios. Su función es asociar que, al pulsarla, el usuario encontrará su plan de rehabilitación específico, la conexión con los Nodos Vestibles y la guía de movimientos inerciales.
+- **Progreso:** Representa el conjunto de datos históricos y analíticos del paciente. Asocia en la mente del usuario la disponibilidad de gráficos de evolución, comparativas de Range of Motion (ROM) y niveles de Adherencia alcanzados desde el inicio del protocolo terapéutico.
+- **Protocolos:** Etiqueta exclusiva para el perfil del Fisioterapeuta. Asocia de forma directa el acceso a la creación y edición de planes de entrenamiento personalizados, límites de ángulos permitidos y selección de ejercicios biomecánicos.
+- **Dispositivos:** Se utiliza para la gestión del hardware de KinIoT. Asocia el estado de los sensores BNO055, niveles de batería, calibración del ESP32 y configuraciones de emparejamiento Bluetooth.
+- **Clínica:** Etiqueta orientada al perfil administrativo que asocia la gestión multitenant de la organización, incluyendo la administración de sedes, cuentas de especialistas e inventario tecnológico.
+- **Reportes:** Utilizada para la exportación de información clínica objetiva. Asocia la generación de documentos técnicos que detallan la Cadena Cinemática del paciente, facilitando la comunicación entre especialistas médicos.
+- **Ayuda (o Soporte):** Concentra la documentación de usuario y guías rápidas de colocación de los sensores. Su asociación mental indica que allí se encuentran soluciones a errores de conexión (Luz Roja en el LED) o tutoriales de uso del sistema.
 
 #### 5.2.3. SEO Tags and Meta Tags
 
