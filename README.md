@@ -5281,7 +5281,7 @@ Los colores juegan un papel clave en la primera impresión que los usuarios tien
 - **Color de Advertencia:** #FFAD33 (Naranja): Actúa como una señal preventiva. En uFlex, es crucial para indicar cuando un paciente realiza un movimiento que se desvía ligeramente del patrón correcto o cuando la batería de los sensores IoT está próxima a agotarse.
 - **Color de Error:** #EF5350 (Rojo Coral): Destinado a situaciones críticas, como la pérdida de conexión Bluetooth con los sensores o la ejecución de movimientos peligrosos que podrían comprometer la lesión. Es un tono vibrante que asegura una atención inmediata por parte del usuario.
 
-![Paleta de colores de uFlex](./assets/design/style-guidelines/uflex-color-palette.png)
+![Paleta de colores de uFlex](assets/design/style-guidelines/general/uflex-color-palette.png)
 
 **Tipografía**
 
@@ -5294,9 +5294,9 @@ En el caso de uFlex, se seleccionaron las siguientes fuentes:
 
 Con estas elecciones tipográficas, uFlex logra un equilibrio entre una estética vanguardista y una funcionalidad clínica superior. La combinación de ambas asegura que la plataforma sea percibida como una herramienta de alta precisión técnica, pero accesible y amigable para el proceso de recuperación del paciente.
 
-![Tipografía uFlex Títulos](./assets/design/style-guidelines/uflex-typography-headings.png)
+![Tipografía uFlex Títulos](assets/design/style-guidelines/general/uflex-typography-headings.png)
 
-![Tipografía uFlex Cuerpo de Texto](./assets/design/style-guidelines/uflex-typography-body.png)
+![Tipografía uFlex Cuerpo de Texto](assets/design/style-guidelines/general/uflex-typography-body.png)
 
 **Iconografía**
 
@@ -5304,25 +5304,25 @@ La iconografía utilizada en uFlex sigue un estilo lineal y minimalista, alinead
 
 Además, se sigue el estilo de Material Design Icons, adaptando los iconos a la paleta de colores de uFlex para mantener la coherencia visual. Los iconos se utilizan para representar acciones comunes, como iniciar una sesión, reportar un nivel de dolor o cancelar una sesión, lo que mejora la experiencia del usuario al proporcionar señales visuales claras.
 
-![Iconografía de uFlex](./assets/design/style-guidelines/uflex-iconography.png)
+![Iconografía de uFlex](assets/design/style-guidelines/general/uflex-iconography.png)
 
 **Sistema de Cuadrículas**
 
 El diseño de la interfaz de usuario de uFlex se basa en un sistema de cuadrículas flexible que asegura una disposición ordenada y coherente de los elementos visuales. Este sistema facilita la alineación y el espaciado, mejorando la legibilidad y la estética general de la plataforma.
 
-![Sistema de cuadrículas de uFlex](./assets/design/style-guidelines/uflex-grid-system.png)
+![Sistema de cuadrículas de uFlex](assets/design/style-guidelines/general/uflex-grid-system.png)
 
 **Espaciado**
 
 El espaciado entre los elementos es crucial para evitar la saturación visual y mejorar la experiencia del usuario. En uFlex, se utiliza un sistema de espaciado consistente basado en unidades de 8px, lo que permite una distribución equilibrada y armoniosa de los componentes en la interfaz.
 
-![Espaciado de uFlex](./assets/design/style-guidelines/uflex-spacing.png)
+![Espaciado de uFlex](assets/design/style-guidelines/general/uflex-spacing.png)
 
 **Branding**
 
 Para uFlex, se optó por un imagotipo que combina tanto un logotipo (el nombre de la marca) con un isotipo (un símbolo o icono) en una sola unidad coherente. Este enfoque permite que la marca sea fácilmente reconocible y memorable, ya que el símbolo gráfico puede ser utilizado de manera independiente en ciertos contextos, mientras que el nombre de la marca refuerza la identidad verbal.
 
-![Branding de uFlex](./assets/design/style-guidelines/uflex-branding.png)
+![Branding de uFlex](assets/design/style-guidelines/general/uflex-branding.png)
 
 El imagotipo de uFlex se compone por un isotipo abstracto que fusiona la letra "U" con una representación esquemática de una articulación humana. La estructura se divide en dos segmentos curvos unidos por nodos circulares, los cuales simbolizan los puntos de conexión y flexibilidad del miembro superior (codo o muñeca). El uso del degradado visual entre el verde menta y el azul petróleo en los diferentes segmentos representa la transición de una lesión hacia la recuperación total, mientras que las formas redondeadas eliminan la rigidez, transmitiendo una sensación de movimiento fluido y natural, objetivo principal de la telerehabilitación.
 
@@ -5373,6 +5373,34 @@ Para la interfaz web de uFlex, orientada principalmente a administradores y fisi
 - **Chip:** Utilizados para categorizar el estado de los pacientes (ej. "En progreso", "Finalizado") o filtrar etiquetas en el inventario de equipos KinIoT. Son elementos compactos que ayudan a organizar la información sin saturar visualmente el dashboard.
 
     ![Chip de uFlex Web](./assets/design/style-guidelines/web/uflex-web-chip.png)
+
+**Mobile Style Guidelines**
+
+Para la aplicación móvil de uFlex, el enfoque principal es la facilidad de uso y la reducción de la fricción cognitiva para el paciente. Al igual que en la versión web, se utiliza Material Design 3 como marco de referencia, adaptando sus componentes para ofrecer una interfaz táctil que sea amigable, incluso para usuarios con movilidad reducida o dolor en las articulaciones.
+
+- **Buttons:** Los botones móviles presentan superficies táctiles amplias y bordes altamente redondeados (forma de píldora) para facilitar la interacción. Se utilizan variantes con sombra (elevated) para acciones principales y tonos suaves para botones secundarios, manteniendo siempre el contraste necesario para una visibilidad clara. 
+
+    ![Botones de uFlex Mobile](./assets/design/style-guidelines/mobile/uflex-mobile-buttons.png)
+
+- **Segmented Button:** Este componente se emplea para alternar entre vistas rápidas o categorías, como cambiar entre la visualización de "Hoy" y "Semana" en el historial de ejercicios. Su diseño permite una selección clara y un feedback visual inmediato sobre la opción activa.
+
+    ![Segmented Button de uFlex Mobile](./assets/design/style-guidelines/mobile/uflex-mobile-segmented-button.png)
+
+- **Progress Indicator:** Son vitales para gestionar la paciencia del usuario durante procesos asíncronos, como la sincronización de datos mediante Bluetooth con los sensores o la carga de rutinas. Se utilizan tanto barras lineales como indicadores circulares para comunicar que el sistema está trabajando.
+
+    ![Progress Indicator de uFlex Mobile](./assets/design/style-guidelines/mobile/uflex-mobile-progress-indicators.png)
+
+- **Snackbar:** Se utilizan para proporcionar mensajes informativos breves y automáticos al pie de la pantalla, como confirmar que los datos de una sesión se han guardado exitosamente o alertar sobre una desconexión del sensor, permitiendo que el usuario continúe su flujo sin interrupciones mayores.
+
+    ![Snackbar de uFlex Mobile](./assets/design/style-guidelines/mobile/uflex-mobile-snackbar.png)
+
+- **Navigation Bar:** Ubicada en la parte inferior de la pantalla (Bottom Navigation), facilita la navegación con una sola mano. Permite al paciente saltar rápidamente entre las secciones de "Inicio", "Terapia", "Progreso" y "Perfil" mediante iconos claros y etiquetas legibles.
+
+    ![Navigation Bar de uFlex Mobile](./assets/design/style-guidelines/mobile/uflex-mobile-navigation-bar.png)
+
+- **Menu:** Para funciones secundarias o ajustes de cuenta, se implementan menús desplegables que organizan las opciones de manera vertical. Este diseño ahorra espacio en pantalla y mantiene la interfaz limpia, mostrando solo lo necesario cuando el usuario lo requiere.
+
+    ![Menu de uFlex Mobile](./assets/design/style-guidelines/mobile/uflex-mobile-menu.png)
 
 <hr class="page-break">
 
