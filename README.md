@@ -5519,7 +5519,27 @@ Dado que la aplicación móvil es de uso exclusivo para el Paciente que realiza 
 
 #### 5.2.4. Searching Systems
 
+Los sistemas de búsqueda en uFlex han sido diseñados para mitigar la sobrecarga de información, permitiendo que los usuarios localicen registros específicos, métricas de sensores o historiales clínicos de manera ágil y precisa.
 
+1. **Búsqueda en la Aplicación Web (Especialistas y Administradores)**
+
+Dada la naturaleza multitenant de la plataforma, el dashboard administrativo requiere un sistema de búsqueda robusto para gestionar múltiples pacientes y especialistas.
+
+- **Búsqueda Global y Predictiva:** Se implementa una barra de búsqueda con autocompletado en el encabezado del portal. Al ingresar las primeras letras del nombre de un paciente o el ID de un Wearable Node, el sistema sugiere coincidencias en tiempo real, reduciendo el tiempo de navegación.
+- **Filtros Avanzados (Filtering System):** Para refinar los resultados, el especialista cuenta con filtros específicos basados en nuestro lenguaje ubicuo:
+  - **Por Estado de Adherencia:** Filtrar pacientes con bajo cumplimiento del protocolo terapéutico.
+  - **Por Tipo de Lesión:** Agrupar resultados por articulación afectada (Codo o Muñeca).
+  - **Por Rango de Fecha:** Localizar sesiones clínicas realizadas en periodos específicos.
+  - **Por Estado del Hardware:** Filtrar dispositivos KinIoT según nivel de batería o última fecha de sincronización.
+- **Visualización de Resultados:** Los datos se presentan en tablas dinámicas que permiten el "ordenamiento por columnas". Los términos buscados aparecen resaltados, y cada fila incluye un acceso directo a la visualización de la Cadena Cinemática del paciente.
+
+2. **Búsqueda en la Aplicación Móvil (Pacientes)**
+
+En el entorno móvil, la búsqueda es más dirigida y simplificada para no abrumar al usuario durante su recuperación.
+
+- **Búsqueda en Biblioteca de Ejercicios:** El paciente puede buscar rutinas específicas dentro de su plan personalizado. El sistema utiliza etiquetas (chips) para filtrar por "Ejercicios de Flexión", "Rotación" o "Nuevas Rutinas".
+- **Historial de Sesiones:** Se incluye un buscador cronológico dentro de la sección de "Progreso", donde el paciente puede localizar una fecha exacta para revisar el nivel de dolor reportado o los ángulos de ROM alcanzados en ese día.
+- **Visualización de Resultados:** Los resultados se muestran mediante tarjetas (cards) visuales que incluyen un ícono representativo del ejercicio y un indicador de estado (completado/pendiente), facilitando la identificación rápida sin necesidad de leer textos extensos.
 
 #### 5.2.5. Navigation Systems
 
