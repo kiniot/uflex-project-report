@@ -5463,7 +5463,59 @@ En esta sección se definen las etiquetas utilizadas en la plataforma para repre
 
 #### 5.2.3. SEO Tags and Meta Tags
 
+Para optimizar el posicionamiento y la visibilidad del ecosistema uFlex de la startup KinIoT, se han definido estrategias de SEO para las plataformas web y de ASO para la aplicación móvil. Estas etiquetas permiten que los motores de búsqueda y las tiendas de aplicaciones indexen correctamente el contenido, atrayendo tanto a socios estratégicos (clínicas) como a usuarios finales (pacientes).
 
+**Landing Page SEO Tags and Meta Tags**
+
+La página de aterrizaje tiene como objetivo principal el marketing y la captación de centros de salud y pacientes interesados en la telerehabilitación.
+
+| **Etiqueta**           | **Contenido**                                                                                                                                                 |
+|------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Title                  | uFlex - Telerehabilitación con IoT para Miembro Superior                                                                                                      |
+| Meta Description       | uFlex es la solución líder de KinIoT en Perú que utiliza sensores vestibles y una plataforma SaaS para el monitoreo biomecánico de la rehabilitación en casa. |
+| Meta Keywords          | telerehabilitación, IoT salud, fisioterapia remota, sensores vestibles, KinIoT, rehabilitación de codo, medicina física Perú                                  |
+| Meta Author            | KinIoT Team                                                                                                                                                   |
+| Meta Viewport          | width=device-width, initial-scale=1.0                                                                                                                         |
+| Meta Charset           | UTF-8                                                                                                                                                         |
+| Open Graph Title       | uFlex: Transforma tu rehabilitación con tecnología IoT                                                                                                        |
+| Open Graph Description | Recupera tu movilidad con precisión clínica desde casa mediante nuestros sensores de alta fidelidad.                                                          |
+| Open Graph Image       | https://www.kiniot.com/assets/images/uflex-og-preview.png                                                                                                     |
+| Open Graph URL         | https://www.kiniot.com/uflex                                                                                                                                  |
+
+```html
+<title>uFlex - Telerehabilitación con IoT para Miembro Superior</title>
+<meta name="description" content="uFlex es la solución líder de KinIoT en Perú que utiliza sensores vestibles y una plataforma SaaS para el monitoreo biomecánico de la rehabilitación en casa.">
+<meta name="keywords" content="telerehabilitación, IoT salud, fisioterapia remota, sensores vestibles, KinIoT, rehabilitación de codo, medicina física Perú">
+<meta name="author" content="KinIoT Team">
+<meta property="og:title" content="uFlex: Transforma tu rehabilitación con tecnología IoT">
+<meta property="og:description" content="Recupera tu movilidad con precisión clínica desde casa mediante nuestros sensores de alta fidelidad.">
+```
+
+**Web Application SEO Tags and Meta Tags**
+
+La aplicación web está diseñada para el acceso de Fisioterapeutas y Administradores de clínicas. Al ser una SPA, las etiquetas se enfocan en la funcionalidad y seguridad profesional.
+
+| **Etiqueta**     | **Contenido**                                                                                                  |
+|------------------|----------------------------------------------------------------------------------------------------------------|
+| Title            | Portal de Gestión uFlex - KinIoT                                                                               |
+| Meta Description | Plataforma de gestión clínica y monitoreo de pacientes para especialistas en medicina física y rehabilitación. |
+| Meta Keywords    | gestión clínica SaaS, monitoreo ROM, datos biomecánicos, fisioterapia digital, administración de pacientes     |
+| Meta Robots      | noindex, nofollow (para proteger el acceso a datos internos)                                                   |
+
+**Android Mobile Application ASO (Paciente)**
+
+Dado que la aplicación móvil es de uso exclusivo para el Paciente que realiza sus ejercicios con los Wearable Nodes, el ASO se centra en la facilidad de recuperación y el uso de hardware.
+
+| **Etiqueta**      | **Contenido**                                                                                                                                                                                                                                                                                                           |
+|-------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| App Title         | uFlex: Tu Fisioterapia en Casa                                                                                                                                                                                                                                                                                          |
+| Short Description | Realiza tu rehabilitación de brazo y muñeca con monitoreo IoT en tiempo real.                                                                                                                                                                                                                                           |
+| Full Description  | uFlex te acompaña en tu recuperación. Conéctate a tus sensores KinIoT y recibe retroalimentación inmediata sobre tus movimientos. Nuestra tecnología de sensores BNO055 garantiza que realices cada ejercicio con precisión clínica, evitando movimientos compensatorios y acelerando tu retorno a la movilidad normal. |
+| App Keywords      | ejercicios de codo, rehabilitación móvil, sensor movimiento salud, fisioterapia digital, uFlex, KinIoT                                                                                                                                                                                                                  |
+| Category          | Salud y Bienestar / Medicina                                                                                                                                                                                                                                                                                            |
+| Developer Name    | KinIoT                                                                                                                                                                                                                                                                                                                  |
+| Icon              | Icono de uFlex (512x512 PNG)                                                                                                                                                                                                                                                                                            |
+| Screenshots       | Capturas del emparejamiento Bluetooth, guías de ejercicios y gráficos de progreso (ROM).                                                                                                                                                                                                                                |
 
 #### 5.2.4. Searching Systems
 
