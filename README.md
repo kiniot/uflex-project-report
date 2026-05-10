@@ -5543,7 +5543,28 @@ En el entorno móvil, la búsqueda es más dirigida y simplificada para no abrum
 
 #### 5.2.5. Navigation Systems
 
+El sistema de navegación de uFlex se estructura para guiar a los tres tipos de usuarios a través de sus metas específicas: la venta del servicio (Landing), la gestión clínica (Web App) y la ejecución de la terapia (Mobile App). Se han implementado técnicas de navegación que minimizan la cantidad de clics necesarios para alcanzar funciones críticas.
 
+1. **Navegación en el Landing Page (Marketing y Captación)**
+
+- **Navegación de Desplazamiento (Scrolling Navigation):** Al ser un sitio orientado a la conversión, se utiliza una estructura de "One-page" donde el usuario recorre la propuesta de valor de KinIoT, las características de uFlex y los testimonios de forma lineal.
+- **Menú Sticky:** Un encabezado persistente permite saltar rápidamente a secciones como "Tecnología IoT" o "Planes para Clínicas", manteniendo siempre visible el botón de llamado a la acción (CTA) para solicitar una demo.
+
+2. **Navegación en la Aplicación Web (Dashboard Multitenant)**
+
+- **Barra Lateral Estática (Side Navigation):** Se utiliza un menú vertical a la izquierda que contiene las categorías principales: Dashboard, Pacientes, Protocolos e Inventario IoT. Este sistema permite que el fisioterapeuta cambie de contexto sin perder la visibilidad de su ubicación actual.
+- **Navegación por Migas de Pan (Breadcrumbs):** Dado que la gestión clínica puede profundizar en niveles (ej. Clínica > Especialista > Paciente > Sesión específica), las breadcrumbs permiten al administrador retroceder niveles jerárquicos de forma inmediata.
+- **Navegación Contextual:** Dentro del perfil de un paciente, se incluyen pestañas (tabs) para navegar entre "Datos Biomecánicos", "Historial de ROM" y "Configuración de Sensores", manteniendo toda la información relacionada en un solo lugar.
+
+3. **Navegación en la Aplicación Móvil (Experiencia del Paciente):**
+
+- **Barra de Navegación Inferior (Bottom Navigation):** Diseñada para la interacción con el pulgar, permite alternar entre "Inicio", "Mi Terapia" y "Progreso". Es la técnica principal para usuarios que podrían tener movilidad reducida en una mano.
+- **Navegación Secuencial (Guided Flow):** Para la sesión de ejercicios, se emplea una navegación tipo "wizard". El sistema bloquea la navegación libre para obligar al usuario a seguir el orden clínico: Calibración de Sensores → Ejercicio 1 → Feedback Háptico → Registro de Dolor.
+- **Gestos de Interacción (Gestures):** Se incorporan gestos de deslizamiento (swipe) para navegar entre las tarjetas de resultados históricos, haciendo que la revisión del progreso sea una experiencia táctil natural.
+
+4. **Navegación entre Ecosistemas (Inter-product Navigation)**
+
+- **Deep Linking:** El sistema permite que, desde el Portal Web, el fisioterapeuta genere alertas que llegan como notificaciones push al móvil del paciente, creando un puente de navegación directo hacia una rutina específica que requiere atención.
 
 <hr class="page-break">
 
