@@ -99,11 +99,11 @@ Se usó el flujo de trabajo **GitFlow**, que incluye las siguientes ramas princi
 
 <hr class="page-break">
 
-## TB1
+## AV1
 
 **Tareas**
 
-Para el desarrollo del TB1, cada participante del equipo realizó las siguientes tareas:
+Para el desarrollo del AV1, cada participante del equipo realizó las siguientes tareas:
 
 | Integrantes                         | Tarea asignada                                                                                               |
 |-------------------------------------|--------------------------------------------------------------------------------------------------------------|
@@ -317,10 +317,14 @@ En el siguiente cuadro se describe las acciones realizadas y enunciados de concl
     <tr>
       <td rowspan="5"><strong>Trabaja en equipo para proporcionar liderazgo en forma conjunta</strong></td>
       <td><strong>Crispin Ramos, Daniel Franco</strong><br><b>AV1:</b> Lideré la ejecución del Needfinding y la elaboración del Impact Mapping, articulando las necesidades del usuario con los objetivos de negocio. Asumí la responsabilidad del diseño estratégico Context Mapping y el desarrollo táctico DDD del Bounded Context Device. Participé activamente en las sesiones de EventStorming, guiando la delimitación de contextos y validando las interacciones estratégicas del sistema.</td>
-      <td rowspan="5"><b>AV1:</b> Durante el desarrollo del AV1, que abarcó desde el perfil de la startup hasta el diseño de la solución de software, hemos aprendido que el liderazgo no recae en una sola persona sino que se ejerce de forma conjunta. Cada integrante tomó la conducción de las secciones en las que tenía mayor dominio y al mismo tiempo apoyó activamente al resto, lo que nos permitió avanzar de manera paralela sin perder coherencia. Actividades transversales como el EventStorming evidenciaron que compartir el liderazgo fortalece la calidad de las decisiones y nos ayuda a alinear el rumbo del proyecto como equipo.</td>
+        <td rowspan="5">
+          <b>AV1:</b> Durante el desarrollo del AV1, que abarcó desde el perfil de la startup hasta el diseño de la solución de software, hemos aprendido que el liderazgo no recae en una sola persona sino que se ejerce de forma conjunta. Cada integrante tomó la conducción de las secciones en las que tenía mayor dominio y al mismo tiempo apoyó activamente al resto, lo que nos permitió avanzar de manera paralela sin perder coherencia. Actividades transversales como el EventStorming evidenciaron que compartir el liderazgo fortalece la calidad de las decisiones y nos ayuda a alinear el rumbo del proyecto como equipo.
+          <br><br>
+          <b>TB1:</b> En esta etapa técnica, el liderazgo se manifestó en la capacidad de guiar la implementación del software sin perder la visión estratégica. Aprendimos que el liderazgo técnico implica no solo delegar, sino asegurar la trazabilidad entre lo diseñado (EventStorming) y lo construido (Código). La coordinación en la consolidación de evidencias demostró que un liderazgo distribuido permite identificar cuellos de botella rápidamente y mantener la integridad del sistema uFlex.
+        </td>
     </tr>
     <tr>
-      <td><strong>Ramirez Mestanza, Salim Ignacio</strong><br><b>AV1:</b> Lideré la elaboración de las User Stories del proyecto, estructurando los requerimientos funcionales y sus criterios de aceptación para mantener coherencia entre los módulos. Además, apoyé activamente en el Design-Level EventStorming para alinear decisiones de dominio con el equipo y desarrollé el Domain Message Flows Modeling, integrando los eventos y mensajes clave entre bounded contexts.</td>
+      <td><strong>Ramirez Mestanza, Salim Ignacio</strong><br><b>AV1:</b> Lideré la elaboración de las User Stories del proyecto, estructurando los requerimientos funcionales y sus criterios de aceptación para mantener coherencia entre los módulos. Además, apoyé activamente en el Design-Level EventStorming para alinear decisiones de dominio con el equipo y desarrollé el Domain Message Flows Modeling, integrando los eventos y mensajes clave entre bounded contexts.<br><br><b>TB1:</b> Lideré la gestión del Product Backlog y el Sprint Backlog del TB1, asegurando que cada User Story tuviera criterios de aceptación claros y estuviera vinculada correctamente a los Issues de GitHub. Coordiné con el equipo la definición de los Acceptance Tests y supervisé la implementación de la lógica de dominio en el backend para mantener la integridad de los flujos de mensajes diseñados previamente. Facilité la comunicación entre los encargados de frontend y backend para asegurar que la integración de servicios cumpliera con las expectativas del negocio.</td>
     </tr>
     <tr>
       <td><strong>Rivera Sosa, Eduardo Gael</strong><br><b>AV1:</b> Lideré el diseño de la arquitectura de software de uFlex elaborando los diagramas Landscape, Context, Container y Deployment. Facilité junto al equipo el Design-Level EventStorming, guiando las decisiones sobre eventos y bounded contexts. También dirigí el análisis competitivo y las estrategias frente a competidores, consolidando los aportes del equipo en un entregable coherente.<br><br><b>TB1:</b> Lideré la consolidación de la evidencia técnica del Sprint Review del TB1 articulando los aportes del equipo en seis frentes: <em>Development Evidence</em> (organización del repositorio, ramas y pull requests), <em>Testing Suite Evidence</em> (estructura y reporte de las suites de pruebas), <em>Execution Evidence</em> (capturas funcionales del producto en ejecución), <em>Services Documentation</em> (documentación de los endpoints REST del monolito uFlex), <em>Software Deployment Evidence</em> (URLs y configuración del despliegue) y <em>Team Collaboration Insights</em> (métricas de GitHub Insights). Coordiné con cada integrante para integrar sus aportes en un entregable unificado, asegurando trazabilidad entre las historias del Sprint Backlog y la implementación efectiva.</td>
@@ -334,10 +338,14 @@ En el siguiente cuadro se describe las acciones realizadas y enunciados de concl
     <tr>
       <td rowspan="5"><strong>Crea un entorno colaborativo e inclusivo, establece metas, planifica tareas y cumple objetivos</strong></td>
       <td><strong>Crispin Ramos, Daniel Franco</strong><br><b>AV1:</b> Planifiqué y cumplí con los entregables de análisis y diseño asignados, coordinando con el equipo la priorización de las actividades dentro del Bounded Context Device. Mi participación activa en las sesiones de EventStorming y en la validación de diagramas tácticos facilitó el consenso técnico y aseguró que los aportes del equipo se integraran correctamente dentro de los plazos del AV1.</td>
-      <td rowspan="5"><b>AV1:</b> A lo largo del AV1 hemos logrado cubrir todo el alcance planificado, desde la definición de la startup y el análisis del problema hasta el diseño completo de la solución de software. Para conseguirlo establecimos metas claras por capítulo, distribuimos las tareas según las fortalezas de cada integrante y realizamos revisiones constantes para mantener el avance alineado. Creemos que el entorno colaborativo e inclusivo que construimos fue clave: cada propuesta fue discutida en conjunto y los entregables finales reflejan aportes de todo el equipo, cumpliendo los objetivos acordados en los plazos previstos.</td>
+        <td rowspan="5">
+          <b>AV1:</b> A lo largo del AV1 hemos logrado cubrir todo el alcance planificado, desde la definición de la startup y el análisis del problema hasta el diseño completo de la solución de software. Para conseguirlo establecimos metas claras por capítulo, distribuimos las tareas según las fortalezas de cada integrante y realizamos revisiones constantes para mantener el avance alineado. Creemos que el entorno colaborativo e inclusivo que construimos fue clave: cada propuesta fue discutida en conjunto y los entregables finales reflejan aportes de todo el equipo, cumpliendo los objetivos acordados en los plazos previstos.
+          <br><br>
+          <b>TB1:</b> El cumplimiento del Sprint Goal fue posible gracias a una planificación rigurosa de tareas en GitHub y la flexibilidad para ajustar la arquitectura (como la transición al monolito) de forma consensuada. Mantuvimos un entorno inclusivo donde la revisión de código y la documentación técnica fueron responsabilidades compartidas, lo que garantizó que todos los integrantes estuvieran alineados con el despliegue final y la calidad de las pruebas.
+        </td>
     </tr>
     <tr>
-      <td><strong>Ramirez Mestanza, Salim Ignacio</strong><br><b>AV1:</b> Planifiqué y entregué en los plazos acordados las secciones a mi cargo, especialmente la definición de User Stories y el Domain Message Flows Modeling. Participé de forma activa en el Design-Level EventStorming como espacio colaborativo, incorporando los aportes del equipo para mantener metas comunes, una coordinación inclusiva y el cumplimiento de los objetivos del AV1.</td>
+      <td><strong>Ramirez Mestanza, Salim Ignacio</strong><br><b>AV1:</b> Planifiqué y entregué en los plazos acordados las secciones a mi cargo, especialmente la definición de User Stories y el Domain Message Flows Modeling. Participé de forma activa en el Design-Level EventStorming como espacio colaborativo, incorporando los aportes del equipo para mantener metas comunes, una coordinación inclusiva y el cumplimiento de los objetivos del AV1.<br><br><b>TB1:</b> Planifiqué y ejecuté la migración de los requerimientos del AV1 hacia el entorno de desarrollo, definiendo las metas de cada historia de usuario dentro del Sprint. Cumplí con la entrega de los reportes de pruebas unitarias y de integración, garantizando que el software cumpliera con los estándares de calidad antes del Sprint Review. Promoví un entorno inclusivo mediante la revisión técnica por pares (Peer Review), brindando soporte a mis compañeros en la resolución de conflictos de código y asegurando que los objetivos técnicos del TB1 se alcanzaran puntualmente.</td>
     </tr>
     <tr>
       <td><strong>Rivera Sosa, Eduardo Gael</strong><br><b>AV1:</b> Planifiqué y entregué en los plazos acordados las secciones a mi cargo: segmentos objetivo, análisis competitivo, estrategias frente a competidores, user personas y la arquitectura de software con sus diagramas. Participé activamente en el Design-Level EventStorming como actividad colaborativa, asegurando que los aportes de todos los integrantes se reflejaran en el diseño final.<br><br><b>TB1:</b> Planifiqué y entregué dentro de los plazos del Sprint las seis secciones de evidencia a mi cargo (Development, Testing Suite, Execution, Services Documentation, Software Deployment y Team Collaboration Insights), distribuyendo subtareas claras por integrante y haciendo seguimiento de su avance. Mantuve un entorno colaborativo e inclusivo durante el Sprint: revisé los aportes de cada miembro, integré sus capturas y commits a la documentación, y propicié ajustes consensuados (por ejemplo, la corrección de los diagramas C4 y la simplificación del backend a un monolito) cumpliendo los objetivos del Sprint Goal.</td>
@@ -5257,59 +5265,436 @@ En integridad y rendimiento, el diseño incorpora reglas alineadas al dominio: �
 
 ## Capítulo V: Solution UI/UX Design
 
-
+El capítulo presenta el diseño de la interfaz de usuario (UI) y la experiencia de usuario (UX) de la plataforma uFlex. Se detallan los principios de diseño, la arquitectura de la información, los wireframes y prototipos de las principales pantallas de la aplicación. Además, se describen las herramientas y tecnologías utilizadas para el desarrollo del diseño UI/UX.
 
 ### 5.1. Style Guidelines
 
-
+La guía de estilos sienta las bases de diseño para la plataforma uFlex, asegurando una experiencia de usuario coherente y atractiva. En esta sección se detallan los colores, tipografías, iconografía y otros elementos visuales que conforman la identidad de la marca.
 
 #### 5.1.1. General Style Guidelines
 
+La identidad visual de uFlex ha sido diseñada para transmitir confianza, precisión técnica y bienestar clínico. Dado que el ecosistema integra hardware (sensores) y software (SaaS), la paleta de colores busca equilibrar la sobriedad necesaria para una herramienta de grado médico con la calidez requerida para reducir la "kinesiofobia" (miedo al movimiento) en el paciente durante su rehabilitación en casa.
 
+El estilo visual se basa en una estética limpia y moderna, diseñada para garantizar la legibilidad en diversos entornos, desde la pantalla de un smartphone en un hogar con iluminación variable hasta un dashboard clínico en una clínica.
+
+**Color**
+
+Los colores juegan un papel clave en la primera impresión que los usuarios tienen de uFlex. Se han seleccionado tonos que facilitan la jerarquía visual y reducen la carga cognitiva, permitiendo que el paciente se enfoque en la ejecución correcta de sus ejercicios. A continuación, se detalla la paleta de colores de uFlex y su sustento:
+
+- **Color Primario:** #074D61 (Azul Petróleo): Este tono actúa como el pilar de la identidad de la marca. Se seleccionó para evocar profesionalismo, seguridad y estabilidad. Al ser un color profundo, proporciona un contraste excelente para elementos de navegación, transmitiendo la robustez de un sistema que gestiona datos críticos de salud.
+- **Color Secundario:** #48CBB6 (Verde Menta): Funciona como el acento principal de la interfaz, aportando frescura y una sensación de renovación física. Su uso está destinado a elementos interactivos y llamadas a la acción (CTAs), asociando la tecnología de KinIoT con la vitalidad y el progreso del proceso terapéutico.
+- **Color de Fondo:** #F7F5ED (Blanco Hueso): A diferencia de un blanco puro, este tono reduce la fatiga visual, especialmente importante para los fisioterapeutas que pasan largas jornadas revisando métricas. Crea una atmósfera orgánica y acogedora que suaviza la naturaleza estéril de las aplicaciones médicas tradicionales.
+- **Color de Información:** #00B4D8 (Azul Claro): Se reserva para estados neutrales, guías de usuario y visualización de datos informativos. Su claridad ayuda a distinguir instrucciones de soporte sin generar una alerta innecesaria en el paciente.
+- **Color de Éxito:** #3BC48E (Verde Esmeralda): Utilizado para validar el cumplimiento de metas, como el alcance del ángulo de ROM deseado o la finalización de una serie. Este verde refuerza positivamente el comportamiento del usuario mediante una retroalimentación visual clara.
+- **Color de Advertencia:** #FFAD33 (Naranja): Actúa como una señal preventiva. En uFlex, es crucial para indicar cuando un paciente realiza un movimiento que se desvía ligeramente del patrón correcto o cuando la batería de los sensores IoT está próxima a agotarse.
+- **Color de Error:** #EF5350 (Rojo Coral): Destinado a situaciones críticas, como la pérdida de conexión Bluetooth con los sensores o la ejecución de movimientos peligrosos que podrían comprometer la lesión. Es un tono vibrante que asegura una atención inmediata por parte del usuario.
+
+![Paleta de colores de uFlex](assets/design/style-guidelines/general/uflex-color-palette.png)
+
+**Tipografía**
+
+La tipografía es otro componente esencial de la identidad visual de una marca. La elección de fuentes tipográficas debe reflejar la personalidad de la marca y garantizar la legibilidad en todos los dispositivos, desde los dashboards complejos del especialista hasta la interfaz móvil del paciente.
+
+En el caso de uFlex, se seleccionaron las siguientes fuentes:
+
+- **Títulos y Encabezados:** *Plus Jakarta Sans* – Se eligió esta fuente por su geometría moderna y su aire tecnológico, lo cual se alinea con la identidad de KinIoT como innovadora en IoT. Al ser una tipografía diseñada específicamente para pantallas modernas, ofrece una excelente distinción de jerarquías en los encabezados, aportando un carácter dinámico y profesional que guía la vista del usuario hacia la información más relevante de manera inmediata.
+- **Cuerpo de Texto:** *Inter* – Esta tipografía es el estándar para interfaces de usuario debido a su altísima legibilidad en tamaños pequeños. Su diseño optimiza el espacio entre caracteres, lo que facilita que los pacientes lean sus instrucciones de rehabilitación sin esfuerzo visual y que los especialistas interpreten rápidamente los datos numéricos y reportes clínicos en el sistema multitenant.
+
+Con estas elecciones tipográficas, uFlex logra un equilibrio entre una estética vanguardista y una funcionalidad clínica superior. La combinación de ambas asegura que la plataforma sea percibida como una herramienta de alta precisión técnica, pero accesible y amigable para el proceso de recuperación del paciente.
+
+![Tipografía uFlex Títulos](assets/design/style-guidelines/general/uflex-typography-headings.png)
+
+![Tipografía uFlex Cuerpo de Texto](assets/design/style-guidelines/general/uflex-typography-body.png)
+
+**Iconografía**
+
+La iconografía utilizada en uFlex sigue un estilo lineal y minimalista, alineado con las tendencias actuales de diseño. Los iconos son simples, claros y fácilmente reconocibles, lo que facilita la navegación y la comprensión de las funciones de la plataforma.
+
+Además, se sigue el estilo de Material Design Icons, adaptando los iconos a la paleta de colores de uFlex para mantener la coherencia visual. Los iconos se utilizan para representar acciones comunes, como iniciar una sesión, reportar un nivel de dolor o cancelar una sesión, lo que mejora la experiencia del usuario al proporcionar señales visuales claras.
+
+![Iconografía de uFlex](assets/design/style-guidelines/general/uflex-iconography.png)
+
+**Sistema de Cuadrículas**
+
+El diseño de la interfaz de usuario de uFlex se basa en un sistema de cuadrículas flexible que asegura una disposición ordenada y coherente de los elementos visuales. Este sistema facilita la alineación y el espaciado, mejorando la legibilidad y la estética general de la plataforma.
+
+![Sistema de cuadrículas de uFlex](assets/design/style-guidelines/general/uflex-grid-system.png)
+
+**Espaciado**
+
+El espaciado entre los elementos es crucial para evitar la saturación visual y mejorar la experiencia del usuario. En uFlex, se utiliza un sistema de espaciado consistente basado en unidades de 8px, lo que permite una distribución equilibrada y armoniosa de los componentes en la interfaz.
+
+![Espaciado de uFlex](assets/design/style-guidelines/general/uflex-spacing.png)
+
+**Branding**
+
+Para uFlex, se optó por un imagotipo que combina tanto un logotipo (el nombre de la marca) con un isotipo (un símbolo o icono) en una sola unidad coherente. Este enfoque permite que la marca sea fácilmente reconocible y memorable, ya que el símbolo gráfico puede ser utilizado de manera independiente en ciertos contextos, mientras que el nombre de la marca refuerza la identidad verbal.
+
+![Branding de uFlex](assets/design/style-guidelines/general/uflex-branding.png)
+
+El imagotipo de uFlex se compone por un isotipo abstracto que fusiona la letra "U" con una representación esquemática de una articulación humana. La estructura se divide en dos segmentos curvos unidos por nodos circulares, los cuales simbolizan los puntos de conexión y flexibilidad del miembro superior (codo o muñeca). El uso del degradado visual entre el verde menta y el azul petróleo en los diferentes segmentos representa la transición de una lesión hacia la recuperación total, mientras que las formas redondeadas eliminan la rigidez, transmitiendo una sensación de movimiento fluido y natural, objetivo principal de la telerehabilitación.
+
+Además, el imagotipo incluye el nombre "uFlex" en una tipografía moderna y legible, utilizando la fuente Plus Jakarta Sans en un peso semi-bold para aportar solidez visual y equilibrio al conjunto. La aplicación del Azul Petróleo (#074D61) en el texto garantiza que la marca tenga suficiente peso visual en interfaces digitales. La minúscula inicial "u" resalta la cercanía con el usuario (user-centric) y su naturaleza tecnológica, mientras que la "F" mayúscula enfatiza el concepto de "Flexibilidad", creando un ritmo visual que facilita la recordación del nombre comercial.
+
+**Tono de Comunicación**
+
+El tono de comunicación de uFlex se define como **Empático**, **Profesional** y **Alentador**. Dado que el usuario principal suele atravesar un proceso de recuperación física que puede ser frustrante o doloroso, la plataforma debe actuar no solo como una herramienta de medición, sino como un acompañante en su rehabilitación.
+
+- **Empatía:** El sistema reconoce el esfuerzo del usuario. No se limita a entregar datos técnicos, sino que utiliza mensajes que validan el progreso del paciente.
+- **Profesionalismo:** Al ser una solución que gestiona datos de salud y biomecánica, la comunicación mantiene una base seria y precisa, evitando ambigüedades que puedan generar dudas sobre el estado clínico.
+- **Aliento:** Se utiliza un enfoque positivo (sin llegar a ser excesivamente informal) para motivar al paciente a completar sus rutinas diarias, transformando la percepción de la terapia de una obligación a un logro alcanzable.
+
+**Lenguaje Aplicado**
+
+El lenguaje aplicado en las interfaces de uFlex se caracteriza por ser **Respetuoso** y **Sereno**, manteniendo un equilibrio entre lo formal y lo casual según el contexto:
+
+- **Claridad Técnica:** En el dashboard del especialista, el lenguaje es preciso y utiliza la terminología del dominio (como ROM, flexión o supinación) definida en nuestro *Ubiquitous Language*.
+- **Accesibilidad Cognitiva:** En la interfaz del paciente, se evita la jerga médica compleja en favor de instrucciones directas y fáciles de seguir (ej. "Mueve tu muñeca hacia arriba" en lugar de "Realiza una extensión de carpo").
+- **Microcopy Predictivo:** Los botones y etiquetas están diseñados para reducir la incertidumbre. En lugar de usar términos genéricos como "Enviar", se utilizan frases de acción clara como "Finalizar Sesión" o "Reportar Dolor", alineándose con el objetivo de KinIoT de eliminar la incertidumbre en las terapias remotas.
 
 #### 5.1.2. Web, Mobile and IoT Style Guidelines
 
+**Web Style Guidelines**
 
+Para la interfaz web de uFlex, orientada principalmente a administradores y fisioterapeutas, se han adoptado los estándares de **Material Design 3**. Esta decisión asegura una navegación intuitiva y una jerarquía visual clara, facilitando la gestión de grandes volúmenes de datos clínicos y la configuración de terapias.
+
+- **Buttons:** Los botones utilizan esquinas redondeadas y estados claros (hover, focused, disabled) para indicar interactividad. Se prioriza el uso del color primario Azul Petróleo para acciones principales y variantes en "outline" para acciones secundarias, optimizando la toma de decisiones del especialista.
+
+    ![Botones de uFlex Web](./assets/design/style-guidelines/web/uflex-web-buttons.png)
+
+- **TextField:** Los campos de texto están diseñados para maximizar la legibilidad durante el ingreso de historias clínicas o datos de registro. Incluyen etiquetas flotantes y mensajes de error en Rojo Coral para proporcionar feedback inmediato al usuario.
+
+    ![Campos de texto de uFlex Web](./assets/design/style-guidelines/web/uflex-web-textfields.png)
+
+- **Select:** Este componente se utiliza para la selección de protocolos de tratamiento o asignación de pacientes. Su diseño desplegable permite una navegación eficiente dentro de formularios complejos sin perder el contexto de la página.
+
+    ![Select de uFlex Web](./assets/design/style-guidelines/web/uflex-web-select.png)
+
+- **Slider:** Esencial para la visualización y ajuste de rangos de movimiento (ROM) o metas de repeticiones. El slider permite un control granular y visual de parámetros numéricos, facilitando al fisioterapeuta la personalización del tratamiento.
+
+    ![Slider de uFlex Web](./assets/design/style-guidelines/web/uflex-web-slider.png)
+
+- **Checkbox:** Se emplean en las listas de tareas y selección múltiple de ejercicios dentro del plan de rehabilitación. Su diseño minimalista en Verde Menta confirma visualmente las selecciones del administrador de forma rápida.
+
+    ![Checkbox de uFlex Web](./assets/design/style-guidelines/web/uflex-web-checkbox.png)
+
+- **Chip:** Utilizados para categorizar el estado de los pacientes (ej. "En progreso", "Finalizado") o filtrar etiquetas en el inventario de equipos KinIoT. Son elementos compactos que ayudan a organizar la información sin saturar visualmente el dashboard.
+
+    ![Chip de uFlex Web](./assets/design/style-guidelines/web/uflex-web-chip.png)
+
+**Mobile Style Guidelines**
+
+Para la aplicación móvil de uFlex, el enfoque principal es la facilidad de uso y la reducción de la fricción cognitiva para el paciente. Al igual que en la versión web, se utiliza Material Design 3 como marco de referencia, adaptando sus componentes para ofrecer una interfaz táctil que sea amigable, incluso para usuarios con movilidad reducida o dolor en las articulaciones.
+
+- **Buttons:** Los botones móviles presentan superficies táctiles amplias y bordes altamente redondeados (forma de píldora) para facilitar la interacción. Se utilizan variantes con sombra (elevated) para acciones principales y tonos suaves para botones secundarios, manteniendo siempre el contraste necesario para una visibilidad clara. 
+
+    ![Botones de uFlex Mobile](./assets/design/style-guidelines/mobile/uflex-mobile-buttons.png)
+
+- **Segmented Button:** Este componente se emplea para alternar entre vistas rápidas o categorías, como cambiar entre la visualización de "Hoy" y "Semana" en el historial de ejercicios. Su diseño permite una selección clara y un feedback visual inmediato sobre la opción activa.
+
+    ![Segmented Button de uFlex Mobile](./assets/design/style-guidelines/mobile/uflex-mobile-segmented-button.png)
+
+- **Progress Indicator:** Son vitales para gestionar la paciencia del usuario durante procesos asíncronos, como la sincronización de datos mediante Bluetooth con los sensores o la carga de rutinas. Se utilizan tanto barras lineales como indicadores circulares para comunicar que el sistema está trabajando.
+
+    ![Progress Indicator de uFlex Mobile](./assets/design/style-guidelines/mobile/uflex-mobile-progress-indicators.png)
+
+- **Snackbar:** Se utilizan para proporcionar mensajes informativos breves y automáticos al pie de la pantalla, como confirmar que los datos de una sesión se han guardado exitosamente o alertar sobre una desconexión del sensor, permitiendo que el usuario continúe su flujo sin interrupciones mayores.
+
+    ![Snackbar de uFlex Mobile](./assets/design/style-guidelines/mobile/uflex-mobile-snackbar.png)
+
+- **Navigation Bar:** Ubicada en la parte inferior de la pantalla (Bottom Navigation), facilita la navegación con una sola mano. Permite al paciente saltar rápidamente entre las secciones de "Inicio", "Terapia", "Progreso" y "Perfil" mediante iconos claros y etiquetas legibles.
+
+    ![Navigation Bar de uFlex Mobile](./assets/design/style-guidelines/mobile/uflex-mobile-navigation-bar.png)
+
+- **Menu:** Para funciones secundarias o ajustes de cuenta, se implementan menús desplegables que organizan las opciones de manera vertical. Este diseño ahorra espacio en pantalla y mantiene la interfaz limpia, mostrando solo lo necesario cuando el usuario lo requiere.
+
+    ![Menu de uFlex Mobile](./assets/design/style-guidelines/mobile/uflex-mobile-menu.png)
+
+**IoT Style Guidelines**
+
+Estas directrices definen las características físicas y visuales de los dispositivos para asegurar que la captura de datos biomecánicos sea fiable y que la interacción con el paciente sea intuitiva y libre de fricción técnica.
+
+**Diseño físico y carcasa (Wearable Nodes):** El diseño de los tres nodos (Bíceps, Antebrazo y Dorso de la mano) prioriza la ergonomía y la higiene, factores críticos en entornos de rehabilitación.
+
+- **Material:** La carcasa está fabricada en polímero médico ligero, resistente a caídas accidentales y con propiedades hipoalergénicas para evitar irritaciones durante sesiones clínicas prolongadas.
+- **Color:** Se utiliza el Blanco Hueso (#F7F5ED) como base para transmitir limpieza y calma, con detalles en Azul Petróleo (#074D61) en los puntos de sujeción para mantener la coherencia con el branding de uFlex.
+- **Ergonomía:** Los nodos presentan una base cóncava para adaptarse a la curvatura de las extremidades. Los bordes son redondeados para no interferir con la ropa del paciente o causar molestias durante movimientos de Flexión o Extensión.
+- **Sujeción:** Cada nodo cuenta con ranuras para correas de velcro elástico de grado médico, permitiendo una fijación firme que evita el deslizamiento, lo cual es vital para que los sensores entreguen ángulos precisos sin ruido por movimiento relativo.
+
+**Componentes visuales y hápticos en campo:** Estos elementos permiten que el paciente conozca el estado del sistema sin necesidad de mirar constantemente la aplicación móvil, reduciendo la carga cognitiva.
+
+- **Indicadores de Estado (LED RGB):** Un único LED ubicado en el nodo central (controlado por el ESP32) comunica el estado operativo mediante códigos de color coherentes con la paleta de uFlex:
+    - **Azul Parpadeante:** Dispositivo en modo de emparejamiento Bluetooth.
+    - **Verde Fijo:** Conexión exitosa y sensores calibrados listos para iniciar la sesión clínica.
+    - **Rojo Fijo:** Nivel de batería crítica o fallo en la lectura de un sensor.
+- **Feedback Háptico (Motor Vibrador):** Es el canal de comunicación principal durante el ejercicio. El motor tipo moneda genera una vibración breve pero perceptible cuando el sistema detecta un Movimiento Compensatorio (ej. elevación excesiva del hombro) o cuando el paciente alcanza el límite de su Rango de Movimiento (ROM) prescrito en su protocolo terapéutico.
+
+**Gestión de Energía e Interfaz de Usuario Física:** Para facilitar la autonomía del paciente, los nodos cuentan con una batería recargable de larga duración y un puerto USB-C para carga rápida.
+
+- **Puerto de Carga:** Ubicado de forma lateral para no interferir con la sujeción, utiliza un estándar USB-C protegido por una solapa de silicona, conectado a un módulo de recarga de la batería de litio.
+- **Identificador de Nodo:** Cada nodo está grabado con su posición técnica (B, A, D) mediante serigrafía de alta durabilidad, asegurando que el paciente coloque correctamente el sensor de "Bíceps", "Antebrazo" o "Dorso" para no alterar la lógica de la Cadena Cinemática.
 
 <hr class="page-break">
 
 ### 5.2. Information Architecture
 
-
+En esta sección se describe la arquitectura de la información de la plataforma uFlex, la cual ha sido diseñada para estructurar, organizar y etiquetar el contenido de manera que los fisioterapeutas, administradores y pacientes encuentren la información clínica y operativa sin esfuerzo. El objetivo primordial es reducir la carga cognitiva mediante una jerarquía clara que facilite la toma de decisiones médicas y el cumplimiento de las rutinas de ejercicios.
 
 #### 5.2.1. Organization Systems
 
+Para garantizar que el contenido de uFlex sea accesible y lógico, se han aplicado diversos sistemas de organización adaptados a la naturaleza de los datos y al perfil de cada usuario:
 
+**Visual Organization Systems (Sistemas de Organización Visual):**
+
+- **Organización Jerárquica (Visual Hierarchy):** Se aplica de forma predominante en los dashboards de la plataforma web y la aplicación móvil. La información más crítica, como el estado de conexión de los Wearable Nodes y las métricas de ROM (Range of Motion), ocupa el nivel superior de la jerarquía visual mediante el uso de tarjetas (cards) destacadas y tipografía Plus Jakarta Sans en pesos mayores. Esto permite que el fisioterapeuta identifique anomalías en la rehabilitación de un vistazo.
+- **Organización Secuencial (Step-by-step):** Este sistema es el eje central de la experiencia del paciente durante las Clinical Sessions. El flujo de la terapia se organiza como un proceso lineal que guía al usuario desde el emparejamiento de los sensores, pasando por la ejecución guiada de cada ejercicio (Flexión, Extensión, etc.), hasta el reporte final de dolor y progreso.
+- **Organización Matricial:** Se utiliza en la sección de analítica avanzada para especialistas y administradores. Permite cruzar variables como la Adherencia del paciente frente a la mejora en los ángulos de movimiento a lo largo del tiempo, facilitando la comparación de múltiples datos complejos en una sola vista.
+
+**Content Categorization Schemes (Esquemas de Categorización de Contenido):**
+
+- **Según Audiencia (Grupos de Usuarios):** Es el esquema principal de la arquitectura de uFlex. El contenido se segmenta estrictamente según el rol: los Especialistas acceden a herramientas de prescripción y monitoreo técnico, los Administradores a la gestión multitenant de la clínica, y los Pacientes a su plan de entrenamiento personal y feedback biomecánico inmediato.
+- **Cronológico:** Aplicado en el historial de recuperación. Los datos capturados por los sensores BNO055 se organizan por fechas y sesiones, permitiendo al usuario y al médico observar la evolución de la Rigidez Articular desde el inicio del tratamiento hasta la fecha actual.
+- **Por Tópicos:** Se utiliza en la biblioteca de ejercicios y protocolos terapéuticos, categorizando el contenido por articulación (Codo o Muñeca) y tipo de movimiento (Pronación, Supinación, etc.), facilitando la búsqueda de ejercicios específicos para cada patología.
+- **Alfabético:** Este esquema se aplica de forma auxiliar en los listados de pacientes y en el inventario de dispositivos IoT de la clínica para facilitar la localización rápida de registros específicos en bases de datos extensas.
 
 #### 5.2.2. Labeling Systems
 
+En esta sección se definen las etiquetas utilizadas en la plataforma para representar conjuntos de información complejos mediante términos breves y significativos. El objetivo es facilitar la navegabilidad y asegurar que la asociación entre la etiqueta y el contenido sea inmediata, evitando la ambigüedad tanto en la interfaz médica como en la del usuario final.
 
+- **Terapia (o Sesión):** Esta etiqueta se utiliza en la aplicación móvil para agrupar el flujo de ejercicios diarios. Su función es asociar que, al pulsarla, el usuario encontrará su plan de rehabilitación específico, la conexión con los Nodos Vestibles y la guía de movimientos inerciales.
+- **Progreso:** Representa el conjunto de datos históricos y analíticos del paciente. Asocia en la mente del usuario la disponibilidad de gráficos de evolución, comparativas de Range of Motion (ROM) y niveles de Adherencia alcanzados desde el inicio del protocolo terapéutico.
+- **Protocolos:** Etiqueta exclusiva para el perfil del Fisioterapeuta. Asocia de forma directa el acceso a la creación y edición de planes de entrenamiento personalizados, límites de ángulos permitidos y selección de ejercicios biomecánicos.
+- **Dispositivos:** Se utiliza para la gestión del hardware de KinIoT. Asocia el estado de los sensores BNO055, niveles de batería, calibración del ESP32 y configuraciones de emparejamiento Bluetooth.
+- **Clínica:** Etiqueta orientada al perfil administrativo que asocia la gestión multitenant de la organización, incluyendo la administración de sedes, cuentas de especialistas e inventario tecnológico.
+- **Reportes:** Utilizada para la exportación de información clínica objetiva. Asocia la generación de documentos técnicos que detallan la Cadena Cinemática del paciente, facilitando la comunicación entre especialistas médicos.
+- **Ayuda (o Soporte):** Concentra la documentación de usuario y guías rápidas de colocación de los sensores. Su asociación mental indica que allí se encuentran soluciones a errores de conexión (Luz Roja en el LED) o tutoriales de uso del sistema.
 
 #### 5.2.3. SEO Tags and Meta Tags
 
+Para optimizar el posicionamiento y la visibilidad del ecosistema uFlex de la startup KinIoT, se han definido estrategias de SEO para las plataformas web y de ASO para la aplicación móvil. Estas etiquetas permiten que los motores de búsqueda y las tiendas de aplicaciones indexen correctamente el contenido, atrayendo tanto a socios estratégicos (clínicas) como a usuarios finales (pacientes).
 
+**Landing Page SEO Tags and Meta Tags**
+
+La página de aterrizaje tiene como objetivo principal el marketing y la captación de centros de salud y pacientes interesados en la telerehabilitación.
+
+| **Etiqueta**           | **Contenido**                                                                                                                                                 |
+|------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Title                  | uFlex - Telerehabilitación con IoT para Miembro Superior                                                                                                      |
+| Meta Description       | uFlex es la solución líder de KinIoT en Perú que utiliza sensores vestibles y una plataforma SaaS para el monitoreo biomecánico de la rehabilitación en casa. |
+| Meta Keywords          | telerehabilitación, IoT salud, fisioterapia remota, sensores vestibles, KinIoT, rehabilitación de codo, medicina física Perú                                  |
+| Meta Author            | KinIoT Team                                                                                                                                                   |
+| Meta Viewport          | width=device-width, initial-scale=1.0                                                                                                                         |
+| Meta Charset           | UTF-8                                                                                                                                                         |
+| Open Graph Title       | uFlex: Transforma tu rehabilitación con tecnología IoT                                                                                                        |
+| Open Graph Description | Recupera tu movilidad con precisión clínica desde casa mediante nuestros sensores de alta fidelidad.                                                          |
+| Open Graph Image       | https://www.kiniot.com/assets/images/uflex-og-preview.png                                                                                                     |
+| Open Graph URL         | https://www.kiniot.com/uflex                                                                                                                                  |
+
+```html
+<title>uFlex - Telerehabilitación con IoT para Miembro Superior</title>
+<meta name="description" content="uFlex es la solución líder de KinIoT en Perú que utiliza sensores vestibles y una plataforma SaaS para el monitoreo biomecánico de la rehabilitación en casa.">
+<meta name="keywords" content="telerehabilitación, IoT salud, fisioterapia remota, sensores vestibles, KinIoT, rehabilitación de codo, medicina física Perú">
+<meta name="author" content="KinIoT Team">
+<meta property="og:title" content="uFlex: Transforma tu rehabilitación con tecnología IoT">
+<meta property="og:description" content="Recupera tu movilidad con precisión clínica desde casa mediante nuestros sensores de alta fidelidad.">
+```
+
+**Web Application SEO Tags and Meta Tags**
+
+La aplicación web está diseñada para el acceso de Fisioterapeutas y Administradores de clínicas. Al ser una SPA, las etiquetas se enfocan en la funcionalidad y seguridad profesional.
+
+| **Etiqueta**     | **Contenido**                                                                                                  |
+|------------------|----------------------------------------------------------------------------------------------------------------|
+| Title            | Portal de Gestión uFlex - KinIoT                                                                               |
+| Meta Description | Plataforma de gestión clínica y monitoreo de pacientes para especialistas en medicina física y rehabilitación. |
+| Meta Keywords    | gestión clínica SaaS, monitoreo ROM, datos biomecánicos, fisioterapia digital, administración de pacientes     |
+| Meta Robots      | noindex, nofollow (para proteger el acceso a datos internos)                                                   |
+
+**Android Mobile Application ASO (Paciente)**
+
+Dado que la aplicación móvil es de uso exclusivo para el Paciente que realiza sus ejercicios con los Wearable Nodes, el ASO se centra en la facilidad de recuperación y el uso de hardware.
+
+| **Etiqueta**      | **Contenido**                                                                                                                                                                                                                                                                                                           |
+|-------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| App Title         | uFlex: Tu Fisioterapia en Casa                                                                                                                                                                                                                                                                                          |
+| Short Description | Realiza tu rehabilitación de brazo y muñeca con monitoreo IoT en tiempo real.                                                                                                                                                                                                                                           |
+| Full Description  | uFlex te acompaña en tu recuperación. Conéctate a tus sensores KinIoT y recibe retroalimentación inmediata sobre tus movimientos. Nuestra tecnología de sensores BNO055 garantiza que realices cada ejercicio con precisión clínica, evitando movimientos compensatorios y acelerando tu retorno a la movilidad normal. |
+| App Keywords      | ejercicios de codo, rehabilitación móvil, sensor movimiento salud, fisioterapia digital, uFlex, KinIoT                                                                                                                                                                                                                  |
+| Category          | Salud y Bienestar / Medicina                                                                                                                                                                                                                                                                                            |
+| Developer Name    | KinIoT                                                                                                                                                                                                                                                                                                                  |
+| Icon              | Icono de uFlex (512x512 PNG)                                                                                                                                                                                                                                                                                            |
+| Screenshots       | Capturas del emparejamiento Bluetooth, guías de ejercicios y gráficos de progreso (ROM).                                                                                                                                                                                                                                |
 
 #### 5.2.4. Searching Systems
 
+Los sistemas de búsqueda en uFlex han sido diseñados para mitigar la sobrecarga de información, permitiendo que los usuarios localicen registros específicos, métricas de sensores o historiales clínicos de manera ágil y precisa.
 
+1. **Búsqueda en la Aplicación Web (Especialistas y Administradores)**
+
+Dada la naturaleza multitenant de la plataforma, el dashboard administrativo requiere un sistema de búsqueda robusto para gestionar múltiples pacientes y especialistas.
+
+- **Búsqueda Global y Predictiva:** Se implementa una barra de búsqueda con autocompletado en el encabezado del portal. Al ingresar las primeras letras del nombre de un paciente o el ID de un Wearable Node, el sistema sugiere coincidencias en tiempo real, reduciendo el tiempo de navegación.
+- **Filtros Avanzados (Filtering System):** Para refinar los resultados, el especialista cuenta con filtros específicos basados en nuestro lenguaje ubicuo:
+  - **Por Estado de Adherencia:** Filtrar pacientes con bajo cumplimiento del protocolo terapéutico.
+  - **Por Tipo de Lesión:** Agrupar resultados por articulación afectada (Codo o Muñeca).
+  - **Por Rango de Fecha:** Localizar sesiones clínicas realizadas en periodos específicos.
+  - **Por Estado del Hardware:** Filtrar dispositivos KinIoT según nivel de batería o última fecha de sincronización.
+- **Visualización de Resultados:** Los datos se presentan en tablas dinámicas que permiten el "ordenamiento por columnas". Los términos buscados aparecen resaltados, y cada fila incluye un acceso directo a la visualización de la Cadena Cinemática del paciente.
+
+2. **Búsqueda en la Aplicación Móvil (Pacientes)**
+
+En el entorno móvil, la búsqueda es más dirigida y simplificada para no abrumar al usuario durante su recuperación.
+
+- **Búsqueda en Biblioteca de Ejercicios:** El paciente puede buscar rutinas específicas dentro de su plan personalizado. El sistema utiliza etiquetas (chips) para filtrar por "Ejercicios de Flexión", "Rotación" o "Nuevas Rutinas".
+- **Historial de Sesiones:** Se incluye un buscador cronológico dentro de la sección de "Progreso", donde el paciente puede localizar una fecha exacta para revisar el nivel de dolor reportado o los ángulos de ROM alcanzados en ese día.
+- **Visualización de Resultados:** Los resultados se muestran mediante tarjetas (cards) visuales que incluyen un ícono representativo del ejercicio y un indicador de estado (completado/pendiente), facilitando la identificación rápida sin necesidad de leer textos extensos.
 
 #### 5.2.5. Navigation Systems
 
+El sistema de navegación de uFlex se estructura para guiar a los tres tipos de usuarios a través de sus metas específicas: la venta del servicio (Landing), la gestión clínica (Web App) y la ejecución de la terapia (Mobile App). Se han implementado técnicas de navegación que minimizan la cantidad de clics necesarios para alcanzar funciones críticas.
 
+1. **Navegación en el Landing Page (Marketing y Captación)**
+
+- **Navegación de Desplazamiento (Scrolling Navigation):** Al ser un sitio orientado a la conversión, se utiliza una estructura de "One-page" donde el usuario recorre la propuesta de valor de KinIoT, las características de uFlex y los testimonios de forma lineal.
+- **Menú Sticky:** Un encabezado persistente permite saltar rápidamente a secciones como "Tecnología IoT" o "Planes para Clínicas", manteniendo siempre visible el botón de llamado a la acción (CTA) para solicitar una demo.
+
+2. **Navegación en la Aplicación Web (Dashboard Multitenant)**
+
+- **Barra Lateral Estática (Side Navigation):** Se utiliza un menú vertical a la izquierda que contiene las categorías principales: Dashboard, Pacientes, Protocolos e Inventario IoT. Este sistema permite que el fisioterapeuta cambie de contexto sin perder la visibilidad de su ubicación actual.
+- **Navegación por Migas de Pan (Breadcrumbs):** Dado que la gestión clínica puede profundizar en niveles (ej. Clínica > Especialista > Paciente > Sesión específica), las breadcrumbs permiten al administrador retroceder niveles jerárquicos de forma inmediata.
+- **Navegación Contextual:** Dentro del perfil de un paciente, se incluyen pestañas (tabs) para navegar entre "Datos Biomecánicos", "Historial de ROM" y "Configuración de Sensores", manteniendo toda la información relacionada en un solo lugar.
+
+3. **Navegación en la Aplicación Móvil (Experiencia del Paciente):**
+
+- **Barra de Navegación Inferior (Bottom Navigation):** Diseñada para la interacción con el pulgar, permite alternar entre "Inicio", "Mi Terapia" y "Progreso". Es la técnica principal para usuarios que podrían tener movilidad reducida en una mano.
+- **Navegación Secuencial (Guided Flow):** Para la sesión de ejercicios, se emplea una navegación tipo "wizard". El sistema bloquea la navegación libre para obligar al usuario a seguir el orden clínico: Calibración de Sensores → Ejercicio 1 → Feedback Háptico → Registro de Dolor.
+- **Gestos de Interacción (Gestures):** Se incorporan gestos de deslizamiento (swipe) para navegar entre las tarjetas de resultados históricos, haciendo que la revisión del progreso sea una experiencia táctil natural.
+
+4. **Navegación entre Ecosistemas (Inter-product Navigation)**
+
+- **Deep Linking:** El sistema permite que, desde el Portal Web, el fisioterapeuta genere alertas que llegan como notificaciones push al móvil del paciente, creando un puente de navegación directo hacia una rutina específica que requiere atención.
 
 <hr class="page-break">
 
 ### 5.3. Landing Page UI Design
 
-
+En esta sección se presentan los wireframes y mock-ups de la página de inicio (landing page) de la plataforma uFlex. Se describen las principales secciones, funcionalidades y elementos visuales que componen esta pantalla.
 
 #### 5.3.1. Landing Page Wireframe
 
+A continuación se presenta la sustentación de la landing page. El diseño de media fidelidad se ha estructurado para comunicar de manera clara y efectiva la propuesta de valor de uFlex, destacando sus características innovadoras y su impacto en la rehabilitación de miembro superior.
 
+**Hero**
+
+Encabezado claro, subtítulo con propuesta de valor y botones de acción para empezar. El diseño es limpio y directo, con un fondo que resalta el logotipo de uFlex.
+
+![Landing Page Wireframe Hero](./assets/ux-ui/wireframes/landing/landing-page-wireframe-1.png)
+
+**Características**
+
+Se destacan las principales funcionalidades de uFlex, como el monitoreo en tiempo real, la precisión clínica y la facilidad de uso. Cada característica se acompaña de un ícono representativo para mejorar la comprensión visual.
+
+![Landing Page Wireframe Features](./assets/ux-ui/wireframes/landing/landing-page-wireframe-2.png)
+
+**Cómo Funciona**
+
+Se explica en 3 pasos simples cómo funciona la plataforma, desde la conexión de los sensores hasta la visualización de resultados. El diseño utiliza una estructura secuencial para guiar al usuario a través del proceso.
+
+![Landing Page Wireframe How It Works](./assets/ux-ui/wireframes/landing/landing-page-wireframe-3.png)
+
+**Tecnología**
+
+Se detalle el uso de IoT y Edge Computing en uFlex, destacando la innovación tecnológica detrás del producto. Se incluyen gráficos que ilustran la arquitectura técnica y el flujo de datos.
+
+![Landing Page Wireframe Technology](./assets/ux-ui/wireframes/landing/landing-page-wireframe-4.png)
+
+**Testimonios**
+
+Se incluyen testimonios de usuarios satisfechos, con citas destacadas y fotos para generar confianza y credibilidad en el producto.
+
+![Landing Page Wireframe Testimonials](./assets/ux-ui/wireframes/landing/landing-page-wireframe-5.png)
+
+**Planes**
+
+Se muestran los diferentes planes de suscripción para clínicas, con una tabla comparativa que resalta las características incluidas en cada plan y un llamado a la acción para solicitar una demo.
+
+![Landing Page Wireframe Pricing](./assets/ux-ui/wireframes/landing/landing-page-wireframe-6.png)
+
+**Preguntas Frecuentes**
+
+Se incluyen respuestas a las preguntas más comunes sobre el producto, su uso y su implementación en clínicas, para resolver dudas y facilitar la decisión de compra.
+
+![Landing Page Wireframe FAQ](./assets/ux-ui/wireframes/landing/landing-page-wireframe-7.png)
+
+**Contacto**
+
+Se proporciona un formulario de contacto para que los interesados puedan solicitar más información o agendar una demostración personalizada, con campos para nombre, correo electrónico, mensaje y un botón de envío.
+
+![Landing Page Wireframe Contact](./assets/ux-ui/wireframes/landing/landing-page-wireframe-8.png)
+
+**Pie de Página**
+
+Finalmente, se incluye un pie de página con enlaces a redes sociales, términos y condiciones, política de privacidad y datos de contacto de la empresa, para cerrar la experiencia de navegación con información relevante y accesible.
+
+![Landing Page Wireframe Footer](./assets/ux-ui/wireframes/landing/landing-page-wireframe-9.png)
 
 #### 5.3.2. Landing Page Mock-up
 
+A continuación se presenta la sustentación de los mockups de la landing page. En este mock-up de alta fidelidad se han aplicado los lineamientos de estilo definidos previamente, utilizando la paleta de colores, tipografía y componentes visuales para crear una experiencia atractiva y coherente con la identidad de uFlex.
 
+**Hero**
+
+En el mock-up, el hero se ha diseñado con un fondo dinámico que muestra una imagen un miembro superior representando la necesidad del producto, transmitiendo la idea de innovación y tecnología aplicada a la salud. El título y subtítulo están centrados para captar la atención inmediata del visitante.
+
+![Landing Page Mock-up Hero](./assets/ux-ui/mockups/landing/landing-page-mockup-1.png)
+
+**Características**
+
+Se detallan las características de uFlex con un diseño moderno y visualmente atractivo, utilizando tarjetas (cards) para cada funcionalidad y colores que resaltan los beneficios clave del producto.
+
+![Landing Page Mock-up Features](./assets/ux-ui/mockups/landing/landing-page-mockup-2.png)
+
+**Cómo Funciona**
+
+Se muestra en 3 pasos claros y visuales, con íconos y gráficos que facilitan la comprensión del proceso de uso de uFlex, desde la conexión de los sensores hasta la interpretación de los datos.
+
+![Landing Page Mock-up How It Works](./assets/ux-ui/mockups/landing/landing-page-mockup-3.png)
+
+**Tecnología**
+
+Se detallan los componentes tecnológicos de uFlex, destacando el uso de IoT y Edge Computing, con datos numéricos que resaltan la precisión y eficiencia del sistema.
+
+![Landing Page Mock-up Technology](./assets/ux-ui/mockups/landing/landing-page-mockup-4.png)
+
+**Testimonios**
+
+Se incluye una sección de testimonios con citas reales de usuarios satisfechos, acompañados de fotos y un diseño que genera confianza y credibilidad en el producto.
+
+![Landing Page Mock-up Testimonials](./assets/ux-ui/mockups/landing/landing-page-mockup-5.png)
+
+**Planes**
+
+Se incluyen dos planes principales para clínicas, con una tabla comparativa que resalta las características de cada plan y un llamado a la acción claro para solicitar una demo personalizada.
+
+![Landing Page Mock-up Pricing](./assets/ux-ui/mockups/landing/landing-page-mockup-6.png)
+
+**Preguntas Frecuentes**
+
+Preguntas y respuestas claras y concisas sobre el producto, su uso y su implementación en clínicas, diseñadas para resolver dudas comunes y facilitar la decisión de compra.
+
+![Landing Page Mock-up FAQ](./assets/ux-ui/mockups/landing/landing-page-mockup-7.png)
+
+**Contacto**
+
+Formulario de contacto con un diseño limpio y funcional, que invita a los visitantes a solicitar más información o agendar una demostración personalizada, con campos claros y un botón de envío destacado.
+
+![Landing Page Mock-up Contact](./assets/ux-ui/mockups/landing/landing-page-mockup-8.png)
+
+**Pie de Página**
+
+Finalmente, se incluye un pie de página con enlaces a redes sociales, términos y condiciones, política de privacidad y datos de contacto de la empresa, diseñado para cerrar la experiencia de navegación con información relevante y accesible.
+
+![Landing Page Mock-up Footer](./assets/ux-ui/mockups/landing/landing-page-mockup-9.png)
 
 <hr class="page-break">
 
