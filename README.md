@@ -5202,6 +5202,21 @@ En integridad y rendimiento, el diseño incorpora reglas alineadas al dominio: �
 
 <hr class="page-break">
 
+## 5.4. Applications UX/UI Design.
+En esta sección se presentan low wireframes y mock-ups de las aplicaciones web y móvil de la plataforma uFlex. Se describen las principale pantallas, funcionalidades y elementos visuales que componen estas aplicaciones.
+
+### 5.4.1. Applications Wireframes.
+
+### 5.4.2. Applications Wireflow Diagrams.
+
+### 5.4.2. Applications Mock-ups.
+
+### 5.4.3. Applications User Flow Diagrams.
+
+### 5.5. Applications Prototyping.
+
+### 5.6. IoT Device Design.
+
 # Conclusiones
 
 En esta sección se presentan las conclusiones y recomendaciones derivadas del desarrollo del proyecto. Se analizan los resultados obtenidos, los desafíos enfrentados y las lecciones aprendidas durante el proceso. Además, se proponen acciones futuras para mejorar y optimizar la plataforma uFlex.
