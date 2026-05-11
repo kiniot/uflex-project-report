@@ -5570,15 +5570,123 @@ El sistema de navegación de uFlex se estructura para guiar a los tres tipos de 
 
 ### 5.3. Landing Page UI Design
 
-
+En esta sección se presentan los wireframes y mock-ups de la página de inicio (landing page) de la plataforma uFlex. Se describen las principales secciones, funcionalidades y elementos visuales que componen esta pantalla.
 
 #### 5.3.1. Landing Page Wireframe
 
+A continuación se presenta la sustentación de la landing page. El diseño de media fidelidad se ha estructurado para comunicar de manera clara y efectiva la propuesta de valor de uFlex, destacando sus características innovadoras y su impacto en la rehabilitación de miembro superior.
 
+**Hero**
+
+Encabezado claro, subtítulo con propuesta de valor y botones de acción para empezar. El diseño es limpio y directo, con un fondo que resalta el logotipo de uFlex.
+
+![Landing Page Wireframe Hero](./assets/ux-ui/wireframes/landing/landing-page-wireframe-1.png)
+
+**Características**
+
+Se destacan las principales funcionalidades de uFlex, como el monitoreo en tiempo real, la precisión clínica y la facilidad de uso. Cada característica se acompaña de un ícono representativo para mejorar la comprensión visual.
+
+![Landing Page Wireframe Features](./assets/ux-ui/wireframes/landing/landing-page-wireframe-2.png)
+
+**Cómo Funciona**
+
+Se explica en 3 pasos simples cómo funciona la plataforma, desde la conexión de los sensores hasta la visualización de resultados. El diseño utiliza una estructura secuencial para guiar al usuario a través del proceso.
+
+![Landing Page Wireframe How It Works](./assets/ux-ui/wireframes/landing/landing-page-wireframe-3.png)
+
+**Tecnología**
+
+Se detalle el uso de IoT y Edge Computing en uFlex, destacando la innovación tecnológica detrás del producto. Se incluyen gráficos que ilustran la arquitectura técnica y el flujo de datos.
+
+![Landing Page Wireframe Technology](./assets/ux-ui/wireframes/landing/landing-page-wireframe-4.png)
+
+**Testimonios**
+
+Se incluyen testimonios de usuarios satisfechos, con citas destacadas y fotos para generar confianza y credibilidad en el producto.
+
+![Landing Page Wireframe Testimonials](./assets/ux-ui/wireframes/landing/landing-page-wireframe-5.png)
+
+**Planes**
+
+Se muestran los diferentes planes de suscripción para clínicas, con una tabla comparativa que resalta las características incluidas en cada plan y un llamado a la acción para solicitar una demo.
+
+![Landing Page Wireframe Pricing](./assets/ux-ui/wireframes/landing/landing-page-wireframe-6.png)
+
+**Preguntas Frecuentes**
+
+Se incluyen respuestas a las preguntas más comunes sobre el producto, su uso y su implementación en clínicas, para resolver dudas y facilitar la decisión de compra.
+
+![Landing Page Wireframe FAQ](./assets/ux-ui/wireframes/landing/landing-page-wireframe-7.png)
+
+**Contacto**
+
+Se proporciona un formulario de contacto para que los interesados puedan solicitar más información o agendar una demostración personalizada, con campos para nombre, correo electrónico, mensaje y un botón de envío.
+
+![Landing Page Wireframe Contact](./assets/ux-ui/wireframes/landing/landing-page-wireframe-8.png)
+
+**Pie de Página**
+
+Finalmente, se incluye un pie de página con enlaces a redes sociales, términos y condiciones, política de privacidad y datos de contacto de la empresa, para cerrar la experiencia de navegación con información relevante y accesible.
+
+![Landing Page Wireframe Footer](./assets/ux-ui/wireframes/landing/landing-page-wireframe-9.png)
 
 #### 5.3.2. Landing Page Mock-up
 
+A continuación se presenta la sustentación de los mockups de la landing page. En este mock-up de alta fidelidad se han aplicado los lineamientos de estilo definidos previamente, utilizando la paleta de colores, tipografía y componentes visuales para crear una experiencia atractiva y coherente con la identidad de uFlex.
 
+**Hero**
+
+En el mock-up, el hero se ha diseñado con un fondo dinámico que muestra una imagen un miembro superior representando la necesidad del producto, transmitiendo la idea de innovación y tecnología aplicada a la salud. El título y subtítulo están centrados para captar la atención inmediata del visitante.
+
+![Landing Page Mock-up Hero](./assets/ux-ui/mockups/landing/landing-page-mockup-1.png)
+
+**Características**
+
+Se detallan las características de uFlex con un diseño moderno y visualmente atractivo, utilizando tarjetas (cards) para cada funcionalidad y colores que resaltan los beneficios clave del producto.
+
+![Landing Page Mock-up Features](./assets/ux-ui/mockups/landing/landing-page-mockup-2.png)
+
+**Cómo Funciona**
+
+Se muestra en 3 pasos claros y visuales, con íconos y gráficos que facilitan la comprensión del proceso de uso de uFlex, desde la conexión de los sensores hasta la interpretación de los datos.
+
+![Landing Page Mock-up How It Works](./assets/ux-ui/mockups/landing/landing-page-mockup-3.png)
+
+**Tecnología**
+
+Se detallan los componentes tecnológicos de uFlex, destacando el uso de IoT y Edge Computing, con datos numéricos que resaltan la precisión y eficiencia del sistema.
+
+![Landing Page Mock-up Technology](./assets/ux-ui/mockups/landing/landing-page-mockup-4.png)
+
+**Testimonios**
+
+Se incluye una sección de testimonios con citas reales de usuarios satisfechos, acompañados de fotos y un diseño que genera confianza y credibilidad en el producto.
+
+![Landing Page Mock-up Testimonials](./assets/ux-ui/mockups/landing/landing-page-mockup-5.png)
+
+**Planes**
+
+Se incluyen dos planes principales para clínicas, con una tabla comparativa que resalta las características de cada plan y un llamado a la acción claro para solicitar una demo personalizada.
+
+![Landing Page Mock-up Pricing](./assets/ux-ui/mockups/landing/landing-page-mockup-6.png)
+
+**Preguntas Frecuentes**
+
+Preguntas y respuestas claras y concisas sobre el producto, su uso y su implementación en clínicas, diseñadas para resolver dudas comunes y facilitar la decisión de compra.
+
+![Landing Page Mock-up FAQ](./assets/ux-ui/mockups/landing/landing-page-mockup-7.png)
+
+**Contacto**
+
+Formulario de contacto con un diseño limpio y funcional, que invita a los visitantes a solicitar más información o agendar una demostración personalizada, con campos claros y un botón de envío destacado.
+
+![Landing Page Mock-up Contact](./assets/ux-ui/mockups/landing/landing-page-mockup-8.png)
+
+**Pie de Página**
+
+Finalmente, se incluye un pie de página con enlaces a redes sociales, términos y condiciones, política de privacidad y datos de contacto de la empresa, diseñado para cerrar la experiencia de navegación con información relevante y accesible.
+
+![Landing Page Mock-up Footer](./assets/ux-ui/mockups/landing/landing-page-mockup-9.png)
 
 <hr class="page-break">
 
