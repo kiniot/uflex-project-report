@@ -5728,7 +5728,23 @@ Durante el Sprint 1 nuestro equipo se enfocó en sentar la base de los dos produ
 
 URL del repositorio: https://github.com/kiniot/uflex-landing-page
 
-> El repositorio de la Landing Page fue creado en la organización `kiniot` durante el Sprint 1, pero todavía no contiene commits ni entregables: la implementación de este producto se priorizó para un sprint posterior. Por ello no se incluye tabla de commits para este repositorio en el presente Sprint Review.
+La Landing Page se implementó como el sitio público de presentación de uFlex, incorporando estructura inicial del proyecto, configuración base, sistema visual, soporte PWA, navegación, localización bilingüe y contenido de footer. Los cambios se trabajaron en ramas de feature y se integraron hacia `develop` mediante pull requests.
+
+| Repository                  | Branch                                | Commit Id | Commit Message                                                                                             | Commit Message Body         | Committed on (Date) |
+|-----------------------------|---------------------------------------|-----------|------------------------------------------------------------------------------------------------------------|-----------------------------|---------------------|
+| kiniot/uflex-landing-page   | main                                  | b844eaf   | chore: initial commit                                                                                      | —                           | 10/05/2026          |
+| kiniot/uflex-landing-page   | feature/initial-structure             | db38a64   | feat: add initial project structure with configuration files and design system                              | —                           | 10/05/2026          |
+| kiniot/uflex-landing-page   | feature/initial-structure             | c30c37a   | styles: update styling with custom themes and typography                                                    | —                           | 10/05/2026          |
+| kiniot/uflex-landing-page   | feature/initial-structure             | 8ce1727   | feat: update index.html with improved structure, navigation, and meta tags; add site.webmanifest for PWA support | —                       | 10/05/2026          |
+| kiniot/uflex-landing-page   | feature/initial-structure             | 202e683   | feat(i18n): implement language selection and localization support; add language loading and text updating functionality | —                  | 10/05/2026          |
+| kiniot/uflex-landing-page   | feature/initial-structure → main      | b19ab75   | Merge pull request #1 from kiniot/feature/initial-structure                                                 | Feature/initial structure   | 10/05/2026          |
+| kiniot/uflex-landing-page   | feature/initial-structure             | b917d37   | chore: add KinIoT logo images                                                                              | —                           | 10/05/2026          |
+| kiniot/uflex-landing-page   | feature/initial-structure → develop   | 3dcbfa4   | Merge pull request #2 from kiniot/feature/initial-structure                                                 | chore: add KinIoT logo images | 10/05/2026        |
+| kiniot/uflex-landing-page   | feature/footer-section                | b1378ab   | docs: Add initial README.md file                                                                           | —                           | 10/05/2026          |
+| kiniot/uflex-landing-page   | feature/footer-section                | 45e280c   | feat: add i18n in footer content                                                                           | —                           | 10/05/2026          |
+| kiniot/uflex-landing-page   | feature/footer-section                | fbf54d8   | fix: resolve formatting issues in footer content                                                           | —                           | 10/05/2026          |
+| kiniot/uflex-landing-page   | feature/footer-section                | b2f7196   | chore: remove unused items                                                                                 | —                           | 10/05/2026          |
+| kiniot/uflex-landing-page   | feature/footer-section → develop      | 397a09c   | Merge pull request #3 from kiniot/feature/footer-section                                                    | Feature/footer section      | 10/05/2026          |
 
 **Repositorio: Web Application (PWA)**
 
@@ -5798,11 +5814,7 @@ URL del repositorio: https://github.com/kiniot/uflex-clinic-web
 
 ##### 6.2.1.5. Testing Suite Evidence for Sprint Review
 
-Para este Sprint el alcance de pruebas automatizadas se concentra en **Unit Tests** sobre la Web Application (PWA), implementados con **Vitest** sobre el builder oficial `@angular/build:unit-test` y **Angular TestBed**. Las pruebas cubren las capas de **dominio** (entidades y commands del bounded context IAM y Device) y **aplicación** (stores con signals y computed properties), aplicando el patrón de mocks vía `TestBed.configureTestingModule({ providers: [{ provide: …, useValue: … }] })` para aislar las dependencias de infraestructura (HTTP, Router). El repositorio de la Landing Page no incluye Unit Tests en este Sprint porque el repo aún no contiene implementación. Los **Integration Tests y Acceptance Tests bajo el enfoque BDD** (archivos `.feature` con Gherkin y Steps) **no aplican en el Sprint 1** y se incorporarán en el Sprint 2 cuando se conecte la Web App al monolito REST API en escenarios end-to-end.
-
-**Unit Tests — Landing Page**
-
-> El repositorio de la Landing Page todavía no contiene código fuente ni suite de pruebas. Las Unit Tests se incluirán cuando arranque la implementación de este producto.
+Para este Sprint el alcance de pruebas automatizadas se concentra en **Unit Tests** sobre la Web Application (PWA), implementados con **Vitest** sobre el builder oficial `@angular/build:unit-test` y **Angular TestBed**. Las pruebas cubren las capas de **dominio** (entidades y commands del bounded context IAM y Device) y **aplicación** (stores con signals y computed properties), aplicando el patrón de mocks vía `TestBed.configureTestingModule({ providers: [{ provide: …, useValue: … }] })` para aislar las dependencias de infraestructura (HTTP, Router). Los **Integration Tests y Acceptance Tests bajo el enfoque BDD** (archivos `.feature` con Gherkin y Steps) **no aplican en el Sprint 1** y se incorporarán en el Sprint 2 cuando se conecte la Web App al monolito REST API en escenarios end-to-end.
 
 **Unit Tests — Web Application (PWA)**
 
@@ -5818,12 +5830,6 @@ Para este Sprint el alcance de pruebas automatizadas se concentra en **Unit Test
 
 > Resultado del último run: **22 tests pasando en 7 spec files** (`pnpm test --watch=false` ejecuta el builder `@angular/build:unit-test` con Vitest 4.1.5).
 
-**Commits relacionados con Testing — Landing Page**
-
-URL del repositorio: https://github.com/kiniot/uflex-landing-page
-
-> Sin commits de testing en este Sprint: el repositorio aún no contiene código fuente ni suite de pruebas.
-
 **Commits relacionados con Testing — Web Application (PWA)**
 
 URL del repositorio: https://github.com/kiniot/uflex-clinic-web
@@ -5837,11 +5843,51 @@ URL del repositorio: https://github.com/kiniot/uflex-clinic-web
 
 ##### 6.2.1.6. Execution Evidence for Sprint Review
 
-En este Sprint entregamos una primera versión navegable de la **Web Application (PWA)** de uFlex. El producto cubre el flujo de autenticación común (sign-in y sign-up) y dos portales diferenciados por rol: el portal del **Administrador de Clínica** (clinic-admin), con acceso a los bounded contexts de Therapy, Device, Organization, Subscription y Profile/IAM; y el portal del **Fisioterapeuta** (physiotherapist), con su propio dashboard y vistas de Therapy, Device, Organization y Planning. La **Landing Page** queda fuera del alcance ejecutable de este Sprint porque su repositorio aún no contiene implementación, y los Web Services se entregarán en el Sprint 2 (alcance del monolito REST API). A continuación se presentan las capturas de las principales vistas entregadas.
+En este Sprint entregamos una primera versión navegable de la **Landing Page** y de la **Web Application (PWA)** de uFlex. La Landing Page presenta la propuesta de valor, beneficios, tecnología, testimonios, planes y canales de contacto del producto. La Web Application cubre el flujo de autenticación común (sign-in y sign-up) y dos portales diferenciados por rol: el portal del **Administrador de Clínica** (clinic-admin), con acceso a los bounded contexts de Therapy, Device, Organization, Subscription y Profile/IAM; y el portal del **Fisioterapeuta** (physiotherapist), con su propio dashboard y vistas de Therapy, Device, Organization y Planning. Los Web Services se entregarán en el Sprint 2 (alcance del monolito REST API). A continuación se presentan las capturas de las principales vistas entregadas.
 
 **Landing Page — vistas principales**
 
-> No aplica en este Sprint Review: el repositorio de la Landing Page todavía no contiene implementación, por lo que no hay vistas ejecutables que capturar.
+<div style="text-align: center;">
+  <img src="assets/images/screenshots/sprint-1/landing-hero.png" alt="Landing Page — Hero" style="max-width: 100%; height: auto;">
+</div>
+
+*Figura 6.2.1.6.1. Landing Page — Hero principal y propuesta de valor.*
+
+<div style="text-align: center;">
+  <img src="assets/images/screenshots/sprint-1/landing-benefits.png" alt="Landing Page — Benefits" style="max-width: 100%; height: auto;">
+</div>
+
+*Figura 6.2.1.6.2. Landing Page — Beneficios principales de uFlex.*
+
+<div style="text-align: center;">
+  <img src="assets/images/screenshots/sprint-1/landing-technology.png" alt="Landing Page — Technology" style="max-width: 100%; height: auto;">
+</div>
+
+*Figura 6.2.1.6.3. Landing Page — Tecnología y funcionamiento de la solución.*
+
+<div style="text-align: center;">
+  <img src="assets/images/screenshots/sprint-1/landing-testimonials.png" alt="Landing Page — Testimonials" style="max-width: 100%; height: auto;">
+</div>
+
+*Figura 6.2.1.6.4. Landing Page — Testimonios y validación social.*
+
+<div style="text-align: center;">
+  <img src="assets/images/screenshots/sprint-1/landing-plans.png" alt="Landing Page — Plans" style="max-width: 100%; height: auto;">
+</div>
+
+*Figura 6.2.1.6.5. Landing Page — Planes comerciales.*
+
+<div style="text-align: center;">
+  <img src="assets/images/screenshots/sprint-1/landing-faq.png" alt="Landing Page — FAQ" style="max-width: 100%; height: auto;">
+</div>
+
+*Figura 6.2.1.6.6. Landing Page — Preguntas frecuentes.*
+
+<div style="text-align: center;">
+  <img src="assets/images/screenshots/sprint-1/landing-contact.png" alt="Landing Page — Contact" style="max-width: 100%; height: auto;">
+</div>
+
+*Figura 6.2.1.6.7. Landing Page — Formulario y canales de contacto.*
 
 **Web Application (PWA) — Autenticación**
 
@@ -5849,13 +5895,13 @@ En este Sprint entregamos una primera versión navegable de la **Web Application
   <img src="assets/images/screenshots/sprint-1/Sign-in.png" alt="Web App — Sign In" style="max-width: 100%; height: auto;">
 </div>
 
-*Figura 6.2.1.6.1. Web Application — Pantalla de inicio de sesión.*
+*Figura 6.2.1.6.8. Web Application — Pantalla de inicio de sesión.*
 
 <div style="text-align: center;">
   <img src="assets/images/screenshots/sprint-1/Sign-up.png" alt="Web App — Sign Up" style="max-width: 100%; height: auto;">
 </div>
 
-*Figura 6.2.1.6.2. Web Application — Pantalla de registro.*
+*Figura 6.2.1.6.9. Web Application — Pantalla de registro.*
 
 **Web Application (PWA) — Portal del Administrador de Clínica**
 
@@ -5863,31 +5909,31 @@ En este Sprint entregamos una primera versión navegable de la **Web Application
   <img src="assets/images/screenshots/sprint-1/Administrador-therapy-screen.png" alt="Clinic Admin — Therapy" style="max-width: 100%; height: auto;">
 </div>
 
-*Figura 6.2.1.6.3. Clinic Admin — Catálogo de Therapy (ejercicios y filtros).*
+*Figura 6.2.1.6.10. Clinic Admin — Catálogo de Therapy (ejercicios y filtros).*
 
 <div style="text-align: center;">
   <img src="assets/images/screenshots/sprint-1/Administrador-device-screen.png" alt="Clinic Admin — Device" style="max-width: 100%; height: auto;">
 </div>
 
-*Figura 6.2.1.6.4. Clinic Admin — Inventario de dispositivos IoT.*
+*Figura 6.2.1.6.11. Clinic Admin — Inventario de dispositivos IoT.*
 
 <div style="text-align: center;">
   <img src="assets/images/screenshots/sprint-1/Administrador-organization-screen.png" alt="Clinic Admin — Organization" style="max-width: 100%; height: auto;">
 </div>
 
-*Figura 6.2.1.6.5. Clinic Admin — Gestión de la clínica y staff.*
+*Figura 6.2.1.6.12. Clinic Admin — Gestión de la clínica y staff.*
 
 <div style="text-align: center;">
   <img src="assets/images/screenshots/sprint-1/Administrador-subscription-screen.png" alt="Clinic Admin — Subscription" style="max-width: 100%; height: auto;">
 </div>
 
-*Figura 6.2.1.6.6. Clinic Admin — Plan, uso de licencias e historial de facturación.*
+*Figura 6.2.1.6.13. Clinic Admin — Plan, uso de licencias e historial de facturación.*
 
 <div style="text-align: center;">
   <img src="assets/images/screenshots/sprint-1/Administrador-profile-screen.png" alt="Clinic Admin — Profile / IAM" style="max-width: 100%; height: auto;">
 </div>
 
-*Figura 6.2.1.6.7. Clinic Admin — Directorio de usuarios (IAM Profile).*
+*Figura 6.2.1.6.14. Clinic Admin — Directorio de usuarios (IAM Profile).*
 
 **Web Application (PWA) — Portal del Fisioterapeuta**
 
@@ -5895,31 +5941,31 @@ En este Sprint entregamos una primera versión navegable de la **Web Application
   <img src="assets/images/screenshots/sprint-1/Physiotherapist-dashboard-screen.png" alt="Physiotherapist — Dashboard" style="max-width: 100%; height: auto;">
 </div>
 
-*Figura 6.2.1.6.8. Physiotherapist — Dashboard del día (sesiones, alertas y métricas clínicas).*
+*Figura 6.2.1.6.15. Physiotherapist — Dashboard del día (sesiones, alertas y métricas clínicas).*
 
 <div style="text-align: center;">
   <img src="assets/images/screenshots/sprint-1/Physiotherapist-therapy-screen.png" alt="Physiotherapist — Therapy" style="max-width: 100%; height: auto;">
 </div>
 
-*Figura 6.2.1.6.9. Physiotherapist — Gestión de pacientes y protocolos de terapia.*
+*Figura 6.2.1.6.16. Physiotherapist — Gestión de pacientes y protocolos de terapia.*
 
 <div style="text-align: center;">
   <img src="assets/images/screenshots/sprint-1/Physiotherapist-planning-screen.png" alt="Physiotherapist — Planning" style="max-width: 100%; height: auto;">
 </div>
 
-*Figura 6.2.1.6.10. Physiotherapist — Therapy Roadmap y routine builder.*
+*Figura 6.2.1.6.17. Physiotherapist — Therapy Roadmap y routine builder.*
 
 <div style="text-align: center;">
   <img src="assets/images/screenshots/sprint-1/Physiotherapist-device-screen.png" alt="Physiotherapist — Device" style="max-width: 100%; height: auto;">
 </div>
 
-*Figura 6.2.1.6.11. Physiotherapist — Inventario de kits IoT con conectividad y batería.*
+*Figura 6.2.1.6.18. Physiotherapist — Inventario de kits IoT con conectividad y batería.*
 
 <div style="text-align: center;">
   <img src="assets/images/screenshots/sprint-1/Physiotherapist-organization-screen.png" alt="Physiotherapist — Organization" style="max-width: 100%; height: auto;">
 </div>
 
-*Figura 6.2.1.6.12. Physiotherapist — Cola de pacientes sin asignar y KPIs operacionales.*
+*Figura 6.2.1.6.19. Physiotherapist — Cola de pacientes sin asignar y KPIs operacionales.*
 
 ##### 6.2.1.7. Services Documentation Evidence for Sprint Review
 
@@ -5927,11 +5973,23 @@ Esta sección **no aplica para el Sprint 1** porque el alcance entregado se conc
 
 ##### 6.2.1.8. Software Deployment Evidence for Sprint Review
 
-Durante este Sprint el equipo realizó las primeras actividades de despliegue de la **Web Application (PWA)** en **Vercel**, el proveedor cloud elegido para los productos de front-end. La **Landing Page** queda fuera del alcance de despliegue de este Sprint porque su repositorio aún no contiene implementación, y los **Web Services** se desplegarán en el Sprint 2 cuando se entregue el monolito REST API. A continuación se documenta el flujo de despliegue ejecutado.
+Durante este Sprint el equipo realizó las primeras actividades de despliegue de los productos de **front-end** en **Vercel**, el proveedor cloud elegido para publicar la Landing Page y la Web Application (PWA). Los **Web Services** se desplegarán en el Sprint 2 cuando se entregue el monolito REST API. A continuación se documenta el flujo de despliegue ejecutado para cada producto.
 
 **Despliegue — Landing Page**
 
-> No aplica en este Sprint Review: el repositorio de la Landing Page todavía no contiene implementación, por lo tanto no hay artefacto que desplegar.
+URL pública: <https://uflex-landing-page.vercel.app/>
+
+Pasos realizados durante el Sprint:
+1. **Creación del proyecto en Vercel.** Se accedió al dashboard de Vercel con la cuenta enlazada a GitHub y se creó un nuevo proyecto para la Landing Page.
+2. **Importación del repositorio.** Desde la opción "Add New... -> Project" se importó el repositorio `kiniot/uflex-landing-page`, quedando conectado con la rama `main` para despliegues de producción.
+3. **Configuración del build.** Vercel detectó automáticamente la aplicación front-end y configuró el flujo de instalación, build y publicación del artefacto estático.
+4. **Verificación del dominio público.** Tras finalizar el build, Vercel asignó el dominio `https://uflex-landing-page.vercel.app/` y el estado del deployment quedó como **Ready**.
+
+<div style="text-align: center;">
+  <img src="assets/images/screenshots/sprint-1/deploy-landing-vercel.png" alt="Deploy Landing Page — Vercel" style="max-width: 100%; height: auto;">
+</div>
+
+*Figura 6.2.1.8.1. Vercel — proyecto y despliegue de la Landing Page.*
 
 **Despliegue — Web Application (PWA)**
 
@@ -5939,15 +5997,15 @@ URL pública: <https://uflex-clinic-web.vercel.app/>
 
 Pasos realizados durante el Sprint:
 1. **Creación de la cuenta en Vercel.** Se registró la cuenta del integrante responsable usando "Continue with GitHub" para enlazar Vercel directamente con el usuario de GitHub que tiene acceso a la organización `kiniot`.
-2. **Importación del repositorio.** Desde el dashboard de Vercel se eligió "Add New… → Project" y se importó el repositorio `kiniot/uflex-clinic-web`. Para que Vercel pudiera detectarlo bajo el plan free (Hobby), el repositorio se cambió a visibilidad pública en GitHub, ya que el plan gratuito no permite desplegar repos privados de organizaciones.
-3. **Configuración del build.** Vercel detectó automáticamente Angular como framework. Se confirmaron los parámetros: `Install Command: pnpm install`, `Build Command: pnpm build`, `Output Directory: dist/uflex-clinic-web/browser` y la rama de producción configurada en `develop`.
+2. **Importación del repositorio.** Desde el dashboard de Vercel se eligió "Add New... -> Project" y se importó el repositorio `kiniot/uflex-clinic-web`. Para que Vercel pudiera detectarlo bajo el plan free (Hobby), el repositorio se cambió a visibilidad pública en GitHub, ya que el plan gratuito no permite desplegar repos privados de organizaciones.
+3. **Configuración del build.** Vercel detectó automáticamente Angular como framework. Se confirmaron los parámetros de instalación, build y salida del artefacto web, manteniendo la rama de producción conectada al repositorio.
 4. **Verificación del dominio público y navegación.** Tras finalizar el primer build, Vercel asignó la URL `https://uflex-clinic-web.vercel.app/`. Se validó que el sitio carga correctamente, que el redirect del path raíz (`/`) lleva a `/iam/sign-in` (gracias al fix introducido en el commit `0e7f0b1`) y que la PWA se instala desde el navegador.
 
 <div style="text-align: center;">
   <img src="assets/images/screenshots/sprint-1/deploy-webapp-vercel.png" alt="Deploy Web App — Vercel" style="max-width: 100%; height: auto;">
 </div>
 
-*Figura 6.2.1.8.1. Vercel — proyecto y despliegue de la Web Application.*
+*Figura 6.2.1.8.2. Vercel — proyecto y despliegue de la Web Application.*
 
 ##### 6.2.1.9. Team Collaboration Insights during Sprint
 
