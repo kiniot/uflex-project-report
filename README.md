@@ -57,19 +57,25 @@
 
 # Registro de Versiones del Informe
 
-| Version  | Fecha      | Autor                                 | Descripción de modificación                                                     |
-|----------|------------|---------------------------------------|---------------------------------------------------------------------------------|
-| 1.0.0    | 2026-04-04 | Ramirez Mestanza, Salim Ignacio       | Creación de estructura base, carátula y registro de versiones.                  |
-| 1.1.0    | 2026-04-05 | Varela Bustinza, Marcelo Alessandro   | Redacción de Capítulo I: Startup Profile y Solution Profile (Lean UX).          |
-| 1.2.0    | 2026-04-07 | Sulca Gonzales, Paúl Fernando         | Desarrollo de Capítulo II: Requirements Elicitation & Analysis.                 |
-| 1.3.0    | 2026-04-10 | Crispín Ramos, Daniel Franco          | Desarrollo de Capítulo III: Requirements Specification.                         |
-| 1.4.0    | 2026-04-13 | Rivera Sosa, Eduardo Gael             | Desarrollo de Capítulo IV: Strategic DDD y Software Architecture.               |
-| 1.5.1    | 2026-04-16 | Varela Bustinza, Marcelo Alessandro   | Desarrollo Tactical DDD del Bounded Context: Organization.                      |
-| 1.5.2    | 2026-04-16 | Rivera Sosa, Eduardo Gael             | Desarrollo Tactical DDD del Bounded Context: IAM y Subscription.                |
-| 1.5.3    | 2026-04-19 | Crispín Ramos, Daniel Franco          | Desarrollo Tactical DDD del Bounded Context: Device.                            |
-| 1.5.4    | 2026-04-21 | Ramirez Mestanza, Salim Ignacio       | Desarrollo Tactical DDD del Bounded Context: Planning.                          |
-| 1.5.5    | 2026-04-22 | Sulca Gonzales, Paúl Fernando         | Desarrollo Tactical DDD del Bounded Context: Therapy.                           |
-| 1.6.0    | 2026-04-23 | Ramirez Mestanza, Salim Ignacio       | Integración de Student Outcome, Conclusiones (avance) y Bibliografía para AV1.  |
+| Version | Fecha      | Autor                                 | Descripción de modificación                                                    |
+|---------|------------|---------------------------------------|--------------------------------------------------------------------------------|
+| 1.0.0   | 2026-04-04 | Ramirez Mestanza, Salim Ignacio       | Creación de estructura base, carátula y registro de versiones.                 |
+| 1.1.0   | 2026-04-05 | Varela Bustinza, Marcelo Alessandro   | Redacción de Capítulo I: Startup Profile y Solution Profile (Lean UX).         |
+| 1.2.0   | 2026-04-07 | Sulca Gonzales, Paúl Fernando         | Desarrollo de Capítulo II: Requirements Elicitation & Analysis.                |
+| 1.3.0   | 2026-04-10 | Crispín Ramos, Daniel Franco          | Desarrollo de Capítulo III: Requirements Specification.                        |
+| 1.4.0   | 2026-04-13 | Rivera Sosa, Eduardo Gael             | Desarrollo de Capítulo IV: Strategic DDD y Software Architecture.              |
+| 1.5.1   | 2026-04-16 | Varela Bustinza, Marcelo Alessandro   | Desarrollo Tactical DDD del Bounded Context: Organization.                     |
+| 1.5.2   | 2026-04-16 | Rivera Sosa, Eduardo Gael             | Desarrollo Tactical DDD del Bounded Context: IAM y Subscription.               |
+| 1.5.3   | 2026-04-19 | Crispín Ramos, Daniel Franco          | Desarrollo Tactical DDD del Bounded Context: Device.                           |
+| 1.5.4   | 2026-04-21 | Ramirez Mestanza, Salim Ignacio       | Desarrollo Tactical DDD del Bounded Context: Planning.                         |
+| 1.5.5   | 2026-04-22 | Sulca Gonzales, Paúl Fernando         | Desarrollo Tactical DDD del Bounded Context: Therapy.                          |
+| 1.6.0   | 2026-04-23 | Ramirez Mestanza, Salim Ignacio       | Integración de Student Outcome, Conclusiones (avance) y Bibliografía para AV1. |
+| 2.0.0   | 2026-05-13 | Crispín Ramos, Daniel Franco          | Mejora continua y corrección de errores del AV1.                               |
+| 2.0.1   | 2026-05-13 | Ramirez Mestanza, Salim Ignacio       | Style Guidelines, Information Architecture y IoT Device Design.                |
+| 2.0.2   | 2026-05-13 | Rivera Sosa, Eduardo Gael             | Application UX-UI Web                                                          |
+| 2.0.3   | 2026-05-13 | Sulca Gonzales, Paúl Fernando         | Application UX-UI Móvil                                                        |
+| 2.0.4   | 2026-05-13 | Varela Bustinza, Marcelo Alessandro   | Software Configuration Management, Landing Page, Sprint 1 evidence.            |
+| 2.0.5   | 2026-05-13 | Ramirez Mestanza, Salim Ignacio       | Integración de Student Outcome, Conclusiones (avance) y Bibliografía para TB1. |
 
 <hr class="page-break">
 
@@ -5706,22 +5712,281 @@ Finalmente, se incluye un pie de página con enlaces a redes sociales, términos
 
 
 
+#### Application Mobile - Paciente
+
+En esta sección se presentan los wireframes de media fidelidad para la aplicación móvil del paciente. El diseño sigue los principios de **diseño inclusivo**, aplicando tipografía legible de alto contraste, áreas táctiles mínimas de 48x48dp, navegación simple con patrones de flujo conocidos y jerarquía visual clara con grupos de contenido bien definidos. La arquitectura de información se estructura en flujos que priorizan las acciones más frecuentes del paciente.
+
+**Splash**
+
+Pantalla inicial que muestra el logotipo de uFlex centrado en un fondo limpio. Cumple la función de crear reconocimiento de marca mientras se cargan los recursos necesarios. El tiempo de exposición es breve (1-2 segundos) y redirige automáticamente al login si el usuario no está autenticado, o al onboarding en caso contrario.
+
+![Mobile Patient Wireframe - Splash](./assets/ux-ui/wireframes/mobile/mobile-patient-wireframe-1.png)
+
+**Login**
+
+Pantalla de autenticación que solicita al paciente su correo electrónico (con el que el fisioterapeuta lo registró) y un código de verificación enviado a dicho correo. El diseño sigue el principio de **affordance clara**, con campos de entrada claramente etiquetados y botones de acción prominentes. La disposición vertical de los elementos facilita la interacción con una sola mano. Se incluye la opción de reenviar el código si no se recibió, aplicando diseño inclusivo para usuarios con ansiedad tecnológica.
+
+![Mobile Patient Wireframe - Login](./assets/ux-ui/wireframes/mobile/mobile-patient-wireframe-2.png)
+
+**Home**
+
+Pantalla principal que actúa como hub de navegación. Saluda al usuario con un mensaje motivacional personalizado para incentivarlo a realizar su rutina diaria. Muestra un widget de **progreso semanal** con el porcentaje de ejercicios completados (visualizado como una barra de progreso circular con color verde paraCompletion y gris para pendiente). Además, presenta la lista de ejercicios asignados para el día de hoy, diferenciando los completados de los pendientes con íconos y colores semánticos. La información se organiza según el modelo de **Jerarquía de Necesidades** de Maslow adaptada a rehabilitación: primero motivación, luego progreso, finalmente tareas.
+
+![Mobile Patient Wireframe - Home](./assets/ux-ui/wireframes/mobile/mobile-patient-wireframe-3.png)
+
+**Devices - Sincronización Exitosa**
+
+Pantalla de confirmación que aparece tras completar exitosamente la vinculación del sensor IoT con la aplicación. Muestra el porcentaje de batería restante del dispositivo, transmitiendo éxito y tranquilidad. La información de batería se presenta con un indicador visual (porcentaje + ícono) siguiendo principios de diseño **data at a glance** para que el paciente pueda verificar rapidamente el estado del hardware antes de iniciar la terapia.
+
+![Mobile Patient Wireframe - Devices Éxito](./assets/ux-ui/wireframes/mobile/mobile-patient-wireframe-4.png)
+
+**Devices - Conexión Paso 1**
+
+Pantalla instructiva que guía al paciente en el primer paso de vinculación del sensor. El diseño aplica el principio de **diseño ambiental** mostrando una ilustración del sensor físico con una flecha señalando dónde debe encenderse. Indica que se debe asegurar que la luz del dispositivo IoT se encienda. El texto de instrucción es breve, con viñetas numeradas y un ícono representativo. La estructura sigue una disposición **top-to-bottom** para guiar visualmente al usuario por los pasos sin necesidad de scroll.
+
+![Mobile Patient Wireframe - Devices Conexión Paso 1](./assets/ux-ui/wireframes/mobile/mobile-patient-wireframe-5.png)
+
+**Devices - Conexión Paso 2**
+
+Pantalla que muestra el proceso de vinculación Bluetooth entre el teléfono y el sensor IoT. Presenta una **barra de progreso circular** que se completa incrementally mientras se establece la conexión. El diseño aplica el principio de **feedback continuo** manteniendo al paciente informado del estado del proceso. El texto "Vinculando..." se acompaña de un indicador visual de carga, y el mensaje es claro: la conexión se realiza por Bluetooth de baja energía para minimizar el consumo de batería del dispositivo IoT.
+
+![Mobile Patient Wireframe - Devices Conexión Paso 2](./assets/ux-ui/wireframes/mobile/mobile-patient-wireframe-6.png)
+
+**Terapia - Preparación**
+
+Pantalla previa al inicio de la sesión de ejercicios. El diseño sigue principios de **diseño instruccional** mostrando un video tutorial de cómo ejecutar correctamente los movimientos. Debajo del video, se presenta una serie de instrucciones textuales y visuales que describen la postura correcta, los errores comunes a evitar y las recomendaciones de respiración. Se aplica un layout de **contenido mixto** que combina video (elemento dominante), texto secundario e íconos de precaución para maximizar la comprensión del paciente antes de iniciar la actividad física.
+
+![Mobile Patient Wireframe - Terapia Preparación](./assets/ux-ui/wireframes/mobile/mobile-patient-wireframe-7.png)
+
+**Terapia - Sesión Activa**
+
+Pantalla central de la experiencia de rehabilitación. El diseño aplica principios de **diseño centrado en la tarea** mostrando en tiempo real un avatar que sigue los movimientos del brazo del paciente capturados por el sensor IoT. Se visualizan los ejercicios solicitados junto con el conteo de repeticiones válidas (incrementándose en verde) y el total de repeticiones requeridas. La información se dispone en cuadrantes: avatar superior para feedback visual, contador lateral para métricas, y barra inferior de progreso de sesión. El contraste alto y los colores semánticos permiten que pacientes con visión reducida puedan seguir su progreso.
+
+![Mobile Patient Wireframe - Terapia Sesión Activa](./assets/ux-ui/wireframes/mobile/mobile-patient-wireframe-8.png)
+
+**Terapia - Sesión Activa con Alerta**
+
+Pantalla idéntica a la sesión activa en su estructura, pero que se activa dinámicamente cuando el sistema detecta que el paciente no está ejecutando el movimiento dentro del rango o ángulo estipulado por el fisioterapeuta. El diseño aplica el principio de **feedback correctivo inmediato** mostrando una alerta visual prominente con un ícono de advertencia y un mensaje claro: "Ajusta tu posición". La alerta se presenta con color naranja de alta visibilidad, sin interrumpir abruptamente el flujo de la sesión, permitiendo que el paciente corrija y continúe sin perder el ritmo de la terapia.
+
+![Mobile Patient Wireframe - Terapia Sesión Activa Alerta](./assets/ux-ui/wireframes/mobile/mobile-patient-wireframe-9.png)
+
+**Terapia - Feedback**
+
+Pantalla final de la sesión de terapia. El diseño sigue el principio de **cierre de ciclo** proporcionando al paciente un espacio para reflexionar sobre su experiencia. Se presenta una escala visual de dolor (iconos faciales con etiquetas descriptivas) para que el paciente indique cuánto dolor sintió durante la sesión. Un campo de comentarios permite expresar sensaciones o dudas. El botón "Finalizar" confirma la conclusión de la terapia y guarda los datos para que el fisioterapeuta pueda revisarlos. La composición sigue un flujo vertical que facilita la completaración de todos los campos.
+
+![Mobile Patient Wireframe - Terapia Feedback](./assets/ux-ui/wireframes/mobile/mobile-patient-wireframe-10.png)
+
+**Historial - Progreso**
+
+Pantalla de consulta histórica que muestra gráficos de evolución de la movilidad del paciente a lo largo del tiempo. El diseño aplica principios de **visualización de datos accesible** usando líneas de tendencia con colores diferenciados para cada rango de movimiento medido. Se incluyen comentarios del fisioterapeuta como notas adjuntas a puntos específicos del gráfico, permitiendo que el paciente entienda el contexto clínico de su evolución. La información se organiza cronológicamente de más reciente a más antiguo, con la posibilidad de hacer zoom o seleccionar rangos de fechas específicos para consultar períodos anteriores.
+
+![Mobile Patient Wireframe - Historial Progreso](./assets/ux-ui/wireframes/mobile/mobile-patient-wireframe-11.png)
+
 #### 5.4.2. Applications Wireflow Diagrams
 
 
+
+
+#### Application Mobile - Paciente
+
+En esta seccion se presentan los Wireflow Diagrams de la aplicacion movil del paciente. Cada wireflow representa el flujo principal (happy path) para cumplir un User Goal especifico del usuario Mateo Rojas (paciente en rehabilitacion). Los wireflows muestran las pantallas involucradas y las transiciones entre ellas, facilitando la comprension del recorrido del usuario dentro de la aplicacion.
+
+**WF-01: Device Connection Flow**
+
+**User Goal:** UG-01 - Conectar mi dispositivo IoT a mi celular
+
+**Descripcion:** El paciente accede a la seccion de dispositivos para vincular el sensor IoT con su celular por primera vez o luego de haberlo desconectado. El flujo comienza en Home donde selecciona la opcion de conectar dispositivo, sigue los pasos de encendido y vinculacion Bluetooth, y regresa a Home una vez completado el proceso exitosamente.
+
+**Diagrama del flujo:**
+
+![Wireflow - Device Connection](./assets/ux-ui/wireflows/patient/mobile-patient-wireflow-1.png)
+
+**Explicacion del flujo:**
+
+1. **Home:** El paciente se encuentra en la pantalla principal y selecciona la opcion "Conectar dispositivo" (representada con icono de Bluetooth/dispositivo).
+2. **Devices - Conexion Paso 1:** Se muestra una instruccion para encender el sensor IoT manteniendo presionado el boton de encendido. El boton "Siguiente" permanece deshabilitado hasta que se detecte el dispositivo.
+3. **Devices - Conexion Paso 2:** Una vez detectado, la pantalla muestra una barra de progreso circular mientras se establece la conexion Bluetooth. El flujo es automatico sin intervencion del usuario.
+4. **Devices - Sincronizacion Exitosa:** Aparece la confirmacion con un icono de check verde, el nivel de bateria del dispositivo (85%) y el estado "Conectado". El paciente presiona "Listo" para finalizar.
+5. **Home:** El sistema redirige automaticamente a la pantalla principal donde ahora aparece el dispositivo conectado disponible para iniciar terapias.
+
+---
+
+**WF-02: Therapy Session Flow**
+
+**User Goal:** UG-02 - Realizar una sesion completa de rehabilitacion
+
+**Descripcion:** El paciente inicia su sesion de terapia desde Home con el dispositivo ya conectado. Sigue las instrucciones de preparacion, ejecuta los ejercicios mientras el sensor captura sus movimientos, recibe feedback en tiempo real sobre su postura, y al finalizar reporta su nivel de dolor para que el fisioterapeuta pueda evaluar su progreso.
+
+**Diagrama del flujo:**
+
+![Wireflow - Therapy Session](./assets/ux-ui/wireflows/patient/mobile-patient-wireflow-2.png)
+
+**Explicacion del flujo:**
+
+1. **Home:** El paciente selecciona un ejercicio pendiente de su lista diaria (boton de play).
+2. **Terapia - Preparacion:** Se muestra un video tutorial con las instrucciones de postura correcta. El paciente Revisa las recomendaciones y presiona "Iniciar Sesion".
+3. **Terapia - Sesion Activa:** Comienza la captura de movimiento en tiempo real. El avatar refleja los movimientos del brazo del paciente. El contador de repeticiones avanza conforme las ejecuta correctamente. La barra de progreso indica en que sesion va (3 de 5).
+4. **Terapia - Sesion Activa con Alerta:** Si el paciente realiza un movimiento fuera del angulo requerido, aparece un mensaje de alerta sobrepuesto: "Ajusta tu posicion". El paciente corrige su postura y puede continuar.
+5. **Terapia - Feedback:** Al completar todas las repeticiones, aparece la pantalla final donde el paciente selecciona su nivel de dolor (1 a 5), escribe comentarios opcionales y presiona "Finalizar".
+6. **Home:** El sistema guarda la informacion de la sesion y redirige a Home. El ejercicio aparece marcado como completado con check verde.
+
+---
+
+**WF-03: Progress History Flow**
+
+**User Goal:** UG-03 - Consultar mi historial de progreso
+
+**Descripcion:** El paciente desea revisar como ha evolucionado su movilidad a lo largo del tiempo. Accede a la seccion de historial desde Home, visualiza los graficos de progreso con los datos capturados por el sensor, y revisa los comentarios que su fisioterapeuta ha dejado en las sesiones anteriores.
+
+**Diagrama del flujo:**
+
+![Wireflow - Progress History](./assets/ux-ui/wireflows/patient/mobile-patient-wireflow-3.png)
+
+**Explicacion del flujo:**
+
+1. **Home:** El paciente selecciona la opcion "Ver historial de progreso" desde la pantalla principal.
+2. **Historial - Progreso:** Se muestra un grafico de lineas con la tendencia del rango de movimiento a lo largo de las ultimas semanas. Los puntos en el grafico incluyen notas del fisioterapeuta que pueden ser revisadas tocando cada punto de datos.
+3. **Historial - Progreso (filtro):** El paciente puede usar el selector de fechas para consultar un rango especifico de tiempo (Desde/Hasta).
+4. **Home:** El paciente presiona el boton de retroceder o "Volver" para regresar a la pantalla principal.
+
+---
 
 #### 5.4.3. Applications Mock-ups
 
 
 
+#### Application Mobile - Paciente
+
+En esta seccion se presentan los mockups de alta fidelidad para la aplicacion movil del paciente. El diseno aplica el Design System de uFlex con colores corporativos, bordes redondeados y sombras sutiles. Cada pantalla esta disenada para ser intuitiva, con elementos claros y accesibles que cumplen con los principios de diseno inclusivo.
+
+**Splash**
+
+El mockup del Splash muestra el logotipo de uFlex en color azul centrado sobre un fondo blanco limpio. Debajo del logo aparece el mensaje "Rehabilitacion inteligente" a modo de tagline. Un pequeno indicador de carga animado (circulo) aparece en la parte inferior mientras se inicia la aplicacion. El diseno es minimalista para lograr rapides en la carga.
+
+![Mobile Patient Mockup - Splash](./assets/ux-ui/mockups/mobile/patient/mobile-patient-mockup-1.png)
+
+**Login**
+
+El mockup del Login muestra una estructura vertical centrada. En la parte superior esta el logo de uFlex. En el centro hay dos campos de entrada: uno para el correo electronico y otro para el codigo de verificacion que llega al correo. Debajo de los campos hay dos botones: el principal "Verificar" en azul solido, y el secundario "Reenviar codigo" solo con texto. En la parte inferior hay un enlace de "Ayuda" pequeno. La disposicion guia la vista de arriba hacia abajo de manera natural.
+
+![Mobile Patient Mockup - Login](./assets/ux-ui/mockups/mobile/patient/mobile-patient-mockup-2.png)
+
+**Home**
+
+El mockup del Home muestra tres areas bien separadas. Arriba esta el saludo personalizado "Hola, Salim" con un icono circular de avatar a la derecha y un mensaje motivacional debajo. En la parte media hay una tarjeta que muestra el progreso semanal con un circulo que indica el porcentaje completado (67%) y el texto correspondiente. Abajo aparece una lista de ejercicios del dia, donde cada uno tiene un icono, nombre y numero de repeticiones. Los ejercicios completados tienen una marca de verificacion verde, mientras que los pendientes muestran un boton de play para iniciar.
+
+![Mobile Patient Mockup - Home](./assets/ux-ui/mockups/mobile/patient/mobile-patient-mockup-3.png)
+
+**Devices - Sincronizacion Exitosa**
+
+El mockup de sincronizacion exitosa muestra un icono de check dentro de un circulo verdegrande, indicando que todo salio bien. Debajo dice "Dispositivo conectado" y se muestra una tarjeta con el icono de bateria y el porcentaje (85%) junto con la etiqueta "Nivel de bateria". Abajo aparece una pastilla verde que dice "Conectado". Todo el contenido esta centrado para transmitir claridad y tranquilidad al usuario.
+
+![Mobile Patient Mockup - Devices Exito](./assets/ux-ui/mockups/mobile/patient/mobile-patient-mockup-4.png)
+
+**Devices - Conexion Paso 1**
+
+El mockup del primer paso de conexion muestra una ilustracion del sensor IoT con una flecha indicando el boton de encendido. Hay un titulo "Enciende tu sensor" seguido de dos instrucciones con iconos: la primera dice "Mantener presionado el boton de encendido" y la segunda "Verificar que la luz indicadora parpadee". El boton "Siguiente" aparece abajo pero deshabilitado (en gris) hasta que se detecte el dispositivo.
+
+![Mobile Patient Mockup - Devices Conexion Paso 1](./assets/ux-ui/mockups/mobile/patient/mobile-patient-mockup-5.png)
+
+**Devices - Conexion Paso 2**
+
+El mockup del segundo paso muestra una barra de progreso circular animada en el centro de la pantalla. Sobre la barra dice "Buscando dispositivo" y debajo "Vinculando...". Abajo hay un texto explicativo que dice "Conectando por Bluetooth de baja energia". No hay botones porque el proceso es automatico.
+
+![Mobile Patient Mockup - Devices Conexion Paso 2](./assets/ux-ui/mockups/mobile/patient/mobile-patient-mockup-6.png)
+
+**Terapia - Preparacion**
+
+El mockup de preparacion tiene un area de video rectangular en la parte superior con un icono de play centrado. Debajo del video hay una lista de instrucciones con iconos: "Postura correcta", "Evita movimiento brusco" y "Mantener respiracion constante". Cada instruccion tiene un icono a la izquierda y texto a la derecha. En la parte inferior hay un boton grande "Iniciar Sesion" en azul.
+
+![Mobile Patient Mockup - Terapia Preparacion](./assets/ux-ui/mockups/mobile/patient/mobile-patient-mockup-7.png)
+
+**Terapia - Sesion Activa**
+
+El mockup de sesion activa muestra el progreso de la terapia en tiempo real. En la parte superior izquierda hay un avatar que representa al usuario siguiendo los movimientos del brazo. En la parte superior derecha se ve el nombre del ejercicio "Flexion de codo" y un contador grande que muestra las repeticiones "8/12". En la parte inferior hay una barra de progreso horizontal que indica en que sesion va (3 de 5). En la esquina inferior derecha hay un boton circular de "Pausa". El avatar y los contadores permiten al usuario seguir su progreso visualmente.
+
+![Mobile Patient Mockup - Terapia Sesion Activa](./assets/ux-ui/mockups/mobile/patient/mobile-patient-mockup-8.png)
+
+**Terapia - Sesion Activa con Alerta**
+
+El mockup de alerta muestra la misma estructura del sesion activa, pero con un mensaje emergente en la parte superior. Este mensaje aparece en un recuadro amarillo con un icono de advertencia y el texto "Ajusta tu posicion" junto con una explicacion de que el angulo actual es menor al requerido. El mensaje se superpone al contenido principal sin cubrirlo completamente, para que el usuario pueda seguir viendo su progreso mientras corrige su postura.
+
+![Mobile Patient Mockup - Terapia Sesion Activa Alerta](./assets/ux-ui/mockups/mobile/patient/mobile-patient-mockup-9.png)
+
+**Terapia - Feedback**
+
+El mockup de feedback es la pantalla final de la sesion. En la parte superior muestra una escala de dolor con 5 opciones representadas por circulos numerados del 1 al 5, cada uno con un color diferente (desde verde para sin dolor hasta rojo para mucho dolor). Debajo de cada circulo hay una etiqueta descriptiva: "Sin dolor", "Leve", "Moderado", "Intenso", "Muy intenso". Mas abajo hay un campo de texto grande para escribir comentarios sobre la sesion. Al final hay un boton grande "Finalizar" en azul.
+
+![Mobile Patient Mockup - Terapia Feedback](./assets/ux-ui/mockups/mobile/patient/mobile-patient-mockup-10.png)
+
+**Historial - Progreso**
+
+El mockup del historial muestra graficos de como ha evolucionado el progreso del paciente. En la parte superior esta el titulo "Tu progreso" seguido de un grafico de lineas que muestra la tendencia del rango de movimiento a lo largo de las semanas. Los puntos en el grafico representan datos tomados en diferentes fechas. Hay pequenos iconos que representan los comentarios del fisioterapeuta. En la parte inferior hay dos campos de fecha para seleccionar un rango: "Desde" y "Hasta" con iconos de calendario.
+
+![Mobile Patient Mockup - Historial Progreso](./assets/ux-ui/mockups/mobile/patient/mobile-patient-mockup-11.png)
+
 #### 5.4.4. Applications User Flow Diagrams
 
 
 
-<hr class="page-break">
+#### Application Mobile - Paciente
 
-### 5.5. Applications Prototyping
+En esta seccion se presentan los User Flow Diagrams de la aplicacion movil del paciente. A diferencia de los Wireflow Diagrams, los User Flows incluyen tanto el camino principal (happy path) como los caminos alternativos (unhappy paths) para cada User Goal. Esto permite visualizar todas las posibles rutas que el usuario puede seguir dentro de la aplicacion, incluyendo los casos donde ocurren errores o el usuario decide cancelar una accion.
 
+Los User Flows son consistentes con los Wireflows previamente definidos, utilizando las misma pantallas y transiciones base, pero expandiendo el flujo para incluir las condiciones alternativas.
+
+
+**UF-01: Device Connection User Flow**
+
+**User Goal:** UG-01 - Conectar mi dispositivo IoT a mi celular
+
+**Descripcion y flujo:** El paciente inicia la conexion del dispositivo desde Home. Existen dos posibilidades: si el sensor ya esta encendido y es detectado inmediatamente, se muestra la pantalla de sincronizacion exitosa con el porcentaje de bateria y el check de confirmacion. Si el sensor no es detectado, el paciente debe seguir dos pasos: primero encender el sensor IoT presionando el boton de encendido y verificar que la luz indicadora parpadee, y segundo esperar a que la barra de progreso Bluetooth complete la vinculacion. Una vez completada la conexion, se muestra la pantalla con el check verde, el nivel de bateria y el estado "Conectado". El paciente puede cancelar el proceso en cualquier momento presionando "Volver".
+
+**Diagrama del flujo:**
+
+![User Flow - Device Connection](./assets/ux-ui/userflows/patient/mobile-patient-userflow-1.png)
+
+---
+
+**UF-02: Therapy Session User Flow**
+
+**User Goal:** UG-02 - Realizar una sesion completa de rehabilitacion
+
+**Descripcion y flujo:** El paciente puede acceder a su rutina de ejercicios de dos maneras: directamente desde la seccion "Ejercicios" en la barra de navegacion inferior, o presionando sobre un ejercicio pendiente desde la lista en Home. Una vez en la pantalla de preparacion, ve un video tutorial con las instrucciones y presiona "Iniciar Sesion". Durante la sesion activa, el avatar sigue sus movimientos en tiempo real. Hay dos posibilidades durante los ejercicios: si el paciente ejecuta todos los movimientos correctamente dentro del rango de angulo requerido, la sesion avanza normalmente hasta completarse. Si realiza algun movimiento con mala postura o fuera del angulo estipulado, aparece una alerta emergente indicando que ajuste su posicion; el paciente corrige y presiona "Continuar" para proseguir. Al finalizar todas las repeticiones, se muestra la pantalla de feedback donde el paciente selecciona su nivel de dolor y escribe comentarios opcionales antes de presionar "Finalizar" y regresar a Home con el ejercicio marcado como completado.
+
+**Diagrama del flujo:**
+
+![User Flow - Therapy Session](./assets/ux-ui/userflows/patient/mobile-patient-userflow-2.png)
+
+---
+
+**UF-03: Progress History User Flow**
+
+**User Goal:** UG-03 - Consultar mi historial de progreso
+
+**Descripcion y flujo:** El paciente puede acceder a su historial de dos maneras: desde la seccion "Historial" en la barra de navegacion inferior, o presionando sobre la tarjeta de progreso semanal en Home para ver mas detalles. Al entrar se muestra un grafico de lineas con la evolucion del rango de movimiento a lo largo del tiempo. El paciente puede tocar cualquier punto de datos en el grafico para ver la nota o comentario que el fisioterapeuta dejo en esa sesion. Tambien puede usar el selector de fechas (Desde/Hasta) para filtrar y ver un rango especifico de su progreso. Si no hay datos para el rango seleccionado, el sistema muestra un mensaje informativo. Al finalizar, el paciente presiona "Volver" para regresar a Home.
+
+**Diagrama del flujo:**
+
+![User Flow - Progress History](./assets/ux-ui/userflows/patient/mobile-patient-userflow-3.png)
+
+#### 5.4.5. Applications Prototyping
+
+
+
+#### Application Mobile - Paciente
+
+En esta seccion se presenta el prototipo interactivo de la aplicacion movil del paciente. El prototipo fue desarrollado utilizando Figma y permite experimentar las interacciones reales de la app, incluyendo las transiciones entre pantallas, los flujos de navegacion y la retroalimentacion visual de cada elemento.
+
+El prototipo abarca las 11 pantallas principales del paciente: Splash, Login, Home, Devices (3 pantallas), Terapia (4 pantallas) e Historial.
+
+![Prototyping Application Mobile](./assets/ux-ui/prototypes/mobile/patient/prototype-mobile.png)
+
+**Enlace al prototipo:**
+
+El prototipo interactivo se encuentra disponible en Figma y puede ser accesado a traves del siguiente enlace: [Prototipo Mobile Paciente - uFlex](https://www.figma.com/proto/zTSdPPNtBudIxeYN6Ro83Q/uFlex-Mobile?node-id=30-3100&viewport=674%2C264%2C0.27&t=ZhFjKkotzh5hLJDo-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=30%3A3100&page-id=24%3A2323)
+
+El video del prototipo interactivo se encuentra disponible a traves del siguiente enlace: [Video Prototipo Mobile Paciente - uFlex](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20221g120_upc_edu_pe/IQA6HikJDm2WRI2hmc-I92pcAazSwYXEpvRIm1Z8_xudj-M?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=1F2w9s)
 
 
 ### 5.6. IoT Device Design
