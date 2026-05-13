@@ -6081,28 +6081,406 @@ Adicionalmente, se incluye el diagrama de despliegue de la arquitectura del sist
 
 ![Software Deployment Configuration: Deployment Diagram](assets/diagrams/software-architecture/deployment/out/uflex-deployment-diagram.png)
 
-
-
 <hr class="page-break">
 
 ### 6.2. Landing Page, Services & Applications Implementation
 
+En esta seccion se describe la implementacion progresiva de los productos digitales de uFlex, incluyendo la landing page, la web application para fisioterapeutas y administradores, los servicios backend y las aplicaciones conectadas al ecosistema IoT. Se presentan los sprints ejecutados, los objetivos planteados, las responsabilidades asumidas por el equipo y la evidencia generada durante el desarrollo.
 
 
 #### 6.2.1. Sprint 1
 
+Durante el primer sprint, el equipo se enfoco unicamente en los artefactos de **landing page** y **web application**, priorizando una primera entrega navegable y coherente con la propuesta de valor de uFlex. El trabajo se concentro en exponer claramente la oferta de telerehabilitacion para fisioterapeutas y clinicas, y en habilitar la base funcional de la experiencia web para los usuarios institucionales. Para ello, se definieron objetivos concretos, se distribuyeron tareas entre los cinco integrantes y se alinearon los entregables con el backlog priorizado del producto.
 
 
 ##### 6.2.1.1. Sprint Planning 1
 
+Se presenta el sprint planning correspondiente a esta primera entrega, detallando el contexto de planificacion, el objetivo del sprint y la capacidad estimada del equipo.
+
+A continuación se presenta una captura de pantalla de nuestro tablero en Trello: 
+
+![Captura  Sprint 1 de Trello](./assets/images/screenshots/trello-sprint-1.png)  
+[Enlace del Trello](https://kyrubi-upc.atlassian.net/jira/software/projects/HU/boards/34)  
+
+| Sprint # | Sprint 1 |
+|---|---|
+| **Sprint Planning Background** | |
+| Date | 02/05/2026 |
+| Time | 08:30 PM |
+| Location | Reunion grupal virtual mediante Discord |
+| Prepared By | Paul Sulca |
+| Attendees (to planning meeting) | Paul Sulca, Daniel Crispin, Salim Ramirez, Eduardo Rivera, Marcelo Varela |
+| **Sprint Goal & User Stories** | |
+| Sprint 1 Goal | Nos centramos en implementar la landing page publica de uFlex, la base funcional de la web application para fisioterapeutas y administradores, y el soporte tecnico minimo para autenticacion institucional. Creemos que esto entregara una primera version visible y verificable de la propuesta digital del proyecto. Esto se confirmara cuando las secciones clave de la landing page esten navegables, la web application permita flujos iniciales de acceso y visualizacion base para usuarios institucionales, y la autenticacion del cliente web cuente con un servicio backend inicial. |
+| Sprint 1 Velocity | 36 |
+| Sum of Story Points | 36 |
 
 
 ##### 6.2.1.2. Aspect Leaders and Collaborators
 
+En esta seccion se presenta la matriz Leadership-and-Collaboration Matrix (LACX) correspondiente al Sprint 1. Dado que el alcance de este sprint se limita a los artefactos de **Landing Page** y **Web Application**, estos dos productos se consideran los aspectos principales de coordinacion. La matriz permite identificar con claridad quien lidera cada frente y quienes participan como colaboradores, facilitando la comunicacion interna y la posterior asignacion de tareas del sprint.
+
+| Team Member (Last Name, First Name) | GitHub Username | Landing Page Leader (L) / Collaborator (C) | Web Application Leader (L) / Collaborator (C) |
+|---|---|---|---|
+| Crispin Ramos, Daniel Franco | `danielcr04` | C | C |
+| Ramirez Mestanza, Salim Ignacio | `salimramirez` | L | C |
+| Sulca Gonzales, Paul Fernando | `Kyrubi` | C | C |
+| Rivera Sosa, Eduardo Gael | `gael-rs` | C | L |
+| Varela Bustinza, Marcelo Alessandro | `VarBus` | C | C |
+
+La organizacion de lideres y colaboradores mantiene relacion directa con la seleccion posterior de tasks del Sprint 1, asegurando que cada producto tenga una referencia principal y apoyo distribuido entre los integrantes del equipo.
 
 
 ##### 6.2.1.3. Sprint Backlog 1
 
+El objetivo de este Sprint es presentar una primera version funcional de la **landing page** de uFlex y de la **web application** orientada a fisioterapeutas y administradores de clinica. Para ello, se priorizaron las User Stories del Product Backlog relacionadas con exploracion de propuesta de valor, contenido comercial del sitio publico, acceso institucional a la plataforma y soporte tecnico de autenticacion para el cliente web.
+
+<div style="font-size:80%; overflow-x:auto;">
+  <table border="1" cellspacing="0" cellpadding="5">
+    <thead>
+      <tr>
+        <th colspan="2">Sprint #</th>
+        <th colspan="6">Sprint 1</th>
+      </tr>
+      <tr>
+        <th colspan="2">User Story / Technical Story</th>
+        <th colspan="6">Work-Item / Task</th>
+      </tr>
+      <tr>
+        <th>Id</th>
+        <th>Title</th>
+        <th>Id</th>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Estimation (Hours)</th>
+        <th>Assigned To</th>
+        <th>Status (To-do / In-Process / To-Review / Done)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>US01</td>
+        <td>Exploracion de la propuesta de valor</td>
+        <td>US01-a</td>
+        <td>Implementar hero principal</td>
+        <td>Maquetar la seccion principal con propuesta de valor, CTA y contenido inicial orientado a clinicas y pacientes.</td>
+        <td>4</td>
+        <td>Salim Ramirez</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US01</td>
+        <td>Exploracion de la propuesta de valor</td>
+        <td>US01-b</td>
+        <td>Ajustar responsive y contenido visual</td>
+        <td>Optimizar la experiencia responsive del hero y alinear textos e imagenes con la narrativa comercial de uFlex.</td>
+        <td>3</td>
+        <td>Daniel Crispin</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US02</td>
+        <td>Consulta de contenido para pacientes</td>
+        <td>US02-a</td>
+        <td>Construir seccion para pacientes</td>
+        <td>Desarrollar la seccion "Como funciona para pacientes" explicando rutina, monitoreo y uso en el hogar.</td>
+        <td>3</td>
+        <td>Paul Sulca</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US02</td>
+        <td>Consulta de contenido para pacientes</td>
+        <td>US02-b</td>
+        <td>Revisar copy y consistencia UX</td>
+        <td>Validar claridad del contenido, jerarquia visual y continuidad con la propuesta de valor general del sitio.</td>
+        <td>2</td>
+        <td>Marcelo Varela</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US03</td>
+        <td>Consulta de contenido para especialistas</td>
+        <td>US03-a</td>
+        <td>Construir seccion para fisioterapeutas</td>
+        <td>Implementar la seccion explicativa para especialistas, destacando monitoreo ROM, alertas y trazabilidad clinica.</td>
+        <td>3</td>
+        <td>Eduardo Rivera</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US03</td>
+        <td>Consulta de contenido para especialistas</td>
+        <td>US03-b</td>
+        <td>Refinar composicion visual</td>
+        <td>Ajustar distribucion, iconografia y jerarquia del contenido para especialistas en desktop y mobile.</td>
+        <td>2</td>
+        <td>Daniel Crispin</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US04</td>
+        <td>Consulta de planes y precios para clinicas</td>
+        <td>US04-a</td>
+        <td>Disenar bloque de planes</td>
+        <td>Implementar cards de planes y beneficios para el segmento clinica dentro de la landing page.</td>
+        <td>3</td>
+        <td>Salim Ramirez</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US04</td>
+        <td>Consulta de planes y precios para clinicas</td>
+        <td>US04-b</td>
+        <td>Configurar comparativa visual</td>
+        <td>Agregar atributos diferenciales, CTA y estructura de comparacion entre planes.</td>
+        <td>2</td>
+        <td>Paul Sulca</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US05</td>
+        <td>Solicitud de demo comercial</td>
+        <td>US05-a</td>
+        <td>Construir formulario de demo</td>
+        <td>Implementar formulario web para solicitud de demo comercial con campos y validaciones base.</td>
+        <td>3</td>
+        <td>Eduardo Rivera</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US05</td>
+        <td>Solicitud de demo comercial</td>
+        <td>US05-b</td>
+        <td>Integrar UX de envio</td>
+        <td>Agregar estados visuales de envio, mensajes de confirmacion y consistencia de experiencia para el lead comercial.</td>
+        <td>2</td>
+        <td>Marcelo Varela</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US06</td>
+        <td>Acceso a la descarga de la app movil</td>
+        <td>US06-a</td>
+        <td>Incorporar CTA de descarga</td>
+        <td>Agregar seccion o CTA visible para redireccionar a la descarga futura de la aplicacion movil.</td>
+        <td>2</td>
+        <td>Daniel Crispin</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US06</td>
+        <td>Acceso a la descarga de la app movil</td>
+        <td>US06-b</td>
+        <td>Validar navegacion y enlaces</td>
+        <td>Probar navegacion interna y comportamiento de los enlaces de descarga en los distintos breakpoints.</td>
+        <td>1</td>
+        <td>Paul Sulca</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US17</td>
+        <td>Inicio de sesion del fisioterapeuta</td>
+        <td>US17-a</td>
+        <td>Disenar vista de login clinico</td>
+        <td>Implementar pantalla inicial de acceso para fisioterapeutas dentro de la web application.</td>
+        <td>3</td>
+        <td>Eduardo Rivera</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US17</td>
+        <td>Inicio de sesion del fisioterapeuta</td>
+        <td>US17-b</td>
+        <td>Conectar flujo de autenticacion</td>
+        <td>Preparar formularios, validaciones y consumo base del servicio de autenticacion para el rol fisioterapeuta.</td>
+        <td>2</td>
+        <td>Salim Ramirez</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US20</td>
+        <td>Listado de pacientes asignados</td>
+        <td>US20-a</td>
+        <td>Maquetar vista de pacientes</td>
+        <td>Construir la pantalla base de listado de pacientes asignados al fisioterapeuta.</td>
+        <td>3</td>
+        <td>Eduardo Rivera</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US20</td>
+        <td>Listado de pacientes asignados</td>
+        <td>US20-b</td>
+        <td>Refinar estados y filtros iniciales</td>
+        <td>Agregar estructura para estados vacios, busqueda basica y tarjetas de informacion resumida.</td>
+        <td>2</td>
+        <td>Marcelo Varela</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US26</td>
+        <td>Inicio de sesion del administrador</td>
+        <td>US26-a</td>
+        <td>Disenar acceso administrativo</td>
+        <td>Implementar la pantalla de inicio de sesion para administradores de clinica dentro de la web application.</td>
+        <td>3</td>
+        <td>Paul Sulca</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US26</td>
+        <td>Inicio de sesion del administrador</td>
+        <td>US26-b</td>
+        <td>Unificar comportamiento de acceso</td>
+        <td>Homologar componentes de login y validaciones entre vistas de fisioterapeuta y administrador.</td>
+        <td>2</td>
+        <td>Daniel Crispin</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US19</td>
+        <td>Cierre de sesion del fisioterapeuta</td>
+        <td>US19-a</td>
+        <td>Implementar cierre de sesion</td>
+        <td>Agregar accion de cierre de sesion y limpieza de token en la web application del fisioterapeuta.</td>
+        <td>2</td>
+        <td>Eduardo Rivera</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US19</td>
+        <td>Cierre de sesion del fisioterapeuta</td>
+        <td>US19-b</td>
+        <td>Validar redireccion y estado</td>
+        <td>Verificar redireccion a login y estado limpio del cliente tras el logout.</td>
+        <td>1</td>
+        <td>Daniel Crispin</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US28</td>
+        <td>Cierre de sesion del administrador</td>
+        <td>US28-a</td>
+        <td>Implementar cierre de sesion admin</td>
+        <td>Agregar accion de cierre de sesion y limpieza de token en el panel administrativo.</td>
+        <td>2</td>
+        <td>Paul Sulca</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US28</td>
+        <td>Cierre de sesion del administrador</td>
+        <td>US28-b</td>
+        <td>Validar redireccion y estado</td>
+        <td>Verificar redireccion a login y estado limpio del cliente tras el logout.</td>
+        <td>1</td>
+        <td>Marcelo Varela</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US22</td>
+        <td>Ajuste de protocolo vigente</td>
+        <td>US22-a</td>
+        <td>Diseñar vista de ajuste</td>
+        <td>Maquetar la pantalla base para modificar parametros del protocolo vigente.</td>
+        <td>3</td>
+        <td>Eduardo Rivera</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US22</td>
+        <td>Ajuste de protocolo vigente</td>
+        <td>US22-b</td>
+        <td>Definir validaciones UI</td>
+        <td>Agregar validaciones de campos y estructura de confirmacion del cambio.</td>
+        <td>2</td>
+        <td>Salim Ramirez</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US23</td>
+        <td>Revision del dashboard de metricas ROM</td>
+        <td>US23-a</td>
+        <td>Construir dashboard base</td>
+        <td>Implementar vista con tarjetas de ROM y resumen de progreso por paciente.</td>
+        <td>4</td>
+        <td>Eduardo Rivera</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US23</td>
+        <td>Revision del dashboard de metricas ROM</td>
+        <td>US23-b</td>
+        <td>Refinar layout y estados</td>
+        <td>Agregar estados vacios, labels clinicas y ajustes de responsive.</td>
+        <td>2</td>
+        <td>Daniel Crispin</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US24</td>
+        <td>Registro de notas clinicas</td>
+        <td>US24-a</td>
+        <td>Maquetar formulario de notas</td>
+        <td>Diseñar formulario de notas clinicas asociado a una sesion del paciente.</td>
+        <td>3</td>
+        <td>Marcelo Varela</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US24</td>
+        <td>Registro de notas clinicas</td>
+        <td>US24-b</td>
+        <td>Agregar validaciones y guardado</td>
+        <td>Incluir validaciones basicas y boton de guardado con feedback visual.</td>
+        <td>2</td>
+        <td>Paul Sulca</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US33</td>
+        <td>Configuracion del perfil de la clinica</td>
+        <td>US33-a</td>
+        <td>Maquetar perfil institucional</td>
+        <td>Construir la vista base de perfil de clinica con secciones editables.</td>
+        <td>3</td>
+        <td>Salim Ramirez</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US33</td>
+        <td>Configuracion del perfil de la clinica</td>
+        <td>US33-b</td>
+        <td>Definir campos y estados</td>
+        <td>Agregar campos institucionales y estados de guardado en la web application.</td>
+        <td>2</td>
+        <td>Daniel Crispin</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>TS37</td>
+        <td>Autenticacion JWT con filtro multitenant</td>
+        <td>TS37-a</td>
+        <td>Configurar autenticacion base del cliente web</td>
+        <td>Implementar el soporte inicial de autenticacion JWT para los flujos institucionales de la web application.</td>
+        <td>4</td>
+        <td>Salim Ramirez</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>TS37</td>
+        <td>Autenticacion JWT con filtro multitenant</td>
+        <td>TS37-b</td>
+        <td>Validar integracion por roles</td>
+        <td>Probar el acceso diferenciado para fisioterapeutas y administradores, alineando la integracion con el esquema multitenant.</td>
+        <td>3</td>
+        <td>Eduardo Rivera</td>
+        <td>Done</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
 
 ##### 6.2.1.4. Development Evidence for Sprint Review
