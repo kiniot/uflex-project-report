@@ -1140,23 +1140,25 @@ Los resultados validan la necesidad de *Uflex*. El problema no es la falta de vo
 
 ## 2.3. Needfinding
 
-
-
 ### 2.3.1. User Personas
 
 Esta sección presenta nuestros usuarios ideales diseñados para el ecosistema de KinIoT. Estos artefactos se han construido a partir del análisis del mercado peruano de salud, el comportamiento de las clínicas privadas y las barreras de accesibilidad en la rehabilitación física.
 
 **User persona del segmento de pacientes en rehabilitación del miembro superior**
 
-<img src="assets/requirements/personas/patient-user-persona.png" alt="User Persona Paciente" style="width: 800px; height: auto;">
+<img src="assets/requirements/personas/patient-user-persona.png" alt="User Persona Paciente" style="width: 400px; height: auto;">
+
+<hr class="page-break">
 
 **User persona del segmento de fisioterapeuta**
 
-<img src="assets/requirements/personas/physiotherapist-user-persona.png" alt="User Persona Fisioterapeuta" style="width: 800px; height: auto;">
+<img src="assets/requirements/personas/physiotherapist-user-persona.png" alt="User Persona Fisioterapeuta" style="width: 400px; height: auto;">
+
+<hr class="page-break">
 
 **User persona del segmento de administradores de clínica y centros de salud**
 
-<img src="assets/requirements/personas/clinic-admin-user-persona.png" alt="User Persona Administrador" style="width: 800px; height: auto;">
+<img src="assets/requirements/personas/clinic-admin-user-persona.png" alt="User Persona Administrador" style="width: 400px; height: auto;">
 
 ### 2.3.2. User Task Matrix
 
@@ -1199,10 +1201,9 @@ En este User Task Matrix se detallan las tareas clave que cada tipo de usuario p
 
 El análisis revela que las tareas críticas del paciente (ejecución física) y del fisioterapeuta (evaluación del ROM) convergen fuertemente en el reporte de síntomas y la corrección postural, validando la necesidad de comunicación clínica bidireccional. En contraste, el administrador opera en un flujo completamente aislado del proceso médico, enfocando sus tareas de alta importancia en la gestión de recursos, retención y facturación. Esta clara división confirma que la solución debe separar funcionalmente la captura autónoma de datos biomecánicos del panel de control gerencial.
 
+<hr class="page-break">
 
 ### 2.3.3. User Journey Mapping
-
-
 
 A continuación, se presentan los User Journey Maps de cada User Persona priorizado para uFlex. Estos mapas permiten visualizar el recorrido completo de cada segmento durante el proceso de rehabilitación remota, identificando puntos de dolor, necesidades de información y oportunidades de mejora en cada etapa de interacción con la solución.
 
@@ -1210,39 +1211,35 @@ A continuación, se presentan los User Journey Maps de cada User Persona prioriz
 
   ![User Journey Map del User Persona Mateo Rojas](assets/requirements/maps/journey-maps/patient-user-journey-map.png)
 
+<hr class="page-break">
+
 * User Journey Map de Valeria Castro (Fisioterapeuta):
 
   ![User Journey Map del User Persona Valeria Castro](assets/requirements/maps/journey-maps/physiotherapist-user-journey-map.png)
+
+<hr class="page-break">
 
 * User Journey Map de Roberto Villanueva (Administrador de clínica):
 
   ![User Journey Map del User Persona Roberto Villanueva](assets/requirements/maps/journey-maps/clinic-admin-user-journey-map.png)
 
+<hr class="page-break">
+
 ### 2.3.4. Empathy Mapping
 
 Se elaboraron los Empathy Mapping para los tres User Personas priorizados de uFlex: **Mateo Rojas (Paciente)**, **Valeria Castro (Fisioterapeuta)** y **Roberto Villanueva (Administrador de clínica)**. Este ejercicio permitió comprender de forma integral lo que cada perfil dice, piensa, hace y siente durante su experiencia con el proceso de rehabilitación remota, identificando sus principales pains y gains para orientar decisiones de diseño centradas en valor clínico, operativo y de adherencia.
 
----
-
 #### Paciente en rehabilitación (Mateo Rojas)
 
-![Empathy Mapping - Paciente](assets/requirements/maps/empathy-maps/patient-empathy-map.png)
-
----
+<img src="assets/requirements/maps/empathy-maps/patient-empathy-map.png" alt="Empathy Mapping - Paciente" style="width:500px; height:auto;">
 
 #### Fisioterapeuta (Valeria Castro)
 
-![Empathy Mapping - Fisioterapeuta](assets/requirements/maps/empathy-maps/physiotherapist-empathy-map.png)
-
----
+<img src="assets/requirements/maps/empathy-maps/physiotherapist-empathy-map.png" alt="Empathy Mapping - Fisioterapeuta" style="width:500px; height:auto;">
 
 #### Administrador de clínica (Roberto Villanueva)
 
-![Empathy Mapping - Administrador](assets/requirements/maps/empathy-maps/clinic-admin-empathy-map.png)
-
----
-
-
+<img src="assets/requirements/maps/empathy-maps/clinic-admin-empathy-map.png" alt="Empathy Mapping - Administrador" style="width:500px; height:auto;">
 
 <hr class="page-break">
 
@@ -1996,7 +1993,7 @@ A continuación, se presenta nuestro Impact Map, estructurado sobre dos objetivo
 
 - Retención de Clientes: Reducir la tasa de abandono del tratamiento en un 25% durante el primer año mediante el uso de biofeedback IoT.
 
-<img src="assets/requirements/maps/impact-maps/impact-map.png" alt="Impact Mapping" style="width: 900px; height: auto;">
+<img src="assets/requirements/maps/impact-maps/impact-map.png" alt="Impact Mapping" style="width: 420px; height: auto;">
 
 <hr class="page-break">
 
@@ -7674,6 +7671,8 @@ El código fuente del proyecto está disponible en el siguiente repositorio de G
 
 1. Organización de GitHub: [https://github.com/kiniot](https://github.com/kiniot)
 2. Repositorio del reporte en GitHub: [https://github.com/kiniot/uflex-project-report](https://github.com/kiniot/uflex-project-report)
+3. Repositorio de la Landing Page: [https://github.com/kiniot/uflex-landing-page](https://github.com/kiniot/uflex-landing-page)
+4. Repositorio de la Web Application: [https://github.com/kiniot/uflex-clinic-web](https://github.com/kiniot/uflex-clinic-web)
 
 <hr class="page-break">
 
