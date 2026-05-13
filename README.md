@@ -57,19 +57,25 @@
 
 # Registro de Versiones del Informe
 
-| Version  | Fecha      | Autor                                 | Descripción de modificación                                                     |
-|----------|------------|---------------------------------------|---------------------------------------------------------------------------------|
-| 1.0.0    | 2026-04-04 | Ramirez Mestanza, Salim Ignacio       | Creación de estructura base, carátula y registro de versiones.                  |
-| 1.1.0    | 2026-04-05 | Varela Bustinza, Marcelo Alessandro   | Redacción de Capítulo I: Startup Profile y Solution Profile (Lean UX).          |
-| 1.2.0    | 2026-04-07 | Sulca Gonzales, Paúl Fernando         | Desarrollo de Capítulo II: Requirements Elicitation & Analysis.                 |
-| 1.3.0    | 2026-04-10 | Crispín Ramos, Daniel Franco          | Desarrollo de Capítulo III: Requirements Specification.                         |
-| 1.4.0    | 2026-04-13 | Rivera Sosa, Eduardo Gael             | Desarrollo de Capítulo IV: Strategic DDD y Software Architecture.               |
-| 1.5.1    | 2026-04-16 | Varela Bustinza, Marcelo Alessandro   | Desarrollo Tactical DDD del Bounded Context: Organization.                      |
-| 1.5.2    | 2026-04-16 | Rivera Sosa, Eduardo Gael             | Desarrollo Tactical DDD del Bounded Context: IAM y Subscription.                |
-| 1.5.3    | 2026-04-19 | Crispín Ramos, Daniel Franco          | Desarrollo Tactical DDD del Bounded Context: Device.                            |
-| 1.5.4    | 2026-04-21 | Ramirez Mestanza, Salim Ignacio       | Desarrollo Tactical DDD del Bounded Context: Planning.                          |
-| 1.5.5    | 2026-04-22 | Sulca Gonzales, Paúl Fernando         | Desarrollo Tactical DDD del Bounded Context: Therapy.                           |
-| 1.6.0    | 2026-04-23 | Ramirez Mestanza, Salim Ignacio       | Integración de Student Outcome, Conclusiones (avance) y Bibliografía para AV1.  |
+| Version | Fecha      | Autor                                 | Descripción de modificación                                                    |
+|---------|------------|---------------------------------------|--------------------------------------------------------------------------------|
+| 1.0.0   | 2026-04-04 | Ramirez Mestanza, Salim Ignacio       | Creación de estructura base, carátula y registro de versiones.                 |
+| 1.1.0   | 2026-04-05 | Varela Bustinza, Marcelo Alessandro   | Redacción de Capítulo I: Startup Profile y Solution Profile (Lean UX).         |
+| 1.2.0   | 2026-04-07 | Sulca Gonzales, Paúl Fernando         | Desarrollo de Capítulo II: Requirements Elicitation & Analysis.                |
+| 1.3.0   | 2026-04-10 | Crispín Ramos, Daniel Franco          | Desarrollo de Capítulo III: Requirements Specification.                        |
+| 1.4.0   | 2026-04-13 | Rivera Sosa, Eduardo Gael             | Desarrollo de Capítulo IV: Strategic DDD y Software Architecture.              |
+| 1.5.1   | 2026-04-16 | Varela Bustinza, Marcelo Alessandro   | Desarrollo Tactical DDD del Bounded Context: Organization.                     |
+| 1.5.2   | 2026-04-16 | Rivera Sosa, Eduardo Gael             | Desarrollo Tactical DDD del Bounded Context: IAM y Subscription.               |
+| 1.5.3   | 2026-04-19 | Crispín Ramos, Daniel Franco          | Desarrollo Tactical DDD del Bounded Context: Device.                           |
+| 1.5.4   | 2026-04-21 | Ramirez Mestanza, Salim Ignacio       | Desarrollo Tactical DDD del Bounded Context: Planning.                         |
+| 1.5.5   | 2026-04-22 | Sulca Gonzales, Paúl Fernando         | Desarrollo Tactical DDD del Bounded Context: Therapy.                          |
+| 1.6.0   | 2026-04-23 | Ramirez Mestanza, Salim Ignacio       | Integración de Student Outcome, Conclusiones (avance) y Bibliografía para AV1. |
+| 2.0.0   | 2026-05-13 | Crispín Ramos, Daniel Franco          | Mejora continua y corrección de errores del AV1.                               |
+| 2.0.1   | 2026-05-13 | Ramirez Mestanza, Salim Ignacio       | Style Guidelines, Information Architecture y IoT Device Design.                |
+| 2.0.2   | 2026-05-13 | Rivera Sosa, Eduardo Gael             | Application UX-UI Web                                                          |
+| 2.0.3   | 2026-05-13 | Sulca Gonzales, Paúl Fernando         | Application UX-UI Móvil                                                        |
+| 2.0.4   | 2026-05-13 | Varela Bustinza, Marcelo Alessandro   | Software Configuration Management, Landing Page, Sprint 1 evidence.            |
+| 2.0.5   | 2026-05-13 | Ramirez Mestanza, Salim Ignacio       | Integración de Student Outcome, Conclusiones (avance) y Bibliografía para TB1. |
 
 <hr class="page-break">
 
@@ -77,7 +83,7 @@
 
 En esta sección se presenta un resumen de las actividades de colaboración realizadas para la elaboración del informe del proyecto.
 
-Se utilizó **GitHub** como plataforma de control de versiones y colaboración en equipo. Se incluye enlace para acceder al repositorio para el reporte del proyecto. [Ver en Github](https://github.com/kiniot/uflex-project-report)
+Se utilizó **GitHub** como plataforma de control de versiones y colaboración en equipo. Se incluye enlace para acceder al repositorio para el reporte del proyecto. [https://github.com/kiniot/uflex-project-report](https://github.com/kiniot/uflex-project-report)
 
 Los integrantes del equipo y sus nombres de usuario en GitHub son los siguientes:
 
@@ -99,11 +105,11 @@ Se usó el flujo de trabajo **GitFlow**, que incluye las siguientes ramas princi
 
 <hr class="page-break">
 
-## TB1
+## AV1
 
 **Tareas**
 
-Para el desarrollo del TB1, cada participante del equipo realizó las siguientes tareas:
+Para el desarrollo del AV1, cada participante del equipo realizó las siguientes tareas:
 
 | Integrantes                         | Tarea asignada                                                                                               |
 |-------------------------------------|--------------------------------------------------------------------------------------------------------------|
@@ -144,6 +150,56 @@ El siguiente gráfico muestra la cantidad de commits realizados en la semana con
 Análisis de cantidad de commits realizados por semana.
 
 ![Insights - Commits](./assets/images/screenshots/insights-commits.png)
+
+</div>
+
+<hr class="page-break">
+
+## TB1
+
+**Tareas**
+
+Para el desarrollo del AV1, cada participante del equipo realizó las siguientes tareas:
+
+| Integrantes                         | Tarea asignada                                                                                                                      |
+|-------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------|
+| Ramirez Mestanza, Salim Ignacio     | - Style Guidelines <br> - Information Architecture <br> - Landing Page Wireframes <br> - Landing Page Mock-ups                      |
+| Sulca Gonzales, Paúl Fernando       | - Software Configuration Management <br> - Sprint Planning 1 <br> - Sprint Backlog 1 <br> - Source Code Management                  |
+| Crispin Ramos, Daniel Franco        | - Applications Wireframes <br> - Applications Wireflow Diagrams <br> - Applications Mock-ups <br> - Applications User Flow Diagrams |
+| Varela Bustinza, Marcelo Alessandro | - Applications Wireframes <br> - Applications Wireflow Diagrams <br> - Applications Mock-ups <br> - Applications User Flow Diagrams |
+| Rivera Sosa, Eduardo Gael           | - Development Evidence <br> - Testing Suite Evidence <br> - Execution Evidence <br> - Deployment Evidence                           |
+
+**GitHub Collaboration Insights**
+
+En GitHub se presenta un timeline de las principales ramas creadas por cada integrante del equipo, así como los procesos de merge realizados.  
+Todas las ramas fueron gestionadas siguiendo el flujo de trabajo **GitFlow**, adaptado para una organización que utiliza un sistema de control de versiones.
+
+<div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
+
+Gráfico de red (*network graph*) de ramas en el repositorio de GitHub.
+
+![Insights - Network Graph](./assets/images/screenshots/sprint-1/insights-network-graph.png)
+
+</div>
+
+A continuación, se presentan los gráficos que muestran el análisis de los commits en el repositorio correspondiente al informe.  
+Estos gráficos detallan la cantidad de líneas de código añadidas por cada miembro del equipo y la actividad de commits registrada.
+
+<div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
+
+Análisis de líneas de código añadidas por contribuyente.
+
+![Insights - Contributors](./assets/images/screenshots/sprint-1/insights-contributor.png)
+
+</div>
+
+El siguiente gráfico muestra la cantidad de commits realizados en la semana con mayor actividad en el proyecto.
+
+<div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
+
+Análisis de cantidad de commits realizados por semana.
+
+![Insights - Commits](./assets/images/screenshots/sprint-1/insights-commits.png)
 
 </div>
 
@@ -253,6 +309,45 @@ Análisis de cantidad de commits realizados por semana.
             - [4.2.6.6.1. Bounded Context Domain Layer Class Diagrams](#42661-bounded-context-domain-layer-class-diagrams)
             - [4.2.6.6.2. Bounded Context Database Design Diagram](#42662-bounded-context-database-design-diagram)
 
+- [Capítulo V: Solution UI/UX Design](#capítulo-v-solution-uiux-design)
+   - [5.1. Style Guidelines](#51-style-guidelines)
+      - [5.1.1. General Style Guidelines](#511-general-style-guidelines)
+      - [5.1.2. Web, Mobile and IoT Style Guidelines](#512-web-mobile-and-iot-style-guidelines)
+   - [5.2. Information Architecture](#52-information-architecture)
+      - [5.2.1. Organization Systems](#521-organization-systems)
+      - [5.2.2. Labeling Systems](#522-labeling-systems)
+      - [5.2.3. SEO Tags and Meta Tags](#523-seo-tags-and-meta-tags)
+      - [5.2.4. Searching Systems](#524-searching-systems)
+      - [5.2.5. Navigation Systems](#525-navigation-systems)
+   - [5.3. Landing Page UI Design](#53-landing-page-ui-design)
+      - [5.3.1. Landing Page Wireframe](#531-landing-page-wireframe)
+      - [5.3.2. Landing Page Mock-up](#532-landing-page-mock-up)
+   - [5.4. Applications UX/UI Design](#54-applications-uxui-design)
+      - [5.4.1. Applications Wireframes](#541-applications-wireframes)
+      - [5.4.2. Applications Wireflow Diagrams](#542-applications-wireflow-diagrams)
+      - [5.4.3. Applications Mock-ups](#543-applications-mock-ups)
+      - [5.4.4. Applications User Flow Diagrams](#544-applications-user-flow-diagrams)
+   - [5.5. Applications Prototyping](#55-applications-prototyping)
+   - [5.6. IoT Device Design](#56-iot-device-design)
+
+   - [Capítulo VI: Product Implementation, Validation & Deployment](#capítulo-vi-product-implementation-validation--deployment)
+      - [6.1. Software Configuration Management](#61-software-configuration-management)
+         - [6.1.1. Software Development Environment Configuration](#611-software-development-environment-configuration)
+         - [6.1.2. Source Code Management](#612-source-code-management)
+         - [6.1.3. Source Code Style Guide & Conventions](#613-source-code-style-guide--conventions)
+         - [6.1.4. Software Deployment Configuration](#614-software-deployment-configuration)
+      - [6.2. Landing Page, Services & Applications Implementation](#62-landing-page-services--applications-implementation)
+         - [6.2.1. Sprint 1](#621-sprint-1)
+            - [6.2.1.1. Sprint Planning 1](#6211-sprint-planning-1)
+            - [6.2.1.2. Aspect Leaders and Collaborators](#6212-aspect-leaders-and-collaborators)
+            - [6.2.1.3. Sprint Backlog 1](#6213-sprint-backlog-1)
+            - [6.2.1.4. Development Evidence for Sprint Review](#6214-development-evidence-for-sprint-review)
+            - [6.2.1.5. Testing Suite Evidence for Sprint Review](#6215-testing-suite-evidence-for-sprint-review)
+            - [6.2.1.6. Execution Evidence for Sprint Review](#6216-execution-evidence-for-sprint-review)
+            - [6.2.1.7. Services Documentation Evidence for Sprint Review](#6217-services-documentation-evidence-for-sprint-review)
+            - [6.2.1.8. Software Deployment Evidence for Sprint Review](#6218-software-deployment-evidence-for-sprint-review)
+            - [6.2.1.9. Team Collaboration Insights during Sprint](#6219-team-collaboration-insights-during-sprint)
+
 - [Conclusiones](#conclusiones)
    - [Conclusiones y recomendaciones](#conclusiones-y-recomendaciones)
 - [Bibliografía](#bibliografía)
@@ -277,34 +372,42 @@ En el siguiente cuadro se describe las acciones realizadas y enunciados de concl
   <tbody>
     <tr>
       <td rowspan="5"><strong>Trabaja en equipo para proporcionar liderazgo en forma conjunta</strong></td>
-      <td><strong>Crispin Ramos, Daniel Franco</strong><br><b>AV1:</b> Lideré la ejecución del Needfinding y la elaboración del Impact Mapping, articulando las necesidades del usuario con los objetivos de negocio. Asumí la responsabilidad del diseño estratégico Context Mapping y el desarrollo táctico DDD del Bounded Context Device. Participé activamente en las sesiones de EventStorming, guiando la delimitación de contextos y validando las interacciones estratégicas del sistema.</td>
-      <td rowspan="5"><b>AV1:</b> Durante el desarrollo del AV1, que abarcó desde el perfil de la startup hasta el diseño de la solución de software, hemos aprendido que el liderazgo no recae en una sola persona sino que se ejerce de forma conjunta. Cada integrante tomó la conducción de las secciones en las que tenía mayor dominio y al mismo tiempo apoyó activamente al resto, lo que nos permitió avanzar de manera paralela sin perder coherencia. Actividades transversales como el EventStorming evidenciaron que compartir el liderazgo fortalece la calidad de las decisiones y nos ayuda a alinear el rumbo del proyecto como equipo.</td>
+      <td><strong>Crispin Ramos, Daniel Franco</strong><br><b>AV1:</b> Lideré la ejecución del Needfinding y la elaboración del Impact Mapping, articulando las necesidades del usuario con los objetivos de negocio. Asumí la responsabilidad del diseño estratégico Context Mapping y el desarrollo táctico DDD del Bounded Context Device. Participé activamente en las sesiones de EventStorming, guiando la delimitación de contextos y validando las interacciones estratégicas del sistema.<br><br><b>TB1:</b> Lideré el diseño UI/UX de la aplicación móvil del paciente, asegurando la coherencia visual con el Design System y guiando al equipo en la adopción de patrones de diseño inclusivo. Coordiné con los desarrolladores para traducir los wireframes en interfaces funcionales en el módulo Organization de la Web Application, demostrando liderazgo técnico en la integración de diseño y desarrollo.</td>
+        <td rowspan="5">
+          <b>AV1:</b> Durante el desarrollo del AV1, que abarcó desde el perfil de la startup hasta el diseño de la solución de software, hemos aprendido que el liderazgo no recae en una sola persona sino que se ejerce de forma conjunta. Cada integrante tomó la conducción de las secciones en las que tenía mayor dominio y al mismo tiempo apoyó activamente al resto, lo que nos permitió avanzar de manera paralela sin perder coherencia. Actividades transversales como el EventStorming evidenciaron que compartir el liderazgo fortalece la calidad de las decisiones y nos ayuda a alinear el rumbo del proyecto como equipo.
+          <br><br>
+          <b>TB1:</b> En esta etapa técnica, el liderazgo se manifestó en la capacidad de guiar la implementación del software sin perder la visión estratégica. Aprendimos que el liderazgo técnico implica no solo delegar, sino asegurar la trazabilidad entre lo diseñado (EventStorming) y lo construido (Código). La coordinación en la consolidación de evidencias demostró que un liderazgo distribuido permite identificar cuellos de botella rápidamente y mantener la integridad del sistema uFlex.
+        </td>
     </tr>
     <tr>
-      <td><strong>Ramirez Mestanza, Salim Ignacio</strong><br><b>AV1:</b> Lideré la elaboración de las User Stories del proyecto, estructurando los requerimientos funcionales y sus criterios de aceptación para mantener coherencia entre los módulos. Además, apoyé activamente en el Design-Level EventStorming para alinear decisiones de dominio con el equipo y desarrollé el Domain Message Flows Modeling, integrando los eventos y mensajes clave entre bounded contexts.</td>
+      <td><strong>Ramirez Mestanza, Salim Ignacio</strong><br><b>AV1:</b> Lideré la elaboración de las User Stories del proyecto, estructurando los requerimientos funcionales y sus criterios de aceptación para mantener coherencia entre los módulos. Además, apoyé activamente en el Design-Level EventStorming para alinear decisiones de dominio con el equipo y desarrollé el Domain Message Flows Modeling, integrando los eventos y mensajes clave entre bounded contexts.<br><br><b>TB1:</b> Lideré la gestión del Product Backlog y el Sprint Backlog del TB1, asegurando que cada User Story tuviera criterios de aceptación claros y estuviera vinculada correctamente a los Issues de GitHub. Coordiné con el equipo la definición de los Acceptance Tests y supervisé la implementación de la lógica de dominio en el backend para mantener la integridad de los flujos de mensajes diseñados previamente. Facilité la comunicación entre los encargados de frontend y backend para asegurar que la integración de servicios cumpliera con las expectativas del negocio.</td>
     </tr>
     <tr>
-      <td><strong>Rivera Sosa, Eduardo Gael</strong><br><b>AV1:</b> Lideré el diseño de la arquitectura de software de uFlex elaborando los diagramas Landscape, Context, Container y Deployment. Facilité junto al equipo el Design-Level EventStorming, guiando las decisiones sobre eventos y bounded contexts. También dirigí el análisis competitivo y las estrategias frente a competidores, consolidando los aportes del equipo en un entregable coherente.</td>
+      <td><strong>Rivera Sosa, Eduardo Gael</strong><br><b>AV1:</b> Lideré el diseño de la arquitectura de software de uFlex elaborando los diagramas Landscape, Context, Container y Deployment. Facilité junto al equipo el Design-Level EventStorming, guiando las decisiones sobre eventos y bounded contexts. También dirigí el análisis competitivo y las estrategias frente a competidores, consolidando los aportes del equipo en un entregable coherente.<br><br><b>TB1:</b> Lideré la consolidación de la evidencia técnica del Sprint Review del TB1 articulando los aportes del equipo en seis frentes: <em>Development Evidence</em> (organización del repositorio, ramas y pull requests), <em>Testing Suite Evidence</em> (estructura y reporte de las suites de pruebas), <em>Execution Evidence</em> (capturas funcionales del producto en ejecución), <em>Services Documentation</em> (documentación de los endpoints REST del monolito uFlex), <em>Software Deployment Evidence</em> (URLs y configuración del despliegue) y <em>Team Collaboration Insights</em> (métricas de GitHub Insights). Coordiné con cada integrante para integrar sus aportes en un entregable unificado, asegurando trazabilidad entre las historias del Sprint Backlog y la implementación efectiva.</td>
     </tr>
     <tr>
-      <td><strong>Sulca Gonzales, Paúl Fernando</strong><br><b>AV1:</b> Lideré y facilité actividades de análisis centradas en el usuario, incluyendo la elaboración de entrevistas, User Task Matrix, User Journey Mapping y Empathy Mapping, articulando los aportes del equipo para convertirlos en insumos de diseño consistentes. Además, participé activamente en Big Picture Event Storming y Candidate Context Discovery para alinear decisiones de dominio y delimitar bounded contexts con enfoque estratégico.</td>
+      <td><strong>Sulca Gonzales, Paúl Fernando</strong><br><b>AV1:</b> Lideré y facilité actividades de análisis centradas en el usuario, incluyendo la elaboración de entrevistas, User Task Matrix, User Journey Mapping y Empathy Mapping, articulando los aportes del equipo para convertirlos en insumos de diseño consistentes. Además, participé activamente en Big Picture Event Storming y Candidate Context Discovery para alinear decisiones de dominio y delimitar bounded contexts con enfoque estratégico.<br><b>TB1:</b> Coordiné en equipo las secciones de Software Configuration Management y la planificación del Sprint 1, promoviendo liderazgo compartido y alineando criterios técnicos y de contenido con el resto del equipo.</td>
     </tr>
     <tr>
       <td><strong>Varela Bustinza, Marcelo Alessandro</strong><br><b>AV1:</b>Durante el desarrollo del proyecto, aporté activamente en la organización y desarrollo de capítulos clave, participando en temas como Lean UX, entrevistas, needfinding y diseño de software. Mi contribución permitió coordinar ideas con el equipo y avanzar de manera conjunta hacia los objetivos del trabajo.</td> <b>TB1:</b> Desarrollé e implementé la documentación correspondiente a la sección UX/UI Design de la aplicación web de uFlex, enfocándome en la organización de wireframes, mock-ups, wireflow diagrams y user flow diagrams. Asimismo, analicé los flujos del administrador y del fisioterapeuta, identificando la función de cada pantalla y redactando descripciones coherentes con el propósito del proyecto. También contribuí a ordenar los assets visuales, renombrar las imágenes con nombres específicos y estructurar el contenido en formato Markdown para facilitar su integración al reporte del equipo.
     </tr>
     <tr>
       <td rowspan="5"><strong>Crea un entorno colaborativo e inclusivo, establece metas, planifica tareas y cumple objetivos</strong></td>
-      <td><strong>Crispin Ramos, Daniel Franco</strong><br><b>AV1:</b> Planifiqué y cumplí con los entregables de análisis y diseño asignados, coordinando con el equipo la priorización de las actividades dentro del Bounded Context Device. Mi participación activa en las sesiones de EventStorming y en la validación de diagramas tácticos facilitó el consenso técnico y aseguró que los aportes del equipo se integraran correctamente dentro de los plazos del AV1.</td>
-      <td rowspan="5"><b>AV1:</b> A lo largo del AV1 hemos logrado cubrir todo el alcance planificado, desde la definición de la startup y el análisis del problema hasta el diseño completo de la solución de software. Para conseguirlo establecimos metas claras por capítulo, distribuimos las tareas según las fortalezas de cada integrante y realizamos revisiones constantes para mantener el avance alineado. Creemos que el entorno colaborativo e inclusivo que construimos fue clave: cada propuesta fue discutida en conjunto y los entregables finales reflejan aportes de todo el equipo, cumpliendo los objetivos acordados en los plazos previstos.</td>
+      <td><strong>Crispin Ramos, Daniel Franco</strong><br><b>AV1:</b> Planifiqué y cumplí con los entregables de análisis y diseño asignados, coordinando con el equipo la priorización de las actividades dentro del Bounded Context Device. Mi participación activa en las sesiones de EventStorming y en la validación de diagramas tácticos facilitó el consenso técnico y aseguró que los aportes del equipo se integraran correctamente dentro de los plazos del AV1.<br><br><b>TB1:</b> Planifiqué las tareas de diseño UI/UX estableciendo metas claras y plazos para el desarrollo de wireframes, mockups y prototipos. Cumplí con los objetivos asignados manteniendo un entorno colaborativo con los desarrolladores frontend, facilitando la comunicación para lograr la correcta implementación de las interfaces diseñadas.</td>
+        <td rowspan="5">
+          <b>AV1:</b> A lo largo del AV1 hemos logrado cubrir todo el alcance planificado, desde la definición de la startup y el análisis del problema hasta el diseño completo de la solución de software. Para conseguirlo establecimos metas claras por capítulo, distribuimos las tareas según las fortalezas de cada integrante y realizamos revisiones constantes para mantener el avance alineado. Creemos que el entorno colaborativo e inclusivo que construimos fue clave: cada propuesta fue discutida en conjunto y los entregables finales reflejan aportes de todo el equipo, cumpliendo los objetivos acordados en los plazos previstos.
+          <br><br>
+          <b>TB1:</b> El cumplimiento del Sprint Goal fue posible gracias a una planificación rigurosa de tareas en GitHub y la flexibilidad para ajustar la arquitectura (como la transición al monolito) de forma consensuada. Mantuvimos un entorno inclusivo donde la revisión de código y la documentación técnica fueron responsabilidades compartidas, lo que garantizó que todos los integrantes estuvieran alineados con el despliegue final y la calidad de las pruebas.
+        </td>
     </tr>
     <tr>
-      <td><strong>Ramirez Mestanza, Salim Ignacio</strong><br><b>AV1:</b> Planifiqué y entregué en los plazos acordados las secciones a mi cargo, especialmente la definición de User Stories y el Domain Message Flows Modeling. Participé de forma activa en el Design-Level EventStorming como espacio colaborativo, incorporando los aportes del equipo para mantener metas comunes, una coordinación inclusiva y el cumplimiento de los objetivos del AV1.</td>
+      <td><strong>Ramirez Mestanza, Salim Ignacio</strong><br><b>AV1:</b> Planifiqué y entregué en los plazos acordados las secciones a mi cargo, especialmente la definición de User Stories y el Domain Message Flows Modeling. Participé de forma activa en el Design-Level EventStorming como espacio colaborativo, incorporando los aportes del equipo para mantener metas comunes, una coordinación inclusiva y el cumplimiento de los objetivos del AV1.<br><br><b>TB1:</b> Planifiqué y ejecuté la migración de los requerimientos del AV1 hacia el entorno de desarrollo, definiendo las metas de cada historia de usuario dentro del Sprint. Cumplí con la entrega de los reportes de pruebas unitarias y de integración, garantizando que el software cumpliera con los estándares de calidad antes del Sprint Review. Promoví un entorno inclusivo mediante la revisión técnica por pares (Peer Review), brindando soporte a mis compañeros en la resolución de conflictos de código y asegurando que los objetivos técnicos del TB1 se alcanzaran puntualmente.</td>
     </tr>
     <tr>
-      <td><strong>Rivera Sosa, Eduardo Gael</strong><br><b>AV1:</b> Planifiqué y entregué en los plazos acordados las secciones a mi cargo: segmentos objetivo, análisis competitivo, estrategias frente a competidores, user personas y la arquitectura de software con sus diagramas. Participé activamente en el Design-Level EventStorming como actividad colaborativa, asegurando que los aportes de todos los integrantes se reflejaran en el diseño final.</td>
+      <td><strong>Rivera Sosa, Eduardo Gael</strong><br><b>AV1:</b> Planifiqué y entregué en los plazos acordados las secciones a mi cargo: segmentos objetivo, análisis competitivo, estrategias frente a competidores, user personas y la arquitectura de software con sus diagramas. Participé activamente en el Design-Level EventStorming como actividad colaborativa, asegurando que los aportes de todos los integrantes se reflejaran en el diseño final.<br><br><b>TB1:</b> Planifiqué y entregué dentro de los plazos del Sprint las seis secciones de evidencia a mi cargo (Development, Testing Suite, Execution, Services Documentation, Software Deployment y Team Collaboration Insights), distribuyendo subtareas claras por integrante y haciendo seguimiento de su avance. Mantuve un entorno colaborativo e inclusivo durante el Sprint: revisé los aportes de cada miembro, integré sus capturas y commits a la documentación, y propicié ajustes consensuados (por ejemplo, la corrección de los diagramas C4 y la simplificación del backend a un monolito) cumpliendo los objetivos del Sprint Goal.</td>
     </tr>
     <tr>
-      <td><strong>Sulca Gonzales, Paúl Fernando</strong><br><b>AV1:</b> Planifiqué y cumplí los entregables asignados en las etapas de investigación y modelado del dominio, coordinando con el equipo la priorización de tareas para mantener el avance del AV1 dentro de los plazos. Mi participación en la definición de bounded contexts y en el diseño táctico DDD (capas y diagramas de soporte) contribuyó a consolidar un entorno de trabajo colaborativo, ordenado e inclusivo orientado al cumplimiento de objetivos.</td>
+      <td><strong>Sulca Gonzales, Paúl Fernando</strong><br><b>AV1:</b> Planifiqué y cumplí los entregables asignados en las etapas de investigación y modelado del dominio, coordinando con el equipo la priorización de tareas para mantener el avance del AV1 dentro de los plazos. Mi participación en la definición de bounded contexts y en el diseño táctico DDD (capas y diagramas de soporte) contribuyó a consolidar un entorno de trabajo colaborativo, ordenado e inclusivo orientado al cumplimiento de objetivos.<br><b>TB1:</b> Organicé y completé los apartados de Software Configuration Management y la documentación de Sprint 1, estableciendo metas claras, distribuyendo tareas y asegurando coherencia entre backlog, liderazgo y alcance acordado.</td>
     </tr>
     <tr>
       <td><strong>Varela Bustinza, Marcelo Alessandro</strong><br><b>AV1:</b>Participé de forma colaborativa en la distribución y ejecución de tareas, asumiendo responsabilidades concretas dentro del proyecto y cumpliendo con los entregables asignados. Esto ayudó a mantener un trabajo ordenado, con metas claras y un avance coordinado entre los integrantes.</td> <b>TB1:</b> Planifiqué y cumplí con las tareas asignadas relacionadas con la documentación de la aplicación web, priorizando la correcta organización de las imágenes, la separación de flujos por rol y la redacción de subtítulos y descripciones para cada user flow. Además, propuse una estructura clara para que el contenido pudiera ser copiado e integrado directamente en el reporte, manteniendo consistencia con la plantilla del curso y evitando incluir secciones que no correspondían al alcance definido, como la aplicación móvil.
@@ -351,23 +454,23 @@ Ser reconocidos en el 2030 como la startup líder en telemonitoreo biomecánico 
   <tbody>
     <tr>
       <td><strong>Crispín Ramos, Daniel Franco</strong><br> Soy Daniel. Tengo interés por la arquitectura de sistemas y el diseño de soluciones. Me entusiasma profundizar en metodologías como Domain-Driven Design y patrones de diseño para entender cómo construir aplicaciones escalables y mantenibles. Soy una persona responsable, comprometida y con facilidad para trabajar en equipo.</td>
-      <td><img src="assets/images/photos/daniel-photo.jpg" alt="daniel image" width="200"></td>
+      <td><img src="assets/images/photos/daniel-profile-photo.jpg" alt="daniel image" style="width: 200px; height: auto;"></td>
     </tr>
     <tr>
-      <td><strong>Ramirez Mestanza, Salim Ignacio</strong><br> Soy Salim, estudiante de Ingenieria de Software, con entusiasmo por el desarrollo backend, la arquitectura de software y el cloud. Me enfoco en tomar decisiones tecnicas complejas que generen impacto directo en los resultados del proyecto y aporten a los atributos de calidad esperados del software. Me considero perseverante, no me rindo ante los retos y siempre busco la colaboracion del equipo para avanzar. Tambien asumo un rol de liderazgo, porque creo firmemente que cada integrante es una parte indispensable para el exito del proyecto.</td>
-      <td><img src="assets/images/photos/salim-photo.jpeg" alt="salim image" width="200"></td>
+      <td><strong>Ramirez Mestanza, Salim Ignacio</strong><br> Soy Salim, estudiante de Ingeniería de Software, con entusiasmo por el desarrollo backend, la arquitectura de software y el cloud. Me enfoco en tomar decisiones tecnicas complejas que generen impacto directo en los resultados del proyecto y aporten a los atributos de calidad esperados del software. Me considero perseverante, no me rindo ante los retos y siempre busco la colaboracion del equipo para avanzar. Tambien asumo un rol de liderazgo, porque creo firmemente que cada integrante es una parte indispensable para el exito del proyecto.</td>
+      <td><img src="assets/images/photos/salim-profile-photo.jpeg" alt="salim image" style="width: 200px; height: auto;"></td>
     </tr>
     <tr>
       <td><strong>Rivera Sosa, Eduardo Gael</strong><br> Soy Gael, desarrollador Full Stack con enfoque en IA. Me gusta construir productos que realmente funcionen y aprender rápido lo que sea necesario para lograrlo. Soy proactivo, me adapto bien al trabajo en equipo y disfruto resolver problemas desde la raíz. Cuando algo se puede hacer mejor, lo digo.</td>
-      <td><img src="assets/images/photos/gael-photo.jpg" alt="gael image" width="200"></td>
+      <td><img src="assets/images/photos/gael-profile-photo.jpg" alt="gael image" style="width: 200px; height: auto;"></td>
     </tr>
     <tr>
       <td><strong>Sulca Gonzales, Paúl Fernando</strong><br> Soy Paúl, estudiante de 8vo ciclo de Ingeniería de Software en la Universidad Peruana de Ciencias Aplicadas. Tengo interés en el desarrollo full-stack, las metodologías ágiles y la gestión de proyectos. Me enfoco en aprender rápidamente y adaptarme a distintos retos, aportando soluciones tecnológicas innovadoras y de impacto. Me considero una persona analítica, con pensamiento crítico, y disfruto trabajar en equipo para lograr resultados sólidos y bien estructurados.</td>
-      <td><img src="assets/images/photos/paul-photo.png" alt="paul image" width="200"></td>
+      <td><img src="assets/images/photos/paul-profile-photo.png" alt="paul image" style="width: 200px; height: auto;"></td>
     </tr>
     <tr>
       <td><strong>Varela Bustinza, Marcelo Alessandro</strong><br> Mi nombre es Marcelo Varela. Soy un estudiante de la carrera de Ingeniería De Software, tengo 21 años y actualmente me encuentro cursando el octavo ciclo de la carrera. Me caracterizo por ser una persona responsable, resiliente y proactiva, al cual le gusta aprender sobre tecnología y el desarrollo de software. Mi compromiso como miembro de este equipo es brindar mi apoyo y participación para enfrentar lo desafíos así como dar lo mejor de mí para el éxito de este proyecto.</td>
-      <td><img src="assets/images/photos/Marcelo-photo.jpeg" alt="marcelo image" width="200"></td>
+      <td><img src="assets/images/photos/marcelo-profile-photo.jpeg" alt="marcelo image" style="width: 200px; height: auto;"></td>
     </tr>
   </tbody>
 </table>
@@ -378,6 +481,8 @@ Ser reconocidos en el 2030 como la startup líder en telemonitoreo biomecánico 
 
 
 ### 1.2.1 Antecedentes y problemática
+
+En el Perú, la rehabilitación de fracturas de miembro superior presenta una brecha entre la atención clínica presencial y el seguimiento domiciliario continuo. Como advierten Carbajal Galarza et al. (2021), gran parte del proceso en casa aún depende de la autoejecución del paciente y de reportes subjetivos, lo que limita la corrección oportuna de errores terapéuticos. Esta situación se vuelve más relevante si se considera que, según MINSA (2019), existe una población amplia con limitaciones de movilidad, y que las fracturas de extremidades constituyen una carga frecuente en trauma (Arias Tolentino, 2022). Aunque la teleatención viene creciendo y ya muestra avances en cobertura (Fernandez Agurto et al., 2025), persiste la necesidad de un modelo híbrido que combine supervisión profesional y monitoreo remoto estructurado para reducir abandono, secuelas funcionales y tiempos prolongados de recuperación, en línea con lo señalado por INR (2025) y MINSA (2025b).
 
 #### WHAT (Qué)
 
@@ -549,7 +654,7 @@ Sabremos que esto es cierto cuando veamos que el tiempo de configuración inicia
 
 A continuación, se presenta el Lean UX Canvas elaborado en la herramienta Miro:
 
-<img src="assets/lean-ux/canvas/canvas.png" alt="Lean UX Canvas">
+<img src="assets/lean-ux/canvas/lean-ux-canvas.png" alt="Lean UX Canvas">
 
 Enlace al Lean UX Canvas:
 https://miro.com/app/board/uXjVGuekPgY=/?share_link_id=263966947817 
@@ -604,7 +709,7 @@ Este segmento agrupa a los tomadores de decisiones B2B que gestionan la operaci�
     <th colspan="6">Competitive Analysis landscape</th>
   </tr>
   <tr>
-    <td colspan="2" align="center"><b>¿Por qué llevar a cabo este análisis?</b></td>
+    <td colspan="2" style="text-align: center;"><b>¿Por qué llevar a cabo este análisis?</b></td>
     <td colspan="4">¿De qué manera puede KinIoT diferenciarse de las soluciones de rehabilitación digital actuales mediante el uso de tecnología IoT para capturar datos cuantitativos precisos, superando las barreras de alto costo y falta de biofeedback en tiempo real que presentan los competidores en el mercado peruano?</td>
   </tr>
   <tr>
@@ -615,11 +720,11 @@ Este segmento agrupa a los tomadores de decisiones B2B que gestionan la operaci�
     <th>Physitrack</th>
   </tr>
   <tr>
-    <td colspan="2" align="center"><b>Logo</b></td>
-    <td align="center"><img src="assets/logos/competitors/uflex.png" alt="KinIoT logo" width="100"></td>
-    <td align="center"><img src="assets/logos/competitors/sword.png" alt="Sword Health logo" width="100"></td>
-    <td align="center"><img src="assets/logos/competitors/hinge-health.png" alt="Hinge Health logo" width="100"></td>
-    <td align="center"><img src="assets/logos/competitors/physitrack.png" alt="Physitrack logo" width="100"></td>
+    <td colspan="2" style="text-align: center;"><b>Logo</b></td>
+    <td style="text-align: center;"><img src="assets/logos/competitors/uflex-logo.png" alt="KinIoT logo" style="width: 100px; height: auto;"></td>
+    <td style="text-align: center;"><img src="assets/logos/competitors/sword-logo.png" alt="Sword Health logo" style="width: 100px; height: auto;"></td>
+    <td style="text-align: center;"><img src="assets/logos/competitors/hinge-health-logo.png" alt="Hinge Health logo" style="width: 100px; height: auto;"></td>
+    <td style="text-align: center;"><img src="assets/logos/competitors/physitrack-logo.png" alt="Physitrack logo" style="width: 100px; height: auto;"></td>
   </tr>
   <tr>
     <td rowspan="2"><b>Perfil</b></td>
@@ -836,8 +941,8 @@ En esta sección se detallan las estrategias y tácticas que KinIoT aplicará pa
 | **Ocupación**           | Administrador principal en centro de salud                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
 | **Fecha de entrevista** | 2026-04-11                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
 | **Timing**              | 00:00 - 03:40                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
-| **Video**               | [Ver en Microsoft Stream](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20201e843_upc_edu_pe/IQBi9_cKZMuRQaK0-UbxF7MIAZnukHun0vDhy1qki_eRsUs?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=JVqpgO)                                                                                                                                                                                                                                                                                       |
-| **Captura**             | ![Captura entrevista Carlos](./assets/images/screenshots/interview-screenshot-admin1.png)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| **Video**               | [https://goo.su/8EMwBnI](https://goo.su/8EMwBnI)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| **Captura**             | ![Captura entrevista Carlos](assets/images/screenshots/clinic-admin-interview-screenshot-1.png)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 | **Resumen**             | Carlos cuenta con 10 años de experiencia, cuya gestión se ve limitada por procesos operativos fragmentados y una alta tasa de deserción de pacientes tras las primeras semanas de tratamiento. Actualmente, enfrenta dificultades para estandarizar la atención debido a la falta de automatización y a la ausencia de visibilidad sobre el progreso clínico fuera de las instalaciones. Busca implementar una solución tecnológica que le permita monitorear objetivamente los resultados para mejorar la retención, optimizar la rentabilidad del centro y ofrecer un servicio diferenciado y basado en datos medibles ante la competencia. |
 
 **Segmento Administrativos: Entrevistado 2**
@@ -851,8 +956,8 @@ En esta sección se detallan las estrategias y tácticas que KinIoT aplicará pa
 | **Ocupación**           | Administrador de clínicas y centros de rehabilitación                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
 | **Fecha de entrevista** | 2026-04-15                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
 | **Timing**              | 03:40 - 13:00                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
-| **Video**               | [Ver en Microsoft Stream](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20201e843_upc_edu_pe/IQBi9_cKZMuRQaK0-UbxF7MIAZnukHun0vDhy1qki_eRsUs?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=JVqpgO)                                                                                                                                                                                                                                                                                                                            |
-| **Captura**             | ![Captura entrevista Ricardo](./assets/images/screenshots/interview-screenshot-admin2.png)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| **Video**               | [https://goo.su/8EMwBnI](https://goo.su/8EMwBnI)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| **Captura**             | ![Captura entrevista Ricardo](assets/images/screenshots/clinic-admin-interview-screenshot-2.png)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 | **Resumen**             | Administrador con 12 años de trayectoria y un MBA en Gestión de Salud, que actualmente supervisa dos sedes y un equipo de 14 fisioterapeutas con un flujo de 600 pacientes mensuales. Su gestión se ve obstaculizada por procesos arcaicos (uso de papel y coordinación por WhatsApp) que le impiden medir la productividad del personal y el progreso real del paciente, factor que contribuye a una tasa de abandono del 20-25%. Busca una solución digital que permita el monitoreo preventivo de los pacientes en casa, priorizando ante todo la facilidad de uso y un soporte técnico sólido para asegurar la adopción inmediata de su equipo sin generar fricción operativa. |
 
 **Segmento Administrativos: Entrevistado 3**
@@ -866,8 +971,8 @@ En esta sección se detallan las estrategias y tácticas que KinIoT aplicará pa
 | **Ocupación**           | Fisioterapeuta y Administrador de centro de salud propio                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
 | **Fecha de entrevista** | 2026-04-16                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
 | **Timing**              | 13:00 - 21:52                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
-| **Video**               | [Ver en Microsoft Stream](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20201e843_upc_edu_pe/IQBi9_cKZMuRQaK0-UbxF7MIAZnukHun0vDhy1qki_eRsUs?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=JVqpgO)                                                                                                                                                                                                                                                                                                                                                                                                            |
-| **Captura**             | ![Captura entrevista Luis](./assets/images/screenshots/interview-screenshot-admin3.png)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| **Video**               | [https://goo.su/8EMwBnI](https://goo.su/8EMwBnI)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| **Captura**             | ![Captura entrevista Luis](assets/images/screenshots/clinic-admin-interview-screenshot-3.png)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
 | **Resumen**             | Administrador con 6 años liderando su propio centro, operando con un equipo de 42 profesionales y un volumen de hasta 200 pacientes mensuales. Su gestión se basa actualmente en herramientas analógicas (cuadernos y archivos locales), lo que provoca ineficiencias críticas en la gestión de citas, altas tasas de abandono y una total carencia de métricas objetivas sobre la productividad de su personal y la evolución clínica de los pacientes. Identifica una oportunidad estratégica en la tele-rehabilitación para ofrecer un servicio "premium" y diferenciado ante la competencia, condicionando su adopción a un modelo de costo accesible, una usabilidad extrema que no sature a su personal y, crucialmente, la resistencia física del hardware. |
 
 
@@ -882,8 +987,8 @@ En esta sección se detallan las estrategias y tácticas que KinIoT aplicará pa
 | **Ocupación**           | Estudiante                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 | **Fecha de entrevista** | 2026-04-09                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 | **Timing**              | 21:52 - 30:32                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
-| **Video**               | [Ver en Microsoft Stream](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20201e843_upc_edu_pe/IQBi9_cKZMuRQaK0-UbxF7MIAZnukHun0vDhy1qki_eRsUs?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=JVqpgO)                                                                                                                                                                                                                           |
-| **Captura**             | ![Captura entrevista Bianca](./assets/images/screenshots/interview-screenshot-paciente1.png)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| **Video**               | [https://goo.su/8EMwBnI](https://goo.su/8EMwBnI)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| **Captura**             | ![Captura entrevista Bianca](assets/images/screenshots/patient-interview-screenshot-1.png)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 | **Resumen**             | Paciente joven en proceso de rehabilitación de miembro superior que manifiesta dificultades críticas con la adherencia al tratamiento y la falta de supervisión técnica en el hogar. Su principal barrera es la incertidumbre sobre la ejecución correcta de los ejercicios, lo que genera desmotivación y sensación de estancamiento. Valora positivamente una solución que ofrezca retroalimentación técnica en tiempo real y enfatiza que la usabilidad autónoma —específicamente la facilidad de colocación y uso sin asistencia— es un factor determinante para su adopción. |
 
 **Segmento Pacientes: Entrevistado 2**
@@ -897,8 +1002,8 @@ En esta sección se detallan las estrategias y tácticas que KinIoT aplicará pa
 | **Ocupación**           | Estudiante                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 | **Fecha de entrevista** | 2026-04-11                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 | **Timing**              | 30:32 - 37:02                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
-| **Video**               | [Ver en Microsoft Stream](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20201e843_upc_edu_pe/IQBi9_cKZMuRQaK0-UbxF7MIAZnukHun0vDhy1qki_eRsUs?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=JVqpgO)                                                                                                                                                                                                                                                                        |
-| **Captura**             | ![Captura entrevista Gabriel](./assets/images/screenshots/interview-screenshot-paciente2.png)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| **Video**               | [https://goo.su/8EMwBnI](https://goo.su/8EMwBnI)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| **Captura**             | ![Captura entrevista Gabriel](assets/images/screenshots/patient-interview-screenshot-2.png)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
 | **Resumen**             | Estudiante de 23 años en proceso de recuperación de una lesión de grado 1 en el brazo derecho. Aunque cuenta con supervisión profesional externa que le brinda seguridad, manifiesta una notable falta de indicadores objetivos para medir su evolución diaria, lo que genera incertidumbre sobre su progreso real. Su motivación principal es recuperar la funcionalidad completa de sus extremidades; por ello, valora soluciones tecnológicas que ofrezcan alta precisión y usabilidad autónoma, aunque se muestra escéptico ante la fiabilidad de herramientas digitales que no garanticen información exacta y accesible. |
 
 **Segmento Pacientes: Entrevistado 3**
@@ -912,8 +1017,8 @@ En esta sección se detallan las estrategias y tácticas que KinIoT aplicará pa
 | **Ocupación**           | Estudiante universitario                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
 | **Fecha de entrevista** | 2026-04-12                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
 | **Timing**              | 37:02 - 46:59                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
-| **Video**               | [Ver en Microsoft Stream](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20201e843_upc_edu_pe/IQBi9_cKZMuRQaK0-UbxF7MIAZnukHun0vDhy1qki_eRsUs?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=JVqpgO)                                                                                                                                                                                                                                                                                                                                                       |
-| **Captura**             | ![Captura entrevista Henry](./assets/images/screenshots/interview-screenshot-paciente3.png)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| **Video**               | [https://goo.su/8EMwBnI](https://goo.su/8EMwBnI)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| **Captura**             | ![Captura entrevista Henry](assets/images/screenshots/patient-interview-screenshot-3.png)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 | **Resumen**             | Estudiante universitario que experimentó una fractura en la infancia tratada exclusivamente con inmovilización, sin acceso a terapia física profesional, lo que resultó en atrofia muscular y pérdida de movilidad que tuvo que gestionar por cuenta propia. Su experiencia subraya una necesidad crítica de democratizar el acceso a guías de rehabilitación técnicas y precisas que eliminen la incertidumbre del paciente. Valora altamente una solución que ofrezca retroalimentación en tiempo real, aunque advierte que el éxito de la herramienta depende de una usabilidad extremadamente intuitiva o de un modelo de asistencia, especialmente para usuarios no nativos digitales o adultos mayores. |
 
 **Segmento Fisioterapeutas: Entrevistado 1**
@@ -927,8 +1032,8 @@ En esta sección se detallan las estrategias y tácticas que KinIoT aplicará pa
 | **Ocupación**           | Estudiante de Fisioterapia                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 | **Fecha de entrevista** | 2026-04-11                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 | **Timing**              | 46:59 - 52:36                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
-| **Video**               | [Ver en Microsoft Stream](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20201e843_upc_edu_pe/IQBi9_cKZMuRQaK0-UbxF7MIAZnukHun0vDhy1qki_eRsUs?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=JVqpgO)                                                                                                                                                                                                                                                                                                                                                                                                     |
-| **Captura**             | ![Captura entrevista Gustavo](./assets/images/screenshots/interview-screenshot-fisioterapeuta1.png)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| **Video**               | [https://goo.su/8EMwBnI](https://goo.su/8EMwBnI)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| **Captura**             | ![Captura entrevista Gustavo](assets/images/screenshots/physiotherapist-interview-screenshot-1.png)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
 | **Resumen**             | Estudiante de fisioterapia con experiencia en centros especializados de alta rotación, donde actualmente depende de procesos manuales y en papel para el seguimiento de pacientes. Identifica como su mayor desafío clínico la falta de supervisión remota, lo que resulta en pacientes que ejecutan ejercicios con técnica incorrecta (compensaciones musculares) o abandonan el tratamiento por desmotivación al no sentirse guiados. Su principal motivación es la transición hacia un modelo de trabajo proactivo: busca una herramienta que le permita corregir ejercicios en tiempo real mediante datos objetivos, enfatizando que cualquier solución digital debe ser extremadamente ágil para no entorpecer el ritmo acelerado de atención clínica. |
 
 **Segmento Fisioterapeutas: Entrevistado 2**
@@ -942,8 +1047,8 @@ En esta sección se detallan las estrategias y tácticas que KinIoT aplicará pa
 | **Ocupación**           | Fisioterapeuta especialista en fracturas de brazos                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 | **Fecha de entrevista** | 2026-04-14                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
 | **Timing**              | 52:36 - 01:00:20                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-| **Video**               | [Ver en Microsoft Stream](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20201e843_upc_edu_pe/IQBi9_cKZMuRQaK0-UbxF7MIAZnukHun0vDhy1qki_eRsUs?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=JVqpgO)                                                                                                                                                                                                                                                                                                                                                            |
-| **Captura**             | ![Captura entrevista Fabian](./assets/images/screenshots/interview-screenshot-fisioterapeuta2.png)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| **Video**               | [https://goo.su/8EMwBnI](https://goo.su/8EMwBnI)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| **Captura**             | ![Captura entrevista Fabian](assets/images/screenshots/physiotherapist-interview-screenshot-2.png)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 | **Resumen**             | Especialista con 3 años de experiencia en el ámbito clínico, donde gestiona un flujo dinámico de pacientes mediante herramientas analógicas (WhatsApp y reportes manuales). Identifica como principal obstáculo la falta de constancia y la omisión de evidencia por parte del paciente, quienes suelen abandonar el tratamiento prematuramente al sentir una mejoría inicial, lo que deriva en recaídas graves. Valora de forma muy positiva la posibilidad de acceder a telemetría en tiempo real, ya que le permitiría transitar de un seguimiento reactivo a uno preventivo, asegurando que el paciente cumpla con la técnica correcta sin necesidad de solicitar constantemente videos o reportes informales. |
 
 **Segmento Fisioterapeutas: Entrevistado 3**
@@ -957,11 +1062,11 @@ En esta sección se detallan las estrategias y tácticas que KinIoT aplicará pa
 | **Ocupación**           | Fisioterapeuta clínico                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
 | **Fecha de entrevista** | 2026-04-15                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
 | **Timing**              | 01:00:20 - 01:05:36                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
-| **Video**               | [Ver en Microsoft Stream](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20201e843_upc_edu_pe/IQBi9_cKZMuRQaK0-UbxF7MIAZnukHun0vDhy1qki_eRsUs?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=JVqpgO)                                                                                                                                                                                                                                                                                                                                                          |
-| **Captura**             | ![Captura entrevista Diego](./assets/images/screenshots/interview-screenshot-fisioterapeuta3.png)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| **Video**               | [https://goo.su/8EMwBnI](https://goo.su/8EMwBnI)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| **Captura**             | ![Captura entrevista Diego](assets/images/screenshots/physiotherapist-interview-screenshot-3.png)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
 | **Resumen**             | Diego cuenta con 5 años de experiencia, frustrado por la falta de rigor técnico en el seguimiento remoto, ya que actualmente depende de reportes verbales subjetivos que no garantizan la seguridad ni la eficacia del tratamiento. Percibe una brecha importante en la continuidad del cuidado al no tener visibilidad sobre el cumplimiento del paciente en casa, lo que frecuentemente deriva en abandono o recuperaciones lentas. Su mayor motivación es integrar herramientas que proporcionen datos biomecánicos en tiempo real, permitiéndole realizar ajustes terapéuticos precisos y proactivos sin que esto signifique una carga administrativa adicional que interrumpa su flujo de atención directa. |
 
-Link Video - Entrevistas: [https://upcedupe-my.sharepoint.com/:v:/g/personal/u20201e843_upc_edu_pe/IQBi9_cKZMuRQaK0-UbxF7MIAZnukHun0vDhy1qki_eRsUs?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=JVqpgO](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20201e843_upc_edu_pe/IQBi9_cKZMuRQaK0-UbxF7MIAZnukHun0vDhy1qki_eRsUs?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=JVqpgO)
+Link Video - Entrevistas: [https://goo.su/8EMwBnI](https://goo.su/8EMwBnI)
 
 ### 2.2.3. Análisis de entrevistas
 
@@ -1043,52 +1148,52 @@ Esta sección presenta nuestros usuarios ideales diseñados para el ecosistema d
 
 **User persona del segmento de pacientes en rehabilitación del miembro superior**
 
-<img src="assets/requirements/personas/paciente.png" alt="User Persona Paciente" width="800">
+<img src="assets/requirements/personas/patient-user-persona.png" alt="User Persona Paciente" style="width: 800px; height: auto;">
 
 **User persona del segmento de fisioterapeuta**
 
-<img src="assets/requirements/personas/fisioterapeuta.png" alt="User Persona Fisioterapeuta" width="800">
+<img src="assets/requirements/personas/physiotherapist-user-persona.png" alt="User Persona Fisioterapeuta" style="width: 800px; height: auto;">
 
 **User persona del segmento de administradores de clínica y centros de salud**
 
-<img src="assets/requirements/personas/admin.png" alt="User Persona Administrador" width="800">
+<img src="assets/requirements/personas/clinic-admin-user-persona.png" alt="User Persona Administrador" style="width: 800px; height: auto;">
 
 ### 2.3.2. User Task Matrix
 
 En este User Task Matrix se detallan las tareas clave que cada tipo de usuario puede realizar dentro del ecosistema de uFlex.
 
-| **TAREA** | **Mateo Rojas (Paciente en Rehab.) - Frecuencia** | **Mateo Rojas (Paciente en Rehab.) - Importancia** |
-|---|:---:|:---:|
-| Realizar rutina de ejercicios físicos | Alta | Alta |
-| Evaluar el rango de movimiento (ROM) | Media | Media |
-| Reportar/Registrar síntomas y dolor | Alta | Alta |
-| Ajustar el plan de tratamiento | N/A | N/A |
-| Instruir/Aprender postura biomecánica | Alta | Alta |
-| Monitorear asistencia y retención | N/A | N/A |
-| Gestionar recursos y equipamiento | N/A | N/A |
-| Pagar / Facturar servicios de terapia | Baja | Alta |
+| **TAREA**                             | **Mateo Rojas (Paciente en Rehab.) - Frecuencia** | **Mateo Rojas (Paciente en Rehab.) - Importancia** |
+|---------------------------------------|:-------------------------------------------------:|:--------------------------------------------------:|
+| Realizar rutina de ejercicios físicos |                       Alta                        |                        Alta                        |
+| Evaluar el rango de movimiento (ROM)  |                       Media                       |                       Media                        |
+| Reportar/Registrar síntomas y dolor   |                       Alta                        |                        Alta                        |
+| Ajustar el plan de tratamiento        |                        N/A                        |                        N/A                         |
+| Instruir/Aprender postura biomecánica |                       Alta                        |                        Alta                        |
+| Monitorear asistencia y retención     |                        N/A                        |                        N/A                         |
+| Gestionar recursos y equipamiento     |                        N/A                        |                        N/A                         |
+| Pagar / Facturar servicios de terapia |                       Baja                        |                        Alta                        |
 
-| **TAREA** | **Valeria Castro (Fisioterapeuta) - Frecuencia** | **Valeria Castro (Fisioterapeuta) - Importancia** |
-|---|:---:|:---:|
-| Realizar rutina de ejercicios físicos | Baja | Baja |
-| Evaluar el rango de movimiento (ROM) | Alta | Alta |
-| Reportar/Registrar síntomas y dolor | Alta | Alta |
-| Ajustar el plan de tratamiento | Media | Alta |
-| Instruir/Aprender postura biomecánica | Alta | Alta |
-| Monitorear asistencia y retención | Media | Media |
-| Gestionar recursos y equipamiento | Baja | Baja |
-| Pagar / Facturar servicios de terapia | N/A | N/A |
+| **TAREA**                             | **Valeria Castro (Fisioterapeuta) - Frecuencia** | **Valeria Castro (Fisioterapeuta) - Importancia** |
+|---------------------------------------|:------------------------------------------------:|:-------------------------------------------------:|
+| Realizar rutina de ejercicios físicos |                       Baja                       |                       Baja                        |
+| Evaluar el rango de movimiento (ROM)  |                       Alta                       |                       Alta                        |
+| Reportar/Registrar síntomas y dolor   |                       Alta                       |                       Alta                        |
+| Ajustar el plan de tratamiento        |                      Media                       |                       Alta                        |
+| Instruir/Aprender postura biomecánica |                       Alta                       |                       Alta                        |
+| Monitorear asistencia y retención     |                      Media                       |                       Media                       |
+| Gestionar recursos y equipamiento     |                       Baja                       |                       Baja                        |
+| Pagar / Facturar servicios de terapia |                       N/A                        |                        N/A                        |
 
-| **TAREA** | **Roberto Villanueva (Administrador) - Frecuencia** | **Roberto Villanueva (Administrador) - Importancia** |
-|---|:---:|:---:|
-| Realizar rutina de ejercicios físicos | N/A | N/A |
-| Evaluar el rango de movimiento (ROM) | N/A | N/A |
-| Reportar/Registrar síntomas y dolor | N/A | N/A |
-| Ajustar el plan de tratamiento | N/A | N/A |
-| Instruir/Aprender postura biomecánica | N/A | N/A |
-| Monitorear asistencia y retención | Alta | Alta |
-| Gestionar recursos y equipamiento | Alta | Alta |
-| Pagar / Facturar servicios de terapia | Media | Alta |
+| **TAREA**                             | **Roberto Villanueva (Administrador) - Frecuencia** | **Roberto Villanueva (Administrador) - Importancia** |
+|---------------------------------------|:---------------------------------------------------:|:----------------------------------------------------:|
+| Realizar rutina de ejercicios físicos |                         N/A                         |                         N/A                          |
+| Evaluar el rango de movimiento (ROM)  |                         N/A                         |                         N/A                          |
+| Reportar/Registrar síntomas y dolor   |                         N/A                         |                         N/A                          |
+| Ajustar el plan de tratamiento        |                         N/A                         |                         N/A                          |
+| Instruir/Aprender postura biomecánica |                         N/A                         |                         N/A                          |
+| Monitorear asistencia y retención     |                        Alta                         |                         Alta                         |
+| Gestionar recursos y equipamiento     |                        Alta                         |                         Alta                         |
+| Pagar / Facturar servicios de terapia |                        Media                        |                         Alta                         |
 
 **Análisis de la Matriz**
 
@@ -1103,15 +1208,15 @@ A continuación, se presentan los User Journey Maps de cada User Persona prioriz
 
 * User Journey Map de Mateo Rojas (Paciente en rehabilitación):
 
-  ![User Journey Map del User Persona Mateo Rojas](./assets/images/photos/user-journey-map-mateo-rojas.png)
+  ![User Journey Map del User Persona Mateo Rojas](assets/requirements/maps/journey-maps/patient-user-journey-map.png)
 
 * User Journey Map de Valeria Castro (Fisioterapeuta):
 
-  ![User Journey Map del User Persona Valeria Castro](./assets/images/photos/user-journey-map-valeria-castro.png)
+  ![User Journey Map del User Persona Valeria Castro](assets/requirements/maps/journey-maps/physiotherapist-user-journey-map.png)
 
 * User Journey Map de Roberto Villanueva (Administrador de clínica):
 
-  ![User Journey Map del User Persona Roberto Villanueva](./assets/images/photos/user-journey-map-roberto-villanueva.png)
+  ![User Journey Map del User Persona Roberto Villanueva](assets/requirements/maps/journey-maps/clinic-admin-user-journey-map.png)
 
 ### 2.3.4. Empathy Mapping
 
@@ -1121,19 +1226,19 @@ Se elaboraron los Empathy Mapping para los tres User Personas priorizados de uFl
 
 #### Paciente en rehabilitación (Mateo Rojas)
 
-![Empathy Mapping - Paciente](./assets/requirements/maps/empathy-maps/empathy-mapping-paciente.png.png)
+![Empathy Mapping - Paciente](assets/requirements/maps/empathy-maps/patient-empathy-map.png)
 
 ---
 
 #### Fisioterapeuta (Valeria Castro)
 
-![Empathy Mapping - Fisioterapeuta](./assets/requirements/maps/empathy-maps/empathy-mapping-fisioterapeuta.png.png)
+![Empathy Mapping - Fisioterapeuta](assets/requirements/maps/empathy-maps/physiotherapist-empathy-map.png)
 
 ---
 
 #### Administrador de clínica (Roberto Villanueva)
 
-![Empathy Mapping - Administrador](./assets/requirements/maps/empathy-maps/empathy-mapping-admin.png.png)
+![Empathy Mapping - Administrador](assets/requirements/maps/empathy-maps/clinic-admin-empathy-map.png)
 
 ---
 
@@ -1171,7 +1276,7 @@ Finalmente, se presenta el Big Picture Event Storming finalizado, con los evento
 
 ![big-picture-5](assets/diagrams/ddd/event-storming/big-picture/big-picture-event-storming-5.png)
 
-Se puede acceder al Big Picture Event Storming en el siguiente enlace de la herramienta Miro: [Version final del Big Picture Event Storming](https://miro.com/app/board/uXjVGsDiw2M=/?share_link_id=274967609887)
+Se puede acceder al Big Picture Event Storming en el siguiente enlace de la herramienta Miro: [https://miro.com/app/board/uXjVGsDiw2M=/?share_link_id=274967609887](https://miro.com/app/board/uXjVGsDiw2M=/?share_link_id=274967609887)
 
 > *Enlace completo:* https://miro.com/app/board/uXjVGsDiw2M=/?share_link_id=274967609887
 
@@ -1891,7 +1996,7 @@ A continuación, se presenta nuestro Impact Map, estructurado sobre dos objetivo
 
 - Retención de Clientes: Reducir la tasa de abandono del tratamiento en un 25% durante el primer año mediante el uso de biofeedback IoT.
 
-<img src="assets/requirements/maps/impact-maps/impact-mapping.png" alt="Impact Mapping" width="900">
+<img src="assets/requirements/maps/impact-maps/impact-map.png" alt="Impact Mapping" style="width: 900px; height: auto;">
 
 <hr class="page-break">
 
@@ -1901,7 +2006,7 @@ A continuación, se presenta el Product Backlog de uFlex con todas las User Stor
 
 La herramienta utilizada para la gestión del Product Backlog de uFlex es **Jira Software**. A continuación se presenta una captura del backlog en la herramienta junto con el enlace público al tablero:
 
-<img src="assets/images/screenshots/jira-product-backlog.png" alt="Product Backlog en Jira" width="900">
+<img src="assets/images/screenshots/jira-product-backlog.png" alt="Product Backlog en Jira" style="width: 900px; height: auto;">
 
 **Enlace al Product Backlog en Jira:** [https://fastpavos.atlassian.net/jira/software/projects/UF/boards/34/backlog](https://fastpavos.atlassian.net/jira/software/projects/UF/boards/34/backlog?atlOrigin=eyJpIjoiM2Y1YzMxNzZjOTkxNDkwY2IzZTYxZGQzNWZhMmUxYWEiLCJwIjoiaiJ9)
 
@@ -2052,14 +2157,14 @@ Con esta tercera iteración, el equipo dejó una base consistente para pasar al 
 
 Como resultado de la sesión, se identificaron seis bounded contexts candidatos para uFlex:
 
-| Candidate Context | Eventos clave asociados | Clasificación | Descripción | Justificación |
-|---|---|---|---|---|
-| IAM | `Create User`, `User Created`, `User Verified` | Generic | Gestión de identidad, autenticación y acceso por rol. | Es transversal y necesario para operar, pero no representa diferenciación de negocio en telerehabilitación. |
-| Organization | `Patient Profile Created`, `Patient Profile Updated`, `Physiotherapist Registered` | Supporting | Administración de perfiles clínicos y estructura organizacional de la clínica. | Sostiene la operación multiusuario y multirol, habilitando la trazabilidad de pacientes y especialistas. |
-| Subscription | `Purchase Subscription Plan`, `Subscription Plan Purchased`, `IoT Linked To Clinic` | Supporting | Gestión comercial del plan contratado y habilitación operativa de la clínica. | Es clave para monetización y activación del servicio, aunque no constituye el núcleo clínico diferencial. |
-| Planning | `Treatment Plan Created`, `Treatment Plan Assigned`, `Treatment Plan Updated`, `Treatment Plan Removed`, `Treatment Plan Finalized` | Core | Ciclo de vida del plan terapéutico y su asignación a cada paciente. | Define la estrategia clínica personalizada y conecta la prescripción con la ejecución terapéutica remota. |
-| Device | `IoT Kit Registered`, `IoT Kit Linked To Patient`, `IoT Kit Calibrated`, `IoT Battery Low Level Detected`, `IoT Device Disconnected` | Supporting | Gestión de estado, vinculación y salud operativa de dispositivos IoT. | Es indispensable para la continuidad técnica de la terapia remota y la calidad de captura de datos. |
-| Therapy | `Therapy Session Initiated`, `Routine Started`, `Joint Motion Data Captured`, `Repetition Validated`, `Anomalous Movement Detected`, `Visual Alert Triggered`, `Pain Level Reported`, `Routine Completed`, `Therapy Session Finalized` | Core | Orquestación de la sesión terapéutica y procesamiento de señales biomecánicas en tiempo real. | Contiene la propuesta de valor principal de uFlex: monitoreo objetivo, feedback inmediato y trazabilidad clínica del progreso. |
+| Candidate Context | Eventos clave asociados                                                                                                                                                                                                                | Clasificación | Descripción                                                                                   | Justificación                                                                                                                  |
+|-------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------|-----------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------|
+| IAM               | `Create User`, `User Created`, `User Verified`                                                                                                                                                                                         | Generic       | Gestión de identidad, autenticación y acceso por rol.                                         | Es transversal y necesario para operar, pero no representa diferenciación de negocio en telerehabilitación.                    |
+| Organization      | `Patient Profile Created`, `Patient Profile Updated`, `Physiotherapist Registered`                                                                                                                                                     | Supporting    | Administración de perfiles clínicos y estructura organizacional de la clínica.                | Sostiene la operación multiusuario y multirol, habilitando la trazabilidad de pacientes y especialistas.                       |
+| Subscription      | `Purchase Subscription Plan`, `Subscription Plan Purchased`, `IoT Linked To Clinic`                                                                                                                                                    | Supporting    | Gestión comercial del plan contratado y habilitación operativa de la clínica.                 | Es clave para monetización y activación del servicio, aunque no constituye el núcleo clínico diferencial.                      |
+| Planning          | `Treatment Plan Created`, `Treatment Plan Assigned`, `Treatment Plan Updated`, `Treatment Plan Removed`, `Treatment Plan Finalized`                                                                                                    | Core          | Ciclo de vida del plan terapéutico y su asignación a cada paciente.                           | Define la estrategia clínica personalizada y conecta la prescripción con la ejecución terapéutica remota.                      |
+| Device            | `IoT Kit Registered`, `IoT Kit Linked To Patient`, `IoT Kit Calibrated`, `IoT Battery Low Level Detected`, `IoT Device Disconnected`                                                                                                   | Supporting    | Gestión de estado, vinculación y salud operativa de dispositivos IoT.                         | Es indispensable para la continuidad técnica de la terapia remota y la calidad de captura de datos.                            |
+| Therapy           | `Therapy Session Initiated`, `Routine Started`, `Joint Motion Data Captured`, `Repetition Validated`, `Anomalous Movement Detected`, `Visual Alert Triggered`, `Pain Level Reported`, `Routine Completed`, `Therapy Session Finalized` | Core          | Orquestación de la sesión terapéutica y procesamiento de señales biomecánicas en tiempo real. | Contiene la propuesta de valor principal de uFlex: monitoreo objetivo, feedback inmediato y trazabilidad clínica del progreso. |
 
 **Clasificación estratégica**
 
@@ -2141,37 +2246,37 @@ importantes.
 
 Contexto génerico para la identificación y acceso.
 
-<img src="assets/diagrams/canvases/IAM.png" alt="IAM Bounded context canvases" width="800">
+<img src="assets/diagrams/ddd/bounded-context-canvases/iam-bounded-context-canvas.png" alt="IAM Bounded context canvases" style="width: 800px; height: auto;">
 
 ##### Organization
 
 Encargado de gestionar la información personal de cada usuario registrado en la aplicación.
 
-<img src="assets/diagrams/canvases/Organization.png" alt="Organization Bounded context canvases" width="800">
+<img src="assets/diagrams/ddd/bounded-context-canvases/organization-bounded-context-canvas.png" alt="Organization Bounded context canvases" style="width: 800px; height: auto;">
 
 ##### Subscription
 
 Encargado de gestionar la adquisición y activación de los planes de suscripción.
 
-<img src="assets/diagrams/canvases/Subscription.png" alt="Subscription Bounded context canvases" width="800">
+<img src="assets/diagrams/ddd/bounded-context-canvases/subscription-bounded-context-canvas.png" alt="Subscription Bounded context canvases" style="width: 800px; height: auto;">
 
 ##### Planning
 
 Encargado del ciclo de vida de los planes de tratamiento de los pacientes.
 
-<img src="assets/diagrams/canvases/Planning.png" alt="Planning Bounded context canvases" width="800">
+<img src="assets/diagrams/ddd/bounded-context-canvases/planning-bounded-context-canvas.png" alt="Planning Bounded context canvases" style="width: 800px; height: auto;">
 
 ##### Device
 
 Encargado del ciclo de vida de los dispositivos IOT.
 
-<img src="assets/diagrams/canvases/Device.png" alt="Device Bounded context canvases" width="800">
+<img src="assets/diagrams/ddd/bounded-context-canvases/device-bounded-context-canvas.png" alt="Device Bounded context canvases" style="width: 800px; height: auto;">
 
 ##### Therapy
 
 Encargado de orquestar cada sesión de cada terapia física ejecutada por el paciente.
 
-<img src="assets/diagrams/canvases/Therapy.png" alt="Therapy Bounded context canvases" width="800">
+<img src="assets/diagrams/ddd/bounded-context-canvases/therapy-bounded-context-canvas.png" alt="Therapy Bounded context canvases" style="width: 800px; height: auto;">
 
 
 <hr class="page-break">
@@ -2202,7 +2307,7 @@ A continuación, se describen las relaciones establecidas en nuestro diseño:
 * **Planning hacia Therapy (Patrón: Customer/Supplier - C/S):**
     * *Planning* entrega la configuración y *Therapy* la ejecuta. Existe una separación clara de responsabilidades: uno gestiona la estrategia clínica y el otro la ejecución en tiempo real.
 
-<img src="assets/diagrams/ddd/context-maps/context-mapping.jpg" alt="Context Mapping uFlex" width="800">
+<img src="assets/diagrams/ddd/context-maps/context-mapping.jpg" alt="Context Mapping uFlex" style="width: 800px; height: auto;">
 
 Como se observa en el diagrama, hemos priorizado la protección de nuestros contextos *Core* (*Therapy* y *Planning*). La implementación de un *Anti-corruption Layer* (ACL) entre *Device* y *Therapy* es fundamental. Esto evita que cualquier cambio futuro en el hardware del dispositivo impacte nuestra lógica de negocio principal, permitiendo que *uFlex* evolucione su tecnología sin corromper su modelo clínico.
 
@@ -2215,36 +2320,34 @@ Como se observa en el diagrama, hemos priorizado la protección de nuestros cont
 
 #### 4.1.3.1. Software Architecture System Landscape Diagram
 
-El System Landscape Diagram presenta una vista de alto nivel del ecosistema tecnológico en el que opera uFlex, el producto insignia de la startup KinIoT. A diferencia del Context Diagram —que enfoca a uFlex como un único sistema— el Landscape descompone a uFlex en los cuatro sub-sistemas que conforman su portafolio técnico y muestra cómo estos interactúan entre sí y con el ecosistema externo. Su propósito es ofrecer a cualquier lector, técnico o no, una comprensión rápida y completa del alcance del producto y sus integraciones.
+El System Landscape Diagram ubica a uFlex como un único sistema dentro del ecosistema tecnológico de la clínica que lo adopta. Su propósito es mostrar cómo uFlex se relaciona con los demás sistemas que la clínica ya utiliza para operar (HCE, Operaciones, Finanzas, RRHH, Stock y CRM).
 
-Dentro del *Enterprise Boundary* de KinIoT se distinguen cuatro sistemas propios: **uFlex Web Platform** (landing público y PWA clínica desplegados en Vercel, usados por fisioterapeutas y administradores de clínica), **uFlex Mobile Platform** (apps nativas iOS y Android por las cuales el paciente ejecuta sus rutinas y recibe retroalimentación biomecánica), **uFlex Wearable Platform** (hardware propio de KinIoT: el sensor IMU vestible junto con su firmware embebido en C++ y la capa edge en Python que procesa las señales en tiempo real) y **uFlex Clinical Cloud** (los microservicios Spring Boot y las bases de datos Azure que orquestan sesiones clínicas, suscripciones multi-tenant, analítica y notificaciones). Las interacciones internas se visualizan explícitamente: la Mobile Platform se comunica con el Wearable vía BLE y con el Clinical Cloud vía HTTPS; la Web Platform también consume las APIs clínicas; y el Wearable envía datos anonimizados directamente al Cloud.
+Dentro del *Enterprise Boundary* de la clínica se identifican: **uFlex** (la plataforma IoT/SaaS de telerehabilitación, en foco), **HCE** que custodia el expediente clínico del paciente, **Operaciones** que gestiona la agenda de citas, **Finanzas** que centraliza facturación y cobros, **RRHH** que administra al personal, **Stock** que controla insumos y equipos, y **CRM / Marketing** que mantiene la comunicación con los pacientes. uFlex se integra con cada uno de ellos: adjunta informes biomecánicos al expediente (HCE), consulta y reserva sesiones (Operaciones), reporta sesiones facturables (Finanzas), consulta el roster de fisioterapeutas (RRHH), reserva equipos (Stock) y comparte el progreso para campañas de adherencia (CRM).
 
-El ecosistema externo se agrupa en tres categorías diferenciadas por color para que el lector identifique de un vistazo el rol de cada proveedor. En gris se encuentran los **SaaS core** (Supabase para autenticación OAuth e identidad, Culqi para pagos de suscripción y Resend para correos transaccionales), integraciones de negocio sin las cuales uFlex no puede operar. En azul-grisáceo se muestran los **servicios de plataforma y observabilidad** (FCM/APNs para notificaciones push al paciente y Azure Monitor / Application Insights para telemetría del backend), que soportan la operación técnica sin ser parte del dominio. En un gris azulado más claro aparece la **integración planificada** con el EHR de la clínica, representando en el roadmap la futura exportación de informes biomecánicos al expediente oficial del paciente.
-
-Los tres actores que interactúan con uFlex en este nivel son el **paciente** (toca tres sistemas: navega el landing antes de registrarse, usa la app móvil para las rutinas y el sensor vestible durante los ejercicios), el **fisioterapeuta** (accede a la PWA para supervisar sesiones y ajustar protocolos) y el **administrador de clínica** (gestiona sedes, usuarios y suscripción desde la misma PWA). Esta distribución refleja la realidad clínica: el paciente es quien genera los datos en casa, mientras que el staff clínico los consume y los convierte en decisiones terapéuticas.
+Los tres actores que interactúan con uFlex son el **paciente** (ejecuta sus rutinas y consulta su progreso), el **fisioterapeuta** (supervisa sesiones y ajusta protocolos) y el **administrador de clínica** (gestiona usuarios, suscripción y operación general).
 
 <div style="text-align: center;">
-  <img src="./assets/diagrams/software-architecture/landscape/src/landscape.png" alt="uFlex — Software Architecture System Landscape Diagram" style="max-width: 100%; height: auto;">
+  <img src="assets/diagrams/software-architecture/landscape/out/uflex-landscape-diagram.png" alt="uFlex — Software Architecture System Landscape Diagram" style="max-width: 100%; height: auto;">
 </div>
 
-*Figura 4.1.3.1. Diagrama de Paisaje (System Landscape) del ecosistema KinIoT — uFlex descompuesto en sus cuatro sub-sistemas, junto a sus proveedores SaaS, servicios de plataforma e integraciones planificadas.*
+*Figura 4.1.3.1. Diagrama de Paisaje (System Landscape) — uFlex en el ecosistema de la clínica, junto a los demás sistemas internos (HCE, Operaciones, Finanzas, RRHH, Stock, CRM).*
 
 #### 4.1.3.2. Software Architecture Context Level Diagrams
 
-El diagrama de contexto de uFlex muestra a los tres actores operativos que interactúan directamente con la plataforma (paciente, fisioterapeuta y administrador de clínica), el sistema uFlex como unidad en foco —que encapsula los sensores IMU vestibles, el firmware embebido, la app móvil y el backend cloud— y los tres servicios externos con los que se integra: Supabase (OAuth), Culqi (pagos) y Resend (correos transaccionales).
+El diagrama de contexto de uFlex muestra a los tres actores que interactúan directamente con la plataforma (paciente, fisioterapeuta y administrador de clínica), el sistema uFlex como unidad en foco (que encapsula el firmware embebido, la app móvil y el backend monolítico) y los sistemas externos con los que se integra: el Hardware uFlex (wearable con sensores IMU y actuadores hápticos), Culqi (pagos) y Resend (correos transaccionales).
 
 <div style="text-align: center;">
-  <img src="./assets/diagrams/software-architecture/context/src/context.png" alt="uFlex — Software Architecture Context Level Diagram" style="max-width: 100%; height: auto;">
+  <img src="assets/diagrams/software-architecture/context/out/uflex-context-diagram.png" alt="uFlex — Software Architecture Context Level Diagram" style="max-width: 100%; height: auto;">
 </div>
 
 *Figura 4.1.3.2. Diagrama de contexto (C4 Nivel 1) de uFlex.*
 
 #### 4.1.3.3. Software Architecture Container Level Diagrams
 
-El diagrama de contenedores detalla la arquitectura interna de uFlex, organizada en tres capas: la capa IoT & Edge (sensor IMU vestible, firmware embebido, procesamiento biomecánico en el edge y buffer local), la capa de aplicaciones cliente (app móvil nativa del paciente y PWA web para fisioterapeutas y administradores de clínica) y la capa de servicios backend (microservicios de identidad, sesiones de terapia, tendencias clínicas, suscripciones, analítica y notificaciones, cada uno con su base de datos). El IAM Service actúa como capa delgada sobre Supabase para enriquecer los perfiles con rol clínico y clínica asociada. El API Gateway centraliza el enrutamiento entre clientes y servicios, y las integraciones externas con Supabase (OAuth), Culqi (pagos) y Resend (correos) se muestran fuera del límite del sistema.
+El diagrama de contenedores detalla la arquitectura interna de uFlex, organizada en tres capas: la capa **IoT & Edge** (firmware embebido en C++ que se comunica con el Hardware uFlex (sistema externo) por BLE, y la Edge App en Python con su buffer local en SQLite), la capa de **aplicaciones cliente** (Landing Page pública, Mobile App nativa del paciente con caché local en SQLite y PWA web para fisioterapeutas y administradores de clínica) y el **backend monolítico**, implementado como un único **REST API** en Java + Spring Boot que expone todos los endpoints de uFlex (identidad, terapia, tendencias, suscripciones, analítica y notificaciones) y gestiona la autenticación mediante JWT. La persistencia se concentra en una **única base de datos PostgreSQL (hospedada en Supabase)** organizada en múltiples esquemas. Los sistemas externos son Hardware uFlex (sensores IMU y actuadores hápticos), Culqi (pagos) y Resend (correos transaccionales).
 
 <div style="text-align: center;">
-  <img src="./assets/diagrams/software-architecture/containers/src/containers.png" alt="uFlex — Software Architecture Container Level Diagram" style="max-width: 100%; height: auto;">
+  <img src="assets/diagrams/software-architecture/containers/out/uflex-containers-diagram.png" alt="uFlex — Software Architecture Container Level Diagram" style="max-width: 100%; height: auto;">
 </div>
 
 *Figura 4.1.3.3. Diagrama de contenedores (C4 Nivel 2) de uFlex.*
@@ -2260,7 +2363,7 @@ La segunda zona es **Vercel** (Edge Network / CDN global), donde se despliegan l
 La cuarta zona agrupa a los **Third-party SaaS Providers**: Supabase (que concentra la autenticación OAuth y la base de datos de identidad), Culqi (pasarela de pagos peruana para las suscripciones multi-tenant de clínicas) y Resend (envío de correos transaccionales). Todas las comunicaciones entre zonas viajan por **HTTPS**, salvo la conexión interna entre los microservicios y la base de datos, que usa **JDBC/SSL**. Este nivel de detalle permite, por ejemplo, identificar qué latencia esperar en cada salto, qué firewall o grupo de seguridad proteger, y qué credenciales/secretos rotar en cada integración.
 
 <div style="text-align: center;">
-  <img src="./assets/diagrams/software-architecture/deployment/src/deployment.png" alt="uFlex — Software Architecture Deployment Diagram" style="max-width: 100%; height: auto;">
+  <img src="assets/diagrams/software-architecture/deployment/out/uflex-deployment-diagram.png" alt="uFlex — Software Architecture Deployment Diagram" style="max-width: 100%; height: auto;">
 </div>
 
 *Figura 4.1.3.4. Diagrama de Despliegue (Deployment) de uFlex — distribución física de contenedores sobre el entorno local del paciente, Vercel, Microsoft Azure y los proveedores SaaS de terceros.*
@@ -2275,7 +2378,7 @@ Cada bounded context contará con su propio apartado, donde se detallará cómo 
 
 ### 4.2.1. Bounded Context: IAM
 
-El bounded context **IAM (Identity and Access Management)** concentra todo lo relacionado con la identidad de los usuarios de uFlex y su rol dentro del ecosistema clínico. A diferencia de Supabase —que actúa como identity provider externo y responsable de la autenticación OAuth— el BC IAM se encarga del **perfil enriquecido** del usuario dentro del dominio: su rol clínico (Paciente, Fisioterapeuta o Administrador de Clínica), su clínica asociada y su ciclo de vida (pendiente de verificación, verificado, suspendido). La relación con Supabase se implementa mediante un Anti-Corruption Layer (ACL), de modo que un cambio en la API de Supabase no contamine el modelo de dominio. Los comandos y eventos emitidos por este BC (`CreateUserCommand`, `VerifyUserCommand`, `UserCreatedEvent`, `UserVerifiedEvent`) fueron identificados durante el Design-Level EventStorming.
+El bounded context **IAM (Identity and Access Management)** concentra todo lo relacionado con la identidad de los usuarios de uFlex y su rol dentro del ecosistema clínico. Este BC se encarga tanto de la **autenticación** (registro, inicio de sesión, hashing de contraseñas con bcrypt y emisión/validación de JWT propios) como del **perfil enriquecido** del usuario dentro del dominio: su rol clínico (Paciente, Fisioterapeuta o Administrador de Clínica), su clínica asociada y su ciclo de vida (pendiente de verificación, verificado, suspendido). Al ser un monolito, uFlex gestiona internamente sus credenciales y tokens sin depender de un identity provider externo. Los comandos y eventos emitidos por este BC (`SignUpCommand`, `SignInCommand`, `VerifyUserCommand`, `UserCreatedEvent`, `UserVerifiedEvent`) fueron identificados durante el Design-Level EventStorming.
 
 #### 4.2.1.1. Domain Layer
 
@@ -2283,37 +2386,37 @@ En esta sección se describen los elementos del Domain Layer del contexto de IAM
 
 **1. User (Aggregate Root)**
 
-Representa al usuario del sistema, con su identidad enriquecida, roles clínicos y asociación al tenant (clínica). La autenticación real (contraseña/OAuth) vive en Supabase; por eso el aggregate guarda `supabaseUserId` como referencia externa en lugar de almacenar la contraseña.
+Representa al usuario del sistema, con su identidad, credenciales, roles clínicos y asociación al tenant (clínica). El aggregate guarda el hash de la contraseña (bcrypt) calculado por el monolito; uFlex emite y valida sus propios JWT.
 
 **Atributos principales:**
 
-| Atributo | Tipo | Visibilidad | Descripción |
-|---|---|---|---|
-| `id` | `UserId` | private | Identificador interno del usuario. |
-| `supabaseUserId` | `String` | private | Identificador del usuario en Supabase (UUID emitido por el OAuth provider). Inmutable tras la creación. |
-| `emailAddress` | `EmailAddress` | private | Correo del usuario (VO compartido con otros BCs). |
-| `fullName` | `FullName` | private | Nombre completo del usuario. |
-| `roles` | `Set<Role>` | private | Conjunto de roles clínicos asignados. |
-| `verificationStatus` | `VerificationStatus` | private | Estado de verificación de correo (`NOT_VERIFIED` / `VERIFIED`). |
-| `accountStatus` | `AccountStatus` | private | Estado de la cuenta (`PENDING`, `ACTIVE`, `BLOCKED`, `DELETED`). |
-| `verificationCode` | `VerificationCode` | private | Código y expiración para verificación clínica adicional (por ejemplo, validación por el Administrador de Clínica). |
-| `clinicId` | `ClinicId` | private | Identificador de la clínica (tenant) asociada; puede quedar sin asignar hasta el onboarding. |
+| Atributo             | Tipo                 | Visibilidad | Descripción                                                                                                        |
+|----------------------|----------------------|-------------|--------------------------------------------------------------------------------------------------------------------|
+| `id`                 | `UserId`             | private     | Identificador interno del usuario.                                                                                 |
+| `emailAddress`       | `EmailAddress`       | private     | Correo del usuario (VO compartido con otros BCs).                                                                  |
+| `passwordHash`       | `PasswordHash`       | private     | Hash bcrypt de la contraseña; nunca se expone fuera del aggregate.                                                 |
+| `fullName`           | `FullName`           | private     | Nombre completo del usuario.                                                                                       |
+| `roles`              | `Set<Role>`          | private     | Conjunto de roles clínicos asignados.                                                                              |
+| `verificationStatus` | `VerificationStatus` | private     | Estado de verificación de correo (`NOT_VERIFIED` / `VERIFIED`).                                                    |
+| `accountStatus`      | `AccountStatus`      | private     | Estado de la cuenta (`PENDING`, `ACTIVE`, `BLOCKED`, `DELETED`).                                                   |
+| `verificationCode`   | `VerificationCode`   | private     | Código y expiración para verificación clínica adicional (por ejemplo, validación por el Administrador de Clínica). |
+| `clinicId`           | `ClinicId`           | private     | Identificador de la clínica (tenant) asociada; puede quedar sin asignar hasta el onboarding.                       |
 
 **Métodos principales:**
 
-| Método | Tipo Retorno | Visibilidad | Descripción |
-|---|---|---|---|
-| `User()` | Constructor | public | Constructor vacío requerido por JPA. |
-| `User(EmailAddress, String supabaseUserId, VerificationCode)` | Constructor | public | Crea un usuario en estado `PENDING` y `NOT_VERIFIED`, con `clinicId` vacío y sin roles. |
-| `User(EmailAddress, String supabaseUserId, VerificationCode, List<Role>)` | Constructor | public | Crea usuario e inicializa roles usando `validateRoleSet`. |
-| `addRole(Role role)` | `User` | public | Agrega un rol al conjunto y valida la coherencia con el tenant. |
-| `addRoles(List<Role> roles)` | `User` | public | Valida y agrega múltiples roles. |
-| `isVerified()` | `boolean` | public | Devuelve `true` si `verificationStatus == VERIFIED`. |
-| `activate()` | `void` | public | Cambia `accountStatus` a `ACTIVE` solo si el usuario ya está `VERIFIED`. |
-| `assignVerificationCode(String email, String code, Integer expirationMinutes)` | `void` | public | Asigna un nuevo `VerificationCode` y publica `UserVerificationCodeAssignedEvent`. |
-| `verifyUser(String code)` | `void` | public | Valida el código, marca `VERIFIED`, activa la cuenta y limpia el `VerificationCode`. |
-| `associateClinic(ClinicId clinicId)` | `void` | public | Asocia un `clinicId` si el usuario aún no tenía tenant asignado. |
-| `disassociateClinic(ClinicId clinicId)` | `void` | public | Desasocia si coincide con el tenant actual; de lo contrario lanza excepción. |
+| Método                                                                         | Tipo Retorno | Visibilidad | Descripción                                                                             |
+|--------------------------------------------------------------------------------|--------------|-------------|-----------------------------------------------------------------------------------------|
+| `User()`                                                                       | Constructor  | public      | Constructor vacío requerido por JPA.                                                    |
+| `User(EmailAddress, PasswordHash, FullName, VerificationCode)`                 | Constructor  | public      | Crea un usuario en estado `PENDING` y `NOT_VERIFIED`, con `clinicId` vacío y sin roles. |
+| `User(EmailAddress, PasswordHash, FullName, VerificationCode, List<Role>)`     | Constructor  | public      | Crea usuario e inicializa roles usando `validateRoleSet`.                               |
+| `addRole(Role role)`                                                           | `User`       | public      | Agrega un rol al conjunto y valida la coherencia con el tenant.                         |
+| `addRoles(List<Role> roles)`                                                   | `User`       | public      | Valida y agrega múltiples roles.                                                        |
+| `isVerified()`                                                                 | `boolean`    | public      | Devuelve `true` si `verificationStatus == VERIFIED`.                                    |
+| `activate()`                                                                   | `void`       | public      | Cambia `accountStatus` a `ACTIVE` solo si el usuario ya está `VERIFIED`.                |
+| `assignVerificationCode(String email, String code, Integer expirationMinutes)` | `void`       | public      | Asigna un nuevo `VerificationCode` y publica `UserVerificationCodeAssignedEvent`.       |
+| `verifyUser(String code)`                                                      | `void`       | public      | Valida el código, marca `VERIFIED`, activa la cuenta y limpia el `VerificationCode`.    |
+| `associateClinic(ClinicId clinicId)`                                           | `void`       | public      | Asocia un `clinicId` si el usuario aún no tenía tenant asignado.                        |
+| `disassociateClinic(ClinicId clinicId)`                                        | `void`       | public      | Desasocia si coincide con el tenant actual; de lo contrario lanza excepción.            |
 
 **2. Role (Entity)**
 
@@ -2321,67 +2424,67 @@ Define un rol clínico asignable a un usuario. Persiste como entidad para permit
 
 **Atributos principales:**
 
-| Atributo | Tipo | Visibilidad | Descripción |
-|---|---|---|---|
-| `id` | `Long` | private | Identificador único del rol. |
-| `name` | `Roles` | private | Nombre del rol (enum `PATIENT`, `PHYSIOTHERAPIST`, `CLINIC_ADMIN`). |
+| Atributo | Tipo    | Visibilidad | Descripción                                                         |
+|----------|---------|-------------|---------------------------------------------------------------------|
+| `id`     | `Long`  | private     | Identificador único del rol.                                        |
+| `name`   | `Roles` | private     | Nombre del rol (enum `PATIENT`, `PHYSIOTHERAPIST`, `CLINIC_ADMIN`). |
 
 **Métodos principales:**
 
-| Método | Tipo Retorno | Visibilidad | Descripción |
-|---|---|---|---|
-| `Role()` | Constructor | public | Constructor vacío (JPA/Lombok). |
-| `Role(Roles name)` | Constructor | public | Inicializa rol con el enum correspondiente. |
-| `getStringName()` | `String` | public | Devuelve el nombre del enum como string. |
-| `getDefaultRole()` *(static)* | `Role` | public | Devuelve el rol por defecto (`PATIENT`). |
-| `toRoleFromName(String name)` *(static)* | `Role` | public | Crea un `Role` a partir del nombre del enum. |
-| `validateRoleSet(List<Role> roles)` *(static)* | `List<Role>` | public | Si la lista es nula o vacía, retorna `[PATIENT]`. |
+| Método                                         | Tipo Retorno | Visibilidad | Descripción                                       |
+|------------------------------------------------|--------------|-------------|---------------------------------------------------|
+| `Role()`                                       | Constructor  | public      | Constructor vacío (JPA/Lombok).                   |
+| `Role(Roles name)`                             | Constructor  | public      | Inicializa rol con el enum correspondiente.       |
+| `getStringName()`                              | `String`     | public      | Devuelve el nombre del enum como string.          |
+| `getDefaultRole()` *(static)*                  | `Role`       | public      | Devuelve el rol por defecto (`PATIENT`).          |
+| `toRoleFromName(String name)` *(static)*       | `Role`       | public      | Crea un `Role` a partir del nombre del enum.      |
+| `validateRoleSet(List<Role> roles)` *(static)* | `List<Role>` | public      | Si la lista es nula o vacía, retorna `[PATIENT]`. |
 
 **3. AccountStatus (Value Object)**
 
 Estado actual de la cuenta del usuario.
 
-| Atributo | Tipo | Visibilidad | Descripción |
-|---|---|---|---|
-| `PENDING` | Enum | public | La cuenta está pendiente de activación. |
-| `ACTIVE` | Enum | public | La cuenta está activa. |
-| `BLOCKED` | Enum | public | La cuenta está bloqueada por el Administrador de Clínica o por Soporte. |
-| `DELETED` | Enum | public | La cuenta fue eliminada lógicamente. |
+| Atributo  | Tipo | Visibilidad | Descripción                                                             |
+|-----------|------|-------------|-------------------------------------------------------------------------|
+| `PENDING` | Enum | public      | La cuenta está pendiente de activación.                                 |
+| `ACTIVE`  | Enum | public      | La cuenta está activa.                                                  |
+| `BLOCKED` | Enum | public      | La cuenta está bloqueada por el Administrador de Clínica o por Soporte. |
+| `DELETED` | Enum | public      | La cuenta fue eliminada lógicamente.                                    |
 
 **4. VerificationStatus (Value Object)**
 
 Indica si el correo del usuario ya fue verificado.
 
-| Atributo | Tipo | Visibilidad | Descripción |
-|---|---|---|---|
-| `NOT_VERIFIED` | Enum | public | El correo aún no está verificado. |
-| `VERIFIED` | Enum | public | El correo fue verificado exitosamente. |
+| Atributo       | Tipo | Visibilidad | Descripción                            |
+|----------------|------|-------------|----------------------------------------|
+| `NOT_VERIFIED` | Enum | public      | El correo aún no está verificado.      |
+| `VERIFIED`     | Enum | public      | El correo fue verificado exitosamente. |
 
 **5. Roles (Value Object)**
 
 Enumera los roles clínicos disponibles en uFlex.
 
-| Atributo | Tipo | Visibilidad | Descripción |
-|---|---|---|---|
-| `PATIENT` | Enum | public | Paciente en rehabilitación que usa la Mobile App y el sensor vestible. |
-| `PHYSIOTHERAPIST` | Enum | public | Fisioterapeuta que supervisa sesiones y ajusta protocolos clínicos. |
-| `CLINIC_ADMIN` | Enum | public | Administrador de clínica que gestiona sedes, usuarios y suscripción. |
+| Atributo          | Tipo | Visibilidad | Descripción                                                            |
+|-------------------|------|-------------|------------------------------------------------------------------------|
+| `PATIENT`         | Enum | public      | Paciente en rehabilitación que usa la Mobile App y el sensor vestible. |
+| `PHYSIOTHERAPIST` | Enum | public      | Fisioterapeuta que supervisa sesiones y ajusta protocolos clínicos.    |
+| `CLINIC_ADMIN`    | Enum | public      | Administrador de clínica que gestiona sedes, usuarios y suscripción.   |
 
 **6. ClinicId (Value Object)**
 
 Identificador del tenant (clínica) al que se asocia un usuario. Es una referencia lógica al BC Subscription; no es una foreign key dura para mantener la autonomía entre bounded contexts.
 
-| Atributo | Tipo | Visibilidad | Descripción |
-|---|---|---|---|
-| `clinicId` | `UUID` | private | Identificador de la clínica; puede ser `null` si aún no ha sido asignado. |
+| Atributo   | Tipo   | Visibilidad | Descripción                                                               |
+|------------|--------|-------------|---------------------------------------------------------------------------|
+| `clinicId` | `UUID` | private     | Identificador de la clínica; puede ser `null` si aún no ha sido asignado. |
 
 **Métodos principales:**
 
-| Método | Tipo Retorno | Visibilidad | Descripción |
-|---|---|---|---|
-| `ClinicId()` | Constructor | public | Inicializa con `null` (no asignado). |
-| `ClinicId(UUID clinicId)` | Constructor | public | Valida que el UUID no sea nulo. |
-| `isAssigned()` | `boolean` | public | `true` si `clinicId != null`. |
+| Método                    | Tipo Retorno | Visibilidad | Descripción                          |
+|---------------------------|--------------|-------------|--------------------------------------|
+| `ClinicId()`              | Constructor  | public      | Inicializa con `null` (no asignado). |
+| `ClinicId(UUID clinicId)` | Constructor  | public      | Valida que el UUID no sea nulo.      |
+| `isAssigned()`            | `boolean`    | public      | `true` si `clinicId != null`.        |
 
 **7. VerificationCode (Value Object)**
 
@@ -2389,199 +2492,213 @@ Código y fecha de expiración usados para verificar usuarios (activación de co
 
 **Atributos principales:**
 
-| Atributo | Tipo | Visibilidad | Descripción |
-|---|---|---|---|
-| `code` | `String` | private | Código de verificación (puede quedar `null` tras la verificación). |
-| `expiration` | `LocalDateTime` | private | Fecha y hora de expiración del código. |
+| Atributo     | Tipo            | Visibilidad | Descripción                                                        |
+|--------------|-----------------|-------------|--------------------------------------------------------------------|
+| `code`       | `String`        | private     | Código de verificación (puede quedar `null` tras la verificación). |
+| `expiration` | `LocalDateTime` | private     | Fecha y hora de expiración del código.                             |
 
 **Métodos principales:**
 
-| Método | Tipo Retorno | Visibilidad | Descripción |
-|---|---|---|---|
-| `VerificationCode(String, LocalDateTime)` | Constructor | public | Valida que el código no sea vacío y que la expiración sea futura. |
-| `isExpired()` | `boolean` | public | `true` si `now > expiration`. |
-| `matches(String inputCode)` | `boolean` | public | `true` si el código coincide y no ha expirado. |
+| Método                                    | Tipo Retorno | Visibilidad | Descripción                                                       |
+|-------------------------------------------|--------------|-------------|-------------------------------------------------------------------|
+| `VerificationCode(String, LocalDateTime)` | Constructor  | public      | Valida que el código no sea vacío y que la expiración sea futura. |
+| `isExpired()`                             | `boolean`    | public      | `true` si `now > expiration`.                                     |
+| `matches(String inputCode)`               | `boolean`    | public      | `true` si el código coincide y no ha expirado.                    |
 
 **8. EmailAddress (Value Object)**
 
 VO compartido entre bounded contexts para representar un correo electrónico válido.
 
-| Atributo | Tipo | Visibilidad | Descripción |
-|---|---|---|---|
-| `value` | `String` | private | Valor del correo, validado contra formato RFC 5322. |
+| Atributo | Tipo     | Visibilidad | Descripción                                         |
+|----------|----------|-------------|-----------------------------------------------------|
+| `value`  | `String` | private     | Valor del correo, validado contra formato RFC 5322. |
 
 **9. FullName (Value Object)**
 
 Nombre completo del usuario, compuesto por nombre y apellidos.
 
-| Atributo | Tipo | Visibilidad | Descripción |
-|---|---|---|---|
-| `firstName` | `String` | private | Nombre(s) del usuario. |
-| `lastName` | `String` | private | Apellidos del usuario. |
+| Atributo    | Tipo     | Visibilidad | Descripción            |
+|-------------|----------|-------------|------------------------|
+| `firstName` | `String` | private     | Nombre(s) del usuario. |
+| `lastName`  | `String` | private     | Apellidos del usuario. |
 
-**10. SignUpCommand (Command)**
+**10. PasswordHash (Value Object)**
 
-Comando para registrar un nuevo usuario en uFlex tras el flujo OAuth de Supabase.
+Encapsula el hash bcrypt de la contraseña. La contraseña en texto plano nunca cruza la frontera del dominio: se hashea en el application layer (vía `HashingService`) antes de construir el VO.
 
-| Atributo | Tipo | Visibilidad | Descripción |
-|---|---|---|---|
-| `supabaseUserId` | `String` | public | ID del usuario emitido por Supabase. |
-| `emailAddress` | `EmailAddress` | public | Correo del usuario. |
-| `fullName` | `FullName` | public | Nombre completo. |
-| `roles` | `List<Role>` | public | Roles iniciales (validados por `validateRoleSet`). |
-| `clinicId` | `ClinicId` | public | Clínica a la que se asocia (opcional en el onboarding inicial). |
+| Atributo | Tipo     | Visibilidad | Descripción                                          |
+|----------|----------|-------------|------------------------------------------------------|
+| `value`  | `String` | private     | Hash bcrypt resultante (no se persiste en claro).    |
 
-**11. SignInCommand (Command)**
+**Métodos principales:**
 
-Comando para iniciar sesión. En uFlex la autenticación la realiza Supabase; este comando valida el JWT emitido por Supabase y carga el contexto clínico.
+| Método                       | Tipo Retorno | Visibilidad | Descripción                                                       |
+|------------------------------|--------------|-------------|-------------------------------------------------------------------|
+| `PasswordHash(String value)` | Constructor  | public      | Valida que el hash no sea nulo ni vacío y tenga formato bcrypt.   |
 
-| Atributo | Tipo | Visibilidad | Descripción |
-|---|---|---|---|
-| `supabaseJwt` | `String` | public | Token JWT emitido por Supabase tras autenticación OAuth. |
+**11. SignUpCommand (Command)**
 
-**12. VerifyUserCommand (Command)**
+Comando para registrar un nuevo usuario en uFlex.
 
-Comando para verificar un usuario mediante código (verificación clínica adicional aparte de la verificación de correo de Supabase).
+| Atributo         | Tipo           | Visibilidad | Descripción                                                     |
+|------------------|----------------|-------------|-----------------------------------------------------------------|
+| `emailAddress`   | `EmailAddress` | public      | Correo del usuario.                                             |
+| `password`       | `String`       | public      | Contraseña en texto plano (será hasheada por el service).       |
+| `fullName`       | `FullName`     | public      | Nombre completo.                                                |
+| `roles`          | `List<Role>`   | public      | Roles iniciales (validados por `validateRoleSet`).              |
+| `clinicId`       | `ClinicId`     | public      | Clínica a la que se asocia (opcional en el onboarding inicial). |
 
-| Atributo | Tipo | Visibilidad | Descripción |
-|---|---|---|---|
-| `email` | `String` | public | Correo del usuario a verificar. |
-| `code` | `String` | public | Código de verificación recibido por correo. |
+**12. SignInCommand (Command)**
 
-**13. ResendVerificationCodeCommand (Command)**
+Comando para iniciar sesión validando email y contraseña; tras la validación uFlex emite un JWT propio.
+
+| Atributo       | Tipo           | Visibilidad | Descripción                                          |
+|----------------|----------------|-------------|------------------------------------------------------|
+| `emailAddress` | `EmailAddress` | public      | Correo del usuario.                                  |
+| `password`     | `String`       | public      | Contraseña en texto plano para validar contra hash.  |
+
+**13. VerifyUserCommand (Command)**
+
+Comando para verificar un usuario mediante el código enviado por correo.
+
+| Atributo | Tipo     | Visibilidad | Descripción                                 |
+|----------|----------|-------------|---------------------------------------------|
+| `email`  | `String` | public      | Correo del usuario a verificar.             |
+| `code`   | `String` | public      | Código de verificación recibido por correo. |
+
+**14. ResendVerificationCodeCommand (Command)**
 
 Comando para reenviar un código de verificación.
 
-| Atributo | Tipo | Visibilidad | Descripción |
-|---|---|---|---|
-| `email` | `String` | public | Correo válido del usuario al que se reenvía el código. |
+| Atributo | Tipo     | Visibilidad | Descripción                                            |
+|----------|----------|-------------|--------------------------------------------------------|
+| `email`  | `String` | public      | Correo válido del usuario al que se reenvía el código. |
 
-**14. AssignUserClinicIdCommand (Command)**
+**15. AssignUserClinicIdCommand (Command)**
 
 Comando para asociar un usuario a una clínica (tenant). Es emitido típicamente por el BC Subscription cuando se activa el plan de la clínica y el administrador invita a sus fisioterapeutas.
 
-| Atributo | Tipo | Visibilidad | Descripción |
-|---|---|---|---|
-| `userId` | `Long` | public | ID del usuario objetivo. |
-| `clinicId` | `UUID` | public | ID de la clínica a asociar. |
+| Atributo   | Tipo   | Visibilidad | Descripción                 |
+|------------|--------|-------------|-----------------------------|
+| `userId`   | `Long` | public      | ID del usuario objetivo.    |
+| `clinicId` | `UUID` | public      | ID de la clínica a asociar. |
 
-**15. SeedRolesCommand (Command)**
+**16. SeedRolesCommand (Command)**
 
 Comando utilizado al arranque del servicio para sembrar los roles clínicos base si aún no existen en la base de datos.
 
-| Atributo | Tipo | Visibilidad | Descripción |
-|---|---|---|---|
-| *(ninguno)* | — | — | No requiere atributos; su ejecución crea los roles `PATIENT`, `PHYSIOTHERAPIST` y `CLINIC_ADMIN`. |
+| Atributo    | Tipo | Visibilidad | Descripción                                                                                       |
+|-------------|------|-------------|---------------------------------------------------------------------------------------------------|
+| *(ninguno)* | —    | —           | No requiere atributos; su ejecución crea los roles `PATIENT`, `PHYSIOTHERAPIST` y `CLINIC_ADMIN`. |
 
-**16. GetAuthenticatedUserClinicIdQuery (Query)**
+**17. GetAuthenticatedUserClinicIdQuery (Query)**
 
 Consulta para obtener el `ClinicId` del usuario autenticado en el contexto de seguridad.
 
-| Atributo | Tipo | Visibilidad | Descripción |
-|---|---|---|---|
-| *(ninguno)* | — | — | No requiere atributos; retorna el `ClinicId` del usuario autenticado a partir del token JWT. |
+| Atributo    | Tipo | Visibilidad | Descripción                                                                                  |
+|-------------|------|-------------|----------------------------------------------------------------------------------------------|
+| *(ninguno)* | —    | —           | No requiere atributos; retorna el `ClinicId` del usuario autenticado a partir del token JWT. |
 
-**17. GetUserByIdQuery (Query)**
+**18. GetUserByIdQuery (Query)**
 
 Consulta un usuario por su identificador interno.
 
-| Atributo | Tipo | Visibilidad | Descripción |
-|---|---|---|---|
-| `userId` | `Long` | public | ID interno del usuario. |
+| Atributo | Tipo   | Visibilidad | Descripción             |
+|----------|--------|-------------|-------------------------|
+| `userId` | `Long` | public      | ID interno del usuario. |
 
-**18. GetUsersByClinicIdQuery (Query)**
+**19. GetUsersByClinicIdQuery (Query)**
 
 Lista los usuarios asociados a una clínica (útil para la PWA del Administrador de Clínica).
 
-| Atributo | Tipo | Visibilidad | Descripción |
-|---|---|---|---|
-| `clinicId` | `UUID` | public | ID de la clínica. |
+| Atributo   | Tipo   | Visibilidad | Descripción       |
+|------------|--------|-------------|-------------------|
+| `clinicId` | `UUID` | public      | ID de la clínica. |
 
-**19. GetUsersByRoleQuery (Query)**
+**20. GetUsersByRoleQuery (Query)**
 
 Lista los usuarios de una clínica filtrados por rol (p. ej. todos los fisioterapeutas de una sede).
 
-| Atributo | Tipo | Visibilidad | Descripción |
-|---|---|---|---|
-| `clinicId` | `UUID` | public | ID de la clínica sobre la que se filtra. |
-| `role` | `Roles` | public | Rol a filtrar. |
+| Atributo   | Tipo    | Visibilidad | Descripción                              |
+|------------|---------|-------------|------------------------------------------|
+| `clinicId` | `UUID`  | public      | ID de la clínica sobre la que se filtra. |
+| `role`     | `Roles` | public      | Rol a filtrar.                           |
 
-**20. UserCreatedEvent (Domain Event)**
+**21. UserCreatedEvent (Domain Event)**
 
 Evento publicado al crear un usuario. Permite al BC Subscription u otros reaccionar (por ejemplo, asignar un asiento del plan).
 
-| Atributo | Tipo | Visibilidad | Descripción |
-|---|---|---|---|
-| `userId` | `Long` | private | ID del usuario creado. |
-| `supabaseUserId` | `String` | private | ID en Supabase. |
-| `emailAddress` | `String` | private | Correo del usuario. |
-| `occurredOn` | `Instant` | private | Marca temporal del evento. |
+| Atributo       | Tipo      | Visibilidad | Descripción                |
+|----------------|-----------|-------------|----------------------------|
+| `userId`       | `Long`    | private     | ID del usuario creado.     |
+| `emailAddress` | `String`  | private     | Correo del usuario.        |
+| `occurredOn`   | `Instant` | private     | Marca temporal del evento. |
 
-**21. UserVerifiedEvent (Domain Event)**
+**22. UserVerifiedEvent (Domain Event)**
 
 Evento publicado cuando el usuario completa la verificación.
 
-| Atributo | Tipo | Visibilidad | Descripción |
-|---|---|---|---|
-| `userId` | `Long` | private | ID del usuario verificado. |
-| `verifiedAt` | `Instant` | private | Marca temporal de la verificación. |
+| Atributo     | Tipo      | Visibilidad | Descripción                        |
+|--------------|-----------|-------------|------------------------------------|
+| `userId`     | `Long`    | private     | ID del usuario verificado.         |
+| `verifiedAt` | `Instant` | private     | Marca temporal de la verificación. |
 
-**22. UserVerificationCodeAssignedEvent (Domain Event)**
+**23. UserVerificationCodeAssignedEvent (Domain Event)**
 
 Evento publicado al asignar un código de verificación; es consumido por un handler que dispara el envío del correo vía Resend.
 
-| Atributo | Tipo | Visibilidad | Descripción |
-|---|---|---|---|
-| `source` (heredado) | `Object` | private | Objeto origen del evento (`ApplicationEvent`). |
-| `email` | `String` | private | Correo destinatario del código. |
-| `code` | `String` | private | Código generado. |
-| `expirationMinutes` | `Integer` | private | Minutos hasta la expiración. |
+| Atributo            | Tipo      | Visibilidad | Descripción                                    |
+|---------------------|-----------|-------------|------------------------------------------------|
+| `source` (heredado) | `Object`  | private     | Objeto origen del evento (`ApplicationEvent`). |
+| `email`             | `String`  | private     | Correo destinatario del código.                |
+| `code`              | `String`  | private     | Código generado.                               |
+| `expirationMinutes` | `Integer` | private     | Minutos hasta la expiración.                   |
 
-**23. UserCommandService (Domain Service)**
+**24. UserCommandService (Domain Service)**
 
 Maneja los commands relacionados con usuarios.
 
-| Método | Tipo Retorno | Visibilidad | Descripción |
-|---|---|---|---|
-| `handle(SignInCommand)` | `Optional<ImmutablePair<User, String>>` | public | Valida el JWT de Supabase y retorna el par (usuario, token enriquecido con clínica). |
-| `handle(SignUpCommand)` | `Optional<User>` | public | Registra un usuario nuevo en uFlex tras el OAuth de Supabase. |
-| `handle(VerifyUserCommand)` | `boolean` | public | Verifica el usuario por código y activa la cuenta. |
-| `handle(ResendVerificationCodeCommand)` | `boolean` | public | Reenvía el código de verificación si el usuario aún no está verificado. |
-| `handle(AssignUserClinicIdCommand)` | `void` | public | Asocia un usuario a una clínica. |
+| Método                                  | Tipo Retorno                            | Visibilidad | Descripción                                                                                            |
+|-----------------------------------------|-----------------------------------------|-------------|--------------------------------------------------------------------------------------------------------|
+| `handle(SignInCommand)`                 | `Optional<ImmutablePair<User, String>>` | public      | Valida email/contraseña y retorna el par (usuario, JWT emitido por uFlex).                             |
+| `handle(SignUpCommand)`                 | `Optional<User>`                        | public      | Registra un usuario nuevo en uFlex hasheando la contraseña y generando un código de verificación.      |
+| `handle(VerifyUserCommand)`             | `boolean`                               | public      | Verifica el usuario por código y activa la cuenta.                                                     |
+| `handle(ResendVerificationCodeCommand)` | `boolean`                               | public      | Reenvía el código de verificación si el usuario aún no está verificado.                                |
+| `handle(AssignUserClinicIdCommand)`     | `void`                                  | public      | Asocia un usuario a una clínica.                                                                       |
 
-**24. UserQueryService (Domain Service)**
+**25. UserQueryService (Domain Service)**
 
 Maneja las queries relacionadas con usuarios.
 
-| Método | Tipo Retorno | Visibilidad | Descripción |
-|---|---|---|---|
-| `handle(GetAuthenticatedUserClinicIdQuery)` | `Optional<ClinicId>` | public | Obtiene el `ClinicId` del usuario autenticado. |
-| `handle(GetUserByIdQuery)` | `Optional<User>` | public | Recupera un usuario por su ID interno. |
-| `handle(GetUsersByClinicIdQuery)` | `List<User>` | public | Lista los usuarios asociados a una clínica. |
-| `handle(GetUsersByRoleQuery)` | `List<User>` | public | Lista los usuarios de una clínica filtrados por rol. |
+| Método                                      | Tipo Retorno         | Visibilidad | Descripción                                          |
+|---------------------------------------------|----------------------|-------------|------------------------------------------------------|
+| `handle(GetAuthenticatedUserClinicIdQuery)` | `Optional<ClinicId>` | public      | Obtiene el `ClinicId` del usuario autenticado.       |
+| `handle(GetUserByIdQuery)`                  | `Optional<User>`     | public      | Recupera un usuario por su ID interno.               |
+| `handle(GetUsersByClinicIdQuery)`           | `List<User>`         | public      | Lista los usuarios asociados a una clínica.          |
+| `handle(GetUsersByRoleQuery)`               | `List<User>`         | public      | Lista los usuarios de una clínica filtrados por rol. |
 
-**25. RoleCommandService (Domain Service)**
+**26. RoleCommandService (Domain Service)**
 
 Maneja los commands relacionados con la gestión de roles.
 
-| Método | Tipo Retorno | Visibilidad | Descripción |
-|---|---|---|---|
-| `handle(SeedRolesCommand)` | `void` | public | Siembra los roles clínicos base si aún no existen. |
+| Método                     | Tipo Retorno | Visibilidad | Descripción                                        |
+|----------------------------|--------------|-------------|----------------------------------------------------|
+| `handle(SeedRolesCommand)` | `void`       | public      | Siembra los roles clínicos base si aún no existen. |
 
 #### 4.2.1.2. Interface Layer
 
 **1. AuthenticationController (REST Controller)**
 
-Expone las funcionalidades de autenticación y registro a través de endpoints HTTP. Internamente delega la autenticación a Supabase y enriquece la respuesta con el perfil clínico local.
+Expone las funcionalidades de autenticación y registro a través de endpoints HTTP. Toda la lógica de autenticación (hashing, validación de credenciales y emisión de JWT) corre dentro del monolito de uFlex.
 
 **Endpoints principales:**
 
-| Método | Ruta base | HTTP | Descripción |
-|---|---|---|---|
-| `signIn` | `/api/v1/authentication/sign-in` | POST | Recibe el JWT de Supabase, lo valida y retorna la sesión enriquecida con rol clínico y `clinicId`. |
-| `signUp` | `/api/v1/authentication/sign-up` | POST | Registra un nuevo usuario local tras el signup en Supabase. |
-| `verify` | `/api/v1/authentication/verify` | POST | Verifica al usuario con el código clínico enviado por correo. |
-| `resendCode` | `/api/v1/authentication/resend-code` | POST | Reenvía el código de verificación al correo del usuario. |
+| Método       | Ruta base                            | HTTP | Descripción                                                                                                          |
+|--------------|--------------------------------------|------|----------------------------------------------------------------------------------------------------------------------|
+| `signIn`     | `/api/v1/authentication/sign-in`     | POST | Recibe email y contraseña, valida las credenciales contra el hash bcrypt y retorna el JWT emitido por uFlex.         |
+| `signUp`     | `/api/v1/authentication/sign-up`     | POST | Registra un nuevo usuario hasheando la contraseña con bcrypt y generando el código de verificación.                  |
+| `verify`     | `/api/v1/authentication/verify`      | POST | Verifica al usuario con el código clínico enviado por correo.                                                        |
+| `resendCode` | `/api/v1/authentication/resend-code` | POST | Reenvía el código de verificación al correo del usuario.                                                             |
 
 **2. UserController (REST Controller)**
 
@@ -2589,40 +2706,40 @@ Expone operaciones de consulta y administración del perfil clínico.
 
 **Endpoints principales:**
 
-| Método | Ruta base | HTTP | Descripción |
-|---|---|---|---|
-| `getUserById` | `/api/v1/users/{id}` | GET | Obtiene el perfil clínico por ID interno. |
-| `getUsersByClinic` | `/api/v1/users?clinicId={id}` | GET | Lista los usuarios de una clínica (requiere rol `CLINIC_ADMIN`). |
-| `getUsersByRole` | `/api/v1/users?clinicId={id}&role={role}` | GET | Lista los usuarios de una clínica filtrados por rol. |
-| `assignClinic` | `/api/v1/users/{id}/clinic` | PATCH | Asocia un usuario a una clínica (invocado desde el BC Subscription). |
+| Método             | Ruta base                                 | HTTP  | Descripción                                                          |
+|--------------------|-------------------------------------------|-------|----------------------------------------------------------------------|
+| `getUserById`      | `/api/v1/users/{id}`                      | GET   | Obtiene el perfil clínico por ID interno.                            |
+| `getUsersByClinic` | `/api/v1/users?clinicId={id}`             | GET   | Lista los usuarios de una clínica (requiere rol `CLINIC_ADMIN`).     |
+| `getUsersByRole`   | `/api/v1/users?clinicId={id}&role={role}` | GET   | Lista los usuarios de una clínica filtrados por rol.                 |
+| `assignClinic`     | `/api/v1/users/{id}/clinic`               | PATCH | Asocia un usuario a una clínica (invocado desde el BC Subscription). |
 
 **3. Resources (DTOs)**
 
 DTOs utilizados para la comunicación REST, modelados como Java Records.
 
-| Resource | Atributos principales | Descripción |
-|---|---|---|
-| `AuthenticatedUserResource` | `id: Long`, `emailAddress: String`, `roles: List<String>`, `clinicId: UUID`, `token: String` | Respuesta del sign-in (perfil enriquecido + token). |
-| `SignInResource` | `supabaseJwt: String` | Token JWT emitido por Supabase que se envía para canjear por sesión local. |
-| `SignUpResource` | `supabaseUserId: String`, `emailAddress: String`, `fullName: String`, `roles: List<String>`, `clinicId: UUID` | Datos mínimos para crear el perfil local. |
-| `VerifyUserResource` | `email: String`, `code: String` | Verificación de usuario por código. |
-| `ResendVerificationCodeResource` | `email: String` | Solicita reenviar el código de verificación. |
-| `UserResource` | `id: Long`, `emailAddress: String`, `fullName: String`, `roles: List<String>`, `clinicId: UUID`, `accountStatus: String` | Usuario expuesto por la API de consulta. |
-| `RoleResource` | `id: Long`, `name: String` | Representación de un rol clínico. |
+| Resource                         | Atributos principales                                                                                                    | Descripción                                                                |
+|----------------------------------|--------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------|
+| `AuthenticatedUserResource`      | `id: Long`, `emailAddress: String`, `roles: List<String>`, `clinicId: UUID`, `token: String`                             | Respuesta del sign-in (perfil enriquecido + JWT emitido por uFlex).        |
+| `SignInResource`                 | `emailAddress: String`, `password: String`                                                                               | Credenciales que el cliente envía para iniciar sesión.                     |
+| `SignUpResource`                 | `emailAddress: String`, `password: String`, `fullName: String`, `roles: List<String>`, `clinicId: UUID`                  | Datos mínimos para crear un usuario nuevo en uFlex.                        |
+| `VerifyUserResource`             | `email: String`, `code: String`                                                                                          | Verificación de usuario por código.                                        |
+| `ResendVerificationCodeResource` | `email: String`                                                                                                          | Solicita reenviar el código de verificación.                               |
+| `UserResource`                   | `id: Long`, `emailAddress: String`, `fullName: String`, `roles: List<String>`, `clinicId: UUID`, `accountStatus: String` | Usuario expuesto por la API de consulta.                                   |
+| `RoleResource`                   | `id: Long`, `name: String`                                                                                               | Representación de un rol clínico.                                          |
 
 **4. Transform (Assemblers)**
 
 Convierten entre entidades del dominio y recursos REST, así como entre recursos y commands/queries.
 
-| Assembler | Entrada | Salida | Descripción |
-|---|---|---|---|
-| `AuthenticatedUserResourceFromEntityAssembler` | `User`, `token: String` | `AuthenticatedUserResource` | Mapea el aggregate `User` y el token enriquecido al recurso de respuesta de sign-in. |
-| `SignInCommandFromResourceAssembler` | `SignInResource` | `SignInCommand` | Construye el command de sign-in a partir del JWT recibido. |
-| `SignUpCommandFromResourceAssembler` | `SignUpResource` | `SignUpCommand` | Construye el command de registro, mapeando `List<String>` a `List<Role>`. |
-| `VerifyUserCommandFromResourceAssembler` | `VerifyUserResource` | `VerifyUserCommand` | Construye el command de verificación por código. |
-| `ResendVerificationCodeCommandFromResourceAssembler` | `ResendVerificationCodeResource` | `ResendVerificationCodeCommand` | Construye el command de reenvío de código. |
-| `UserResourceFromEntityAssembler` | `User` | `UserResource` | Expone el aggregate como recurso de consulta. |
-| `RoleResourceFromEntityAssembler` | `Role` | `RoleResource` | Expone el rol como recurso. |
+| Assembler                                            | Entrada                          | Salida                          | Descripción                                                                          |
+|------------------------------------------------------|----------------------------------|---------------------------------|--------------------------------------------------------------------------------------|
+| `AuthenticatedUserResourceFromEntityAssembler`       | `User`, `token: String`          | `AuthenticatedUserResource`     | Mapea el aggregate `User` y el JWT al recurso de respuesta de sign-in.               |
+| `SignInCommandFromResourceAssembler`                 | `SignInResource`                 | `SignInCommand`                 | Construye el command de sign-in con email y contraseña.                              |
+| `SignUpCommandFromResourceAssembler`                 | `SignUpResource`                 | `SignUpCommand`                 | Construye el command de registro, mapeando `List<String>` a `List<Role>`.            |
+| `VerifyUserCommandFromResourceAssembler`             | `VerifyUserResource`             | `VerifyUserCommand`             | Construye el command de verificación por código.                                     |
+| `ResendVerificationCodeCommandFromResourceAssembler` | `ResendVerificationCodeResource` | `ResendVerificationCodeCommand` | Construye el command de reenvío de código.                                           |
+| `UserResourceFromEntityAssembler`                    | `User`                           | `UserResource`                  | Expone el aggregate como recurso de consulta.                                        |
+| `RoleResourceFromEntityAssembler`                    | `Role`                           | `RoleResource`                  | Expone el rol como recurso.                                                          |
 
 #### 4.2.1.3. Application Layer
 
@@ -2630,153 +2747,152 @@ Convierten entre entidades del dominio y recursos REST, así como entre recursos
 
 Implementa la fachada que otros bounded contexts (Subscription, Therapy, Trends, Analytics) usan para obtener información de identidad sin conocer el modelo interno del BC IAM.
 
-| Atributo | Tipo | Visibilidad | Descripción |
-|---|---|---|---|
-| `userQueryService` | `UserQueryService` | private | Servicio de consultas del dominio IAM. |
+| Atributo           | Tipo               | Visibilidad | Descripción                            |
+|--------------------|--------------------|-------------|----------------------------------------|
+| `userQueryService` | `UserQueryService` | private     | Servicio de consultas del dominio IAM. |
 
 **Métodos principales:**
 
-| Método | Tipo Retorno | Visibilidad | Descripción |
-|---|---|---|---|
-| `fetchAuthenticatedUserClinicId()` | `UUID` | public | Retorna el `clinicId` actual a partir del contexto de seguridad (o `null` si no existe). |
-| `fetchUserById(Long userId)` | `Optional<UserDto>` | public | Expone un DTO ligero del perfil, sin el aggregate interno. |
+| Método                             | Tipo Retorno        | Visibilidad | Descripción                                                                              |
+|------------------------------------|---------------------|-------------|------------------------------------------------------------------------------------------|
+| `fetchAuthenticatedUserClinicId()` | `UUID`              | public      | Retorna el `clinicId` actual a partir del contexto de seguridad (o `null` si no existe). |
+| `fetchUserById(Long userId)`       | `Optional<UserDto>` | public      | Expone un DTO ligero del perfil, sin el aggregate interno.                               |
 
 **2. RoleCommandServiceImpl (Command Service Implementation)**
 
-| Atributo | Tipo | Visibilidad | Descripción |
-|---|---|---|---|
-| `roleRepository` | `RoleRepository` | private | Acceso a la persistencia de roles. |
+| Atributo         | Tipo             | Visibilidad | Descripción                        |
+|------------------|------------------|-------------|------------------------------------|
+| `roleRepository` | `RoleRepository` | private     | Acceso a la persistencia de roles. |
 
 **Métodos principales:**
 
-| Método | Tipo Retorno | Visibilidad | Descripción |
-|---|---|---|---|
-| `handle(SeedRolesCommand)` | `void` | public | Crea los roles del enum `Roles` si aún no existen. |
+| Método                     | Tipo Retorno | Visibilidad | Descripción                                        |
+|----------------------------|--------------|-------------|----------------------------------------------------|
+| `handle(SeedRolesCommand)` | `void`       | public      | Crea los roles del enum `Roles` si aún no existen. |
 
 **3. UserCommandServiceImpl (Command Service Implementation)**
 
-Orquesta registro, validación de sesión, verificación y asociación de clínica. No gestiona contraseñas (eso vive en Supabase).
+Orquesta registro, autenticación, verificación y asociación de clínica. Hashea contraseñas con bcrypt, valida credenciales y emite JWT internos.
 
-| Atributo | Tipo | Visibilidad | Descripción |
-|---|---|---|---|
-| `userRepository` | `UserRepository` | private | Persistencia de usuarios. |
-| `supabaseAuthPort` | `SupabaseAuthPort` | private | ACL contra el OAuth provider externo. |
-| `jwtValidationPort` | `JwtValidationPort` | private | Validación de los JWT emitidos por Supabase. |
-| `verificationService` | `VerificationService` | private | Generación y validación de códigos de verificación. |
-| `roleRepository` | `RoleRepository` | private | Resolución de roles por nombre. |
-| `eventPublisher` | `ApplicationEventPublisher` | private | Publicación de domain events. |
+| Atributo              | Tipo                        | Visibilidad | Descripción                                                                            |
+|-----------------------|-----------------------------|-------------|----------------------------------------------------------------------------------------|
+| `userRepository`      | `UserRepository`            | private     | Persistencia de usuarios.                                                              |
+| `hashingService`      | `HashingService`            | private     | Hashea contraseñas con bcrypt y compara hashes contra texto plano.                     |
+| `tokenService`        | `TokenService`              | private     | Emite y valida los JWT propios de uFlex.                                               |
+| `verificationService` | `VerificationService`       | private     | Generación y validación de códigos de verificación.                                    |
+| `roleRepository`      | `RoleRepository`            | private     | Resolución de roles por nombre.                                                        |
+| `eventPublisher`      | `ApplicationEventPublisher` | private     | Publicación de domain events.                                                          |
 
 **Métodos principales:**
 
-| Método | Tipo Retorno | Visibilidad | Descripción |
-|---|---|---|---|
-| `handle(SignInCommand)` | `Optional<ImmutablePair<User, String>>` | public | Valida el JWT de Supabase, carga el perfil local y retorna `(user, token enriquecido con clinicId)`. |
-| `handle(SignUpCommand)` | `Optional<User>` | public | Crea el perfil local tras el signup en Supabase, asigna roles y genera el código de verificación clínica. |
-| `handle(VerifyUserCommand)` | `boolean` | public | Valida el código y activa la cuenta. |
-| `handle(ResendVerificationCodeCommand)` | `boolean` | public | Reenvía el código de verificación si el usuario no está verificado. |
-| `handle(AssignUserClinicIdCommand)` | `void` | public | Asocia la clínica al usuario objetivo. |
+| Método                                  | Tipo Retorno                            | Visibilidad | Descripción                                                                                               |
+|-----------------------------------------|-----------------------------------------|-------------|-----------------------------------------------------------------------------------------------------------|
+| `handle(SignInCommand)`                 | `Optional<ImmutablePair<User, String>>` | public      | Valida email/contraseña contra el hash bcrypt y retorna `(user, JWT enriquecido con clinicId)`.           |
+| `handle(SignUpCommand)`                 | `Optional<User>`                        | public      | Crea el perfil local hasheando la contraseña con bcrypt, asigna roles y genera el código de verificación. |
+| `handle(VerifyUserCommand)`             | `boolean`                               | public      | Valida el código y activa la cuenta.                                                                      |
+| `handle(ResendVerificationCodeCommand)` | `boolean`                               | public      | Reenvía el código de verificación si el usuario no está verificado.                                       |
+| `handle(AssignUserClinicIdCommand)`     | `void`                                  | public      | Asocia la clínica al usuario objetivo.                                                                    |
 
 **4. UserQueryServiceImpl (Query Service Implementation)**
 
-| Atributo | Tipo | Visibilidad | Descripción |
-|---|---|---|---|
-| `userRepository` | `UserRepository` | private | Lectura del read model de usuarios. |
-| `identityService` | `IdentityService` | private | Proveedor del contexto de identidad actual. |
+| Atributo          | Tipo              | Visibilidad | Descripción                                 |
+|-------------------|-------------------|-------------|---------------------------------------------|
+| `userRepository`  | `UserRepository`  | private     | Lectura del read model de usuarios.         |
+| `identityService` | `IdentityService` | private     | Proveedor del contexto de identidad actual. |
 
 **Métodos principales:**
 
-| Método | Tipo Retorno | Visibilidad | Descripción |
-|---|---|---|---|
-| `handle(GetAuthenticatedUserClinicIdQuery)` | `Optional<ClinicId>` | public | Retorna el `ClinicId` del usuario autenticado. |
-| `handle(GetUserByIdQuery)` | `Optional<User>` | public | Recupera un usuario por su ID interno. |
-| `handle(GetUsersByClinicIdQuery)` | `List<User>` | public | Lista los usuarios asociados a una clínica. |
-| `handle(GetUsersByRoleQuery)` | `List<User>` | public | Lista los usuarios de una clínica por rol. |
+| Método                                      | Tipo Retorno         | Visibilidad | Descripción                                    |
+|---------------------------------------------|----------------------|-------------|------------------------------------------------|
+| `handle(GetAuthenticatedUserClinicIdQuery)` | `Optional<ClinicId>` | public      | Retorna el `ClinicId` del usuario autenticado. |
+| `handle(GetUserByIdQuery)`                  | `Optional<User>`     | public      | Recupera un usuario por su ID interno.         |
+| `handle(GetUsersByClinicIdQuery)`           | `List<User>`         | public      | Lista los usuarios asociados a una clínica.    |
+| `handle(GetUsersByRoleQuery)`               | `List<User>`         | public      | Lista los usuarios de una clínica por rol.     |
 
 **5. SubscriptionActivatedEventHandler (Domain Event Handler)**
 
 Reacciona al evento `SubscriptionActivatedEvent` emitido por el BC Subscription para sincronizar el `clinicId` del Administrador de Clínica tras la activación del plan.
 
-| Atributo | Tipo | Visibilidad | Descripción |
-|---|---|---|---|
-| `userCommandService` | `UserCommandService` | private | Envía `AssignUserClinicIdCommand` al usuario administrador. |
+| Atributo             | Tipo                 | Visibilidad | Descripción                                                 |
+|----------------------|----------------------|-------------|-------------------------------------------------------------|
+| `userCommandService` | `UserCommandService` | private     | Envía `AssignUserClinicIdCommand` al usuario administrador. |
 
-| Método | Tipo Retorno | Visibilidad | Descripción |
-|---|---|---|---|
-| `on(SubscriptionActivatedEvent)` | `void` | public | Asocia el `clinicId` recién creado al administrador de la clínica. |
+| Método                           | Tipo Retorno | Visibilidad | Descripción                                                        |
+|----------------------------------|--------------|-------------|--------------------------------------------------------------------|
+| `on(SubscriptionActivatedEvent)` | `void`       | public      | Asocia el `clinicId` recién creado al administrador de la clínica. |
 
 **6. ApplicationReadyEventHandler (Framework Event Handler)**
 
-| Atributo | Tipo | Visibilidad | Descripción |
-|---|---|---|---|
-| `roleCommandService` | `RoleCommandService` | private | Orquesta la siembra de roles. |
+| Atributo             | Tipo                 | Visibilidad | Descripción                   |
+|----------------------|----------------------|-------------|-------------------------------|
+| `roleCommandService` | `RoleCommandService` | private     | Orquesta la siembra de roles. |
 
-| Método | Tipo Retorno | Visibilidad | Descripción |
-|---|---|---|---|
-| `on(ApplicationReadyEvent)` | `void` | public | Ejecuta `SeedRolesCommand` al arrancar el servicio. |
+| Método                      | Tipo Retorno | Visibilidad | Descripción                                         |
+|-----------------------------|--------------|-------------|-----------------------------------------------------|
+| `on(ApplicationReadyEvent)` | `void`       | public      | Ejecuta `SeedRolesCommand` al arrancar el servicio. |
 
 **7. UserVerificationCodeAssignedEventHandler (Domain Event Handler)**
 
-| Atributo | Tipo | Visibilidad | Descripción |
-|---|---|---|---|
-| `emailService` | `EmailService` | private | Servicio para envío de correos (Resend). |
+| Atributo       | Tipo           | Visibilidad | Descripción                              |
+|----------------|----------------|-------------|------------------------------------------|
+| `emailService` | `EmailService` | private     | Servicio para envío de correos (Resend). |
 
-| Método | Tipo Retorno | Visibilidad | Descripción |
-|---|---|---|---|
-| `handle(UserVerificationCodeAssignedEvent)` | `void` | public | Envía el correo con el código y la expiración (ejecución `@Async`). |
+| Método                                      | Tipo Retorno | Visibilidad | Descripción                                                         |
+|---------------------------------------------|--------------|-------------|---------------------------------------------------------------------|
+| `handle(UserVerificationCodeAssignedEvent)` | `void`       | public      | Envía el correo con el código y la expiración (ejecución `@Async`). |
 
 **8. EmailService (Outbound Service Port)**
 
 Interfaz para envío de correos (implementada contra Resend en la Infrastructure Layer).
 
-| Método | Tipo Retorno | Visibilidad | Descripción |
-|---|---|---|---|
-| `sendVerificationEmail(String to, String code, int expirationMinutes)` | `void` | public | Envía un correo de verificación. |
-| `sendPasswordResetEmail(String to, String link)` | `void` | public | Envía un correo de restablecimiento (delegado a Supabase que genera el link). |
-| `sendClinicInvitationEmail(String to, String clinicName, String token)` | `void` | public | Envía invitación a fisioterapeuta para unirse a una clínica. |
+| Método                                                                  | Tipo Retorno | Visibilidad | Descripción                                                                   |
+|-------------------------------------------------------------------------|--------------|-------------|-------------------------------------------------------------------------------|
+| `sendVerificationEmail(String to, String code, int expirationMinutes)`  | `void`       | public      | Envía un correo de verificación.                                              |
+| `sendPasswordResetEmail(String to, String link)`                        | `void`       | public      | Envía un correo de restablecimiento de contraseña con un link tokenizado.     |
+| `sendClinicInvitationEmail(String to, String clinicName, String token)` | `void`       | public      | Envía invitación a fisioterapeuta para unirse a una clínica.                  |
 
-**9. SupabaseAuthPort (Outbound Service Port — ACL)**
+**9. HashingService (Outbound Service Port)**
 
-Puerto hacia Supabase Auth. Reemplaza al `HashingService` y `TokenService` del ejemplo clásico (Supabase gestiona contraseñas y emite tokens).
+Hashea contraseñas con bcrypt y verifica una contraseña en texto plano contra un hash existente.
 
-| Método | Tipo Retorno | Visibilidad | Descripción |
-|---|---|---|---|
-| `createIdentity(EmailAddress, FullName)` | `String` | public | Crea una identidad en Supabase y retorna el `supabaseUserId`. |
-| `resendSupabaseVerification(EmailAddress)` | `void` | public | Solicita a Supabase reenviar el correo de verificación de su lado. |
-| `disableIdentity(String supabaseUserId)` | `void` | public | Inhabilita la identidad en Supabase al eliminar/bloquear el perfil local. |
+| Método                                          | Tipo Retorno | Visibilidad | Descripción                                                       |
+|-------------------------------------------------|--------------|-------------|-------------------------------------------------------------------|
+| `hash(String rawPassword)`                      | `String`     | public      | Devuelve el hash bcrypt de la contraseña en texto plano.          |
+| `matches(String rawPassword, String hash)`      | `boolean`    | public      | `true` si el hash bcrypt corresponde a la contraseña recibida.    |
 
-**10. JwtValidationPort (Outbound Service Port)**
+**10. TokenService (Outbound Service Port)**
 
-Valida los JWT emitidos por Supabase y extrae claims. uFlex **no emite** tokens propios.
+Emite y valida los JWT propios de uFlex y extrae sus claims.
 
-| Método | Tipo Retorno | Visibilidad | Descripción |
-|---|---|---|---|
-| `validateToken(String jwt)` | `boolean` | public | Valida firma, emisor y expiración del JWT de Supabase. |
-| `getSupabaseUserIdFromToken(String jwt)` | `Optional<String>` | public | Extrae el claim `sub` (UUID de Supabase). |
-| `getEmailFromToken(String jwt)` | `Optional<String>` | public | Extrae el claim `email`. |
+| Método                          | Tipo Retorno       | Visibilidad | Descripción                                                                  |
+|---------------------------------|--------------------|-------------|------------------------------------------------------------------------------|
+| `generateToken(User user)`      | `String`           | public      | Genera un JWT firmado con los claims `sub`, `email`, `roles` y `clinicId`.   |
+| `validateToken(String jwt)`     | `boolean`          | public      | Valida firma, emisor y expiración del JWT.                                   |
+| `getUserIdFromToken(String jwt)`| `Optional<Long>`   | public      | Extrae el claim `sub` (ID interno del usuario).                              |
+| `getEmailFromToken(String jwt)` | `Optional<String>` | public      | Extrae el claim `email`.                                                     |
 
 **11. IdentityService (Outbound Service Port)**
 
-Interfaz para obtener los datos del contexto de seguridad actual (principalmente leídos del JWT tras su validación por el filtro de seguridad).
+Interfaz para obtener los datos del contexto de seguridad actual (leídos del JWT tras su validación por el filtro de seguridad).
 
-| Método | Tipo Retorno | Visibilidad | Descripción |
-|---|---|---|---|
-| `getUserId()` | `Optional<Long>` | public | ID interno del usuario autenticado. |
-| `getSupabaseUserId()` | `Optional<String>` | public | ID en Supabase del usuario autenticado. |
-| `getEmail()` | `Optional<String>` | public | Email del contexto. |
-| `getRoles()` | `Set<String>` | public | Roles del contexto. |
-| `getClinicId()` | `Optional<UUID>` | public | Clínica asociada al usuario actual. |
-| `isServiceAccount()` | `boolean` | public | Indica si el caller es una service account (por ejemplo, otro microservicio interno). |
+| Método                | Tipo Retorno       | Visibilidad | Descripción                                                                           |
+|-----------------------|--------------------|-------------|---------------------------------------------------------------------------------------|
+| `getUserId()`         | `Optional<Long>`   | public      | ID interno del usuario autenticado.                                                   |
+| `getEmail()`          | `Optional<String>` | public      | Email del contexto.                                                                   |
+| `getRoles()`          | `Set<String>`      | public      | Roles del contexto.                                                                   |
+| `getClinicId()`       | `Optional<UUID>`   | public      | Clínica asociada al usuario actual.                                                   |
+| `isServiceAccount()`  | `boolean`          | public      | Indica si el caller es una service account (por ejemplo, un job interno).             |
 
 **12. VerificationService (Outbound Service Port)**
 
 Interfaz para generar y validar códigos de verificación.
 
-| Método | Tipo Retorno | Visibilidad | Descripción |
-|---|---|---|---|
-| `generateCode()` | `String` | public | Genera un código con longitud por defecto. |
-| `generateCode(int length)` | `String` | public | Genera un código con longitud indicada. |
-| `generateExpirationMinutes()` | `Integer` | public | Devuelve los minutos de expiración configurados. |
-| `verifyCode(String code, String expected, LocalDateTime expiration)` | `boolean` | public | Verifica coincidencia y vigencia del código. |
+| Método                                                               | Tipo Retorno | Visibilidad | Descripción                                      |
+|----------------------------------------------------------------------|--------------|-------------|--------------------------------------------------|
+| `generateCode()`                                                     | `String`     | public      | Genera un código con longitud por defecto.       |
+| `generateCode(int length)`                                           | `String`     | public      | Genera un código con longitud indicada.          |
+| `generateExpirationMinutes()`                                        | `Integer`    | public      | Devuelve los minutos de expiración configurados. |
+| `verifyCode(String code, String expected, LocalDateTime expiration)` | `boolean`    | public      | Verifica coincidencia y vigencia del código.     |
 
 #### 4.2.1.4. Infrastructure Layer
 
@@ -2784,147 +2900,150 @@ Interfaz para generar y validar códigos de verificación.
 
 Interfaz de acceso a datos para usuarios, implementada por Spring Data JPA sobre Azure Database for PostgreSQL.
 
-| Método | Tipo Retorno | Visibilidad | Descripción |
-|---|---|---|---|
-| `findById(Long id)` | `Optional<User>` | public | Busca un usuario por su identificador interno. |
-| `save(User user)` | `User` | public | Persiste o actualiza un usuario. |
-| `findByEmailAddress(EmailAddress email)` | `Optional<User>` | public | Obtiene un usuario por su correo. |
-| `findBySupabaseUserId(String supabaseUserId)` | `Optional<User>` | public | Obtiene un usuario por su ID en Supabase. |
-| `existsByEmailAddress(EmailAddress email)` | `boolean` | public | Verifica la existencia de un usuario por correo. |
-| `findAllByClinicId(UUID clinicId)` | `List<User>` | public | Lista usuarios por clínica. |
-| `findAllByClinicIdAndRole(UUID clinicId, Roles role)` | `List<User>` | public | Lista usuarios por clínica y rol. |
+| Método                                                | Tipo Retorno     | Visibilidad | Descripción                                      |
+|-------------------------------------------------------|------------------|-------------|--------------------------------------------------|
+| `findById(Long id)`                                   | `Optional<User>` | public      | Busca un usuario por su identificador interno.   |
+| `save(User user)`                                     | `User`           | public      | Persiste o actualiza un usuario.                 |
+| `findByEmailAddress(EmailAddress email)`              | `Optional<User>` | public      | Obtiene un usuario por su correo.                |
+| `existsByEmailAddress(EmailAddress email)`            | `boolean`        | public      | Verifica la existencia de un usuario por correo. |
+| `findAllByClinicId(UUID clinicId)`                    | `List<User>`     | public      | Lista usuarios por clínica.                      |
+| `findAllByClinicIdAndRole(UUID clinicId, Roles role)` | `List<User>`     | public      | Lista usuarios por clínica y rol.                |
 
 **2. RoleRepository (Repository Interface)**
 
-| Método | Tipo Retorno | Visibilidad | Descripción |
-|---|---|---|---|
-| `findById(Long id)` | `Optional<Role>` | public | Busca un rol por su identificador. |
-| `save(Role role)` | `Role` | public | Persiste o actualiza un rol. |
-| `findByName(Roles name)` | `Optional<Role>` | public | Obtiene un rol por su enum `Roles`. |
-| `existsByName(Roles name)` | `boolean` | public | Verifica existencia por nombre de rol. |
+| Método                     | Tipo Retorno     | Visibilidad | Descripción                            |
+|----------------------------|------------------|-------------|----------------------------------------|
+| `findById(Long id)`        | `Optional<Role>` | public      | Busca un rol por su identificador.     |
+| `save(Role role)`          | `Role`           | public      | Persiste o actualiza un rol.           |
+| `findByName(Roles name)`   | `Optional<Role>` | public      | Obtiene un rol por su enum `Roles`.    |
+| `existsByName(Roles name)` | `boolean`        | public      | Verifica existencia por nombre de rol. |
 
 **3. WebSecurityConfiguration (Security Config)**
 
-Configuración de Spring Security stateless con validación del JWT emitido por Supabase (no se emiten tokens propios).
+Configuración de Spring Security stateless con validación del JWT emitido internamente por uFlex.
 
-| Método/Bean | Tipo Retorno | Visibilidad | Descripción |
-|---|---|---|---|
-| `supabaseJwtFilter()` | `SupabaseJwtAuthenticationFilter` | public | Filtro que extrae y valida el JWT emitido por Supabase y autentica el request. |
-| `authenticationManager(config)` | `AuthenticationManager` | public | Expone el `AuthenticationManager` de Spring Security. |
-| `filterChain(HttpSecurity http)` | `SecurityFilterChain` | public | CORS, CSRF off, handler 401, stateless; `permitAll` a `/api/v1/authentication/**` y a Swagger. |
+| Método/Bean                      | Tipo Retorno                | Visibilidad | Descripción                                                                                    |
+|----------------------------------|-----------------------------|-------------|------------------------------------------------------------------------------------------------|
+| `jwtAuthenticationFilter()`      | `JwtAuthenticationFilter`   | public      | Filtro que extrae y valida el JWT emitido por uFlex y autentica el request.                    |
+| `passwordEncoder()`              | `PasswordEncoder`           | public      | Bean `BCryptPasswordEncoder` consumido por el `BcryptHashingService`.                          |
+| `authenticationManager(config)`  | `AuthenticationManager`     | public      | Expone el `AuthenticationManager` de Spring Security.                                          |
+| `filterChain(HttpSecurity http)` | `SecurityFilterChain`       | public      | CORS, CSRF off, handler 401, stateless; `permitAll` a `/api/v1/authentication/**` y a Swagger. |
 
-**4. SupabaseJwtAuthenticationFilter (Security Filter)**
+**4. JwtAuthenticationFilter (Security Filter)**
 
-Filtro que autentica requests a partir del JWT Bearer emitido por Supabase.
+Filtro que autentica requests a partir del JWT Bearer emitido por uFlex.
 
-| Método | Tipo Retorno | Visibilidad | Descripción |
-|---|---|---|---|
-| `doFilterInternal(request, response, chain)` | `void` | protected | Extrae el token, lo valida contra `JwtValidationPort`, carga el `UserDetails` local y establece la autenticación. |
+| Método                                       | Tipo Retorno | Visibilidad | Descripción                                                                                                |
+|----------------------------------------------|--------------|-------------|------------------------------------------------------------------------------------------------------------|
+| `doFilterInternal(request, response, chain)` | `void`       | protected   | Extrae el token, lo valida contra `TokenService`, carga el `UserDetails` local y establece la autenticación.|
 
 **5. UnauthorizedRequestHandlerEntryPoint (Auth EntryPoint)**
 
 Maneja las respuestas 401 no autorizadas.
 
-| Método | Tipo Retorno | Visibilidad | Descripción |
-|---|---|---|---|
-| `commence(request, response, authException)` | `void` | public | Responde con `401 Unauthorized` en formato JSON. |
+| Método                                       | Tipo Retorno | Visibilidad | Descripción                                      |
+|----------------------------------------------|--------------|-------------|--------------------------------------------------|
+| `commence(request, response, authException)` | `void`       | public      | Responde con `401 Unauthorized` en formato JSON. |
 
 **6. UserDetailsServiceImpl (UserDetailsService)**
 
-Carga el perfil local a partir del `supabaseUserId` extraído del JWT.
+Carga el perfil local a partir del email o del ID interno extraído del JWT.
 
-| Método | Tipo Retorno | Visibilidad | Descripción |
-|---|---|---|---|
-| `loadUserBySupabaseId(String supabaseUserId)` | `UserDetails` | public | Carga el perfil local a partir del ID de Supabase. |
+| Método                              | Tipo Retorno  | Visibilidad | Descripción                                          |
+|-------------------------------------|---------------|-------------|------------------------------------------------------|
+| `loadUserByUsername(String email)`  | `UserDetails` | public      | Carga el perfil local a partir del email del usuario.|
+| `loadUserById(Long userId)`         | `UserDetails` | public      | Carga el perfil local a partir del ID interno.       |
 
 **7. UserDetailsImpl (Security Model)**
 
 Adaptador con authorities y `clinicId`.
 
-| Método | Tipo Retorno | Visibilidad | Descripción |
-|---|---|---|---|
-| `build(User user)` | `UserDetailsImpl` | public | Construye desde la entidad `User` (roles → authorities, `clinicId` como claim extra). |
+| Método             | Tipo Retorno      | Visibilidad | Descripción                                                                           |
+|--------------------|-------------------|-------------|---------------------------------------------------------------------------------------|
+| `build(User user)` | `UserDetailsImpl` | public      | Construye desde la entidad `User` (roles → authorities, `clinicId` como claim extra). |
 
 **8. VerificationServiceImpl (Verification Service)**
 
 Generación y validación de códigos OTP con configuración externa.
 
-| Método | Tipo Retorno | Visibilidad | Descripción |
-|---|---|---|---|
-| `generateCode()` | `String` | public | Genera un código con longitud por defecto. |
-| `generateCode(int length)` | `String` | public | Genera un código con la longitud indicada. |
-| `generateExpirationMinutes()` | `Integer` | public | Minutos de expiración configurados. |
-| `verifyCode(String code, String expected, LocalDateTime expiration)` | `boolean` | public | Verifica coincidencia y vigencia. |
+| Método                                                               | Tipo Retorno | Visibilidad | Descripción                                |
+|----------------------------------------------------------------------|--------------|-------------|--------------------------------------------|
+| `generateCode()`                                                     | `String`     | public      | Genera un código con longitud por defecto. |
+| `generateCode(int length)`                                           | `String`     | public      | Genera un código con la longitud indicada. |
+| `generateExpirationMinutes()`                                        | `Integer`    | public      | Minutos de expiración configurados.        |
+| `verifyCode(String code, String expected, LocalDateTime expiration)` | `boolean`    | public      | Verifica coincidencia y vigencia.          |
 
 **9. VerificationProperties (Configuration Properties)**
 
 Propiedades externas para OTP (prefijo `uflex.iam.verification`).
 
-| Campo | Tipo | Visibilidad | Descripción |
-|---|---|---|---|
-| `expirationMinutes` | `Integer` | private | Minutos de expiración por defecto. |
-| `codeLength` | `Integer` | private | Longitud del código OTP. |
+| Campo               | Tipo      | Visibilidad | Descripción                        |
+|---------------------|-----------|-------------|------------------------------------|
+| `expirationMinutes` | `Integer` | private     | Minutos de expiración por defecto. |
+| `codeLength`        | `Integer` | private     | Longitud del código OTP.           |
 
 **10. ResendEmailServiceImpl (Email Adapter)**
 
 Implementación de `EmailService` contra la API de Resend.
 
-| Atributo | Tipo | Visibilidad | Descripción |
-|---|---|---|---|
-| `resendClient` | `ResendHttpClient` | private | Cliente HTTP hacia la API de Resend. |
-| `templateRenderer` | `EmailTemplateRenderer` | private | Motor de plantillas (Thymeleaf) para los correos. |
+| Atributo           | Tipo                    | Visibilidad | Descripción                                       |
+|--------------------|-------------------------|-------------|---------------------------------------------------|
+| `resendClient`     | `ResendHttpClient`      | private     | Cliente HTTP hacia la API de Resend.              |
+| `templateRenderer` | `EmailTemplateRenderer` | private     | Motor de plantillas (Thymeleaf) para los correos. |
 
-| Método | Tipo Retorno | Visibilidad | Descripción |
-|---|---|---|---|
-| `sendVerificationEmail(String to, String code, int exp)` | `void` | public | Renderiza la plantilla y llama a Resend. |
-| `sendPasswordResetEmail(String to, String link)` | `void` | public | Envía correo de reseteo con plantilla. |
-| `sendClinicInvitationEmail(String to, String clinicName, String token)` | `void` | public | Envía correo de invitación a clínica. |
+| Método                                                                  | Tipo Retorno | Visibilidad | Descripción                              |
+|-------------------------------------------------------------------------|--------------|-------------|------------------------------------------|
+| `sendVerificationEmail(String to, String code, int exp)`                | `void`       | public      | Renderiza la plantilla y llama a Resend. |
+| `sendPasswordResetEmail(String to, String link)`                        | `void`       | public      | Envía correo de reseteo con plantilla.   |
+| `sendClinicInvitationEmail(String to, String clinicName, String token)` | `void`       | public      | Envía correo de invitación a clínica.    |
 
-**11. SupabaseAuthAdapter (ACL Adapter)**
+**11. BcryptHashingService (Hashing Adapter)**
 
-Implementa `SupabaseAuthPort`. Único componente que conoce el vocabulario de Supabase; consume además los webhooks de signup/verificación emitidos por Supabase.
+Implementa `HashingService` sobre `BCryptPasswordEncoder` de Spring Security.
 
-| Atributo | Tipo | Visibilidad | Descripción |
-|---|---|---|---|
-| `supabaseClient` | `SupabaseHttpClient` | private | Cliente HTTP hacia la Admin API de Supabase. |
-| `userCommandService` | `UserCommandService` | private | Se invoca desde el handler de webhook para disparar `SignUpCommand`. |
+| Atributo          | Tipo                | Visibilidad | Descripción                          |
+|-------------------|---------------------|-------------|--------------------------------------|
+| `passwordEncoder` | `PasswordEncoder`   | private     | Encoder bcrypt configurado por Spring|
 
-| Método | Tipo Retorno | Visibilidad | Descripción |
-|---|---|---|---|
-| `createIdentity(EmailAddress, FullName)` | `String` | public | Crea identidad en Supabase vía Admin API y retorna su `id`. |
-| `resendSupabaseVerification(EmailAddress)` | `void` | public | Llama al endpoint `/auth/v1/resend` de Supabase. |
-| `disableIdentity(String supabaseUserId)` | `void` | public | Inhabilita la identidad en Supabase. |
-| `onSignupWebhook(SupabaseSignupPayload)` | `void` | public | Endpoint de webhook que recibe el evento de signup y dispara `SignUpCommand` internamente. |
+| Método                                     | Tipo Retorno | Visibilidad | Descripción                                                       |
+|--------------------------------------------|--------------|-------------|-------------------------------------------------------------------|
+| `hash(String rawPassword)`                 | `String`     | public      | Devuelve el hash bcrypt de la contraseña en texto plano.          |
+| `matches(String rawPassword, String hash)` | `boolean`    | public      | `true` si el hash bcrypt corresponde a la contraseña recibida.    |
 
-**12. SupabaseJwtValidator (JWT Validation Adapter)**
+**12. JjwtTokenService (JWT Adapter)**
 
-Implementa `JwtValidationPort` sobre la librería `jjwt`, cargando la JWKS pública de Supabase.
+Implementa `TokenService` usando la librería `jjwt`. Firma los tokens con la clave privada de uFlex y valida los tokens entrantes contra la misma clave.
 
-| Método | Tipo Retorno | Visibilidad | Descripción |
-|---|---|---|---|
-| `validateToken(String jwt)` | `boolean` | public | Valida firma, issuer y expiración contra la JWKS de Supabase. |
-| `getSupabaseUserIdFromToken(String jwt)` | `Optional<String>` | public | Extrae el claim `sub`. |
-| `getEmailFromToken(String jwt)` | `Optional<String>` | public | Extrae el claim `email`. |
+| Atributo        | Tipo               | Visibilidad | Descripción                                              |
+|-----------------|--------------------|-------------|----------------------------------------------------------|
+| `signingKey`    | `SecretKey`        | private     | Clave HMAC con la que se firman y verifican los tokens.  |
+| `tokenProperties`| `TokenProperties` | private     | Issuer, expiración por defecto y otros parámetros.       |
+
+| Método                          | Tipo Retorno       | Visibilidad | Descripción                                                                  |
+|---------------------------------|--------------------|-------------|------------------------------------------------------------------------------|
+| `generateToken(User user)`      | `String`           | public      | Construye y firma un JWT con `sub`, `email`, `roles` y `clinicId`.           |
+| `validateToken(String jwt)`     | `boolean`          | public      | Valida firma, issuer y expiración del JWT.                                   |
+| `getUserIdFromToken(String jwt)`| `Optional<Long>`   | public      | Extrae el claim `sub`.                                                       |
+| `getEmailFromToken(String jwt)` | `Optional<String>` | public      | Extrae el claim `email`.                                                     |
 
 **13. CurrentUserProviderImpl (Identity Adapter)**
 
 Implementa `IdentityService` leyendo el contexto de `SecurityContextHolder` de Spring Security.
 
-| Método | Tipo Retorno | Visibilidad | Descripción |
-|---|---|---|---|
-| `getUserId()` | `Optional<Long>` | public | ID interno del usuario autenticado. |
-| `getSupabaseUserId()` | `Optional<String>` | public | ID en Supabase del usuario autenticado. |
-| `getEmail()` | `Optional<String>` | public | Email del contexto. |
-| `getRoles()` | `Set<String>` | public | Authorities del contexto. |
-| `getClinicId()` | `Optional<UUID>` | public | `clinicId` del contexto. |
-| `isServiceAccount()` | `boolean` | public | Indica si es una cuenta de servicio interna. |
+| Método                | Tipo Retorno       | Visibilidad | Descripción                                  |
+|-----------------------|--------------------|-------------|----------------------------------------------|
+| `getUserId()`         | `Optional<Long>`   | public      | ID interno del usuario autenticado.          |
+| `getEmail()`          | `Optional<String>` | public      | Email del contexto.                          |
+| `getRoles()`          | `Set<String>`      | public      | Authorities del contexto.                    |
+| `getClinicId()`       | `Optional<UUID>`   | public      | `clinicId` del contexto.                     |
+| `isServiceAccount()`  | `boolean`          | public      | Indica si es una cuenta de servicio interna. |
 
 #### 4.2.1.5. Bounded Context Software Architecture Component Level Diagrams
 
-El diagrama de componentes (C4 Nivel 3) muestra cómo se organiza internamente el contenedor `IAM Service` (Java/Spring Boot). Se distinguen cinco componentes principales: el `User Controller` como punto de entrada REST, los dos application services `User Command Service` y `User Query Service` que materializan el patrón CQRS, el `User Repository (JPA)` como abstracción de persistencia y el `Supabase Auth Adapter` como ACL contra el identity provider externo. Todos los componentes viven dentro del *Container Boundary* del IAM Service; el API Gateway queda fuera (delega tráfico), la `IAM DB` también (Azure Database for PostgreSQL, consumida por JDBC/SSL) y Supabase aparece como sistema externo con doble flujo (el adapter lo consulta vía HTTPS y Supabase lo notifica vía webhook).
+El diagrama de componentes (C4 Nivel 3) muestra cómo se organiza internamente el módulo IAM dentro del monolito (Java/Spring Boot). Se distinguen seis componentes principales: el `Authentication Controller` y el `User Controller` como puntos de entrada REST, los dos application services `User Command Service` y `User Query Service` que materializan el patrón CQRS, el `User Repository (JPA)` como abstracción de persistencia, y los adapters de seguridad `Bcrypt Hashing Service` (hashing de contraseñas) y `JJWT Token Service` (emisión y validación de los JWT propios de uFlex). Todos los componentes viven dentro del *Container Boundary* del REST API (monolito); la `uFlex DB` queda fuera (PostgreSQL en Supabase, consumida por JDBC/SSL).
 
 <div style="text-align: center;">
-  <img src="assets/diagrams/software-architecture/components/out/iam.png" alt="uFlex — IAM Bounded Context Component Diagram" style="max-width: 100%; height: auto;">
+  <img src="assets/diagrams/software-architecture/components/out/iam-components-diagram.png" alt="uFlex — IAM Bounded Context Component Diagram" style="max-width: 100%; height: auto;">
 </div>
 
 *Figura 4.2.1.5. Diagrama de componentes (C4 Nivel 3) del Bounded Context IAM.*
@@ -2933,20 +3052,20 @@ El diagrama de componentes (C4 Nivel 3) muestra cómo se organiza internamente e
 
 ##### 4.2.1.6.1. Bounded Context Domain Layer Class Diagrams
 
-El diagrama de clases del Domain Layer del BC IAM modela exclusivamente los conceptos centrales del dominio, sin incluir las capas de application ni infrastructure. El paquete `domain.model.aggregates` contiene al Aggregate Root `User` y a la Entity `Role`; `domain.model.valueobjects` agrupa los Value Objects (`UserId`, `EmailAddress`, `FullName`, `ClinicId`, `VerificationCode`) y los enumerados (`Roles`, `AccountStatus`, `VerificationStatus`); `domain.model.events` encapsula los Domain Events publicados por el aggregate (`UserCreatedEvent`, `UserVerifiedEvent`, `UserVerificationCodeAssignedEvent`); y `domain.exceptions` reúne las excepciones de negocio que protegen las invariantes del dominio. Las flechas con línea continua marcan composición (el `User` contiene sus Value Objects), las flechas con línea punteada marcan dependencias semánticas (eventos publicados y excepciones lanzadas) y los rombos vacíos indican agregación con cardinalidad opcional o múltiple (relación de `User` con `ClinicId` y con `Role`).
+El diagrama de clases del Domain Layer del BC IAM modela exclusivamente los conceptos centrales del dominio, sin incluir las capas de application ni infrastructure. El paquete `domain.model.aggregates` contiene al Aggregate Root `User` y a la Entity `Role`; `domain.model.valueobjects` agrupa los Value Objects (`UserId`, `EmailAddress`, `PasswordHash`, `FullName`, `ClinicId`, `VerificationCode`) y los enumerados (`Roles`, `AccountStatus`, `VerificationStatus`); `domain.model.events` encapsula los Domain Events publicados por el aggregate (`UserCreatedEvent`, `UserVerifiedEvent`, `UserVerificationCodeAssignedEvent`); y `domain.exceptions` reúne las excepciones de negocio que protegen las invariantes del dominio. Las flechas con línea continua marcan composición (el `User` contiene sus Value Objects), las flechas con línea punteada marcan dependencias semánticas (eventos publicados y excepciones lanzadas) y los rombos vacíos indican agregación con cardinalidad opcional o múltiple (relación de `User` con `ClinicId` y con `Role`).
 
 <div style="text-align: center;">
-  <img src="assets/diagrams/uml/class/out/iam.png" alt="uFlex — IAM Bounded Context Domain Class Diagram" style="max-width: 100%; height: auto;">
+  <img src="assets/diagrams/uml/class/out/iam-domain-layer-class-diagram.png" alt="uFlex — IAM Bounded Context Domain Class Diagram" style="max-width: 100%; height: auto;">
 </div>
 
 *Figura 4.2.1.6.1. Diagrama de clases del dominio del Bounded Context IAM.*
 
 ##### 4.2.1.6.2. Bounded Context Database Design Diagram
 
-El esquema físico del BC IAM en Azure Database for PostgreSQL consta de una tabla principal `users` que almacena el perfil enriquecido (identificador interno, referencia al usuario en Supabase, email único, nombre completo, rol, estado, clínica asociada y timestamps de auditoría), dos tablas de catálogo `user_roles` y `user_statuses` para mantener normalizados los valores permitidos (usadas también para internacionalizar descripciones en el futuro) y una tabla `user_audit_events` que registra los eventos significativos del ciclo de vida del usuario (creación, verificación, cambios de rol, suspensiones) con un payload JSONB flexible. Los índices incluyen unicidad sobre `email` y `supabase_user_id`, e índices compuestos por `(role, clinic_id)` y `(clinic_id)` para soportar las queries más frecuentes de la Web Client App (listado por clínica y por rol). Se optó deliberadamente por **no** declarar una foreign key dura sobre `clinic_id` hacia la tabla de clínicas del BC Subscription: cada bounded context aísla su schema y la referencia es lógica, respetando la autonomía entre contextos.
+El esquema físico del BC IAM (esquema `iam` dentro de la base PostgreSQL hospedada en Supabase) consta de una tabla principal `users` que almacena el perfil enriquecido (identificador interno, email único, hash bcrypt de la contraseña, nombre completo, rol, estado, clínica asociada y timestamps de auditoría), dos tablas de catálogo `user_roles` y `user_statuses` para mantener normalizados los valores permitidos (usadas también para internacionalizar descripciones en el futuro) y una tabla `user_audit_events` que registra los eventos significativos del ciclo de vida del usuario (creación, verificación, cambios de rol, suspensiones) con un payload JSONB flexible. Los índices incluyen unicidad sobre `email` e índices compuestos por `(role, clinic_id)` y `(clinic_id)` para soportar las queries más frecuentes de la Web Client App (listado por clínica y por rol). Se optó deliberadamente por **no** declarar una foreign key dura sobre `clinic_id` hacia la tabla de clínicas del BC Subscription: cada bounded context aísla su schema y la referencia es lógica, respetando la autonomía entre contextos.
 
 <div style="text-align: center;">
-  <img src="assets/diagrams/database/erd/out/iam-erd.png" alt="uFlex — IAM Bounded Context Database ER Diagram" style="max-width: 100%; height: auto;">
+  <img src="assets/diagrams/database/erd/out/iam-database-design-diagram.png" alt="uFlex — IAM Bounded Context Database ER Diagram" style="max-width: 100%; height: auto;">
 </div>
 
 *Figura 4.2.1.6.2. Diagrama entidad-relación del Bounded Context IAM.*
@@ -2967,34 +3086,34 @@ Representa la suscripción de una clínica a uFlex. Encapsula el plan contratado
 
 **Atributos principales:**
 
-| Atributo | Tipo | Visibilidad | Descripción |
-|---|---|---|---|
-| `id` | `SubscriptionId` | private | Identificador interno de la suscripción. |
-| `clinicId` | `ClinicId` | private | Tenant (clínica) al que pertenece la suscripción. |
-| `plan` | `SubscriptionPlan` | private | Plan contratado (referencia a la Entity del catálogo). |
-| `status` | `SubscriptionStatus` | private | Estado actual (`PENDING_PAYMENT`, `TRIAL`, `ACTIVE`, `PAST_DUE`, `CANCELLED`, `EXPIRED`). |
-| `billingCycle` | `BillingCycle` | private | Ciclo de facturación elegido (`MONTHLY` o `YEARLY`). |
-| `currentPeriodStart` | `LocalDate` | private | Fecha de inicio del periodo actual. |
-| `currentPeriodEnd` | `LocalDate` | private | Fecha de fin del periodo actual. |
-| `nextBillingDate` | `LocalDate` | private | Fecha en la que se cobrará la renovación automática. |
-| `trialUntil` | `LocalDate` | private | Fecha de fin del periodo de prueba (si aplica). |
-| `paymentReference` | `PaymentReference` | private | Referencia al medio de pago tokenizado en Culqi. |
-| `invoices` | `List<Invoice>` | private | Historial de facturas emitidas para esta suscripción. |
+| Atributo             | Tipo                 | Visibilidad | Descripción                                                                               |
+|----------------------|----------------------|-------------|-------------------------------------------------------------------------------------------|
+| `id`                 | `SubscriptionId`     | private     | Identificador interno de la suscripción.                                                  |
+| `clinicId`           | `ClinicId`           | private     | Tenant (clínica) al que pertenece la suscripción.                                         |
+| `plan`               | `SubscriptionPlan`   | private     | Plan contratado (referencia a la Entity del catálogo).                                    |
+| `status`             | `SubscriptionStatus` | private     | Estado actual (`PENDING_PAYMENT`, `TRIAL`, `ACTIVE`, `PAST_DUE`, `CANCELLED`, `EXPIRED`). |
+| `billingCycle`       | `BillingCycle`       | private     | Ciclo de facturación elegido (`MONTHLY` o `YEARLY`).                                      |
+| `currentPeriodStart` | `LocalDate`          | private     | Fecha de inicio del periodo actual.                                                       |
+| `currentPeriodEnd`   | `LocalDate`          | private     | Fecha de fin del periodo actual.                                                          |
+| `nextBillingDate`    | `LocalDate`          | private     | Fecha en la que se cobrará la renovación automática.                                      |
+| `trialUntil`         | `LocalDate`          | private     | Fecha de fin del periodo de prueba (si aplica).                                           |
+| `paymentReference`   | `PaymentReference`   | private     | Referencia al medio de pago tokenizado en Culqi.                                          |
+| `invoices`           | `List<Invoice>`      | private     | Historial de facturas emitidas para esta suscripción.                                     |
 
 **Métodos principales:**
 
-| Método | Tipo Retorno | Visibilidad | Descripción |
-|---|---|---|---|
-| `Subscription()` | Constructor | public | Constructor vacío requerido por JPA. |
-| `Subscription(ClinicId, SubscriptionPlan, BillingCycle)` | Constructor | public | Crea una suscripción en estado `PENDING_PAYMENT`. |
-| `activate()` | `void` | public | Cambia el estado a `ACTIVE` tras confirmar el primer cobro; publica `SubscriptionActivatedEvent`. |
-| `renew()` | `Invoice` | public | Genera una nueva factura para el siguiente periodo y actualiza `nextBillingDate`. |
-| `cancel(String reason)` | `void` | public | Cambia el estado a `CANCELLED` y publica `SubscriptionCancelledEvent`. |
-| `markPastDue()` | `void` | public | Marca la suscripción como `PAST_DUE` si un cobro falla. |
-| `expire()` | `void` | public | Transiciona a `EXPIRED` cuando la cuenta lleva más de N días en `PAST_DUE`. |
-| `linkToClinic(ClinicId)` | `void` | public | Asocia la suscripción a la clínica en la primera compra; publica `SubscriptionLinkedToClinicEvent`. |
-| `registerPayment(PaymentReference)` | `void` | public | Registra una referencia de pago tokenizada para cobros recurrentes. |
-| `isActive()` | `boolean` | public | Devuelve `true` si el estado actual es `ACTIVE` o `TRIAL`. |
+| Método                                                   | Tipo Retorno | Visibilidad | Descripción                                                                                         |
+|----------------------------------------------------------|--------------|-------------|-----------------------------------------------------------------------------------------------------|
+| `Subscription()`                                         | Constructor  | public      | Constructor vacío requerido por JPA.                                                                |
+| `Subscription(ClinicId, SubscriptionPlan, BillingCycle)` | Constructor  | public      | Crea una suscripción en estado `PENDING_PAYMENT`.                                                   |
+| `activate()`                                             | `void`       | public      | Cambia el estado a `ACTIVE` tras confirmar el primer cobro; publica `SubscriptionActivatedEvent`.   |
+| `renew()`                                                | `Invoice`    | public      | Genera una nueva factura para el siguiente periodo y actualiza `nextBillingDate`.                   |
+| `cancel(String reason)`                                  | `void`       | public      | Cambia el estado a `CANCELLED` y publica `SubscriptionCancelledEvent`.                              |
+| `markPastDue()`                                          | `void`       | public      | Marca la suscripción como `PAST_DUE` si un cobro falla.                                             |
+| `expire()`                                               | `void`       | public      | Transiciona a `EXPIRED` cuando la cuenta lleva más de N días en `PAST_DUE`.                         |
+| `linkToClinic(ClinicId)`                                 | `void`       | public      | Asocia la suscripción a la clínica en la primera compra; publica `SubscriptionLinkedToClinicEvent`. |
+| `registerPayment(PaymentReference)`                      | `void`       | public      | Registra una referencia de pago tokenizada para cobros recurrentes.                                 |
+| `isActive()`                                             | `boolean`    | public      | Devuelve `true` si el estado actual es `ACTIVE` o `TRIAL`.                                          |
 
 **2. SubscriptionPlan (Entity)**
 
@@ -3002,25 +3121,25 @@ Define un plan del catálogo comercial (por ejemplo, *Starter*, *Professional*, 
 
 **Atributos principales:**
 
-| Atributo | Tipo | Visibilidad | Descripción |
-|---|---|---|---|
-| `id` | `PlanId` | private | Identificador del plan. |
-| `name` | `String` | private | Nombre comercial (p. ej. *Starter*). |
-| `code` | `String` | private | Código único tipo SKU. |
-| `monthlyPrice` | `Money` | private | Precio del ciclo mensual. |
-| `yearlyPrice` | `Money` | private | Precio del ciclo anual (usualmente con descuento). |
-| `maxPatients` | `Integer` | private | Tope de pacientes concurrentes incluidos. |
-| `maxPhysiotherapists` | `Integer` | private | Tope de fisioterapeutas incluidos. |
-| `features` | `Set<String>` | private | Funcionalidades incluidas (tags). |
-| `active` | `boolean` | private | `true` si el plan está disponible para nueva compra. |
+| Atributo              | Tipo          | Visibilidad | Descripción                                          |
+|-----------------------|---------------|-------------|------------------------------------------------------|
+| `id`                  | `PlanId`      | private     | Identificador del plan.                              |
+| `name`                | `String`      | private     | Nombre comercial (p. ej. *Starter*).                 |
+| `code`                | `String`      | private     | Código único tipo SKU.                               |
+| `monthlyPrice`        | `Money`       | private     | Precio del ciclo mensual.                            |
+| `yearlyPrice`         | `Money`       | private     | Precio del ciclo anual (usualmente con descuento).   |
+| `maxPatients`         | `Integer`     | private     | Tope de pacientes concurrentes incluidos.            |
+| `maxPhysiotherapists` | `Integer`     | private     | Tope de fisioterapeutas incluidos.                   |
+| `features`            | `Set<String>` | private     | Funcionalidades incluidas (tags).                    |
+| `active`              | `boolean`     | private     | `true` si el plan está disponible para nueva compra. |
 
 **Métodos principales:**
 
-| Método | Tipo Retorno | Visibilidad | Descripción |
-|---|---|---|---|
-| `priceFor(BillingCycle)` | `Money` | public | Retorna `monthlyPrice` o `yearlyPrice` según el ciclo. |
-| `isActive()` | `boolean` | public | `true` si el plan está activo en el catálogo. |
-| `deactivate()` | `void` | public | Retira el plan del catálogo (no afecta a suscripciones ya vendidas). |
+| Método                   | Tipo Retorno | Visibilidad | Descripción                                                          |
+|--------------------------|--------------|-------------|----------------------------------------------------------------------|
+| `priceFor(BillingCycle)` | `Money`      | public      | Retorna `monthlyPrice` o `yearlyPrice` según el ciclo.               |
+| `isActive()`             | `boolean`    | public      | `true` si el plan está activo en el catálogo.                        |
+| `deactivate()`           | `void`       | public      | Retira el plan del catálogo (no afecta a suscripciones ya vendidas). |
 
 **3. Invoice (Entity)**
 
@@ -3028,327 +3147,327 @@ Factura emitida para cada periodo facturable de una suscripción. Una vez emitid
 
 **Atributos principales:**
 
-| Atributo | Tipo | Visibilidad | Descripción |
-|---|---|---|---|
-| `id` | `InvoiceId` | private | Identificador de la factura. |
-| `subscriptionId` | `SubscriptionId` | private | Suscripción a la que pertenece. |
-| `amount` | `Money` | private | Monto cobrado. |
-| `issuedAt` | `Instant` | private | Fecha/hora de emisión. |
-| `dueAt` | `Instant` | private | Fecha/hora límite de pago. |
-| `paidAt` | `Instant` | private | Fecha/hora de confirmación del pago. |
-| `status` | `InvoiceStatus` | private | Estado (`PENDING`, `PAID`, `FAILED`, `VOID`). |
-| `providerTransactionId` | `String` | private | ID de la transacción en Culqi. |
+| Atributo                | Tipo             | Visibilidad | Descripción                                   |
+|-------------------------|------------------|-------------|-----------------------------------------------|
+| `id`                    | `InvoiceId`      | private     | Identificador de la factura.                  |
+| `subscriptionId`        | `SubscriptionId` | private     | Suscripción a la que pertenece.               |
+| `amount`                | `Money`          | private     | Monto cobrado.                                |
+| `issuedAt`              | `Instant`        | private     | Fecha/hora de emisión.                        |
+| `dueAt`                 | `Instant`        | private     | Fecha/hora límite de pago.                    |
+| `paidAt`                | `Instant`        | private     | Fecha/hora de confirmación del pago.          |
+| `status`                | `InvoiceStatus`  | private     | Estado (`PENDING`, `PAID`, `FAILED`, `VOID`). |
+| `providerTransactionId` | `String`         | private     | ID de la transacción en Culqi.                |
 
 **Métodos principales:**
 
-| Método | Tipo Retorno | Visibilidad | Descripción |
-|---|---|---|---|
-| `markAsPaid(String txId)` | `void` | public | Marca la factura como `PAID` y publica `InvoicePaidEvent`. |
-| `markAsFailed(String reason)` | `void` | public | Marca la factura como `FAILED` y publica `InvoicePaymentFailedEvent`. |
-| `voidInvoice()` | `void` | public | Anula la factura (por ejemplo, ante una cancelación dentro del periodo de gracia). |
-| `isOverdue()` | `boolean` | public | `true` si `now > dueAt` y el estado es `PENDING`. |
+| Método                        | Tipo Retorno | Visibilidad | Descripción                                                                        |
+|-------------------------------|--------------|-------------|------------------------------------------------------------------------------------|
+| `markAsPaid(String txId)`     | `void`       | public      | Marca la factura como `PAID` y publica `InvoicePaidEvent`.                         |
+| `markAsFailed(String reason)` | `void`       | public      | Marca la factura como `FAILED` y publica `InvoicePaymentFailedEvent`.              |
+| `voidInvoice()`               | `void`       | public      | Anula la factura (por ejemplo, ante una cancelación dentro del periodo de gracia). |
+| `isOverdue()`                 | `boolean`    | public      | `true` si `now > dueAt` y el estado es `PENDING`.                                  |
 
 **4. SubscriptionId / PlanId / InvoiceId / ClinicId (Value Objects)**
 
 Identificadores opacos basados en UUID. `ClinicId` es compartido con el BC IAM (referencia lógica al tenant).
 
-| Atributo | Tipo | Visibilidad | Descripción |
-|---|---|---|---|
-| `value` | `UUID` | private | Valor inmutable generado al crear el agregado/entidad. |
+| Atributo | Tipo   | Visibilidad | Descripción                                            |
+|----------|--------|-------------|--------------------------------------------------------|
+| `value`  | `UUID` | private     | Valor inmutable generado al crear el agregado/entidad. |
 
 **5. Money (Value Object)**
 
 Monto monetario con moneda explícita.
 
-| Atributo | Tipo | Visibilidad | Descripción |
-|---|---|---|---|
-| `amount` | `BigDecimal` | private | Valor numérico con precisión suficiente para evitar pérdidas por redondeo. |
-| `currency` | `String` | private | Código ISO 4217 (por ejemplo `PEN` o `USD`). |
+| Atributo   | Tipo         | Visibilidad | Descripción                                                                |
+|------------|--------------|-------------|----------------------------------------------------------------------------|
+| `amount`   | `BigDecimal` | private     | Valor numérico con precisión suficiente para evitar pérdidas por redondeo. |
+| `currency` | `String`     | private     | Código ISO 4217 (por ejemplo `PEN` o `USD`).                               |
 
 **Métodos principales:**
 
-| Método | Tipo Retorno | Visibilidad | Descripción |
-|---|---|---|---|
-| `plus(Money other)` | `Money` | public | Suma dos montos (misma moneda). |
-| `isZero()` | `boolean` | public | `true` si el monto es cero. |
+| Método              | Tipo Retorno | Visibilidad | Descripción                     |
+|---------------------|--------------|-------------|---------------------------------|
+| `plus(Money other)` | `Money`      | public      | Suma dos montos (misma moneda). |
+| `isZero()`          | `boolean`    | public      | `true` si el monto es cero.     |
 
 **6. PaymentReference (Value Object)**
 
 Referencia tokenizada al medio de pago registrado en Culqi (uFlex no almacena números de tarjeta).
 
-| Atributo | Tipo | Visibilidad | Descripción |
-|---|---|---|---|
-| `providerToken` | `String` | private | Token opaco emitido por Culqi. |
-| `last4` | `String` | private | Últimos 4 dígitos (para mostrar al usuario). |
-| `expiresOn` | `YearMonth` | private | Fecha de expiración de la tarjeta. |
+| Atributo        | Tipo        | Visibilidad | Descripción                                  |
+|-----------------|-------------|-------------|----------------------------------------------|
+| `providerToken` | `String`    | private     | Token opaco emitido por Culqi.               |
+| `last4`         | `String`    | private     | Últimos 4 dígitos (para mostrar al usuario). |
+| `expiresOn`     | `YearMonth` | private     | Fecha de expiración de la tarjeta.           |
 
 **7. BillingCycle (Value Object)**
 
-| Atributo | Tipo | Visibilidad | Descripción |
-|---|---|---|---|
-| `MONTHLY` | Enum | public | Cobro mensual recurrente. |
-| `YEARLY` | Enum | public | Cobro anual con descuento. |
+| Atributo  | Tipo | Visibilidad | Descripción                |
+|-----------|------|-------------|----------------------------|
+| `MONTHLY` | Enum | public      | Cobro mensual recurrente.  |
+| `YEARLY`  | Enum | public      | Cobro anual con descuento. |
 
 **8. SubscriptionStatus (Value Object)**
 
-| Atributo | Tipo | Visibilidad | Descripción |
-|---|---|---|---|
-| `PENDING_PAYMENT` | Enum | public | Suscripción creada, a la espera del primer cobro. |
-| `TRIAL` | Enum | public | Periodo de prueba activo. |
-| `ACTIVE` | Enum | public | Suscripción activa y al día. |
-| `PAST_DUE` | Enum | public | Falló un cobro recurrente; en periodo de gracia. |
-| `CANCELLED` | Enum | public | Cancelada por la clínica; sigue activa hasta fin del periodo. |
-| `EXPIRED` | Enum | public | Expiró definitivamente. |
+| Atributo          | Tipo | Visibilidad | Descripción                                                   |
+|-------------------|------|-------------|---------------------------------------------------------------|
+| `PENDING_PAYMENT` | Enum | public      | Suscripción creada, a la espera del primer cobro.             |
+| `TRIAL`           | Enum | public      | Periodo de prueba activo.                                     |
+| `ACTIVE`          | Enum | public      | Suscripción activa y al día.                                  |
+| `PAST_DUE`        | Enum | public      | Falló un cobro recurrente; en periodo de gracia.              |
+| `CANCELLED`       | Enum | public      | Cancelada por la clínica; sigue activa hasta fin del periodo. |
+| `EXPIRED`         | Enum | public      | Expiró definitivamente.                                       |
 
 **9. InvoiceStatus (Value Object)**
 
-| Atributo | Tipo | Visibilidad | Descripción |
-|---|---|---|---|
-| `PENDING` | Enum | public | Factura emitida, pago pendiente. |
-| `PAID` | Enum | public | Pago confirmado por Culqi. |
-| `FAILED` | Enum | public | Pago rechazado por Culqi. |
-| `VOID` | Enum | public | Factura anulada. |
+| Atributo  | Tipo | Visibilidad | Descripción                      |
+|-----------|------|-------------|----------------------------------|
+| `PENDING` | Enum | public      | Factura emitida, pago pendiente. |
+| `PAID`    | Enum | public      | Pago confirmado por Culqi.       |
+| `FAILED`  | Enum | public      | Pago rechazado por Culqi.        |
+| `VOID`    | Enum | public      | Factura anulada.                 |
 
 **10. PurchaseSubscriptionPlanCommand (Command)**
 
 Comando emitido por el Administrador de Clínica al comprar una suscripción.
 
-| Atributo | Tipo | Visibilidad | Descripción |
-|---|---|---|---|
-| `clinicId` | `UUID` | public | Tenant que compra. |
-| `planId` | `UUID` | public | Plan seleccionado. |
-| `billingCycle` | `BillingCycle` | public | Ciclo `MONTHLY` o `YEARLY`. |
-| `paymentToken` | `String` | public | Token emitido por el SDK de Culqi en el frontend. |
+| Atributo       | Tipo           | Visibilidad | Descripción                                       |
+|----------------|----------------|-------------|---------------------------------------------------|
+| `clinicId`     | `UUID`         | public      | Tenant que compra.                                |
+| `planId`       | `UUID`         | public      | Plan seleccionado.                                |
+| `billingCycle` | `BillingCycle` | public      | Ciclo `MONTHLY` o `YEARLY`.                       |
+| `paymentToken` | `String`       | public      | Token emitido por el SDK de Culqi en el frontend. |
 
 **11. LinkSubscriptionToClinicCommand (Command)**
 
-| Atributo | Tipo | Visibilidad | Descripción |
-|---|---|---|---|
-| `subscriptionId` | `UUID` | public | Suscripción a asociar. |
-| `clinicId` | `UUID` | public | Clínica destino. |
+| Atributo         | Tipo   | Visibilidad | Descripción            |
+|------------------|--------|-------------|------------------------|
+| `subscriptionId` | `UUID` | public      | Suscripción a asociar. |
+| `clinicId`       | `UUID` | public      | Clínica destino.       |
 
 **12. RenewSubscriptionCommand (Command)**
 
 Emitido por el scheduler cuando llega la `nextBillingDate`.
 
-| Atributo | Tipo | Visibilidad | Descripción |
-|---|---|---|---|
-| `subscriptionId` | `UUID` | public | Suscripción a renovar. |
+| Atributo         | Tipo   | Visibilidad | Descripción            |
+|------------------|--------|-------------|------------------------|
+| `subscriptionId` | `UUID` | public      | Suscripción a renovar. |
 
 **13. CancelSubscriptionCommand (Command)**
 
-| Atributo | Tipo | Visibilidad | Descripción |
-|---|---|---|---|
-| `subscriptionId` | `UUID` | public | Suscripción a cancelar. |
-| `reason` | `String` | public | Motivo informado por el usuario. |
+| Atributo         | Tipo     | Visibilidad | Descripción                      |
+|------------------|----------|-------------|----------------------------------|
+| `subscriptionId` | `UUID`   | public      | Suscripción a cancelar.          |
+| `reason`         | `String` | public      | Motivo informado por el usuario. |
 
 **14. RegisterInvoicePaymentCommand (Command)**
 
 Emitido por el webhook de Culqi al confirmar un cobro.
 
-| Atributo | Tipo | Visibilidad | Descripción |
-|---|---|---|---|
-| `invoiceId` | `UUID` | public | Factura pagada. |
-| `providerTransactionId` | `String` | public | ID de la transacción en Culqi. |
+| Atributo                | Tipo     | Visibilidad | Descripción                    |
+|-------------------------|----------|-------------|--------------------------------|
+| `invoiceId`             | `UUID`   | public      | Factura pagada.                |
+| `providerTransactionId` | `String` | public      | ID de la transacción en Culqi. |
 
 **15. CreatePlanCommand (Command)**
 
 Usado por Operaciones para crear nuevos planes en el catálogo.
 
-| Atributo | Tipo | Visibilidad | Descripción |
-|---|---|---|---|
-| `name` | `String` | public | Nombre comercial. |
-| `code` | `String` | public | Código SKU único. |
-| `monthlyPrice` | `Money` | public | Precio mensual. |
-| `yearlyPrice` | `Money` | public | Precio anual. |
-| `maxPatients` | `Integer` | public | Tope de pacientes. |
-| `maxPhysiotherapists` | `Integer` | public | Tope de fisioterapeutas. |
+| Atributo              | Tipo      | Visibilidad | Descripción              |
+|-----------------------|-----------|-------------|--------------------------|
+| `name`                | `String`  | public      | Nombre comercial.        |
+| `code`                | `String`  | public      | Código SKU único.        |
+| `monthlyPrice`        | `Money`   | public      | Precio mensual.          |
+| `yearlyPrice`         | `Money`   | public      | Precio anual.            |
+| `maxPatients`         | `Integer` | public      | Tope de pacientes.       |
+| `maxPhysiotherapists` | `Integer` | public      | Tope de fisioterapeutas. |
 
 **16. DeactivatePlanCommand (Command)**
 
-| Atributo | Tipo | Visibilidad | Descripción |
-|---|---|---|---|
-| `planId` | `UUID` | public | Plan a retirar del catálogo. |
+| Atributo | Tipo   | Visibilidad | Descripción                  |
+|----------|--------|-------------|------------------------------|
+| `planId` | `UUID` | public      | Plan a retirar del catálogo. |
 
 **17. ChangeSubscriptionPlanCommand (Command)**
 
 Emitido por el Administrador de Clínica desde el dashboard para hacer upgrade o downgrade a otro plan. El servicio de precios calcula el monto prorrateado para el resto del periodo vigente.
 
-| Atributo | Tipo | Visibilidad | Descripción |
-|---|---|---|---|
-| `subscriptionId` | `UUID` | public | Suscripción a modificar. |
-| `newPlanId` | `UUID` | public | Nuevo plan deseado. |
-| `newBillingCycle` | `BillingCycle` | public | Ciclo de facturación para el nuevo plan (puede coincidir con el anterior). |
-| `effectiveAt` | `EffectivePolicy` | public | Política de aplicación: `IMMEDIATE` (prorratea y cobra la diferencia) o `AT_NEXT_PERIOD` (aplica al renovar). |
+| Atributo          | Tipo              | Visibilidad | Descripción                                                                                                   |
+|-------------------|-------------------|-------------|---------------------------------------------------------------------------------------------------------------|
+| `subscriptionId`  | `UUID`            | public      | Suscripción a modificar.                                                                                      |
+| `newPlanId`       | `UUID`            | public      | Nuevo plan deseado.                                                                                           |
+| `newBillingCycle` | `BillingCycle`    | public      | Ciclo de facturación para el nuevo plan (puede coincidir con el anterior).                                    |
+| `effectiveAt`     | `EffectivePolicy` | public      | Política de aplicación: `IMMEDIATE` (prorratea y cobra la diferencia) o `AT_NEXT_PERIOD` (aplica al renovar). |
 
 **18. UpdatePaymentMethodCommand (Command)**
 
 Emitido desde el dashboard cuando el Administrador de Clínica actualiza su tarjeta (por ejemplo, tras un vencimiento). El `paymentToken` es emitido por el SDK de Culqi en el frontend y reemplaza al almacenado en el aggregate.
 
-| Atributo | Tipo | Visibilidad | Descripción |
-|---|---|---|---|
-| `subscriptionId` | `UUID` | public | Suscripción cuyo medio de pago se actualiza. |
-| `paymentToken` | `String` | public | Nuevo token tokenizado por Culqi. |
+| Atributo         | Tipo     | Visibilidad | Descripción                                  |
+|------------------|----------|-------------|----------------------------------------------|
+| `subscriptionId` | `UUID`   | public      | Suscripción cuyo medio de pago se actualiza. |
+| `paymentToken`   | `String` | public      | Nuevo token tokenizado por Culqi.            |
 
 **19. GetPlanListQuery (Query)**
 
 Consulta usada por la Web Client App para mostrar el catálogo de planes.
 
-| Atributo | Tipo | Visibilidad | Descripción |
-|---|---|---|---|
-| `activeOnly` | `boolean` | public | Si `true`, solo planes vigentes; si `false`, incluye deprecados (uso interno). |
+| Atributo     | Tipo      | Visibilidad | Descripción                                                                    |
+|--------------|-----------|-------------|--------------------------------------------------------------------------------|
+| `activeOnly` | `boolean` | public      | Si `true`, solo planes vigentes; si `false`, incluye deprecados (uso interno). |
 
 **20. GetPlanByIdQuery (Query)**
 
-| Atributo | Tipo | Visibilidad | Descripción |
-|---|---|---|---|
-| `planId` | `UUID` | public | ID del plan. |
+| Atributo | Tipo   | Visibilidad | Descripción  |
+|----------|--------|-------------|--------------|
+| `planId` | `UUID` | public      | ID del plan. |
 
 **21. GetSubscriptionByIdQuery (Query)**
 
-| Atributo | Tipo | Visibilidad | Descripción |
-|---|---|---|---|
-| `subscriptionId` | `UUID` | public | ID de la suscripción. |
+| Atributo         | Tipo   | Visibilidad | Descripción           |
+|------------------|--------|-------------|-----------------------|
+| `subscriptionId` | `UUID` | public      | ID de la suscripción. |
 
 **22. GetSubscriptionByClinicQuery (Query)**
 
-| Atributo | Tipo | Visibilidad | Descripción |
-|---|---|---|---|
-| `clinicId` | `UUID` | public | Clínica dueña de la suscripción. |
+| Atributo   | Tipo   | Visibilidad | Descripción                      |
+|------------|--------|-------------|----------------------------------|
+| `clinicId` | `UUID` | public      | Clínica dueña de la suscripción. |
 
 **23. GetInvoiceHistoryQuery (Query)**
 
-| Atributo | Tipo | Visibilidad | Descripción |
-|---|---|---|---|
-| `subscriptionId` | `UUID` | public | Suscripción cuyo historial se consulta. |
+| Atributo         | Tipo   | Visibilidad | Descripción                             |
+|------------------|--------|-------------|-----------------------------------------|
+| `subscriptionId` | `UUID` | public      | Suscripción cuyo historial se consulta. |
 
 **24. SubscriptionPurchasedEvent (Domain Event)**
 
 Evento publicado al concretarse una compra. Consumido internamente para disparar la emisión de la primera factura.
 
-| Atributo | Tipo | Visibilidad | Descripción |
-|---|---|---|---|
-| `subscriptionId` | `UUID` | private | Suscripción recién creada. |
-| `clinicId` | `UUID` | private | Clínica compradora. |
-| `planId` | `UUID` | private | Plan contratado. |
-| `amount` | `Money` | private | Monto cobrado. |
-| `occurredOn` | `Instant` | private | Marca temporal. |
+| Atributo         | Tipo      | Visibilidad | Descripción                |
+|------------------|-----------|-------------|----------------------------|
+| `subscriptionId` | `UUID`    | private     | Suscripción recién creada. |
+| `clinicId`       | `UUID`    | private     | Clínica compradora.        |
+| `planId`         | `UUID`    | private     | Plan contratado.           |
+| `amount`         | `Money`   | private     | Monto cobrado.             |
+| `occurredOn`     | `Instant` | private     | Marca temporal.            |
 
 **25. SubscriptionLinkedToClinicEvent (Domain Event)**
 
 Evento que **consumen otros BCs** (especialmente IAM) para sincronizar el `clinicId` del Administrador de Clínica.
 
-| Atributo | Tipo | Visibilidad | Descripción |
-|---|---|---|---|
-| `subscriptionId` | `UUID` | private | Suscripción. |
-| `clinicId` | `UUID` | private | Tenant asociado. |
-| `occurredOn` | `Instant` | private | Marca temporal. |
+| Atributo         | Tipo      | Visibilidad | Descripción      |
+|------------------|-----------|-------------|------------------|
+| `subscriptionId` | `UUID`    | private     | Suscripción.     |
+| `clinicId`       | `UUID`    | private     | Tenant asociado. |
+| `occurredOn`     | `Instant` | private     | Marca temporal.  |
 
 **26. SubscriptionActivatedEvent (Domain Event)**
 
-| Atributo | Tipo | Visibilidad | Descripción |
-|---|---|---|---|
-| `subscriptionId` | `UUID` | private | Suscripción activada. |
-| `clinicId` | `UUID` | private | Tenant. |
-| `activatedAt` | `Instant` | private | Marca temporal. |
+| Atributo         | Tipo      | Visibilidad | Descripción           |
+|------------------|-----------|-------------|-----------------------|
+| `subscriptionId` | `UUID`    | private     | Suscripción activada. |
+| `clinicId`       | `UUID`    | private     | Tenant.               |
+| `activatedAt`    | `Instant` | private     | Marca temporal.       |
 
 **27. SubscriptionRenewedEvent (Domain Event)**
 
-| Atributo | Tipo | Visibilidad | Descripción |
-|---|---|---|---|
-| `subscriptionId` | `UUID` | private | Suscripción renovada. |
-| `newPeriodEnd` | `LocalDate` | private | Fin del nuevo periodo. |
+| Atributo         | Tipo        | Visibilidad | Descripción            |
+|------------------|-------------|-------------|------------------------|
+| `subscriptionId` | `UUID`      | private     | Suscripción renovada.  |
+| `newPeriodEnd`   | `LocalDate` | private     | Fin del nuevo periodo. |
 
 **28. SubscriptionCancelledEvent (Domain Event)**
 
-| Atributo | Tipo | Visibilidad | Descripción |
-|---|---|---|---|
-| `subscriptionId` | `UUID` | private | Suscripción cancelada. |
-| `reason` | `String` | private | Motivo. |
-| `cancelledAt` | `Instant` | private | Marca temporal. |
+| Atributo         | Tipo      | Visibilidad | Descripción            |
+|------------------|-----------|-------------|------------------------|
+| `subscriptionId` | `UUID`    | private     | Suscripción cancelada. |
+| `reason`         | `String`  | private     | Motivo.                |
+| `cancelledAt`    | `Instant` | private     | Marca temporal.        |
 
 **29. InvoicePaidEvent (Domain Event)**
 
-| Atributo | Tipo | Visibilidad | Descripción |
-|---|---|---|---|
-| `invoiceId` | `UUID` | private | Factura pagada. |
-| `amount` | `Money` | private | Monto cobrado. |
-| `paidAt` | `Instant` | private | Marca temporal. |
+| Atributo    | Tipo      | Visibilidad | Descripción     |
+|-------------|-----------|-------------|-----------------|
+| `invoiceId` | `UUID`    | private     | Factura pagada. |
+| `amount`    | `Money`   | private     | Monto cobrado.  |
+| `paidAt`    | `Instant` | private     | Marca temporal. |
 
 **30. InvoicePaymentFailedEvent (Domain Event)**
 
-| Atributo | Tipo | Visibilidad | Descripción |
-|---|---|---|---|
-| `invoiceId` | `UUID` | private | Factura fallida. |
-| `reason` | `String` | private | Motivo del rechazo. |
-| `failedAt` | `Instant` | private | Marca temporal. |
+| Atributo    | Tipo      | Visibilidad | Descripción         |
+|-------------|-----------|-------------|---------------------|
+| `invoiceId` | `UUID`    | private     | Factura fallida.    |
+| `reason`    | `String`  | private     | Motivo del rechazo. |
+| `failedAt`  | `Instant` | private     | Marca temporal.     |
 
 **31. SubscriptionPlanChangedEvent (Domain Event)**
 
 Evento publicado al cambiar el plan de una suscripción. Permite al BC Analytics registrar conversiones y a otros contextos ajustar los topes de uso.
 
-| Atributo | Tipo | Visibilidad | Descripción |
-|---|---|---|---|
-| `subscriptionId` | `UUID` | private | Suscripción modificada. |
-| `oldPlanId` | `UUID` | private | Plan anterior. |
-| `newPlanId` | `UUID` | private | Plan nuevo. |
-| `proratedAmount` | `Money` | private | Monto prorrateado cobrado (cero si `AT_NEXT_PERIOD`). |
-| `changedAt` | `Instant` | private | Marca temporal. |
+| Atributo         | Tipo      | Visibilidad | Descripción                                           |
+|------------------|-----------|-------------|-------------------------------------------------------|
+| `subscriptionId` | `UUID`    | private     | Suscripción modificada.                               |
+| `oldPlanId`      | `UUID`    | private     | Plan anterior.                                        |
+| `newPlanId`      | `UUID`    | private     | Plan nuevo.                                           |
+| `proratedAmount` | `Money`   | private     | Monto prorrateado cobrado (cero si `AT_NEXT_PERIOD`). |
+| `changedAt`      | `Instant` | private     | Marca temporal.                                       |
 
 **32. PaymentMethodUpdatedEvent (Domain Event)**
 
 Evento publicado al actualizar el medio de pago. Consumido por el `NotificationService` para enviar un correo de confirmación al administrador.
 
-| Atributo | Tipo | Visibilidad | Descripción |
-|---|---|---|---|
-| `subscriptionId` | `UUID` | private | Suscripción afectada. |
-| `last4` | `String` | private | Últimos 4 dígitos de la nueva tarjeta (para mostrar). |
-| `updatedAt` | `Instant` | private | Marca temporal. |
+| Atributo         | Tipo      | Visibilidad | Descripción                                           |
+|------------------|-----------|-------------|-------------------------------------------------------|
+| `subscriptionId` | `UUID`    | private     | Suscripción afectada.                                 |
+| `last4`          | `String`  | private     | Últimos 4 dígitos de la nueva tarjeta (para mostrar). |
+| `updatedAt`      | `Instant` | private     | Marca temporal.                                       |
 
 **33. SubscriptionCommandService (Domain Service)**
 
 Maneja los commands relacionados con el ciclo de vida de la suscripción.
 
-| Método | Tipo Retorno | Visibilidad | Descripción |
-|---|---|---|---|
-| `handle(PurchaseSubscriptionPlanCommand)` | `SubscriptionId` | public | Ejecuta la compra: llama a Culqi, crea la suscripción y emite la primera factura. |
-| `handle(LinkSubscriptionToClinicCommand)` | `void` | public | Asocia la suscripción al tenant. |
-| `handle(RenewSubscriptionCommand)` | `void` | public | Dispara la renovación recurrente. |
-| `handle(CancelSubscriptionCommand)` | `void` | public | Cancela la suscripción con motivo. |
-| `handle(RegisterInvoicePaymentCommand)` | `void` | public | Marca una factura como `PAID` tras el webhook de Culqi. |
-| `handle(ChangeSubscriptionPlanCommand)` | `Money` | public | Cambia el plan (upgrade/downgrade); si `IMMEDIATE`, calcula y cobra el prorrateo con `SubscriptionPricingService`. |
-| `handle(UpdatePaymentMethodCommand)` | `void` | public | Reemplaza la `PaymentReference` del aggregate con el nuevo token de Culqi. |
+| Método                                    | Tipo Retorno     | Visibilidad | Descripción                                                                                                        |
+|-------------------------------------------|------------------|-------------|--------------------------------------------------------------------------------------------------------------------|
+| `handle(PurchaseSubscriptionPlanCommand)` | `SubscriptionId` | public      | Ejecuta la compra: llama a Culqi, crea la suscripción y emite la primera factura.                                  |
+| `handle(LinkSubscriptionToClinicCommand)` | `void`           | public      | Asocia la suscripción al tenant.                                                                                   |
+| `handle(RenewSubscriptionCommand)`        | `void`           | public      | Dispara la renovación recurrente.                                                                                  |
+| `handle(CancelSubscriptionCommand)`       | `void`           | public      | Cancela la suscripción con motivo.                                                                                 |
+| `handle(RegisterInvoicePaymentCommand)`   | `void`           | public      | Marca una factura como `PAID` tras el webhook de Culqi.                                                            |
+| `handle(ChangeSubscriptionPlanCommand)`   | `Money`          | public      | Cambia el plan (upgrade/downgrade); si `IMMEDIATE`, calcula y cobra el prorrateo con `SubscriptionPricingService`. |
+| `handle(UpdatePaymentMethodCommand)`      | `void`           | public      | Reemplaza la `PaymentReference` del aggregate con el nuevo token de Culqi.                                         |
 
 **34. SubscriptionQueryService (Domain Service)**
 
-| Método | Tipo Retorno | Visibilidad | Descripción |
-|---|---|---|---|
-| `handle(GetSubscriptionByIdQuery)` | `Subscription` | public | Obtiene una suscripción por ID. |
-| `handle(GetSubscriptionByClinicQuery)` | `Subscription` | public | Obtiene la suscripción activa de una clínica. |
-| `handle(GetInvoiceHistoryQuery)` | `List<Invoice>` | public | Lista las facturas históricas. |
+| Método                                 | Tipo Retorno    | Visibilidad | Descripción                                   |
+|----------------------------------------|-----------------|-------------|-----------------------------------------------|
+| `handle(GetSubscriptionByIdQuery)`     | `Subscription`  | public      | Obtiene una suscripción por ID.               |
+| `handle(GetSubscriptionByClinicQuery)` | `Subscription`  | public      | Obtiene la suscripción activa de una clínica. |
+| `handle(GetInvoiceHistoryQuery)`       | `List<Invoice>` | public      | Lista las facturas históricas.                |
 
 **35. PlanCommandService (Domain Service)**
 
-| Método | Tipo Retorno | Visibilidad | Descripción |
-|---|---|---|---|
-| `handle(CreatePlanCommand)` | `PlanId` | public | Crea un nuevo plan en el catálogo. |
-| `handle(DeactivatePlanCommand)` | `void` | public | Retira un plan del catálogo. |
+| Método                          | Tipo Retorno | Visibilidad | Descripción                        |
+|---------------------------------|--------------|-------------|------------------------------------|
+| `handle(CreatePlanCommand)`     | `PlanId`     | public      | Crea un nuevo plan en el catálogo. |
+| `handle(DeactivatePlanCommand)` | `void`       | public      | Retira un plan del catálogo.       |
 
 **36. PlanQueryService (Domain Service)**
 
-| Método | Tipo Retorno | Visibilidad | Descripción |
-|---|---|---|---|
-| `handle(GetPlanListQuery)` | `List<SubscriptionPlan>` | public | Lista los planes disponibles. |
-| `handle(GetPlanByIdQuery)` | `SubscriptionPlan` | public | Obtiene un plan por ID. |
+| Método                     | Tipo Retorno             | Visibilidad | Descripción                   |
+|----------------------------|--------------------------|-------------|-------------------------------|
+| `handle(GetPlanListQuery)` | `List<SubscriptionPlan>` | public      | Lista los planes disponibles. |
+| `handle(GetPlanByIdQuery)` | `SubscriptionPlan`       | public      | Obtiene un plan por ID.       |
 
 **37. SubscriptionPricingService (Domain Service)**
 
 Servicio puro de cálculo de precios y prorrateo.
 
-| Método | Tipo Retorno | Visibilidad | Descripción |
-|---|---|---|---|
-| `priceFor(SubscriptionPlan, BillingCycle)` | `Money` | public | Calcula el precio del plan para el ciclo indicado. |
-| `applyProration(Subscription, SubscriptionPlan)` | `Money` | public | Calcula el monto prorrateado al cambiar de plan a mitad de periodo. |
+| Método                                           | Tipo Retorno | Visibilidad | Descripción                                                         |
+|--------------------------------------------------|--------------|-------------|---------------------------------------------------------------------|
+| `priceFor(SubscriptionPlan, BillingCycle)`       | `Money`      | public      | Calcula el precio del plan para el ciclo indicado.                  |
+| `applyProration(Subscription, SubscriptionPlan)` | `Money`      | public      | Calcula el monto prorrateado al cambiar de plan a mitad de periodo. |
 
 #### 4.2.2.2. Interface Layer
 
@@ -3356,57 +3475,57 @@ Servicio puro de cálculo de precios y prorrateo.
 
 Expone los casos de uso de suscripción al Administrador de Clínica a través de la PWA.
 
-| Método | Ruta base | HTTP | Descripción |
-|---|---|---|---|
-| `purchaseSubscription` | `/api/v1/subscriptions` | POST | Compra un plan usando un `paymentToken` emitido por el SDK de Culqi en el frontend. |
-| `getSubscriptionByClinic` | `/api/v1/subscriptions?clinicId={id}` | GET | Obtiene la suscripción activa de la clínica. |
-| `cancelSubscription` | `/api/v1/subscriptions/{id}/cancel` | POST | Cancela una suscripción vigente. |
-| `changePlan` | `/api/v1/subscriptions/{id}/plan` | PATCH | Cambia el plan (upgrade/downgrade) con política `IMMEDIATE` o `AT_NEXT_PERIOD`. |
-| `updatePaymentMethod` | `/api/v1/subscriptions/{id}/payment-method` | PATCH | Actualiza el medio de pago con un nuevo token de Culqi. |
-| `getInvoiceHistory` | `/api/v1/subscriptions/{id}/invoices` | GET | Devuelve el historial de facturas. |
+| Método                    | Ruta base                                   | HTTP  | Descripción                                                                         |
+|---------------------------|---------------------------------------------|-------|-------------------------------------------------------------------------------------|
+| `purchaseSubscription`    | `/api/v1/subscriptions`                     | POST  | Compra un plan usando un `paymentToken` emitido por el SDK de Culqi en el frontend. |
+| `getSubscriptionByClinic` | `/api/v1/subscriptions?clinicId={id}`       | GET   | Obtiene la suscripción activa de la clínica.                                        |
+| `cancelSubscription`      | `/api/v1/subscriptions/{id}/cancel`         | POST  | Cancela una suscripción vigente.                                                    |
+| `changePlan`              | `/api/v1/subscriptions/{id}/plan`           | PATCH | Cambia el plan (upgrade/downgrade) con política `IMMEDIATE` o `AT_NEXT_PERIOD`.     |
+| `updatePaymentMethod`     | `/api/v1/subscriptions/{id}/payment-method` | PATCH | Actualiza el medio de pago con un nuevo token de Culqi.                             |
+| `getInvoiceHistory`       | `/api/v1/subscriptions/{id}/invoices`       | GET   | Devuelve el historial de facturas.                                                  |
 
 **2. PlanController (REST Controller)**
 
 Catálogo público de planes visible en la landing y en la PWA.
 
-| Método | Ruta base | HTTP | Descripción |
-|---|---|---|---|
-| `getPlans` | `/api/v1/plans` | GET | Lista los planes activos del catálogo. |
-| `getPlanById` | `/api/v1/plans/{id}` | GET | Obtiene un plan específico. |
-| `createPlan` | `/api/v1/plans` | POST | Crea un plan (operación de administración interna). |
-| `deactivatePlan` | `/api/v1/plans/{id}` | DELETE | Retira un plan del catálogo. |
+| Método           | Ruta base            | HTTP   | Descripción                                         |
+|------------------|----------------------|--------|-----------------------------------------------------|
+| `getPlans`       | `/api/v1/plans`      | GET    | Lista los planes activos del catálogo.              |
+| `getPlanById`    | `/api/v1/plans/{id}` | GET    | Obtiene un plan específico.                         |
+| `createPlan`     | `/api/v1/plans`      | POST   | Crea un plan (operación de administración interna). |
+| `deactivatePlan` | `/api/v1/plans/{id}` | DELETE | Retira un plan del catálogo.                        |
 
 **3. CulqiWebhookController (REST Controller)**
 
 Endpoint que recibe los eventos de Culqi (confirmación de cargo, fallo de cobro). Valida la firma HMAC antes de procesar.
 
-| Método | Ruta base | HTTP | Descripción |
-|---|---|---|---|
+| Método          | Ruta base                | HTTP | Descripción                                                                                                 |
+|-----------------|--------------------------|------|-------------------------------------------------------------------------------------------------------------|
 | `handleWebhook` | `/api/v1/webhooks/culqi` | POST | Recibe y procesa eventos de Culqi; traduce a `RegisterInvoicePaymentCommand` o `InvoicePaymentFailedEvent`. |
 
 **4. Resources (DTOs)**
 
-| Resource | Atributos principales | Descripción |
-|---|---|---|
-| `PurchaseSubscriptionResource` | `clinicId: UUID`, `planId: UUID`, `billingCycle: String`, `paymentToken: String` | Datos de compra recibidos desde el frontend. |
-| `SubscriptionResource` | `id: UUID`, `clinicId: UUID`, `planName: String`, `status: String`, `billingCycle: String`, `currentPeriodEnd: LocalDate`, `nextBillingDate: LocalDate` | Representación de una suscripción. |
-| `PlanResource` | `id: UUID`, `name: String`, `code: String`, `monthlyPrice: BigDecimal`, `yearlyPrice: BigDecimal`, `currency: String`, `maxPatients: Integer`, `maxPhysiotherapists: Integer`, `features: List<String>` | Representación de un plan. |
-| `InvoiceResource` | `id: UUID`, `amount: BigDecimal`, `currency: String`, `issuedAt: Instant`, `dueAt: Instant`, `paidAt: Instant`, `status: String` | Representación de una factura. |
-| `CancelSubscriptionResource` | `reason: String` | Motivo de cancelación. |
-| `ChangePlanResource` | `newPlanId: UUID`, `newBillingCycle: String`, `effectiveAt: String` | Datos para cambiar de plan desde el dashboard. |
-| `UpdatePaymentMethodResource` | `paymentToken: String` | Nuevo token tokenizado por el SDK de Culqi en el frontend. |
+| Resource                       | Atributos principales                                                                                                                                                                                   | Descripción                                                |
+|--------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------|
+| `PurchaseSubscriptionResource` | `clinicId: UUID`, `planId: UUID`, `billingCycle: String`, `paymentToken: String`                                                                                                                        | Datos de compra recibidos desde el frontend.               |
+| `SubscriptionResource`         | `id: UUID`, `clinicId: UUID`, `planName: String`, `status: String`, `billingCycle: String`, `currentPeriodEnd: LocalDate`, `nextBillingDate: LocalDate`                                                 | Representación de una suscripción.                         |
+| `PlanResource`                 | `id: UUID`, `name: String`, `code: String`, `monthlyPrice: BigDecimal`, `yearlyPrice: BigDecimal`, `currency: String`, `maxPatients: Integer`, `maxPhysiotherapists: Integer`, `features: List<String>` | Representación de un plan.                                 |
+| `InvoiceResource`              | `id: UUID`, `amount: BigDecimal`, `currency: String`, `issuedAt: Instant`, `dueAt: Instant`, `paidAt: Instant`, `status: String`                                                                        | Representación de una factura.                             |
+| `CancelSubscriptionResource`   | `reason: String`                                                                                                                                                                                        | Motivo de cancelación.                                     |
+| `ChangePlanResource`           | `newPlanId: UUID`, `newBillingCycle: String`, `effectiveAt: String`                                                                                                                                     | Datos para cambiar de plan desde el dashboard.             |
+| `UpdatePaymentMethodResource`  | `paymentToken: String`                                                                                                                                                                                  | Nuevo token tokenizado por el SDK de Culqi en el frontend. |
 
 **5. Transform (Assemblers)**
 
-| Assembler | Entrada | Salida | Descripción |
-|---|---|---|---|
-| `PurchaseSubscriptionCommandFromResourceAssembler` | `PurchaseSubscriptionResource` | `PurchaseSubscriptionPlanCommand` | Construye el command de compra. |
-| `SubscriptionResourceFromEntityAssembler` | `Subscription` | `SubscriptionResource` | Expone el aggregate como recurso. |
-| `PlanResourceFromEntityAssembler` | `SubscriptionPlan` | `PlanResource` | Expone el plan como recurso. |
-| `InvoiceResourceFromEntityAssembler` | `Invoice` | `InvoiceResource` | Expone la factura como recurso. |
-| `CancelSubscriptionCommandFromResourceAssembler` | `CancelSubscriptionResource`, `subscriptionId: UUID` | `CancelSubscriptionCommand` | Construye el command de cancelación. |
-| `ChangeSubscriptionPlanCommandFromResourceAssembler` | `ChangePlanResource`, `subscriptionId: UUID` | `ChangeSubscriptionPlanCommand` | Construye el command de cambio de plan. |
-| `UpdatePaymentMethodCommandFromResourceAssembler` | `UpdatePaymentMethodResource`, `subscriptionId: UUID` | `UpdatePaymentMethodCommand` | Construye el command de actualización del medio de pago. |
+| Assembler                                            | Entrada                                               | Salida                            | Descripción                                              |
+|------------------------------------------------------|-------------------------------------------------------|-----------------------------------|----------------------------------------------------------|
+| `PurchaseSubscriptionCommandFromResourceAssembler`   | `PurchaseSubscriptionResource`                        | `PurchaseSubscriptionPlanCommand` | Construye el command de compra.                          |
+| `SubscriptionResourceFromEntityAssembler`            | `Subscription`                                        | `SubscriptionResource`            | Expone el aggregate como recurso.                        |
+| `PlanResourceFromEntityAssembler`                    | `SubscriptionPlan`                                    | `PlanResource`                    | Expone el plan como recurso.                             |
+| `InvoiceResourceFromEntityAssembler`                 | `Invoice`                                             | `InvoiceResource`                 | Expone la factura como recurso.                          |
+| `CancelSubscriptionCommandFromResourceAssembler`     | `CancelSubscriptionResource`, `subscriptionId: UUID`  | `CancelSubscriptionCommand`       | Construye el command de cancelación.                     |
+| `ChangeSubscriptionPlanCommandFromResourceAssembler` | `ChangePlanResource`, `subscriptionId: UUID`          | `ChangeSubscriptionPlanCommand`   | Construye el command de cambio de plan.                  |
+| `UpdatePaymentMethodCommandFromResourceAssembler`    | `UpdatePaymentMethodResource`, `subscriptionId: UUID` | `UpdatePaymentMethodCommand`      | Construye el command de actualización del medio de pago. |
 
 #### 4.2.2.3. Application Layer
 
@@ -3414,127 +3533,127 @@ Endpoint que recibe los eventos de Culqi (confirmación de cargo, fallo de cobro
 
 Fachada que otros bounded contexts usan para consultar estado de suscripción sin acoplarse al modelo interno.
 
-| Atributo | Tipo | Visibilidad | Descripción |
-|---|---|---|---|
-| `subscriptionQueryService` | `SubscriptionQueryService` | private | Servicio de consultas de Subscription. |
+| Atributo                   | Tipo                       | Visibilidad | Descripción                            |
+|----------------------------|----------------------------|-------------|----------------------------------------|
+| `subscriptionQueryService` | `SubscriptionQueryService` | private     | Servicio de consultas de Subscription. |
 
-| Método | Tipo Retorno | Visibilidad | Descripción |
-|---|---|---|---|
-| `isClinicSubscriptionActive(UUID clinicId)` | `boolean` | public | Responde si el tenant tiene una suscripción vigente. |
-| `fetchCurrentPlanCode(UUID clinicId)` | `Optional<String>` | public | Retorna el código del plan contratado para gating de features. |
+| Método                                      | Tipo Retorno       | Visibilidad | Descripción                                                    |
+|---------------------------------------------|--------------------|-------------|----------------------------------------------------------------|
+| `isClinicSubscriptionActive(UUID clinicId)` | `boolean`          | public      | Responde si el tenant tiene una suscripción vigente.           |
+| `fetchCurrentPlanCode(UUID clinicId)`       | `Optional<String>` | public      | Retorna el código del plan contratado para gating de features. |
 
 **2. SubscriptionCommandServiceImpl**
 
 Orquesta la compra, renovación, cancelación y reconciliación de pagos.
 
-| Atributo | Tipo | Visibilidad | Descripción |
-|---|---|---|---|
-| `subscriptionRepository` | `SubscriptionRepository` | private | Persistencia del aggregate. |
-| `planRepository` | `PlanRepository` | private | Consulta del catálogo. |
-| `invoiceRepository` | `InvoiceRepository` | private | Persistencia de facturas. |
-| `culqiPaymentPort` | `CulqiPaymentPort` | private | ACL hacia la pasarela. |
-| `iamContextFacadePort` | `IamContextFacadePort` | private | Consulta del BC IAM. |
-| `pricingService` | `SubscriptionPricingService` | private | Cálculo de precios. |
-| `eventPublisher` | `ApplicationEventPublisher` | private | Publicación de domain events. |
+| Atributo                 | Tipo                         | Visibilidad | Descripción                   |
+|--------------------------|------------------------------|-------------|-------------------------------|
+| `subscriptionRepository` | `SubscriptionRepository`     | private     | Persistencia del aggregate.   |
+| `planRepository`         | `PlanRepository`             | private     | Consulta del catálogo.        |
+| `invoiceRepository`      | `InvoiceRepository`          | private     | Persistencia de facturas.     |
+| `culqiPaymentPort`       | `CulqiPaymentPort`           | private     | ACL hacia la pasarela.        |
+| `iamContextFacadePort`   | `IamContextFacadePort`       | private     | Consulta del BC IAM.          |
+| `pricingService`         | `SubscriptionPricingService` | private     | Cálculo de precios.           |
+| `eventPublisher`         | `ApplicationEventPublisher`  | private     | Publicación de domain events. |
 
-| Método | Tipo Retorno | Visibilidad | Descripción |
-|---|---|---|---|
-| `handle(PurchaseSubscriptionPlanCommand)` | `SubscriptionId` | public | Valida admin, tokeniza el pago, crea la suscripción, emite factura y publica `SubscriptionPurchasedEvent`. |
-| `handle(LinkSubscriptionToClinicCommand)` | `void` | public | Asocia la suscripción al tenant y publica `SubscriptionLinkedToClinicEvent`. |
-| `handle(RenewSubscriptionCommand)` | `void` | public | Genera factura y cobra vía Culqi; maneja fallos con reintentos. |
-| `handle(CancelSubscriptionCommand)` | `void` | public | Marca la suscripción como `CANCELLED` y publica el evento. |
-| `handle(RegisterInvoicePaymentCommand)` | `void` | public | Marca la factura como `PAID` tras el webhook de Culqi. |
-| `handle(ChangeSubscriptionPlanCommand)` | `Money` | public | Cambia de plan: si `IMMEDIATE`, usa `SubscriptionPricingService.applyProration` y cobra la diferencia vía `CulqiPaymentPort`; si `AT_NEXT_PERIOD`, difiere el cambio a la próxima renovación. Publica `SubscriptionPlanChangedEvent`. |
-| `handle(UpdatePaymentMethodCommand)` | `void` | public | Tokeniza la nueva tarjeta con `CulqiPaymentPort`, reemplaza la `PaymentReference` en el aggregate y publica `PaymentMethodUpdatedEvent`. |
+| Método                                    | Tipo Retorno     | Visibilidad | Descripción                                                                                                                                                                                                                           |
+|-------------------------------------------|------------------|-------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `handle(PurchaseSubscriptionPlanCommand)` | `SubscriptionId` | public      | Valida admin, tokeniza el pago, crea la suscripción, emite factura y publica `SubscriptionPurchasedEvent`.                                                                                                                            |
+| `handle(LinkSubscriptionToClinicCommand)` | `void`           | public      | Asocia la suscripción al tenant y publica `SubscriptionLinkedToClinicEvent`.                                                                                                                                                          |
+| `handle(RenewSubscriptionCommand)`        | `void`           | public      | Genera factura y cobra vía Culqi; maneja fallos con reintentos.                                                                                                                                                                       |
+| `handle(CancelSubscriptionCommand)`       | `void`           | public      | Marca la suscripción como `CANCELLED` y publica el evento.                                                                                                                                                                            |
+| `handle(RegisterInvoicePaymentCommand)`   | `void`           | public      | Marca la factura como `PAID` tras el webhook de Culqi.                                                                                                                                                                                |
+| `handle(ChangeSubscriptionPlanCommand)`   | `Money`          | public      | Cambia de plan: si `IMMEDIATE`, usa `SubscriptionPricingService.applyProration` y cobra la diferencia vía `CulqiPaymentPort`; si `AT_NEXT_PERIOD`, difiere el cambio a la próxima renovación. Publica `SubscriptionPlanChangedEvent`. |
+| `handle(UpdatePaymentMethodCommand)`      | `void`           | public      | Tokeniza la nueva tarjeta con `CulqiPaymentPort`, reemplaza la `PaymentReference` en el aggregate y publica `PaymentMethodUpdatedEvent`.                                                                                              |
 
 **3. SubscriptionQueryServiceImpl**
 
-| Atributo | Tipo | Visibilidad | Descripción |
-|---|---|---|---|
-| `subscriptionRepository` | `SubscriptionRepository` | private | Lectura del aggregate. |
-| `invoiceRepository` | `InvoiceRepository` | private | Lectura de facturas. |
+| Atributo                 | Tipo                     | Visibilidad | Descripción            |
+|--------------------------|--------------------------|-------------|------------------------|
+| `subscriptionRepository` | `SubscriptionRepository` | private     | Lectura del aggregate. |
+| `invoiceRepository`      | `InvoiceRepository`      | private     | Lectura de facturas.   |
 
-| Método | Tipo Retorno | Visibilidad | Descripción |
-|---|---|---|---|
-| `handle(GetSubscriptionByIdQuery)` | `Subscription` | public | Recupera una suscripción por ID. |
-| `handle(GetSubscriptionByClinicQuery)` | `Subscription` | public | Recupera la suscripción activa de una clínica. |
-| `handle(GetInvoiceHistoryQuery)` | `List<Invoice>` | public | Historial de facturas. |
+| Método                                 | Tipo Retorno    | Visibilidad | Descripción                                    |
+|----------------------------------------|-----------------|-------------|------------------------------------------------|
+| `handle(GetSubscriptionByIdQuery)`     | `Subscription`  | public      | Recupera una suscripción por ID.               |
+| `handle(GetSubscriptionByClinicQuery)` | `Subscription`  | public      | Recupera la suscripción activa de una clínica. |
+| `handle(GetInvoiceHistoryQuery)`       | `List<Invoice>` | public      | Historial de facturas.                         |
 
 **4. PlanCommandServiceImpl**
 
-| Atributo | Tipo | Visibilidad | Descripción |
-|---|---|---|---|
-| `planRepository` | `PlanRepository` | private | Acceso al catálogo. |
+| Atributo         | Tipo             | Visibilidad | Descripción         |
+|------------------|------------------|-------------|---------------------|
+| `planRepository` | `PlanRepository` | private     | Acceso al catálogo. |
 
-| Método | Tipo Retorno | Visibilidad | Descripción |
-|---|---|---|---|
-| `handle(CreatePlanCommand)` | `PlanId` | public | Crea un plan nuevo. |
-| `handle(DeactivatePlanCommand)` | `void` | public | Retira un plan del catálogo. |
+| Método                          | Tipo Retorno | Visibilidad | Descripción                  |
+|---------------------------------|--------------|-------------|------------------------------|
+| `handle(CreatePlanCommand)`     | `PlanId`     | public      | Crea un plan nuevo.          |
+| `handle(DeactivatePlanCommand)` | `void`       | public      | Retira un plan del catálogo. |
 
 **5. PlanQueryServiceImpl**
 
-| Método | Tipo Retorno | Visibilidad | Descripción |
-|---|---|---|---|
-| `handle(GetPlanListQuery)` | `List<SubscriptionPlan>` | public | Lista los planes. |
-| `handle(GetPlanByIdQuery)` | `SubscriptionPlan` | public | Obtiene un plan por ID. |
+| Método                     | Tipo Retorno             | Visibilidad | Descripción             |
+|----------------------------|--------------------------|-------------|-------------------------|
+| `handle(GetPlanListQuery)` | `List<SubscriptionPlan>` | public      | Lista los planes.       |
+| `handle(GetPlanByIdQuery)` | `SubscriptionPlan`       | public      | Obtiene un plan por ID. |
 
 **6. CulqiWebhookEventHandler (Integration Event Handler)**
 
 Procesa los eventos de Culqi recibidos por el `CulqiWebhookController`.
 
-| Método | Tipo Retorno | Visibilidad | Descripción |
-|---|---|---|---|
-| `on(CulqiChargeSucceeded)` | `void` | public | Traduce a `RegisterInvoicePaymentCommand` y lo despacha al Command Service. |
-| `on(CulqiChargeFailed)` | `void` | public | Publica `InvoicePaymentFailedEvent` y marca la suscripción como `PAST_DUE` si corresponde. |
+| Método                     | Tipo Retorno | Visibilidad | Descripción                                                                                |
+|----------------------------|--------------|-------------|--------------------------------------------------------------------------------------------|
+| `on(CulqiChargeSucceeded)` | `void`       | public      | Traduce a `RegisterInvoicePaymentCommand` y lo despacha al Command Service.                |
+| `on(CulqiChargeFailed)`    | `void`       | public      | Publica `InvoicePaymentFailedEvent` y marca la suscripción como `PAST_DUE` si corresponde. |
 
 **7. SubscriptionRenewalScheduler (Scheduled Task)**
 
 Job programado que detecta suscripciones cuyo `nextBillingDate` venció y dispara `RenewSubscriptionCommand`.
 
-| Método | Tipo Retorno | Visibilidad | Descripción |
-|---|---|---|---|
-| `runDailyRenewalBatch()` | `void` | public | Ejecuta `@Scheduled(cron)`; recorre las suscripciones con `nextBillingDate <= today` y despacha los commands de renovación. |
+| Método                   | Tipo Retorno | Visibilidad | Descripción                                                                                                                 |
+|--------------------------|--------------|-------------|-----------------------------------------------------------------------------------------------------------------------------|
+| `runDailyRenewalBatch()` | `void`       | public      | Ejecuta `@Scheduled(cron)`; recorre las suscripciones con `nextBillingDate <= today` y despacha los commands de renovación. |
 
 **8. SubscriptionExpirationScheduler (Scheduled Task)**
 
-| Método | Tipo Retorno | Visibilidad | Descripción |
-|---|---|---|---|
-| `runDailyExpirationBatch()` | `void` | public | Marca como `EXPIRED` las suscripciones que llevan más de N días en `PAST_DUE`. |
+| Método                      | Tipo Retorno | Visibilidad | Descripción                                                                    |
+|-----------------------------|--------------|-------------|--------------------------------------------------------------------------------|
+| `runDailyExpirationBatch()` | `void`       | public      | Marca como `EXPIRED` las suscripciones que llevan más de N días en `PAST_DUE`. |
 
 **9. ApplicationReadyEventHandler (Framework Event Handler)**
 
-| Método | Tipo Retorno | Visibilidad | Descripción |
-|---|---|---|---|
-| `on(ApplicationReadyEvent)` | `void` | public | Ejecuta la semilla de planes base al arranque si el catálogo está vacío. |
+| Método                      | Tipo Retorno | Visibilidad | Descripción                                                              |
+|-----------------------------|--------------|-------------|--------------------------------------------------------------------------|
+| `on(ApplicationReadyEvent)` | `void`       | public      | Ejecuta la semilla de planes base al arranque si el catálogo está vacío. |
 
 **10. CulqiPaymentPort (Outbound Service Port)**
 
 ACL hacia Culqi.
 
-| Método | Tipo Retorno | Visibilidad | Descripción |
-|---|---|---|---|
-| `createCharge(Money amount, String token)` | `PaymentReference` | public | Crea un cargo contra el token emitido por el SDK de Culqi. |
-| `refundCharge(PaymentReference)` | `void` | public | Reversa un cobro. |
-| `verifyWebhookSignature(String payload, String signature)` | `boolean` | public | Valida la firma HMAC del webhook de Culqi. |
+| Método                                                     | Tipo Retorno       | Visibilidad | Descripción                                                |
+|------------------------------------------------------------|--------------------|-------------|------------------------------------------------------------|
+| `createCharge(Money amount, String token)`                 | `PaymentReference` | public      | Crea un cargo contra el token emitido por el SDK de Culqi. |
+| `refundCharge(PaymentReference)`                           | `void`             | public      | Reversa un cobro.                                          |
+| `verifyWebhookSignature(String payload, String signature)` | `boolean`          | public      | Valida la firma HMAC del webhook de Culqi.                 |
 
 **11. IamContextFacadePort (Outbound Service Port)**
 
 Puerto hacia la fachada del BC IAM para validar el usuario que compra.
 
-| Método | Tipo Retorno | Visibilidad | Descripción |
-|---|---|---|---|
-| `fetchClinicIdOfAdmin(Long userId)` | `UUID` | public | Obtiene el `clinicId` del administrador autenticado. |
-| `validateClinicAdmin(Long userId)` | `boolean` | public | Verifica que el usuario tenga el rol `CLINIC_ADMIN`. |
+| Método                              | Tipo Retorno | Visibilidad | Descripción                                          |
+|-------------------------------------|--------------|-------------|------------------------------------------------------|
+| `fetchClinicIdOfAdmin(Long userId)` | `UUID`       | public      | Obtiene el `clinicId` del administrador autenticado. |
+| `validateClinicAdmin(Long userId)`  | `boolean`    | public      | Verifica que el usuario tenga el rol `CLINIC_ADMIN`. |
 
 **12. NotificationServicePort (Outbound Service Port)**
 
 Puerto hacia el Notification Service hermano para enviar correos (que a su vez usa Resend).
 
-| Método | Tipo Retorno | Visibilidad | Descripción |
-|---|---|---|---|
-| `sendInvoiceIssuedNotification(String email, Invoice invoice)` | `void` | public | Solicita al Notification Service enviar la factura por correo. |
-| `sendPaymentFailedNotification(String email, Invoice invoice)` | `void` | public | Notifica al admin que un cobro falló. |
-| `sendSubscriptionCancelledNotification(String email, Subscription sub)` | `void` | public | Notifica la cancelación. |
+| Método                                                                  | Tipo Retorno | Visibilidad | Descripción                                                    |
+|-------------------------------------------------------------------------|--------------|-------------|----------------------------------------------------------------|
+| `sendInvoiceIssuedNotification(String email, Invoice invoice)`          | `void`       | public      | Solicita al Notification Service enviar la factura por correo. |
+| `sendPaymentFailedNotification(String email, Invoice invoice)`          | `void`       | public      | Notifica al admin que un cobro falló.                          |
+| `sendSubscriptionCancelledNotification(String email, Subscription sub)` | `void`       | public      | Notifica la cancelación.                                       |
 
 #### 4.2.2.4. Infrastructure Layer
 
@@ -3542,111 +3661,111 @@ Puerto hacia el Notification Service hermano para enviar correos (que a su vez u
 
 Spring Data JPA sobre Azure Database for PostgreSQL.
 
-| Método | Tipo Retorno | Visibilidad | Descripción |
-|---|---|---|---|
-| `save(Subscription sub)` | `Subscription` | public | Persiste o actualiza una suscripción. |
-| `findById(UUID id)` | `Optional<Subscription>` | public | Busca por ID. |
-| `findByClinicId(UUID clinicId)` | `Optional<Subscription>` | public | Obtiene la suscripción activa de un tenant. |
-| `findAllPastDue()` | `List<Subscription>` | public | Lista las suscripciones `PAST_DUE` (usado por el scheduler de expiración). |
-| `findAllDueForRenewal(LocalDate today)` | `List<Subscription>` | public | Lista las suscripciones con `nextBillingDate <= today`. |
+| Método                                  | Tipo Retorno             | Visibilidad | Descripción                                                                |
+|-----------------------------------------|--------------------------|-------------|----------------------------------------------------------------------------|
+| `save(Subscription sub)`                | `Subscription`           | public      | Persiste o actualiza una suscripción.                                      |
+| `findById(UUID id)`                     | `Optional<Subscription>` | public      | Busca por ID.                                                              |
+| `findByClinicId(UUID clinicId)`         | `Optional<Subscription>` | public      | Obtiene la suscripción activa de un tenant.                                |
+| `findAllPastDue()`                      | `List<Subscription>`     | public      | Lista las suscripciones `PAST_DUE` (usado por el scheduler de expiración). |
+| `findAllDueForRenewal(LocalDate today)` | `List<Subscription>`     | public      | Lista las suscripciones con `nextBillingDate <= today`.                    |
 
 **2. PlanRepository (Repository Interface)**
 
-| Método | Tipo Retorno | Visibilidad | Descripción |
-|---|---|---|---|
-| `save(SubscriptionPlan plan)` | `SubscriptionPlan` | public | Persiste un plan. |
-| `findById(UUID id)` | `Optional<SubscriptionPlan>` | public | Busca por ID. |
-| `findAllActive()` | `List<SubscriptionPlan>` | public | Lista los planes activos. |
-| `findByCode(String code)` | `Optional<SubscriptionPlan>` | public | Busca por código SKU. |
+| Método                        | Tipo Retorno                 | Visibilidad | Descripción               |
+|-------------------------------|------------------------------|-------------|---------------------------|
+| `save(SubscriptionPlan plan)` | `SubscriptionPlan`           | public      | Persiste un plan.         |
+| `findById(UUID id)`           | `Optional<SubscriptionPlan>` | public      | Busca por ID.             |
+| `findAllActive()`             | `List<SubscriptionPlan>`     | public      | Lista los planes activos. |
+| `findByCode(String code)`     | `Optional<SubscriptionPlan>` | public      | Busca por código SKU.     |
 
 **3. InvoiceRepository (Repository Interface)**
 
-| Método | Tipo Retorno | Visibilidad | Descripción |
-|---|---|---|---|
-| `save(Invoice invoice)` | `Invoice` | public | Persiste una factura. |
-| `findById(UUID id)` | `Optional<Invoice>` | public | Busca por ID. |
-| `findBySubscriptionId(UUID id)` | `List<Invoice>` | public | Lista las facturas de una suscripción. |
-| `findAllOverdue()` | `List<Invoice>` | public | Lista las facturas vencidas pendientes de cobro. |
+| Método                          | Tipo Retorno        | Visibilidad | Descripción                                      |
+|---------------------------------|---------------------|-------------|--------------------------------------------------|
+| `save(Invoice invoice)`         | `Invoice`           | public      | Persiste una factura.                            |
+| `findById(UUID id)`             | `Optional<Invoice>` | public      | Busca por ID.                                    |
+| `findBySubscriptionId(UUID id)` | `List<Invoice>`     | public      | Lista las facturas de una suscripción.           |
+| `findAllOverdue()`              | `List<Invoice>`     | public      | Lista las facturas vencidas pendientes de cobro. |
 
 **4. CulqiPaymentAdapter (ACL Adapter)**
 
 Implementa `CulqiPaymentPort`. Único componente que conoce el vocabulario de Culqi.
 
-| Atributo | Tipo | Visibilidad | Descripción |
-|---|---|---|---|
-| `culqiClient` | `CulqiHttpClient` | private | Cliente HTTP hacia la API pública de Culqi. |
-| `webhookSecret` | `String` | private | Secreto compartido con Culqi para validar firmas HMAC. |
+| Atributo        | Tipo              | Visibilidad | Descripción                                            |
+|-----------------|-------------------|-------------|--------------------------------------------------------|
+| `culqiClient`   | `CulqiHttpClient` | private     | Cliente HTTP hacia la API pública de Culqi.            |
+| `webhookSecret` | `String`          | private     | Secreto compartido con Culqi para validar firmas HMAC. |
 
-| Método | Tipo Retorno | Visibilidad | Descripción |
-|---|---|---|---|
-| `createCharge(Money amount, String token)` | `PaymentReference` | public | Invoca `POST /v2/charges` de Culqi y mapea la respuesta. |
-| `refundCharge(PaymentReference)` | `void` | public | Invoca `POST /v2/refunds`. |
-| `verifyWebhookSignature(String payload, String signature)` | `boolean` | public | Valida la firma HMAC-SHA256 del webhook. |
+| Método                                                     | Tipo Retorno       | Visibilidad | Descripción                                              |
+|------------------------------------------------------------|--------------------|-------------|----------------------------------------------------------|
+| `createCharge(Money amount, String token)`                 | `PaymentReference` | public      | Invoca `POST /v2/charges` de Culqi y mapea la respuesta. |
+| `refundCharge(PaymentReference)`                           | `void`             | public      | Invoca `POST /v2/refunds`.                               |
+| `verifyWebhookSignature(String payload, String signature)` | `boolean`          | public      | Valida la firma HMAC-SHA256 del webhook.                 |
 
 **5. CulqiHttpClient (HTTP Client)**
 
 Wrapper de la API REST de Culqi usando `WebClient` de Spring.
 
-| Atributo | Tipo | Visibilidad | Descripción |
-|---|---|---|---|
-| `webClient` | `WebClient` | private | Cliente HTTP reactivo. |
-| `privateKey` | `String` | private | Clave privada de Culqi (cargada desde Azure Key Vault). |
+| Atributo     | Tipo        | Visibilidad | Descripción                                             |
+|--------------|-------------|-------------|---------------------------------------------------------|
+| `webClient`  | `WebClient` | private     | Cliente HTTP reactivo.                                  |
+| `privateKey` | `String`    | private     | Clave privada de Culqi (cargada desde Azure Key Vault). |
 
-| Método | Tipo Retorno | Visibilidad | Descripción |
-|---|---|---|---|
-| `post(String path, Object body)` | `JsonNode` | public | Ejecuta una petición POST autenticada. |
-| `get(String path)` | `JsonNode` | public | Ejecuta una petición GET autenticada. |
+| Método                           | Tipo Retorno | Visibilidad | Descripción                            |
+|----------------------------------|--------------|-------------|----------------------------------------|
+| `post(String path, Object body)` | `JsonNode`   | public      | Ejecuta una petición POST autenticada. |
+| `get(String path)`               | `JsonNode`   | public      | Ejecuta una petición GET autenticada.  |
 
 **6. IamContextFacadeAdapter (ACL Adapter)**
 
 Implementa `IamContextFacadePort` invocando al IAM Service hermano vía HTTP interno.
 
-| Método | Tipo Retorno | Visibilidad | Descripción |
-|---|---|---|---|
-| `fetchClinicIdOfAdmin(Long userId)` | `UUID` | public | Llama a `GET /api/v1/users/{id}` del IAM Service. |
-| `validateClinicAdmin(Long userId)` | `boolean` | public | Valida que el usuario tenga el rol `CLINIC_ADMIN`. |
+| Método                              | Tipo Retorno | Visibilidad | Descripción                                        |
+|-------------------------------------|--------------|-------------|----------------------------------------------------|
+| `fetchClinicIdOfAdmin(Long userId)` | `UUID`       | public      | Llama a `GET /api/v1/users/{id}` del IAM Service.  |
+| `validateClinicAdmin(Long userId)`  | `boolean`    | public      | Valida que el usuario tenga el rol `CLINIC_ADMIN`. |
 
 **7. NotificationServiceAdapter (ACL Adapter)**
 
 Implementa `NotificationServicePort` invocando al Notification Service hermano.
 
-| Método | Tipo Retorno | Visibilidad | Descripción |
-|---|---|---|---|
-| `sendInvoiceIssuedNotification(email, invoice)` | `void` | public | Encola una petición contra el Notification Service que a su vez envía el correo vía Resend. |
-| `sendPaymentFailedNotification(email, invoice)` | `void` | public | Notifica fallo de cobro. |
-| `sendSubscriptionCancelledNotification(email, sub)` | `void` | public | Notifica cancelación. |
+| Método                                              | Tipo Retorno | Visibilidad | Descripción                                                                                 |
+|-----------------------------------------------------|--------------|-------------|---------------------------------------------------------------------------------------------|
+| `sendInvoiceIssuedNotification(email, invoice)`     | `void`       | public      | Encola una petición contra el Notification Service que a su vez envía el correo vía Resend. |
+| `sendPaymentFailedNotification(email, invoice)`     | `void`       | public      | Notifica fallo de cobro.                                                                    |
+| `sendSubscriptionCancelledNotification(email, sub)` | `void`       | public      | Notifica cancelación.                                                                       |
 
 **8. SubscriptionScheduler (Spring Scheduled)**
 
 Implementación del scheduler basado en Spring `@Scheduled` con cron expressions configurables.
 
-| Método | Tipo Retorno | Visibilidad | Descripción |
-|---|---|---|---|
-| `runDailyRenewalBatch()` | `void` | public | `@Scheduled(cron = "${uflex.subscription.renewal-cron}")`. |
-| `runDailyExpirationBatch()` | `void` | public | `@Scheduled(cron = "${uflex.subscription.expiration-cron}")`. |
+| Método                      | Tipo Retorno | Visibilidad | Descripción                                                   |
+|-----------------------------|--------------|-------------|---------------------------------------------------------------|
+| `runDailyRenewalBatch()`    | `void`       | public      | `@Scheduled(cron = "${uflex.subscription.renewal-cron}")`.    |
+| `runDailyExpirationBatch()` | `void`       | public      | `@Scheduled(cron = "${uflex.subscription.expiration-cron}")`. |
 
 **9. CulqiWebhookController (Integration Controller)**
 
 Endpoint REST que recibe los webhooks de Culqi.
 
-| Método | Tipo Retorno | Visibilidad | Descripción |
-|---|---|---|---|
-| `handleWebhook(String body, String signature)` | `ResponseEntity<Void>` | public | Valida la firma HMAC, deserializa el evento y delega en el `CulqiWebhookEventHandler`. |
+| Método                                         | Tipo Retorno           | Visibilidad | Descripción                                                                            |
+|------------------------------------------------|------------------------|-------------|----------------------------------------------------------------------------------------|
+| `handleWebhook(String body, String signature)` | `ResponseEntity<Void>` | public      | Valida la firma HMAC, deserializa el evento y delega en el `CulqiWebhookEventHandler`. |
 
 **10. PlanSeederProperties (Configuration Properties)**
 
 Propiedades externas con los planes base que se insertan en un ambiente nuevo.
 
-| Campo | Tipo | Visibilidad | Descripción |
-|---|---|---|---|
-| `seedPlans` | `List<PlanSeed>` | private | Lista de planes a sembrar al arranque. |
+| Campo       | Tipo             | Visibilidad | Descripción                            |
+|-------------|------------------|-------------|----------------------------------------|
+| `seedPlans` | `List<PlanSeed>` | private     | Lista de planes a sembrar al arranque. |
 
 #### 4.2.2.5. Bounded Context Software Architecture Component Level Diagrams
 
 El diagrama de componentes del BC Subscription replica el patrón de capas del BC IAM y añade dos Anti-Corruption Layers diferenciadas: **Culqi Payments Service ACL** (contra la pasarela de pagos externa) e **IAM Context Service ACL** (contra el BC IAM hermano, para validar el rol `CLINIC_ADMIN` y obtener el `clinicId` asociado al administrador autenticado). El Infrastructure Layer, además de persistir contra la Subscription DB, también se comunica con el Notification Service hermano para enviar facturas y avisos de cobro fallido por correo. La capa Domain permanece aislada de todas las integraciones externas.
 
 <div style="text-align: center;">
-  <img src="assets/diagrams/software-architecture/components/out/subscription.png" alt="uFlex — Subscription Bounded Context Component Diagram" style="max-width: 100%; height: auto;">
+  <img src="assets/diagrams/software-architecture/components/out/subscription-components-diagram.png" alt="uFlex — Subscription Bounded Context Component Diagram" style="max-width: 100%; height: auto;">
 </div>
 
 *Figura 4.2.2.5. Diagrama de componentes (C4 Nivel 3) del Bounded Context Subscription.*
@@ -3658,7 +3777,7 @@ El diagrama de componentes del BC Subscription replica el patrón de capas del B
 El diagrama de clases del Domain Layer del BC Subscription modela exclusivamente los conceptos centrales del dominio, sin incluir las capas de application ni infrastructure. El Aggregate Root `Subscription` está compuesto por la Entity `SubscriptionPlan` (referencia al catálogo) y una colección de Entities `Invoice` (historial de facturas emitidas). Los Value Objects modelan los conceptos monetarios (`Money`, `PaymentReference`) y temporales (`BillingCycle`) así como los estados (`SubscriptionStatus`, `InvoiceStatus`). Los Domain Events publicados (`SubscriptionPurchasedEvent`, `SubscriptionLinkedToClinicEvent`, `SubscriptionActivatedEvent`, `SubscriptionRenewedEvent`, `SubscriptionCancelledEvent`, `InvoicePaidEvent`, `InvoicePaymentFailedEvent`) permiten que el BC IAM (sincronización del `clinicId`), el Notification Service (envío de correos) y la analítica interna reaccionen sin acoplamiento directo al aggregate. El único Domain Service en sentido estricto es `SubscriptionPricingService`, que encapsula la lógica de cálculo de precios y prorrateo entre planes y ciclos de facturación. El paquete `domain.exceptions` reúne las excepciones de negocio que protegen las invariantes del aggregate.
 
 <div style="text-align: center;">
-  <img src="assets/diagrams/uml/class/out/subscription.png" alt="uFlex — Subscription Bounded Context Domain Class Diagram" style="max-width: 100%; height: auto;">
+  <img src="assets/diagrams/uml/class/out/subscription-domain-layer-class-diagram.png" alt="uFlex — Subscription Bounded Context Domain Class Diagram" style="max-width: 100%; height: auto;">
 </div>
 
 *Figura 4.2.2.6.1. Diagrama de clases del dominio del Bounded Context Subscription.*
@@ -3668,7 +3787,7 @@ El diagrama de clases del Domain Layer del BC Subscription modela exclusivamente
 El esquema físico del BC Subscription en Azure Database for PostgreSQL está compuesto por tres tablas principales: `subscription_plans` (catálogo con precios mensuales y anuales, topes de pacientes y fisioterapeutas, y estado activo/inactivo), `subscriptions` (suscripción por tenant, con FK lógica a `subscription_plans`, estado, ventanas del periodo actual, fecha de próxima facturación, referencia de pago tokenizada en Culqi y `clinic_id` como referencia lógica al BC IAM sin FK dura) e `invoices` (facturas emitidas por cada periodo, con FK a `subscriptions`, monto, estado y `provider_transaction_id` para reconciliación con Culqi). Se complementa con dos tablas de catálogo (`subscription_statuses` e `invoice_statuses`) para normalizar los enumerados, e índices compuestos por `(clinic_id, status)` y `(status, next_billing_date)` para soportar las queries más frecuentes (consulta de suscripción activa por clínica y detección de renovaciones vencidas por el scheduler).
 
 <div style="text-align: center;">
-  <img src="assets/diagrams/database/erd/out/subscription-erd.png" alt="uFlex — Subscription Bounded Context Database ER Diagram" style="max-width: 100%; height: auto;">
+  <img src="assets/diagrams/database/erd/out/subscription-database-design-diagram.png" alt="uFlex — Subscription Bounded Context Database ER Diagram" style="max-width: 100%; height: auto;">
 </div>
 
 *Figura 4.2.2.6.2. Diagrama entidad-relación del Bounded Context Subscription.*
@@ -3679,7 +3798,7 @@ El esquema físico del BC Subscription en Azure Database for PostgreSQL está co
 
 <p>El bounded context <strong>Organization</strong> concentra la información organizacional y el perfil enriquecido de cada actor clínico registrado en uFlex. Mientras que el BC IAM resuelve la identidad técnica del usuario (autenticación, roles y ciclo de vida de la cuenta) y el BC Subscription gobierna el contrato comercial del tenant, el BC Organization se encarga de representar a la <em>clínica como organización</em> (denominación legal, RUC, sedes, datos de contacto, logotipo, horarios) y de mantener el <em>perfil personal y clínico</em> de los usuarios asociados a esa clínica (fisioterapeutas con su número de colegiatura y especialidad, pacientes con sus datos demográficos, contacto de emergencia y breve historial clínico, y administradores con su ámbito de gestión). Este contexto es, por tanto, la fuente autoritativa del <code>ClinicId</code> referenciado lógicamente por el resto de bounded contexts y del árbol de <code>Branches</code> (sedes) sobre el que operan Planning, Device y Therapy. Los comandos y eventos principales (<code>RegisterClinicCommand</code>, <code>AddBranchCommand</code>, <code>RegisterPhysiotherapistProfileCommand</code>, <code>RegisterPatientProfileCommand</code>, <code>AssignPatientToPhysiotherapistCommand</code>, <code>ClinicRegisteredEvent</code>, <code>ClinicActivatedEvent</code>, <code>BranchAddedEvent</code>, <code>PhysiotherapistProfileRegisteredEvent</code>, <code>PatientProfileRegisteredEvent</code>, <code>PatientAssignedToPhysiotherapistEvent</code>) fueron identificados durante el Design-Level EventStorming.</p>
 
-<h4 id="4-2-3-1-domain-layer">4.2.3.1. Domain Layer</h4>
+#### 4.2.3.1. Domain Layer
 
 <p>En esta sección se describen los elementos del Domain Layer del contexto de Organization, que modelan la estructura interna de la clínica multi-tenant y el perfil enriquecido de sus usuarios. Las invariantes clave son: una clínica no puede registrarse sin al menos una sede principal, el RUC de una clínica es único dentro de la plataforma, un paciente debe pertenecer a una única clínica a la vez y sólo puede ser asignado a un fisioterapeuta que forme parte de la misma clínica, y el perfil clínico del fisioterapeuta exige un número de colegiatura válido antes de pasar al estado <code>ACTIVE</code>.</p>
 
@@ -3949,7 +4068,7 @@ El esquema físico del BC Subscription en Azure Database for PostgreSQL está co
   </tbody>
 </table>
 
-<h4 id="4-2-3-2-interface-layer">4.2.3.2. Interface Layer</h4>
+#### 4.2.3.2. Interface Layer
 
 <p><strong>1. ClinicController (REST Controller)</strong></p>
 
@@ -4055,7 +4174,7 @@ El esquema físico del BC Subscription en Azure Database for PostgreSQL está co
   </tbody>
 </table>
 
-<h4 id="4-2-3-3-application-layer">4.2.3.3. Application Layer</h4>
+#### 4.2.3.3. Application Layer
 
 <p><strong>1. OrganizationContextFacadeImpl (ACL Facade)</strong></p>
 
@@ -4153,7 +4272,7 @@ El esquema físico del BC Subscription en Azure Database for PostgreSQL está co
   </tbody>
 </table>
 
-<h4 id="4-2-3-4-infrastructure-layer">4.2.3.4. Infrastructure Layer</h4>
+#### 4.2.3.4. Infrastructure Layer
 
 <p><strong>1. ClinicRepository (Repository Interface)</strong></p>
 
@@ -4231,7 +4350,7 @@ El esquema físico del BC Subscription en Azure Database for PostgreSQL está co
 
 El diagrama de componentes (C4 Nivel 3) muestra cómo se organiza internamente el contenedor Organization API (Java/Spring Boot). Se distinguen como piezas centrales los controladores ClinicController, BranchController, PhysiotherapistProfileController y PatientProfileController como puntos de entrada REST; los application services ClinicCommandServiceImpl, ClinicQueryServiceImpl, PhysiotherapistProfileCommandServiceImpl y PatientProfileCommandServiceImpl como responsables de materializar la lógica de aplicación; la fachada OrganizationContextFacadeImpl como ACL consumida por bounded contexts hermanos; los repositorios ClinicRepository, PhysiotherapistProfileRepository y PatientProfileRepository como abstracciones de persistencia; y los adaptadores SunatTaxIdAdapter, LicenseRegistryAdapter y AzureBlobStorageAdapter para integrarse con servicios externos de validación y almacenamiento. Todos estos componentes viven dentro del Container Boundary del Planning Service; el API Gateway queda fuera como mecanismo de enrutamiento y validación JWT, y la Organization DB también se modela externamente como Azure Database for PostgreSQL.
 
-<div style="text-align: center;"> <img src="assets/diagrams/software-architecture/components/out/organization.png" alt="uFlex — Organization Bounded Context Component Diagram" style="max-width: 100%; height: auto;"> </div>
+<div style="text-align: center;"> <img src="assets/diagrams/software-architecture/components/out/organization-components-diagram.png" alt="uFlex — Organization Bounded Context Component Diagram" style="max-width: 100%; height: auto;"> </div>
 
 Figura 4.2.3.5. Diagrama de componentes (C4 Nivel 3) del Bounded Context Organization.
 
@@ -4240,7 +4359,7 @@ Figura 4.2.3.5. Diagrama de componentes (C4 Nivel 3) del Bounded Context Organiz
 
 El diagrama de clases del Domain Layer del BC Organization modela exclusivamente los conceptos centrales del dominio, sin incluir las capas de application ni infrastructure. El paquete domain.model.aggregates contiene los Aggregate Roots Clinic, PhysiotherapistProfile y PatientProfile; domain.model.entities incluye las Entities Branch y ClinicAdminProfile; domain.model.valueobjects agrupa los Value Objects que representan la identidad organizacional, los datos de contacto, la información clínica resumida y las referencias lógicas hacia otros bounded contexts, además de los enumerados que gobiernan los estados de clínicas, sedes y perfiles; domain.model.events encapsula los Domain Events publicados por los aggregates, como ClinicRegisteredEvent, ClinicActivatedEvent, BranchAddedEvent, PhysiotherapistProfileRegisteredEvent, PatientProfileRegisteredEvent y PatientAssignedToPhysiotherapistEvent; y domain.exceptions reúne las excepciones de negocio que protegen las invariantes del dominio, por ejemplo la unicidad del RUC, la existencia de una única sede central o la restricción de asignar pacientes únicamente a fisioterapeutas de la misma clínica. Las flechas con línea continua representan composición entre aggregates y sus Value Objects, las flechas con línea punteada expresan dependencias semánticas hacia eventos publicados y excepciones lanzadas, y los rombos vacíos indican relaciones de agregación o asociación opcional dentro del modelo del dominio.
 
-<div style="text-align: center;"> <img src="assets/diagrams/uml/class/out/domain-layer-diagram-organization.png" alt="uFlex — Organization Bounded Context Domain Class Diagram" style="max-width: 100%; height: auto;"> </div>
+<div style="text-align: center;"> <img src="assets/diagrams/uml/class/out/organization-domain-layer-class-diagram.png" alt="uFlex — Organization Bounded Context Domain Class Diagram" style="max-width: 100%; height: auto;"> </div>
 
 Figura 4.2.3.6.1. Diagrama de clases del dominio del Bounded Context Organization.
 
@@ -4248,7 +4367,7 @@ Figura 4.2.3.6.1. Diagrama de clases del dominio del Bounded Context Organizatio
 
 El esquema físico del BC Organization en Azure Database for PostgreSQL se estructura alrededor de tablas principales para la gestión organizacional y de perfiles clínicos. La tabla clinics almacena la identidad de la clínica como tenant, incluyendo razón social, nombre comercial, RUC, datos de contacto, logotipo, estado y datos de auditoría; branches registra las sedes asociadas a cada clínica, con su dirección, teléfono, horarios y estado operativo; physiotherapist_profiles conserva la información profesional y laboral del fisioterapeuta, como colegiatura, especialidad, experiencia, sede principal y estado del perfil; y patient_profiles mantiene la información demográfica y clínica resumida del paciente, así como su asignación al fisioterapeuta responsable, contacto de emergencia y datos de seguro. Adicionalmente, pueden considerarse tablas de apoyo o catálogos para normalizar estados como clinic_statuses, branch_statuses, profile_statuses y admin_scopes. Los índices priorizan búsquedas por tax_id, por clinic_id, por user_id y por relaciones de asignación clínica, a fin de optimizar consultas operativas frecuentes. De manera coherente con el enfoque de bounded contexts, las referencias hacia elementos gestionados en otros contextos, como usuarios del BC IAM, se mantienen como referencias lógicas y no como foreign keys duras cruzadas entre dominios.
 
-<div style="text-align: center;"> <img src="assets/diagrams/database/erd/out/organization-erd.png" alt="uFlex — Organization Bounded Context Database ER Diagram" style="max-width: 100%; height: auto;"> </div>
+<div style="text-align: center;"> <img src="assets/diagrams/database/erd/out/organization-database-design-diagram.png" alt="uFlex — Organization Bounded Context Database ER Diagram" style="max-width: 100%; height: auto;"> </div>
 
 Figura 4.2.3.6.2. Diagrama entidad-relación del Bounded Context Organization.
 
@@ -4267,52 +4386,52 @@ Es el componente central que encapsula el estado físico del dispositivo IoT. Co
 
 **Atributos principales:**
 
-| Atributo | Tipo | Visibilidad | Descripción |
-|---|---|---|---|
-| `id` | `IotKitId` | private | Identificador único del dispositivo. |
-| `serialNumber` | `SerialNumber` | private | Código de fabricante único del hardware. |
-| `status` | `KitStatus` | private | Estado operativo (`REGISTERED`, `LINKED`, `CALIBRATING`, `DISCONNECTED`). |
-| `batteryLevel` | `BatteryLevel` | private | Porcentaje de carga actual (0-100%). |
-| `firmwareVersion` | `String` | private | Versión del firmware instalado. |
-| `createdAt` | `LocalDateTime` | private | Fecha de alta en el sistema. |
+| Atributo          | Tipo            | Visibilidad | Descripción                                                               |
+|-------------------|-----------------|-------------|---------------------------------------------------------------------------|
+| `id`              | `IotKitId`      | private     | Identificador único del dispositivo.                                      |
+| `serialNumber`    | `SerialNumber`  | private     | Código de fabricante único del hardware.                                  |
+| `status`          | `KitStatus`     | private     | Estado operativo (`REGISTERED`, `LINKED`, `CALIBRATING`, `DISCONNECTED`). |
+| `batteryLevel`    | `BatteryLevel`  | private     | Porcentaje de carga actual (0-100%).                                      |
+| `firmwareVersion` | `String`        | private     | Versión del firmware instalado.                                           |
+| `createdAt`       | `LocalDateTime` | private     | Fecha de alta en el sistema.                                              |
 
 **Métodos principales:**
 
-| Método | Tipo Retorno | Visibilidad | Descripción |
-|---|---|---|---|
-| `IotKit()` | Constructor | public | Constructor para persistencia. |
-| `register(SerialNumber)` | `IotKit` | public | Crea un nuevo kit con estado `REGISTERED`. |
-| `calibrate(CalibrationData)` | `void` | public | Actualiza parámetros de calibración y publica `IotKitCalibrated`. |
-| `link()` | `void` | public | Cambia estado a `LINKED`. |
-| `updateBattery(BatteryLevel)` | `void` | public | Registra nivel de batería y dispara alerta si es < 15%. |
-| `disconnect()` | `void` | public | Cambia estado a `DISCONNECTED` y publica `IotKitDisconnected`. |
+| Método                        | Tipo Retorno | Visibilidad | Descripción                                                       |
+|-------------------------------|--------------|-------------|-------------------------------------------------------------------|
+| `IotKit()`                    | Constructor  | public      | Constructor para persistencia.                                    |
+| `register(SerialNumber)`      | `IotKit`     | public      | Crea un nuevo kit con estado `REGISTERED`.                        |
+| `calibrate(CalibrationData)`  | `void`       | public      | Actualiza parámetros de calibración y publica `IotKitCalibrated`. |
+| `link()`                      | `void`       | public      | Cambia estado a `LINKED`.                                         |
+| `updateBattery(BatteryLevel)` | `void`       | public      | Registra nivel de batería y dispara alerta si es < 15%.           |
+| `disconnect()`                | `void`       | public      | Cambia estado a `DISCONNECTED` y publica `IotKitDisconnected`.    |
 
 **2. CalibrationData (Value Object)**
 
 Define los parámetros de ajuste necesarios para que el sensor IoT sea preciso durante la terapia.
 
-| Atributo | Tipo | Visibilidad | Descripción |
-|---|---|---|---|
-| `offset` | `Double` | private | Valor de corrección de ángulo del sensor. |
-| `lastCalibrationDate` | `LocalDateTime` | private | Fecha del último ajuste. |
+| Atributo              | Tipo            | Visibilidad | Descripción                               |
+|-----------------------|-----------------|-------------|-------------------------------------------|
+| `offset`              | `Double`        | private     | Valor de corrección de ángulo del sensor. |
+| `lastCalibrationDate` | `LocalDateTime` | private     | Fecha del último ajuste.                  |
 
 **3. KitStatus (Value Object - Enum)**
 
-| Atributo | Tipo | Visibilidad | Descripción |
-|---|---|---|---|
-| `REGISTERED` | Enum | public | Kit disponible en inventario. |
-| `LINKED` | Enum | public | Kit en uso activo por un paciente. |
-| `CALIBRATING` | Enum | public | Proceso de calibración en curso. |
-| `DISCONNECTED` | Enum | public | Kit fuera de línea o sin señal. |
+| Atributo       | Tipo | Visibilidad | Descripción                        |
+|----------------|------|-------------|------------------------------------|
+| `REGISTERED`   | Enum | public      | Kit disponible en inventario.      |
+| `LINKED`       | Enum | public      | Kit en uso activo por un paciente. |
+| `CALIBRATING`  | Enum | public      | Proceso de calibración en curso.   |
+| `DISCONNECTED` | Enum | public      | Kit fuera de línea o sin señal.    |
 
 **4. DeviceCommandService (Domain Service)**
 
 Coordina la lógica compleja de estados del hardware.
 
-| Método | Tipo Retorno | Visibilidad | Descripción |
-|---|---|---|---|
-| `handle(RegisterIotKitCommand)` | `UUID` | public | Registra un nuevo kit validando que el serial sea único. |
-| `handle(CalibrateKitCommand)` | `void` | public | Ejecuta la calibración en el agregado `IotKit`. |
+| Método                          | Tipo Retorno | Visibilidad | Descripción                                              |
+|---------------------------------|--------------|-------------|----------------------------------------------------------|
+| `handle(RegisterIotKitCommand)` | `UUID`       | public      | Registra un nuevo kit validando que el serial sea único. |
+| `handle(CalibrateKitCommand)`   | `void`       | public      | Ejecuta la calibración en el agregado `IotKit`.          |
 
 #### 4.2.4.2. Interface Layer
 
@@ -4320,41 +4439,41 @@ En esta sección se presentan los contratos REST para la gestión de inventario 
 
 **1. IotKitController (REST Controller)**
 
-| Método | Ruta | HTTP | Descripción |
-|---|---|---|---|
-| `register` | `/api/v1/devices` | POST | Registra un nuevo kit IoT en el sistema. |
-| `getById` | `/api/v1/devices/{id}` | GET | Obtiene el estado y salud de un kit específico. |
-| `updateBattery` | `/api/v1/devices/{id}/battery` | PATCH | Endpoint para telemetría de batería (usado por el sensor). |
-| `calibrate` | `/api/v1/devices/{id}/calibrate` | POST | Inicia el proceso de calibración técnica. |
+| Método          | Ruta                             | HTTP  | Descripción                                                |
+|-----------------|----------------------------------|-------|------------------------------------------------------------|
+| `register`      | `/api/v1/devices`                | POST  | Registra un nuevo kit IoT en el sistema.                   |
+| `getById`       | `/api/v1/devices/{id}`           | GET   | Obtiene el estado y salud de un kit específico.            |
+| `updateBattery` | `/api/v1/devices/{id}/battery`   | PATCH | Endpoint para telemetría de batería (usado por el sensor). |
+| `calibrate`     | `/api/v1/devices/{id}/calibrate` | POST  | Inicia el proceso de calibración técnica.                  |
 
 **2. Resources (DTOs)**
 
-| Resource | Atributos principales | Descripción |
-|---|---|---|
-| `RegisterIotKitResource` | `serialNumber: String` | Datos requeridos para dar de alta un kit. |
-| `IotKitResource` | `id: UUID`, `serialNumber: String`, `status: String` | Representación pública del kit. |
+| Resource                 | Atributos principales                                | Descripción                               |
+|--------------------------|------------------------------------------------------|-------------------------------------------|
+| `RegisterIotKitResource` | `serialNumber: String`                               | Datos requeridos para dar de alta un kit. |
+| `IotKitResource`         | `id: UUID`, `serialNumber: String`, `status: String` | Representación pública del kit.           |
 
 **3. Transform (Assemblers)**
 
-| Assembler | Entrada | Salida | Descripción |
-|---|---|---|---|
-| `IotKitFromResourceAssembler` | `RegisterIotKitResource` | `RegisterIotKitCommand` | Mapea el request a comando de dominio. |
-| `IotKitResourceFromEntityAssembler` | `IotKit` | `IotKitResource` | Convierte entidad a DTO de salida. |
+| Assembler                           | Entrada                  | Salida                  | Descripción                            |
+|-------------------------------------|--------------------------|-------------------------|----------------------------------------|
+| `IotKitFromResourceAssembler`       | `RegisterIotKitResource` | `RegisterIotKitCommand` | Mapea el request a comando de dominio. |
+| `IotKitResourceFromEntityAssembler` | `IotKit`                 | `IotKitResource`        | Convierte entidad a DTO de salida.     |
 
 #### 4.2.4.3. Application Layer
 
 **1. IotKitCommandServiceImpl (Command Service)**
 
-| Método | Tipo Retorno | Visibilidad | Descripción |
-|---|---|---|---|
-| `handle(RegisterIotKitCommand)` | `UUID` | public | Persiste el nuevo kit y valida duplicidad de serial. |
-| `handle(UpdateBatteryCommand)` | `void` | public | Procesa telemetría de batería y publica eventos de mantenimiento. |
+| Método                          | Tipo Retorno | Visibilidad | Descripción                                                       |
+|---------------------------------|--------------|-------------|-------------------------------------------------------------------|
+| `handle(RegisterIotKitCommand)` | `UUID`       | public      | Persiste el nuevo kit y valida duplicidad de serial.              |
+| `handle(UpdateBatteryCommand)`  | `void`       | public      | Procesa telemetría de batería y publica eventos de mantenimiento. |
 
 **2. IotKitQueryServiceImpl (Query Service)**
 
-| Método | Tipo Retorno | Visibilidad | Descripción |
-|---|---|---|---|
-| `handle(GetAllKitsQuery)` | `List<IotKit>` | public | Retorna inventario completo de kits. |
+| Método                    | Tipo Retorno   | Visibilidad | Descripción                          |
+|---------------------------|----------------|-------------|--------------------------------------|
+| `handle(GetAllKitsQuery)` | `List<IotKit>` | public      | Retorna inventario completo de kits. |
 
 #### 4.2.4.4. Infrastructure Layer
 
@@ -4362,19 +4481,19 @@ En esta sección se presentan los contratos REST para la gestión de inventario 
 
 Interfaz de persistencia para el agregado `IotKit` usando Spring Data JPA.
 
-| Método | Tipo Retorno | Visibilidad | Descripción |
-|---|---|---|---|
-| `findById(IotKitId id)` | `Optional<IotKit>` | public | Busca kit por ID. |
-| `findBySerialNumber(String sn)` | `Optional<IotKit>` | public | Busca kit por número de serie físico. |
-| `save(IotKit kit)` | `IotKit` | public | Persiste el estado del kit. |
-| `existsBySerialNumber(String sn)` | `boolean` | public | Valida existencia de serial para evitar duplicados. |
+| Método                            | Tipo Retorno       | Visibilidad | Descripción                                         |
+|-----------------------------------|--------------------|-------------|-----------------------------------------------------|
+| `findById(IotKitId id)`           | `Optional<IotKit>` | public      | Busca kit por ID.                                   |
+| `findBySerialNumber(String sn)`   | `Optional<IotKit>` | public      | Busca kit por número de serie físico.               |
+| `save(IotKit kit)`                | `IotKit`           | public      | Persiste el estado del kit.                         |
+| `existsBySerialNumber(String sn)` | `boolean`          | public      | Valida existencia de serial para evitar duplicados. |
 
 #### 4.2.4.5. Bounded Context Software Architecture Component Level Diagrams
 
 El diagrama de componentes (C4 Nivel 3) muestra cómo se organiza internamente el contenedor Device Service (Java/Spring Boot). Se distinguen componentes clave: el IotKitController y el TelemetryController como puntos de entrada REST para la gestión administrativa y la recepción de telemetría, los application services IotKitCommandServiceImpl e IotKitQueryServiceImpl que materializan el patrón CQRS para separar la lógica de modificación del estado del hardware de las consultas de inventario, el IotKitRepository (JPA) como abstracción de persistencia y el DeviceContextFacade como ACL para exponer la disponibilidad y salud de los kits IoT a otros contextos como Planning o Therapy.
 
 <div style="text-align: center;">
-  <img src="assets/diagrams/software-architecture/components/out/device.png" alt="uFlex — Device Bounded Context Component Diagram" style="max-width: 100%; height: auto;">
+  <img src="assets/diagrams/software-architecture/components/out/device-components-diagram.png" alt="uFlex — Device Bounded Context Component Diagram" style="max-width: 100%; height: auto;">
 </div>
 
 *Figura 4.2.4.5. Diagrama de componentes (C4 Nivel 3) del Bounded Context Device.*
@@ -4388,7 +4507,7 @@ El diagrama de componentes (C4 Nivel 3) muestra cómo se organiza internamente e
 El diagrama de clases del Domain Layer del BC Device modela exclusivamente los conceptos centrales de la gestión de hardware IoT, sin incluir las capas de application ni infrastructure. El paquete domain.model.aggregates contiene al Aggregate Root IotKit; domain.model.valueobjects agrupa los Value Objects (IotKitId, SerialNumber, BatteryLevel, CalibrationData) y el enumerado (KitStatus); domain.model.events encapsula los Domain Events publicados por el aggregate (IotKitRegisteredEvent, IotKitCalibratedEvent, BatteryLevelChangedEvent, IotKitStatusChangedEvent); y domain.exceptions reúne las excepciones de negocio que protegen las invariantes del dominio (por ejemplo, evitar la duplicidad de registros o calibraciones en estados inválidos). Las flechas con línea continua marcan composición (el IotKit contiene sus Value Objects de estado y calibración), las flechas con línea punteada marcan dependencias semánticas (eventos publicados y excepciones lanzadas).
 
 <div style="text-align: center;">
-  <img src="assets/diagrams/uml/class/out/device.png" alt="uFlex — Device Bounded Context Domain Class Diagram" style="max-width: 100%; height: auto;">
+  <img src="assets/diagrams/uml/class/out/device-domain-layer-class-diagram.png" alt="uFlex — Device Bounded Context Domain Class Diagram" style="max-width: 100%; height: auto;">
 </div>
 
 *Figura 4.2.4.6.1. Diagrama de clases del dominio del Bounded Context Device.*
@@ -4398,7 +4517,7 @@ El diagrama de clases del Domain Layer del BC Device modela exclusivamente los c
 El esquema físico del BC Device en Azure Database for PostgreSQL consta de una tabla principal iot_kits que almacena el estado operativo y de salud del sensor (identificador único, serial_number, status_code, nivel de batería, versión de firmware, datos de calibración y timestamps de auditoría), y una tabla de catálogo kit_statuses para normalizar los estados permitidos del ciclo de vida del hardware (REGISTERED, LINKED, CALIBRATING, DISCONNECTED). Los índices incluyen búsquedas por serial_number para validar la unicidad y trazabilidad física del equipo, y por status_code para monitorear rápidamente flotas de dispositivos disponibles o en error. Se optó deliberadamente por no declarar foreign keys duras hacia tablas de otros bounded contexts para mantener la autonomía entre módulos, gestionando la relación lógica del kit con los pacientes y terapeutas a través de los servicios de aplicación.
 
 <div style="text-align: center;">
-  <img src="assets/diagrams/database/erd/out/device-erd.png" alt="uFlex — Device Bounded Context Database ER Diagram" style="max-width: 100%; height: auto;">
+  <img src="assets/diagrams/database/erd/out/device-database-design-diagram.png" alt="uFlex — Device Bounded Context Database ER Diagram" style="max-width: 100%; height: auto;">
 </div>
 
 *Figura 4.2.4.6.2. Diagrama entidad-relación del Bounded Context Device.*
@@ -4417,65 +4536,65 @@ Es el núcleo del proceso de rehabilitación. Define qué ejercicios debe realiz
 
 **Atributos principales:**
 
-| Atributo | Tipo | Visibilidad | Descripción |
-|---|---|---|---|
-| `id` | `TreatmentPlanId` | private | Identificador único del plan de tratamiento. |
-| `patientId` | `PatientId` | private | Referencia lógica al paciente (del BC IAM). |
-| `physiotherapistId` | `PhysiotherapistId` | private | Referencia al especialista responsable. |
-| `jointType` | `JointType` | private | Articulación a tratar (`ELBOW`, `WRIST`). |
-| `targetROM` | `TargetROM` | private | Rangos de movimiento objetivo (metas angulares). |
-| `status` | `PlanStatus` | private | Estado del plan (`CREATED`, `ACTIVE`, `FINALIZED`, `REMOVED`). |
-| `deviceId` | `DeviceId` | private | Identificador del kit IoT vinculado al plan. |
-| `createdAt` | `LocalDateTime` | private | Fecha de creación del plan. |
+| Atributo            | Tipo                | Visibilidad | Descripción                                                    |
+|---------------------|---------------------|-------------|----------------------------------------------------------------|
+| `id`                | `TreatmentPlanId`   | private     | Identificador único del plan de tratamiento.                   |
+| `patientId`         | `PatientId`         | private     | Referencia lógica al paciente (del BC IAM).                    |
+| `physiotherapistId` | `PhysiotherapistId` | private     | Referencia al especialista responsable.                        |
+| `jointType`         | `JointType`         | private     | Articulación a tratar (`ELBOW`, `WRIST`).                      |
+| `targetROM`         | `TargetROM`         | private     | Rangos de movimiento objetivo (metas angulares).               |
+| `status`            | `PlanStatus`        | private     | Estado del plan (`CREATED`, `ACTIVE`, `FINALIZED`, `REMOVED`). |
+| `deviceId`          | `DeviceId`          | private     | Identificador del kit IoT vinculado al plan.                   |
+| `createdAt`         | `LocalDateTime`     | private     | Fecha de creación del plan.                                    |
 
 **Métodos principales:**
 
-| Método | Tipo Retorno | Visibilidad | Descripción |
-|---|---|---|---|
-| `TreatmentPlan()` | Constructor | public | Constructor requerido para persistencia. |
-| `create(PatientId, JointType, TargetROM)` | `TreatmentPlan` | public | Crea un nuevo plan en estado `CREATED`. |
-| `linkDevice(DeviceId)` | `void` | public | Vincula un kit IoT al plan, cambia estado a `ACTIVE` y publica `IoTKitLinkedToPatient`. |
-| `updatePlan(TargetROM)` | `void` | public | Actualiza las metas angulares y publica `TreatmentPlanUpdated`. |
-| `remove()` | `void` | public | Ejecuta eliminación lógica del plan y publica `TreatmentPlanRemoved`. |
-| `finalize(ClinicalReport)` | `void` | public | Cierra el plan tras el alta médica y publica `TreatmentPlanFinalized`. |
+| Método                                    | Tipo Retorno    | Visibilidad | Descripción                                                                             |
+|-------------------------------------------|-----------------|-------------|-----------------------------------------------------------------------------------------|
+| `TreatmentPlan()`                         | Constructor     | public      | Constructor requerido para persistencia.                                                |
+| `create(PatientId, JointType, TargetROM)` | `TreatmentPlan` | public      | Crea un nuevo plan en estado `CREATED`.                                                 |
+| `linkDevice(DeviceId)`                    | `void`          | public      | Vincula un kit IoT al plan, cambia estado a `ACTIVE` y publica `IoTKitLinkedToPatient`. |
+| `updatePlan(TargetROM)`                   | `void`          | public      | Actualiza las metas angulares y publica `TreatmentPlanUpdated`.                         |
+| `remove()`                                | `void`          | public      | Ejecuta eliminación lógica del plan y publica `TreatmentPlanRemoved`.                   |
+| `finalize(ClinicalReport)`                | `void`          | public      | Cierra el plan tras el alta médica y publica `TreatmentPlanFinalized`.                  |
 
 **2. TargetROM (Value Object)**
 
 Define los límites cinemáticos que el paciente debe alcanzar o no exceder durante su terapia.
 
-| Atributo | Tipo | Visibilidad | Descripción |
-|---|---|---|---|
-| `minAngle` | `Double` | private | Angulo minimo permitido (por ejemplo, extension total). |
-| `maxAngle` | `Double` | private | Angulo maximo objetivo (por ejemplo, flexion deseada). |
-| `unit` | `String` | private | Unidad de medida, siempre `degrees`. |
+| Atributo   | Tipo     | Visibilidad | Descripción                                             |
+|------------|----------|-------------|---------------------------------------------------------|
+| `minAngle` | `Double` | private     | Angulo minimo permitido (por ejemplo, extension total). |
+| `maxAngle` | `Double` | private     | Angulo maximo objetivo (por ejemplo, flexion deseada).  |
+| `unit`     | `String` | private     | Unidad de medida, siempre `degrees`.                    |
 
 **3. PlanStatus (Value Object)**
 
 Estado de ciclo de vida del plan terapéutico.
 
-| Atributo | Tipo | Visibilidad | Descripción |
-|---|---|---|---|
-| `CREATED` | Enum | public | Plan diseñado pero sin equipo vinculado. |
-| `ACTIVE` | Enum | public | Plan en ejecución con equipo IoT vinculado. |
-| `FINALIZED` | Enum | public | Tratamiento concluido exitosamente (alta). |
-| `REMOVED` | Enum | public | Plan cancelado o descartado. |
+| Atributo    | Tipo | Visibilidad | Descripción                                 |
+|-------------|------|-------------|---------------------------------------------|
+| `CREATED`   | Enum | public      | Plan diseñado pero sin equipo vinculado.    |
+| `ACTIVE`    | Enum | public      | Plan en ejecución con equipo IoT vinculado. |
+| `FINALIZED` | Enum | public      | Tratamiento concluido exitosamente (alta).  |
+| `REMOVED`   | Enum | public      | Plan cancelado o descartado.                |
 
 **4. JointType (Value Object)**
 
 Clasifica la articulación objetivo del tratamiento.
 
-| Atributo | Tipo | Visibilidad | Descripción |
-|---|---|---|---|
-| `ELBOW` | Enum | public | Tratamiento enfocado en la articulación del codo. |
-| `WRIST` | Enum | public | Tratamiento enfocado en la articulación de la muñeca. |
+| Atributo | Tipo | Visibilidad | Descripción                                           |
+|----------|------|-------------|-------------------------------------------------------|
+| `ELBOW`  | Enum | public      | Tratamiento enfocado en la articulación del codo.     |
+| `WRIST`  | Enum | public      | Tratamiento enfocado en la articulación de la muñeca. |
 
 **5. DeviceId (Value Object)**
 
 Referencia al kit de sensores asignado. Asegura que el código del hardware sea válido antes de la vinculación.
 
-| Atributo | Tipo | Visibilidad | Descripción |
-|---|---|---|---|
-| `serialNumber` | `String` | private | Código único del kit IoT (por ejemplo, `KT-2026-001`). |
+| Atributo       | Tipo     | Visibilidad | Descripción                                            |
+|----------------|----------|-------------|--------------------------------------------------------|
+| `serialNumber` | `String` | private     | Código único del kit IoT (por ejemplo, `KT-2026-001`). |
 
 **6. ClinicalReport (Entity)**
 
@@ -4483,30 +4602,30 @@ Documento generado al finalizar el tratamiento que resume el desempeño biomecá
 
 **Atributos principales:**
 
-| Atributo | Tipo | Visibilidad | Descripción |
-|---|---|---|---|
-| `id` | `Long` | private | Identificador del reporte clínico. |
-| `summary` | `String` | private | Observaciones finales del fisioterapeuta. |
-| `completionRate` | `Double` | private | Porcentaje de cumplimiento de las sesiones prescritas. |
+| Atributo         | Tipo     | Visibilidad | Descripción                                            |
+|------------------|----------|-------------|--------------------------------------------------------|
+| `id`             | `Long`   | private     | Identificador del reporte clínico.                     |
+| `summary`        | `String` | private     | Observaciones finales del fisioterapeuta.              |
+| `completionRate` | `Double` | private     | Porcentaje de cumplimiento de las sesiones prescritas. |
 
 **10. PlanningCommandService (Domain Service)**
 
 Coordina las operaciones complejas que involucran el estado de los planes de tratamiento.
 
-| Método | Tipo Retorno | Visibilidad | Descripción |
-|---|---|---|---|
-| `handle(CreateTreatmentPlanCommand)` | `UUID` | public | Registra un nuevo plan y valida que el paciente sea apto. |
-| `handle(LinkIoTKitCommand)` | `boolean` | public | Verifica disponibilidad del kit y lo vincula al paciente. |
-| `handle(DischargePatientCommand)` | `void` | public | Ejecuta el alta, genera el reporte y libera el kit IoT (`Unlink`). |
+| Método                               | Tipo Retorno | Visibilidad | Descripción                                                        |
+|--------------------------------------|--------------|-------------|--------------------------------------------------------------------|
+| `handle(CreateTreatmentPlanCommand)` | `UUID`       | public      | Registra un nuevo plan y valida que el paciente sea apto.          |
+| `handle(LinkIoTKitCommand)`          | `boolean`    | public      | Verifica disponibilidad del kit y lo vincula al paciente.          |
+| `handle(DischargePatientCommand)`    | `void`       | public      | Ejecuta el alta, genera el reporte y libera el kit IoT (`Unlink`). |
 
 **11. PlanningQueryService (Domain Service)**
 
 Maneja las consultas de información sobre planes activos e históricos.
 
-| Método | Tipo Retorno | Visibilidad | Descripción |
-|---|---|---|---|
-| `handle(GetActivePlanByPatientIdQuery)` | `Optional<TreatmentPlan>` | public | Obtiene el plan activo que el paciente debe ejecutar en su app. |
-| `handle(GetClinicalHistoryQuery)` | `List<TreatmentPlan>` | public | Lista todos los planes (activos y finalizados) de un paciente. |
+| Método                                  | Tipo Retorno              | Visibilidad | Descripción                                                     |
+|-----------------------------------------|---------------------------|-------------|-----------------------------------------------------------------|
+| `handle(GetActivePlanByPatientIdQuery)` | `Optional<TreatmentPlan>` | public      | Obtiene el plan activo que el paciente debe ejecutar en su app. |
+| `handle(GetClinicalHistoryQuery)`       | `List<TreatmentPlan>`     | public      | Lista todos los planes (activos y finalizados) de un paciente.  |
 
 #### 4.2.5.2. Interface Layer
 
@@ -4518,13 +4637,13 @@ Este controlador expone las capacidades de prescripción clínica y gestión de 
 
 **Endpoints principales:**
 
-| Método | Ruta base | HTTP | Descripción |
-|---|---|---|---|
-| `createTreatmentPlan` | `/api/v1/plans` | POST | Registra un nuevo plan de tratamiento para un paciente específico. |
-| `updateTreatmentPlan` | `/api/v1/plans/{id}` | PUT | Actualiza las metas angulares (`TargetROM`) o detalles del plan existente. |
-| `getPlanById` | `/api/v1/plans/{id}` | GET | Recupera la información detallada de un plan de tratamiento. |
-| `getActivePlanByPatient` | `/api/v1/plans/active/{patientId}` | GET | Obtiene el plan vigente que el paciente debe ejecutar en su aplicación móvil. |
-| `removeTreatmentPlan` | `/api/v1/plans/{id}` | DELETE | Realiza la eliminación lógica de un plan que no ha sido iniciado. |
+| Método                   | Ruta base                          | HTTP   | Descripción                                                                   |
+|--------------------------|------------------------------------|--------|-------------------------------------------------------------------------------|
+| `createTreatmentPlan`    | `/api/v1/plans`                    | POST   | Registra un nuevo plan de tratamiento para un paciente específico.            |
+| `updateTreatmentPlan`    | `/api/v1/plans/{id}`               | PUT    | Actualiza las metas angulares (`TargetROM`) o detalles del plan existente.    |
+| `getPlanById`            | `/api/v1/plans/{id}`               | GET    | Recupera la información detallada de un plan de tratamiento.                  |
+| `getActivePlanByPatient` | `/api/v1/plans/active/{patientId}` | GET    | Obtiene el plan vigente que el paciente debe ejecutar en su aplicación móvil. |
+| `removeTreatmentPlan`    | `/api/v1/plans/{id}`               | DELETE | Realiza la eliminación lógica de un plan que no ha sido iniciado.             |
 
 **2. ClinicalDischargeController (REST Controller)**
 
@@ -4532,37 +4651,37 @@ Controlador especializado en el cierre del ciclo terapéutico y la liberación d
 
 **Endpoints principales:**
 
-| Método | Ruta base | HTTP | Descripción |
-|---|---|---|---|
-| `dischargePatient` | `/api/v1/plans/{id}/discharge` | POST | Ejecuta el alta médica, genera el reporte final y cambia el estado del plan a `FINALIZED`. |
-| `linkIoTKit` | `/api/v1/plans/{id}/link-device` | PATCH | Vincula un kit de sensores (`DeviceId`) a un plan de tratamiento activo. |
-| `getClinicalHistory` | `/api/v1/plans/history/{patientId}` | GET | Lista todos los planes previos y reportes clínicos del paciente. |
+| Método               | Ruta base                           | HTTP  | Descripción                                                                                |
+|----------------------|-------------------------------------|-------|--------------------------------------------------------------------------------------------|
+| `dischargePatient`   | `/api/v1/plans/{id}/discharge`      | POST  | Ejecuta el alta médica, genera el reporte final y cambia el estado del plan a `FINALIZED`. |
+| `linkIoTKit`         | `/api/v1/plans/{id}/link-device`    | PATCH | Vincula un kit de sensores (`DeviceId`) a un plan de tratamiento activo.                   |
+| `getClinicalHistory` | `/api/v1/plans/history/{patientId}` | GET   | Lista todos los planes previos y reportes clínicos del paciente.                           |
 
 **3. Resources (DTOs)**
 
 Representaciones de datos optimizadas para la comunicación externa, implementadas como Java Records.
 
-| Resource | Atributos principales | Descripción |
-|---|---|---|
-| `CreateTreatmentPlanResource` | `patientId: UUID`, `physiotherapistId: UUID`, `jointType: String`, `minAngle: Double`, `maxAngle: Double` | Datos necesarios para la creación inicial del plan. |
-| `TreatmentPlanResource` | `id: UUID`, `patientId: UUID`, `jointType: String`, `status: String`, `minAngle: Double`, `maxAngle: Double`, `deviceId: String` | Representación completa del plan para consulta. |
-| `UpdateTreatmentPlanResource` | `minAngle: Double`, `maxAngle: Double` | Datos permitidos para la actualización de metas terapéuticas. |
-| `LinkDeviceResource` | `serialNumber: String` | Contiene el identificador del hardware a vincular. |
-| `DischargeResource` | `summary: String`, `completionRate: Double` | Información necesaria para cerrar el caso clínico. |
-| `ClinicalReportResource` | `planId: UUID`, `summary: String`, `finalizedAt: Date` | Resumen ejecutivo del alta médica. |
+| Resource                      | Atributos principales                                                                                                            | Descripción                                                   |
+|-------------------------------|----------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------|
+| `CreateTreatmentPlanResource` | `patientId: UUID`, `physiotherapistId: UUID`, `jointType: String`, `minAngle: Double`, `maxAngle: Double`                        | Datos necesarios para la creación inicial del plan.           |
+| `TreatmentPlanResource`       | `id: UUID`, `patientId: UUID`, `jointType: String`, `status: String`, `minAngle: Double`, `maxAngle: Double`, `deviceId: String` | Representación completa del plan para consulta.               |
+| `UpdateTreatmentPlanResource` | `minAngle: Double`, `maxAngle: Double`                                                                                           | Datos permitidos para la actualización de metas terapéuticas. |
+| `LinkDeviceResource`          | `serialNumber: String`                                                                                                           | Contiene el identificador del hardware a vincular.            |
+| `DischargeResource`           | `summary: String`, `completionRate: Double`                                                                                      | Información necesaria para cerrar el caso clínico.            |
+| `ClinicalReportResource`      | `planId: UUID`, `summary: String`, `finalizedAt: Date`                                                                           | Resumen ejecutivo del alta médica.                            |
 
 **4. Transform (Assemblers)**
 
 Componentes encargados de la traducción entre el modelo de dominio y la representación externa.
 
-| Assembler | Entrada | Salida | Descripción |
-|---|---|---|---|
-| `TreatmentPlanFromResourceAssembler` | `CreateTreatmentPlanResource` | `CreateTreatmentPlanCommand` | Transforma el JSON de creación en un command de dominio. |
-| `UpdatePlanCommandFromResourceAssembler` | `UpdateTreatmentPlanResource` | `UpdateTreatmentPlanCommand` | Mapea la actualización de metas angulares. |
-| `TreatmentPlanResourceFromEntityAssembler` | `TreatmentPlan` | `TreatmentPlanResource` | Convierte el aggregate root en un recurso de lectura. |
-| `LinkDeviceCommandFromResourceAssembler` | `LinkDeviceResource` | `LinkDeviceCommand` | Crea el command para asociar el hardware al paciente. |
-| `DischargeCommandFromResourceAssembler` | `DischargeResource` | `DischargePatientCommand` | Prepara los datos para el proceso de alta y liberación de equipo. |
-| `ClinicalReportResourceFromEntityAssembler` | `ClinicalReport` | `ClinicalReportResource` | Mapea la entidad de reporte a su representación REST. |
+| Assembler                                   | Entrada                       | Salida                       | Descripción                                                       |
+|---------------------------------------------|-------------------------------|------------------------------|-------------------------------------------------------------------|
+| `TreatmentPlanFromResourceAssembler`        | `CreateTreatmentPlanResource` | `CreateTreatmentPlanCommand` | Transforma el JSON de creación en un command de dominio.          |
+| `UpdatePlanCommandFromResourceAssembler`    | `UpdateTreatmentPlanResource` | `UpdateTreatmentPlanCommand` | Mapea la actualización de metas angulares.                        |
+| `TreatmentPlanResourceFromEntityAssembler`  | `TreatmentPlan`               | `TreatmentPlanResource`      | Convierte el aggregate root en un recurso de lectura.             |
+| `LinkDeviceCommandFromResourceAssembler`    | `LinkDeviceResource`          | `LinkDeviceCommand`          | Crea el command para asociar el hardware al paciente.             |
+| `DischargeCommandFromResourceAssembler`     | `DischargeResource`           | `DischargePatientCommand`    | Prepara los datos para el proceso de alta y liberación de equipo. |
+| `ClinicalReportResourceFromEntityAssembler` | `ClinicalReport`              | `ClinicalReportResource`     | Mapea la entidad de reporte a su representación REST.             |
 
 #### 4.2.5.3. Application Layer
 
@@ -4570,48 +4689,48 @@ Componentes encargados de la traducción entre el modelo de dominio y la represe
 
 Proporciona un punto de entrada simplificado para que otros bounded contexts consulten el estado de los planes de tratamiento sin exponer la complejidad interna del aggregate.
 
-| Atributo | Tipo | Visibilidad | Descripción |
-|---|---|---|---|
-| `planningQueryService` | `PlanningQueryService` | private | Servicio de consultas del dominio Planning. |
+| Atributo               | Tipo                   | Visibilidad | Descripción                                 |
+|------------------------|------------------------|-------------|---------------------------------------------|
+| `planningQueryService` | `PlanningQueryService` | private     | Servicio de consultas del dominio Planning. |
 
 **Métodos principales:**
 
-| Método | Tipo Retorno | Visibilidad | Descripción |
-|---|---|---|---|
-| `fetchActivePlanByPatientId(UUID patientId)` | `Optional<ActivePlanDto>` | public | Retorna información básica del plan activo (metas y dispositivo) para la ejecución de la terapia. |
-| `isPatientUnderActiveTreatment(UUID patientId)` | `boolean` | public | Verifica si el paciente tiene un plan en estado `ACTIVE`. |
+| Método                                          | Tipo Retorno              | Visibilidad | Descripción                                                                                       |
+|-------------------------------------------------|---------------------------|-------------|---------------------------------------------------------------------------------------------------|
+| `fetchActivePlanByPatientId(UUID patientId)`    | `Optional<ActivePlanDto>` | public      | Retorna información básica del plan activo (metas y dispositivo) para la ejecución de la terapia. |
+| `isPatientUnderActiveTreatment(UUID patientId)` | `boolean`                 | public      | Verifica si el paciente tiene un plan en estado `ACTIVE`.                                         |
 
 **2. TreatmentPlanCommandServiceImpl (Command Service Implementation)**
 
 Orquesta la lógica de creación, actualización y cierre de planes. Coordina la publicación de eventos para notificar al BC de Inventario cuando un equipo es vinculado o liberado.
 
-| Atributo | Tipo | Visibilidad | Descripción |
-|---|---|---|---|
-| `treatmentPlanRepository` | `TreatmentPlanRepository` | private | Acceso a la persistencia de planes. |
-| `externalInventoryService` | `InventoryService` | private | ACL para validar la existencia de dispositivos físicos. |
-| `eventPublisher` | `ApplicationEventPublisher` | private | Publicador de eventos de dominio. |
+| Atributo                   | Tipo                        | Visibilidad | Descripción                                             |
+|----------------------------|-----------------------------|-------------|---------------------------------------------------------|
+| `treatmentPlanRepository`  | `TreatmentPlanRepository`   | private     | Acceso a la persistencia de planes.                     |
+| `externalInventoryService` | `InventoryService`          | private     | ACL para validar la existencia de dispositivos físicos. |
+| `eventPublisher`           | `ApplicationEventPublisher` | private     | Publicador de eventos de dominio.                       |
 
 **Métodos principales:**
 
-| Método | Tipo Retorno | Visibilidad | Descripción |
-|---|---|---|---|
-| `handle(CreateTreatmentPlanCommand)` | `UUID` | public | Crea el plan en estado `CREATED` y valida que no existan planes activos duplicados. |
-| `handle(LinkIoTKitCommand)` | `void` | public | Valida el `serialNumber` con el BC de Inventario, vincula el equipo y publica `IoTKitLinkedToPatient`. |
-| `handle(UpdateTreatmentPlanCommand)` | `void` | public | Actualiza los `TargetROM` y publica `TreatmentPlanUpdated`. |
-| `handle(DischargePatientCommand)` | `void` | public | Genera el reporte clínico, finaliza el plan y publica `TreatmentPlanFinalized`. |
+| Método                               | Tipo Retorno | Visibilidad | Descripción                                                                                            |
+|--------------------------------------|--------------|-------------|--------------------------------------------------------------------------------------------------------|
+| `handle(CreateTreatmentPlanCommand)` | `UUID`       | public      | Crea el plan en estado `CREATED` y valida que no existan planes activos duplicados.                    |
+| `handle(LinkIoTKitCommand)`          | `void`       | public      | Valida el `serialNumber` con el BC de Inventario, vincula el equipo y publica `IoTKitLinkedToPatient`. |
+| `handle(UpdateTreatmentPlanCommand)` | `void`       | public      | Actualiza los `TargetROM` y publica `TreatmentPlanUpdated`.                                            |
+| `handle(DischargePatientCommand)`    | `void`       | public      | Genera el reporte clínico, finaliza el plan y publica `TreatmentPlanFinalized`.                        |
 
 **3. PlanningQueryServiceImpl (Query Service Implementation)**
 
-| Atributo | Tipo | Visibilidad | Descripción |
-|---|---|---|---|
-| `treatmentPlanRepository` | `TreatmentPlanRepository` | private | Acceso al read model de planes de tratamiento. |
+| Atributo                  | Tipo                      | Visibilidad | Descripción                                    |
+|---------------------------|---------------------------|-------------|------------------------------------------------|
+| `treatmentPlanRepository` | `TreatmentPlanRepository` | private     | Acceso al read model de planes de tratamiento. |
 
 **Métodos principales:**
 
-| Método | Tipo Retorno | Visibilidad | Descripción |
-|---|---|---|---|
-| `handle(GetActivePlanByPatientIdQuery)` | `Optional<TreatmentPlan>` | public | Recupera el plan vigente para el paciente. |
-| `handle(GetClinicalHistoryQuery)` | `List<TreatmentPlan>` | public | Lista todos los planes históricos asociados a un `PatientId`. |
+| Método                                  | Tipo Retorno              | Visibilidad | Descripción                                                   |
+|-----------------------------------------|---------------------------|-------------|---------------------------------------------------------------|
+| `handle(GetActivePlanByPatientIdQuery)` | `Optional<TreatmentPlan>` | public      | Recupera el plan vigente para el paciente.                    |
+| `handle(GetClinicalHistoryQuery)`       | `List<TreatmentPlan>`     | public      | Lista todos los planes históricos asociados a un `PatientId`. |
 
   #### 4.2.5.4. Infrastructure Layer
 
@@ -4619,20 +4738,20 @@ Orquesta la lógica de creación, actualización y cierre de planes. Coordina la
 
   Interfaz de acceso a datos para los planes de tratamiento, utilizando Spring Data JPA sobre PostgreSQL.
 
-  | Método | Tipo Retorno | Visibilidad | Descripción |
-  |---|---|---|---|
-  | `findById(TreatmentPlanId id)` | `Optional<TreatmentPlan>` | public | Recupera un plan por su identificador único. |
-  | `save(TreatmentPlan plan)` | `TreatmentPlan` | public | Persiste o actualiza el estado del aggregate. |
-  | `findByPatientIdAndStatus(PatientId pId, PlanStatus s)` | `Optional<TreatmentPlan>` | public | Busca un plan específico de un paciente por su estado (por ejemplo, `ACTIVE`). |
-  | `findAllByPatientId(PatientId patientId)` | `List<TreatmentPlan>` | public | Obtiene el historial completo de tratamientos del paciente. |
-  | `existsByPatientIdAndStatus(PatientId pId, PlanStatus s)` | `boolean` | public | Invariante: verifica si ya hay un plan activo para evitar duplicidad. |
+  | Método                                                    | Tipo Retorno              | Visibilidad | Descripción                                                                    |
+  |-----------------------------------------------------------|---------------------------|-------------|--------------------------------------------------------------------------------|
+  | `findById(TreatmentPlanId id)`                            | `Optional<TreatmentPlan>` | public      | Recupera un plan por su identificador único.                                   |
+  | `save(TreatmentPlan plan)`                                | `TreatmentPlan`           | public      | Persiste o actualiza el estado del aggregate.                                  |
+  | `findByPatientIdAndStatus(PatientId pId, PlanStatus s)`   | `Optional<TreatmentPlan>` | public      | Busca un plan específico de un paciente por su estado (por ejemplo, `ACTIVE`). |
+  | `findAllByPatientId(PatientId patientId)`                 | `List<TreatmentPlan>`     | public      | Obtiene el historial completo de tratamientos del paciente.                    |
+  | `existsByPatientIdAndStatus(PatientId pId, PlanStatus s)` | `boolean`                 | public      | Invariante: verifica si ya hay un plan activo para evitar duplicidad.          |
 
 #### 4.2.5.5. Bounded Context Software Architecture Component Level Diagrams
 
 El diagrama de componentes (C4 Nivel 3) muestra cómo se organiza internamente el contenedor Planning Service (Java/Spring Boot). Se distinguen seis componentes principales: el TreatmentPlanController y el ClinicalDischargeController como puntos de entrada REST, los application services TreatmentPlanCommandServiceImpl y PlanningQueryServiceImpl que materializan el patrón CQRS, el TreatmentPlanRepository (JPA) como abstracción de persistencia y el ExternalInventoryServiceAdapter como ACL para validar la disponibilidad de kits IoT. Todos los componentes viven dentro del Container Boundary del Planning Service; el API Gateway queda fuera (delega tráfico) y la Planning DB también (Azure Database for PostgreSQL, consumida por JDBC/SSL).
 
 <div style="text-align: center;">
-  <img src="assets/diagrams/software-architecture/components/out/planning.png" alt="uFlex — Planning Bounded Context Component Diagram" style="max-width: 100%; height: auto;">
+  <img src="assets/diagrams/software-architecture/components/out/planning-components-diagram.png" alt="uFlex — Planning Bounded Context Component Diagram" style="max-width: 100%; height: auto;">
 </div>
 
 *Figura 4.2.5.5. Diagrama de componentes (C4 Nivel 3) del Bounded Context Planning.*
@@ -4644,7 +4763,7 @@ El diagrama de componentes (C4 Nivel 3) muestra cómo se organiza internamente e
 El diagrama de clases del Domain Layer del BC Planning modela exclusivamente los conceptos centrales del dominio, sin incluir las capas de application ni infrastructure. El paquete `domain.model.aggregates` contiene al Aggregate Root `TreatmentPlan`; `domain.model.entities` incluye la Entity `ClinicalReport`; `domain.model.valueobjects` agrupa los Value Objects (`TreatmentPlanId`, `PatientId`, `PhysiotherapistId`, `TargetROM`, `DeviceId`) y los enumerados (`PlanStatus`, `JointType`); `domain.model.events` encapsula los Domain Events publicados por el aggregate (`IoTKitLinkedToPatient`, `TreatmentPlanUpdated`, `TreatmentPlanRemoved`, `TreatmentPlanFinalized`); y `domain.exceptions` reúne las excepciones de negocio que protegen las invariantes del dominio (por ejemplo, evitar más de un plan activo por paciente/lesión). Las flechas con línea continua marcan composición (el `TreatmentPlan` contiene sus Value Objects), las flechas con línea punteada marcan dependencias semánticas (eventos publicados y excepciones lanzadas) y los rombos vacíos indican agregación con cardinalidad opcional o múltiple (relación del plan con `DeviceId` y con `ClinicalReport` al cierre terapéutico).
 
 <div style="text-align: center;">
-  <img src="assets/diagrams/uml/class/out/planning.png" alt="uFlex — IAM Bounded Context Domain Class Diagram" style="max-width: 100%; height: auto;">
+  <img src="assets/diagrams/uml/class/out/planning-domain-layer-class-diagram.png" alt="uFlex — IAM Bounded Context Domain Class Diagram" style="max-width: 100%; height: auto;">
 </div>
 
 *Figura 4.2.5.6.1. Diagrama de clases del dominio del Bounded Context Planning.*
@@ -4654,7 +4773,7 @@ El diagrama de clases del Domain Layer del BC Planning modela exclusivamente los
 El esquema físico del BC Planning en Azure Database for PostgreSQL consta de una tabla principal `treatment_plans` que almacena el estado clínico-operativo del tratamiento (identificador del plan, `patient_id`, `physiotherapist_id`, articulación objetivo, rangos `min_angle`/`max_angle`, estado del plan, `device_id` y timestamps de auditoría), una tabla `clinical_reports` para registrar el resultado de alta asociado al plan (resumen y porcentaje de cumplimiento), y una tabla de catálogo `plan_statuses` para normalizar los estados permitidos del ciclo de vida (`CREATED`, `ACTIVE`, `FINALIZED`, `REMOVED`). Los índices incluyen búsquedas por `(patient_id, status)` para obtener rápidamente el plan activo, por `patient_id` para el historial clínico, y por `device_id` para trazabilidad del kit IoT asignado. Se optó deliberadamente por **no** declarar foreign keys duras hacia tablas de otros bounded contexts (`patient_id` del BC IAM y `device_id` del BC Device/Inventory): las referencias son lógicas para mantener la autonomía entre contextos.
 
 <div style="text-align: center;">
-  <img src="assets/diagrams/database/erd/out/planning-erd.png" alt="uFlex — IAM Bounded Context Database ER Diagram" style="max-width: 100%; height: auto;">
+  <img src="assets/diagrams/database/erd/out/planning-database-design-diagram.png" alt="uFlex — IAM Bounded Context Database ER Diagram" style="max-width: 100%; height: auto;">
 </div>
 
 *Figura 4.2.5.6.2. Diagrama entidad-relación del Bounded Context Planning.*
@@ -4679,35 +4798,35 @@ Es el núcleo del proceso terapéutico remoto. Controla el ciclo de vida complet
 
 **Atributos principales:**
 
-| Atributo | Tipo | Visibilidad | Descripción |
-|---|---|---|---|
-| `id` | `TherapySessionId` | private | Identificador único de la sesión. |
-| `patientId` | `PatientId` | private | Referencia al paciente que ejecuta la sesión. |
-| `treatmentPlanId` | `TreatmentPlanId` | private | Referencia desnormalizada al plan de tratamiento origen para trazabilidad clínica. |
-| `iotDeviceId` | `DeviceId` | private | Referencia al dispositivo IoT que reporta telemetría en tiempo real. |
-| `routine` | `Routine` | private | Rutina asignada a ejecutar en la sesión. |
-| `sensorSnapshot` | `IoTSensorSnapshot` | private | Estado del posicionamiento de sensores al iniciar. |
-| `painLevelReported` | `PainLevel` | private | Nivel de dolor reportado por el paciente durante la sesión. |
-| `status` | `SessionStatus` | private | Estado actual de la sesión (`Pending`, `Ready`, `InProgress`, `Completed`, `Cancelled`). |
-| `startedAt` | `DateTime` | private | Fecha y hora de inicio de la sesión. |
-| `finalizedAt` | `DateTime` | private | Fecha y hora de cierre de la sesión. |
+| Atributo            | Tipo                | Visibilidad | Descripción                                                                              |
+|---------------------|---------------------|-------------|------------------------------------------------------------------------------------------|
+| `id`                | `TherapySessionId`  | private     | Identificador único de la sesión.                                                        |
+| `patientId`         | `PatientId`         | private     | Referencia al paciente que ejecuta la sesión.                                            |
+| `treatmentPlanId`   | `TreatmentPlanId`   | private     | Referencia desnormalizada al plan de tratamiento origen para trazabilidad clínica.       |
+| `iotDeviceId`       | `DeviceId`          | private     | Referencia al dispositivo IoT que reporta telemetría en tiempo real.                     |
+| `routine`           | `Routine`           | private     | Rutina asignada a ejecutar en la sesión.                                                 |
+| `sensorSnapshot`    | `IoTSensorSnapshot` | private     | Estado del posicionamiento de sensores al iniciar.                                       |
+| `painLevelReported` | `PainLevel`         | private     | Nivel de dolor reportado por el paciente durante la sesión.                              |
+| `status`            | `SessionStatus`     | private     | Estado actual de la sesión (`Pending`, `Ready`, `InProgress`, `Completed`, `Cancelled`). |
+| `startedAt`         | `DateTime`          | private     | Fecha y hora de inicio de la sesión.                                                     |
+| `finalizedAt`       | `DateTime`          | private     | Fecha y hora de cierre de la sesión.                                                     |
 
 **Métodos principales:**
 
-| Método | Tipo Retorno | Visibilidad | Descripción |
-|---|---|---|---|
-| `initiatePreparation(patientId, treatmentPlanId, iotDeviceId, routine)` | `TherapySession` | public | Crea la sesión con los datos base y la deja en estado `Pending`. |
-| `confirmHardwareReadiness(snapshot)` | `void` | public | Registra el snapshot de sensores y avanza el estado a `Ready`. |
-| `startRoutine()` | `void` | public | Inicia la ejecución de la rutina y cambia el estado a `InProgress`. |
-| `reportPainLevel(painLevel)` | `void` | public | Registra el nivel de dolor reportado por el paciente. |
-| `recordAnomalousMovement(alertType)` | `void` | public | Registra la anomalía detectada y publica el evento de dominio correspondiente (`ExcessiveMovementAlertIssued` o `AnomalousMovementDetected`). |
-| `recordValidRepetition(serieId)` | `void` | public | Registra una repetición válida en la serie indicada, delega en `Routine`/`Serie` y actualiza el estado de validación de la rutina según corresponda. |
-| `finalizeSession()` | `void` | public | Cierra la sesión exitosamente; valida que la rutina esté `Completed` y cambia estado a `Completed`. |
-| `cancelSession()` | `void` | public | Cancela la sesión antes de completarse y cambia estado a `Cancelled`. |
-| `ensureHardwareReady()` | `void` | private | Invariante: no se puede iniciar la rutina si el estado no es `Ready`. |
-| `ensureSensorsPlaced()` | `void` | private | Invariante: el snapshot debe confirmar que los sensores están posicionados correctamente. |
-| `ensureRoutineAssigned()` | `void` | private | Invariante: debe existir una rutina asociada antes de iniciar. |
-| `ensureNotFinalized()` | `void` | private | Invariante: una sesión en estado `Completed` o `Cancelled` no acepta más operaciones. |
+| Método                                                                  | Tipo Retorno     | Visibilidad | Descripción                                                                                                                                          |
+|-------------------------------------------------------------------------|------------------|-------------|------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `initiatePreparation(patientId, treatmentPlanId, iotDeviceId, routine)` | `TherapySession` | public      | Crea la sesión con los datos base y la deja en estado `Pending`.                                                                                     |
+| `confirmHardwareReadiness(snapshot)`                                    | `void`           | public      | Registra el snapshot de sensores y avanza el estado a `Ready`.                                                                                       |
+| `startRoutine()`                                                        | `void`           | public      | Inicia la ejecución de la rutina y cambia el estado a `InProgress`.                                                                                  |
+| `reportPainLevel(painLevel)`                                            | `void`           | public      | Registra el nivel de dolor reportado por el paciente.                                                                                                |
+| `recordAnomalousMovement(alertType)`                                    | `void`           | public      | Registra la anomalía detectada y publica el evento de dominio correspondiente (`ExcessiveMovementAlertIssued` o `AnomalousMovementDetected`).        |
+| `recordValidRepetition(serieId)`                                        | `void`           | public      | Registra una repetición válida en la serie indicada, delega en `Routine`/`Serie` y actualiza el estado de validación de la rutina según corresponda. |
+| `finalizeSession()`                                                     | `void`           | public      | Cierra la sesión exitosamente; valida que la rutina esté `Completed` y cambia estado a `Completed`.                                                  |
+| `cancelSession()`                                                       | `void`           | public      | Cancela la sesión antes de completarse y cambia estado a `Cancelled`.                                                                                |
+| `ensureHardwareReady()`                                                 | `void`           | private     | Invariante: no se puede iniciar la rutina si el estado no es `Ready`.                                                                                |
+| `ensureSensorsPlaced()`                                                 | `void`           | private     | Invariante: el snapshot debe confirmar que los sensores están posicionados correctamente.                                                            |
+| `ensureRoutineAssigned()`                                               | `void`           | private     | Invariante: debe existir una rutina asociada antes de iniciar.                                                                                       |
+| `ensureNotFinalized()`                                                  | `void`           | private     | Invariante: una sesión en estado `Completed` o `Cancelled` no acepta más operaciones.                                                                |
 
 **Notas de diseño:**
 
@@ -4720,24 +4839,24 @@ Entidad con identidad local dentro de la sesión. Agrupa y ordena las series de 
 
 **Atributos principales:**
 
-| Atributo | Tipo | Visibilidad | Descripción |
-|---|---|---|---|
-| `id` | `RoutineId` | private | Identificador local dentro de la sesión. |
-| `name` | `String` | private | Nombre descriptivo (por ejemplo, `Rutina 1`). |
-| `series` | `List<Serie>` | private | Lista ordenada de series que componen la rutina. |
-| `status` | `RoutineStatus` | private | Estado de ejecución (`Pending`, `Started`, `Completed`). |
+| Atributo | Tipo            | Visibilidad | Descripción                                              |
+|----------|-----------------|-------------|----------------------------------------------------------|
+| `id`     | `RoutineId`     | private     | Identificador local dentro de la sesión.                 |
+| `name`   | `String`        | private     | Nombre descriptivo (por ejemplo, `Rutina 1`).            |
+| `series` | `List<Serie>`   | private     | Lista ordenada de series que componen la rutina.         |
+| `status` | `RoutineStatus` | private     | Estado de ejecución (`Pending`, `Started`, `Completed`). |
 
 **Métodos principales:**
 
-| Método | Tipo Retorno | Visibilidad | Descripción |
-|---|---|---|---|
-| `start()` | `void` | public | Marca la rutina como iniciada. |
-| `startNextSerie()` | `void` | public | Inicia la siguiente serie pendiente en orden. |
-| `recordValidRepetitionInSerie(serieId)` | `void` | public | Delega el registro de repetición válida en la serie correspondiente; si la serie se completa, evalúa si toda la rutina está completada. |
-| `isCompleted()` | `boolean` | public | Retorna `true` si todas las series están en estado `Validated`. |
-| `currentSerie()` | `Optional<Serie>` | public | Retorna la serie actualmente en ejecución. |
-| `markAsCompleted()` | `void` | private | Cambia el estado a `Completed` cuando todas las series están validadas. |
-| `findSerie(serieId)` | `Serie` | private | Localiza una serie por su id local; lanza `SerieNotFoundException` si no existe. |
+| Método                                  | Tipo Retorno      | Visibilidad | Descripción                                                                                                                             |
+|-----------------------------------------|-------------------|-------------|-----------------------------------------------------------------------------------------------------------------------------------------|
+| `start()`                               | `void`            | public      | Marca la rutina como iniciada.                                                                                                          |
+| `startNextSerie()`                      | `void`            | public      | Inicia la siguiente serie pendiente en orden.                                                                                           |
+| `recordValidRepetitionInSerie(serieId)` | `void`            | public      | Delega el registro de repetición válida en la serie correspondiente; si la serie se completa, evalúa si toda la rutina está completada. |
+| `isCompleted()`                         | `boolean`         | public      | Retorna `true` si todas las series están en estado `Validated`.                                                                         |
+| `currentSerie()`                        | `Optional<Serie>` | public      | Retorna la serie actualmente en ejecución.                                                                                              |
+| `markAsCompleted()`                     | `void`            | private     | Cambia el estado a `Completed` cuando todas las series están validadas.                                                                 |
+| `findSerie(serieId)`                    | `Serie`           | private     | Localiza una serie por su id local; lanza `SerieNotFoundException` si no existe.                                                        |
 
 **3. Serie (Entity)**
 
@@ -4745,196 +4864,196 @@ Unidad de ejecución dentro de una rutina. Combina una referencia al ejercicio b
 
 **Atributos principales:**
 
-| Atributo | Tipo | Visibilidad | Descripción |
-|---|---|---|---|
-| `id` | `SerieId` | private | Identificador local dentro de la rutina. |
-| `exerciseId` | `ExerciseId` | private | Referencia al identificador del ejercicio en el catálogo maestro. |
-| `targetRepetitions` | `RepetitionCount` | private | Número de repeticiones objetivo. |
-| `angleThreshold` | `AngleThreshold` | private | Rango angular válido para esta serie. |
-| `instructionalVideoUrl` | `String` | private | URL del video instruccional asociado. |
-| `currentRepetitions` | `int` | private | Contador de repeticiones válidas acumuladas. |
-| `completedRepetitions` | `List<CompletedRepetition>` | private | Historial inmutable de repeticiones validadas. |
-| `status` | `SerieStatus` | private | Estado de la serie (`Pending`, `Started`, `Validated`, `Failed`). |
+| Atributo                | Tipo                        | Visibilidad | Descripción                                                       |
+|-------------------------|-----------------------------|-------------|-------------------------------------------------------------------|
+| `id`                    | `SerieId`                   | private     | Identificador local dentro de la rutina.                          |
+| `exerciseId`            | `ExerciseId`                | private     | Referencia al identificador del ejercicio en el catálogo maestro. |
+| `targetRepetitions`     | `RepetitionCount`           | private     | Número de repeticiones objetivo.                                  |
+| `angleThreshold`        | `AngleThreshold`            | private     | Rango angular válido para esta serie.                             |
+| `instructionalVideoUrl` | `String`                    | private     | URL del video instruccional asociado.                             |
+| `currentRepetitions`    | `int`                       | private     | Contador de repeticiones válidas acumuladas.                      |
+| `completedRepetitions`  | `List<CompletedRepetition>` | private     | Historial inmutable de repeticiones validadas.                    |
+| `status`                | `SerieStatus`               | private     | Estado de la serie (`Pending`, `Started`, `Validated`, `Failed`). |
 
 **Métodos principales:**
 
-| Método | Tipo Retorno | Visibilidad | Descripción |
-|---|---|---|---|
-| `start()` | `void` | public | Inicia la serie y cambia estado a `Started`. |
-| `playInstructionalVideo()` | `void` | public | Registra que el video instruccional fue reproducido. |
-| `recordValidRepetition(completedRepetition)` | `void` | public | Incrementa `currentRepetitions` y agrega el `CompletedRepetition`; si se alcanza el objetivo, invoca `markAsAchieved()`. |
-| `isValidated()` | `boolean` | public | Retorna `true` si el estado es `Validated`. |
-| `markAsAchieved()` | `void` | private | Cambia el estado a `Validated` cuando `hasReachedTarget()` es verdadero. |
-| `hasReachedTarget()` | `boolean` | private | Retorna `true` si `currentRepetitions >= targetRepetitions.value`. |
+| Método                                       | Tipo Retorno | Visibilidad | Descripción                                                                                                              |
+|----------------------------------------------|--------------|-------------|--------------------------------------------------------------------------------------------------------------------------|
+| `start()`                                    | `void`       | public      | Inicia la serie y cambia estado a `Started`.                                                                             |
+| `playInstructionalVideo()`                   | `void`       | public      | Registra que el video instruccional fue reproducido.                                                                     |
+| `recordValidRepetition(completedRepetition)` | `void`       | public      | Incrementa `currentRepetitions` y agrega el `CompletedRepetition`; si se alcanza el objetivo, invoca `markAsAchieved()`. |
+| `isValidated()`                              | `boolean`    | public      | Retorna `true` si el estado es `Validated`.                                                                              |
+| `markAsAchieved()`                           | `void`       | private     | Cambia el estado a `Validated` cuando `hasReachedTarget()` es verdadero.                                                 |
+| `hasReachedTarget()`                         | `boolean`    | private     | Retorna `true` si `currentRepetitions >= targetRepetitions.value`.                                                       |
 
 **4. ExerciseId (Value Object)**
 
 Identificador del ejercicio definido en el catálogo maestro (bounded context externo). El dominio Therapy sólo requiere esta referencia para operar; los datos visuales del ejercicio pertenecen al read model.
 
-| Atributo | Tipo | Visibilidad | Descripción |
-|---|---|---|---|
-| `value` | `UUID` | private | Identificador único del ejercicio en el catálogo maestro. |
+| Atributo | Tipo   | Visibilidad | Descripción                                               |
+|----------|--------|-------------|-----------------------------------------------------------|
+| `value`  | `UUID` | private     | Identificador único del ejercicio en el catálogo maestro. |
 
 **5. CompletedRepetition (Value Object)**
 
 Registro inmutable de una repetición ya ejecutada y validada por el Edge App. Representa un hecho consumado y no cambia una vez persistido.
 
-| Atributo | Tipo | Visibilidad | Descripción |
-|---|---|---|---|
-| `achievedAngle` | `Float` | private | Ángulo articular final alcanzado en la repetición. |
-| `wasWithinThreshold` | `Boolean` | private | Indica si el ángulo estuvo dentro del `AngleThreshold` definido. |
-| `recordedAt` | `DateTime` | private | Timestamp de la captura validada. |
+| Atributo             | Tipo       | Visibilidad | Descripción                                                      |
+|----------------------|------------|-------------|------------------------------------------------------------------|
+| `achievedAngle`      | `Float`    | private     | Ángulo articular final alcanzado en la repetición.               |
+| `wasWithinThreshold` | `Boolean`  | private     | Indica si el ángulo estuvo dentro del `AngleThreshold` definido. |
+| `recordedAt`         | `DateTime` | private     | Timestamp de la captura validada.                                |
 
 **6. IoTSensorSnapshot (Value Object)**
 
 Instantánea inmutable del estado de posicionamiento de sensores IoT al momento de confirmar el hardware para inicio de sesión.
 
-| Atributo | Tipo | Visibilidad | Descripción |
-|---|---|---|---|
-| `deviceId` | `String` | private | Identificador del dispositivo IoT confirmado. |
-| `sensorsPlaced` | `Boolean` | private | Indica si todos los sensores están correctamente posicionados. |
-| `recordedAt` | `DateTime` | private | Timestamp del momento de confirmación. |
+| Atributo        | Tipo       | Visibilidad | Descripción                                                    |
+|-----------------|------------|-------------|----------------------------------------------------------------|
+| `deviceId`      | `String`   | private     | Identificador del dispositivo IoT confirmado.                  |
+| `sensorsPlaced` | `Boolean`  | private     | Indica si todos los sensores están correctamente posicionados. |
+| `recordedAt`    | `DateTime` | private     | Timestamp del momento de confirmación.                         |
 
 **7. AngleThreshold (Value Object)**
 
 Define el rango angular aceptable para validar el movimiento de una repetición.
 
-| Atributo | Tipo | Visibilidad | Descripción |
-|---|---|---|---|
-| `minAngle` | `Float` | private | Ángulo mínimo aceptable en grados. |
-| `maxAngle` | `Float` | private | Ángulo máximo aceptable en grados. |
+| Atributo   | Tipo    | Visibilidad | Descripción                        |
+|------------|---------|-------------|------------------------------------|
+| `minAngle` | `Float` | private     | Ángulo mínimo aceptable en grados. |
+| `maxAngle` | `Float` | private     | Ángulo máximo aceptable en grados. |
 
-| Método | Tipo Retorno | Visibilidad | Descripción |
-|---|---|---|---|
-| `isWithinRange(angle)` | `boolean` | public | Retorna `true` si el ángulo recibido está dentro del rango definido. |
+| Método                 | Tipo Retorno | Visibilidad | Descripción                                                          |
+|------------------------|--------------|-------------|----------------------------------------------------------------------|
+| `isWithinRange(angle)` | `boolean`    | public      | Retorna `true` si el ángulo recibido está dentro del rango definido. |
 
 **8. PainLevel (Value Object)**
 
 Nivel de dolor autorreportado por el paciente sobre una escala clínica acotada.
 
-| Atributo | Tipo | Visibilidad | Descripción |
-|---|---|---|---|
-| `value` | `Integer` | private | Valor entre `0` y `10`. |
+| Atributo | Tipo      | Visibilidad | Descripción             |
+|----------|-----------|-------------|-------------------------|
+| `value`  | `Integer` | private     | Valor entre `0` y `10`. |
 
-| Método | Tipo Retorno | Visibilidad | Descripción |
-|---|---|---|---|
-| `isValid()` | `boolean` | public | Retorna `true` si el valor está en el rango `[0, 10]`. |
+| Método      | Tipo Retorno | Visibilidad | Descripción                                            |
+|-------------|--------------|-------------|--------------------------------------------------------|
+| `isValid()` | `boolean`    | public      | Retorna `true` si el valor está en el rango `[0, 10]`. |
 
 **9. RepetitionCount (Value Object)**
 
 Número de repeticiones objetivo para una serie. Garantiza que el valor sea positivo.
 
-| Atributo | Tipo | Visibilidad | Descripción |
-|---|---|---|---|
-| `value` | `Integer` | private | Cantidad de repeticiones objetivo (`> 0`). |
+| Atributo | Tipo      | Visibilidad | Descripción                                |
+|----------|-----------|-------------|--------------------------------------------|
+| `value`  | `Integer` | private     | Cantidad de repeticiones objetivo (`> 0`). |
 
 **10. SessionStatus (Value Object)**
 
 Estado del ciclo de vida de la sesión terapéutica.
 
-| Atributo | Tipo | Visibilidad | Descripción |
-|---|---|---|---|
-| `Pending` | Enum | public | Sesión creada, pendiente de preparación de hardware. |
-| `Ready` | Enum | public | Hardware y sensores confirmados; lista para iniciar. |
-| `InProgress` | Enum | public | Rutina en ejecución activa. |
-| `Completed` | Enum | public | Rutina finalizada y sesión cerrada correctamente. |
-| `Cancelled` | Enum | public | Sesión cancelada antes de completarse. |
+| Atributo     | Tipo | Visibilidad | Descripción                                          |
+|--------------|------|-------------|------------------------------------------------------|
+| `Pending`    | Enum | public      | Sesión creada, pendiente de preparación de hardware. |
+| `Ready`      | Enum | public      | Hardware y sensores confirmados; lista para iniciar. |
+| `InProgress` | Enum | public      | Rutina en ejecución activa.                          |
+| `Completed`  | Enum | public      | Rutina finalizada y sesión cerrada correctamente.    |
+| `Cancelled`  | Enum | public      | Sesión cancelada antes de completarse.               |
 
 **11. RoutineStatus (Value Object)**
 
 Estado de ejecución de la rutina.
 
-| Atributo | Tipo | Visibilidad | Descripción |
-|---|---|---|---|
-| `Pending` | Enum | public | Rutina creada pero aún no iniciada. |
-| `Started` | Enum | public | Rutina en ejecución. |
-| `Completed` | Enum | public | Rutina validada en su totalidad. |
+| Atributo    | Tipo | Visibilidad | Descripción                         |
+|-------------|------|-------------|-------------------------------------|
+| `Pending`   | Enum | public      | Rutina creada pero aún no iniciada. |
+| `Started`   | Enum | public      | Rutina en ejecución.                |
+| `Completed` | Enum | public      | Rutina validada en su totalidad.    |
 
 **12. SerieStatus (Value Object)**
 
 Estado de ejecución de una serie.
 
-| Atributo | Tipo | Visibilidad | Descripción |
-|---|---|---|---|
-| `Pending` | Enum | public | Serie pendiente de ejecución. |
-| `Started` | Enum | public | Serie iniciada. |
-| `Validated` | Enum | public | Serie completada y validada clínicamente. |
-| `Failed` | Enum | public | Serie finalizada con incumplimiento de criterios clínicos. |
+| Atributo    | Tipo | Visibilidad | Descripción                                                |
+|-------------|------|-------------|------------------------------------------------------------|
+| `Pending`   | Enum | public      | Serie pendiente de ejecución.                              |
+| `Started`   | Enum | public      | Serie iniciada.                                            |
+| `Validated` | Enum | public      | Serie completada y validada clínicamente.                  |
+| `Failed`    | Enum | public      | Serie finalizada con incumplimiento de criterios clínicos. |
 
 **13. MovementAlertType (Value Object)**
 
 Tipo de alerta de movimiento registrada durante la sesión y propagada como evento de dominio.
 
-| Atributo | Tipo | Visibilidad | Descripción |
-|---|---|---|---|
-| `ExcessiveMovement` | Enum | public | Alerta por exceso de rango o intensidad de movimiento. |
-| `AnomalousMovement` | Enum | public | Alerta por patrón de movimiento compensatorio o atípico. |
+| Atributo            | Tipo | Visibilidad | Descripción                                              |
+|---------------------|------|-------------|----------------------------------------------------------|
+| `ExcessiveMovement` | Enum | public      | Alerta por exceso de rango o intensidad de movimiento.   |
+| `AnomalousMovement` | Enum | public      | Alerta por patrón de movimiento compensatorio o atípico. |
 
 **14. IDs (Value Objects)**
 
 Todos los identificadores del dominio (`TherapySessionId`, `PatientId`, `TreatmentPlanId`, `DeviceId`, `RoutineId`, `SerieId`) envuelven un `UUID` para garantizar type safety y evitar intercambios incorrectos de tipos en operaciones del dominio.
 
-| Atributo | Tipo | Visibilidad | Descripción |
-|---|---|---|---|
-| `value` | `UUID` | private | Identificador inmutable tipado para cada concepto del dominio. |
+| Atributo | Tipo   | Visibilidad | Descripción                                                    |
+|----------|--------|-------------|----------------------------------------------------------------|
+| `value`  | `UUID` | private     | Identificador inmutable tipado para cada concepto del dominio. |
 
 **15. MotionAnalysisService (Domain Service)**
 
 Analiza los datos de movimiento articular capturados y preprocesados por el Edge App para determinar si existe movimiento excesivo o anómalo. Esta lógica se modela como servicio de dominio porque evalúa reglas clínicas transversales que no pertenecen a una sola entidad.
 
-| Método | Tipo Retorno | Visibilidad | Descripción |
-|---|---|---|---|
-| `analyze(motionData, threshold)` | `Optional<MovementAlertType>` | public | Evalúa los datos de movimiento contra el `AngleThreshold` de la serie activa; retorna un `MovementAlertType` si detecta anomalía o vacío si el movimiento es normal. |
-| `isAnomalous(motionData, threshold)` | `boolean` | private | Determina si el ángulo medido está fuera del rango seguro definido por el threshold. |
-| `isExcessive(motionData)` | `boolean` | private | Determina si la amplitud del movimiento supera límites de seguridad absolutos, independientemente del threshold de la serie. |
+| Método                               | Tipo Retorno                  | Visibilidad | Descripción                                                                                                                                                          |
+|--------------------------------------|-------------------------------|-------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `analyze(motionData, threshold)`     | `Optional<MovementAlertType>` | public      | Evalúa los datos de movimiento contra el `AngleThreshold` de la serie activa; retorna un `MovementAlertType` si detecta anomalía o vacío si el movimiento es normal. |
+| `isAnomalous(motionData, threshold)` | `boolean`                     | private     | Determina si el ángulo medido está fuera del rango seguro definido por el threshold.                                                                                 |
+| `isExcessive(motionData)`            | `boolean`                     | private     | Determina si la amplitud del movimiento supera límites de seguridad absolutos, independientemente del threshold de la serie.                                         |
 
 **16. RepetitionValidationService (Domain Service)**
 
 Evalúa si una repetición procesada por el Edge App cumple el `AngleThreshold` definido en la serie y retorna un `CompletedRepetition` listo para registrarse. Centraliza la regla clínica de aceptación de repetición fuera de las entidades.
 
-| Método | Tipo Retorno | Visibilidad | Descripción |
-|---|---|---|---|
-| `validate(achievedAngle, threshold)` | `CompletedRepetition` | public | Compara el ángulo alcanzado con el `AngleThreshold` y retorna un `CompletedRepetition` con `wasWithinThreshold` resuelto. |
+| Método                               | Tipo Retorno          | Visibilidad | Descripción                                                                                                               |
+|--------------------------------------|-----------------------|-------------|---------------------------------------------------------------------------------------------------------------------------|
+| `validate(achievedAngle, threshold)` | `CompletedRepetition` | public      | Compara el ángulo alcanzado con el `AngleThreshold` y retorna un `CompletedRepetition` con `wasWithinThreshold` resuelto. |
 
 **17. Commands**
 
-| Command | Atributos principales | Descripción |
-|---|---|---|
-| `InitiateTherapyPreparationCommand` | `patientId`, `treatmentPlanId`, `iotDeviceId`, `routineId` | Crea y prepara la sesión de terapia dejándola en estado `Pending`. |
-| `ConfirmHardwareReadinessCommand` | `sessionId`, `deviceId`, `sensorsPlaced` | Confirma hardware y sensores; avanza la sesión a `Ready`. |
-| `StartRoutineCommand` | `sessionId` | Inicia la ejecución de la rutina asignada; avanza la sesión a `InProgress`. |
-| `StartSerieCommand` | `sessionId`, `serieId` | Inicia una serie específica dentro de la rutina. |
-| `RecordValidRepetitionCommand` | `sessionId`, `serieId`, `achievedAngle`, `recordedAt` | Registra una repetición validada por el Edge App en la serie indicada. |
-| `RecordAnomalousMovementCommand` | `sessionId`, `alertType` | Registra una anomalía de movimiento y emite el evento correspondiente. |
-| `ReportPainLevelCommand` | `sessionId`, `painLevel` | Registra el nivel de dolor reportado por el paciente. |
-| `FinalizeTherapySessionCommand` | `sessionId` | Cierra y finaliza formalmente la sesión; valida que la rutina esté `Completed`. |
-| `CancelTherapySessionCommand` | `sessionId`, `reason` | Cancela la sesión en cualquier punto antes de completarse. |
+| Command                             | Atributos principales                                      | Descripción                                                                     |
+|-------------------------------------|------------------------------------------------------------|---------------------------------------------------------------------------------|
+| `InitiateTherapyPreparationCommand` | `patientId`, `treatmentPlanId`, `iotDeviceId`, `routineId` | Crea y prepara la sesión de terapia dejándola en estado `Pending`.              |
+| `ConfirmHardwareReadinessCommand`   | `sessionId`, `deviceId`, `sensorsPlaced`                   | Confirma hardware y sensores; avanza la sesión a `Ready`.                       |
+| `StartRoutineCommand`               | `sessionId`                                                | Inicia la ejecución de la rutina asignada; avanza la sesión a `InProgress`.     |
+| `StartSerieCommand`                 | `sessionId`, `serieId`                                     | Inicia una serie específica dentro de la rutina.                                |
+| `RecordValidRepetitionCommand`      | `sessionId`, `serieId`, `achievedAngle`, `recordedAt`      | Registra una repetición validada por el Edge App en la serie indicada.          |
+| `RecordAnomalousMovementCommand`    | `sessionId`, `alertType`                                   | Registra una anomalía de movimiento y emite el evento correspondiente.          |
+| `ReportPainLevelCommand`            | `sessionId`, `painLevel`                                   | Registra el nivel de dolor reportado por el paciente.                           |
+| `FinalizeTherapySessionCommand`     | `sessionId`                                                | Cierra y finaliza formalmente la sesión; valida que la rutina esté `Completed`. |
+| `CancelTherapySessionCommand`       | `sessionId`, `reason`                                      | Cancela la sesión en cualquier punto antes de completarse.                      |
 
 **18. Queries**
 
-| Query | Atributos principales | Descripción |
-|---|---|---|
-| `GetDailyTherapyScheduleQuery` | `patientId`, `date` | Obtiene la rutina asignada al paciente para el día consultado. |
-| `GetSessionProgressQuery` | `sessionId` | Retorna el estado de la sesión: serie activa, repeticiones por serie y estado general. |
-| `GetPainLevelHistoryQuery` | `patientId` | Retorna el historial de niveles de dolor reportados por el paciente. |
-| `GetSerieDetailsQuery` | `sessionId`, `serieId` | Retorna parámetros clínicos y progreso de una serie específica. |
-| `GetSessionSummaryQuery` | `sessionId` | Retorna resumen de sesión finalizada: repeticiones por serie, alertas, dolor y duración total. |
-| `GetActiveSessionByPatientQuery` | `patientId` | Retorna la sesión actualmente en progreso para un paciente, si existe. |
+| Query                            | Atributos principales  | Descripción                                                                                    |
+|----------------------------------|------------------------|------------------------------------------------------------------------------------------------|
+| `GetDailyTherapyScheduleQuery`   | `patientId`, `date`    | Obtiene la rutina asignada al paciente para el día consultado.                                 |
+| `GetSessionProgressQuery`        | `sessionId`            | Retorna el estado de la sesión: serie activa, repeticiones por serie y estado general.         |
+| `GetPainLevelHistoryQuery`       | `patientId`            | Retorna el historial de niveles de dolor reportados por el paciente.                           |
+| `GetSerieDetailsQuery`           | `sessionId`, `serieId` | Retorna parámetros clínicos y progreso de una serie específica.                                |
+| `GetSessionSummaryQuery`         | `sessionId`            | Retorna resumen de sesión finalizada: repeticiones por serie, alertas, dolor y duración total. |
+| `GetActiveSessionByPatientQuery` | `patientId`            | Retorna la sesión actualmente en progreso para un paciente, si existe.                         |
 
 **19. Domain Exceptions**
 
-| Excepción | Descripción |
-|---|---|
-| `HardwareNotReadyException` | Se lanza cuando se intenta iniciar la rutina sin hardware confirmado (`status != Ready`). |
-| `IoTSensorsNotPlacedException` | Se lanza cuando el snapshot indica que los sensores no están correctamente posicionados. |
-| `RoutineNotAssignedToSessionException` | Se lanza al iniciar rutina sin una rutina asociada a la sesión. |
-| `TherapySessionAlreadyFinalizedException` | Se lanza al intentar operar sobre una sesión en estado `Completed` o `Cancelled`. |
-| `SerieNotFoundException` | Se lanza al referenciar un `SerieId` inexistente dentro de la rutina. |
-| `SerieNotStartedException` | Se lanza al intentar registrar una repetición en una serie aún no iniciada. |
-| `SerieAlreadyAchievedException` | Se lanza al intentar registrar una repetición en una serie ya marcada como `Validated`. |
-| `InvalidPainLevelException` | Se lanza cuando el valor de dolor está fuera del rango permitido `[0, 10]`. |
-| `InvalidAngleThresholdException` | Se lanza cuando `minAngle` es mayor o igual a `maxAngle`. |
-| `InvalidRepetitionCountException` | Se lanza cuando el número de repeticiones objetivo es menor o igual a cero. |
+| Excepción                                 | Descripción                                                                               |
+|-------------------------------------------|-------------------------------------------------------------------------------------------|
+| `HardwareNotReadyException`               | Se lanza cuando se intenta iniciar la rutina sin hardware confirmado (`status != Ready`). |
+| `IoTSensorsNotPlacedException`            | Se lanza cuando el snapshot indica que los sensores no están correctamente posicionados.  |
+| `RoutineNotAssignedToSessionException`    | Se lanza al iniciar rutina sin una rutina asociada a la sesión.                           |
+| `TherapySessionAlreadyFinalizedException` | Se lanza al intentar operar sobre una sesión en estado `Completed` o `Cancelled`.         |
+| `SerieNotFoundException`                  | Se lanza al referenciar un `SerieId` inexistente dentro de la rutina.                     |
+| `SerieNotStartedException`                | Se lanza al intentar registrar una repetición en una serie aún no iniciada.               |
+| `SerieAlreadyAchievedException`           | Se lanza al intentar registrar una repetición en una serie ya marcada como `Validated`.   |
+| `InvalidPainLevelException`               | Se lanza cuando el valor de dolor está fuera del rango permitido `[0, 10]`.               |
+| `InvalidAngleThresholdException`          | Se lanza cuando `minAngle` es mayor o igual a `maxAngle`.                                 |
+| `InvalidRepetitionCountException`         | Se lanza cuando el número de repeticiones objetivo es menor o igual a cero.               |
 
 #### 4.2.6.2. Interface Layer
 
@@ -4944,65 +5063,65 @@ En esta sección se describen los elementos del Interface Layer del bounded cont
 
 Controlador principal del ciclo de vida de la sesión terapéutica. Permite al paciente iniciar, ejecutar y cerrar su sesión diaria, y al fisioterapeuta consultar el progreso y resumen de cada sesión.
 
-| Método | Ruta base | HTTP | Descripción |
-|---|---|---|---|
-| `initiatePreparation` | `/api/v1/therapy-sessions` | POST | Crea y prepara una nueva sesión de terapia para un paciente, dejándola en estado `Pending`. |
-| `confirmHardwareReadiness` | `/api/v1/therapy-sessions/{id}/hardware` | PATCH | Confirma el posicionamiento correcto de los sensores IoT; avanza la sesión a `Ready`. |
-| `startRoutine` | `/api/v1/therapy-sessions/{id}/start` | PATCH | Inicia la ejecución de la rutina asignada; avanza la sesión a `InProgress`. |
-| `getSessionProgress` | `/api/v1/therapy-sessions/{id}/progress` | GET | Retorna el estado actual de la sesión: serie activa, repeticiones completadas por serie y estado general. |
-| `getActiveSessionByPatient` | `/api/v1/therapy-sessions/active/{patientId}` | GET | Retorna la sesión actualmente en progreso para un paciente dado. |
-| `getSessionSummary` | `/api/v1/therapy-sessions/{id}/summary` | GET | Retorna el resumen completo de una sesión finalizada. |
-| `finalizeSession` | `/api/v1/therapy-sessions/{id}/finalize` | PATCH | Cierra formalmente la sesión una vez completada la rutina. |
-| `cancelSession` | `/api/v1/therapy-sessions/{id}/cancel` | PATCH | Cancela la sesión antes de completarse. |
+| Método                      | Ruta base                                     | HTTP  | Descripción                                                                                               |
+|-----------------------------|-----------------------------------------------|-------|-----------------------------------------------------------------------------------------------------------|
+| `initiatePreparation`       | `/api/v1/therapy-sessions`                    | POST  | Crea y prepara una nueva sesión de terapia para un paciente, dejándola en estado `Pending`.               |
+| `confirmHardwareReadiness`  | `/api/v1/therapy-sessions/{id}/hardware`      | PATCH | Confirma el posicionamiento correcto de los sensores IoT; avanza la sesión a `Ready`.                     |
+| `startRoutine`              | `/api/v1/therapy-sessions/{id}/start`         | PATCH | Inicia la ejecución de la rutina asignada; avanza la sesión a `InProgress`.                               |
+| `getSessionProgress`        | `/api/v1/therapy-sessions/{id}/progress`      | GET   | Retorna el estado actual de la sesión: serie activa, repeticiones completadas por serie y estado general. |
+| `getActiveSessionByPatient` | `/api/v1/therapy-sessions/active/{patientId}` | GET   | Retorna la sesión actualmente en progreso para un paciente dado.                                          |
+| `getSessionSummary`         | `/api/v1/therapy-sessions/{id}/summary`       | GET   | Retorna el resumen completo de una sesión finalizada.                                                     |
+| `finalizeSession`           | `/api/v1/therapy-sessions/{id}/finalize`      | PATCH | Cierra formalmente la sesión una vez completada la rutina.                                                |
+| `cancelSession`             | `/api/v1/therapy-sessions/{id}/cancel`        | PATCH | Cancela la sesión antes de completarse.                                                                   |
 
 **2. TherapyExecutionController (REST Controller)**
 
 Controlador especializado en la ejecución en tiempo real de series y registro de progreso durante la sesión activa. Recibe los datos procesados por el Edge App y los reportes del paciente.
 
-| Método | Ruta base | HTTP | Descripción |
-|---|---|---|---|
-| `startSerie` | `/api/v1/therapy-sessions/{id}/series/{serieId}/start` | PATCH | Inicia una serie específica dentro de la rutina activa. |
-| `recordValidRepetition` | `/api/v1/therapy-sessions/{id}/series/{serieId}/repetitions` | POST | Registra una repetición válida procesada y enviada por el Edge App. |
-| `recordAnomalousMovement` | `/api/v1/therapy-sessions/{id}/anomalies` | POST | Registra una anomalía de movimiento detectada durante la ejecución de la serie. |
-| `reportPainLevel` | `/api/v1/therapy-sessions/{id}/pain` | PATCH | Registra el nivel de dolor autorreportado por el paciente. |
-| `getSerieDetails` | `/api/v1/therapy-sessions/{id}/series/{serieId}` | GET | Retorna los parámetros clínicos y el progreso actual de una serie específica. |
-| `getDailySchedule` | `/api/v1/therapy-sessions/schedule/{patientId}` | GET | Obtiene la rutina asignada al paciente para el día consultado. |
+| Método                    | Ruta base                                                    | HTTP  | Descripción                                                                     |
+|---------------------------|--------------------------------------------------------------|-------|---------------------------------------------------------------------------------|
+| `startSerie`              | `/api/v1/therapy-sessions/{id}/series/{serieId}/start`       | PATCH | Inicia una serie específica dentro de la rutina activa.                         |
+| `recordValidRepetition`   | `/api/v1/therapy-sessions/{id}/series/{serieId}/repetitions` | POST  | Registra una repetición válida procesada y enviada por el Edge App.             |
+| `recordAnomalousMovement` | `/api/v1/therapy-sessions/{id}/anomalies`                    | POST  | Registra una anomalía de movimiento detectada durante la ejecución de la serie. |
+| `reportPainLevel`         | `/api/v1/therapy-sessions/{id}/pain`                         | PATCH | Registra el nivel de dolor autorreportado por el paciente.                      |
+| `getSerieDetails`         | `/api/v1/therapy-sessions/{id}/series/{serieId}`             | GET   | Retorna los parámetros clínicos y el progreso actual de una serie específica.   |
+| `getDailySchedule`        | `/api/v1/therapy-sessions/schedule/{patientId}`              | GET   | Obtiene la rutina asignada al paciente para el día consultado.                  |
 
 **3. Resources (DTOs)**
 
 Representaciones de datos optimizadas para la comunicación externa, implementadas como Java Records.
 
-| Resource | Atributos principales | Descripción |
-|---|---|---|
-| `InitiateTherapyPreparationResource` | `patientId: UUID`, `treatmentPlanId: UUID`, `iotDeviceId: String`, `routineId: UUID` | Datos necesarios para crear e iniciar la preparación de una sesión. |
-| `ConfirmHardwareReadinessResource` | `deviceId: String`, `sensorsPlaced: Boolean` | Datos del snapshot de posicionamiento de sensores para confirmar el hardware. |
-| `RecordValidRepetitionResource` | `achievedAngle: Double`, `recordedAt: DateTime` | Datos de una repetición procesada por el Edge App listos para registrar. |
-| `RecordAnomalousMovementResource` | `alertType: String` | Tipo de anomalía detectada durante la ejecución (`ExcessiveMovement`, `AnomalousMovement`). |
-| `ReportPainLevelResource` | `painLevel: Integer` | Nivel de dolor autorreportado por el paciente en escala `[0, 10]`. |
-| `CancelTherapySessionResource` | `reason: String` | Motivo de cancelación de la sesión. |
-| `TherapySessionResource` | `id: UUID`, `patientId: UUID`, `treatmentPlanId: UUID`, `iotDeviceId: String`, `status: String`, `startedAt: DateTime`, `finalizedAt: DateTime` | Representación completa de la sesión para consulta. |
-| `SessionProgressResource` | `sessionId: UUID`, `status: String`, `currentSerieId: UUID`, `seriesProgress: List<SerieProgressResource>` | Estado de avance de la sesión con detalle por serie. |
-| `SerieProgressResource` | `serieId: UUID`, `exerciseId: UUID`, `currentRepetitions: Integer`, `targetRepetitions: Integer`, `status: String` | Estado de avance de una serie individual. |
-| `SerieDetailsResource` | `serieId: UUID`, `exerciseId: UUID`, `targetRepetitions: Integer`, `minAngle: Double`, `maxAngle: Double`, `instructionalVideoUrl: String`, `status: String` | Parámetros clínicos completos de una serie. |
-| `SessionSummaryResource` | `sessionId: UUID`, `patientId: UUID`, `totalSeries: Integer`, `completedSeries: Integer`, `painLevel: Integer`, `anomaliesDetected: Integer`, `startedAt: DateTime`, `finalizedAt: DateTime` | Resumen ejecutivo de una sesión finalizada. |
-| `DailyScheduleResource` | `patientId: UUID`, `date: Date`, `routineId: UUID`, `totalSeries: Integer`, `estimatedDurationMinutes: Integer` | Rutina asignada al paciente para el día consultado. |
+| Resource                             | Atributos principales                                                                                                                                                                        | Descripción                                                                                 |
+|--------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------|
+| `InitiateTherapyPreparationResource` | `patientId: UUID`, `treatmentPlanId: UUID`, `iotDeviceId: String`, `routineId: UUID`                                                                                                         | Datos necesarios para crear e iniciar la preparación de una sesión.                         |
+| `ConfirmHardwareReadinessResource`   | `deviceId: String`, `sensorsPlaced: Boolean`                                                                                                                                                 | Datos del snapshot de posicionamiento de sensores para confirmar el hardware.               |
+| `RecordValidRepetitionResource`      | `achievedAngle: Double`, `recordedAt: DateTime`                                                                                                                                              | Datos de una repetición procesada por el Edge App listos para registrar.                    |
+| `RecordAnomalousMovementResource`    | `alertType: String`                                                                                                                                                                          | Tipo de anomalía detectada durante la ejecución (`ExcessiveMovement`, `AnomalousMovement`). |
+| `ReportPainLevelResource`            | `painLevel: Integer`                                                                                                                                                                         | Nivel de dolor autorreportado por el paciente en escala `[0, 10]`.                          |
+| `CancelTherapySessionResource`       | `reason: String`                                                                                                                                                                             | Motivo de cancelación de la sesión.                                                         |
+| `TherapySessionResource`             | `id: UUID`, `patientId: UUID`, `treatmentPlanId: UUID`, `iotDeviceId: String`, `status: String`, `startedAt: DateTime`, `finalizedAt: DateTime`                                              | Representación completa de la sesión para consulta.                                         |
+| `SessionProgressResource`            | `sessionId: UUID`, `status: String`, `currentSerieId: UUID`, `seriesProgress: List<SerieProgressResource>`                                                                                   | Estado de avance de la sesión con detalle por serie.                                        |
+| `SerieProgressResource`              | `serieId: UUID`, `exerciseId: UUID`, `currentRepetitions: Integer`, `targetRepetitions: Integer`, `status: String`                                                                           | Estado de avance de una serie individual.                                                   |
+| `SerieDetailsResource`               | `serieId: UUID`, `exerciseId: UUID`, `targetRepetitions: Integer`, `minAngle: Double`, `maxAngle: Double`, `instructionalVideoUrl: String`, `status: String`                                 | Parámetros clínicos completos de una serie.                                                 |
+| `SessionSummaryResource`             | `sessionId: UUID`, `patientId: UUID`, `totalSeries: Integer`, `completedSeries: Integer`, `painLevel: Integer`, `anomaliesDetected: Integer`, `startedAt: DateTime`, `finalizedAt: DateTime` | Resumen ejecutivo de una sesión finalizada.                                                 |
+| `DailyScheduleResource`              | `patientId: UUID`, `date: Date`, `routineId: UUID`, `totalSeries: Integer`, `estimatedDurationMinutes: Integer`                                                                              | Rutina asignada al paciente para el día consultado.                                         |
 
 **4. Transform (Assemblers)**
 
 Componentes encargados de la traducción entre el modelo de dominio y la representación externa.
 
-| Assembler | Entrada | Salida | Descripción |
-|---|---|---|---|
-| `InitiateTherapyPreparationCommandFromResourceAssembler` | `InitiateTherapyPreparationResource` | `InitiateTherapyPreparationCommand` | Transforma el JSON de creación en el command de dominio correspondiente. |
-| `ConfirmHardwareReadinessCommandFromResourceAssembler` | `ConfirmHardwareReadinessResource` | `ConfirmHardwareReadinessCommand` | Mapea los datos del snapshot de sensores al command de confirmación de hardware. |
-| `RecordValidRepetitionCommandFromResourceAssembler` | `RecordValidRepetitionResource` | `RecordValidRepetitionCommand` | Traduce los datos de repetición enviados por el Edge App al command de dominio. |
-| `RecordAnomalousMovementCommandFromResourceAssembler` | `RecordAnomalousMovementResource` | `RecordAnomalousMovementCommand` | Mapea el tipo de alerta al command de registro de anomalía. |
-| `ReportPainLevelCommandFromResourceAssembler` | `ReportPainLevelResource` | `ReportPainLevelCommand` | Traduce el nivel de dolor reportado al command de dominio. |
-| `CancelTherapySessionCommandFromResourceAssembler` | `CancelTherapySessionResource` | `CancelTherapySessionCommand` | Mapea el motivo de cancelación al command correspondiente. |
-| `TherapySessionResourceFromEntityAssembler` | `TherapySession` | `TherapySessionResource` | Convierte el aggregate root en su representación REST para consulta. |
-| `SessionProgressResourceFromEntityAssembler` | `TherapySession` | `SessionProgressResource` | Construye la vista de progreso de la sesión a partir del estado interno del agregado y su rutina. |
-| `SerieDetailsResourceFromEntityAssembler` | `Serie` | `SerieDetailsResource` | Mapea los parámetros clínicos y el estado de una serie a su representación REST. |
-| `SessionSummaryResourceFromEntityAssembler` | `TherapySession` | `SessionSummaryResource` | Construye el resumen ejecutivo de la sesión finalizada a partir del agregado completo. |
+| Assembler                                                | Entrada                              | Salida                              | Descripción                                                                                       |
+|----------------------------------------------------------|--------------------------------------|-------------------------------------|---------------------------------------------------------------------------------------------------|
+| `InitiateTherapyPreparationCommandFromResourceAssembler` | `InitiateTherapyPreparationResource` | `InitiateTherapyPreparationCommand` | Transforma el JSON de creación en el command de dominio correspondiente.                          |
+| `ConfirmHardwareReadinessCommandFromResourceAssembler`   | `ConfirmHardwareReadinessResource`   | `ConfirmHardwareReadinessCommand`   | Mapea los datos del snapshot de sensores al command de confirmación de hardware.                  |
+| `RecordValidRepetitionCommandFromResourceAssembler`      | `RecordValidRepetitionResource`      | `RecordValidRepetitionCommand`      | Traduce los datos de repetición enviados por el Edge App al command de dominio.                   |
+| `RecordAnomalousMovementCommandFromResourceAssembler`    | `RecordAnomalousMovementResource`    | `RecordAnomalousMovementCommand`    | Mapea el tipo de alerta al command de registro de anomalía.                                       |
+| `ReportPainLevelCommandFromResourceAssembler`            | `ReportPainLevelResource`            | `ReportPainLevelCommand`            | Traduce el nivel de dolor reportado al command de dominio.                                        |
+| `CancelTherapySessionCommandFromResourceAssembler`       | `CancelTherapySessionResource`       | `CancelTherapySessionCommand`       | Mapea el motivo de cancelación al command correspondiente.                                        |
+| `TherapySessionResourceFromEntityAssembler`              | `TherapySession`                     | `TherapySessionResource`            | Convierte el aggregate root en su representación REST para consulta.                              |
+| `SessionProgressResourceFromEntityAssembler`             | `TherapySession`                     | `SessionProgressResource`           | Construye la vista de progreso de la sesión a partir del estado interno del agregado y su rutina. |
+| `SerieDetailsResourceFromEntityAssembler`                | `Serie`                              | `SerieDetailsResource`              | Mapea los parámetros clínicos y el estado de una serie a su representación REST.                  |
+| `SessionSummaryResourceFromEntityAssembler`              | `TherapySession`                     | `SessionSummaryResource`            | Construye el resumen ejecutivo de la sesión finalizada a partir del agregado completo.            |
 
 #### 4.2.6.3. Application Layer
 
@@ -5012,84 +5131,84 @@ En esta sección se explican las clases responsables de orquestar los casos de u
 
 Actúa como una capa anticorrupción (Anti-Corruption Layer) y punto de entrada simplificado para que otros bounded contexts (como Planning o Gamification) puedan consultar datos de la sesión sin acoplarse al modelo interno de Therapy.
 
-| Atributo | Tipo | Visibilidad | Descripción |
-|---|---|---|---|
-| `therapyQueryService` | `TherapyQueryService` | private | Servicio interno de consultas del dominio Therapy. |
+| Atributo              | Tipo                  | Visibilidad | Descripción                                        |
+|-----------------------|-----------------------|-------------|----------------------------------------------------|
+| `therapyQueryService` | `TherapyQueryService` | private     | Servicio interno de consultas del dominio Therapy. |
 
 **Métodos principales:**
 
-| Método | Tipo Retorno | Visibilidad | Descripción |
-|---|---|---|---|
-| `isPatientInActiveSession(UUID patientId)` | `boolean` | public | Verifica si el paciente tiene una sesión en estado `Ready` o `InProgress` para evitar duplicidades. |
-| `fetchLastSessionSummary(UUID patientId)` | `Optional<SessionSummaryDto>` | public | Retorna el reporte de la última sesión para que Planning pueda actualizar el historial clínico general. |
-| `countCompletedSessionsByPlan(UUID planId)` | `int` | public | Retorna el número de sesiones completadas asociadas a un plan de tratamiento, útil para calcular el avance macro. |
+| Método                                      | Tipo Retorno                  | Visibilidad | Descripción                                                                                                       |
+|---------------------------------------------|-------------------------------|-------------|-------------------------------------------------------------------------------------------------------------------|
+| `isPatientInActiveSession(UUID patientId)`  | `boolean`                     | public      | Verifica si el paciente tiene una sesión en estado `Ready` o `InProgress` para evitar duplicidades.               |
+| `fetchLastSessionSummary(UUID patientId)`   | `Optional<SessionSummaryDto>` | public      | Retorna el reporte de la última sesión para que Planning pueda actualizar el historial clínico general.           |
+| `countCompletedSessionsByPlan(UUID planId)` | `int`                         | public      | Retorna el número de sesiones completadas asociadas a un plan de tratamiento, útil para calcular el avance macro. |
 
 **2. TherapySessionCommandServiceImpl (Command Service)**
 
 Orquesta los casos de uso relacionados con el ciclo de vida general de la sesión (preparación, inicio, cancelación y cierre).
 
-| Atributo | Tipo | Visibilidad | Descripción |
-|---|---|---|---|
-| `sessionRepository` | `TherapySessionRepository` | private | Puerto para acceder a la persistencia del aggregate root. |
-| `eventPublisher` | `ApplicationEventPublisher` | private | Publicador de eventos de dominio hacia el bus de eventos. |
+| Atributo            | Tipo                        | Visibilidad | Descripción                                               |
+|---------------------|-----------------------------|-------------|-----------------------------------------------------------|
+| `sessionRepository` | `TherapySessionRepository`  | private     | Puerto para acceder a la persistencia del aggregate root. |
+| `eventPublisher`    | `ApplicationEventPublisher` | private     | Publicador de eventos de dominio hacia el bus de eventos. |
 
 **Métodos principales:**
 
-| Método | Tipo Retorno | Visibilidad | Descripción |
-|---|---|---|---|
-| `handle(InitiateTherapyPreparationCommand)` | `UUID` | public | Instancia el agregado `TherapySession` en estado `Pending` y lo persiste. |
-| `handle(ConfirmHardwareReadinessCommand)` | `void` | public | Recupera la sesión, invoca `confirmHardwareReadiness()`, guarda el snapshot y publica `HardwareReadinessConfirmed`. |
-| `handle(StartRoutineCommand)` | `void` | public | Cambia el estado a `InProgress`, inicia la rutina y publica `RoutineStarted`. |
-| `handle(ReportPainLevelCommand)` | `void` | public | Recupera la sesión, registra el dolor del paciente y publica `PainLevelReported`. |
-| `handle(FinalizeTherapySessionCommand)` | `void` | public | Ejecuta `finalizeSession()`, persiste el estado `Completed` y publica `TherapySessionCompleted`. |
-| `handle(CancelTherapySessionCommand)` | `void` | public | Recupera la sesión, invoca `cancelSession()` con el motivo indicado, persiste estado `Cancelled` y publica `TherapySessionCancelled`. |
+| Método                                      | Tipo Retorno | Visibilidad | Descripción                                                                                                                           |
+|---------------------------------------------|--------------|-------------|---------------------------------------------------------------------------------------------------------------------------------------|
+| `handle(InitiateTherapyPreparationCommand)` | `UUID`       | public      | Instancia el agregado `TherapySession` en estado `Pending` y lo persiste.                                                             |
+| `handle(ConfirmHardwareReadinessCommand)`   | `void`       | public      | Recupera la sesión, invoca `confirmHardwareReadiness()`, guarda el snapshot y publica `HardwareReadinessConfirmed`.                   |
+| `handle(StartRoutineCommand)`               | `void`       | public      | Cambia el estado a `InProgress`, inicia la rutina y publica `RoutineStarted`.                                                         |
+| `handle(ReportPainLevelCommand)`            | `void`       | public      | Recupera la sesión, registra el dolor del paciente y publica `PainLevelReported`.                                                     |
+| `handle(FinalizeTherapySessionCommand)`     | `void`       | public      | Ejecuta `finalizeSession()`, persiste el estado `Completed` y publica `TherapySessionCompleted`.                                      |
+| `handle(CancelTherapySessionCommand)`       | `void`       | public      | Recupera la sesión, invoca `cancelSession()` con el motivo indicado, persiste estado `Cancelled` y publica `TherapySessionCancelled`. |
 
 **3. TherapyExecutionCommandServiceImpl (Command Service)**
 
 Orquesta los casos de uso de alta frecuencia (ejecución en tiempo real). En este servicio se inyectan los domain services para procesar la lógica clínica antes de afectar al agregado.
 
-| Atributo | Tipo | Visibilidad | Descripción |
-|---|---|---|---|
-| `sessionRepository` | `TherapySessionRepository` | private | Puerto para acceder a la persistencia del agregado. |
-| `motionAnalysisService` | `MotionAnalysisService` | private | Domain service que evalúa si el movimiento infringe límites de seguridad. |
-| `validationService` | `RepetitionValidationService` | private | Domain service que valida si el ángulo alcanzado califica como repetición útil. |
-| `eventPublisher` | `ApplicationEventPublisher` | private | Publicador de eventos de dominio en tiempo real. |
+| Atributo                | Tipo                          | Visibilidad | Descripción                                                                     |
+|-------------------------|-------------------------------|-------------|---------------------------------------------------------------------------------|
+| `sessionRepository`     | `TherapySessionRepository`    | private     | Puerto para acceder a la persistencia del agregado.                             |
+| `motionAnalysisService` | `MotionAnalysisService`       | private     | Domain service que evalúa si el movimiento infringe límites de seguridad.       |
+| `validationService`     | `RepetitionValidationService` | private     | Domain service que valida si el ángulo alcanzado califica como repetición útil. |
+| `eventPublisher`        | `ApplicationEventPublisher`   | private     | Publicador de eventos de dominio en tiempo real.                                |
 
 **Métodos principales:**
 
-| Método | Tipo Retorno | Visibilidad | Descripción |
-|---|---|---|---|
-| `handle(StartSerieCommand)` | `void` | public | Busca la rutina activa, inicia la serie indicada y publica `SerieStarted`. |
-| `handle(RecordValidRepetitionCommand)` | `void` | public | Recupera la sesión, evalúa movimiento con `MotionAnalysisService`, valida repetición con `RepetitionValidationService`, registra en el agregado y publica `RepetitionRecorded`. |
-| `handle(RecordAnomalousMovementCommand)` | `void` | public | Registra la anomalía en la sesión y publica (`AnomalousMovementDetected` o `ExcessiveMovementAlertIssued`) para gatillar alertas físicas. |
+| Método                                   | Tipo Retorno | Visibilidad | Descripción                                                                                                                                                                     |
+|------------------------------------------|--------------|-------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `handle(StartSerieCommand)`              | `void`       | public      | Busca la rutina activa, inicia la serie indicada y publica `SerieStarted`.                                                                                                      |
+| `handle(RecordValidRepetitionCommand)`   | `void`       | public      | Recupera la sesión, evalúa movimiento con `MotionAnalysisService`, valida repetición con `RepetitionValidationService`, registra en el agregado y publica `RepetitionRecorded`. |
+| `handle(RecordAnomalousMovementCommand)` | `void`       | public      | Registra la anomalía en la sesión y publica (`AnomalousMovementDetected` o `ExcessiveMovementAlertIssued`) para gatillar alertas físicas.                                       |
 
 **4. TherapyQueryServiceImpl (Query Service)**
 
 Encargado de resolver consultas para las pantallas del Frontend y el Edge App, accediendo a proyecciones o al modelo de lectura optimizado.
 
-| Atributo | Tipo | Visibilidad | Descripción |
-|---|---|---|---|
-| `sessionReadRepository` | `TherapySessionReadRepository` | private | Acceso optimizado para lectura de datos (Read Model). |
+| Atributo                | Tipo                           | Visibilidad | Descripción                                           |
+|-------------------------|--------------------------------|-------------|-------------------------------------------------------|
+| `sessionReadRepository` | `TherapySessionReadRepository` | private     | Acceso optimizado para lectura de datos (Read Model). |
 
 **Métodos principales:**
 
-| Método | Tipo Retorno | Visibilidad | Descripción |
-|---|---|---|---|
-| `handle(GetSessionProgressQuery)` | `SessionProgressDto` | public | Recupera el estado de avance en vivo (serie actual, conteos) para la UI de ejecución. |
-| `handle(GetSessionSummaryQuery)` | `SessionSummaryDto` | public | Recupera la información consolidada tras el cierre de la sesión. |
-| `handle(GetDailyTherapyScheduleQuery)` | `DailyScheduleDto` | public | Consulta la rutina proyectada para el paciente en una fecha específica. |
+| Método                                 | Tipo Retorno         | Visibilidad | Descripción                                                                           |
+|----------------------------------------|----------------------|-------------|---------------------------------------------------------------------------------------|
+| `handle(GetSessionProgressQuery)`      | `SessionProgressDto` | public      | Recupera el estado de avance en vivo (serie actual, conteos) para la UI de ejecución. |
+| `handle(GetSessionSummaryQuery)`       | `SessionSummaryDto`  | public      | Recupera la información consolidada tras el cierre de la sesión.                      |
+| `handle(GetDailyTherapyScheduleQuery)` | `DailyScheduleDto`   | public      | Consulta la rutina proyectada para el paciente en una fecha específica.               |
 
 **5. TherapyEventHandlers (Event Handlers)**
 
 Componentes de la capa de aplicación que escuchan de forma asíncrona los eventos emitidos por el dominio para ejecutar efectos secundarios en la infraestructura, actualizar la UI o comunicarse con otros bounded contexts.
 
-| Event Handler | Evento Escuchado | Descripción |
-|---|---|---|
-| `IoTFeedbackEventHandler` | `AnomalousMovementDetected`, `ExcessiveMovementAlertIssued` | Usa `IoTHardwareGateway` para enviar señal de vibración y alerta visual al dispositivo IoT del paciente. |
-| `InstructionalVideoEventHandler` | `SerieStarted` | Escucha el inicio de una serie y gatilla la reproducción del video instruccional en la app móvil. |
-| `SessionProgressNotificationHandler` | `RepetitionRecorded`, `SerieAchieved` | Notifica vía WebSocket a la app del paciente y dashboard del fisioterapeuta cambios de progreso en tiempo real. |
-| `SessionClosureEventHandler` | `TherapySessionCompleted` | Escucha la finalización exitosa de la sesión y notifica asíncronamente al contexto de Planning. |
-| `SessionCancellationEventHandler` | `TherapySessionCancelled` | Notifica a Planning la cancelación de la sesión y solicita la liberación del dispositivo IoT para su reutilización. |
+| Event Handler                        | Evento Escuchado                                            | Descripción                                                                                                         |
+|--------------------------------------|-------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------|
+| `IoTFeedbackEventHandler`            | `AnomalousMovementDetected`, `ExcessiveMovementAlertIssued` | Usa `IoTHardwareGateway` para enviar señal de vibración y alerta visual al dispositivo IoT del paciente.            |
+| `InstructionalVideoEventHandler`     | `SerieStarted`                                              | Escucha el inicio de una serie y gatilla la reproducción del video instruccional en la app móvil.                   |
+| `SessionProgressNotificationHandler` | `RepetitionRecorded`, `SerieAchieved`                       | Notifica vía WebSocket a la app del paciente y dashboard del fisioterapeuta cambios de progreso en tiempo real.     |
+| `SessionClosureEventHandler`         | `TherapySessionCompleted`                                   | Escucha la finalización exitosa de la sesión y notifica asíncronamente al contexto de Planning.                     |
+| `SessionCancellationEventHandler`    | `TherapySessionCancelled`                                   | Notifica a Planning la cancelación de la sesión y solicita la liberación del dispositivo IoT para su reutilización. |
 
 **Notas adicionales de diseño arquitectónico:**
 
@@ -5105,47 +5224,47 @@ En esta capa se ubican los componentes que acceden a servicios externos: base de
 
 Interfaz única de acceso a datos para el aggregate root `TherapySession`, implementada con Spring Data JPA sobre PostgreSQL. Maneja operaciones de escritura y lectura transaccional para Command Services y Query Services.
 
-| Método | Tipo Retorno | Visibilidad | Descripción |
-|---|---|---|---|
-| `findById(TherapySessionId id)` | `Optional<TherapySession>` | public | Recupera la sesión completa con su rutina y series por identificador. |
-| `save(TherapySession session)` | `TherapySession` | public | Persiste o actualiza el estado completo del aggregate. |
-| `findByPatientIdAndStatusIn(PatientId pId, List<SessionStatus> statuses)` | `Optional<TherapySession>` | public | Retorna la sesión en progreso (`Ready`, `InProgress`) para un paciente. |
-| `findAllByPatientId(PatientId patientId)` | `List<TherapySession>` | public | Obtiene el historial completo de sesiones del paciente. |
-| `findAllByTreatmentPlanId(TreatmentPlanId planId)` | `List<TherapySession>` | public | Obtiene sesiones asociadas a un plan para trazabilidad clínica. |
-| `findByPatientIdAndDate(PatientId pId, LocalDate date)` | `Optional<TherapySession>` | public | Recupera la sesión programada del paciente para una fecha específica. |
-| `existsByPatientIdAndStatusIn(PatientId pId, List<SessionStatus> statuses)` | `boolean` | public | Invariante: verifica si existe una sesión activa para evitar duplicidades. |
-| `countByTreatmentPlanIdAndStatus(TreatmentPlanId planId, SessionStatus status)` | `int` | public | Cuenta sesiones completadas de un plan, consumido por el ACL Facade. |
+| Método                                                                          | Tipo Retorno               | Visibilidad | Descripción                                                                |
+|---------------------------------------------------------------------------------|----------------------------|-------------|----------------------------------------------------------------------------|
+| `findById(TherapySessionId id)`                                                 | `Optional<TherapySession>` | public      | Recupera la sesión completa con su rutina y series por identificador.      |
+| `save(TherapySession session)`                                                  | `TherapySession`           | public      | Persiste o actualiza el estado completo del aggregate.                     |
+| `findByPatientIdAndStatusIn(PatientId pId, List<SessionStatus> statuses)`       | `Optional<TherapySession>` | public      | Retorna la sesión en progreso (`Ready`, `InProgress`) para un paciente.    |
+| `findAllByPatientId(PatientId patientId)`                                       | `List<TherapySession>`     | public      | Obtiene el historial completo de sesiones del paciente.                    |
+| `findAllByTreatmentPlanId(TreatmentPlanId planId)`                              | `List<TherapySession>`     | public      | Obtiene sesiones asociadas a un plan para trazabilidad clínica.            |
+| `findByPatientIdAndDate(PatientId pId, LocalDate date)`                         | `Optional<TherapySession>` | public      | Recupera la sesión programada del paciente para una fecha específica.      |
+| `existsByPatientIdAndStatusIn(PatientId pId, List<SessionStatus> statuses)`     | `boolean`                  | public      | Invariante: verifica si existe una sesión activa para evitar duplicidades. |
+| `countByTreatmentPlanIdAndStatus(TreatmentPlanId planId, SessionStatus status)` | `int`                      | public      | Cuenta sesiones completadas de un plan, consumido por el ACL Facade.       |
 
 **2. IoTHardwareGateway (Infrastructure Port)**
 
 Puerto de salida hacia el dispositivo IoT. Implementa la respuesta a eventos de dominio capturados por `IoTFeedbackEventHandler` mediante MQTT sobre broker Mosquitto.
 
-| Método | Tipo Retorno | Visibilidad | Descripción |
-|---|---|---|---|
-| `triggerVibrationFeedback(DeviceId deviceId)` | `void` | public | Publica un mensaje MQTT solicitando feedback de vibración al dispositivo. |
-| `triggerVisualAlert(DeviceId deviceId, AlertColor color)` | `void` | public | Envía señal de alerta visual (por ejemplo, luz roja ante movimiento anómalo). |
-| `playInstructionalVideo(DeviceId deviceId, String videoUrl)` | `void` | public | Solicita al Edge App la reproducción del video instruccional de la serie. |
-| `releaseDevice(DeviceId deviceId)` | `void` | public | Libera el dispositivo al cancelar o finalizar la sesión para su reutilización. |
+| Método                                                       | Tipo Retorno | Visibilidad | Descripción                                                                    |
+|--------------------------------------------------------------|--------------|-------------|--------------------------------------------------------------------------------|
+| `triggerVibrationFeedback(DeviceId deviceId)`                | `void`       | public      | Publica un mensaje MQTT solicitando feedback de vibración al dispositivo.      |
+| `triggerVisualAlert(DeviceId deviceId, AlertColor color)`    | `void`       | public      | Envía señal de alerta visual (por ejemplo, luz roja ante movimiento anómalo).  |
+| `playInstructionalVideo(DeviceId deviceId, String videoUrl)` | `void`       | public      | Solicita al Edge App la reproducción del video instruccional de la serie.      |
+| `releaseDevice(DeviceId deviceId)`                           | `void`       | public      | Libera el dispositivo al cancelar o finalizar la sesión para su reutilización. |
 
 **3. SessionProgressWebSocketPublisher (WebSocket Publisher)**
 
 Publicador en tiempo real hacia clientes conectados (app móvil del paciente y dashboard clínico del fisioterapeuta), sobre WebSocket/STOMP con Spring WebSocket.
 
-| Método | Tipo Retorno | Visibilidad | Descripción |
-|---|---|---|---|
-| `broadcastProgressUpdate(UUID sessionId, SessionProgressDto progress)` | `void` | public | Emite el progreso actualizado al tópico STOMP de la sesión activa. |
-| `broadcastAnomalyAlert(UUID sessionId, MovementAlertType alertType)` | `void` | public | Notifica al fisioterapeuta supervisor sobre una anomalía detectada. |
-| `broadcastSessionClosed(UUID sessionId)` | `void` | public | Notifica a los clientes suscritos que la sesión fue finalizada o cancelada. |
+| Método                                                                 | Tipo Retorno | Visibilidad | Descripción                                                                 |
+|------------------------------------------------------------------------|--------------|-------------|-----------------------------------------------------------------------------|
+| `broadcastProgressUpdate(UUID sessionId, SessionProgressDto progress)` | `void`       | public      | Emite el progreso actualizado al tópico STOMP de la sesión activa.          |
+| `broadcastAnomalyAlert(UUID sessionId, MovementAlertType alertType)`   | `void`       | public      | Notifica al fisioterapeuta supervisor sobre una anomalía detectada.         |
+| `broadcastSessionClosed(UUID sessionId)`                               | `void`       | public      | Notifica a los clientes suscritos que la sesión fue finalizada o cancelada. |
 
 **4. PlanningContextClient (ACL Client)**
 
 Cliente saliente hacia el bounded context de Planning. Permite comunicar cierre y cancelación de sesiones sin acoplamiento directo, vía HTTP/REST con tolerancia a fallos usando Resilience4j.
 
-| Método | Tipo Retorno | Visibilidad | Descripción |
-|---|---|---|---|
-| `notifySessionCompleted(UUID treatmentPlanId, SessionSummaryDto summary)` | `void` | public | Informa a Planning que una sesión fue completada para actualizar avance del plan. |
-| `notifySessionCancelled(UUID treatmentPlanId, UUID sessionId, String reason)` | `void` | public | Informa la cancelación para que Planning ajuste cronograma y libere recursos. |
-| `requestRoutineForDate(UUID patientId, LocalDate date)` | `Optional<RoutineSnapshotDto>` | public | Solicita a Planning la rutina asignada al paciente para una fecha específica. |
+| Método                                                                        | Tipo Retorno                   | Visibilidad | Descripción                                                                       |
+|-------------------------------------------------------------------------------|--------------------------------|-------------|-----------------------------------------------------------------------------------|
+| `notifySessionCompleted(UUID treatmentPlanId, SessionSummaryDto summary)`     | `void`                         | public      | Informa a Planning que una sesión fue completada para actualizar avance del plan. |
+| `notifySessionCancelled(UUID treatmentPlanId, UUID sessionId, String reason)` | `void`                         | public      | Informa la cancelación para que Planning ajuste cronograma y libere recursos.     |
+| `requestRoutineForDate(UUID patientId, LocalDate date)`                       | `Optional<RoutineSnapshotDto>` | public      | Solicita a Planning la rutina asignada al paciente para una fecha específica.     |
 
 **Notas de diseño de esta capa:**
 
@@ -5164,7 +5283,7 @@ Los clientes externos acceden por HTTPS: apps móviles nativas (Android/iOS), PW
 Fuera del *Container Boundary* quedan tres dependencias: broker **Mosquitto** (MQTT/TLS), bounded context **Planning** consumido vía ACL REST con Resilience4j, y **Therapy Relational SQL Database** (Azure PostgreSQL por JDBC/SSL). El flujo de dependencias mantiene la estructura táctica: `Interface -> Application -> (Domain + Infrastructure)`.
 
 <div style="text-align: center;">
-  <img src="assets/diagrams/software-architecture/components/out/therapy.png" alt="uFlex — Therapy Bounded Context Component Diagram" style="max-width: 100%; height: auto;">
+  <img src="assets/diagrams/software-architecture/components/out/therapy-components-diagram.png" alt="uFlex — Therapy Bounded Context Component Diagram" style="max-width: 100%; height: auto;">
 </div>
 
 *Figura 4.2.6.5. Diagrama de componentes (C4 Nivel 3) del Bounded Context Therapy.*
@@ -5180,7 +5299,7 @@ En la estructura del modelo, `TherapySession` compone a `Routine` (`1..1`), `Rou
 Los Domain Services (`MotionAnalysisService`, `RepetitionValidationService`) se modelan como interfaces en `domain.services`, siguiendo inversión de dependencias: el dominio define contratos y las implementaciones se resuelven en capas superiores. Ambos usan `AngleThreshold` como referencia clínica común. En la notación, líneas continuas indican composición/agregación, líneas punteadas dependencias semánticas (eventos y excepciones) y la paleta distingue aggregate root, entities, value objects, domain events, domain services y domain exceptions.
 
 <div style="text-align: center;">
-  <img src="assets/diagrams/uml/class/out/therapy.png" alt="uFlex — Therapy Bounded Context Domain Class Diagram" style="max-width: 100%; height: auto;">
+  <img src="assets/diagrams/uml/class/out/therapy-domain-layer-class-diagram.png" alt="uFlex — Therapy Bounded Context Domain Class Diagram" style="max-width: 100%; height: auto;">
 </div>
 
 *Figura 4.2.6.6.1. Diagrama de clases del dominio del Bounded Context Therapy.*
@@ -5194,7 +5313,7 @@ El diagrama de base de datos del BC Therapy modela la persistencia relacional de
 En integridad y rendimiento, el diseño incorpora reglas alineadas al dominio: índice único por paciente y fecha para evitar sesiones duplicadas por día, índice parcial por `iot_device_id` para identificar dispositivos en uso (`READY`, `IN_PROGRESS`), y constraints para proteger invariantes de serie (`current_repetitions <= target_repetitions`, `min_angle < max_angle`). Se mantiene, además, la estrategia de autonomía entre contexts: las referencias externas son lógicas (sin foreign keys duras hacia IAM, Planning o Device).
 
 <div style="text-align: center;">
-  <img src="assets/diagrams/database/erd/out/therapy-erd.png" alt="uFlex — Therapy Bounded Context Database ER Diagram" style="max-width: 100%; height: auto;">
+  <img src="assets/diagrams/database/erd/out/therapy-database-design-diagram.png" alt="uFlex — Therapy Bounded Context Database ER Diagram" style="max-width: 100%; height: auto;">
 </div>
 
 *Figura 4.2.6.6.2. Diagrama entidad-relación del Bounded Context Therapy.*
@@ -5202,21 +5321,447 @@ En integridad y rendimiento, el diseño incorpora reglas alineadas al dominio: �
 
 <hr class="page-break">
 
-## 5.4. Applications UX/UI Design.
+## Capítulo V: Solution UI/UX Design
 
-En esta sección se presentan los low wireframes, wireflow diagrams, mock-ups, user flow diagrams y prototipos correspondientes a la aplicación web de la plataforma uFlex. Estos artefactos permiten representar la estructura, navegación, apariencia visual e interacción de los usuarios dentro del sistema.
+El capítulo presenta el diseño de la interfaz de usuario (UI) y la experiencia de usuario (UX) de la plataforma uFlex. Se detallan los principios de diseño, la arquitectura de la información, los wireframes y prototipos de las principales pantallas de la aplicación. Además, se describen las herramientas y tecnologías utilizadas para el desarrollo del diseño UI/UX.
 
-La aplicación web de uFlex está orientada principalmente a administradores de clínica y fisioterapeutas. A través de esta plataforma, los usuarios pueden gestionar organizaciones, dispositivos IoT, pacientes, terapias, planificación clínica, ejercicios terapéuticos y suscripciones. El diseño busca mantener una experiencia clara, profesional y coherente con el contexto médico-tecnológico del producto.
+### 5.1. Style Guidelines
 
----
+La guía de estilos sienta las bases de diseño para la plataforma uFlex, asegurando una experiencia de usuario coherente y atractiva. En esta sección se detallan los colores, tipografías, iconografía y otros elementos visuales que conforman la identidad de la marca.
 
-## 5.4.1. Applications Wireframes.
+#### 5.1.1. General Style Guidelines
 
-Los wireframes representan la estructura inicial de las pantallas de la aplicación web de uFlex antes de aplicar el diseño visual final. Su objetivo es validar la distribución de componentes, la jerarquía de información y la navegación entre los módulos principales del sistema.
+La identidad visual de uFlex ha sido diseñada para transmitir confianza, precisión técnica y bienestar clínico. Dado que el ecosistema integra hardware (sensores) y software (SaaS), la paleta de colores busca equilibrar la sobriedad necesaria para una herramienta de grado médico con la calidez requerida para reducir la "kinesiofobia" (miedo al movimiento) en el paciente durante su rehabilitación en casa.
 
-Estos wireframes se organizaron según los roles principales de la plataforma web: administrador de clínica, fisioterapeuta y paciente. Cada pantalla permite identificar cómo se ubican formularios, tablas, botones, tarjetas de información y acciones principales antes de pasar a los mock-ups de alta fidelidad.
+El estilo visual se basa en una estética limpia y moderna, diseñada para garantizar la legibilidad en diversos entornos, desde la pantalla de un smartphone en un hogar con iluminación variable hasta un dashboard clínico en una clínica.
 
----
+**Color**
+
+Los colores juegan un papel clave en la primera impresión que los usuarios tienen de uFlex. Se han seleccionado tonos que facilitan la jerarquía visual y reducen la carga cognitiva, permitiendo que el paciente se enfoque en la ejecución correcta de sus ejercicios. A continuación, se detalla la paleta de colores de uFlex y su sustento:
+
+- **Color Primario:** #074D61 (Azul Petróleo): Este tono actúa como el pilar de la identidad de la marca. Se seleccionó para evocar profesionalismo, seguridad y estabilidad. Al ser un color profundo, proporciona un contraste excelente para elementos de navegación, transmitiendo la robustez de un sistema que gestiona datos críticos de salud.
+- **Color Secundario:** #48CBB6 (Verde Menta): Funciona como el acento principal de la interfaz, aportando frescura y una sensación de renovación física. Su uso está destinado a elementos interactivos y llamadas a la acción (CTAs), asociando la tecnología de KinIoT con la vitalidad y el progreso del proceso terapéutico.
+- **Color de Fondo:** #F7F5ED (Blanco Hueso): A diferencia de un blanco puro, este tono reduce la fatiga visual, especialmente importante para los fisioterapeutas que pasan largas jornadas revisando métricas. Crea una atmósfera orgánica y acogedora que suaviza la naturaleza estéril de las aplicaciones médicas tradicionales.
+- **Color de Información:** #00B4D8 (Azul Claro): Se reserva para estados neutrales, guías de usuario y visualización de datos informativos. Su claridad ayuda a distinguir instrucciones de soporte sin generar una alerta innecesaria en el paciente.
+- **Color de Éxito:** #3BC48E (Verde Esmeralda): Utilizado para validar el cumplimiento de metas, como el alcance del ángulo de ROM deseado o la finalización de una serie. Este verde refuerza positivamente el comportamiento del usuario mediante una retroalimentación visual clara.
+- **Color de Advertencia:** #FFAD33 (Naranja): Actúa como una señal preventiva. En uFlex, es crucial para indicar cuando un paciente realiza un movimiento que se desvía ligeramente del patrón correcto o cuando la batería de los sensores IoT está próxima a agotarse.
+- **Color de Error:** #EF5350 (Rojo Coral): Destinado a situaciones críticas, como la pérdida de conexión Bluetooth con los sensores o la ejecución de movimientos peligrosos que podrían comprometer la lesión. Es un tono vibrante que asegura una atención inmediata por parte del usuario.
+
+![Paleta de colores de uFlex](assets/design/style-guidelines/general/uflex-color-palette.png)
+
+**Tipografía**
+
+La tipografía es otro componente esencial de la identidad visual de una marca. La elección de fuentes tipográficas debe reflejar la personalidad de la marca y garantizar la legibilidad en todos los dispositivos, desde los dashboards complejos del especialista hasta la interfaz móvil del paciente.
+
+En el caso de uFlex, se seleccionaron las siguientes fuentes:
+
+- **Títulos y Encabezados:** *Plus Jakarta Sans* – Se eligió esta fuente por su geometría moderna y su aire tecnológico, lo cual se alinea con la identidad de KinIoT como innovadora en IoT. Al ser una tipografía diseñada específicamente para pantallas modernas, ofrece una excelente distinción de jerarquías en los encabezados, aportando un carácter dinámico y profesional que guía la vista del usuario hacia la información más relevante de manera inmediata.
+- **Cuerpo de Texto:** *Inter* – Esta tipografía es el estándar para interfaces de usuario debido a su altísima legibilidad en tamaños pequeños. Su diseño optimiza el espacio entre caracteres, lo que facilita que los pacientes lean sus instrucciones de rehabilitación sin esfuerzo visual y que los especialistas interpreten rápidamente los datos numéricos y reportes clínicos en el sistema multitenant.
+
+Con estas elecciones tipográficas, uFlex logra un equilibrio entre una estética vanguardista y una funcionalidad clínica superior. La combinación de ambas asegura que la plataforma sea percibida como una herramienta de alta precisión técnica, pero accesible y amigable para el proceso de recuperación del paciente.
+
+![Tipografía uFlex Títulos](assets/design/style-guidelines/general/uflex-typography-headings.png)
+
+![Tipografía uFlex Cuerpo de Texto](assets/design/style-guidelines/general/uflex-typography-body.png)
+
+**Iconografía**
+
+La iconografía utilizada en uFlex sigue un estilo lineal y minimalista, alineado con las tendencias actuales de diseño. Los iconos son simples, claros y fácilmente reconocibles, lo que facilita la navegación y la comprensión de las funciones de la plataforma.
+
+Además, se sigue el estilo de Material Design Icons, adaptando los iconos a la paleta de colores de uFlex para mantener la coherencia visual. Los iconos se utilizan para representar acciones comunes, como iniciar una sesión, reportar un nivel de dolor o cancelar una sesión, lo que mejora la experiencia del usuario al proporcionar señales visuales claras.
+
+![Iconografía de uFlex](assets/design/style-guidelines/general/uflex-iconography.png)
+
+**Sistema de Cuadrículas**
+
+El diseño de la interfaz de usuario de uFlex se basa en un sistema de cuadrículas flexible que asegura una disposición ordenada y coherente de los elementos visuales. Este sistema facilita la alineación y el espaciado, mejorando la legibilidad y la estética general de la plataforma.
+
+![Sistema de cuadrículas de uFlex](assets/design/style-guidelines/general/uflex-grid-system.png)
+
+**Espaciado**
+
+El espaciado entre los elementos es crucial para evitar la saturación visual y mejorar la experiencia del usuario. En uFlex, se utiliza un sistema de espaciado consistente basado en unidades de 8px, lo que permite una distribución equilibrada y armoniosa de los componentes en la interfaz.
+
+![Espaciado de uFlex](assets/design/style-guidelines/general/uflex-spacing.png)
+
+**Branding**
+
+Para uFlex, se optó por un imagotipo que combina tanto un logotipo (el nombre de la marca) con un isotipo (un símbolo o icono) en una sola unidad coherente. Este enfoque permite que la marca sea fácilmente reconocible y memorable, ya que el símbolo gráfico puede ser utilizado de manera independiente en ciertos contextos, mientras que el nombre de la marca refuerza la identidad verbal.
+
+![Branding de uFlex](assets/design/style-guidelines/general/uflex-branding.png)
+
+El imagotipo de uFlex se compone por un isotipo abstracto que fusiona la letra "U" con una representación esquemática de una articulación humana. La estructura se divide en dos segmentos curvos unidos por nodos circulares, los cuales simbolizan los puntos de conexión y flexibilidad del miembro superior (codo o muñeca). El uso del degradado visual entre el verde menta y el azul petróleo en los diferentes segmentos representa la transición de una lesión hacia la recuperación total, mientras que las formas redondeadas eliminan la rigidez, transmitiendo una sensación de movimiento fluido y natural, objetivo principal de la telerehabilitación.
+
+Además, el imagotipo incluye el nombre "uFlex" en una tipografía moderna y legible, utilizando la fuente Plus Jakarta Sans en un peso semi-bold para aportar solidez visual y equilibrio al conjunto. La aplicación del Azul Petróleo (#074D61) en el texto garantiza que la marca tenga suficiente peso visual en interfaces digitales. La minúscula inicial "u" resalta la cercanía con el usuario (user-centric) y su naturaleza tecnológica, mientras que la "F" mayúscula enfatiza el concepto de "Flexibilidad", creando un ritmo visual que facilita la recordación del nombre comercial.
+
+**Tono de Comunicación**
+
+El tono de comunicación de uFlex se define como **Empático**, **Profesional** y **Alentador**. Dado que el usuario principal suele atravesar un proceso de recuperación física que puede ser frustrante o doloroso, la plataforma debe actuar no solo como una herramienta de medición, sino como un acompañante en su rehabilitación.
+
+- **Empatía:** El sistema reconoce el esfuerzo del usuario. No se limita a entregar datos técnicos, sino que utiliza mensajes que validan el progreso del paciente.
+- **Profesionalismo:** Al ser una solución que gestiona datos de salud y biomecánica, la comunicación mantiene una base seria y precisa, evitando ambigüedades que puedan generar dudas sobre el estado clínico.
+- **Aliento:** Se utiliza un enfoque positivo (sin llegar a ser excesivamente informal) para motivar al paciente a completar sus rutinas diarias, transformando la percepción de la terapia de una obligación a un logro alcanzable.
+
+**Lenguaje Aplicado**
+
+El lenguaje aplicado en las interfaces de uFlex se caracteriza por ser **Respetuoso** y **Sereno**, manteniendo un equilibrio entre lo formal y lo casual según el contexto:
+
+- **Claridad Técnica:** En el dashboard del especialista, el lenguaje es preciso y utiliza la terminología del dominio (como ROM, flexión o supinación) definida en nuestro *Ubiquitous Language*.
+- **Accesibilidad Cognitiva:** En la interfaz del paciente, se evita la jerga médica compleja en favor de instrucciones directas y fáciles de seguir (ej. "Mueve tu muñeca hacia arriba" en lugar de "Realiza una extensión de carpo").
+- **Microcopy Predictivo:** Los botones y etiquetas están diseñados para reducir la incertidumbre. En lugar de usar términos genéricos como "Enviar", se utilizan frases de acción clara como "Finalizar Sesión" o "Reportar Dolor", alineándose con el objetivo de KinIoT de eliminar la incertidumbre en las terapias remotas.
+
+#### 5.1.2. Web, Mobile and IoT Style Guidelines
+
+**Web Style Guidelines**
+
+Para la interfaz web de uFlex, orientada principalmente a administradores y fisioterapeutas, se han adoptado los estándares de **Material Design 3**. Esta decisión asegura una navegación intuitiva y una jerarquía visual clara, facilitando la gestión de grandes volúmenes de datos clínicos y la configuración de terapias.
+
+- **Buttons:** Los botones utilizan esquinas redondeadas y estados claros (hover, focused, disabled) para indicar interactividad. Se prioriza el uso del color primario Azul Petróleo para acciones principales y variantes en "outline" para acciones secundarias, optimizando la toma de decisiones del especialista.
+
+    ![Botones de uFlex Web](./assets/design/style-guidelines/web/uflex-web-buttons.png)
+
+- **TextField:** Los campos de texto están diseñados para maximizar la legibilidad durante el ingreso de historias clínicas o datos de registro. Incluyen etiquetas flotantes y mensajes de error en Rojo Coral para proporcionar feedback inmediato al usuario.
+
+    ![Campos de texto de uFlex Web](./assets/design/style-guidelines/web/uflex-web-textfields.png)
+
+- **Select:** Este componente se utiliza para la selección de protocolos de tratamiento o asignación de pacientes. Su diseño desplegable permite una navegación eficiente dentro de formularios complejos sin perder el contexto de la página.
+
+    ![Select de uFlex Web](./assets/design/style-guidelines/web/uflex-web-select.png)
+
+- **Slider:** Esencial para la visualización y ajuste de rangos de movimiento (ROM) o metas de repeticiones. El slider permite un control granular y visual de parámetros numéricos, facilitando al fisioterapeuta la personalización del tratamiento.
+
+    ![Slider de uFlex Web](./assets/design/style-guidelines/web/uflex-web-slider.png)
+
+- **Checkbox:** Se emplean en las listas de tareas y selección múltiple de ejercicios dentro del plan de rehabilitación. Su diseño minimalista en Verde Menta confirma visualmente las selecciones del administrador de forma rápida.
+
+    ![Checkbox de uFlex Web](./assets/design/style-guidelines/web/uflex-web-checkbox.png)
+
+- **Chip:** Utilizados para categorizar el estado de los pacientes (ej. "En progreso", "Finalizado") o filtrar etiquetas en el inventario de equipos KinIoT. Son elementos compactos que ayudan a organizar la información sin saturar visualmente el dashboard.
+
+    ![Chip de uFlex Web](./assets/design/style-guidelines/web/uflex-web-chip.png)
+
+**Mobile Style Guidelines**
+
+Para la aplicación móvil de uFlex, el enfoque principal es la facilidad de uso y la reducción de la fricción cognitiva para el paciente. Al igual que en la versión web, se utiliza Material Design 3 como marco de referencia, adaptando sus componentes para ofrecer una interfaz táctil que sea amigable, incluso para usuarios con movilidad reducida o dolor en las articulaciones.
+
+- **Buttons:** Los botones móviles presentan superficies táctiles amplias y bordes altamente redondeados (forma de píldora) para facilitar la interacción. Se utilizan variantes con sombra (elevated) para acciones principales y tonos suaves para botones secundarios, manteniendo siempre el contraste necesario para una visibilidad clara. 
+
+    ![Botones de uFlex Mobile](./assets/design/style-guidelines/mobile/uflex-mobile-buttons.png)
+
+- **Segmented Button:** Este componente se emplea para alternar entre vistas rápidas o categorías, como cambiar entre la visualización de "Hoy" y "Semana" en el historial de ejercicios. Su diseño permite una selección clara y un feedback visual inmediato sobre la opción activa.
+
+    ![Segmented Button de uFlex Mobile](./assets/design/style-guidelines/mobile/uflex-mobile-segmented-button.png)
+
+- **Progress Indicator:** Son vitales para gestionar la paciencia del usuario durante procesos asíncronos, como la sincronización de datos mediante Bluetooth con los sensores o la carga de rutinas. Se utilizan tanto barras lineales como indicadores circulares para comunicar que el sistema está trabajando.
+
+    ![Progress Indicator de uFlex Mobile](./assets/design/style-guidelines/mobile/uflex-mobile-progress-indicators.png)
+
+- **Snackbar:** Se utilizan para proporcionar mensajes informativos breves y automáticos al pie de la pantalla, como confirmar que los datos de una sesión se han guardado exitosamente o alertar sobre una desconexión del sensor, permitiendo que el usuario continúe su flujo sin interrupciones mayores.
+
+    ![Snackbar de uFlex Mobile](./assets/design/style-guidelines/mobile/uflex-mobile-snackbar.png)
+
+- **Navigation Bar:** Ubicada en la parte inferior de la pantalla (Bottom Navigation), facilita la navegación con una sola mano. Permite al paciente saltar rápidamente entre las secciones de "Inicio", "Terapia", "Progreso" y "Perfil" mediante iconos claros y etiquetas legibles.
+
+    ![Navigation Bar de uFlex Mobile](./assets/design/style-guidelines/mobile/uflex-mobile-navigation-bar.png)
+
+- **Menu:** Para funciones secundarias o ajustes de cuenta, se implementan menús desplegables que organizan las opciones de manera vertical. Este diseño ahorra espacio en pantalla y mantiene la interfaz limpia, mostrando solo lo necesario cuando el usuario lo requiere.
+
+    ![Menu de uFlex Mobile](./assets/design/style-guidelines/mobile/uflex-mobile-menu.png)
+
+**IoT Style Guidelines**
+
+Estas directrices definen las características físicas y visuales de los dispositivos para asegurar que la captura de datos biomecánicos sea fiable y que la interacción con el paciente sea intuitiva y libre de fricción técnica.
+
+**Diseño físico y carcasa (Wearable Nodes):** El diseño de los tres nodos (Bíceps, Antebrazo y Dorso de la mano) prioriza la ergonomía y la higiene, factores críticos en entornos de rehabilitación.
+
+- **Material:** La carcasa está fabricada en polímero médico ligero, resistente a caídas accidentales y con propiedades hipoalergénicas para evitar irritaciones durante sesiones clínicas prolongadas.
+- **Color:** Se utiliza el Blanco Hueso (#F7F5ED) como base para transmitir limpieza y calma, con detalles en Azul Petróleo (#074D61) en los puntos de sujeción para mantener la coherencia con el branding de uFlex.
+- **Ergonomía:** Los nodos presentan una base cóncava para adaptarse a la curvatura de las extremidades. Los bordes son redondeados para no interferir con la ropa del paciente o causar molestias durante movimientos de Flexión o Extensión.
+- **Sujeción:** Cada nodo cuenta con ranuras para correas de velcro elástico de grado médico, permitiendo una fijación firme que evita el deslizamiento, lo cual es vital para que los sensores entreguen ángulos precisos sin ruido por movimiento relativo.
+
+**Componentes visuales y hápticos en campo:** Estos elementos permiten que el paciente conozca el estado del sistema sin necesidad de mirar constantemente la aplicación móvil, reduciendo la carga cognitiva.
+
+- **Indicadores de Estado (LED RGB):** Un único LED ubicado en el nodo central (controlado por el ESP32) comunica el estado operativo mediante códigos de color coherentes con la paleta de uFlex:
+    - **Azul Parpadeante:** Dispositivo en modo de emparejamiento Bluetooth.
+    - **Verde Fijo:** Conexión exitosa y sensores calibrados listos para iniciar la sesión clínica.
+    - **Rojo Fijo:** Nivel de batería crítica o fallo en la lectura de un sensor.
+- **Feedback Háptico (Motor Vibrador):** Es el canal de comunicación principal durante el ejercicio. El motor tipo moneda genera una vibración breve pero perceptible cuando el sistema detecta un Movimiento Compensatorio (ej. elevación excesiva del hombro) o cuando el paciente alcanza el límite de su Rango de Movimiento (ROM) prescrito en su protocolo terapéutico.
+
+**Gestión de Energía e Interfaz de Usuario Física:** Para facilitar la autonomía del paciente, los nodos cuentan con una batería recargable de larga duración y un puerto USB-C para carga rápida.
+
+- **Puerto de Carga:** Ubicado de forma lateral para no interferir con la sujeción, utiliza un estándar USB-C protegido por una solapa de silicona, conectado a un módulo de recarga de la batería de litio.
+- **Identificador de Nodo:** Cada nodo está grabado con su posición técnica (B, A, D) mediante serigrafía de alta durabilidad, asegurando que el paciente coloque correctamente el sensor de "Bíceps", "Antebrazo" o "Dorso" para no alterar la lógica de la Cadena Cinemática.
+
+<hr class="page-break">
+
+### 5.2. Information Architecture
+
+En esta sección se describe la arquitectura de la información de la plataforma uFlex, la cual ha sido diseñada para estructurar, organizar y etiquetar el contenido de manera que los fisioterapeutas, administradores y pacientes encuentren la información clínica y operativa sin esfuerzo. El objetivo primordial es reducir la carga cognitiva mediante una jerarquía clara que facilite la toma de decisiones médicas y el cumplimiento de las rutinas de ejercicios.
+
+#### 5.2.1. Organization Systems
+
+Para garantizar que el contenido de uFlex sea accesible y lógico, se han aplicado diversos sistemas de organización adaptados a la naturaleza de los datos y al perfil de cada usuario:
+
+**Visual Organization Systems (Sistemas de Organización Visual):**
+
+- **Organización Jerárquica (Visual Hierarchy):** Se aplica de forma predominante en los dashboards de la plataforma web y la aplicación móvil. La información más crítica, como el estado de conexión de los Wearable Nodes y las métricas de ROM (Range of Motion), ocupa el nivel superior de la jerarquía visual mediante el uso de tarjetas (cards) destacadas y tipografía Plus Jakarta Sans en pesos mayores. Esto permite que el fisioterapeuta identifique anomalías en la rehabilitación de un vistazo.
+- **Organización Secuencial (Step-by-step):** Este sistema es el eje central de la experiencia del paciente durante las Clinical Sessions. El flujo de la terapia se organiza como un proceso lineal que guía al usuario desde el emparejamiento de los sensores, pasando por la ejecución guiada de cada ejercicio (Flexión, Extensión, etc.), hasta el reporte final de dolor y progreso.
+- **Organización Matricial:** Se utiliza en la sección de analítica avanzada para especialistas y administradores. Permite cruzar variables como la Adherencia del paciente frente a la mejora en los ángulos de movimiento a lo largo del tiempo, facilitando la comparación de múltiples datos complejos en una sola vista.
+
+**Content Categorization Schemes (Esquemas de Categorización de Contenido):**
+
+- **Según Audiencia (Grupos de Usuarios):** Es el esquema principal de la arquitectura de uFlex. El contenido se segmenta estrictamente según el rol: los Especialistas acceden a herramientas de prescripción y monitoreo técnico, los Administradores a la gestión multitenant de la clínica, y los Pacientes a su plan de entrenamiento personal y feedback biomecánico inmediato.
+- **Cronológico:** Aplicado en el historial de recuperación. Los datos capturados por los sensores BNO055 se organizan por fechas y sesiones, permitiendo al usuario y al médico observar la evolución de la Rigidez Articular desde el inicio del tratamiento hasta la fecha actual.
+- **Por Tópicos:** Se utiliza en la biblioteca de ejercicios y protocolos terapéuticos, categorizando el contenido por articulación (Codo o Muñeca) y tipo de movimiento (Pronación, Supinación, etc.), facilitando la búsqueda de ejercicios específicos para cada patología.
+- **Alfabético:** Este esquema se aplica de forma auxiliar en los listados de pacientes y en el inventario de dispositivos IoT de la clínica para facilitar la localización rápida de registros específicos en bases de datos extensas.
+
+#### 5.2.2. Labeling Systems
+
+En esta sección se definen las etiquetas utilizadas en la plataforma para representar conjuntos de información complejos mediante términos breves y significativos. El objetivo es facilitar la navegabilidad y asegurar que la asociación entre la etiqueta y el contenido sea inmediata, evitando la ambigüedad tanto en la interfaz médica como en la del usuario final.
+
+- **Terapia (o Sesión):** Esta etiqueta se utiliza en la aplicación móvil para agrupar el flujo de ejercicios diarios. Su función es asociar que, al pulsarla, el usuario encontrará su plan de rehabilitación específico, la conexión con los Nodos Vestibles y la guía de movimientos inerciales.
+- **Progreso:** Representa el conjunto de datos históricos y analíticos del paciente. Asocia en la mente del usuario la disponibilidad de gráficos de evolución, comparativas de Range of Motion (ROM) y niveles de Adherencia alcanzados desde el inicio del protocolo terapéutico.
+- **Protocolos:** Etiqueta exclusiva para el perfil del Fisioterapeuta. Asocia de forma directa el acceso a la creación y edición de planes de entrenamiento personalizados, límites de ángulos permitidos y selección de ejercicios biomecánicos.
+- **Dispositivos:** Se utiliza para la gestión del hardware de KinIoT. Asocia el estado de los sensores BNO055, niveles de batería, calibración del ESP32 y configuraciones de emparejamiento Bluetooth.
+- **Clínica:** Etiqueta orientada al perfil administrativo que asocia la gestión multitenant de la organización, incluyendo la administración de sedes, cuentas de especialistas e inventario tecnológico.
+- **Reportes:** Utilizada para la exportación de información clínica objetiva. Asocia la generación de documentos técnicos que detallan la Cadena Cinemática del paciente, facilitando la comunicación entre especialistas médicos.
+- **Ayuda (o Soporte):** Concentra la documentación de usuario y guías rápidas de colocación de los sensores. Su asociación mental indica que allí se encuentran soluciones a errores de conexión (Luz Roja en el LED) o tutoriales de uso del sistema.
+
+#### 5.2.3. SEO Tags and Meta Tags
+
+Para optimizar el posicionamiento y la visibilidad del ecosistema uFlex de la startup KinIoT, se han definido estrategias de SEO para las plataformas web y de ASO para la aplicación móvil. Estas etiquetas permiten que los motores de búsqueda y las tiendas de aplicaciones indexen correctamente el contenido, atrayendo tanto a socios estratégicos (clínicas) como a usuarios finales (pacientes).
+
+**Landing Page SEO Tags and Meta Tags**
+
+La página de aterrizaje tiene como objetivo principal el marketing y la captación de centros de salud y pacientes interesados en la telerehabilitación.
+
+| **Etiqueta**           | **Contenido**                                                                                                                                                 |
+|------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Title                  | uFlex - Telerehabilitación con IoT para Miembro Superior                                                                                                      |
+| Meta Description       | uFlex es la solución líder de KinIoT en Perú que utiliza sensores vestibles y una plataforma SaaS para el monitoreo biomecánico de la rehabilitación en casa. |
+| Meta Keywords          | telerehabilitación, IoT salud, fisioterapia remota, sensores vestibles, KinIoT, rehabilitación de codo, medicina física Perú                                  |
+| Meta Author            | KinIoT Team                                                                                                                                                   |
+| Meta Viewport          | width=device-width, initial-scale=1.0                                                                                                                         |
+| Meta Charset           | UTF-8                                                                                                                                                         |
+| Open Graph Title       | uFlex: Transforma tu rehabilitación con tecnología IoT                                                                                                        |
+| Open Graph Description | Recupera tu movilidad con precisión clínica desde casa mediante nuestros sensores de alta fidelidad.                                                          |
+| Open Graph Image       | https://www.kiniot.com/assets/images/uflex-og-preview.png                                                                                                     |
+| Open Graph URL         | https://www.kiniot.com/uflex                                                                                                                                  |
+
+```html
+<title>uFlex - Telerehabilitación con IoT para Miembro Superior</title>
+<meta name="description" content="uFlex es la solución líder de KinIoT en Perú que utiliza sensores vestibles y una plataforma SaaS para el monitoreo biomecánico de la rehabilitación en casa.">
+<meta name="keywords" content="telerehabilitación, IoT salud, fisioterapia remota, sensores vestibles, KinIoT, rehabilitación de codo, medicina física Perú">
+<meta name="author" content="KinIoT Team">
+<meta property="og:title" content="uFlex: Transforma tu rehabilitación con tecnología IoT">
+<meta property="og:description" content="Recupera tu movilidad con precisión clínica desde casa mediante nuestros sensores de alta fidelidad.">
+```
+
+**Web Application SEO Tags and Meta Tags**
+
+La aplicación web está diseñada para el acceso de Fisioterapeutas y Administradores de clínicas. Al ser una SPA, las etiquetas se enfocan en la funcionalidad y seguridad profesional.
+
+| **Etiqueta**     | **Contenido**                                                                                                  |
+|------------------|----------------------------------------------------------------------------------------------------------------|
+| Title            | Portal de Gestión uFlex - KinIoT                                                                               |
+| Meta Description | Plataforma de gestión clínica y monitoreo de pacientes para especialistas en medicina física y rehabilitación. |
+| Meta Keywords    | gestión clínica SaaS, monitoreo ROM, datos biomecánicos, fisioterapia digital, administración de pacientes     |
+| Meta Robots      | noindex, nofollow (para proteger el acceso a datos internos)                                                   |
+
+**Android Mobile Application ASO (Paciente)**
+
+Dado que la aplicación móvil es de uso exclusivo para el Paciente que realiza sus ejercicios con los Wearable Nodes, el ASO se centra en la facilidad de recuperación y el uso de hardware.
+
+| **Etiqueta**      | **Contenido**                                                                                                                                                                                                                                                                                                           |
+|-------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| App Title         | uFlex: Tu Fisioterapia en Casa                                                                                                                                                                                                                                                                                          |
+| Short Description | Realiza tu rehabilitación de brazo y muñeca con monitoreo IoT en tiempo real.                                                                                                                                                                                                                                           |
+| Full Description  | uFlex te acompaña en tu recuperación. Conéctate a tus sensores KinIoT y recibe retroalimentación inmediata sobre tus movimientos. Nuestra tecnología de sensores BNO055 garantiza que realices cada ejercicio con precisión clínica, evitando movimientos compensatorios y acelerando tu retorno a la movilidad normal. |
+| App Keywords      | ejercicios de codo, rehabilitación móvil, sensor movimiento salud, fisioterapia digital, uFlex, KinIoT                                                                                                                                                                                                                  |
+| Category          | Salud y Bienestar / Medicina                                                                                                                                                                                                                                                                                            |
+| Developer Name    | KinIoT                                                                                                                                                                                                                                                                                                                  |
+| Icon              | Icono de uFlex (512x512 PNG)                                                                                                                                                                                                                                                                                            |
+| Screenshots       | Capturas del emparejamiento Bluetooth, guías de ejercicios y gráficos de progreso (ROM).                                                                                                                                                                                                                                |
+
+#### 5.2.4. Searching Systems
+
+Los sistemas de búsqueda en uFlex han sido diseñados para mitigar la sobrecarga de información, permitiendo que los usuarios localicen registros específicos, métricas de sensores o historiales clínicos de manera ágil y precisa.
+
+1. **Búsqueda en la Aplicación Web (Especialistas y Administradores)**
+
+Dada la naturaleza multitenant de la plataforma, el dashboard administrativo requiere un sistema de búsqueda robusto para gestionar múltiples pacientes y especialistas.
+
+- **Búsqueda Global y Predictiva:** Se implementa una barra de búsqueda con autocompletado en el encabezado del portal. Al ingresar las primeras letras del nombre de un paciente o el ID de un Wearable Node, el sistema sugiere coincidencias en tiempo real, reduciendo el tiempo de navegación.
+- **Filtros Avanzados (Filtering System):** Para refinar los resultados, el especialista cuenta con filtros específicos basados en nuestro lenguaje ubicuo:
+  - **Por Estado de Adherencia:** Filtrar pacientes con bajo cumplimiento del protocolo terapéutico.
+  - **Por Tipo de Lesión:** Agrupar resultados por articulación afectada (Codo o Muñeca).
+  - **Por Rango de Fecha:** Localizar sesiones clínicas realizadas en periodos específicos.
+  - **Por Estado del Hardware:** Filtrar dispositivos KinIoT según nivel de batería o última fecha de sincronización.
+- **Visualización de Resultados:** Los datos se presentan en tablas dinámicas que permiten el "ordenamiento por columnas". Los términos buscados aparecen resaltados, y cada fila incluye un acceso directo a la visualización de la Cadena Cinemática del paciente.
+
+2. **Búsqueda en la Aplicación Móvil (Pacientes)**
+
+En el entorno móvil, la búsqueda es más dirigida y simplificada para no abrumar al usuario durante su recuperación.
+
+- **Búsqueda en Biblioteca de Ejercicios:** El paciente puede buscar rutinas específicas dentro de su plan personalizado. El sistema utiliza etiquetas (chips) para filtrar por "Ejercicios de Flexión", "Rotación" o "Nuevas Rutinas".
+- **Historial de Sesiones:** Se incluye un buscador cronológico dentro de la sección de "Progreso", donde el paciente puede localizar una fecha exacta para revisar el nivel de dolor reportado o los ángulos de ROM alcanzados en ese día.
+- **Visualización de Resultados:** Los resultados se muestran mediante tarjetas (cards) visuales que incluyen un ícono representativo del ejercicio y un indicador de estado (completado/pendiente), facilitando la identificación rápida sin necesidad de leer textos extensos.
+
+#### 5.2.5. Navigation Systems
+
+El sistema de navegación de uFlex se estructura para guiar a los tres tipos de usuarios a través de sus metas específicas: la venta del servicio (Landing), la gestión clínica (Web App) y la ejecución de la terapia (Mobile App). Se han implementado técnicas de navegación que minimizan la cantidad de clics necesarios para alcanzar funciones críticas.
+
+1. **Navegación en el Landing Page (Marketing y Captación)**
+
+- **Navegación de Desplazamiento (Scrolling Navigation):** Al ser un sitio orientado a la conversión, se utiliza una estructura de "One-page" donde el usuario recorre la propuesta de valor de KinIoT, las características de uFlex y los testimonios de forma lineal.
+- **Menú Sticky:** Un encabezado persistente permite saltar rápidamente a secciones como "Tecnología IoT" o "Planes para Clínicas", manteniendo siempre visible el botón de llamado a la acción (CTA) para solicitar una demo.
+
+2. **Navegación en la Aplicación Web (Dashboard Multitenant)**
+
+- **Barra Lateral Estática (Side Navigation):** Se utiliza un menú vertical a la izquierda que contiene las categorías principales: Dashboard, Pacientes, Protocolos e Inventario IoT. Este sistema permite que el fisioterapeuta cambie de contexto sin perder la visibilidad de su ubicación actual.
+- **Navegación por Migas de Pan (Breadcrumbs):** Dado que la gestión clínica puede profundizar en niveles (ej. Clínica > Especialista > Paciente > Sesión específica), las breadcrumbs permiten al administrador retroceder niveles jerárquicos de forma inmediata.
+- **Navegación Contextual:** Dentro del perfil de un paciente, se incluyen pestañas (tabs) para navegar entre "Datos Biomecánicos", "Historial de ROM" y "Configuración de Sensores", manteniendo toda la información relacionada en un solo lugar.
+
+3. **Navegación en la Aplicación Móvil (Experiencia del Paciente):**
+
+- **Barra de Navegación Inferior (Bottom Navigation):** Diseñada para la interacción con el pulgar, permite alternar entre "Inicio", "Mi Terapia" y "Progreso". Es la técnica principal para usuarios que podrían tener movilidad reducida en una mano.
+- **Navegación Secuencial (Guided Flow):** Para la sesión de ejercicios, se emplea una navegación tipo "wizard". El sistema bloquea la navegación libre para obligar al usuario a seguir el orden clínico: Calibración de Sensores → Ejercicio 1 → Feedback Háptico → Registro de Dolor.
+- **Gestos de Interacción (Gestures):** Se incorporan gestos de deslizamiento (swipe) para navegar entre las tarjetas de resultados históricos, haciendo que la revisión del progreso sea una experiencia táctil natural.
+
+4. **Navegación entre Ecosistemas (Inter-product Navigation)**
+
+- **Deep Linking:** El sistema permite que, desde el Portal Web, el fisioterapeuta genere alertas que llegan como notificaciones push al móvil del paciente, creando un puente de navegación directo hacia una rutina específica que requiere atención.
+
+<hr class="page-break">
+
+### 5.3. Landing Page UI Design
+
+En esta sección se presentan los wireframes y mock-ups de la página de inicio (landing page) de la plataforma uFlex. Se describen las principales secciones, funcionalidades y elementos visuales que componen esta pantalla.
+
+#### 5.3.1. Landing Page Wireframe
+
+A continuación se presenta la sustentación de la landing page. El diseño de media fidelidad se ha estructurado para comunicar de manera clara y efectiva la propuesta de valor de uFlex, destacando sus características innovadoras y su impacto en la rehabilitación de miembro superior.
+
+**Hero**
+
+Encabezado claro, subtítulo con propuesta de valor y botones de acción para empezar. El diseño es limpio y directo, con un fondo que resalta el logotipo de uFlex.
+
+![Landing Page Wireframe Hero](./assets/ux-ui/wireframes/landing/landing-page-wireframe-1.png)
+
+**Características**
+
+Se destacan las principales funcionalidades de uFlex, como el monitoreo en tiempo real, la precisión clínica y la facilidad de uso. Cada característica se acompaña de un ícono representativo para mejorar la comprensión visual.
+
+![Landing Page Wireframe Features](./assets/ux-ui/wireframes/landing/landing-page-wireframe-2.png)
+
+**Cómo Funciona**
+
+Se explica en 3 pasos simples cómo funciona la plataforma, desde la conexión de los sensores hasta la visualización de resultados. El diseño utiliza una estructura secuencial para guiar al usuario a través del proceso.
+
+![Landing Page Wireframe How It Works](./assets/ux-ui/wireframes/landing/landing-page-wireframe-3.png)
+
+**Tecnología**
+
+Se detalle el uso de IoT y Edge Computing en uFlex, destacando la innovación tecnológica detrás del producto. Se incluyen gráficos que ilustran la arquitectura técnica y el flujo de datos.
+
+![Landing Page Wireframe Technology](./assets/ux-ui/wireframes/landing/landing-page-wireframe-4.png)
+
+**Testimonios**
+
+Se incluyen testimonios de usuarios satisfechos, con citas destacadas y fotos para generar confianza y credibilidad en el producto.
+
+![Landing Page Wireframe Testimonials](./assets/ux-ui/wireframes/landing/landing-page-wireframe-5.png)
+
+**Planes**
+
+Se muestran los diferentes planes de suscripción para clínicas, con una tabla comparativa que resalta las características incluidas en cada plan y un llamado a la acción para solicitar una demo.
+
+![Landing Page Wireframe Pricing](./assets/ux-ui/wireframes/landing/landing-page-wireframe-6.png)
+
+**Preguntas Frecuentes**
+
+Se incluyen respuestas a las preguntas más comunes sobre el producto, su uso y su implementación en clínicas, para resolver dudas y facilitar la decisión de compra.
+
+![Landing Page Wireframe FAQ](./assets/ux-ui/wireframes/landing/landing-page-wireframe-7.png)
+
+**Contacto**
+
+Se proporciona un formulario de contacto para que los interesados puedan solicitar más información o agendar una demostración personalizada, con campos para nombre, correo electrónico, mensaje y un botón de envío.
+
+![Landing Page Wireframe Contact](./assets/ux-ui/wireframes/landing/landing-page-wireframe-8.png)
+
+**Pie de Página**
+
+Finalmente, se incluye un pie de página con enlaces a redes sociales, términos y condiciones, política de privacidad y datos de contacto de la empresa, para cerrar la experiencia de navegación con información relevante y accesible.
+
+![Landing Page Wireframe Footer](./assets/ux-ui/wireframes/landing/landing-page-wireframe-9.png)
+
+#### 5.3.2. Landing Page Mock-up
+
+A continuación se presenta la sustentación de los mockups de la landing page. En este mock-up de alta fidelidad se han aplicado los lineamientos de estilo definidos previamente, utilizando la paleta de colores, tipografía y componentes visuales para crear una experiencia atractiva y coherente con la identidad de uFlex.
+
+**Hero**
+
+En el mock-up, el hero se ha diseñado con un fondo dinámico que muestra una imagen un miembro superior representando la necesidad del producto, transmitiendo la idea de innovación y tecnología aplicada a la salud. El título y subtítulo están centrados para captar la atención inmediata del visitante.
+
+![Landing Page Mock-up Hero](./assets/ux-ui/mockups/landing/landing-page-mockup-1.png)
+
+**Características**
+
+Se detallan las características de uFlex con un diseño moderno y visualmente atractivo, utilizando tarjetas (cards) para cada funcionalidad y colores que resaltan los beneficios clave del producto.
+
+![Landing Page Mock-up Features](./assets/ux-ui/mockups/landing/landing-page-mockup-2.png)
+
+**Cómo Funciona**
+
+Se muestra en 3 pasos claros y visuales, con íconos y gráficos que facilitan la comprensión del proceso de uso de uFlex, desde la conexión de los sensores hasta la interpretación de los datos.
+
+![Landing Page Mock-up How It Works](./assets/ux-ui/mockups/landing/landing-page-mockup-3.png)
+
+**Tecnología**
+
+Se detallan los componentes tecnológicos de uFlex, destacando el uso de IoT y Edge Computing, con datos numéricos que resaltan la precisión y eficiencia del sistema.
+
+![Landing Page Mock-up Technology](./assets/ux-ui/mockups/landing/landing-page-mockup-4.png)
+
+**Testimonios**
+
+Se incluye una sección de testimonios con citas reales de usuarios satisfechos, acompañados de fotos y un diseño que genera confianza y credibilidad en el producto.
+
+![Landing Page Mock-up Testimonials](./assets/ux-ui/mockups/landing/landing-page-mockup-5.png)
+
+**Planes**
+
+Se incluyen dos planes principales para clínicas, con una tabla comparativa que resalta las características de cada plan y un llamado a la acción claro para solicitar una demo personalizada.
+
+![Landing Page Mock-up Pricing](./assets/ux-ui/mockups/landing/landing-page-mockup-6.png)
+
+**Preguntas Frecuentes**
+
+Preguntas y respuestas claras y concisas sobre el producto, su uso y su implementación en clínicas, diseñadas para resolver dudas comunes y facilitar la decisión de compra.
+
+![Landing Page Mock-up FAQ](./assets/ux-ui/mockups/landing/landing-page-mockup-7.png)
+
+**Contacto**
+
+Formulario de contacto con un diseño limpio y funcional, que invita a los visitantes a solicitar más información o agendar una demostración personalizada, con campos claros y un botón de envío destacado.
+
+![Landing Page Mock-up Contact](./assets/ux-ui/mockups/landing/landing-page-mockup-8.png)
+
+**Pie de Página**
+
+Finalmente, se incluye un pie de página con enlaces a redes sociales, términos y condiciones, política de privacidad y datos de contacto de la empresa, diseñado para cerrar la experiencia de navegación con información relevante y accesible.
+
+![Landing Page Mock-up Footer](./assets/ux-ui/mockups/landing/landing-page-mockup-9.png)
+
+<hr class="page-break">
+
+### 5.4. Applications UX/UI Design
+
+
+
+#### 5.4.1. Applications Wireframes
+
 
 ## 5.4.1.1. Web Applications Wireframes.
 
@@ -5340,7 +5885,79 @@ Esta pantalla permite revisar el tratamiento del paciente, validar ejercicios as
 
 <img src="assets/ux-ui/wireframes/web/physiotherapist/Therapy_physiotherapist.png" alt="Wireframe de terapia del fisioterapeuta en uFlex" width="100%">
 
----
+
+#### Application Mobile - Paciente
+
+En esta sección se presentan los wireframes de media fidelidad para la aplicación móvil del paciente. El diseño sigue los principios de **diseño inclusivo**, aplicando tipografía legible de alto contraste, áreas táctiles mínimas de 48x48dp, navegación simple con patrones de flujo conocidos y jerarquía visual clara con grupos de contenido bien definidos. La arquitectura de información se estructura en flujos que priorizan las acciones más frecuentes del paciente.
+
+**Splash**
+
+Pantalla inicial que muestra el logotipo de uFlex centrado en un fondo limpio. Cumple la función de crear reconocimiento de marca mientras se cargan los recursos necesarios. El tiempo de exposición es breve (1-2 segundos) y redirige automáticamente al login si el usuario no está autenticado, o al onboarding en caso contrario.
+
+![Mobile Patient Wireframe - Splash](./assets/ux-ui/wireframes/mobile/mobile-patient-wireframe-1.png)
+
+**Login**
+
+Pantalla de autenticación que solicita al paciente su correo electrónico (con el que el fisioterapeuta lo registró) y un código de verificación enviado a dicho correo. El diseño sigue el principio de **affordance clara**, con campos de entrada claramente etiquetados y botones de acción prominentes. La disposición vertical de los elementos facilita la interacción con una sola mano. Se incluye la opción de reenviar el código si no se recibió, aplicando diseño inclusivo para usuarios con ansiedad tecnológica.
+
+![Mobile Patient Wireframe - Login](./assets/ux-ui/wireframes/mobile/mobile-patient-wireframe-2.png)
+
+**Home**
+
+Pantalla principal que actúa como hub de navegación. Saluda al usuario con un mensaje motivacional personalizado para incentivarlo a realizar su rutina diaria. Muestra un widget de **progreso semanal** con el porcentaje de ejercicios completados (visualizado como una barra de progreso circular con color verde paraCompletion y gris para pendiente). Además, presenta la lista de ejercicios asignados para el día de hoy, diferenciando los completados de los pendientes con íconos y colores semánticos. La información se organiza según el modelo de **Jerarquía de Necesidades** de Maslow adaptada a rehabilitación: primero motivación, luego progreso, finalmente tareas.
+
+![Mobile Patient Wireframe - Home](./assets/ux-ui/wireframes/mobile/mobile-patient-wireframe-3.png)
+
+**Devices - Sincronización Exitosa**
+
+Pantalla de confirmación que aparece tras completar exitosamente la vinculación del sensor IoT con la aplicación. Muestra el porcentaje de batería restante del dispositivo, transmitiendo éxito y tranquilidad. La información de batería se presenta con un indicador visual (porcentaje + ícono) siguiendo principios de diseño **data at a glance** para que el paciente pueda verificar rapidamente el estado del hardware antes de iniciar la terapia.
+
+![Mobile Patient Wireframe - Devices Éxito](./assets/ux-ui/wireframes/mobile/mobile-patient-wireframe-4.png)
+
+**Devices - Conexión Paso 1**
+
+Pantalla instructiva que guía al paciente en el primer paso de vinculación del sensor. El diseño aplica el principio de **diseño ambiental** mostrando una ilustración del sensor físico con una flecha señalando dónde debe encenderse. Indica que se debe asegurar que la luz del dispositivo IoT se encienda. El texto de instrucción es breve, con viñetas numeradas y un ícono representativo. La estructura sigue una disposición **top-to-bottom** para guiar visualmente al usuario por los pasos sin necesidad de scroll.
+
+![Mobile Patient Wireframe - Devices Conexión Paso 1](./assets/ux-ui/wireframes/mobile/mobile-patient-wireframe-5.png)
+
+**Devices - Conexión Paso 2**
+
+Pantalla que muestra el proceso de vinculación Bluetooth entre el teléfono y el sensor IoT. Presenta una **barra de progreso circular** que se completa incrementally mientras se establece la conexión. El diseño aplica el principio de **feedback continuo** manteniendo al paciente informado del estado del proceso. El texto "Vinculando..." se acompaña de un indicador visual de carga, y el mensaje es claro: la conexión se realiza por Bluetooth de baja energía para minimizar el consumo de batería del dispositivo IoT.
+
+![Mobile Patient Wireframe - Devices Conexión Paso 2](./assets/ux-ui/wireframes/mobile/mobile-patient-wireframe-6.png)
+
+**Terapia - Preparación**
+
+Pantalla previa al inicio de la sesión de ejercicios. El diseño sigue principios de **diseño instruccional** mostrando un video tutorial de cómo ejecutar correctamente los movimientos. Debajo del video, se presenta una serie de instrucciones textuales y visuales que describen la postura correcta, los errores comunes a evitar y las recomendaciones de respiración. Se aplica un layout de **contenido mixto** que combina video (elemento dominante), texto secundario e íconos de precaución para maximizar la comprensión del paciente antes de iniciar la actividad física.
+
+![Mobile Patient Wireframe - Terapia Preparación](./assets/ux-ui/wireframes/mobile/mobile-patient-wireframe-7.png)
+
+**Terapia - Sesión Activa**
+
+Pantalla central de la experiencia de rehabilitación. El diseño aplica principios de **diseño centrado en la tarea** mostrando en tiempo real un avatar que sigue los movimientos del brazo del paciente capturados por el sensor IoT. Se visualizan los ejercicios solicitados junto con el conteo de repeticiones válidas (incrementándose en verde) y el total de repeticiones requeridas. La información se dispone en cuadrantes: avatar superior para feedback visual, contador lateral para métricas, y barra inferior de progreso de sesión. El contraste alto y los colores semánticos permiten que pacientes con visión reducida puedan seguir su progreso.
+
+![Mobile Patient Wireframe - Terapia Sesión Activa](./assets/ux-ui/wireframes/mobile/mobile-patient-wireframe-8.png)
+
+**Terapia - Sesión Activa con Alerta**
+
+Pantalla idéntica a la sesión activa en su estructura, pero que se activa dinámicamente cuando el sistema detecta que el paciente no está ejecutando el movimiento dentro del rango o ángulo estipulado por el fisioterapeuta. El diseño aplica el principio de **feedback correctivo inmediato** mostrando una alerta visual prominente con un ícono de advertencia y un mensaje claro: "Ajusta tu posición". La alerta se presenta con color naranja de alta visibilidad, sin interrumpir abruptamente el flujo de la sesión, permitiendo que el paciente corrija y continúe sin perder el ritmo de la terapia.
+
+![Mobile Patient Wireframe - Terapia Sesión Activa Alerta](./assets/ux-ui/wireframes/mobile/mobile-patient-wireframe-9.png)
+
+**Terapia - Feedback**
+
+Pantalla final de la sesión de terapia. El diseño sigue el principio de **cierre de ciclo** proporcionando al paciente un espacio para reflexionar sobre su experiencia. Se presenta una escala visual de dolor (iconos faciales con etiquetas descriptivas) para que el paciente indique cuánto dolor sintió durante la sesión. Un campo de comentarios permite expresar sensaciones o dudas. El botón "Finalizar" confirma la conclusión de la terapia y guarda los datos para que el fisioterapeuta pueda revisarlos. La composición sigue un flujo vertical que facilita la completaración de todos los campos.
+
+![Mobile Patient Wireframe - Terapia Feedback](./assets/ux-ui/wireframes/mobile/mobile-patient-wireframe-10.png)
+
+**Historial - Progreso**
+
+Pantalla de consulta histórica que muestra gráficos de evolución de la movilidad del paciente a lo largo del tiempo. El diseño aplica principios de **visualización de datos accesible** usando líneas de tendencia con colores diferenciados para cada rango de movimiento medido. Se incluyen comentarios del fisioterapeuta como notas adjuntas a puntos específicos del gráfico, permitiendo que el paciente entienda el contexto clínico de su evolución. La información se organiza cronológicamente de más reciente a más antiguo, con la posibilidad de hacer zoom o seleccionar rangos de fechas específicos para consultar períodos anteriores.
+
+![Mobile Patient Wireframe - Historial Progreso](./assets/ux-ui/wireframes/mobile/mobile-patient-wireframe-11.png)
+
+#### 5.4.2. Applications Wireflow Diagrams
+
 
 ## 5.4.2. Applications Wireflow Diagrams.
 
@@ -5360,13 +5977,74 @@ Este diagrama representa el recorrido del fisioterapeuta dentro del portal clín
 
 <img src="assets/ux-ui/wireflows/web/physiotherapist/physiotherapist_wireflow.png" alt="Wireflow web del fisioterapeuta en uFlex" width="100%">
 
+
+
+#### Application Mobile - Paciente
+
+En esta seccion se presentan los Wireflow Diagrams de la aplicacion movil del paciente. Cada wireflow representa el flujo principal (happy path) para cumplir un User Goal especifico del usuario Mateo Rojas (paciente en rehabilitacion). Los wireflows muestran las pantallas involucradas y las transiciones entre ellas, facilitando la comprension del recorrido del usuario dentro de la aplicacion.
+
+**WF-01: Device Connection Flow**
+
+**User Goal:** UG-01 - Conectar mi dispositivo IoT a mi celular
+
+**Descripcion:** El paciente accede a la seccion de dispositivos para vincular el sensor IoT con su celular por primera vez o luego de haberlo desconectado. El flujo comienza en Home donde selecciona la opcion de conectar dispositivo, sigue los pasos de encendido y vinculacion Bluetooth, y regresa a Home una vez completado el proceso exitosamente.
+
+**Diagrama del flujo:**
+
+![Wireflow - Device Connection](./assets/ux-ui/wireflows/patient/mobile-patient-wireflow-1.png)
+
+**Explicacion del flujo:**
+
+1. **Home:** El paciente se encuentra en la pantalla principal y selecciona la opcion "Conectar dispositivo" (representada con icono de Bluetooth/dispositivo).
+2. **Devices - Conexion Paso 1:** Se muestra una instruccion para encender el sensor IoT manteniendo presionado el boton de encendido. El boton "Siguiente" permanece deshabilitado hasta que se detecte el dispositivo.
+3. **Devices - Conexion Paso 2:** Una vez detectado, la pantalla muestra una barra de progreso circular mientras se establece la conexion Bluetooth. El flujo es automatico sin intervencion del usuario.
+4. **Devices - Sincronizacion Exitosa:** Aparece la confirmacion con un icono de check verde, el nivel de bateria del dispositivo (85%) y el estado "Conectado". El paciente presiona "Listo" para finalizar.
+5. **Home:** El sistema redirige automaticamente a la pantalla principal donde ahora aparece el dispositivo conectado disponible para iniciar terapias.
+
 ---
 
-## 5.4.3. Applications Mock-ups.
+**WF-02: Therapy Session Flow**
 
-Los mock-ups representan la versión visual de alta fidelidad de las pantallas de uFlex. A diferencia de los wireframes, estos incorporan colores, tipografías, íconos, botones, tarjetas, tablas y componentes visuales finales.
+**User Goal:** UG-02 - Realizar una sesion completa de rehabilitacion
 
-El diseño de los mock-ups busca transmitir una imagen profesional, médica y tecnológica, acorde con el objetivo de uFlex de brindar seguimiento remoto de rehabilitación mediante dispositivos IoT.
+**Descripcion:** El paciente inicia su sesion de terapia desde Home con el dispositivo ya conectado. Sigue las instrucciones de preparacion, ejecuta los ejercicios mientras el sensor captura sus movimientos, recibe feedback en tiempo real sobre su postura, y al finalizar reporta su nivel de dolor para que el fisioterapeuta pueda evaluar su progreso.
+
+**Diagrama del flujo:**
+
+![Wireflow - Therapy Session](./assets/ux-ui/wireflows/patient/mobile-patient-wireflow-2.png)
+
+**Explicacion del flujo:**
+
+1. **Home:** El paciente selecciona un ejercicio pendiente de su lista diaria (boton de play).
+2. **Terapia - Preparacion:** Se muestra un video tutorial con las instrucciones de postura correcta. El paciente Revisa las recomendaciones y presiona "Iniciar Sesion".
+3. **Terapia - Sesion Activa:** Comienza la captura de movimiento en tiempo real. El avatar refleja los movimientos del brazo del paciente. El contador de repeticiones avanza conforme las ejecuta correctamente. La barra de progreso indica en que sesion va (3 de 5).
+4. **Terapia - Sesion Activa con Alerta:** Si el paciente realiza un movimiento fuera del angulo requerido, aparece un mensaje de alerta sobrepuesto: "Ajusta tu posicion". El paciente corrige su postura y puede continuar.
+5. **Terapia - Feedback:** Al completar todas las repeticiones, aparece la pantalla final donde el paciente selecciona su nivel de dolor (1 a 5), escribe comentarios opcionales y presiona "Finalizar".
+6. **Home:** El sistema guarda la informacion de la sesion y redirige a Home. El ejercicio aparece marcado como completado con check verde.
+
+---
+
+**WF-03: Progress History Flow**
+
+**User Goal:** UG-03 - Consultar mi historial de progreso
+
+**Descripcion:** El paciente desea revisar como ha evolucionado su movilidad a lo largo del tiempo. Accede a la seccion de historial desde Home, visualiza los graficos de progreso con los datos capturados por el sensor, y revisa los comentarios que su fisioterapeuta ha dejado en las sesiones anteriores.
+
+**Diagrama del flujo:**
+
+![Wireflow - Progress History](./assets/ux-ui/wireflows/patient/mobile-patient-wireflow-3.png)
+
+**Explicacion del flujo:**
+
+1. **Home:** El paciente selecciona la opcion "Ver historial de progreso" desde la pantalla principal.
+2. **Historial - Progreso:** Se muestra un grafico de lineas con la tendencia del rango de movimiento a lo largo de las ultimas semanas. Los puntos en el grafico incluyen notas del fisioterapeuta que pueden ser revisadas tocando cada punto de datos.
+3. **Historial - Progreso (filtro):** El paciente puede usar el selector de fechas para consultar un rango especifico de tiempo (Desde/Hasta).
+4. **Home:** El paciente presiona el boton de retroceder o "Volver" para regresar a la pantalla principal.
+
+---
+
+#### 5.4.3. Applications Mock-ups
+
 
 ### 5.4.3.1. Web Applications Mock-ups.
 
@@ -5490,7 +6168,79 @@ Esta pantalla muestra la gestión y seguimiento de terapias del paciente, permit
 
 <img src="assets/ux-ui/mockups/web/physiotherapist/Therapy_physiotherapist.png" alt="Mock-up de terapia del fisioterapeuta en uFlex" width="100%">
 
----
+
+#### Application Mobile - Paciente
+
+En esta seccion se presentan los mockups de alta fidelidad para la aplicacion movil del paciente. El diseno aplica el Design System de uFlex con colores corporativos, bordes redondeados y sombras sutiles. Cada pantalla esta disenada para ser intuitiva, con elementos claros y accesibles que cumplen con los principios de diseno inclusivo.
+
+**Splash**
+
+El mockup del Splash muestra el logotipo de uFlex en color azul centrado sobre un fondo blanco limpio. Debajo del logo aparece el mensaje "Rehabilitacion inteligente" a modo de tagline. Un pequeno indicador de carga animado (circulo) aparece en la parte inferior mientras se inicia la aplicacion. El diseno es minimalista para lograr rapides en la carga.
+
+![Mobile Patient Mockup - Splash](./assets/ux-ui/mockups/mobile/patient/mobile-patient-mockup-1.png)
+
+**Login**
+
+El mockup del Login muestra una estructura vertical centrada. En la parte superior esta el logo de uFlex. En el centro hay dos campos de entrada: uno para el correo electronico y otro para el codigo de verificacion que llega al correo. Debajo de los campos hay dos botones: el principal "Verificar" en azul solido, y el secundario "Reenviar codigo" solo con texto. En la parte inferior hay un enlace de "Ayuda" pequeno. La disposicion guia la vista de arriba hacia abajo de manera natural.
+
+![Mobile Patient Mockup - Login](./assets/ux-ui/mockups/mobile/patient/mobile-patient-mockup-2.png)
+
+**Home**
+
+El mockup del Home muestra tres areas bien separadas. Arriba esta el saludo personalizado "Hola, Salim" con un icono circular de avatar a la derecha y un mensaje motivacional debajo. En la parte media hay una tarjeta que muestra el progreso semanal con un circulo que indica el porcentaje completado (67%) y el texto correspondiente. Abajo aparece una lista de ejercicios del dia, donde cada uno tiene un icono, nombre y numero de repeticiones. Los ejercicios completados tienen una marca de verificacion verde, mientras que los pendientes muestran un boton de play para iniciar.
+
+![Mobile Patient Mockup - Home](./assets/ux-ui/mockups/mobile/patient/mobile-patient-mockup-3.png)
+
+**Devices - Sincronizacion Exitosa**
+
+El mockup de sincronizacion exitosa muestra un icono de check dentro de un circulo verdegrande, indicando que todo salio bien. Debajo dice "Dispositivo conectado" y se muestra una tarjeta con el icono de bateria y el porcentaje (85%) junto con la etiqueta "Nivel de bateria". Abajo aparece una pastilla verde que dice "Conectado". Todo el contenido esta centrado para transmitir claridad y tranquilidad al usuario.
+
+![Mobile Patient Mockup - Devices Exito](./assets/ux-ui/mockups/mobile/patient/mobile-patient-mockup-4.png)
+
+**Devices - Conexion Paso 1**
+
+El mockup del primer paso de conexion muestra una ilustracion del sensor IoT con una flecha indicando el boton de encendido. Hay un titulo "Enciende tu sensor" seguido de dos instrucciones con iconos: la primera dice "Mantener presionado el boton de encendido" y la segunda "Verificar que la luz indicadora parpadee". El boton "Siguiente" aparece abajo pero deshabilitado (en gris) hasta que se detecte el dispositivo.
+
+![Mobile Patient Mockup - Devices Conexion Paso 1](./assets/ux-ui/mockups/mobile/patient/mobile-patient-mockup-5.png)
+
+**Devices - Conexion Paso 2**
+
+El mockup del segundo paso muestra una barra de progreso circular animada en el centro de la pantalla. Sobre la barra dice "Buscando dispositivo" y debajo "Vinculando...". Abajo hay un texto explicativo que dice "Conectando por Bluetooth de baja energia". No hay botones porque el proceso es automatico.
+
+![Mobile Patient Mockup - Devices Conexion Paso 2](./assets/ux-ui/mockups/mobile/patient/mobile-patient-mockup-6.png)
+
+**Terapia - Preparacion**
+
+El mockup de preparacion tiene un area de video rectangular en la parte superior con un icono de play centrado. Debajo del video hay una lista de instrucciones con iconos: "Postura correcta", "Evita movimiento brusco" y "Mantener respiracion constante". Cada instruccion tiene un icono a la izquierda y texto a la derecha. En la parte inferior hay un boton grande "Iniciar Sesion" en azul.
+
+![Mobile Patient Mockup - Terapia Preparacion](./assets/ux-ui/mockups/mobile/patient/mobile-patient-mockup-7.png)
+
+**Terapia - Sesion Activa**
+
+El mockup de sesion activa muestra el progreso de la terapia en tiempo real. En la parte superior izquierda hay un avatar que representa al usuario siguiendo los movimientos del brazo. En la parte superior derecha se ve el nombre del ejercicio "Flexion de codo" y un contador grande que muestra las repeticiones "8/12". En la parte inferior hay una barra de progreso horizontal que indica en que sesion va (3 de 5). En la esquina inferior derecha hay un boton circular de "Pausa". El avatar y los contadores permiten al usuario seguir su progreso visualmente.
+
+![Mobile Patient Mockup - Terapia Sesion Activa](./assets/ux-ui/mockups/mobile/patient/mobile-patient-mockup-8.png)
+
+**Terapia - Sesion Activa con Alerta**
+
+El mockup de alerta muestra la misma estructura del sesion activa, pero con un mensaje emergente en la parte superior. Este mensaje aparece en un recuadro amarillo con un icono de advertencia y el texto "Ajusta tu posicion" junto con una explicacion de que el angulo actual es menor al requerido. El mensaje se superpone al contenido principal sin cubrirlo completamente, para que el usuario pueda seguir viendo su progreso mientras corrige su postura.
+
+![Mobile Patient Mockup - Terapia Sesion Activa Alerta](./assets/ux-ui/mockups/mobile/patient/mobile-patient-mockup-9.png)
+
+**Terapia - Feedback**
+
+El mockup de feedback es la pantalla final de la sesion. En la parte superior muestra una escala de dolor con 5 opciones representadas por circulos numerados del 1 al 5, cada uno con un color diferente (desde verde para sin dolor hasta rojo para mucho dolor). Debajo de cada circulo hay una etiqueta descriptiva: "Sin dolor", "Leve", "Moderado", "Intenso", "Muy intenso". Mas abajo hay un campo de texto grande para escribir comentarios sobre la sesion. Al final hay un boton grande "Finalizar" en azul.
+
+![Mobile Patient Mockup - Terapia Feedback](./assets/ux-ui/mockups/mobile/patient/mobile-patient-mockup-10.png)
+
+**Historial - Progreso**
+
+El mockup del historial muestra graficos de como ha evolucionado el progreso del paciente. En la parte superior esta el titulo "Tu progreso" seguido de un grafico de lineas que muestra la tendencia del rango de movimiento a lo largo de las semanas. Los puntos en el grafico representan datos tomados en diferentes fechas. Hay pequenos iconos que representan los comentarios del fisioterapeuta. En la parte inferior hay dos campos de fecha para seleccionar un rango: "Desde" y "Hasta" con iconos de calendario.
+
+![Mobile Patient Mockup - Historial Progreso](./assets/ux-ui/mockups/mobile/patient/mobile-patient-mockup-11.png)
+
+#### 5.4.4. Applications User Flow Diagrams
+
 
 ## 5.4.4. Applications User Flow Diagrams.
 
@@ -5648,13 +6398,49 @@ Este flujo muestra cómo el fisioterapeuta navega desde el módulo Device hacia 
 
 <img src="assets/ux-ui/userflows/web/physiotherapist/physiotherapist_device_to_organization_view_user_flow.png" alt="User flow desde asignación de dispositivo hacia vista de organización del fisioterapeuta en uFlex" width="100%">
 
+
+#### Application Mobile - Paciente
+
+En esta seccion se presentan los User Flow Diagrams de la aplicacion movil del paciente. A diferencia de los Wireflow Diagrams, los User Flows incluyen tanto el camino principal (happy path) como los caminos alternativos (unhappy paths) para cada User Goal. Esto permite visualizar todas las posibles rutas que el usuario puede seguir dentro de la aplicacion, incluyendo los casos donde ocurren errores o el usuario decide cancelar una accion.
+
+Los User Flows son consistentes con los Wireflows previamente definidos, utilizando las misma pantallas y transiciones base, pero expandiendo el flujo para incluir las condiciones alternativas.
+
+
+**UF-01: Device Connection User Flow**
+
+**User Goal:** UG-01 - Conectar mi dispositivo IoT a mi celular
+
+**Descripcion y flujo:** El paciente inicia la conexion del dispositivo desde Home. Existen dos posibilidades: si el sensor ya esta encendido y es detectado inmediatamente, se muestra la pantalla de sincronizacion exitosa con el porcentaje de bateria y el check de confirmacion. Si el sensor no es detectado, el paciente debe seguir dos pasos: primero encender el sensor IoT presionando el boton de encendido y verificar que la luz indicadora parpadee, y segundo esperar a que la barra de progreso Bluetooth complete la vinculacion. Una vez completada la conexion, se muestra la pantalla con el check verde, el nivel de bateria y el estado "Conectado". El paciente puede cancelar el proceso en cualquier momento presionando "Volver".
+
+**Diagrama del flujo:**
+
+![User Flow - Device Connection](./assets/ux-ui/userflows/patient/mobile-patient-userflow-1.png)
+
 ---
 
-## 5.5. Applications Prototyping.
+**UF-02: Therapy Session User Flow**
 
-En esta sección se presenta el prototipo de alta fidelidad de la aplicación web de uFlex. Este prototipo permite simular la navegación real de administradores y fisioterapeutas antes de la implementación final.
+**User Goal:** UG-02 - Realizar una sesion completa de rehabilitacion
 
-El prototipado permite validar la interacción, secuencia de pantallas, claridad de los componentes y facilidad de uso de la plataforma web.
+**Descripcion y flujo:** El paciente puede acceder a su rutina de ejercicios de dos maneras: directamente desde la seccion "Ejercicios" en la barra de navegacion inferior, o presionando sobre un ejercicio pendiente desde la lista en Home. Una vez en la pantalla de preparacion, ve un video tutorial con las instrucciones y presiona "Iniciar Sesion". Durante la sesion activa, el avatar sigue sus movimientos en tiempo real. Hay dos posibilidades durante los ejercicios: si el paciente ejecuta todos los movimientos correctamente dentro del rango de angulo requerido, la sesion avanza normalmente hasta completarse. Si realiza algun movimiento con mala postura o fuera del angulo estipulado, aparece una alerta emergente indicando que ajuste su posicion; el paciente corrige y presiona "Continuar" para proseguir. Al finalizar todas las repeticiones, se muestra la pantalla de feedback donde el paciente selecciona su nivel de dolor y escribe comentarios opcionales antes de presionar "Finalizar" y regresar a Home con el ejercicio marcado como completado.
+
+**Diagrama del flujo:**
+
+![User Flow - Therapy Session](./assets/ux-ui/userflows/patient/mobile-patient-userflow-2.png)
+
+---
+
+**UF-03: Progress History User Flow**
+
+**User Goal:** UG-03 - Consultar mi historial de progreso
+
+**Descripcion y flujo:** El paciente puede acceder a su historial de dos maneras: desde la seccion "Historial" en la barra de navegacion inferior, o presionando sobre la tarjeta de progreso semanal en Home para ver mas detalles. Al entrar se muestra un grafico de lineas con la evolucion del rango de movimiento a lo largo del tiempo. El paciente puede tocar cualquier punto de datos en el grafico para ver la nota o comentario que el fisioterapeuta dejo en esa sesion. Tambien puede usar el selector de fechas (Desde/Hasta) para filtrar y ver un rango especifico de su progreso. Si no hay datos para el rango seleccionado, el sistema muestra un mensaje informativo. Al finalizar, el paciente presiona "Volver" para regresar a Home.
+
+**Diagrama del flujo:**
+
+![User Flow - Progress History](./assets/ux-ui/userflows/patient/mobile-patient-userflow-3.png)
+
+#### 5.5. Applications Prototyping
 
 
 ### 5.5.1. Web Application Prototyping.
@@ -5671,7 +6457,1152 @@ Link del figma del prototipo web: https://www.figma.com/design/ETmizOcfDmHvDkg0P
 
 La validación del prototipo permite comprobar si los usuarios comprenden la navegación y pueden completar sus tareas principales dentro de uFlex. Esta etapa es importante porque el sistema integra gestión clínica, datos de rehabilitación y dispositivos IoT, por lo que la experiencia debe ser clara para el personal administrativo y clínico.
 
-### 5.6. IoT Device Design.
+
+#### Application Mobile - Paciente
+
+En esta seccion se presenta el prototipo interactivo de la aplicacion movil del paciente. El prototipo fue desarrollado utilizando Figma y permite experimentar las interacciones reales de la app, incluyendo las transiciones entre pantallas, los flujos de navegacion y la retroalimentacion visual de cada elemento.
+
+El prototipo abarca las 11 pantallas principales del paciente: Splash, Login, Home, Devices (3 pantallas), Terapia (4 pantallas) e Historial.
+
+![Prototyping Application Mobile](./assets/ux-ui/prototypes/mobile/patient/prototype-mobile.png)
+
+**Enlace al prototipo:**
+
+El prototipo interactivo se encuentra disponible en Figma y puede ser accesado a traves del siguiente enlace: [https://www.figma.com/proto/zTSdPPNtBudIxeYN6Ro83Q/uFlex-Mobile?node-id=30-3100&viewport=674%2C264%2C0.27&t=ZhFjKkotzh5hLJDo-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=30%3A3100&page-id=24%3A2323](https://www.figma.com/proto/zTSdPPNtBudIxeYN6Ro83Q/uFlex-Mobile?node-id=30-3100&viewport=674%2C264%2C0.27&t=ZhFjKkotzh5hLJDo-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=30%3A3100&page-id=24%3A2323)
+
+El video del prototipo interactivo se encuentra disponible a traves del siguiente enlace: [https://upcedupe-my.sharepoint.com/:v:/g/personal/u20221g120_upc_edu_pe/IQA6HikJDm2WRI2hmc-I92pcAazSwYXEpvRIm1Z8_xudj-M?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=1F2w9s](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20221g120_upc_edu_pe/IQA6HikJDm2WRI2hmc-I92pcAazSwYXEpvRIm1Z8_xudj-M?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=1F2w9s)
+
+
+### 5.6. IoT Device Design
+
+#### Introducción y Criterios de Diseño
+Esta sección presenta la propuesta de diseño físico y de circuito para los nodos vestibles (*Wearable Nodes*) que componen el hardware de la solución **uFlex**. El objetivo principal de estos dispositivos es la captura de telemetría inercial y datos biomecánicos en tiempo real durante la ejecución de protocolos de rehabilitación de miembros superiores.
+
+Los principales criterios para las decisiones de diseño del hardware son:
+
+* **Precisión Clínica en la Captura de Datos:** Se utiliza una Unidad de Medida Inercial (IMU) de 6 ejes (MPU6050). Este sensor recolecta datos crudos de aceleración y velocidad angular. Mediante algoritmos de fusión de sensores (*Sensor Fusion*), estos datos se traducen en ángulos de Euler tridimensionales, permitiendo calcular el Rango de Movimiento (ROM) exacto del paciente con alta precisión.
+* **Procesamiento Eficiente (Edge Computing):** El diseño se basa en un microcontrolador ESP32, seleccionado por su capacidad de procesar la validación de los ejercicios localmente y transmitir los resultados vía Bluetooth Low Energy (BLE) a la aplicación móvil, garantizando un bajo consumo energético.
+* **Usabilidad Autónoma y Ergonomía:** El dispositivo físico está conceptualizado como un *wearable* ligero. Se sujeta mediante correas ajustables que aseguran la fijación del sensor en el eje de la articulación, permitiendo que el paciente se lo coloque sin requerir asistencia de terceros.
+
+#### Relación con la Arquitectura de Información y Guía de Estilos
+El diseño de la interfaz física del dispositivo IoT (*IoT Device Physical Interfaces*) es una extensión coherente de nuestra propuesta de experiencia de usuario y arquitectura de información definida para el Bounded Context de *Therapy*.
+
+* **Feedback Visual y Semántica de Colores:** Los indicadores luminosos (LED RGB) del hardware respetan el *Color Palette* de la aplicación móvil. El color **Verde (Success)** indica una repetición válida dentro del umbral prescrito; el **Rojo (Warning/Error)** alerta sobre un movimiento compensatorio o incorrecto; y el **Azul (Info/Brand)** indica el estado de emparejamiento Bluetooth.
+* **Feedback Háptico:** Para evitar que el paciente dependa de mirar la pantalla del dispositivo móvil durante el ejercicio, las alertas de error biomecánico o superación del umbral de dolor se traducen en vibraciones físicas mediante un motor háptico integrado, extendiendo el sistema de notificaciones al entorno físico.
+
+#### Propuesta de Diseño de Circuito (Hardware Schematic)
+Para la validación lógica de los componentes electrónicos y sus conexiones, se elaboró un diagrama esquemático utilizando la herramienta Wokwi. Este circuito demuestra la viabilidad técnica de la interacción física antes de su implementación en placa de desarrollo.
+
+Los componentes integrados y sus nodos de conexión son:
+1.  **Microcontrolador ESP32:** Actúa como cerebro del sistema y módulo de comunicación BLE.
+2.  **Sensor IMU (MPU6050):** Unidad de Medida Inercial conectada vía protocolo I2C (SDA en `GPIO 21`, SCL en `GPIO 22`) para la captura de la posición espacial del brazo. Alimentado a 3.3V.
+3.  **LED RGB:** Conectado mediante resistores de 220Ω a los pines PWM (`GPIO 4` para Rojo, `GPIO 2` para Verde, `GPIO 15` para Azul) para emitir los estados visuales del dispositivo.
+4.  **Motor de Vibración (Coin Motor):** Actuador de feedback háptico conectado al `GPIO 32`. *Nota sobre la simulación:* Debido a las limitaciones de componentes gráficos en Wokwi, este actuador se encuentra representado en el diagrama mediante un zumbador piezoeléctrico (Buzzer). A nivel lógico, valida correctamente la emisión de la señal de alerta generada por el microcontrolador, la cual en el ensamblaje físico activará el motor vibratorio mediante un transistor NPN.
+5.  **Botón Pulsador:** Interfaz de entrada primaria para el encendido y emparejamiento, conectado al `GPIO 13` utilizando la resistencia interna *Pull-up* del ESP32.
+
+![Diagrama esquemático del circuito del dispositivo uFlex elaborado en Wokwi](assets/images/figures/uflex-wokwi-schematic.png)
+
+*Diagrama esquemático del circuito del dispositivo uFlex, mostrando la integración de sensores biomecánicos y actuadores.*
+
+#### Flujos de Interacción del Prototipo IoT
+El hardware cubre interacciones físicas que se sincronizan con las vistas de la aplicación móvil, definiendo los siguientes flujos principales de *Wireflow*:
+
+**1. Flujo de Emparejamiento BLE:**
+* **Paso 1:** El usuario presiona el botón físico de la carcasa.
+* **Paso 2:** El microcontrolador inicia y el LED RGB parpadea en color **Azul**, indicando el estado de búsqueda (*Advertising*).
+* **Paso 3:** Al confirmarse la conexión con la aplicación móvil (Edge App), el dispositivo emite una vibración corta y el LED cambia a **Azul Fijo**, indicando un emparejamiento exitoso.
+
+**2. Flujo de Ejecución de Terapia y Evaluación Biomecánica:**
+* **Paso 1 (Happy Path):** Durante el ejercicio, el sensor IMU envía la orientación espacial al sistema. Si el movimiento se realiza correctamente dentro del Rango de Movimiento (ROM) objetivo, el dispositivo enciende el LED en **Verde** brevemente al culminar la repetición.
+* **Paso 2 (Unhappy Path / Error):** Si el sistema detecta una anomalía (ej. una aceleración brusca o un movimiento compensatorio fuera del eje permitido), el dispositivo responde inmediatamente con una **vibración pulsante rápida** y el LED se enciende en **Rojo**, indicando físicamente al paciente que debe corregir su postura.
+
+<hr class="page-break">
+
+# Capítulo VI: Product Implementation, Validation & Deployment
+
+
+
+### 6.1. Software Configuration Management
+
+
+
+#### 6.1.1. Software Development Environment Configuration
+
+A continuacion se presentan los productos de software seleccionados para apoyar cada etapa del ciclo de vida del producto digital. Se detallan sus nombres, propositos dentro del proyecto y enlaces de acceso o descarga, diferenciando entre soluciones SaaS y software instalable.
+
+**Project Management**
+
+| **Herramienta** | **Proposito** | **Enlace / Ruta de Acceso** |
+|---|---|---|
+| **Trello** | Gestion agil de tareas y tableros para organizar entregables, tareas individuales y por modulo. | [https://trello.com](https://trello.com) |
+
+<br>
+
+**Requirements Management**
+
+| **Herramienta** | **Proposito** | **Enlace / Ruta de Acceso** |
+|---|---|---|
+| **UXPressia** | Creacion de User Personas, Empathy Maps, Journey Maps e Impact Maps. | [https://uxpressia.com](https://uxpressia.com) |
+
+<br>
+
+**Domain-Driven Design Approach**
+
+| **Herramienta** | **Proposito** | **Enlace / Ruta de Acceso** |
+|---|---|---|
+| **Miro** | Creacion de Event Storming, Candidate Context Discovery, Domain Message Flows, Bounded Context Canvases y Context Maps. | [https://miro.com](https://miro.com) |
+
+<br>
+
+**Software Architecture Design**
+
+| **Herramienta** | **Proposito** | **Enlace / Ruta de Acceso** |
+|---|---|---|
+| **PlantUML** | Diagramas C4 y UML usando enfoque Diagrams-as-Code compatible con Markdown y documentacion tecnica. | [https://plantuml.com](https://plantuml.com) |
+
+<br>
+
+**Product UX/UI Design**
+
+| **Herramienta** | **Proposito** | **Enlace / Ruta de Acceso** |
+|---|---|---|
+| **Figma** | Diseno colaborativo de wireframes, mockups y prototipos interactivos. | [https://figma.com](https://figma.com) |
+| **Lucidchart** | Creacion de wireflows y user flows. | [https://lucidchart.com](https://lucidchart.com) |
+
+<br>
+
+**Software Development**
+
+| **Herramienta / Tecnologia** | **Proposito** | **Enlace / Ruta de Descarga** |
+|---|---|---|
+| **WebStorm** | Desarrollo de la landing page y web application usando HTML5, CSS3, JavaScript, Tailwind CSS y DaisyUI. | [https://www.jetbrains.com/webstorm](https://www.jetbrains.com/webstorm) |
+| **IntelliJ IDEA** | Desarrollo del servicio REST API. | [https://www.jetbrains.com/idea](https://www.jetbrains.com/idea) |
+| **Android Studio** | Desarrollo de la aplicacion movil Android con Kotlin Multiplatform y Jetpack Compose. | [https://developer.android.com/studio](https://developer.android.com/studio) |
+| **Visual Studio Code** | Desarrollo de la documentacion en Markdown. | [https://code.visualstudio.com](https://code.visualstudio.com) |
+| **HTML5** | Lenguaje de marcado para la estructura semantica de la landing page. | [https://developer.mozilla.org/docs/Web/HTML](https://developer.mozilla.org/docs/Web/HTML) |
+| **CSS3** | Lenguaje de estilos para la apariencia visual de la landing page. | [https://developer.mozilla.org/docs/Web/CSS](https://developer.mozilla.org/docs/Web/CSS) |
+| **JavaScript** | Lenguaje para manipular el DOM e internacionalizar el contenido en la landing page. | [https://developer.mozilla.org/docs/Web/JavaScript](https://developer.mozilla.org/docs/Web/JavaScript) |
+| **Tailwind CSS** | Framework de estilos para construir la landing page de manera eficiente. | [https://tailwindcss.com](https://tailwindcss.com) |
+| **DaisyUI** | Biblioteca de componentes sobre Tailwind CSS para la UI de la landing page. | [https://daisyui.com](https://daisyui.com) |
+| **Java** | Lenguaje para el backend del servicio REST API. | [https://www.oracle.com/java](https://www.oracle.com/java) |
+| **Spring Boot** | Framework Java para construir el servicio REST API. | [https://spring.io/projects/spring-boot](https://spring.io/projects/spring-boot) |
+| **Kotlin** | Lenguaje para la aplicacion movil Android. | [https://kotlinlang.org](https://kotlinlang.org) |
+| **Jetpack Compose** | Toolkit declarativo para UI nativa en Android. | [https://developer.android.com/jetpack/compose](https://developer.android.com/jetpack/compose) |
+
+<br>
+
+**Software Testing**
+
+| **Herramienta / Tecnologia** | **Proposito** | **Enlace / Ruta de Descarga** |
+|---|---|---|
+| **Gherkin** | Lenguaje para escribir criterios de aceptacion de las User Stories. | [https://cucumber.io/docs/gherkin](https://cucumber.io/docs/gherkin) |
+
+<br>
+
+**Software Deployment**
+
+| **Herramienta / Plataforma** | **Proposito** | **Enlace / Ruta de Acceso** |
+|---|---|---|
+| **Netlify** | Despliegue automatico y gratuito de la landing page. | [https://www.netlify.com](https://www.netlify.com) |
+| **Railway** | Despliegue automatico del servicio REST API. | [https://railway.app](https://railway.app) |
+| **Firebase** | Despliegue automatico de la aplicacion movil. | [https://firebase.google.com](https://firebase.google.com) |
+| **Supabase** | Despliegue automatico de la base de datos PostgreSQL. | [https://supabase.com](https://supabase.com) |
+
+<br>
+
+**Software Documentation**
+
+| **Herramienta / Recurso** | **Proposito** | **Enlace / Ruta de Acceso** |
+|---|---|---|
+| **IntelliJ IDEA** | Edicion del README.md y visualizacion previa de diagramas PlantUML. | [https://www.jetbrains.com/idea](https://www.jetbrains.com/idea) |
+| **Visual Studio Code** | Edicion del README.md y exportacion formateada de Markdown a PDF. | [https://code.visualstudio.com](https://code.visualstudio.com) |
+| **Markdown** | Lenguaje de marcado ligero para documentacion tecnica. | [https://www.markdownguide.org](https://www.markdownguide.org) |
+| **Git** | Control de versiones distribuido para gestionar el codigo fuente. | [https://git-scm.com](https://git-scm.com) |
+| **GitHub** | Repositorio con control de versiones y soporte de issues y PRs. | [https://github.com](https://github.com) |
+| **GitFlow Workflow** | Estrategia de ramificacion para organizar codigo y documentacion. | [https://nvie.com/posts/a-successful-git-branching-model](https://nvie.com/posts/a-successful-git-branching-model) |
+| **Conventional Commits** | Estandar de nombres de commits para trazabilidad. | [https://www.conventionalcommits.org](https://www.conventionalcommits.org) |
+| **Semantic Versioning** | Sistema de versionado para releases coherentes. | [https://semver.org](https://semver.org) |
+
+#### 6.1.2. Source Code Management
+
+El equipo utilizara **GitHub** como plataforma de alojamiento y **Git** como control de versiones para todos los productos del proyecto uFlex, aplicando la estrategia de ramificacion **GitFlow Workflow**, con estandares de versionado **Semantic Versioning** y mensajes estructurados mediante **Conventional Commits**.
+
+**Repositorios del Proyecto**
+
+| Repository                                                                                       | Description                                                         |
+|:-------------------------------------------------------------------------------------------------|:--------------------------------------------------------------------|
+| [https://github.com/KinIoT/uflex-project-report](https://github.com/KinIoT/uflex-project-report) | Comprehensive project documentation and final technical reports.    |
+| [https://github.com/KinIoT/uflex-landing-page](https://github.com/KinIoT/uflex-landing-page)     | Official landing page for user acquisition and marketing.           |
+| [https://github.com/KinIoT/uflex-clinic-web](https://github.com/KinIoT/uflex-clinic-web)         | Web platform for clinics and rehabilitation professionals.          |
+| [https://github.com/KinIoT/uflex-patient-mobile](https://github.com/KinIoT/uflex-patient-mobile) | Mobile application for patient monitoring and therapy guidance.     |
+| [https://github.com/KinIoT/uflex-rest-api](https://github.com/KinIoT/uflex-rest-api)             | Main REST API handling core business logic and database management. |
+| [https://github.com/KinIoT/uflex-edge-api](https://github.com/KinIoT/uflex-edge-api)             | Edge computing API for optimized data pre-processing.               |
+| [https://github.com/KinIoT/uflex-embedded-app](https://github.com/KinIoT/uflex-embedded-app)     | Embedded software for IoT devices and biomechanical sensors.        |
+
+**GitFlow Workflow**
+
+![gitflow](assets/images/figures/gitflow-example.png)
+
+Se seguira el modelo propuesto por Vincent Driessen, el cual define las siguientes ramas principales:
+
+- **main**: Rama principal, contiene las versiones estables en produccion.
+- **develop**: Rama de desarrollo, donde se integran nuevas funcionalidades antes de pasar a produccion.
+
+**Branches usados en GitFlow**
+
+| **Tipo de rama** | **Proposito** | **Convencion de nombres** | **Ejemplo** |
+|---|---|---|---|
+| **feature** | Desarrollo de nuevas funcionalidades. | `feature/<nombre-descriptivo>` | `feature/profile-management` |
+| **release** | Preparacion de una nueva version de produccion. | `release/vX.Y.Z` | `release/v1.0.0` |
+| **hotfix** | Correccion urgente en produccion. | `hotfix/<problema>` | `hotfix/fix-crash-navbar` |
+
+**Semantic Versioning**
+
+Se aplicara el esquema de versionado semantico 2.0.0, con el siguiente formato:
+
+`vMAJOR.MINOR.PATCH`
+
+- **MAJOR**: Cambios incompatibles con versiones anteriores.
+- **MINOR**: Nuevas funcionalidades compatibles con versiones anteriores.
+- **PATCH**: Correcciones de errores o mejoras menores.
+
+**Conventional Commits**
+
+Para los mensajes de commit, se utilizara el estandar Conventional Commits, que permite mayor trazabilidad y generacion automatica de changelogs.
+
+**Formato general**:
+
+`<tipo>(opcional-scope): descripcion breve`
+
+**Tipos a usar**:
+- `feat`: una nueva funcionalidad
+- `fix`: correccion de errores
+- `docs`: cambios en documentacion
+- `style`: formato (espacios, punto y coma, etc.)
+- `refactor`: cambios de codigo que no corrigen errores ni agregan funciones
+- `test`: agregar o modificar pruebas
+- `chore`: tareas generales o mantenimiento
+
+
+#### 6.1.3. Source Code Style Guide & Conventions
+
+Con el fin de asegurar un codigo limpio, mantenible y coherente entre todos los miembros del equipo, se adoptan las siguientes convenciones de estilo y nomenclatura. Todas las variables, funciones, clases, archivos y elementos siguen una nomenclatura en ingles.
+
+**Nomenclature General**
+
+- Se utiliza ingles como idioma unico para nombres de variables, funciones, clases, comentarios y documentacion.
+- Se evitan abreviaciones innecesarias y nombres genericos como `data1`, `temp`, `info`.
+
+**HTML**
+
+Basado en las convenciones de HTML y buenas practicas de MDN, se aplican las siguientes reglas:
+
+- Atributos en minusculas y nombres de clase en **kebab-case** (`section-title`, `main-container`).
+- Uso de comillas dobles para atributos (`class="example"`).
+- Estructura semantica clara con `<header>`, `<nav>`, `<main>`, `<section>`, `<footer>`.
+- Sangria con 2 espacios.
+- Atributos ordenados de manera logica: `id`, `class`, `type`, `name`, `placeholder`, `value`, `required`.
+- Uso adecuado de etiquetas auto-cerradas (`<img />`, `<input />`).
+
+**CSS / Tailwind CSS**
+
+Basado en convenciones de CSS y buenas practicas de Tailwind CSS:
+
+- Nombres de clases en minusculas.
+- Para clases personalizadas: **kebab-case**.
+- Se prioriza Tailwind CSS sobre CSS puro para la landing page.
+- Para clases de utilidad de Tailwind: **snake_case** (`text_center`, `bg_blue_500`).
+- Se agrupan clases por orden logico (layout -> spacing -> color -> typography).
+
+**Google JavaScript Style Guide**
+
+Basado en el Google JavaScript Style Guide:
+
+- **camelCase** para variables, funciones y parametros.
+- **PascalCase** para clases y constructores.
+- Constantes con `UPPER_CASE_WITH_UNDERSCORES` si son globales.
+- Imports explicitos y ordenados: primero externas, luego internas.
+- Evitar `default exports`, usar `export const` o `export class`.
+- Preferir `const` sobre `let` y evitar `var`.
+- Evitar usar `this` fuera de clases.
+- No mezclar logica en componentes; delegar a servicios.
+
+**Java & Spring Boot**
+
+Basado en las convenciones de Java y buenas practicas de Spring:
+
+- **camelCase** para variables, metodos y parametros.
+- **PascalCase** para clases e interfaces.
+- Paquetes en minusculas y separados por puntos (`com.example.project`).
+- Constantes en `UPPER_CASE_WITH_UNDERSCORES`.
+- Cada clase en su propio archivo.
+- Metodos cortos y enfocados en una sola responsabilidad.
+- Uso de anotaciones de Spring para inyeccion de dependencias y configuracion.
+- Evitar logica de negocio en controladores; usar servicios.
+- Manejo de excepciones con `@ControllerAdvice`.
+- Documentacion de APIs REST con Swagger/OpenAPI.
+
+**Kotlin & Jetpack Compose**
+
+Basado en convenciones de Kotlin y buenas practicas de Jetpack Compose:
+
+- **camelCase** para variables, funciones y parametros.
+- **PascalCase** para clases y objetos.
+- Paquetes en minusculas y separados por puntos (`com.example.project`).
+- Constantes en `UPPER_CASE_WITH_UNDERSCORES`.
+- Cada clase y objeto en su propio archivo.
+- Funciones cortas y enfocadas en una sola responsabilidad.
+- Uso de `@Composable` para funciones de UI.
+- Evitar logica de negocio en composables; usar ViewModels.
+- Manejo de estado con `State` y `MutableState`.
+- Documentar funciones publicas con KDoc.
+
+**C++ (Embedded App)**
+
+Basado en convenciones de C++ y criterios de desarrollo embebido:
+
+- Ingles obligatorio para todos los elementos del codigo.
+- Archivos en `kebab-case` o `PascalCase` segun el modulo (`wifi-manager.cpp`, `DataRecord.h`).
+- **camelCase** para variables y funciones; **PascalCase** para clases/structs.
+- Constantes y macros en `UPPER_SNAKE_CASE` (por ejemplo, `WIFI_SSID`, `ENDPOINT_URL`).
+- Sangria de 2 espacios; sin tabuladores.
+- Llaves en la misma linea que la declaracion.
+- Comentarios con `//` para linea simple y `/* ... */` para bloques.
+- Uso de `JsonDocument` (ArduinoJson v7+) y validacion de objetos antes de iterar.
+- `HTTPClient.begin()` y `HTTPClient.end()` en cada request; validar `httpResponseCode` antes de leer el body.
+
+**Python (Edge API Service)**
+
+Basado en PEP 8 y estilo Python:
+
+- Ingles obligatorio en todo el codigo.
+- **snake_case** para variables, funciones y metodos; **PascalCase** para clases.
+- Constantes en `UPPER_SNAKE_CASE`.
+- Modulos y paquetes en minusculas (`interfaces`, `application`).
+- Sangria de 4 espacios; sin tabuladores.
+- Longitud de linea recomendada 79-88 caracteres.
+- Type hints obligatorios en funciones publicas.
+- Docstrings en formato Google (Args, Returns, Raises).
+- Distinguir entidades de dominio y modelos de persistencia.
+- Preferir carga explicita sobre lazy loading en entorno edge.
+
+**Pruebas / Gherkin**
+
+Basado en buenas practicas de Gherkin:
+
+- Archivos `.feature` en ingles.
+- Cada escenario debe ser independiente y autocontenido.
+- Nombres descriptivos para features y escenarios.
+- Estructura Given-When-Then.
+
+
+
+#### 6.1.4. Software Deployment Configuration
+
+Se utilizaran las siguientes plataformas para el despliegue de los diferentes productos del proyecto uFlex:
+
+| **Producto** | **Plataforma de Despliegue** | **Proposito** | **Enlace / Ruta de Acceso** |
+|---|---|---|---|
+| **Landing Page** | **Netlify** | Despliegue automatico y gratuito de la landing page. | [https://www.netlify.com](https://www.netlify.com) |
+| **REST API** | **Railway** | Despliegue automatico del servicio REST API. | [https://railway.app](https://railway.app) |
+| **Mobile App (Android)** | **Firebase** | Distribucion de builds y despliegue automatico para pruebas internas. | [https://firebase.google.com](https://firebase.google.com) |
+| **Mobile App (Android)** | **Google Play Console** | Publicacion y distribucion de la app nativa en Android. | [https://play.google.com/console](https://play.google.com/console) |
+| **Mobile App (iOS)** | **Apple App Store Connect** | Publicacion y distribucion de la app nativa en iOS. | [https://appstoreconnect.apple.com](https://appstoreconnect.apple.com) |
+| **Database** | **Supabase** | Despliegue automatico de la base de datos PostgreSQL. | [https://supabase.com](https://supabase.com) |
+
+**Netlify**
+
+Netlify es una plataforma de alojamiento y despliegue continuo para sitios web estaticos y aplicaciones frontend. Ofrece integracion con repositorios GitHub para despliegues automaticos.
+
+Para configurar el despliegue automatico de la landing page en Netlify:
+1. Crear una cuenta en [Netlify](https://www.netlify.com) y vincularla al repositorio de GitHub de la landing page.
+2. Configurar un nuevo sitio en Netlify, seleccionando el repositorio correspondiente.
+3. Definir la rama de despliegue (por ejemplo, `main`).
+4. Especificar comandos de construccion y carpeta de publicacion (por ejemplo, `npm run build` y `dist/`).
+5. Guardar la configuracion y ejecutar el primer despliegue.
+
+**Railway**
+
+Railway es una plataforma de despliegue y gestion de aplicaciones backend con integracion GitHub.
+
+Para configurar el despliegue automatico del servicio REST API en Railway:
+1. Crear una cuenta en [Railway](https://railway.app) y vincularla al repositorio del API.
+2. Crear un nuevo proyecto y seleccionar el repositorio correspondiente.
+3. Definir la rama de despliegue (por ejemplo, `main`).
+4. Configurar variables de entorno necesarias para la aplicacion.
+5. Guardar la configuracion y permitir el primer despliegue.
+
+**Firebase**
+
+Firebase permite distribuir builds y administrar despliegues de aplicaciones moviles para pruebas internas.
+
+Para configurar la distribucion automatica en Firebase:
+1. Crear un proyecto en [Firebase](https://firebase.google.com).
+2. Vincular el repositorio de la app movil con el proyecto.
+3. Configurar CI/CD con GitHub Actions o Firebase CLI.
+4. Definir comandos de construccion y distribucion (por ejemplo, `./gradlew assemble` y `firebase appdistribution:distribute`).
+5. Ejecutar el primer despliegue.
+
+**Google Play Console**
+
+Google Play Console es la plataforma oficial para publicar y gestionar aplicaciones Android.
+
+Para publicar la aplicacion Android:
+1. Crear una cuenta de desarrollador en [Google Play Console](https://play.google.com/console).
+2. Crear un nuevo proyecto de aplicacion con su metadata.
+3. Subir el archivo AAB generado por Android Studio.
+4. Completar la ficha de la aplicacion y politicas requeridas.
+5. Enviar a revision y publicacion.
+
+
+**Supabase**
+
+Supabase se utiliza para el despliegue automatizado de la base de datos PostgreSQL.
+
+Para configurar el despliegue de base de datos en Supabase:
+1. Crear un proyecto en [Supabase](https://supabase.com).
+2. Configurar el esquema inicial y las tablas requeridas.
+3. Definir variables de conexion seguras para los servicios backend.
+4. Validar conectividad desde el REST API.
+
+Adicionalmente, se incluye el diagrama de despliegue de la arquitectura del sistema, que ilustra como los diferentes componentes de uFlex interactuan entre si y con las plataformas de despliegue.
+
+![Software Deployment Configuration: Deployment Diagram](assets/diagrams/software-architecture/deployment/out/uflex-deployment-diagram.png)
+
+<hr class="page-break">
+
+### 6.2. Landing Page, Services & Applications Implementation
+
+En esta seccion se describe la implementacion progresiva de los productos digitales de uFlex, incluyendo la landing page, la web application para fisioterapeutas y administradores, los servicios backend y las aplicaciones conectadas al ecosistema IoT. Se presentan los sprints ejecutados, los objetivos planteados, las responsabilidades asumidas por el equipo y la evidencia generada durante el desarrollo.
+
+
+#### 6.2.1. Sprint 1
+
+Durante el primer sprint, el equipo se enfoco unicamente en los artefactos de **landing page** y **web application**, priorizando una primera entrega navegable y coherente con la propuesta de valor de uFlex. El trabajo se concentro en exponer claramente la oferta de telerehabilitacion para fisioterapeutas y clinicas, y en habilitar la base funcional de la experiencia web para los usuarios institucionales. Para ello, se definieron objetivos concretos, se distribuyeron tareas entre los cinco integrantes y se alinearon los entregables con el backlog priorizado del producto.
+
+
+##### 6.2.1.1. Sprint Planning 1
+
+Se presenta el sprint planning correspondiente a esta primera entrega, detallando el contexto de planificacion, el objetivo del sprint y la capacidad estimada del equipo.
+
+A continuación se presenta una captura de pantalla de nuestro tablero en Trello: 
+
+![Captura  Sprint 1 de Trello](./assets/images/screenshots/trello-sprint-1.png)  
+[https://kyrubi-upc.atlassian.net/jira/software/projects/HU/boards/34](https://kyrubi-upc.atlassian.net/jira/software/projects/HU/boards/34)  
+
+| Sprint # | Sprint 1 |
+|---|---|
+| **Sprint Planning Background** | |
+| Date | 02/05/2026 |
+| Time | 08:30 PM |
+| Location | Reunion grupal virtual mediante Discord |
+| Prepared By | Paul Sulca |
+| Attendees (to planning meeting) | Paul Sulca, Daniel Crispin, Salim Ramirez, Eduardo Rivera, Marcelo Varela |
+| **Sprint Goal & User Stories** | |
+| Sprint 1 Goal | Nos centramos en implementar la landing page publica de uFlex, la base funcional de la web application para fisioterapeutas y administradores, y el soporte tecnico minimo para autenticacion institucional. Creemos que esto entregara una primera version visible y verificable de la propuesta digital del proyecto. Esto se confirmara cuando las secciones clave de la landing page esten navegables, la web application permita flujos iniciales de acceso y visualizacion base para usuarios institucionales, y la autenticacion del cliente web cuente con un servicio backend inicial. |
+| Sprint 1 Velocity | 36 |
+| Sum of Story Points | 36 |
+
+
+##### 6.2.1.2. Aspect Leaders and Collaborators
+
+En esta seccion se presenta la matriz Leadership-and-Collaboration Matrix (LACX) correspondiente al Sprint 1. Dado que el alcance de este sprint se limita a los artefactos de **Landing Page** y **Web Application**, estos dos productos se consideran los aspectos principales de coordinacion. La matriz permite identificar con claridad quien lidera cada frente y quienes participan como colaboradores, facilitando la comunicacion interna y la posterior asignacion de tareas del sprint.
+
+| Team Member (Last Name, First Name) | GitHub Username | Landing Page Leader (L) / Collaborator (C) | Web Application Leader (L) / Collaborator (C) |
+|---|---|---|---|
+| Crispin Ramos, Daniel Franco | `danielcr04` | C | C |
+| Ramirez Mestanza, Salim Ignacio | `salimramirez` | L | C |
+| Sulca Gonzales, Paul Fernando | `Kyrubi` | C | C |
+| Rivera Sosa, Eduardo Gael | `gael-rs` | C | L |
+| Varela Bustinza, Marcelo Alessandro | `VarBus` | C | C |
+
+La organizacion de lideres y colaboradores mantiene relacion directa con la seleccion posterior de tasks del Sprint 1, asegurando que cada producto tenga una referencia principal y apoyo distribuido entre los integrantes del equipo.
+
+
+##### 6.2.1.3. Sprint Backlog 1
+
+El objetivo de este Sprint es presentar una primera version funcional de la **landing page** de uFlex y de la **web application** orientada a fisioterapeutas y administradores de clinica. Para ello, se priorizaron las User Stories del Product Backlog relacionadas con exploracion de propuesta de valor, contenido comercial del sitio publico, acceso institucional a la plataforma y soporte tecnico de autenticacion para el cliente web.
+
+<div style="font-size:80%; overflow-x:auto;">
+  <table border="1" cellspacing="0" cellpadding="5">
+    <thead>
+      <tr>
+        <th colspan="2">Sprint #</th>
+        <th colspan="6">Sprint 1</th>
+      </tr>
+      <tr>
+        <th colspan="2">User Story / Technical Story</th>
+        <th colspan="6">Work-Item / Task</th>
+      </tr>
+      <tr>
+        <th>Id</th>
+        <th>Title</th>
+        <th>Id</th>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Estimation (Hours)</th>
+        <th>Assigned To</th>
+        <th>Status (To-do / In-Process / To-Review / Done)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>US01</td>
+        <td>Exploracion de la propuesta de valor</td>
+        <td>US01-a</td>
+        <td>Implementar hero principal</td>
+        <td>Maquetar la seccion principal con propuesta de valor, CTA y contenido inicial orientado a clinicas y pacientes.</td>
+        <td>4</td>
+        <td>Salim Ramirez</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US01</td>
+        <td>Exploracion de la propuesta de valor</td>
+        <td>US01-b</td>
+        <td>Ajustar responsive y contenido visual</td>
+        <td>Optimizar la experiencia responsive del hero y alinear textos e imagenes con la narrativa comercial de uFlex.</td>
+        <td>3</td>
+        <td>Daniel Crispin</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US02</td>
+        <td>Consulta de contenido para pacientes</td>
+        <td>US02-a</td>
+        <td>Construir seccion para pacientes</td>
+        <td>Desarrollar la seccion "Como funciona para pacientes" explicando rutina, monitoreo y uso en el hogar.</td>
+        <td>3</td>
+        <td>Paul Sulca</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US02</td>
+        <td>Consulta de contenido para pacientes</td>
+        <td>US02-b</td>
+        <td>Revisar copy y consistencia UX</td>
+        <td>Validar claridad del contenido, jerarquia visual y continuidad con la propuesta de valor general del sitio.</td>
+        <td>2</td>
+        <td>Marcelo Varela</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US03</td>
+        <td>Consulta de contenido para especialistas</td>
+        <td>US03-a</td>
+        <td>Construir seccion para fisioterapeutas</td>
+        <td>Implementar la seccion explicativa para especialistas, destacando monitoreo ROM, alertas y trazabilidad clinica.</td>
+        <td>3</td>
+        <td>Eduardo Rivera</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US03</td>
+        <td>Consulta de contenido para especialistas</td>
+        <td>US03-b</td>
+        <td>Refinar composicion visual</td>
+        <td>Ajustar distribucion, iconografia y jerarquia del contenido para especialistas en desktop y mobile.</td>
+        <td>2</td>
+        <td>Daniel Crispin</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US04</td>
+        <td>Consulta de planes y precios para clinicas</td>
+        <td>US04-a</td>
+        <td>Disenar bloque de planes</td>
+        <td>Implementar cards de planes y beneficios para el segmento clinica dentro de la landing page.</td>
+        <td>3</td>
+        <td>Salim Ramirez</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US04</td>
+        <td>Consulta de planes y precios para clinicas</td>
+        <td>US04-b</td>
+        <td>Configurar comparativa visual</td>
+        <td>Agregar atributos diferenciales, CTA y estructura de comparacion entre planes.</td>
+        <td>2</td>
+        <td>Paul Sulca</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US05</td>
+        <td>Solicitud de demo comercial</td>
+        <td>US05-a</td>
+        <td>Construir formulario de demo</td>
+        <td>Implementar formulario web para solicitud de demo comercial con campos y validaciones base.</td>
+        <td>3</td>
+        <td>Eduardo Rivera</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US05</td>
+        <td>Solicitud de demo comercial</td>
+        <td>US05-b</td>
+        <td>Integrar UX de envio</td>
+        <td>Agregar estados visuales de envio, mensajes de confirmacion y consistencia de experiencia para el lead comercial.</td>
+        <td>2</td>
+        <td>Marcelo Varela</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US06</td>
+        <td>Acceso a la descarga de la app movil</td>
+        <td>US06-a</td>
+        <td>Incorporar CTA de descarga</td>
+        <td>Agregar seccion o CTA visible para redireccionar a la descarga futura de la aplicacion movil.</td>
+        <td>2</td>
+        <td>Daniel Crispin</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US06</td>
+        <td>Acceso a la descarga de la app movil</td>
+        <td>US06-b</td>
+        <td>Validar navegacion y enlaces</td>
+        <td>Probar navegacion interna y comportamiento de los enlaces de descarga en los distintos breakpoints.</td>
+        <td>1</td>
+        <td>Paul Sulca</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US17</td>
+        <td>Inicio de sesion del fisioterapeuta</td>
+        <td>US17-a</td>
+        <td>Disenar vista de login clinico</td>
+        <td>Implementar pantalla inicial de acceso para fisioterapeutas dentro de la web application.</td>
+        <td>3</td>
+        <td>Eduardo Rivera</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US17</td>
+        <td>Inicio de sesion del fisioterapeuta</td>
+        <td>US17-b</td>
+        <td>Conectar flujo de autenticacion</td>
+        <td>Preparar formularios, validaciones y consumo base del servicio de autenticacion para el rol fisioterapeuta.</td>
+        <td>2</td>
+        <td>Salim Ramirez</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US20</td>
+        <td>Listado de pacientes asignados</td>
+        <td>US20-a</td>
+        <td>Maquetar vista de pacientes</td>
+        <td>Construir la pantalla base de listado de pacientes asignados al fisioterapeuta.</td>
+        <td>3</td>
+        <td>Eduardo Rivera</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US20</td>
+        <td>Listado de pacientes asignados</td>
+        <td>US20-b</td>
+        <td>Refinar estados y filtros iniciales</td>
+        <td>Agregar estructura para estados vacios, busqueda basica y tarjetas de informacion resumida.</td>
+        <td>2</td>
+        <td>Marcelo Varela</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US26</td>
+        <td>Inicio de sesion del administrador</td>
+        <td>US26-a</td>
+        <td>Disenar acceso administrativo</td>
+        <td>Implementar la pantalla de inicio de sesion para administradores de clinica dentro de la web application.</td>
+        <td>3</td>
+        <td>Paul Sulca</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US26</td>
+        <td>Inicio de sesion del administrador</td>
+        <td>US26-b</td>
+        <td>Unificar comportamiento de acceso</td>
+        <td>Homologar componentes de login y validaciones entre vistas de fisioterapeuta y administrador.</td>
+        <td>2</td>
+        <td>Daniel Crispin</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US19</td>
+        <td>Cierre de sesion del fisioterapeuta</td>
+        <td>US19-a</td>
+        <td>Implementar cierre de sesion</td>
+        <td>Agregar accion de cierre de sesion y limpieza de token en la web application del fisioterapeuta.</td>
+        <td>2</td>
+        <td>Eduardo Rivera</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US19</td>
+        <td>Cierre de sesion del fisioterapeuta</td>
+        <td>US19-b</td>
+        <td>Validar redireccion y estado</td>
+        <td>Verificar redireccion a login y estado limpio del cliente tras el logout.</td>
+        <td>1</td>
+        <td>Daniel Crispin</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US28</td>
+        <td>Cierre de sesion del administrador</td>
+        <td>US28-a</td>
+        <td>Implementar cierre de sesion admin</td>
+        <td>Agregar accion de cierre de sesion y limpieza de token en el panel administrativo.</td>
+        <td>2</td>
+        <td>Paul Sulca</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US28</td>
+        <td>Cierre de sesion del administrador</td>
+        <td>US28-b</td>
+        <td>Validar redireccion y estado</td>
+        <td>Verificar redireccion a login y estado limpio del cliente tras el logout.</td>
+        <td>1</td>
+        <td>Marcelo Varela</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US22</td>
+        <td>Ajuste de protocolo vigente</td>
+        <td>US22-a</td>
+        <td>Diseñar vista de ajuste</td>
+        <td>Maquetar la pantalla base para modificar parametros del protocolo vigente.</td>
+        <td>3</td>
+        <td>Eduardo Rivera</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US22</td>
+        <td>Ajuste de protocolo vigente</td>
+        <td>US22-b</td>
+        <td>Definir validaciones UI</td>
+        <td>Agregar validaciones de campos y estructura de confirmacion del cambio.</td>
+        <td>2</td>
+        <td>Salim Ramirez</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US23</td>
+        <td>Revision del dashboard de metricas ROM</td>
+        <td>US23-a</td>
+        <td>Construir dashboard base</td>
+        <td>Implementar vista con tarjetas de ROM y resumen de progreso por paciente.</td>
+        <td>4</td>
+        <td>Eduardo Rivera</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US23</td>
+        <td>Revision del dashboard de metricas ROM</td>
+        <td>US23-b</td>
+        <td>Refinar layout y estados</td>
+        <td>Agregar estados vacios, labels clinicas y ajustes de responsive.</td>
+        <td>2</td>
+        <td>Daniel Crispin</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US24</td>
+        <td>Registro de notas clinicas</td>
+        <td>US24-a</td>
+        <td>Maquetar formulario de notas</td>
+        <td>Diseñar formulario de notas clinicas asociado a una sesion del paciente.</td>
+        <td>3</td>
+        <td>Marcelo Varela</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US24</td>
+        <td>Registro de notas clinicas</td>
+        <td>US24-b</td>
+        <td>Agregar validaciones y guardado</td>
+        <td>Incluir validaciones basicas y boton de guardado con feedback visual.</td>
+        <td>2</td>
+        <td>Paul Sulca</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US33</td>
+        <td>Configuracion del perfil de la clinica</td>
+        <td>US33-a</td>
+        <td>Maquetar perfil institucional</td>
+        <td>Construir la vista base de perfil de clinica con secciones editables.</td>
+        <td>3</td>
+        <td>Salim Ramirez</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US33</td>
+        <td>Configuracion del perfil de la clinica</td>
+        <td>US33-b</td>
+        <td>Definir campos y estados</td>
+        <td>Agregar campos institucionales y estados de guardado en la web application.</td>
+        <td>2</td>
+        <td>Daniel Crispin</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>TS37</td>
+        <td>Autenticacion JWT con filtro multitenant</td>
+        <td>TS37-a</td>
+        <td>Configurar autenticacion base del cliente web</td>
+        <td>Implementar el soporte inicial de autenticacion JWT para los flujos institucionales de la web application.</td>
+        <td>4</td>
+        <td>Salim Ramirez</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>TS37</td>
+        <td>Autenticacion JWT con filtro multitenant</td>
+        <td>TS37-b</td>
+        <td>Validar integracion por roles</td>
+        <td>Probar el acceso diferenciado para fisioterapeutas y administradores, alineando la integracion con el esquema multitenant.</td>
+        <td>3</td>
+        <td>Eduardo Rivera</td>
+        <td>Done</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+##### 6.2.1.4. Development Evidence for Sprint Review
+
+Durante el Sprint 1 nuestro equipo se enfocó en sentar la base de los dos productos digitales de **front-end** que abren el ecosistema uFlex hacia los usuarios: la **Landing Page** pública (sitio de captación dirigido a clínicas y pacientes) y la **Web Application** (PWA clínica para fisioterapeutas y administradores de clínica). Los Web Services REST quedan fuera del alcance de este Sprint y se trabajarán en el Sprint 2 cuando se implemente el monolito de uFlex. A continuación se presentan los commits realizados en cada repositorio relacionados con la implementación del alcance del Sprint 1.
+
+**Repositorio: Landing Page**
+
+URL del repositorio: https://github.com/kiniot/uflex-landing-page
+
+La Landing Page se implementó como el sitio público de presentación de uFlex, incorporando estructura inicial del proyecto, configuración base, sistema visual, soporte PWA, navegación, localización bilingüe y contenido de footer. Los cambios se trabajaron en ramas de feature y se integraron hacia `develop` mediante pull requests.
+
+| Repository                  | Branch                                | Commit Id | Commit Message                                                                                             | Commit Message Body         | Committed on (Date) |
+|-----------------------------|---------------------------------------|-----------|------------------------------------------------------------------------------------------------------------|-----------------------------|---------------------|
+| kiniot/uflex-landing-page   | main                                  | b844eaf   | chore: initial commit                                                                                      | —                           | 10/05/2026          |
+| kiniot/uflex-landing-page   | feature/initial-structure             | db38a64   | feat: add initial project structure with configuration files and design system                              | —                           | 10/05/2026          |
+| kiniot/uflex-landing-page   | feature/initial-structure             | c30c37a   | styles: update styling with custom themes and typography                                                    | —                           | 10/05/2026          |
+| kiniot/uflex-landing-page   | feature/initial-structure             | 8ce1727   | feat: update index.html with improved structure, navigation, and meta tags; add site.webmanifest for PWA support | —                       | 10/05/2026          |
+| kiniot/uflex-landing-page   | feature/initial-structure             | 202e683   | feat(i18n): implement language selection and localization support; add language loading and text updating functionality | —                  | 10/05/2026          |
+| kiniot/uflex-landing-page   | feature/initial-structure → main      | b19ab75   | Merge pull request #1 from kiniot/feature/initial-structure                                                 | Feature/initial structure   | 10/05/2026          |
+| kiniot/uflex-landing-page   | feature/initial-structure             | b917d37   | chore: add KinIoT logo images                                                                              | —                           | 10/05/2026          |
+| kiniot/uflex-landing-page   | feature/initial-structure → develop   | 3dcbfa4   | Merge pull request #2 from kiniot/feature/initial-structure                                                 | chore: add KinIoT logo images | 10/05/2026        |
+| kiniot/uflex-landing-page   | feature/footer-section                | b1378ab   | docs: Add initial README.md file                                                                           | —                           | 10/05/2026          |
+| kiniot/uflex-landing-page   | feature/footer-section                | 45e280c   | feat: add i18n in footer content                                                                           | —                           | 10/05/2026          |
+| kiniot/uflex-landing-page   | feature/footer-section                | fbf54d8   | fix: resolve formatting issues in footer content                                                           | —                           | 10/05/2026          |
+| kiniot/uflex-landing-page   | feature/footer-section                | b2f7196   | chore: remove unused items                                                                                 | —                           | 10/05/2026          |
+| kiniot/uflex-landing-page   | feature/footer-section → develop      | 397a09c   | Merge pull request #3 from kiniot/feature/footer-section                                                    | Feature/footer section      | 10/05/2026          |
+
+**Repositorio: Web Application (PWA)**
+
+URL del repositorio: https://github.com/kiniot/uflex-clinic-web
+
+| Repository              | Branch                       | Commit Id | Commit Message                                                                            | Commit Message Body                                                                                                                                  | Committed on (Date) |
+|-------------------------|------------------------------|-----------|-------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------|
+| kiniot/uflex-clinic-web | feature/initial-structure    | d87c18f   | fix: update .gitignore to include environment.ts                                          | —                                                                                                                                                    | 27/04/2026          |
+| kiniot/uflex-clinic-web | feature/initial-structure    | 9fa7ea3   | feat: add file replacements for development environment in angular.json                   | —                                                                                                                                                    | 27/04/2026          |
+| kiniot/uflex-clinic-web | feature/initial-structure    | 3687e61   | feat: add initial documentation and skills-lock configuration                             | —                                                                                                                                                    | 27/04/2026          |
+| kiniot/uflex-clinic-web | feature/initial-structure    | 9f872ff   | feat: add .npmignore to specify files to ignore when publishing                           | —                                                                                                                                                    | 27/04/2026          |
+| kiniot/uflex-clinic-web | feature/initial-structure    | 9d04bfa   | feat: enforce strict engine checks in .npmrc for Node.js compatibility                    | —                                                                                                                                                    | 27/04/2026          |
+| kiniot/uflex-clinic-web | feature/initial-structure    | 305e80d   | feat: add BaseEntity interface to define standard entity structure                        | —                                                                                                                                                    | 28/04/2026          |
+| kiniot/uflex-clinic-web | feature/initial-structure    | 6370165   | feat: add base classes for API services and error handling utilities                      | —                                                                                                                                                    | 28/04/2026          |
+| kiniot/uflex-clinic-web | feature/initial-structure    | dd38dfc   | feat: add BaseForm class for common form validation utilities                             | —                                                                                                                                                    | 28/04/2026          |
+| kiniot/uflex-clinic-web | feature/initial-structure    | f010f40   | feat(shared): add footer component with styling and translation support                   | —                                                                                                                                                    | 28/04/2026          |
+| kiniot/uflex-clinic-web | feature/initial-structure    | 9795def   | feat(shared): add language switcher component with language selection functionality       | —                                                                                                                                                    | 28/04/2026          |
+| kiniot/uflex-clinic-web | feature/initial-structure    | d052953   | feat(shared): add About, Home and Page Not Found components with translation support      | —                                                                                                                                                    | 28/04/2026          |
+| kiniot/uflex-clinic-web | feature/initial-structure    | de1e384   | feat(app): update title in index.html to reflect new branding                             | —                                                                                                                                                    | 28/04/2026          |
+| kiniot/uflex-clinic-web | feature/initial-structure    | 6f83a32   | feat(iam): add User entity implementation with ID and username properties                 | —                                                                                                                                                    | 28/04/2026          |
+| kiniot/uflex-clinic-web | feature/initial-structure    | f36fbe0   | feat(iam): add SignInCommand and SignUpCommand for user authentication                    | —                                                                                                                                                    | 28/04/2026          |
+| kiniot/uflex-clinic-web | feature/initial-structure    | 8151dcd   | feat(iam): implement IamApi service with sign-up and sign-in functionality                | —                                                                                                                                                    | 28/04/2026          |
+| kiniot/uflex-clinic-web | feature/initial-structure    | af8aac5   | feat(iam): add IamStore service for user authentication and state management              | —                                                                                                                                                    | 28/04/2026          |
+| kiniot/uflex-clinic-web | feature/initial-structure    | a0ca847   | feat(iam): add IAM guard and interceptor for authentication and authorization             | —                                                                                                                                                    | 28/04/2026          |
+| kiniot/uflex-clinic-web | feature/initial-structure    | 63813ba   | feat(iam): add authentication section component for user sign-in and sign-up              | —                                                                                                                                                    | 28/04/2026          |
+| kiniot/uflex-clinic-web | feature/initial-structure    | 6570c5b   | feat(iam): add sign-in and sign-up form components with validation                        | —                                                                                                                                                    | 28/04/2026          |
+| kiniot/uflex-clinic-web | feature/initial-structure    | 9435b32   | feat(iam): add routes for sign-in and sign-up forms                                       | —                                                                                                                                                    | 28/04/2026          |
+| kiniot/uflex-clinic-web | feature/initial-structure    | 7d6ace1   | feat(shared): implement main layout component with navigation and footer                  | —                                                                                                                                                    | 28/04/2026          |
+| kiniot/uflex-clinic-web | feature/initial-structure    | 67dcbd2   | feat(app): enhance application configuration with routing, translation, and layout components | —                                                                                                                                                | 28/04/2026          |
+| kiniot/uflex-clinic-web | feature/initial-structure    | d229614   | feat(i18n): add English and Spanish localization files for application content            | —                                                                                                                                                    | 28/04/2026          |
+| kiniot/uflex-clinic-web | feature/initial-structure    | 97a5cec   | feat(app): integrate PrimeNG with custom theme and update styles                          | —                                                                                                                                                    | 29/04/2026          |
+| kiniot/uflex-clinic-web | feature/initial-structure    | 15dbeda   | feat(app): implement custom theme preset and update font styles                           | —                                                                                                                                                    | 03/05/2026          |
+| kiniot/uflex-clinic-web | feature/initial-structure    | d859233   | feat(app): add theme switcher component and implement dark mode functionality             | —                                                                                                                                                    | 03/05/2026          |
+| kiniot/uflex-clinic-web | feature/initial-structure → main | dc5fdc4 | Merge pull request #1 from kiniot/feature/initial-structure                            | Feature/initial structure                                                                                                                            | 03/05/2026          |
+| kiniot/uflex-clinic-web | feature/auth-screens         | b2dc195   | feat(layout): hide chrome on auth routes                                                  | Oculta header y footer globales en rutas /iam para que sign-in y sign-up se rendericen full-screen al estilo del Figma; añade un toolbar flotante con language y theme switcher. | 07/05/2026          |
+| kiniot/uflex-clinic-web | feature/auth-screens         | ec6f858   | feat(iam): redesign sign-in to match figma                                                | Reemplaza el sign-in con la card centrada del Figma (brand block, p-inputText, p-password con toggleMask, p-checkbox de remember-me), añade keys i18n y conserva el flujo de SignInCommand. | 07/05/2026          |
+| kiniot/uflex-clinic-web | feature/auth-screens         | 6c4536e   | feat(iam): redesign sign-up to match figma                                                | Replica el layout del sign-in en sign-up con los cinco campos del Figma (full name, email, password, confirm-password y código de invitación con addon `#`); el store sigue recibiendo {username, password}. | 07/05/2026          |
+| kiniot/uflex-clinic-web | feature/auth-screens         | e7c616d   | feat(layout): place theme and language switchers above auth card                          | Coloca el auth toolbar arriba de la card en una columna flex centrada y alinea el theme switcher al borde izquierdo y el language switcher al derecho. | 07/05/2026          |
+| kiniot/uflex-clinic-web | feature/auth-screens         | 08a6051   | feat(iam): add role selector to sign-up                                                   | Reincorpora el "Select your role" pill toggle con los dos roles del Figma (physiotherapist / clinic admin), requerido en el form pero solo de presentación. | 07/05/2026          |
+| kiniot/uflex-clinic-web | feature/auth-screens → develop | d05d742 | Merge branch 'feature/auth-screens' into develop                                          | Trae los rediseños de sign-in y sign-up, el auth toolbar arriba de la card con switchers, el role selector y el opt-out de analytics del CLI.        | 07/05/2026          |
+| kiniot/uflex-clinic-web | feature/clinic-admin-screens | 0566c47   | feat: add environment pnpm start                                                          | —                                                                                                                                                    | 07/05/2026          |
+| kiniot/uflex-clinic-web | feature/clinic-admin-screens | 34d1b1b   | feat: add environment files testing pnpm start                                            | —                                                                                                                                                    | 07/05/2026          |
+| kiniot/uflex-clinic-web | feature/clinic-admin-screens | a5619d5   | feat(shared): add admin-shell, page-header, search-input, stat-card                       | Componentes genéricos para páginas tipo portal: AdminShell con sidebar+topbar dirigido por config, PageHeader con slot de acción, SearchInput basado en PrimeNG y StatCard reutilizable. | 07/05/2026          |
+| kiniot/uflex-clinic-web | feature/clinic-admin-screens | cff0770   | feat(structure): scaffold portals composing six bounded contexts                          | Define los portales de clinic-admin y physiotherapist como composiciones en presentation que montan rutas de iam, therapy, device, organization y subscription bajo el AdminShell. | 07/05/2026          |
+| kiniot/uflex-clinic-web | feature/clinic-admin-screens | 4b02ea4   | feat(therapy): exercise catalog with filters and registration view                        | Construye el bounded context Therapy: Exercise entity, RegisterExerciseCommand, TherapyStore con catálogo en señales, ExerciseCard, filtros y vista de registro full-page. | 07/05/2026          |
+| kiniot/uflex-clinic-web | feature/clinic-admin-screens | 580f5fb   | feat(device): inventory page with stat cards and fleet table                              | Construye el bounded context Device: Device entity con DeviceStatus/CalibrationStatus, DeviceStore con stats computadas y FleetTable con baterías, BLE, calibración y status pills. | 07/05/2026          |
+| kiniot/uflex-clinic-web | feature/clinic-admin-screens | 850af06   | feat(planning): scaffold patient bounded context                                          | Patient como bounded context propio de Planning (consumido por el flujo link-to-patient de Device) con la estructura estándar de capas dominio/aplicación/infraestructura. | 07/05/2026          |
+| kiniot/uflex-clinic-web | feature/clinic-admin-screens | 6f8614e   | feat(device): add calibrate, diagnostics, register and link views                         | Cuatro rutas hermanas a partir del inventario: live calibration, diagnostic run con terminal log, registro de hardware con checklist y link-to-patient con candidatos del Planning. | 07/05/2026          |
+| kiniot/uflex-clinic-web | feature/clinic-admin-screens | 3cd72b2   | feat(organization): add clinic and staff management                                       | Bounded context Organization con header de identidad de clínica, KPI cards (pacientes, fisioterapeutas, kits IoT), tabs/tabla de staff y sub-vista de enrolamiento de fisioterapeutas. | 07/05/2026          |
+| kiniot/uflex-clinic-web | feature/clinic-admin-screens | 4bd6681   | feat(subscription): add plan dashboard with billing history                               | Bounded context Subscription: card de plan activo con uso de licencias y storage, visual del método de pago, tabla de billing history y grid de planes disponibles.    | 07/05/2026          |
+| kiniot/uflex-clinic-web | feature/clinic-admin-screens | 285b7c3   | feat(iam): replace profile placeholder with user directory                                | Añade UserProfile entity, ProfileStore y la vista de gestión con action cards, métrica de usuarios activos y tabla paginada con rol, status, verificación y last-login. | 07/05/2026          |
+| kiniot/uflex-clinic-web | feature/clinic-admin-screens | 2c79148   | feat(i18n): add keys for new clinic-admin screens                                         | Traducciones EN/ES para sub-rutas de device (calibrate/diagnostics/register/link), organization, enrolamiento de fisioterapeutas, subscription y profile directory.    | 07/05/2026          |
+| kiniot/uflex-clinic-web | feature/clinic-admin-screens → develop | 14ae92e | Merge branch 'feature/clinic-admin-screens' into develop                            | Incorpora el portal completo del clinic-admin: shell de administración con stat cards y buscador, más seis bounded contexts (therapy, device, organization, planning, subscription, IAM profile directory) con sus vistas, sub-rutas y claves i18n. | 07/05/2026          |
+| kiniot/uflex-clinic-web | feature/physiotherapist-screens | 77caf29 | feat(planning): add dashboard signals and therapy roadmap                                  | Sesiones, alertas clínicas y snapshot de métricas para el dashboard del fisioterapeuta; añade Therapy Roadmap con indicador de cuatro fases, routine builder interactivo y trayectoria de largo plazo. | 07/05/2026          |
+| kiniot/uflex-clinic-web | feature/physiotherapist-screens | 460a653 | feat(therapy): add patient roster and library protocols                                    | Vista Therapy Management del fisioterapeuta (paciente-céntrica con KPIs y roster de casos activos) y proyección LibraryProtocol consumida por el Therapy Roadmap.       | 07/05/2026          |
+| kiniot/uflex-clinic-web | feature/physiotherapist-screens | 6034ef8 | feat(device): add physiotherapist inventory view                                           | Proyección InventoryDevice y value objects FleetSnapshot que dirigen la Device Inventory page del fisioterapeuta con conectividad, batería, tabla asignable y cards de mantenimiento. | 07/05/2026          |
+| kiniot/uflex-clinic-web | feature/physiotherapist-screens | 3ba691b | feat(organization): add physiotherapist organization view                                  | Cola de pacientes sin asignar, directorio de staff con progreso de caseload y KPIs de fleet-health + clinic-efficiency que dirigen la Organization page del fisioterapeuta. | 07/05/2026          |
+| kiniot/uflex-clinic-web | feature/physiotherapist-screens | 3dc6d6a | feat(physiotherapist): activate portal shell with dashboard                                | Reemplaza el placeholder por el shell basado en AdminShell (brand, sidebar, topbar con role pill) y conecta sub-rutas a cada contexto; default es el clinician dashboard. | 07/05/2026          |
+| kiniot/uflex-clinic-web | feature/physiotherapist-screens | 76cb5a9 | feat(i18n): add keys for physiotherapist screens                                           | Traducciones EN/ES para shell, dashboard, therapy roster, therapy roadmap, device inventory y organization view del fisioterapeuta.                  | 07/05/2026          |
+| kiniot/uflex-clinic-web | feature/physiotherapist-screens → develop | 66844ef | Merge branch 'feature/physiotherapist-screens' into develop                          | Incorpora el portal del fisioterapeuta: shell con sidebar, topbar de perfil con role pill y cinco vistas específicas del rol que componen datos de los bounded contexts Therapy, Planning, Device y Organization. | 07/05/2026          |
+| kiniot/uflex-clinic-web | feature/subscription         | c51c803   | feat(subscription): add subscription dashboard content view                               | —                                                                                                                                                    | 08/05/2026          |
+| kiniot/uflex-clinic-web | feature/subscription         | 05faac1   | feat: add presentation subscription and delete environment file                           | —                                                                                                                                                    | 08/05/2026          |
+| kiniot/uflex-clinic-web | feature/subscription         | f5f7bbc   | fix: solving merging problems subscription and develop roots                              | —                                                                                                                                                    | 08/05/2026          |
+| kiniot/uflex-clinic-web | feature/subscription         | d43aaf8   | feat: add subscription bounded context with DDD structure and testing development         | —                                                                                                                                                    | 08/05/2026          |
+| kiniot/uflex-clinic-web | feature/iam-integration      | f73fbfe   | feat(iam): integrate with backend and add user/password UI                                | Alinea DTOs con el contrato del backend (email, UUID, lista de roles), restaura sesión desde JWT, redirige por rol al login, añade modal de cambio de contraseña conectado a PUT /api/v1/users/me/password y refresca i18n keys. | 08/05/2026          |
+| kiniot/uflex-clinic-web | feature/iam-integration → develop | 487504f | Merge branch 'feature/iam-integration' into develop                                     | Integra la Web App con el monolito IAM del backend: alinea DTOs (email + UUID + lista de roles), restaura la sesión desde el JWT al refrescar, redirige por rol al iniciar sesión, agrega modal de cambio de contraseña conectado al API y refresca claves i18n de sign-in y topbar. | 08/05/2026          |
+
+##### 6.2.1.5. Testing Suite Evidence for Sprint Review
+
+Para este Sprint el alcance de pruebas automatizadas se concentra en **Unit Tests** sobre la Web Application (PWA), implementados con **Vitest** sobre el builder oficial `@angular/build:unit-test` y **Angular TestBed**. Las pruebas cubren las capas de **dominio** (entidades y commands del bounded context IAM y Device) y **aplicación** (stores con signals y computed properties), aplicando el patrón de mocks vía `TestBed.configureTestingModule({ providers: [{ provide: …, useValue: … }] })` para aislar las dependencias de infraestructura (HTTP, Router). Los **Integration Tests y Acceptance Tests bajo el enfoque BDD** (archivos `.feature` con Gherkin y Steps) **no aplican en el Sprint 1** y se incorporarán en el Sprint 2 cuando se conecte la Web App al monolito REST API en escenarios end-to-end.
+
+**Unit Tests — Web Application (PWA)**
+
+| Test File                                                    | Clase / Componente bajo prueba         | Comportamientos verificados                                                                                                                                                                                                                  |
+|--------------------------------------------------------------|----------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `iam/domain/model/user.entity.spec.ts`                       | `User` (Aggregate / BaseEntity)        | Construcción desde resource con `id`, `email` y `roles`; default de `roles` a arreglo vacío cuando no se proveen; mutación de campos vía setters.                                                                                            |
+| `iam/domain/model/sign-in.command.spec.ts`                   | `SignInCommand` (Command)              | Construcción a partir del resource `{email, password}`; actualización de credenciales por setters.                                                                                                                                           |
+| `iam/domain/model/change-password.command.spec.ts`           | `ChangePasswordCommand` (Command)      | Construcción con `currentPassword` y `newPassword`; reemplazo de ambos valores por setters.                                                                                                                                                  |
+| `iam/application/iam.store.spec.ts`                          | `IamStore` (Application Store)         | Estado signed-out por defecto; restauración de sesión desde JWT no expirado en `localStorage`; descarte de JWT expirado y limpieza del token; sign-in exitoso actualiza estado y redirige al home por rol; sign-in fallido limpia sesión; sign-out remueve token y redirige a `/iam/sign-in`. |
+| `device/domain/model/device.entity.spec.ts`                  | `Device` (BaseEntity)                  | Construcción con todos los campos del kit IoT; soporte de `linkedPatient = null` para kits sin asignar; mutación de campos operacionales (`batteryLevel`, `status`, `calibrationStatus`).                                                    |
+| `device/application/device.store.spec.ts`                    | `DeviceStore` (Application Store)      | Cómputo de `totalActiveKits` (status ≠ offline), `requiresCalibration` (calibrationStatus = expired), `onlinePercentage` (online / total redondeado) y `availableUnitsPct` sobre el snapshot del fleet, todo derivado del mock de 4 dispositivos. |
+| `app.spec.ts`                                                | `App` (root component)                 | Creación del componente raíz con providers de `TranslateModule.forRoot()` y `provideRouter([])`; verificación de que el `<app-layout>` raíz se renderiza dentro del DOM.                                                                     |
+
+> Resultado del último run: **22 tests pasando en 7 spec files** (`pnpm test --watch=false` ejecuta el builder `@angular/build:unit-test` con Vitest 4.1.5).
+
+**Commits relacionados con Testing — Web Application (PWA)**
+
+URL del repositorio: https://github.com/kiniot/uflex-clinic-web
+
+| Repository              | Branch                            | Commit Id | Commit Message                                                | Commit Message Body                                                                                                                                                                                  | Committed on (Date) |
+|-------------------------|-----------------------------------|-----------|---------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------|
+| kiniot/uflex-clinic-web | feature/unit-tests                | 5d68883   | test(iam): cover entities, commands and store                 | Añade unit tests del bounded context IAM: constructores de `User` y los commands con sus getters/setters, más `IamStore` con restauración de sesión desde JWT, sign-in exitoso/fallido y sign-out. Los specs del store mockean `IamApi` vía TestBed para no depender de `HttpClient`. | 09/05/2026          |
+| kiniot/uflex-clinic-web | feature/unit-tests                | 21e2057   | test(device): cover entity and store computed signals         | Añade unit tests del bounded context Device: construcción y mutación de `Device` y los computed signals de `DeviceStore` (`totalActiveKits`, `requiresCalibration`, `onlinePercentage`, `availableUnitsPct`) calculados sobre el mock del fleet. | 09/05/2026          |
+| kiniot/uflex-clinic-web | feature/unit-tests                | bee573e   | test(app): fix root spec to provide translate and router      | El spec raíz fallaba porque `App` inyecta `TranslateService` y el layout usa `Router`. Provee `TranslateModule.forRoot()` y `provideRouter([])` en el módulo de test, y reemplaza el assertion obsoleto `Hello, uflex-clinic-web` por uno que verifica que el layout raíz se renderiza. | 09/05/2026          |
+| kiniot/uflex-clinic-web | feature/unit-tests → develop      | 6fa54c7   | Merge branch 'feature/unit-tests' into develop                | Incorpora la suite de Unit Tests del Sprint 1 cubriendo IAM (entities, commands y store) y Device (entity y store computed signals), más el fix del spec raíz para dejar la suite completa en verde. | 09/05/2026          |
+
+##### 6.2.1.6. Execution Evidence for Sprint Review
+
+En este Sprint entregamos una primera versión navegable de la **Landing Page** y de la **Web Application (PWA)** de uFlex. La Landing Page presenta la propuesta de valor, beneficios, tecnología, testimonios, planes y canales de contacto del producto. La Web Application cubre el flujo de autenticación común (sign-in y sign-up) y dos portales diferenciados por rol: el portal del **Administrador de Clínica** (clinic-admin), con acceso a los bounded contexts de Therapy, Device, Organization, Subscription y Profile/IAM; y el portal del **Fisioterapeuta** (physiotherapist), con su propio dashboard y vistas de Therapy, Device, Organization y Planning. Los Web Services se entregarán en el Sprint 2 (alcance del monolito REST API). A continuación se presentan las capturas de las principales vistas entregadas.
+
+**Landing Page — vistas principales**
+
+<div style="text-align: center;">
+  <img src="assets/images/screenshots/sprint-1/landing-hero.png" alt="Landing Page — Hero" style="max-width: 100%; height: auto;">
+</div>
+
+*Figura 6.2.1.6.1. Landing Page — Hero principal y propuesta de valor.*
+
+<div style="text-align: center;">
+  <img src="assets/images/screenshots/sprint-1/landing-benefits.png" alt="Landing Page — Benefits" style="max-width: 100%; height: auto;">
+</div>
+
+*Figura 6.2.1.6.2. Landing Page — Beneficios principales de uFlex.*
+
+<div style="text-align: center;">
+  <img src="assets/images/screenshots/sprint-1/landing-technology.png" alt="Landing Page — Technology" style="max-width: 100%; height: auto;">
+</div>
+
+*Figura 6.2.1.6.3. Landing Page — Tecnología y funcionamiento de la solución.*
+
+<div style="text-align: center;">
+  <img src="assets/images/screenshots/sprint-1/landing-testimonials.png" alt="Landing Page — Testimonials" style="max-width: 100%; height: auto;">
+</div>
+
+*Figura 6.2.1.6.4. Landing Page — Testimonios y validación social.*
+
+<div style="text-align: center;">
+  <img src="assets/images/screenshots/sprint-1/landing-plans.png" alt="Landing Page — Plans" style="max-width: 100%; height: auto;">
+</div>
+
+*Figura 6.2.1.6.5. Landing Page — Planes comerciales.*
+
+<div style="text-align: center;">
+  <img src="assets/images/screenshots/sprint-1/landing-faq.png" alt="Landing Page — FAQ" style="max-width: 100%; height: auto;">
+</div>
+
+*Figura 6.2.1.6.6. Landing Page — Preguntas frecuentes.*
+
+<div style="text-align: center;">
+  <img src="assets/images/screenshots/sprint-1/landing-contact.png" alt="Landing Page — Contact" style="max-width: 100%; height: auto;">
+</div>
+
+*Figura 6.2.1.6.7. Landing Page — Formulario y canales de contacto.*
+
+**Web Application (PWA) — Autenticación**
+
+<div style="text-align: center;">
+  <img src="assets/images/screenshots/sprint-1/Sign-in.png" alt="Web App — Sign In" style="max-width: 100%; height: auto;">
+</div>
+
+*Figura 6.2.1.6.8. Web Application — Pantalla de inicio de sesión.*
+
+<div style="text-align: center;">
+  <img src="assets/images/screenshots/sprint-1/Sign-up.png" alt="Web App — Sign Up" style="max-width: 100%; height: auto;">
+</div>
+
+*Figura 6.2.1.6.9. Web Application — Pantalla de registro.*
+
+**Web Application (PWA) — Portal del Administrador de Clínica**
+
+<div style="text-align: center;">
+  <img src="assets/images/screenshots/sprint-1/Administrador-therapy-screen.png" alt="Clinic Admin — Therapy" style="max-width: 100%; height: auto;">
+</div>
+
+*Figura 6.2.1.6.10. Clinic Admin — Catálogo de Therapy (ejercicios y filtros).*
+
+<div style="text-align: center;">
+  <img src="assets/images/screenshots/sprint-1/Administrador-device-screen.png" alt="Clinic Admin — Device" style="max-width: 100%; height: auto;">
+</div>
+
+*Figura 6.2.1.6.11. Clinic Admin — Inventario de dispositivos IoT.*
+
+<div style="text-align: center;">
+  <img src="assets/images/screenshots/sprint-1/Administrador-organization-screen.png" alt="Clinic Admin — Organization" style="max-width: 100%; height: auto;">
+</div>
+
+*Figura 6.2.1.6.12. Clinic Admin — Gestión de la clínica y staff.*
+
+<div style="text-align: center;">
+  <img src="assets/images/screenshots/sprint-1/Administrador-subscription-screen.png" alt="Clinic Admin — Subscription" style="max-width: 100%; height: auto;">
+</div>
+
+*Figura 6.2.1.6.13. Clinic Admin — Plan, uso de licencias e historial de facturación.*
+
+<div style="text-align: center;">
+  <img src="assets/images/screenshots/sprint-1/Administrador-profile-screen.png" alt="Clinic Admin — Profile / IAM" style="max-width: 100%; height: auto;">
+</div>
+
+*Figura 6.2.1.6.14. Clinic Admin — Directorio de usuarios (IAM Profile).*
+
+**Web Application (PWA) — Portal del Fisioterapeuta**
+
+<div style="text-align: center;">
+  <img src="assets/images/screenshots/sprint-1/Physiotherapist-dashboard-screen.png" alt="Physiotherapist — Dashboard" style="max-width: 100%; height: auto;">
+</div>
+
+*Figura 6.2.1.6.15. Physiotherapist — Dashboard del día (sesiones, alertas y métricas clínicas).*
+
+<div style="text-align: center;">
+  <img src="assets/images/screenshots/sprint-1/Physiotherapist-therapy-screen.png" alt="Physiotherapist — Therapy" style="max-width: 100%; height: auto;">
+</div>
+
+*Figura 6.2.1.6.16. Physiotherapist — Gestión de pacientes y protocolos de terapia.*
+
+<div style="text-align: center;">
+  <img src="assets/images/screenshots/sprint-1/Physiotherapist-planning-screen.png" alt="Physiotherapist — Planning" style="max-width: 100%; height: auto;">
+</div>
+
+*Figura 6.2.1.6.17. Physiotherapist — Therapy Roadmap y routine builder.*
+
+<div style="text-align: center;">
+  <img src="assets/images/screenshots/sprint-1/Physiotherapist-device-screen.png" alt="Physiotherapist — Device" style="max-width: 100%; height: auto;">
+</div>
+
+*Figura 6.2.1.6.18. Physiotherapist — Inventario de kits IoT con conectividad y batería.*
+
+<div style="text-align: center;">
+  <img src="assets/images/screenshots/sprint-1/Physiotherapist-organization-screen.png" alt="Physiotherapist — Organization" style="max-width: 100%; height: auto;">
+</div>
+
+*Figura 6.2.1.6.19. Physiotherapist — Cola de pacientes sin asignar y KPIs operacionales.*
+
+##### 6.2.1.7. Services Documentation Evidence for Sprint Review
+
+Esta sección **no aplica para el Sprint 1** porque el alcance entregado se concentró en los productos de front-end (Landing Page y Web Application), sin incluir Web Services. La implementación del **monolito REST API** de uFlex (Java + Spring Boot) está planificada para el **Sprint 2**, momento en el que se documentarán los endpoints con **OpenAPI/Swagger** siguiendo la estructura solicitada (verbo HTTP, sintaxis de llamada, parámetros, ejemplos de request/response, capturas de la UI de Swagger desplegada y commits asociados al repositorio del backend).
+
+##### 6.2.1.8. Software Deployment Evidence for Sprint Review
+
+Durante este Sprint el equipo realizó las primeras actividades de despliegue de los productos de **front-end** en **Vercel**, el proveedor cloud elegido para publicar la Landing Page y la Web Application (PWA). Los **Web Services** se desplegarán en el Sprint 2 cuando se entregue el monolito REST API. A continuación se documenta el flujo de despliegue ejecutado para cada producto.
+
+**Despliegue — Landing Page**
+
+URL pública: <https://uflex-landing-page.vercel.app/>
+
+Pasos realizados durante el Sprint:
+1. **Creación del proyecto en Vercel.** Se accedió al dashboard de Vercel con la cuenta enlazada a GitHub y se creó un nuevo proyecto para la Landing Page.
+2. **Importación del repositorio.** Desde la opción "Add New... -> Project" se importó el repositorio `kiniot/uflex-landing-page`, quedando conectado con la rama `main` para despliegues de producción.
+3. **Configuración del build.** Vercel detectó automáticamente la aplicación front-end y configuró el flujo de instalación, build y publicación del artefacto estático.
+4. **Verificación del dominio público.** Tras finalizar el build, Vercel asignó el dominio `https://uflex-landing-page.vercel.app/` y el estado del deployment quedó como **Ready**.
+
+<div style="text-align: center;">
+  <img src="assets/images/screenshots/sprint-1/deploy-landing-vercel.png" alt="Deploy Landing Page — Vercel" style="max-width: 100%; height: auto;">
+</div>
+
+*Figura 6.2.1.8.1. Vercel — proyecto y despliegue de la Landing Page.*
+
+**Despliegue — Web Application (PWA)**
+
+URL pública: <https://uflex-clinic-web.vercel.app/>
+
+Pasos realizados durante el Sprint:
+1. **Creación de la cuenta en Vercel.** Se registró la cuenta del integrante responsable usando "Continue with GitHub" para enlazar Vercel directamente con el usuario de GitHub que tiene acceso a la organización `kiniot`.
+2. **Importación del repositorio.** Desde el dashboard de Vercel se eligió "Add New... -> Project" y se importó el repositorio `kiniot/uflex-clinic-web`. Para que Vercel pudiera detectarlo bajo el plan free (Hobby), el repositorio se cambió a visibilidad pública en GitHub, ya que el plan gratuito no permite desplegar repos privados de organizaciones.
+3. **Configuración del build.** Vercel detectó automáticamente Angular como framework. Se confirmaron los parámetros de instalación, build y salida del artefacto web, manteniendo la rama de producción conectada al repositorio.
+4. **Verificación del dominio público y navegación.** Tras finalizar el primer build, Vercel asignó la URL `https://uflex-clinic-web.vercel.app/`. Se validó que el sitio carga correctamente, que el redirect del path raíz (`/`) lleva a `/iam/sign-in` (gracias al fix introducido en el commit `0e7f0b1`) y que la PWA se instala desde el navegador.
+
+<div style="text-align: center;">
+  <img src="assets/images/screenshots/sprint-1/deploy-webapp-vercel.png" alt="Deploy Web App — Vercel" style="max-width: 100%; height: auto;">
+</div>
+
+*Figura 6.2.1.8.2. Vercel — proyecto y despliegue de la Web Application.*
+
+##### 6.2.1.9. Team Collaboration Insights during Sprint
+
+Durante el Sprint 1 las actividades de implementación se distribuyeron de forma que **todos los integrantes del equipo tuvieran participación tanto en la Landing Page como en la Web Application (PWA)**, siguiendo la repartición de aspect leaders y collaborators acordada en la sesión de Sprint Planning. Coordinamos el avance con dailies cortos y revisiones de pull requests para garantizar consistencia entre ambos productos. A continuación se presentan las capturas de los analíticos de colaboración de GitHub para cada repositorio del Sprint, junto con la interpretación del equipo.
+
+**GitHub Insights — Landing Page**
+
+<div style="text-align: center;">
+  <img src="assets/images/screenshots/sprint-1/insights-landing-contributors.png" alt="Landing — Contributors" style="max-width: 100%; height: auto;">
+</div>
+
+*Figura 6.2.1.9.1. Landing Page — Contributors.* <!-- TODO: subir captura a assets/images/screenshots/sprint-1/insights-landing-contributors.png -->
+
+<div style="text-align: center;">
+  <img src="assets/images/screenshots/sprint-1/insights-landing-commits.png" alt="Landing — Commits" style="max-width: 100%; height: auto;">
+</div>
+
+*Figura 6.2.1.9.2. Landing Page — Commits over time.* <!-- TODO: subir captura a assets/images/screenshots/sprint-1/insights-landing-commits.png -->
+
+<div style="text-align: center;">
+  <img src="assets/images/screenshots/sprint-1/insights-landing-network.png" alt="Landing — Network graph" style="max-width: 100%; height: auto;">
+</div>
+
+*Figura 6.2.1.9.3. Landing Page — Network graph.* <!-- TODO: subir captura a assets/images/screenshots/sprint-1/insights-landing-network.png -->
+
+**GitHub Insights — Web Application (PWA)**
+
+<div style="text-align: center;">
+  <img src="assets/images/screenshots/sprint-1/insights-webapp-contributors.png" alt="Web App — Contributors" style="max-width: 100%; height: auto;">
+</div>
+
+*Figura 6.2.1.9.4. Web Application — Contributors.* <!-- TODO: subir captura a assets/images/screenshots/sprint-1/insights-webapp-contributors.png -->
+
+<div style="text-align: center;">
+  <img src="assets/images/screenshots/sprint-1/insights-webapp-commits.png" alt="Web App — Commits" style="max-width: 100%; height: auto;">
+</div>
+
+*Figura 6.2.1.9.5. Web Application — Commits over time.* <!-- TODO: subir captura a assets/images/screenshots/sprint-1/insights-webapp-commits.png -->
+
+<div style="text-align: center;">
+  <img src="assets/images/screenshots/sprint-1/insights-webapp-network.png" alt="Web App — Network graph" style="max-width: 100%; height: auto;">
+</div>
+
+*Figura 6.2.1.9.6. Web Application — Network graph.* <!-- TODO: subir captura a assets/images/screenshots/sprint-1/insights-webapp-network.png -->
+
+<hr class="page-break">
 
 # Conclusiones
 
@@ -5754,5 +7685,5 @@ El código fuente del proyecto está disponible en el siguiente repositorio de G
 
 Los videos de entrevistas para *needfinding*, exposiciones, y otros videos sobre avances del proyecto están disponibles en Microsoft Streams:
 
-1. Entrevistas para Needfinding: [https://upcedupe-my.sharepoint.com/:v:/g/personal/u20201e843_upc_edu_pe/IQBi9_cKZMuRQaK0-UbxF7MIAZnukHun0vDhy1qki_eRsUs?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=JVqpgO](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20201e843_upc_edu_pe/IQBi9_cKZMuRQaK0-UbxF7MIAZnukHun0vDhy1qki_eRsUs?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=JVqpgO)
-2. Exposición A V1: [https://upcedupe-my.sharepoint.com/:v:/g/personal/u20201e843_upc_edu_pe/IQD2BLK_kG3WTLABTiNdeqlcAY6m3IeQq8Sy6AZInrFMkR8?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=puz5qK](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20201e843_upc_edu_pe/IQD2BLK_kG3WTLABTiNdeqlcAY6m3IeQq8Sy6AZInrFMkR8?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=puz5qK)
+1. Entrevistas para Needfinding: [https://goo.su/8EMwBnI](https://goo.su/8EMwBnI)
+2. Exposición AV1: [https://upcedupe-my.sharepoint.com/:v:/g/personal/u20201e843_upc_edu_pe/IQD2BLK_kG3WTLABTiNdeqlcAY6m3IeQq8Sy6AZInrFMkR8?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=puz5qK](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20201e843_upc_edu_pe/IQD2BLK_kG3WTLABTiNdeqlcAY6m3IeQq8Sy6AZInrFMkR8?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=puz5qK)

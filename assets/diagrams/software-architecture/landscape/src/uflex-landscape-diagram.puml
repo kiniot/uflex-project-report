@@ -1,0 +1,70 @@
+@startuml uflex-sa-landscape
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Context.puml
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+
+' Top-down flow keeps the diagram in portrait orientation
+LAYOUT_TOP_DOWN()
+
+' Styling approximations for Structurizr look (blue & gray palette)
+skinparam shadowing false
+skinparam defaultFontName Arial
+skinparam Padding 3
+skinparam wrapWidth 180
+skinparam nodesep 30
+skinparam ranksep 70
+
+' ---- Tags / legend ----
+AddPersonTag("user",     $bgColor="#4A6FA5", $fontColor="#ffffff", $borderColor="#2F4A73", $legendText="Usuario de uFlex")
+AddSystemTag("uflex",    $bgColor="#1168BD", $fontColor="#ffffff", $borderColor="#0B4884", $legendText="Sistema uFlex (en foco)")
+AddSystemTag("clinic",   $bgColor="#7D98B5", $fontColor="#ffffff", $borderColor="#5C7590", $legendText="Sistema interno de la clínica")
+
+title System Landscape Diagram for the Clinic (uFlex en su ecosistema)
+
+' =========================================================
+' Actors — solo los usuarios directos de uFlex
+' =========================================================
+Person(patient,         "Paciente",                 "Realiza terapia de miembro superior",          $tags="user")
+Person(physiotherapist, "Fisioterapeuta",           "Supervisa y ajusta protocolos clínicos",       $tags="user")
+Person(clinicAdmin,     "Administrador de Clínica", "Gestiona suscripción, usuarios y operación",   $tags="user")
+
+' =========================================================
+' Enterprise boundary — la Clínica y sus sistemas
+' =========================================================
+Enterprise_Boundary(clinicEnterprise, "Clínica (Cliente uFlex)") {
+
+  System(uflex, "uFlex", "Plataforma IoT/SaaS de telerehabilitación de miembro superior", $tags="uflex")
+
+  System(ehr,        "Historia Clínica Electrónica (HCE)", "Expediente clínico del paciente",                 $tags="clinic")
+  System(operations, "Sistema de Operaciones",             "Agenda de citas y atención al paciente",          $tags="clinic")
+  System(finance,    "Sistema de Finanzas",                "Facturación, cobros y contabilidad",              $tags="clinic")
+  System(hr,         "Sistema de RRHH",                    "Gestión de personal: planilla y horarios",        $tags="clinic")
+  System(stock,      "Sistema de Stock / Inventario",      "Insumos médicos y equipos de rehabilitación",     $tags="clinic")
+  System(crm,        "CRM / Marketing",                    "Captación y comunicación con pacientes",          $tags="clinic")
+}
+
+' =========================================================
+' Personas → uFlex (todas pasan por uFlex únicamente)
+' =========================================================
+Rel(patient,         uflex, "Realiza rutinas y consulta progreso")
+Rel(physiotherapist, uflex, "Supervisa sesiones y ajusta protocolos")
+Rel(clinicAdmin,     uflex, "Administra clínica, usuarios y suscripción")
+
+' =========================================================
+' uFlex ↔ otros sistemas de la clínica
+' =========================================================
+Rel(uflex, ehr,        "Adjunta informes biomecánicos al expediente")
+Rel(uflex, operations, "Consulta y reserva sesiones de rehabilitación")
+Rel(uflex, finance,    "Reporta sesiones facturables")
+Rel(uflex, hr,         "Consulta roster de fisioterapeutas")
+Rel(uflex, stock,      "Reserva equipos de rehabilitación")
+Rel(uflex, crm,        "Comparte progreso para campañas de adherencia")
+
+' =========================================================
+' Layout hints — apilar actores en columna
+' =========================================================
+Lay_D(patient, physiotherapist)
+Lay_D(physiotherapist, clinicAdmin)
+
+SHOW_LEGEND()
+@enduml

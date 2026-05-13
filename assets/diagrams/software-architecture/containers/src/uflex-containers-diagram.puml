@@ -1,0 +1,118 @@
+@startuml uflex-sa-containers
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Context.puml
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+
+' Top-down keeps the diagram in portrait orientation
+LAYOUT_TOP_DOWN()
+
+' Styling approximations for Structurizr look (blue & gray palette)
+skinparam shadowing false
+skinparam defaultFontName Arial
+skinparam Padding 3
+skinparam wrapWidth 180
+skinparam nodesep 30
+skinparam ranksep 80
+
+LAYOUT_WITH_LEGEND()
+
+' ---- Tags / legend ----
+AddPersonTag("user",         $bgColor="#4A6FA5", $fontColor="#ffffff", $borderColor="#2F4A73", $legendText="Usuario de uFlex")
+AddSystemTag("external",     $bgColor="#999999", $fontColor="#ffffff", $borderColor="#6B6B6B", $legendText="Sistema externo")
+AddContainerTag("clientApp", $bgColor="#438DD5", $fontColor="#ffffff", $borderColor="#2E6295", $legendText="Aplicación cliente (landing / móvil / web)")
+AddContainerTag("api",       $bgColor="#1168BD", $fontColor="#ffffff", $borderColor="#0B4884", $legendText="REST API (monolito)")
+AddContainerTag("database",  $bgColor="#85BBF0", $fontColor="#000000", $borderColor="#438DD5", $legendText="Base de datos")
+AddContainerTag("iot",       $bgColor="#2E6295", $fontColor="#ffffff", $borderColor="#1C4E80", $legendText="Firmware IoT (embedded)")
+AddContainerTag("edge",      $bgColor="#6BA3DC", $fontColor="#000000", $borderColor="#438DD5", $legendText="Edge computing")
+
+title Container Diagram for uFlex (KinIoT)
+
+' =========================================================
+' Actors (columna izquierda)
+' =========================================================
+Person(patient,         "Paciente",                 "Realiza terapia de miembro superior",        $tags="user")
+Person(physiotherapist, "Fisioterapeuta",           "Supervisa sesiones y ajusta protocolos",     $tags="user")
+Person(clinicAdmin,     "Administrador de Clínica", "Gestiona sedes, usuarios y suscripción",     $tags="user")
+
+' =========================================================
+' uFlex system
+' =========================================================
+System_Boundary(uflex, "uFlex") {
+
+  ' ---- Client Tier ----
+  Boundary(clientTier, "Client Apps Tier") {
+    Container(landingPage,  "Landing Page",   "TypeScript (Vercel)",                                   "Sitio público de captación de leads",                  $tags="clientApp")
+    Container(mobileApp,    "Mobile App",     "Swift/SwiftUI (iOS), Kotlin/Jetpack Compose (Android)", "App del paciente: rutinas, feedback y sincronización", $tags="clientApp")
+    ContainerDb(mobileDB,   "Mobile DB",      "SQLite",                                                "Caché local del paciente",                             $tags="database")
+    Container(webClientApp, "Web Client App", "TypeScript, Angular (Vercel)",                          "PWA para fisioterapeutas y administradores",           $tags="clientApp")
+  }
+
+  ' ---- IoT & Edge Tier ----
+  Boundary(iotTier, "IoT & Edge Tier") {
+    Container(embeddedApp, "Embedded App", "C++",    "Firmware del wearable: muestreo, filtrado y BLE",     $tags="iot")
+    Container(edgeApp,     "Edge App",     "Python", "Procesamiento biomecánico y feedback en tiempo real", $tags="edge")
+    ContainerDb(edgeDB,    "Edge DB",      "SQLite", "Buffer local de muestras biomecánicas",               $tags="database")
+  }
+
+  ' ---- Backend (monolito) ----
+  Container(restApi,   "REST API", "Java, Spring Boot",     "Monolito que expone los endpoints REST de uFlex (identidad, terapia, tendencias, suscripciones, analítica y notificaciones) y gestiona la autenticación con JWT",  $tags="api")
+  ContainerDb(uflexDB, "uFlex DB", "PostgreSQL (Supabase)", "Base de datos única del monolito, organizada en múltiples esquemas (identity, therapy, planning, subscription, analytics, etc.)",                                  $tags="database")
+}
+
+' =========================================================
+' External systems (columna derecha)
+' =========================================================
+System_Ext(uflexHardware, "Hardware uFlex", "Wearable con sensores IMU y actuadores hápticos", $tags="external")
+System_Ext(culqi,         "Culqi",          "Pasarela de pagos peruana",                       $tags="external")
+System_Ext(resend,         "Resend",        "Envío de correos transaccionales",                $tags="external")
+
+' =========================================================
+' Personas → clientes
+' =========================================================
+Rel(patient,         landingPage,  "Explora contenido público")
+Rel(patient,         mobileApp,    "Ejecuta rutinas y revisa feedback")
+Rel(physiotherapist, webClientApp, "Supervisa sesiones y ajusta protocolos")
+Rel(clinicAdmin,     webClientApp, "Administra clínica y suscripción")
+
+' =========================================================
+' Mobile App ↔ otros contenedores
+' =========================================================
+Rel(mobileApp, embeddedApp, "Controla sesión del sensor (BLE)")
+Rel(mobileApp, mobileDB,    "Lee/escribe caché local")
+Rel(mobileApp, restApi,     "Consume endpoints (HTTPS)")
+
+' =========================================================
+' Web Client App ↔ backend
+' =========================================================
+Rel(webClientApp, restApi, "Consume endpoints (HTTPS)")
+
+' =========================================================
+' Cadena IoT
+' =========================================================
+Rel(embeddedApp, uflexHardware, "Lee sensores IMU y controla actuadores hápticos")
+Rel(embeddedApp, edgeApp,       "Envía muestras biomecánicas")
+Rel(edgeApp,     edgeDB,        "Persiste muestras locales")
+Rel(edgeApp,     restApi,       "Envía datos anonimizados (HTTPS)")
+
+' =========================================================
+' REST API ↔ DB ↔ externos
+' =========================================================
+Rel(restApi, uflexDB, "Lee/escribe datos de negocio")
+Rel(restApi, culqi,   "Procesa pagos de suscripción")
+Rel(restApi, resend,  "Envía correos transaccionales")
+
+' =========================================================
+' Layout hints — forzar columnas para mejorar legibilidad
+' =========================================================
+' Personas apiladas verticalmente
+Lay_D(patient, physiotherapist)
+Lay_D(physiotherapist, clinicAdmin)
+
+' Sistemas externos apilados verticalmente
+Lay_D(uflexHardware, culqi)
+Lay_D(culqi, resend)
+
+' DB junto al REST API (a la derecha)
+Lay_R(restApi, uflexDB)
+
+@enduml
