@@ -6449,9 +6449,9 @@ El prototipo web permite simular la experiencia de administradores y fisioterape
 
 <img src="assets/ux-ui/prototypes/web/admin/web_prototype.png" alt="Prototipo web de uFlex" width="100%">
 
-Link de video de explicación: https://upcedupe-my.sharepoint.com/:v:/g/personal/u20201e843_upc_edu_pe/IQBO8HbwIVyVSr8CctgoXe9WAf_hutahyTvBoMkfwdZBrKs?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=50hyr1
+Link de video de explicación: (https://goo.su/Y2U5M)[https://goo.su/Y2U5M]
 
-Link del figma del prototipo web: https://www.figma.com/design/ETmizOcfDmHvDkg0PojfDo/uFlex-WebPlatform?node-id=0-1&t=SsqIkA3YfMBnHQVy-1
+Link del figma del prototipo web: (https://www.figma.com/design/ETmizOcfDmHvDkg0PojfDo/uFlex-WebPlatform?node-id=0-1&t=SsqIkA3YfMBnHQVy-1)[https://www.figma.com/design/ETmizOcfDmHvDkg0PojfDo/uFlex-WebPlatform?node-id=0-1&t=SsqIkA3YfMBnHQVy-1]
 
 ### 5.5.2. Prototype Validation.
 
@@ -6470,7 +6470,7 @@ El prototipo abarca las 11 pantallas principales del paciente: Splash, Login, Ho
 
 El prototipo interactivo se encuentra disponible en Figma y puede ser accesado a traves del siguiente enlace: [https://www.figma.com/proto/zTSdPPNtBudIxeYN6Ro83Q/uFlex-Mobile?node-id=30-3100&viewport=674%2C264%2C0.27&t=ZhFjKkotzh5hLJDo-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=30%3A3100&page-id=24%3A2323](https://www.figma.com/proto/zTSdPPNtBudIxeYN6Ro83Q/uFlex-Mobile?node-id=30-3100&viewport=674%2C264%2C0.27&t=ZhFjKkotzh5hLJDo-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=30%3A3100&page-id=24%3A2323)
 
-El video del prototipo interactivo se encuentra disponible a traves del siguiente enlace: [https://upcedupe-my.sharepoint.com/:v:/g/personal/u20221g120_upc_edu_pe/IQA6HikJDm2WRI2hmc-I92pcAazSwYXEpvRIm1Z8_xudj-M?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=1F2w9s](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20221g120_upc_edu_pe/IQA6HikJDm2WRI2hmc-I92pcAazSwYXEpvRIm1Z8_xudj-M?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=1F2w9s)
+El video del prototipo interactivo se encuentra disponible a traves del siguiente enlace: [https://goo.su/NxMQR](https://goo.su/NxMQR)
 
 
 ### 5.6. IoT Device Design
@@ -6815,7 +6815,7 @@ Se utilizaran las siguientes plataformas para el despliegue de los diferentes pr
 Netlify es una plataforma de alojamiento y despliegue continuo para sitios web estaticos y aplicaciones frontend. Ofrece integracion con repositorios GitHub para despliegues automaticos.
 
 Para configurar el despliegue automatico de la landing page en Netlify:
-1. Crear una cuenta en [Netlify](https://www.netlify.com) y vincularla al repositorio de GitHub de la landing page.
+1. Crear una cuenta en Netlify ([https://www.netlify.com](https://www.netlify.com)) y vincularla al repositorio de GitHub de la landing page.
 2. Configurar un nuevo sitio en Netlify, seleccionando el repositorio correspondiente.
 3. Definir la rama de despliegue (por ejemplo, `main`).
 4. Especificar comandos de construccion y carpeta de publicacion (por ejemplo, `npm run build` y `dist/`).
@@ -6826,7 +6826,7 @@ Para configurar el despliegue automatico de la landing page en Netlify:
 Railway es una plataforma de despliegue y gestion de aplicaciones backend con integracion GitHub.
 
 Para configurar el despliegue automatico del servicio REST API en Railway:
-1. Crear una cuenta en [Railway](https://railway.app) y vincularla al repositorio del API.
+1. Crear una cuenta en Railway ([https://railway.app](https://railway.app)) y vincularla al repositorio del API.
 2. Crear un nuevo proyecto y seleccionar el repositorio correspondiente.
 3. Definir la rama de despliegue (por ejemplo, `main`).
 4. Configurar variables de entorno necesarias para la aplicacion.
@@ -6837,7 +6837,7 @@ Para configurar el despliegue automatico del servicio REST API en Railway:
 Firebase permite distribuir builds y administrar despliegues de aplicaciones moviles para pruebas internas.
 
 Para configurar la distribucion automatica en Firebase:
-1. Crear un proyecto en [Firebase](https://firebase.google.com).
+1. Crear un proyecto en Firebase ([https://firebase.google.com](https://firebase.google.com)).
 2. Vincular el repositorio de la app movil con el proyecto.
 3. Configurar CI/CD con GitHub Actions o Firebase CLI.
 4. Definir comandos de construccion y distribucion (por ejemplo, `./gradlew assemble` y `firebase appdistribution:distribute`).
@@ -6848,7 +6848,7 @@ Para configurar la distribucion automatica en Firebase:
 Google Play Console es la plataforma oficial para publicar y gestionar aplicaciones Android.
 
 Para publicar la aplicacion Android:
-1. Crear una cuenta de desarrollador en [Google Play Console](https://play.google.com/console).
+1. Crear una cuenta de desarrollador en Google Play Console ([https://play.google.com/console](https://play.google.com/console)).
 2. Crear un nuevo proyecto de aplicacion con su metadata.
 3. Subir el archivo AAB generado por Android Studio.
 4. Completar la ficha de la aplicacion y politicas requeridas.
@@ -6860,7 +6860,7 @@ Para publicar la aplicacion Android:
 Supabase se utiliza para el despliegue automatizado de la base de datos PostgreSQL.
 
 Para configurar el despliegue de base de datos en Supabase:
-1. Crear un proyecto en [Supabase](https://supabase.com).
+1. Crear un proyecto en Supabase ([https://supabase.com](https://supabase.com)).
 2. Configurar el esquema inicial y las tablas requeridas.
 3. Definir variables de conexion seguras para los servicios backend.
 4. Validar conectividad desde el REST API.
@@ -7686,4 +7686,5 @@ El código fuente del proyecto está disponible en el siguiente repositorio de G
 Los videos de entrevistas para *needfinding*, exposiciones, y otros videos sobre avances del proyecto están disponibles en Microsoft Streams:
 
 1. Entrevistas para Needfinding: [https://goo.su/8EMwBnI](https://goo.su/8EMwBnI)
-2. Exposición AV1: [https://upcedupe-my.sharepoint.com/:v:/g/personal/u20201e843_upc_edu_pe/IQD2BLK_kG3WTLABTiNdeqlcAY6m3IeQq8Sy6AZInrFMkR8?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=puz5qK](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20201e843_upc_edu_pe/IQD2BLK_kG3WTLABTiNdeqlcAY6m3IeQq8Sy6AZInrFMkR8?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=puz5qK)
+2. Exposición AV1: [https://goo.su/IPyzJ](https://goo.su/IPyzJ)
+3. Exposición TB1: [https://goo.su/XWWS](https://goo.su/XWWS)
