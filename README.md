@@ -155,6 +155,56 @@ Análisis de cantidad de commits realizados por semana.
 
 <hr class="page-break">
 
+## TB1
+
+**Tareas**
+
+Para el desarrollo del AV1, cada participante del equipo realizó las siguientes tareas:
+
+| Integrantes                         | Tarea asignada                                                                                                                      |
+|-------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------|
+| Ramirez Mestanza, Salim Ignacio     | - Style Guidelines <br> - Information Architecture <br> - Landing Page Wireframes <br> - Landing Page Mock-ups                      |
+| Sulca Gonzales, Paúl Fernando       | - Software Configuration Management <br> - Sprint Planning 1 <br> - Sprint Backlog 1 <br> - Source Code Management                  |
+| Crispin Ramos, Daniel Franco        | - Applications Wireframes <br> - Applications Wireflow Diagrams <br> - Applications Mock-ups <br> - Applications User Flow Diagrams |
+| Varela Bustinza, Marcelo Alessandro | - Applications Wireframes <br> - Applications Wireflow Diagrams <br> - Applications Mock-ups <br> - Applications User Flow Diagrams |
+| Rivera Sosa, Eduardo Gael           | - Development Evidence <br> - Testing Suite Evidence <br> - Execution Evidence <br> - Deployment Evidence                           |
+
+**GitHub Collaboration Insights**
+
+En GitHub se presenta un timeline de las principales ramas creadas por cada integrante del equipo, así como los procesos de merge realizados.  
+Todas las ramas fueron gestionadas siguiendo el flujo de trabajo **GitFlow**, adaptado para una organización que utiliza un sistema de control de versiones.
+
+<div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
+
+Gráfico de red (*network graph*) de ramas en el repositorio de GitHub.
+
+![Insights - Network Graph](./assets/images/screenshots/sprint-1/insights-network-graph.png)
+
+</div>
+
+A continuación, se presentan los gráficos que muestran el análisis de los commits en el repositorio correspondiente al informe.  
+Estos gráficos detallan la cantidad de líneas de código añadidas por cada miembro del equipo y la actividad de commits registrada.
+
+<div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
+
+Análisis de líneas de código añadidas por contribuyente.
+
+![Insights - Contributors](./assets/images/screenshots/sprint-1/insights-contributor.png)
+
+</div>
+
+El siguiente gráfico muestra la cantidad de commits realizados en la semana con mayor actividad en el proyecto.
+
+<div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
+
+Análisis de cantidad de commits realizados por semana.
+
+![Insights - Commits](./assets/images/screenshots/sprint-1/insights-commits.png)
+
+</div>
+
+<hr class="page-break">
+
 # Contenido
 
 - [Capítulo I: Introducción](#capítulo-i-introducción)
@@ -7117,10 +7167,6 @@ Durante el Sprint 1 las actividades de implementación se distribuyeron de forma
 </div>
 
 *Figura 6.2.1.9.6. Web Application — Network graph.* <!-- TODO: subir captura a assets/images/screenshots/sprint-1/insights-webapp-network.png -->
-
-**Interpretación del equipo**
-
-<!-- TODO: redactar 1-2 párrafos interpretando los analíticos cuando ya se tengan las capturas. Sugerencia: comentar (a) la distribución de commits por integrante (¿quién lideró cada producto?, ¿hubo participación pareja?), (b) los picos de actividad y su correlación con los hitos del Sprint (planning, mid-sprint, review), y (c) cómo el network graph refleja la estrategia de ramas (feature → develop → main) y los merges con --no-ff que el equipo acordó. -->
 
 <hr class="page-break">
 
