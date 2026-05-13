@@ -5991,7 +5991,46 @@ El video del prototipo interactivo se encuentra disponible a traves del siguient
 
 ### 5.6. IoT Device Design
 
+#### Introducción y Criterios de Diseño
+Esta sección presenta la propuesta de diseño físico y de circuito para los nodos vestibles (*Wearable Nodes*) que componen el hardware de la solución **uFlex**. El objetivo principal de estos dispositivos es la captura de telemetría inercial y datos biomecánicos en tiempo real durante la ejecución de protocolos de rehabilitación de miembros superiores.
 
+Los principales criterios para las decisiones de diseño del hardware son:
+
+* **Precisión Clínica en la Captura de Datos:** Se utiliza una Unidad de Medida Inercial (IMU) de 6 ejes (MPU6050). Este sensor recolecta datos crudos de aceleración y velocidad angular. Mediante algoritmos de fusión de sensores (*Sensor Fusion*), estos datos se traducen en ángulos de Euler tridimensionales, permitiendo calcular el Rango de Movimiento (ROM) exacto del paciente con alta precisión.
+* **Procesamiento Eficiente (Edge Computing):** El diseño se basa en un microcontrolador ESP32, seleccionado por su capacidad de procesar la validación de los ejercicios localmente y transmitir los resultados vía Bluetooth Low Energy (BLE) a la aplicación móvil, garantizando un bajo consumo energético.
+* **Usabilidad Autónoma y Ergonomía:** El dispositivo físico está conceptualizado como un *wearable* ligero. Se sujeta mediante correas ajustables que aseguran la fijación del sensor en el eje de la articulación, permitiendo que el paciente se lo coloque sin requerir asistencia de terceros.
+
+#### Relación con la Arquitectura de Información y Guía de Estilos
+El diseño de la interfaz física del dispositivo IoT (*IoT Device Physical Interfaces*) es una extensión coherente de nuestra propuesta de experiencia de usuario y arquitectura de información definida para el Bounded Context de *Therapy*.
+
+* **Feedback Visual y Semántica de Colores:** Los indicadores luminosos (LED RGB) del hardware respetan el *Color Palette* de la aplicación móvil. El color **Verde (Success)** indica una repetición válida dentro del umbral prescrito; el **Rojo (Warning/Error)** alerta sobre un movimiento compensatorio o incorrecto; y el **Azul (Info/Brand)** indica el estado de emparejamiento Bluetooth.
+* **Feedback Háptico:** Para evitar que el paciente dependa de mirar la pantalla del dispositivo móvil durante el ejercicio, las alertas de error biomecánico o superación del umbral de dolor se traducen en vibraciones físicas mediante un motor háptico integrado, extendiendo el sistema de notificaciones al entorno físico.
+
+#### Propuesta de Diseño de Circuito (Hardware Schematic)
+Para la validación lógica de los componentes electrónicos y sus conexiones, se elaboró un diagrama esquemático utilizando la herramienta Wokwi. Este circuito demuestra la viabilidad técnica de la interacción física antes de su implementación en placa de desarrollo.
+
+Los componentes integrados y sus nodos de conexión son:
+1.  **Microcontrolador ESP32:** Actúa como cerebro del sistema y módulo de comunicación BLE.
+2.  **Sensor IMU (MPU6050):** Unidad de Medida Inercial conectada vía protocolo I2C (SDA en `GPIO 21`, SCL en `GPIO 22`) para la captura de la posición espacial del brazo. Alimentado a 3.3V.
+3.  **LED RGB:** Conectado mediante resistores de 220Ω a los pines PWM (`GPIO 4` para Rojo, `GPIO 2` para Verde, `GPIO 15` para Azul) para emitir los estados visuales del dispositivo.
+4.  **Motor de Vibración (Coin Motor):** Actuador de feedback háptico conectado al `GPIO 32`. *Nota sobre la simulación:* Debido a las limitaciones de componentes gráficos en Wokwi, este actuador se encuentra representado en el diagrama mediante un zumbador piezoeléctrico (Buzzer). A nivel lógico, valida correctamente la emisión de la señal de alerta generada por el microcontrolador, la cual en el ensamblaje físico activará el motor vibratorio mediante un transistor NPN.
+5.  **Botón Pulsador:** Interfaz de entrada primaria para el encendido y emparejamiento, conectado al `GPIO 13` utilizando la resistencia interna *Pull-up* del ESP32.
+
+![Diagrama esquemático del circuito del dispositivo uFlex elaborado en Wokwi](assets/images/figures/uflex-wokwi-schematic.png)
+
+*Diagrama esquemático del circuito del dispositivo uFlex, mostrando la integración de sensores biomecánicos y actuadores.*
+
+#### Flujos de Interacción del Prototipo IoT
+El hardware cubre interacciones físicas que se sincronizan con las vistas de la aplicación móvil, definiendo los siguientes flujos principales de *Wireflow*:
+
+**1. Flujo de Emparejamiento BLE:**
+* **Paso 1:** El usuario presiona el botón físico de la carcasa.
+* **Paso 2:** El microcontrolador inicia y el LED RGB parpadea en color **Azul**, indicando el estado de búsqueda (*Advertising*).
+* **Paso 3:** Al confirmarse la conexión con la aplicación móvil (Edge App), el dispositivo emite una vibración corta y el LED cambia a **Azul Fijo**, indicando un emparejamiento exitoso.
+
+**2. Flujo de Ejecución de Terapia y Evaluación Biomecánica:**
+* **Paso 1 (Happy Path):** Durante el ejercicio, el sensor IMU envía la orientación espacial al sistema. Si el movimiento se realiza correctamente dentro del Rango de Movimiento (ROM) objetivo, el dispositivo enciende el LED en **Verde** brevemente al culminar la repetición.
+* **Paso 2 (Unhappy Path / Error):** Si el sistema detecta una anomalía (ej. una aceleración brusca o un movimiento compensatorio fuera del eje permitido), el dispositivo responde inmediatamente con una **vibración pulsante rápida** y el LED se enciende en **Rojo**, indicando físicamente al paciente que debe corregir su postura.
 
 <hr class="page-break">
 
