@@ -83,7 +83,7 @@
 
 En esta sección se presenta un resumen de las actividades de colaboración realizadas para la elaboración del informe del proyecto.
 
-Se utilizó **GitHub** como plataforma de control de versiones y colaboración en equipo. Se incluye enlace para acceder al repositorio para el reporte del proyecto. [Ver en Github](https://github.com/kiniot/uflex-project-report)
+Se utilizó **GitHub** como plataforma de control de versiones y colaboración en equipo. Se incluye enlace para acceder al repositorio para el reporte del proyecto. [https://github.com/kiniot/uflex-project-report](https://github.com/kiniot/uflex-project-report)
 
 Los integrantes del equipo y sus nombres de usuario en GitHub son los siguientes:
 
@@ -150,6 +150,56 @@ El siguiente gráfico muestra la cantidad de commits realizados en la semana con
 Análisis de cantidad de commits realizados por semana.
 
 ![Insights - Commits](./assets/images/screenshots/insights-commits.png)
+
+</div>
+
+<hr class="page-break">
+
+## TB1
+
+**Tareas**
+
+Para el desarrollo del AV1, cada participante del equipo realizó las siguientes tareas:
+
+| Integrantes                         | Tarea asignada                                                                                                                      |
+|-------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------|
+| Ramirez Mestanza, Salim Ignacio     | - Style Guidelines <br> - Information Architecture <br> - Landing Page Wireframes <br> - Landing Page Mock-ups                      |
+| Sulca Gonzales, Paúl Fernando       | - Software Configuration Management <br> - Sprint Planning 1 <br> - Sprint Backlog 1 <br> - Source Code Management                  |
+| Crispin Ramos, Daniel Franco        | - Applications Wireframes <br> - Applications Wireflow Diagrams <br> - Applications Mock-ups <br> - Applications User Flow Diagrams |
+| Varela Bustinza, Marcelo Alessandro | - Applications Wireframes <br> - Applications Wireflow Diagrams <br> - Applications Mock-ups <br> - Applications User Flow Diagrams |
+| Rivera Sosa, Eduardo Gael           | - Development Evidence <br> - Testing Suite Evidence <br> - Execution Evidence <br> - Deployment Evidence                           |
+
+**GitHub Collaboration Insights**
+
+En GitHub se presenta un timeline de las principales ramas creadas por cada integrante del equipo, así como los procesos de merge realizados.  
+Todas las ramas fueron gestionadas siguiendo el flujo de trabajo **GitFlow**, adaptado para una organización que utiliza un sistema de control de versiones.
+
+<div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
+
+Gráfico de red (*network graph*) de ramas en el repositorio de GitHub.
+
+![Insights - Network Graph](./assets/images/screenshots/sprint-1/insights-network-graph.png)
+
+</div>
+
+A continuación, se presentan los gráficos que muestran el análisis de los commits en el repositorio correspondiente al informe.  
+Estos gráficos detallan la cantidad de líneas de código añadidas por cada miembro del equipo y la actividad de commits registrada.
+
+<div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
+
+Análisis de líneas de código añadidas por contribuyente.
+
+![Insights - Contributors](./assets/images/screenshots/sprint-1/insights-contributor.png)
+
+</div>
+
+El siguiente gráfico muestra la cantidad de commits realizados en la semana con mayor actividad en el proyecto.
+
+<div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
+
+Análisis de cantidad de commits realizados por semana.
+
+![Insights - Commits](./assets/images/screenshots/sprint-1/insights-commits.png)
 
 </div>
 
@@ -339,7 +389,7 @@ En el siguiente cuadro se describe las acciones realizadas y enunciados de concl
       <td><strong>Sulca Gonzales, Paúl Fernando</strong><br><b>AV1:</b> Lideré y facilité actividades de análisis centradas en el usuario, incluyendo la elaboración de entrevistas, User Task Matrix, User Journey Mapping y Empathy Mapping, articulando los aportes del equipo para convertirlos en insumos de diseño consistentes. Además, participé activamente en Big Picture Event Storming y Candidate Context Discovery para alinear decisiones de dominio y delimitar bounded contexts con enfoque estratégico.<br><b>TB1:</b> Coordiné en equipo las secciones de Software Configuration Management y la planificación del Sprint 1, promoviendo liderazgo compartido y alineando criterios técnicos y de contenido con el resto del equipo.</td>
     </tr>
     <tr>
-      <td><strong>Varela Bustinza, Marcelo Alessandro</strong><br><b>AV1:</b>Durante el desarrollo del proyecto, aporté activamente en la organización y desarrollo de capítulos clave, participando en temas como Lean UX, entrevistas, needfinding y diseño de software. Mi contribución permitió coordinar ideas con el equipo y avanzar de manera conjunta hacia los objetivos del trabajo.</td>
+      <td><strong>Varela Bustinza, Marcelo Alessandro</strong><br><b>AV1:</b>Durante el desarrollo del proyecto, aporté activamente en la organización y desarrollo de capítulos clave, participando en temas como Lean UX, entrevistas, needfinding y diseño de software. Mi contribución permitió coordinar ideas con el equipo y avanzar de manera conjunta hacia los objetivos del trabajo.</td> <b>TB1:</b> Desarrollé e implementé la documentación correspondiente a la sección UX/UI Design de la aplicación web de uFlex, enfocándome en la organización de wireframes, mock-ups, wireflow diagrams y user flow diagrams. Asimismo, analicé los flujos del administrador y del fisioterapeuta, identificando la función de cada pantalla y redactando descripciones coherentes con el propósito del proyecto. También contribuí a ordenar los assets visuales, renombrar las imágenes con nombres específicos y estructurar el contenido en formato Markdown para facilitar su integración al reporte del equipo.
     </tr>
     <tr>
       <td rowspan="5"><strong>Crea un entorno colaborativo e inclusivo, establece metas, planifica tareas y cumple objetivos</strong></td>
@@ -360,7 +410,7 @@ En el siguiente cuadro se describe las acciones realizadas y enunciados de concl
       <td><strong>Sulca Gonzales, Paúl Fernando</strong><br><b>AV1:</b> Planifiqué y cumplí los entregables asignados en las etapas de investigación y modelado del dominio, coordinando con el equipo la priorización de tareas para mantener el avance del AV1 dentro de los plazos. Mi participación en la definición de bounded contexts y en el diseño táctico DDD (capas y diagramas de soporte) contribuyó a consolidar un entorno de trabajo colaborativo, ordenado e inclusivo orientado al cumplimiento de objetivos.<br><b>TB1:</b> Organicé y completé los apartados de Software Configuration Management y la documentación de Sprint 1, estableciendo metas claras, distribuyendo tareas y asegurando coherencia entre backlog, liderazgo y alcance acordado.</td>
     </tr>
     <tr>
-      <td><strong>Varela Bustinza, Marcelo Alessandro</strong><br><b>AV1:</b>Participé de forma colaborativa en la distribución y ejecución de tareas, asumiendo responsabilidades concretas dentro del proyecto y cumpliendo con los entregables asignados. Esto ayudó a mantener un trabajo ordenado, con metas claras y un avance coordinado entre los integrantes.</td>
+      <td><strong>Varela Bustinza, Marcelo Alessandro</strong><br><b>AV1:</b>Participé de forma colaborativa en la distribución y ejecución de tareas, asumiendo responsabilidades concretas dentro del proyecto y cumpliendo con los entregables asignados. Esto ayudó a mantener un trabajo ordenado, con metas claras y un avance coordinado entre los integrantes.</td> <b>TB1:</b> Planifiqué y cumplí con las tareas asignadas relacionadas con la documentación de la aplicación web, priorizando la correcta organización de las imágenes, la separación de flujos por rol y la redacción de subtítulos y descripciones para cada user flow. Además, propuse una estructura clara para que el contenido pudiera ser copiado e integrado directamente en el reporte, manteniendo consistencia con la plantilla del curso y evitando incluir secciones que no correspondían al alcance definido, como la aplicación móvil.
     </tr>
   </tbody>
 </table>
@@ -431,6 +481,8 @@ Ser reconocidos en el 2030 como la startup líder en telemonitoreo biomecánico 
 
 
 ### 1.2.1 Antecedentes y problemática
+
+En el Perú, la rehabilitación de fracturas de miembro superior presenta una brecha entre la atención clínica presencial y el seguimiento domiciliario continuo. Como advierten Carbajal Galarza et al. (2021), gran parte del proceso en casa aún depende de la autoejecución del paciente y de reportes subjetivos, lo que limita la corrección oportuna de errores terapéuticos. Esta situación se vuelve más relevante si se considera que, según MINSA (2019), existe una población amplia con limitaciones de movilidad, y que las fracturas de extremidades constituyen una carga frecuente en trauma (Arias Tolentino, 2022). Aunque la teleatención viene creciendo y ya muestra avances en cobertura (Fernandez Agurto et al., 2025), persiste la necesidad de un modelo híbrido que combine supervisión profesional y monitoreo remoto estructurado para reducir abandono, secuelas funcionales y tiempos prolongados de recuperación, en línea con lo señalado por INR (2025) y MINSA (2025b).
 
 #### WHAT (Qué)
 
@@ -889,7 +941,7 @@ En esta sección se detallan las estrategias y tácticas que KinIoT aplicará pa
 | **Ocupación**           | Administrador principal en centro de salud                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
 | **Fecha de entrevista** | 2026-04-11                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
 | **Timing**              | 00:00 - 03:40                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
-| **Video**               | [Ver en Microsoft Stream](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20201e843_upc_edu_pe/IQBi9_cKZMuRQaK0-UbxF7MIAZnukHun0vDhy1qki_eRsUs?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=JVqpgO)                                                                                                                                                                                                                                                                                       |
+| **Video**               | [https://goo.su/8EMwBnI](https://goo.su/8EMwBnI)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
 | **Captura**             | ![Captura entrevista Carlos](assets/images/screenshots/clinic-admin-interview-screenshot-1.png)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 | **Resumen**             | Carlos cuenta con 10 años de experiencia, cuya gestión se ve limitada por procesos operativos fragmentados y una alta tasa de deserción de pacientes tras las primeras semanas de tratamiento. Actualmente, enfrenta dificultades para estandarizar la atención debido a la falta de automatización y a la ausencia de visibilidad sobre el progreso clínico fuera de las instalaciones. Busca implementar una solución tecnológica que le permita monitorear objetivamente los resultados para mejorar la retención, optimizar la rentabilidad del centro y ofrecer un servicio diferenciado y basado en datos medibles ante la competencia. |
 
@@ -904,7 +956,7 @@ En esta sección se detallan las estrategias y tácticas que KinIoT aplicará pa
 | **Ocupación**           | Administrador de clínicas y centros de rehabilitación                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
 | **Fecha de entrevista** | 2026-04-15                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
 | **Timing**              | 03:40 - 13:00                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
-| **Video**               | [Ver en Microsoft Stream](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20201e843_upc_edu_pe/IQBi9_cKZMuRQaK0-UbxF7MIAZnukHun0vDhy1qki_eRsUs?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=JVqpgO)                                                                                                                                                                                                                                                                                                                            |
+| **Video**               | [https://goo.su/8EMwBnI](https://goo.su/8EMwBnI)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 | **Captura**             | ![Captura entrevista Ricardo](assets/images/screenshots/clinic-admin-interview-screenshot-2.png)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 | **Resumen**             | Administrador con 12 años de trayectoria y un MBA en Gestión de Salud, que actualmente supervisa dos sedes y un equipo de 14 fisioterapeutas con un flujo de 600 pacientes mensuales. Su gestión se ve obstaculizada por procesos arcaicos (uso de papel y coordinación por WhatsApp) que le impiden medir la productividad del personal y el progreso real del paciente, factor que contribuye a una tasa de abandono del 20-25%. Busca una solución digital que permita el monitoreo preventivo de los pacientes en casa, priorizando ante todo la facilidad de uso y un soporte técnico sólido para asegurar la adopción inmediata de su equipo sin generar fricción operativa. |
 
@@ -919,7 +971,7 @@ En esta sección se detallan las estrategias y tácticas que KinIoT aplicará pa
 | **Ocupación**           | Fisioterapeuta y Administrador de centro de salud propio                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
 | **Fecha de entrevista** | 2026-04-16                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
 | **Timing**              | 13:00 - 21:52                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
-| **Video**               | [Ver en Microsoft Stream](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20201e843_upc_edu_pe/IQBi9_cKZMuRQaK0-UbxF7MIAZnukHun0vDhy1qki_eRsUs?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=JVqpgO)                                                                                                                                                                                                                                                                                                                                                                                                            |
+| **Video**               | [https://goo.su/8EMwBnI](https://goo.su/8EMwBnI)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 | **Captura**             | ![Captura entrevista Luis](assets/images/screenshots/clinic-admin-interview-screenshot-3.png)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
 | **Resumen**             | Administrador con 6 años liderando su propio centro, operando con un equipo de 42 profesionales y un volumen de hasta 200 pacientes mensuales. Su gestión se basa actualmente en herramientas analógicas (cuadernos y archivos locales), lo que provoca ineficiencias críticas en la gestión de citas, altas tasas de abandono y una total carencia de métricas objetivas sobre la productividad de su personal y la evolución clínica de los pacientes. Identifica una oportunidad estratégica en la tele-rehabilitación para ofrecer un servicio "premium" y diferenciado ante la competencia, condicionando su adopción a un modelo de costo accesible, una usabilidad extrema que no sature a su personal y, crucialmente, la resistencia física del hardware. |
 
@@ -935,7 +987,7 @@ En esta sección se detallan las estrategias y tácticas que KinIoT aplicará pa
 | **Ocupación**           | Estudiante                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 | **Fecha de entrevista** | 2026-04-09                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 | **Timing**              | 21:52 - 30:32                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
-| **Video**               | [Ver en Microsoft Stream](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20201e843_upc_edu_pe/IQBi9_cKZMuRQaK0-UbxF7MIAZnukHun0vDhy1qki_eRsUs?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=JVqpgO)                                                                                                                                                                                                                           |
+| **Video**               | [https://goo.su/8EMwBnI](https://goo.su/8EMwBnI)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 | **Captura**             | ![Captura entrevista Bianca](assets/images/screenshots/patient-interview-screenshot-1.png)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 | **Resumen**             | Paciente joven en proceso de rehabilitación de miembro superior que manifiesta dificultades críticas con la adherencia al tratamiento y la falta de supervisión técnica en el hogar. Su principal barrera es la incertidumbre sobre la ejecución correcta de los ejercicios, lo que genera desmotivación y sensación de estancamiento. Valora positivamente una solución que ofrezca retroalimentación técnica en tiempo real y enfatiza que la usabilidad autónoma —específicamente la facilidad de colocación y uso sin asistencia— es un factor determinante para su adopción. |
 
@@ -950,7 +1002,7 @@ En esta sección se detallan las estrategias y tácticas que KinIoT aplicará pa
 | **Ocupación**           | Estudiante                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 | **Fecha de entrevista** | 2026-04-11                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 | **Timing**              | 30:32 - 37:02                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
-| **Video**               | [Ver en Microsoft Stream](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20201e843_upc_edu_pe/IQBi9_cKZMuRQaK0-UbxF7MIAZnukHun0vDhy1qki_eRsUs?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=JVqpgO)                                                                                                                                                                                                                                                                        |
+| **Video**               | [https://goo.su/8EMwBnI](https://goo.su/8EMwBnI)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 | **Captura**             | ![Captura entrevista Gabriel](assets/images/screenshots/patient-interview-screenshot-2.png)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
 | **Resumen**             | Estudiante de 23 años en proceso de recuperación de una lesión de grado 1 en el brazo derecho. Aunque cuenta con supervisión profesional externa que le brinda seguridad, manifiesta una notable falta de indicadores objetivos para medir su evolución diaria, lo que genera incertidumbre sobre su progreso real. Su motivación principal es recuperar la funcionalidad completa de sus extremidades; por ello, valora soluciones tecnológicas que ofrezcan alta precisión y usabilidad autónoma, aunque se muestra escéptico ante la fiabilidad de herramientas digitales que no garanticen información exacta y accesible. |
 
@@ -965,7 +1017,7 @@ En esta sección se detallan las estrategias y tácticas que KinIoT aplicará pa
 | **Ocupación**           | Estudiante universitario                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
 | **Fecha de entrevista** | 2026-04-12                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
 | **Timing**              | 37:02 - 46:59                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
-| **Video**               | [Ver en Microsoft Stream](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20201e843_upc_edu_pe/IQBi9_cKZMuRQaK0-UbxF7MIAZnukHun0vDhy1qki_eRsUs?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=JVqpgO)                                                                                                                                                                                                                                                                                                                                                       |
+| **Video**               | [https://goo.su/8EMwBnI](https://goo.su/8EMwBnI)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
 | **Captura**             | ![Captura entrevista Henry](assets/images/screenshots/patient-interview-screenshot-3.png)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 | **Resumen**             | Estudiante universitario que experimentó una fractura en la infancia tratada exclusivamente con inmovilización, sin acceso a terapia física profesional, lo que resultó en atrofia muscular y pérdida de movilidad que tuvo que gestionar por cuenta propia. Su experiencia subraya una necesidad crítica de democratizar el acceso a guías de rehabilitación técnicas y precisas que eliminen la incertidumbre del paciente. Valora altamente una solución que ofrezca retroalimentación en tiempo real, aunque advierte que el éxito de la herramienta depende de una usabilidad extremadamente intuitiva o de un modelo de asistencia, especialmente para usuarios no nativos digitales o adultos mayores. |
 
@@ -980,7 +1032,7 @@ En esta sección se detallan las estrategias y tácticas que KinIoT aplicará pa
 | **Ocupación**           | Estudiante de Fisioterapia                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 | **Fecha de entrevista** | 2026-04-11                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 | **Timing**              | 46:59 - 52:36                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
-| **Video**               | [Ver en Microsoft Stream](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20201e843_upc_edu_pe/IQBi9_cKZMuRQaK0-UbxF7MIAZnukHun0vDhy1qki_eRsUs?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=JVqpgO)                                                                                                                                                                                                                                                                                                                                                                                                     |
+| **Video**               | [https://goo.su/8EMwBnI](https://goo.su/8EMwBnI)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 | **Captura**             | ![Captura entrevista Gustavo](assets/images/screenshots/physiotherapist-interview-screenshot-1.png)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
 | **Resumen**             | Estudiante de fisioterapia con experiencia en centros especializados de alta rotación, donde actualmente depende de procesos manuales y en papel para el seguimiento de pacientes. Identifica como su mayor desafío clínico la falta de supervisión remota, lo que resulta en pacientes que ejecutan ejercicios con técnica incorrecta (compensaciones musculares) o abandonan el tratamiento por desmotivación al no sentirse guiados. Su principal motivación es la transición hacia un modelo de trabajo proactivo: busca una herramienta que le permita corregir ejercicios en tiempo real mediante datos objetivos, enfatizando que cualquier solución digital debe ser extremadamente ágil para no entorpecer el ritmo acelerado de atención clínica. |
 
@@ -995,7 +1047,7 @@ En esta sección se detallan las estrategias y tácticas que KinIoT aplicará pa
 | **Ocupación**           | Fisioterapeuta especialista en fracturas de brazos                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 | **Fecha de entrevista** | 2026-04-14                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
 | **Timing**              | 52:36 - 01:00:20                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-| **Video**               | [Ver en Microsoft Stream](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20201e843_upc_edu_pe/IQBi9_cKZMuRQaK0-UbxF7MIAZnukHun0vDhy1qki_eRsUs?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=JVqpgO)                                                                                                                                                                                                                                                                                                                                                            |
+| **Video**               | [https://goo.su/8EMwBnI](https://goo.su/8EMwBnI)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 | **Captura**             | ![Captura entrevista Fabian](assets/images/screenshots/physiotherapist-interview-screenshot-2.png)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 | **Resumen**             | Especialista con 3 años de experiencia en el ámbito clínico, donde gestiona un flujo dinámico de pacientes mediante herramientas analógicas (WhatsApp y reportes manuales). Identifica como principal obstáculo la falta de constancia y la omisión de evidencia por parte del paciente, quienes suelen abandonar el tratamiento prematuramente al sentir una mejoría inicial, lo que deriva en recaídas graves. Valora de forma muy positiva la posibilidad de acceder a telemetría en tiempo real, ya que le permitiría transitar de un seguimiento reactivo a uno preventivo, asegurando que el paciente cumpla con la técnica correcta sin necesidad de solicitar constantemente videos o reportes informales. |
 
@@ -1010,11 +1062,11 @@ En esta sección se detallan las estrategias y tácticas que KinIoT aplicará pa
 | **Ocupación**           | Fisioterapeuta clínico                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
 | **Fecha de entrevista** | 2026-04-15                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
 | **Timing**              | 01:00:20 - 01:05:36                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
-| **Video**               | [Ver en Microsoft Stream](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20201e843_upc_edu_pe/IQBi9_cKZMuRQaK0-UbxF7MIAZnukHun0vDhy1qki_eRsUs?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=JVqpgO)                                                                                                                                                                                                                                                                                                                                                          |
+| **Video**               | [https://goo.su/8EMwBnI](https://goo.su/8EMwBnI)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 | **Captura**             | ![Captura entrevista Diego](assets/images/screenshots/physiotherapist-interview-screenshot-3.png)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
 | **Resumen**             | Diego cuenta con 5 años de experiencia, frustrado por la falta de rigor técnico en el seguimiento remoto, ya que actualmente depende de reportes verbales subjetivos que no garantizan la seguridad ni la eficacia del tratamiento. Percibe una brecha importante en la continuidad del cuidado al no tener visibilidad sobre el cumplimiento del paciente en casa, lo que frecuentemente deriva en abandono o recuperaciones lentas. Su mayor motivación es integrar herramientas que proporcionen datos biomecánicos en tiempo real, permitiéndole realizar ajustes terapéuticos precisos y proactivos sin que esto signifique una carga administrativa adicional que interrumpa su flujo de atención directa. |
 
-Link Video - Entrevistas: [https://upcedupe-my.sharepoint.com/:v:/g/personal/u20201e843_upc_edu_pe/IQBi9_cKZMuRQaK0-UbxF7MIAZnukHun0vDhy1qki_eRsUs?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=JVqpgO](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20201e843_upc_edu_pe/IQBi9_cKZMuRQaK0-UbxF7MIAZnukHun0vDhy1qki_eRsUs?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=JVqpgO)
+Link Video - Entrevistas: [https://goo.su/8EMwBnI](https://goo.su/8EMwBnI)
 
 ### 2.2.3. Análisis de entrevistas
 
@@ -1088,23 +1140,25 @@ Los resultados validan la necesidad de *Uflex*. El problema no es la falta de vo
 
 ## 2.3. Needfinding
 
-
-
 ### 2.3.1. User Personas
 
 Esta sección presenta nuestros usuarios ideales diseñados para el ecosistema de KinIoT. Estos artefactos se han construido a partir del análisis del mercado peruano de salud, el comportamiento de las clínicas privadas y las barreras de accesibilidad en la rehabilitación física.
 
 **User persona del segmento de pacientes en rehabilitación del miembro superior**
 
-<img src="assets/requirements/personas/patient-user-persona.png" alt="User Persona Paciente" style="width: 800px; height: auto;">
+<img src="assets/requirements/personas/patient-user-persona.png" alt="User Persona Paciente" style="width: 400px; height: auto;">
+
+<hr class="page-break">
 
 **User persona del segmento de fisioterapeuta**
 
-<img src="assets/requirements/personas/physiotherapist-user-persona.png" alt="User Persona Fisioterapeuta" style="width: 800px; height: auto;">
+<img src="assets/requirements/personas/physiotherapist-user-persona.png" alt="User Persona Fisioterapeuta" style="width: 400px; height: auto;">
+
+<hr class="page-break">
 
 **User persona del segmento de administradores de clínica y centros de salud**
 
-<img src="assets/requirements/personas/clinic-admin-user-persona.png" alt="User Persona Administrador" style="width: 800px; height: auto;">
+<img src="assets/requirements/personas/clinic-admin-user-persona.png" alt="User Persona Administrador" style="width: 400px; height: auto;">
 
 ### 2.3.2. User Task Matrix
 
@@ -1147,10 +1201,9 @@ En este User Task Matrix se detallan las tareas clave que cada tipo de usuario p
 
 El análisis revela que las tareas críticas del paciente (ejecución física) y del fisioterapeuta (evaluación del ROM) convergen fuertemente en el reporte de síntomas y la corrección postural, validando la necesidad de comunicación clínica bidireccional. En contraste, el administrador opera en un flujo completamente aislado del proceso médico, enfocando sus tareas de alta importancia en la gestión de recursos, retención y facturación. Esta clara división confirma que la solución debe separar funcionalmente la captura autónoma de datos biomecánicos del panel de control gerencial.
 
+<hr class="page-break">
 
 ### 2.3.3. User Journey Mapping
-
-
 
 A continuación, se presentan los User Journey Maps de cada User Persona priorizado para uFlex. Estos mapas permiten visualizar el recorrido completo de cada segmento durante el proceso de rehabilitación remota, identificando puntos de dolor, necesidades de información y oportunidades de mejora en cada etapa de interacción con la solución.
 
@@ -1158,39 +1211,35 @@ A continuación, se presentan los User Journey Maps de cada User Persona prioriz
 
   ![User Journey Map del User Persona Mateo Rojas](assets/requirements/maps/journey-maps/patient-user-journey-map.png)
 
+<hr class="page-break">
+
 * User Journey Map de Valeria Castro (Fisioterapeuta):
 
   ![User Journey Map del User Persona Valeria Castro](assets/requirements/maps/journey-maps/physiotherapist-user-journey-map.png)
+
+<hr class="page-break">
 
 * User Journey Map de Roberto Villanueva (Administrador de clínica):
 
   ![User Journey Map del User Persona Roberto Villanueva](assets/requirements/maps/journey-maps/clinic-admin-user-journey-map.png)
 
+<hr class="page-break">
+
 ### 2.3.4. Empathy Mapping
 
 Se elaboraron los Empathy Mapping para los tres User Personas priorizados de uFlex: **Mateo Rojas (Paciente)**, **Valeria Castro (Fisioterapeuta)** y **Roberto Villanueva (Administrador de clínica)**. Este ejercicio permitió comprender de forma integral lo que cada perfil dice, piensa, hace y siente durante su experiencia con el proceso de rehabilitación remota, identificando sus principales pains y gains para orientar decisiones de diseño centradas en valor clínico, operativo y de adherencia.
 
----
-
 #### Paciente en rehabilitación (Mateo Rojas)
 
-![Empathy Mapping - Paciente](assets/requirements/maps/empathy-maps/patient-empathy-map.png)
-
----
+<img src="assets/requirements/maps/empathy-maps/patient-empathy-map.png" alt="Empathy Mapping - Paciente" style="width:500px; height:auto;">
 
 #### Fisioterapeuta (Valeria Castro)
 
-![Empathy Mapping - Fisioterapeuta](assets/requirements/maps/empathy-maps/physiotherapist-empathy-map.png)
-
----
+<img src="assets/requirements/maps/empathy-maps/physiotherapist-empathy-map.png" alt="Empathy Mapping - Fisioterapeuta" style="width:500px; height:auto;">
 
 #### Administrador de clínica (Roberto Villanueva)
 
-![Empathy Mapping - Administrador](assets/requirements/maps/empathy-maps/clinic-admin-empathy-map.png)
-
----
-
-
+<img src="assets/requirements/maps/empathy-maps/clinic-admin-empathy-map.png" alt="Empathy Mapping - Administrador" style="width:500px; height:auto;">
 
 <hr class="page-break">
 
@@ -1224,7 +1273,7 @@ Finalmente, se presenta el Big Picture Event Storming finalizado, con los evento
 
 ![big-picture-5](assets/diagrams/ddd/event-storming/big-picture/big-picture-event-storming-5.png)
 
-Se puede acceder al Big Picture Event Storming en el siguiente enlace de la herramienta Miro: [Version final del Big Picture Event Storming](https://miro.com/app/board/uXjVGsDiw2M=/?share_link_id=274967609887)
+Se puede acceder al Big Picture Event Storming en el siguiente enlace de la herramienta Miro: [https://miro.com/app/board/uXjVGsDiw2M=/?share_link_id=274967609887](https://miro.com/app/board/uXjVGsDiw2M=/?share_link_id=274967609887)
 
 > *Enlace completo:* https://miro.com/app/board/uXjVGsDiw2M=/?share_link_id=274967609887
 
@@ -1944,7 +1993,7 @@ A continuación, se presenta nuestro Impact Map, estructurado sobre dos objetivo
 
 - Retención de Clientes: Reducir la tasa de abandono del tratamiento en un 25% durante el primer año mediante el uso de biofeedback IoT.
 
-<img src="assets/requirements/maps/impact-maps/impact-map.png" alt="Impact Mapping" style="width: 900px; height: auto;">
+<img src="assets/requirements/maps/impact-maps/impact-map.png" alt="Impact Mapping" style="width: 420px; height: auto;">
 
 <hr class="page-break">
 
@@ -5706,13 +5755,131 @@ Finalmente, se incluye un pie de página con enlaces a redes sociales, términos
 
 ### 5.4. Applications UX/UI Design
 
-
+En esta sección se presentan los wireframes y mock-ups de las aplicaciones de la plataforma uFlex. Se describen las principales pantallas, funcionalidades y elementos visuales que componen estas aplicaciones.
 
 #### 5.4.1. Applications Wireframes
 
+#### Web Application - Clinic Administrator Wireframes
 
+Los wireframes del administrador representan las pantallas destinadas a la gestión operativa de la clínica. Este usuario puede registrar su cuenta, administrar la organización, gestionar dispositivos IoT, vincular dispositivos con pacientes, ejecutar diagnósticos, revisar terapias, registrar ejercicios y controlar la suscripción del servicio.
 
-#### Application Mobile - Paciente
+**Sign Up Admin Wireframe**
+
+Esta pantalla permite que el administrador cree una cuenta dentro de uFlex. El diseño se centra en un formulario simple para facilitar el registro inicial y el acceso a la plataforma.
+
+<img src="assets/ux-ui/wireframes/web/admin/signup_admin.png" alt="Wireframe de registro del administrador en uFlex" width="100%">
+
+**Profile Admin Wireframe**
+
+Esta pantalla permite que el administrador visualice y actualice su información personal dentro del sistema. También funciona como una vista de configuración básica de la cuenta.
+
+<img src="assets/ux-ui/wireframes/web/admin/Profile_admin.png" alt="Wireframe del perfil del administrador en uFlex" width="100%">
+
+**Organization Admin Wireframe**
+
+Esta pantalla permite al administrador gestionar la información general de la clínica, incluyendo datos de la organización, estructura interna y usuarios asociados.
+
+<img src="assets/ux-ui/wireframes/web/admin/Organization_admin.png" alt="Wireframe de organización del administrador en uFlex" width="100%">
+
+**Organization Admin 2 Wireframe**
+
+Esta pantalla complementa la gestión de la organización, mostrando información adicional relacionada con usuarios, sedes o configuración interna de la clínica.
+
+<img src="assets/ux-ui/wireframes/web/admin/Organization_admin_2.png" alt="Wireframe secundario de organización del administrador en uFlex" width="100%">
+
+**Register New Device Wireframe**
+
+Esta pantalla permite registrar un nuevo dispositivo IoT dentro del inventario de la clínica. Su finalidad es asegurar que cada dispositivo quede identificado antes de ser asignado a un paciente.
+
+<img src="assets/ux-ui/wireframes/web/admin/adminregisternewdevice(new).png" alt="Wireframe de registro de nuevo dispositivo IoT en uFlex" width="100%">
+
+**Run Device Diagnostics Wireframe**
+
+Esta pantalla permite ejecutar un diagnóstico del dispositivo IoT para verificar su estado general, conectividad, batería y funcionamiento antes de utilizarlo en una terapia.
+
+<img src="assets/ux-ui/wireframes/web/admin/adminrundevicediagnostics(new).png" alt="Wireframe de diagnóstico de dispositivo IoT en uFlex" width="100%">
+
+**Link Device to Patient Wireframe**
+
+Esta pantalla permite vincular un dispositivo IoT con un paciente específico. Esta asociación es importante para asegurar que los datos capturados durante la rehabilitación se registren correctamente en el perfil del paciente.
+
+<img src="assets/ux-ui/wireframes/web/admin/adminlinkdevicetopatient(new).png" alt="Wireframe de vinculación de dispositivo a paciente en uFlex" width="100%">
+
+**Device Admin 1 Wireframe**
+
+Esta pantalla muestra el inventario de dispositivos IoT registrados en la clínica. Permite revisar qué dispositivos están disponibles, asignados o requieren revisión.
+
+<img src="assets/ux-ui/wireframes/web/admin/Device_admin_1.png" alt="Wireframe de gestión de dispositivos del administrador en uFlex" width="100%">
+
+**Device Admin 2 Wireframe**
+
+Esta pantalla complementa la gestión de dispositivos, mostrando información más detallada sobre el estado operativo de los kits IoT.
+
+<img src="assets/ux-ui/wireframes/web/admin/Device_admin_2.png" alt="Wireframe secundario de gestión de dispositivos del administrador en uFlex" width="100%">
+
+**Therapy Admin Wireframe**
+
+Esta pantalla permite al administrador revisar las terapias registradas dentro de la clínica y supervisar los programas terapéuticos disponibles.
+
+<img src="assets/ux-ui/wireframes/web/admin/Therapy_admin_1.png" alt="Wireframe de gestión de terapias del administrador en uFlex" width="100%">
+
+**Therapy Register Exercise Wireframe**
+
+Esta pantalla permite registrar un nuevo ejercicio terapéutico dentro del sistema. Incluye información como nombre del ejercicio, descripción, articulación objetivo y parámetros básicos.
+
+<img src="assets/ux-ui/wireframes/web/admin/Therapy_register_exercise.png" alt="Wireframe de registro de ejercicio terapéutico en uFlex" width="100%">
+
+**Subscription Admin Wireframe**
+
+Esta pantalla permite al administrador revisar el plan contratado, el estado de la suscripción y las opciones disponibles del servicio SaaS de uFlex.
+
+<img src="assets/ux-ui/wireframes/web/admin/Subscription_admin.png" alt="Wireframe de suscripción del administrador en uFlex" width="100%">
+
+<hr class="page-break">
+
+#### Web Application - Physiotherapist Wireframes
+
+Los wireframes del fisioterapeuta representan las pantallas enfocadas en el seguimiento clínico del paciente. Este usuario puede revisar pacientes asignados, consultar métricas de progreso, planificar terapias, verificar dispositivos y supervisar el avance de la rehabilitación.
+
+**Sign Up Physiotherapist Wireframe**
+
+Esta pantalla permite que el fisioterapeuta se registre o acceda a la plataforma como parte de una clínica. Su objetivo es habilitar el uso del portal clínico.
+
+<img src="assets/ux-ui/wireframes/web/physiotherapist/signup_physiotherapist.png" alt="Wireframe de registro del fisioterapeuta en uFlex" width="100%">
+
+**Dashboard Physiotherapist Wireframe**
+
+Esta pantalla presenta un resumen de pacientes, sesiones, alertas clínicas, dispositivos y métricas relevantes para el fisioterapeuta.
+
+<img src="assets/ux-ui/wireframes/web/physiotherapist/dashboardphysiotherapistuflex.png" alt="Wireframe del dashboard del fisioterapeuta en uFlex" width="100%">
+
+**Organization Physiotherapist Wireframe**
+
+Esta pantalla permite al fisioterapeuta consultar información relacionada con la clínica y los pacientes asociados a su gestión.
+
+<img src="assets/ux-ui/wireframes/web/physiotherapist/Organization_physiotherapist.png" alt="Wireframe de organización del fisioterapeuta en uFlex" width="100%">
+
+**Device Assignment Physiotherapist Wireframe**
+
+Esta pantalla permite verificar o gestionar la asignación de dispositivos IoT a pacientes. Su función es asegurar la trazabilidad entre el paciente, el dispositivo y los datos de rehabilitación.
+
+<img src="assets/ux-ui/wireframes/web/physiotherapist/deviceassignmentphysiotherapistuflex.png" alt="Wireframe de asignación de dispositivo del fisioterapeuta en uFlex" width="100%">
+
+**Planning Physiotherapist Wireframe**
+
+Esta pantalla permite al fisioterapeuta planificar sesiones, ejercicios y objetivos terapéuticos para cada paciente.
+
+<img src="assets/ux-ui/wireframes/web/physiotherapist/planningphysiotherapistuflex.png" alt="Wireframe de planificación del fisioterapeuta en uFlex" width="100%">
+
+**Therapy Physiotherapist Wireframe**
+
+Esta pantalla permite revisar el tratamiento del paciente, validar ejercicios asignados y analizar el avance terapéutico registrado por el sistema.
+
+<img src="assets/ux-ui/wireframes/web/physiotherapist/Therapy_physiotherapist.png" alt="Wireframe de terapia del fisioterapeuta en uFlex" width="100%">
+
+<hr class="page-break">
+
+#### Mobile Application - Patient Wireframes
 
 En esta sección se presentan los wireframes de media fidelidad para la aplicación móvil del paciente. El diseño sigue los principios de **diseño inclusivo**, aplicando tipografía legible de alto contraste, áreas táctiles mínimas de 48x48dp, navegación simple con patrones de flujo conocidos y jerarquía visual clara con grupos de contenido bien definidos. La arquitectura de información se estructura en flujos que priorizan las acciones más frecuentes del paciente.
 
@@ -5782,12 +5949,27 @@ Pantalla de consulta histórica que muestra gráficos de evolución de la movili
 
 ![Mobile Patient Wireframe - Historial Progreso](./assets/ux-ui/wireframes/mobile/mobile-patient-wireframe-11.png)
 
+<hr class="page-break">
+
 #### 5.4.2. Applications Wireflow Diagrams
 
+#### Web Application - Clinic Admin Wireflow Diagrams
 
+Este diagrama representa el recorrido del administrador dentro de la aplicación web. El flujo inicia con el acceso al sistema y continúa con la gestión de organización, dispositivos, terapias y suscripción.
 
+<img src="assets/ux-ui/wireflows/web/admin/admin_wireflow.png" alt="Wireflow web del administrador en uFlex" width="100%">
 
-#### Application Mobile - Paciente
+<hr class="page-break">
+
+#### Web Application - Physiotherapist Wireflow Diagrams
+
+Este diagrama representa el recorrido del fisioterapeuta dentro del portal clínico. El flujo considera el acceso al dashboard, revisión de pacientes, planificación de terapias, asignación de dispositivos y seguimiento del progreso.
+
+<img src="assets/ux-ui/wireflows/web/physiotherapist/physiotherapist_wireflow.png" alt="Wireflow web del fisioterapeuta en uFlex" width="100%">
+
+<hr class="page-break">
+
+#### Mobile Application - Patient Wireflow Diagrams
 
 En esta seccion se presentan los Wireflow Diagrams de la aplicacion movil del paciente. Cada wireflow representa el flujo principal (happy path) para cumplir un User Goal especifico del usuario Mateo Rojas (paciente en rehabilitacion). Los wireflows muestran las pantallas involucradas y las transiciones entre ellas, facilitando la comprension del recorrido del usuario dentro de la aplicacion.
 
@@ -5851,11 +6033,133 @@ En esta seccion se presentan los Wireflow Diagrams de la aplicacion movil del pa
 
 ---
 
+<hr class="page-break">
+
 #### 5.4.3. Applications Mock-ups
 
+En esta sección se presentan los mock-ups de la aplicación web de uFlex. Estas pantallas muestran la apariencia final del sistema para administradores de clínica, fisioterapeutas, y pacientes.
 
+#### Web Application - Clinic Administrator Mock-ups
 
-#### Application Mobile - Paciente
+Los mock-ups del administrador muestran la apariencia final de las pantallas orientadas a la gestión operativa de la clínica.
+
+**Sign Up Admin Mock-up**
+
+Esta pantalla presenta el diseño final del registro del administrador. Su interfaz busca facilitar el ingreso inicial a la plataforma mediante un formulario claro y directo.
+
+<img src="assets/ux-ui/mockups/web/admin/signup_admin.png" alt="Mock-up de registro del administrador en uFlex" width="100%">
+
+**Profile Admin Mock-up**
+
+Esta pantalla muestra el perfil del administrador y la información asociada a su cuenta dentro de uFlex.
+
+<img src="assets/ux-ui/mockups/web/admin/Profile_admin.png" alt="Mock-up del perfil del administrador en uFlex" width="100%">
+
+**Organization Admin Mock-up**
+
+Esta pantalla muestra la gestión visual de la organización o clínica dentro de uFlex.
+
+<img src="assets/ux-ui/mockups/web/admin/Organization_admin.png" alt="Mock-up de organización del administrador en uFlex" width="100%">
+
+**Organization Admin 2 Mock-up**
+
+Esta pantalla complementa la información organizacional de la clínica, permitiendo visualizar datos adicionales de gestión.
+
+<img src="assets/ux-ui/mockups/web/admin/Organization_admin_2.png" alt="Mock-up secundario de organización del administrador en uFlex" width="100%">
+
+**Register New Device Mock-up**
+
+Esta pantalla muestra el diseño final para registrar un nuevo dispositivo IoT dentro del inventario de la clínica.
+
+<img src="assets/ux-ui/mockups/web/admin/adminregisternewdevice(new).png" alt="Mock-up de registro de nuevo dispositivo IoT en uFlex" width="100%">
+
+**Run Device Diagnostics Mock-up**
+
+Esta pantalla muestra el diagnóstico visual del estado del dispositivo IoT, facilitando la verificación de su funcionamiento antes de asignarlo.
+
+<img src="assets/ux-ui/mockups/web/admin/adminrundevicediagnostics(new).png" alt="Mock-up de diagnóstico de dispositivo IoT en uFlex" width="100%">
+
+**Link Device to Patient Mock-up**
+
+Esta pantalla muestra el proceso visual para asociar un dispositivo IoT a un paciente específico.
+
+<img src="assets/ux-ui/mockups/web/admin/adminlinkdevicetopatient(new).png" alt="Mock-up de vinculación de dispositivo a paciente en uFlex" width="100%">
+
+**Device Admin 1 Mock-up**
+
+Esta pantalla muestra la gestión del inventario de dispositivos IoT, permitiendo revisar disponibilidad, asignación o estado de los equipos.
+
+<img src="assets/ux-ui/mockups/web/admin/Device_admin_1.png" alt="Mock-up de gestión de dispositivos del administrador en uFlex" width="100%">
+
+**Device Admin 2 Mock-up**
+
+Esta pantalla muestra información complementaria sobre los dispositivos registrados en el sistema.
+
+<img src="assets/ux-ui/mockups/web/admin/Device_admin_2.png" alt="Mock-up secundario de gestión de dispositivos del administrador en uFlex" width="100%">
+
+**Therapy Admin Mock-up**
+
+Esta pantalla muestra la gestión visual de terapias dentro de la clínica.
+
+<img src="assets/ux-ui/mockups/web/admin/Therapy_admin_1.png" alt="Mock-up de gestión de terapias del administrador en uFlex" width="100%">
+
+**Therapy Register Exercise Mock-up**
+
+Esta pantalla muestra el formulario final para registrar ejercicios terapéuticos dentro de la plataforma.
+
+<img src="assets/ux-ui/mockups/web/admin/Therapy_register_exercise.png" alt="Mock-up de registro de ejercicio terapéutico en uFlex" width="100%">
+
+**Subscription Admin Mock-up**
+
+Esta pantalla muestra la gestión visual del plan de suscripción de la clínica dentro del modelo SaaS de uFlex.
+
+<img src="assets/ux-ui/mockups/web/admin/Subscription_admin.png" alt="Mock-up de suscripción del administrador en uFlex" width="100%">
+
+<hr class="page-break">
+
+#### Web Application - Physiotherapist Mock-ups
+
+Los mock-ups del fisioterapeuta muestran la apariencia final del portal clínico usado para monitorear pacientes, terapias y dispositivos.
+
+**Sign Up Physiotherapist Mock-up**
+
+Esta pantalla muestra el diseño final del registro del fisioterapeuta.
+
+<img src="assets/ux-ui/mockups/web/physiotherapist/signup_physiotherapist.png" alt="Mock-up de registro del fisioterapeuta en uFlex" width="100%">
+
+**Dashboard Physiotherapist Mock-up**
+
+Esta pantalla muestra indicadores, pacientes, alertas y métricas relevantes para el fisioterapeuta. Su propósito es centralizar la información clínica necesaria para el seguimiento de tratamientos.
+
+<img src="assets/ux-ui/mockups/web/physiotherapist/dashboardphysiotherapistuflex.png" alt="Mock-up del dashboard del fisioterapeuta en uFlex" width="100%">
+
+**Organization Physiotherapist Mock-up**
+
+Esta pantalla muestra información de la organización asociada al fisioterapeuta.
+
+<img src="assets/ux-ui/mockups/web/physiotherapist/Organization_physiotherapist.png" alt="Mock-up de organización del fisioterapeuta en uFlex" width="100%">
+
+**Device Assignment Physiotherapist Mock-up**
+
+Esta pantalla muestra la asignación de dispositivos IoT a pacientes, asegurando que el monitoreo remoto esté correctamente vinculado.
+
+<img src="assets/ux-ui/mockups/web/physiotherapist/deviceassignmentphysiotherapistuflex.png" alt="Mock-up de asignación de dispositivo del fisioterapeuta en uFlex" width="100%">
+
+**Planning Physiotherapist Mock-up**
+
+Esta pantalla muestra la planificación terapéutica de pacientes, incluyendo sesiones, ejercicios y objetivos de recuperación.
+
+<img src="assets/ux-ui/mockups/web/physiotherapist/planningphysiotherapistuflex.png" alt="Mock-up de planificación del fisioterapeuta en uFlex" width="100%">
+
+**Therapy Physiotherapist Mock-up**
+
+Esta pantalla muestra la gestión y seguimiento de terapias del paciente, permitiendo revisar el avance registrado por el sistema.
+
+<img src="assets/ux-ui/mockups/web/physiotherapist/Therapy_physiotherapist.png" alt="Mock-up de terapia del fisioterapeuta en uFlex" width="100%">
+
+<hr class="page-break">
+
+#### Mobile Application - Patient Mock-ups
 
 En esta seccion se presentan los mockups de alta fidelidad para la aplicacion movil del paciente. El diseno aplica el Design System de uFlex con colores corporativos, bordes redondeados y sombras sutiles. Cada pantalla esta disenada para ser intuitiva, con elementos claros y accesibles que cumplen con los principios de diseno inclusivo.
 
@@ -5925,11 +6229,169 @@ El mockup del historial muestra graficos de como ha evolucionado el progreso del
 
 ![Mobile Patient Mockup - Historial Progreso](./assets/ux-ui/mockups/mobile/patient/mobile-patient-mockup-11.png)
 
+<hr class="page-break">
+
 #### 5.4.4. Applications User Flow Diagrams
 
+Los user flow diagrams muestran los pasos que sigue cada usuario para completar una tarea dentro de la aplicación web de uFlex. Estos diagramas permiten validar que las tareas principales puedan realizarse de forma lógica, clara y sin pasos innecesarios.
 
+#### Web Application - Clinic Administrator User Flow Diagrams
 
-#### Application Mobile - Paciente
+Los siguientes diagramas representan los flujos principales que realiza el administrador dentro de la aplicación web de uFlex. Cada flujo muestra la relación entre pantallas, las acciones seleccionadas por el usuario y el resultado esperado dentro de la plataforma. Estos recorridos permiten validar que el administrador pueda gestionar la operación de la clínica, los dispositivos IoT, las terapias, el personal clínico y la suscripción del servicio de forma ordenada.
+
+**Administrator Register New Exercise User Flow**
+
+Este flujo representa el proceso que sigue el administrador para registrar un nuevo ejercicio terapéutico dentro de uFlex. El recorrido inicia en la pantalla de Therapy Management, donde el administrador selecciona la opción Register New Exercise. Luego, el sistema lo dirige al formulario de registro, en el que se completan datos como nombre del ejercicio, categoría, parte del cuerpo objetivo, instrucciones, parámetros de prescripción, nivel de dificultad, equipo requerido y recurso multimedia. Finalmente, el administrador guarda el ejercicio para incorporarlo a la biblioteca terapéutica de la clínica.
+
+<img src="assets/ux-ui/userflows/web/admin/admin_register_new_exercise_user_flow.png" alt="User flow de registro de nuevo ejercicio terapéutico por el administrador en uFlex" width="100%">
+
+**Administrator Authentication and Account Creation User Flow**
+
+Este flujo representa el primer contacto del administrador con la plataforma web de uFlex. El usuario inicia en la pantalla de inicio de sesión y, si todavía no cuenta con una cuenta, selecciona la opción Create Account. Luego, el sistema lo dirige a la pantalla de registro, donde puede seleccionar el rol Clinic Admin, ingresar sus datos personales, correo, contraseña y código de invitación de la clínica. Este flujo permite diferenciar el acceso del administrador desde el proceso inicial de autenticación.
+
+<img src="assets/ux-ui/userflows/web/admin/admin_auth_create_account_user_flow.png" alt="User flow de autenticación y creación de cuenta del administrador en uFlex" width="100%">
+
+**Administrator Sign In to Therapy Management User Flow**
+
+Este flujo muestra cómo el administrador ingresa a la plataforma desde la pantalla de inicio de sesión. Después de ingresar sus credenciales y seleccionar Sign In, el sistema lo redirige al entorno principal de administración, iniciando en la vista de Therapy Management. Desde esta pantalla, el administrador puede comenzar a revisar y gestionar los ejercicios terapéuticos registrados en la plataforma.
+
+<img src="assets/ux-ui/userflows/web/admin/admin_sign_in_to_therapy_management_user_flow.png" alt="User flow de inicio de sesión del administrador hacia Therapy Management en uFlex" width="100%">
+
+**Administrator Therapy to Exercise Registration User Flow**
+
+Este flujo complementa el proceso de creación de ejercicios desde la vista Therapy Management. El administrador revisa la biblioteca de ejercicios existentes y selecciona Register New Exercise para acceder al formulario de registro. Este recorrido permite mantener actualizada la base terapéutica que posteriormente será utilizada por los fisioterapeutas al planificar tratamientos.
+
+<img src="assets/ux-ui/userflows/web/admin/admin_therapy_to_exercise_registration_user_flow.png" alt="User flow desde Therapy Management hacia registro de ejercicio en uFlex" width="100%">
+
+**Administrator Therapy to Device Inventory User Flow**
+
+Este flujo muestra la navegación del administrador desde el módulo Therapy hacia el módulo Device. Mediante el menú lateral, el usuario cambia de la gestión terapéutica al inventario de dispositivos IoT. Este recorrido evidencia cómo la plataforma permite pasar de la administración de ejercicios al control de los activos tecnológicos utilizados en la rehabilitación.
+
+<img src="assets/ux-ui/userflows/web/admin/admin_therapy_to_device_inventory_user_flow.png" alt="User flow desde Therapy Management hacia Device Inventory en uFlex" width="100%">
+
+**Administrator Open Device Calibration User Flow**
+
+Este flujo representa el acceso del administrador al proceso de calibración de dispositivos IoT. Desde Device Inventory, el administrador selecciona la opción relacionada con calibración y el sistema muestra la pantalla Device Calibration. Esta vista permite revisar la alineación espacial del dispositivo y preparar el hardware antes de su uso en sesiones clínicas.
+
+<img src="assets/ux-ui/userflows/web/admin/admin_open_device_calibration_user_flow.png" alt="User flow de acceso a calibración de dispositivo IoT en uFlex" width="100%">
+
+**Administrator Complete Device Calibration User Flow**
+
+Este flujo muestra la etapa de validación dentro de la calibración del dispositivo IoT. El administrador revisa los indicadores de alineación, eje vertical, estado del hardware y pasos pendientes; luego selecciona Complete Calibration para finalizar el proceso. Este recorrido es importante porque asegura que el dispositivo capture datos biomecánicos confiables durante la terapia.
+
+<img src="assets/ux-ui/userflows/web/admin/admin_complete_device_calibration_user_flow.png" alt="User flow de finalización de calibración de dispositivo IoT en uFlex" width="100%">
+
+**Administrator Calibrate Device from Inventory User Flow**
+
+Este flujo representa una ruta adicional para acceder a la calibración desde el inventario de dispositivos. El administrador identifica un kit IoT que requiere revisión y selecciona la acción Calibrate. El sistema lo dirige a la pantalla Device Calibration, donde puede revisar los pasos técnicos y completar la validación del hardware.
+
+<img src="assets/ux-ui/userflows/web/admin/admin_calibrate_device_from_inventory_user_flow.png" alt="User flow de calibración de dispositivo desde el inventario en uFlex" width="100%">
+
+**Administrator Run Device Diagnostics User Flow**
+
+Este flujo muestra cómo el administrador ejecuta un diagnóstico técnico sobre un dispositivo IoT. Desde Device Inventory, selecciona Run Diagnostics y el sistema lo dirige a la pantalla System Diagnostics. En esta vista se visualiza el progreso del escaneo, capacidad de batería, nivel de señal, temperatura del hardware y registros técnicos. Este flujo permite verificar el estado del dispositivo antes de utilizarlo en una terapia.
+
+<img src="assets/ux-ui/userflows/web/admin/admin_run_device_diagnostics_user_flow.png" alt="User flow de diagnóstico técnico de dispositivo IoT en uFlex" width="100%">
+
+**Administrator Register New Device User Flow**
+
+Este flujo representa el proceso de registro de un nuevo dispositivo IoT dentro del inventario de la clínica. Desde Device Inventory, el administrador selecciona Register Device y accede a una pantalla de registro. Allí puede abrir el escáner, validar el hardware, ingresar identificadores y completar la incorporación del dispositivo al sistema. Este flujo asegura que cada kit quede registrado antes de ser asignado a un paciente.
+
+<img src="assets/ux-ui/userflows/web/admin/admin_register_new_device_user_flow.png" alt="User flow de registro de nuevo dispositivo IoT por el administrador en uFlex" width="100%">
+
+**Administrator Device Inventory Assignment Overview User Flow**
+
+Este flujo muestra la navegación desde el inventario administrativo hacia una vista de asignación de dispositivos. El administrador parte de Device Inventory y selecciona la opción Link to Patient o una acción relacionada con asignación. El sistema muestra una pantalla con indicadores de conectividad, disponibilidad, batería y dispositivos activos, permitiendo revisar el estado general antes de realizar asignaciones.
+
+<img src="assets/ux-ui/userflows/web/admin/admin_device_inventory_assignment_overview_user_flow.png" alt="User flow de vista general de asignación desde inventario de dispositivos en uFlex" width="100%">
+
+**Administrator Assign Device to Patient User Flow**
+
+Este flujo representa el proceso de asignación de un dispositivo IoT a un paciente desde la vista de inventario. El administrador revisa la disponibilidad de dispositivos y selecciona Assign to Patient para iniciar la asignación. Este recorrido permite vincular un kit IoT disponible con un paciente activo, asegurando que el monitoreo remoto quede correctamente habilitado.
+
+<img src="assets/ux-ui/userflows/web/admin/admin_assign_device_to_patient_user_flow.png" alt="User flow de asignación de dispositivo IoT a paciente en uFlex" width="100%">
+
+**Administrator Link IoT Device to Patient User Flow**
+
+Este flujo muestra el proceso específico para vincular un dispositivo IoT con un paciente. Desde Device Inventory, el administrador selecciona Link to Patient y accede a la pantalla Link IoT Device. En esta vista, selecciona un paciente, revisa el kit disponible y confirma la asignación final. Este flujo es fundamental para garantizar que los datos capturados por el sensor se almacenen en el perfil clínico correcto.
+
+<img src="assets/ux-ui/userflows/web/admin/admin_link_iot_device_to_patient_user_flow.png" alt="User flow de vinculación de dispositivo IoT a paciente en uFlex" width="100%">
+
+**Administrator Open Organization Dashboard User Flow**
+
+Este flujo muestra cómo el administrador navega desde Device Inventory hacia el módulo Organization mediante el menú lateral. En la pantalla de organización, el administrador puede revisar información general de la clínica, número de pacientes, fisioterapeutas activos, disponibilidad de kits IoT, rendimiento institucional y actualizaciones recientes. Este flujo permite centralizar la supervisión operativa de la clínica.
+
+<img src="assets/ux-ui/userflows/web/admin/admin_open_organization_dashboard_user_flow.png" alt="User flow hacia dashboard de organización del administrador en uFlex" width="100%">
+
+**Administrator Register New Physiotherapist User Flow**
+
+Este flujo representa el registro de un nuevo fisioterapeuta dentro de la organización. Desde el dashboard de la clínica, el administrador selecciona Add New Physiotherapist y accede al formulario Register New Physiotherapist. En esta pantalla ingresa datos personales, especialidad, contacto, licencia profesional y credenciales clínicas. Finalmente, guarda el perfil para incorporar al nuevo especialista al equipo de la clínica.
+
+<img src="assets/ux-ui/userflows/web/admin/admin_register_new_physiotherapist_user_flow.png" alt="User flow de registro de nuevo fisioterapeuta por el administrador en uFlex" width="100%">
+
+**Administrator Open Subscription Management User Flow**
+
+Este flujo muestra cómo el administrador accede al módulo Subscription desde la vista Organization. En la pantalla de suscripción puede revisar el plan activo, método de pago, historial de facturación, balance de uso y planes disponibles. Este recorrido responde al modelo SaaS de uFlex, ya que permite que la clínica controle el estado del servicio contratado.
+
+<img src="assets/ux-ui/userflows/web/admin/admin_open_subscription_management_user_flow.png" alt="User flow de acceso a gestión de suscripción del administrador en uFlex" width="100%">
+
+**Administrator Upgrade Plan and Payment User Flow**
+
+Este flujo representa la actualización del plan de suscripción y el proceso de pago. Desde Subscription, el administrador selecciona una opción de mejora del plan y el sistema lo dirige a un formulario de pago. En esta pantalla puede ingresar los datos de tarjeta, país, código postal y confirmar la operación mediante Pay Now. Este flujo permite que la clínica amplíe las capacidades contratadas del servicio.
+
+<img src="assets/ux-ui/userflows/web/admin/admin_upgrade_plan_payment_user_flow.png" alt="User flow de actualización de plan y pago de suscripción en uFlex" width="100%">
+
+**Administrator Open Profile and Access Management User Flow**
+
+Este flujo muestra cómo el administrador accede al módulo Profile desde Subscription mediante el menú lateral. En la pantalla Profile, el administrador puede revisar usuarios, estado de verificación, accesos suspendidos, roles, último inicio de sesión y acciones disponibles. Este recorrido permite mantener control sobre los perfiles vinculados a la organización.
+
+<img src="assets/ux-ui/userflows/web/admin/admin_open_profile_access_management_user_flow.png" alt="User flow de acceso a perfil y gestión de usuarios en uFlex" width="100%">
+
+<hr class="page-break">
+
+#### Web Application - Physiotherapist User Flow Diagrams
+
+Los siguientes diagramas representan los flujos principales que realiza el fisioterapeuta dentro de la aplicación web de uFlex. Cada flujo muestra la relación entre pantallas, las acciones realizadas por el usuario y el resultado esperado dentro del portal clínico. Estos recorridos permiten validar que el fisioterapeuta pueda acceder a la plataforma, registrar pacientes, planificar terapias, asignar dispositivos IoT y consultar información de la organización de manera clara y ordenada.
+
+**Physiotherapist Authentication and Account Creation User Flow**
+
+Este flujo representa el proceso inicial de creación de cuenta del fisioterapeuta dentro de uFlex. El usuario inicia en la pantalla de inicio de sesión y selecciona la opción Create Account. Luego, el sistema lo dirige al formulario de registro, donde debe escoger el rol Physiotherapist, ingresar sus datos personales, correo, contraseña y código de invitación de la clínica. Este flujo permite diferenciar el acceso del fisioterapeuta desde el primer contacto con la plataforma y asegurar que su cuenta quede asociada al entorno clínico correspondiente.
+
+<img src="assets/ux-ui/userflows/web/physiotherapist/physiotherapist_auth_create_account_user_flow.png" alt="User flow de autenticación y creación de cuenta del fisioterapeuta en uFlex" width="100%">
+
+**Physiotherapist Sign In to Dashboard User Flow**
+
+Este flujo muestra cómo el fisioterapeuta accede al portal clínico de uFlex desde la pantalla de inicio de sesión. Después de ingresar sus credenciales y seleccionar Sign In, el sistema lo redirige al dashboard principal. En esta vista, el fisioterapeuta puede revisar indicadores generales, sesiones programadas, pacientes activos, alertas urgentes y métricas clínicas relevantes para iniciar su jornada de seguimiento terapéutico.
+
+<img src="assets/ux-ui/userflows/web/physiotherapist/physiotherapist_sign_in_to_dashboard_user_flow.png" alt="User flow de inicio de sesión del fisioterapeuta hacia el dashboard en uFlex" width="100%">
+
+**Physiotherapist Register New Patient User Flow**
+
+Este flujo representa el proceso para registrar un nuevo paciente desde el módulo Therapy Management. El fisioterapeuta visualiza la lista de pacientes activos y selecciona la opción Register New Patient. Luego, el sistema muestra un formulario lateral donde se ingresa la información clínica inicial del paciente, como nombre completo, fecha de nacimiento, género, diagnóstico principal y fisioterapeuta asignado. Finalmente, el usuario guarda el registro para iniciar el proceso de rehabilitación digital del paciente dentro de uFlex.
+
+<img src="assets/ux-ui/userflows/web/physiotherapist/physiotherapist_register_new_patient_user_flow.png" alt="User flow de registro de nuevo paciente por el fisioterapeuta en uFlex" width="100%">
+
+**Physiotherapist Therapy to Planning Roadmap User Flow**
+
+Este flujo muestra cómo el fisioterapeuta navega desde el módulo Therapy hacia el módulo Planning. El recorrido inicia en Therapy Management, donde el fisioterapeuta revisa la cartera de pacientes y su estado de tratamiento. Al seleccionar Planning desde el menú lateral, el sistema lo dirige a la pantalla Therapy Roadmap, donde puede diseñar una ruta personalizada de rehabilitación, seleccionar ejercicios validados, configurar parámetros de recuperación y finalizar el plan terapéutico para su despliegue.
+
+<img src="assets/ux-ui/userflows/web/physiotherapist/physiotherapist_therapy_to_planning_roadmap_user_flow.png" alt="User flow desde gestión de terapias hacia planificación terapéutica del fisioterapeuta en uFlex" width="100%">
+
+**Physiotherapist Planning to Device Assignment User Flow**
+
+Este flujo representa la transición desde la planificación terapéutica hacia la asignación de dispositivos IoT. El fisioterapeuta parte de la pantalla Therapy Roadmap, donde configura ejercicios y parámetros de la rutina del paciente. Luego, mediante el menú lateral, accede al módulo Device y el sistema muestra la pantalla Assign Device to Patient. En esta vista, puede revisar el inventario disponible, seleccionar un paciente, elegir un dispositivo y confirmar la asignación para habilitar el monitoreo remoto.
+
+<img src="assets/ux-ui/userflows/web/physiotherapist/physiotherapist_planning_to_device_assignment_user_flow.png" alt="User flow desde planificación terapéutica hacia asignación de dispositivo IoT en uFlex" width="100%">
+
+**Physiotherapist Device to Organization View User Flow**
+
+Este flujo muestra cómo el fisioterapeuta navega desde el módulo Device hacia la vista Organization. El recorrido inicia en Assign Device to Patient, donde se gestionan dispositivos disponibles y pacientes vinculados. Luego, al seleccionar Organization desde el menú lateral, el sistema muestra la vista de organización, donde el fisioterapeuta puede consultar información del equipo clínico, pacientes sin asignar, carga de trabajo, productividad del personal y estado general de la flota IoT de la clínica.
+
+<img src="assets/ux-ui/userflows/web/physiotherapist/physiotherapist_device_to_organization_view_user_flow.png" alt="User flow desde asignación de dispositivo hacia vista de organización del fisioterapeuta en uFlex" width="100%">
+
+<hr class="page-break">
+
+#### Mobile Application - Patient User Flow Diagrams
 
 En esta seccion se presentan los User Flow Diagrams de la aplicacion movil del paciente. A diferencia de los Wireflow Diagrams, los User Flows incluyen tanto el camino principal (happy path) como los caminos alternativos (unhappy paths) para cada User Goal. Esto permite visualizar todas las posibles rutas que el usuario puede seguir dentro de la aplicacion, incluyendo los casos donde ocurren errores o el usuario decide cancelar una accion.
 
@@ -5970,11 +6432,25 @@ Los User Flows son consistentes con los Wireflows previamente definidos, utiliza
 
 ![User Flow - Progress History](./assets/ux-ui/userflows/patient/mobile-patient-userflow-3.png)
 
+<hr class="page-break">
+
 #### 5.5. Applications Prototyping
 
+#### Web Application - Clinic Administrator & Physiotherapist Prototyping
 
+El prototipo web permite simular la experiencia de administradores y fisioterapeutas dentro de la plataforma. Incluye módulos como dashboard, organización, dispositivos, terapias, planificación y suscripción.
 
-#### Application Mobile - Paciente
+<img src="assets/ux-ui/prototypes/web/admin/web_prototype.png" alt="Prototipo web de uFlex" width="100%">
+
+**Enlace al prototipo:**
+
+El prototipo interactivo se encuentra disponible en Figma y puede ser accesado a traves del siguiente enlace: [https://www.figma.com/design/ETmizOcfDmHvDkg0PojfDo/uFlex-WebPlatform?node-id=0-1&t=SsqIkA3YfMBnHQVy-1](https://www.figma.com/design/ETmizOcfDmHvDkg0PojfDo/uFlex-WebPlatform?node-id=0-1&t=SsqIkA3YfMBnHQVy-1)
+
+El video del prototipo interactivo se encuentra disponible a traves del siguiente enlace: [https://goo.su/Y2U5M](https://goo.su/Y2U5M)
+
+<hr class="page-break">
+
+#### Mobile Application - Patient Prototyping
 
 En esta seccion se presenta el prototipo interactivo de la aplicacion movil del paciente. El prototipo fue desarrollado utilizando Figma y permite experimentar las interacciones reales de la app, incluyendo las transiciones entre pantallas, los flujos de navegacion y la retroalimentacion visual de cada elemento.
 
@@ -5984,14 +6460,54 @@ El prototipo abarca las 11 pantallas principales del paciente: Splash, Login, Ho
 
 **Enlace al prototipo:**
 
-El prototipo interactivo se encuentra disponible en Figma y puede ser accesado a traves del siguiente enlace: [Prototipo Mobile Paciente - uFlex](https://www.figma.com/proto/zTSdPPNtBudIxeYN6Ro83Q/uFlex-Mobile?node-id=30-3100&viewport=674%2C264%2C0.27&t=ZhFjKkotzh5hLJDo-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=30%3A3100&page-id=24%3A2323)
+El prototipo interactivo se encuentra disponible en Figma y puede ser accesado a traves del siguiente enlace: [https://www.figma.com/proto/zTSdPPNtBudIxeYN6Ro83Q/uFlex-Mobile?node-id=30-3100&viewport=674%2C264%2C0.27&t=ZhFjKkotzh5hLJDo-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=30%3A3100&page-id=24%3A2323](https://www.figma.com/proto/zTSdPPNtBudIxeYN6Ro83Q/uFlex-Mobile?node-id=30-3100&viewport=674%2C264%2C0.27&t=ZhFjKkotzh5hLJDo-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=30%3A3100&page-id=24%3A2323)
 
-El video del prototipo interactivo se encuentra disponible a traves del siguiente enlace: [Video Prototipo Mobile Paciente - uFlex](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20221g120_upc_edu_pe/IQA6HikJDm2WRI2hmc-I92pcAazSwYXEpvRIm1Z8_xudj-M?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=1F2w9s)
+El video del prototipo interactivo se encuentra disponible a traves del siguiente enlace: [https://goo.su/NxMQR](https://goo.su/NxMQR)
 
+<hr class="page-break">
 
 ### 5.6. IoT Device Design
 
+#### Introducción y Criterios de Diseño
+Esta sección presenta la propuesta de diseño físico y de circuito para los nodos vestibles (*Wearable Nodes*) que componen el hardware de la solución **uFlex**. El objetivo principal de estos dispositivos es la captura de telemetría inercial y datos biomecánicos en tiempo real durante la ejecución de protocolos de rehabilitación de miembros superiores.
 
+Los principales criterios para las decisiones de diseño del hardware son:
+
+* **Precisión Clínica en la Captura de Datos:** Se utiliza una Unidad de Medida Inercial (IMU) de 6 ejes (MPU6050). Este sensor recolecta datos crudos de aceleración y velocidad angular. Mediante algoritmos de fusión de sensores (*Sensor Fusion*), estos datos se traducen en ángulos de Euler tridimensionales, permitiendo calcular el Rango de Movimiento (ROM) exacto del paciente con alta precisión.
+* **Procesamiento Eficiente (Edge Computing):** El diseño se basa en un microcontrolador ESP32, seleccionado por su capacidad de procesar la validación de los ejercicios localmente y transmitir los resultados vía Bluetooth Low Energy (BLE) a la aplicación móvil, garantizando un bajo consumo energético.
+* **Usabilidad Autónoma y Ergonomía:** El dispositivo físico está conceptualizado como un *wearable* ligero. Se sujeta mediante correas ajustables que aseguran la fijación del sensor en el eje de la articulación, permitiendo que el paciente se lo coloque sin requerir asistencia de terceros.
+
+#### Relación con la Arquitectura de Información y Guía de Estilos
+El diseño de la interfaz física del dispositivo IoT (*IoT Device Physical Interfaces*) es una extensión coherente de nuestra propuesta de experiencia de usuario y arquitectura de información definida para el Bounded Context de *Therapy*.
+
+* **Feedback Visual y Semántica de Colores:** Los indicadores luminosos (LED RGB) del hardware respetan el *Color Palette* de la aplicación móvil. El color **Verde (Success)** indica una repetición válida dentro del umbral prescrito; el **Rojo (Warning/Error)** alerta sobre un movimiento compensatorio o incorrecto; y el **Azul (Info/Brand)** indica el estado de emparejamiento Bluetooth.
+* **Feedback Háptico:** Para evitar que el paciente dependa de mirar la pantalla del dispositivo móvil durante el ejercicio, las alertas de error biomecánico o superación del umbral de dolor se traducen en vibraciones físicas mediante un motor háptico integrado, extendiendo el sistema de notificaciones al entorno físico.
+
+#### Propuesta de Diseño de Circuito (Hardware Schematic)
+Para la validación lógica de los componentes electrónicos y sus conexiones, se elaboró un diagrama esquemático utilizando la herramienta Wokwi. Este circuito demuestra la viabilidad técnica de la interacción física antes de su implementación en placa de desarrollo.
+
+Los componentes integrados y sus nodos de conexión son:
+1.  **Microcontrolador ESP32:** Actúa como cerebro del sistema y módulo de comunicación BLE.
+2.  **Sensor IMU (MPU6050):** Unidad de Medida Inercial conectada vía protocolo I2C (SDA en `GPIO 21`, SCL en `GPIO 22`) para la captura de la posición espacial del brazo. Alimentado a 3.3V.
+3.  **LED RGB:** Conectado mediante resistores de 220Ω a los pines PWM (`GPIO 4` para Rojo, `GPIO 2` para Verde, `GPIO 15` para Azul) para emitir los estados visuales del dispositivo.
+4.  **Motor de Vibración (Coin Motor):** Actuador de feedback háptico conectado al `GPIO 32`. *Nota sobre la simulación:* Debido a las limitaciones de componentes gráficos en Wokwi, este actuador se encuentra representado en el diagrama mediante un zumbador piezoeléctrico (Buzzer). A nivel lógico, valida correctamente la emisión de la señal de alerta generada por el microcontrolador, la cual en el ensamblaje físico activará el motor vibratorio mediante un transistor NPN.
+5.  **Botón Pulsador:** Interfaz de entrada primaria para el encendido y emparejamiento, conectado al `GPIO 13` utilizando la resistencia interna *Pull-up* del ESP32.
+
+![Diagrama esquemático del circuito del dispositivo uFlex elaborado en Wokwi](assets/images/figures/uflex-wokwi-schematic.png)
+
+*Diagrama esquemático del circuito del dispositivo uFlex, mostrando la integración de sensores biomecánicos y actuadores.*
+
+#### Flujos de Interacción del Prototipo IoT
+El hardware cubre interacciones físicas que se sincronizan con las vistas de la aplicación móvil, definiendo los siguientes flujos principales de *Wireflow*:
+
+**1. Flujo de Emparejamiento BLE:**
+* **Paso 1:** El usuario presiona el botón físico de la carcasa.
+* **Paso 2:** El microcontrolador inicia y el LED RGB parpadea en color **Azul**, indicando el estado de búsqueda (*Advertising*).
+* **Paso 3:** Al confirmarse la conexión con la aplicación móvil (Edge App), el dispositivo emite una vibración corta y el LED cambia a **Azul Fijo**, indicando un emparejamiento exitoso.
+
+**2. Flujo de Ejecución de Terapia y Evaluación Biomecánica:**
+* **Paso 1 (Happy Path):** Durante el ejercicio, el sensor IMU envía la orientación espacial al sistema. Si el movimiento se realiza correctamente dentro del Rango de Movimiento (ROM) objetivo, el dispositivo enciende el LED en **Verde** brevemente al culminar la repetición.
+* **Paso 2 (Unhappy Path / Error):** Si el sistema detecta una anomalía (ej. una aceleración brusca o un movimiento compensatorio fuera del eje permitido), el dispositivo responde inmediatamente con una **vibración pulsante rápida** y el LED se enciende en **Rojo**, indicando físicamente al paciente que debe corregir su postura.
 
 <hr class="page-break">
 
@@ -6106,15 +6622,15 @@ El equipo utilizara **GitHub** como plataforma de alojamiento y **Git** como con
 
 **Repositorios del Proyecto**
 
-| Repository                                                                 | Description                                                         |
-|:---------------------------------------------------------------------------|:--------------------------------------------------------------------|
-| [**uflex-project-report**](https://github.com/KinIoT/uflex-project-report) | Comprehensive project documentation and final technical reports.    |
-| [**uflex-landing-page**](https://github.com/KinIoT/uflex-landing-page)     | Official landing page for user acquisition and marketing.           |
-| [**uflex-clinic-web**](https://github.com/KinIoT/uflex-clinic-web)         | Web platform for clinics and rehabilitation professionals.          |
-| [**uflex-patient-mobile**](https://github.com/KinIoT/uflex-patient-mobile) | Mobile application for patient monitoring and therapy guidance.     |
-| [**uflex-rest-api**](https://github.com/KinIoT/uflex-rest-api)             | Main REST API handling core business logic and database management. |
-| [**uflex-edge-api**](https://github.com/KinIoT/uflex-edge-api)             | Edge computing API for optimized data pre-processing.               |
-| [**uflex-embedded-app**](https://github.com/KinIoT/uflex-embedded-app)     | Embedded software for IoT devices and biomechanical sensors.        |
+| Repository                                                                                       | Description                                                         |
+|:-------------------------------------------------------------------------------------------------|:--------------------------------------------------------------------|
+| [https://github.com/KinIoT/uflex-project-report](https://github.com/KinIoT/uflex-project-report) | Comprehensive project documentation and final technical reports.    |
+| [https://github.com/KinIoT/uflex-landing-page](https://github.com/KinIoT/uflex-landing-page)     | Official landing page for user acquisition and marketing.           |
+| [https://github.com/KinIoT/uflex-clinic-web](https://github.com/KinIoT/uflex-clinic-web)         | Web platform for clinics and rehabilitation professionals.          |
+| [https://github.com/KinIoT/uflex-patient-mobile](https://github.com/KinIoT/uflex-patient-mobile) | Mobile application for patient monitoring and therapy guidance.     |
+| [https://github.com/KinIoT/uflex-rest-api](https://github.com/KinIoT/uflex-rest-api)             | Main REST API handling core business logic and database management. |
+| [https://github.com/KinIoT/uflex-edge-api](https://github.com/KinIoT/uflex-edge-api)             | Edge computing API for optimized data pre-processing.               |
+| [https://github.com/KinIoT/uflex-embedded-app](https://github.com/KinIoT/uflex-embedded-app)     | Embedded software for IoT devices and biomechanical sensors.        |
 
 **GitFlow Workflow**
 
@@ -6292,7 +6808,7 @@ Se utilizaran las siguientes plataformas para el despliegue de los diferentes pr
 Netlify es una plataforma de alojamiento y despliegue continuo para sitios web estaticos y aplicaciones frontend. Ofrece integracion con repositorios GitHub para despliegues automaticos.
 
 Para configurar el despliegue automatico de la landing page en Netlify:
-1. Crear una cuenta en [Netlify](https://www.netlify.com) y vincularla al repositorio de GitHub de la landing page.
+1. Crear una cuenta en Netlify ([https://www.netlify.com](https://www.netlify.com)) y vincularla al repositorio de GitHub de la landing page.
 2. Configurar un nuevo sitio en Netlify, seleccionando el repositorio correspondiente.
 3. Definir la rama de despliegue (por ejemplo, `main`).
 4. Especificar comandos de construccion y carpeta de publicacion (por ejemplo, `npm run build` y `dist/`).
@@ -6303,7 +6819,7 @@ Para configurar el despliegue automatico de la landing page en Netlify:
 Railway es una plataforma de despliegue y gestion de aplicaciones backend con integracion GitHub.
 
 Para configurar el despliegue automatico del servicio REST API en Railway:
-1. Crear una cuenta en [Railway](https://railway.app) y vincularla al repositorio del API.
+1. Crear una cuenta en Railway ([https://railway.app](https://railway.app)) y vincularla al repositorio del API.
 2. Crear un nuevo proyecto y seleccionar el repositorio correspondiente.
 3. Definir la rama de despliegue (por ejemplo, `main`).
 4. Configurar variables de entorno necesarias para la aplicacion.
@@ -6314,7 +6830,7 @@ Para configurar el despliegue automatico del servicio REST API en Railway:
 Firebase permite distribuir builds y administrar despliegues de aplicaciones moviles para pruebas internas.
 
 Para configurar la distribucion automatica en Firebase:
-1. Crear un proyecto en [Firebase](https://firebase.google.com).
+1. Crear un proyecto en Firebase ([https://firebase.google.com](https://firebase.google.com)).
 2. Vincular el repositorio de la app movil con el proyecto.
 3. Configurar CI/CD con GitHub Actions o Firebase CLI.
 4. Definir comandos de construccion y distribucion (por ejemplo, `./gradlew assemble` y `firebase appdistribution:distribute`).
@@ -6325,7 +6841,7 @@ Para configurar la distribucion automatica en Firebase:
 Google Play Console es la plataforma oficial para publicar y gestionar aplicaciones Android.
 
 Para publicar la aplicacion Android:
-1. Crear una cuenta de desarrollador en [Google Play Console](https://play.google.com/console).
+1. Crear una cuenta de desarrollador en Google Play Console ([https://play.google.com/console](https://play.google.com/console)).
 2. Crear un nuevo proyecto de aplicacion con su metadata.
 3. Subir el archivo AAB generado por Android Studio.
 4. Completar la ficha de la aplicacion y politicas requeridas.
@@ -6337,7 +6853,7 @@ Para publicar la aplicacion Android:
 Supabase se utiliza para el despliegue automatizado de la base de datos PostgreSQL.
 
 Para configurar el despliegue de base de datos en Supabase:
-1. Crear un proyecto en [Supabase](https://supabase.com).
+1. Crear un proyecto en Supabase ([https://supabase.com](https://supabase.com)).
 2. Configurar el esquema inicial y las tablas requeridas.
 3. Definir variables de conexion seguras para los servicios backend.
 4. Validar conectividad desde el REST API.
@@ -6365,7 +6881,7 @@ Se presenta el sprint planning correspondiente a esta primera entrega, detalland
 A continuación se presenta una captura de pantalla de nuestro tablero en Trello: 
 
 ![Captura  Sprint 1 de Trello](./assets/images/screenshots/trello-sprint-1.png)  
-[Enlace del Trello](https://kyrubi-upc.atlassian.net/jira/software/projects/HU/boards/34)  
+[https://kyrubi-upc.atlassian.net/jira/software/projects/HU/boards/34](https://kyrubi-upc.atlassian.net/jira/software/projects/HU/boards/34)  
 
 | Sprint # | Sprint 1 |
 |---|---|
@@ -7079,10 +7595,6 @@ Durante el Sprint 1 las actividades de implementación se distribuyeron de forma
 
 *Figura 6.2.1.9.6. Web Application — Network graph.* <!-- TODO: subir captura a assets/images/screenshots/sprint-1/insights-webapp-network.png -->
 
-**Interpretación del equipo**
-
-<!-- TODO: redactar 1-2 párrafos interpretando los analíticos cuando ya se tengan las capturas. Sugerencia: comentar (a) la distribución de commits por integrante (¿quién lideró cada producto?, ¿hubo participación pareja?), (b) los picos de actividad y su correlación con los hitos del Sprint (planning, mid-sprint, review), y (c) cómo el network graph refleja la estrategia de ramas (feature → develop → main) y los merges con --no-ff que el equipo acordó. -->
-
 <hr class="page-break">
 
 # Conclusiones
@@ -7159,6 +7671,8 @@ El código fuente del proyecto está disponible en el siguiente repositorio de G
 
 1. Organización de GitHub: [https://github.com/kiniot](https://github.com/kiniot)
 2. Repositorio del reporte en GitHub: [https://github.com/kiniot/uflex-project-report](https://github.com/kiniot/uflex-project-report)
+3. Repositorio de la Landing Page: [https://github.com/kiniot/uflex-landing-page](https://github.com/kiniot/uflex-landing-page)
+4. Repositorio de la Web Application: [https://github.com/kiniot/uflex-clinic-web](https://github.com/kiniot/uflex-clinic-web)
 
 <hr class="page-break">
 
@@ -7166,5 +7680,6 @@ El código fuente del proyecto está disponible en el siguiente repositorio de G
 
 Los videos de entrevistas para *needfinding*, exposiciones, y otros videos sobre avances del proyecto están disponibles en Microsoft Streams:
 
-1. Entrevistas para Needfinding: [https://upcedupe-my.sharepoint.com/:v:/g/personal/u20201e843_upc_edu_pe/IQBi9_cKZMuRQaK0-UbxF7MIAZnukHun0vDhy1qki_eRsUs?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=JVqpgO](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20201e843_upc_edu_pe/IQBi9_cKZMuRQaK0-UbxF7MIAZnukHun0vDhy1qki_eRsUs?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=JVqpgO)
-2. Exposición AV1: [https://upcedupe-my.sharepoint.com/:v:/g/personal/u20201e843_upc_edu_pe/IQD2BLK_kG3WTLABTiNdeqlcAY6m3IeQq8Sy6AZInrFMkR8?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=puz5qK](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20201e843_upc_edu_pe/IQD2BLK_kG3WTLABTiNdeqlcAY6m3IeQq8Sy6AZInrFMkR8?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=puz5qK)
+1. Entrevistas para Needfinding: [https://goo.su/8EMwBnI](https://goo.su/8EMwBnI)
+2. Exposición AV1: [https://goo.su/IPyzJ](https://goo.su/IPyzJ)
+3. Exposición TB1: [https://goo.su/XWWS](https://goo.su/XWWS)
