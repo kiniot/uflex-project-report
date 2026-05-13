@@ -5758,135 +5758,131 @@ Finalmente, se incluye un pie de página con enlaces a redes sociales, términos
 
 ### 5.4. Applications UX/UI Design
 
-
+En esta sección se presentan los wireframes y mock-ups de las aplicaciones de la plataforma uFlex. Se describen las principales pantallas, funcionalidades y elementos visuales que componen estas aplicaciones.
 
 #### 5.4.1. Applications Wireframes
 
-
-## 5.4.1.1. Web Applications Wireframes.
-
-En esta sección se presentan los wireframes de la aplicación web de uFlex. Esta aplicación permite gestionar la operación clínica, el seguimiento terapéutico y la administración de dispositivos IoT utilizados durante la rehabilitación.
-
-### 5.4.1.1.1. Administrator Web Wireframes.
+#### Web Application - Clinic Administrator Wireframes
 
 Los wireframes del administrador representan las pantallas destinadas a la gestión operativa de la clínica. Este usuario puede registrar su cuenta, administrar la organización, gestionar dispositivos IoT, vincular dispositivos con pacientes, ejecutar diagnósticos, revisar terapias, registrar ejercicios y controlar la suscripción del servicio.
 
-#### Sign Up Admin Wireframe
+**Sign Up Admin Wireframe**
 
 Esta pantalla permite que el administrador cree una cuenta dentro de uFlex. El diseño se centra en un formulario simple para facilitar el registro inicial y el acceso a la plataforma.
 
 <img src="assets/ux-ui/wireframes/web/admin/signup_admin.png" alt="Wireframe de registro del administrador en uFlex" width="100%">
 
-#### Profile Admin Wireframe
+**Profile Admin Wireframe**
 
 Esta pantalla permite que el administrador visualice y actualice su información personal dentro del sistema. También funciona como una vista de configuración básica de la cuenta.
 
 <img src="assets/ux-ui/wireframes/web/admin/Profile_admin.png" alt="Wireframe del perfil del administrador en uFlex" width="100%">
 
-#### Organization Admin Wireframe
+**Organization Admin Wireframe**
 
 Esta pantalla permite al administrador gestionar la información general de la clínica, incluyendo datos de la organización, estructura interna y usuarios asociados.
 
 <img src="assets/ux-ui/wireframes/web/admin/Organization_admin.png" alt="Wireframe de organización del administrador en uFlex" width="100%">
 
-#### Organization Admin 2 Wireframe
+**Organization Admin 2 Wireframe**
 
 Esta pantalla complementa la gestión de la organización, mostrando información adicional relacionada con usuarios, sedes o configuración interna de la clínica.
 
 <img src="assets/ux-ui/wireframes/web/admin/Organization_admin_2.png" alt="Wireframe secundario de organización del administrador en uFlex" width="100%">
 
-#### Register New Device Wireframe
+**Register New Device Wireframe**
 
 Esta pantalla permite registrar un nuevo dispositivo IoT dentro del inventario de la clínica. Su finalidad es asegurar que cada dispositivo quede identificado antes de ser asignado a un paciente.
 
 <img src="assets/ux-ui/wireframes/web/admin/adminregisternewdevice(new).png" alt="Wireframe de registro de nuevo dispositivo IoT en uFlex" width="100%">
 
-#### Run Device Diagnostics Wireframe
+**Run Device Diagnostics Wireframe**
 
 Esta pantalla permite ejecutar un diagnóstico del dispositivo IoT para verificar su estado general, conectividad, batería y funcionamiento antes de utilizarlo en una terapia.
 
 <img src="assets/ux-ui/wireframes/web/admin/adminrundevicediagnostics(new).png" alt="Wireframe de diagnóstico de dispositivo IoT en uFlex" width="100%">
 
-#### Link Device to Patient Wireframe
+**Link Device to Patient Wireframe**
 
 Esta pantalla permite vincular un dispositivo IoT con un paciente específico. Esta asociación es importante para asegurar que los datos capturados durante la rehabilitación se registren correctamente en el perfil del paciente.
 
 <img src="assets/ux-ui/wireframes/web/admin/adminlinkdevicetopatient(new).png" alt="Wireframe de vinculación de dispositivo a paciente en uFlex" width="100%">
 
-#### Device Admin 1 Wireframe
+**Device Admin 1 Wireframe**
 
 Esta pantalla muestra el inventario de dispositivos IoT registrados en la clínica. Permite revisar qué dispositivos están disponibles, asignados o requieren revisión.
 
 <img src="assets/ux-ui/wireframes/web/admin/Device_admin_1.png" alt="Wireframe de gestión de dispositivos del administrador en uFlex" width="100%">
 
-#### Device Admin 2 Wireframe
+**Device Admin 2 Wireframe**
 
 Esta pantalla complementa la gestión de dispositivos, mostrando información más detallada sobre el estado operativo de los kits IoT.
 
 <img src="assets/ux-ui/wireframes/web/admin/Device_admin_2.png" alt="Wireframe secundario de gestión de dispositivos del administrador en uFlex" width="100%">
 
-#### Therapy Admin Wireframe
+**Therapy Admin Wireframe**
 
 Esta pantalla permite al administrador revisar las terapias registradas dentro de la clínica y supervisar los programas terapéuticos disponibles.
 
 <img src="assets/ux-ui/wireframes/web/admin/Therapy_admin_1.png" alt="Wireframe de gestión de terapias del administrador en uFlex" width="100%">
 
-#### Therapy Register Exercise Wireframe
+**Therapy Register Exercise Wireframe**
 
 Esta pantalla permite registrar un nuevo ejercicio terapéutico dentro del sistema. Incluye información como nombre del ejercicio, descripción, articulación objetivo y parámetros básicos.
 
 <img src="assets/ux-ui/wireframes/web/admin/Therapy_register_exercise.png" alt="Wireframe de registro de ejercicio terapéutico en uFlex" width="100%">
 
-#### Subscription Admin Wireframe
+**Subscription Admin Wireframe**
 
 Esta pantalla permite al administrador revisar el plan contratado, el estado de la suscripción y las opciones disponibles del servicio SaaS de uFlex.
 
 <img src="assets/ux-ui/wireframes/web/admin/Subscription_admin.png" alt="Wireframe de suscripción del administrador en uFlex" width="100%">
 
----
+<hr class="page-break">
 
-### 5.4.1.1.2. Physiotherapist Web Wireframes.
+#### Web Application - Physiotherapist Wireframes
 
 Los wireframes del fisioterapeuta representan las pantallas enfocadas en el seguimiento clínico del paciente. Este usuario puede revisar pacientes asignados, consultar métricas de progreso, planificar terapias, verificar dispositivos y supervisar el avance de la rehabilitación.
 
-#### Sign Up Physiotherapist Wireframe
+**Sign Up Physiotherapist Wireframe**
 
 Esta pantalla permite que el fisioterapeuta se registre o acceda a la plataforma como parte de una clínica. Su objetivo es habilitar el uso del portal clínico.
 
 <img src="assets/ux-ui/wireframes/web/physiotherapist/signup_physiotherapist.png" alt="Wireframe de registro del fisioterapeuta en uFlex" width="100%">
 
-#### Dashboard Physiotherapist Wireframe
+**Dashboard Physiotherapist Wireframe**
 
 Esta pantalla presenta un resumen de pacientes, sesiones, alertas clínicas, dispositivos y métricas relevantes para el fisioterapeuta.
 
 <img src="assets/ux-ui/wireframes/web/physiotherapist/dashboardphysiotherapistuflex.png" alt="Wireframe del dashboard del fisioterapeuta en uFlex" width="100%">
 
-#### Organization Physiotherapist Wireframe
+**Organization Physiotherapist Wireframe**
 
 Esta pantalla permite al fisioterapeuta consultar información relacionada con la clínica y los pacientes asociados a su gestión.
 
 <img src="assets/ux-ui/wireframes/web/physiotherapist/Organization_physiotherapist.png" alt="Wireframe de organización del fisioterapeuta en uFlex" width="100%">
 
-#### Device Assignment Physiotherapist Wireframe
+**Device Assignment Physiotherapist Wireframe**
 
 Esta pantalla permite verificar o gestionar la asignación de dispositivos IoT a pacientes. Su función es asegurar la trazabilidad entre el paciente, el dispositivo y los datos de rehabilitación.
 
 <img src="assets/ux-ui/wireframes/web/physiotherapist/deviceassignmentphysiotherapistuflex.png" alt="Wireframe de asignación de dispositivo del fisioterapeuta en uFlex" width="100%">
 
-#### Planning Physiotherapist Wireframe
+**Planning Physiotherapist Wireframe**
 
 Esta pantalla permite al fisioterapeuta planificar sesiones, ejercicios y objetivos terapéuticos para cada paciente.
 
 <img src="assets/ux-ui/wireframes/web/physiotherapist/planningphysiotherapistuflex.png" alt="Wireframe de planificación del fisioterapeuta en uFlex" width="100%">
 
-#### Therapy Physiotherapist Wireframe
+**Therapy Physiotherapist Wireframe**
 
 Esta pantalla permite revisar el tratamiento del paciente, validar ejercicios asignados y analizar el avance terapéutico registrado por el sistema.
 
 <img src="assets/ux-ui/wireframes/web/physiotherapist/Therapy_physiotherapist.png" alt="Wireframe de terapia del fisioterapeuta en uFlex" width="100%">
 
+<hr class="page-break">
 
-#### Application Mobile - Paciente
+#### Mobile Application - Patient Wireframes
 
 En esta sección se presentan los wireframes de media fidelidad para la aplicación móvil del paciente. El diseño sigue los principios de **diseño inclusivo**, aplicando tipografía legible de alto contraste, áreas táctiles mínimas de 48x48dp, navegación simple con patrones de flujo conocidos y jerarquía visual clara con grupos de contenido bien definidos. La arquitectura de información se estructura en flujos que priorizan las acciones más frecuentes del paciente.
 
@@ -5956,30 +5952,27 @@ Pantalla de consulta histórica que muestra gráficos de evolución de la movili
 
 ![Mobile Patient Wireframe - Historial Progreso](./assets/ux-ui/wireframes/mobile/mobile-patient-wireframe-11.png)
 
+<hr class="page-break">
+
 #### 5.4.2. Applications Wireflow Diagrams
 
-
-## 5.4.2. Applications Wireflow Diagrams.
-
-Los wireflow diagrams muestran la conexión entre pantallas y las acciones que realiza el usuario para avanzar dentro de la aplicación web. Estos diagramas permiten comprender la navegación de cada rol y validar que los recorridos sean lógicos, ordenados y coherentes con las tareas del sistema.
-
-### 5.4.2.1. Web Applications Wireflow Diagrams.
-
-#### Administrator Web Wireflow Diagram
+#### Web Application - Clinic Admin Wireflow Diagrams
 
 Este diagrama representa el recorrido del administrador dentro de la aplicación web. El flujo inicia con el acceso al sistema y continúa con la gestión de organización, dispositivos, terapias y suscripción.
 
 <img src="assets/ux-ui/wireflows/web/admin/admin_wireflow.png" alt="Wireflow web del administrador en uFlex" width="100%">
 
-#### Physiotherapist Web Wireflow Diagram
+<hr class="page-break">
+
+#### Web Application - Physiotherapist Wireflow Diagrams
 
 Este diagrama representa el recorrido del fisioterapeuta dentro del portal clínico. El flujo considera el acceso al dashboard, revisión de pacientes, planificación de terapias, asignación de dispositivos y seguimiento del progreso.
 
 <img src="assets/ux-ui/wireflows/web/physiotherapist/physiotherapist_wireflow.png" alt="Wireflow web del fisioterapeuta en uFlex" width="100%">
 
+<hr class="page-break">
 
-
-#### Application Mobile - Paciente
+#### Mobile Application - Patient Wireflow Diagrams
 
 En esta seccion se presentan los Wireflow Diagrams de la aplicacion movil del paciente. Cada wireflow representa el flujo principal (happy path) para cumplir un User Goal especifico del usuario Mateo Rojas (paciente en rehabilitacion). Los wireflows muestran las pantallas involucradas y las transiciones entre ellas, facilitando la comprension del recorrido del usuario dentro de la aplicacion.
 
@@ -6043,133 +6036,133 @@ En esta seccion se presentan los Wireflow Diagrams de la aplicacion movil del pa
 
 ---
 
+<hr class="page-break">
+
 #### 5.4.3. Applications Mock-ups
 
+En esta sección se presentan los mock-ups de la aplicación web de uFlex. Estas pantallas muestran la apariencia final del sistema para administradores de clínica, fisioterapeutas, y pacientes.
 
-### 5.4.3.1. Web Applications Mock-ups.
-
-En esta sección se presentan los mock-ups de la aplicación web de uFlex. Estas pantallas muestran la apariencia final del sistema para administradores de clínica y fisioterapeutas.
-
-### 5.4.3.1.1. Administrator Web Mock-ups.
+#### Web Application - Clinic Administrator Mock-ups
 
 Los mock-ups del administrador muestran la apariencia final de las pantallas orientadas a la gestión operativa de la clínica.
 
-#### Sign Up Admin Mock-up
+**Sign Up Admin Mock-up**
 
 Esta pantalla presenta el diseño final del registro del administrador. Su interfaz busca facilitar el ingreso inicial a la plataforma mediante un formulario claro y directo.
 
 <img src="assets/ux-ui/mockups/web/admin/signup_admin.png" alt="Mock-up de registro del administrador en uFlex" width="100%">
 
-#### Profile Admin Mock-up
+**Profile Admin Mock-up**
 
 Esta pantalla muestra el perfil del administrador y la información asociada a su cuenta dentro de uFlex.
 
 <img src="assets/ux-ui/mockups/web/admin/Profile_admin.png" alt="Mock-up del perfil del administrador en uFlex" width="100%">
 
-#### Organization Admin Mock-up
+**Organization Admin Mock-up**
 
 Esta pantalla muestra la gestión visual de la organización o clínica dentro de uFlex.
 
 <img src="assets/ux-ui/mockups/web/admin/Organization_admin.png" alt="Mock-up de organización del administrador en uFlex" width="100%">
 
-#### Organization Admin 2 Mock-up
+**Organization Admin 2 Mock-up**
 
 Esta pantalla complementa la información organizacional de la clínica, permitiendo visualizar datos adicionales de gestión.
 
 <img src="assets/ux-ui/mockups/web/admin/Organization_admin_2.png" alt="Mock-up secundario de organización del administrador en uFlex" width="100%">
 
-#### Register New Device Mock-up
+**Register New Device Mock-up**
 
 Esta pantalla muestra el diseño final para registrar un nuevo dispositivo IoT dentro del inventario de la clínica.
 
 <img src="assets/ux-ui/mockups/web/admin/adminregisternewdevice(new).png" alt="Mock-up de registro de nuevo dispositivo IoT en uFlex" width="100%">
 
-#### Run Device Diagnostics Mock-up
+**Run Device Diagnostics Mock-up**
 
 Esta pantalla muestra el diagnóstico visual del estado del dispositivo IoT, facilitando la verificación de su funcionamiento antes de asignarlo.
 
 <img src="assets/ux-ui/mockups/web/admin/adminrundevicediagnostics(new).png" alt="Mock-up de diagnóstico de dispositivo IoT en uFlex" width="100%">
 
-#### Link Device to Patient Mock-up
+**Link Device to Patient Mock-up**
 
 Esta pantalla muestra el proceso visual para asociar un dispositivo IoT a un paciente específico.
 
 <img src="assets/ux-ui/mockups/web/admin/adminlinkdevicetopatient(new).png" alt="Mock-up de vinculación de dispositivo a paciente en uFlex" width="100%">
 
-#### Device Admin 1 Mock-up
+**Device Admin 1 Mock-up**
 
 Esta pantalla muestra la gestión del inventario de dispositivos IoT, permitiendo revisar disponibilidad, asignación o estado de los equipos.
 
 <img src="assets/ux-ui/mockups/web/admin/Device_admin_1.png" alt="Mock-up de gestión de dispositivos del administrador en uFlex" width="100%">
 
-#### Device Admin 2 Mock-up
+**Device Admin 2 Mock-up**
 
 Esta pantalla muestra información complementaria sobre los dispositivos registrados en el sistema.
 
 <img src="assets/ux-ui/mockups/web/admin/Device_admin_2.png" alt="Mock-up secundario de gestión de dispositivos del administrador en uFlex" width="100%">
 
-#### Therapy Admin Mock-up
+**Therapy Admin Mock-up**
 
 Esta pantalla muestra la gestión visual de terapias dentro de la clínica.
 
 <img src="assets/ux-ui/mockups/web/admin/Therapy_admin_1.png" alt="Mock-up de gestión de terapias del administrador en uFlex" width="100%">
 
-#### Therapy Register Exercise Mock-up
+**Therapy Register Exercise Mock-up**
 
 Esta pantalla muestra el formulario final para registrar ejercicios terapéuticos dentro de la plataforma.
 
 <img src="assets/ux-ui/mockups/web/admin/Therapy_register_exercise.png" alt="Mock-up de registro de ejercicio terapéutico en uFlex" width="100%">
 
-#### Subscription Admin Mock-up
+**Subscription Admin Mock-up**
 
 Esta pantalla muestra la gestión visual del plan de suscripción de la clínica dentro del modelo SaaS de uFlex.
 
 <img src="assets/ux-ui/mockups/web/admin/Subscription_admin.png" alt="Mock-up de suscripción del administrador en uFlex" width="100%">
 
----
+<hr class="page-break">
 
-### 5.4.3.1.2. Physiotherapist Web Mock-ups.
+#### Web Application - Physiotherapist Mock-ups
 
 Los mock-ups del fisioterapeuta muestran la apariencia final del portal clínico usado para monitorear pacientes, terapias y dispositivos.
 
-#### Sign Up Physiotherapist Mock-up
+**Sign Up Physiotherapist Mock-up**
 
 Esta pantalla muestra el diseño final del registro del fisioterapeuta.
 
 <img src="assets/ux-ui/mockups/web/physiotherapist/signup_physiotherapist.png" alt="Mock-up de registro del fisioterapeuta en uFlex" width="100%">
 
-#### Dashboard Physiotherapist Mock-up
+**Dashboard Physiotherapist Mock-up**
 
 Esta pantalla muestra indicadores, pacientes, alertas y métricas relevantes para el fisioterapeuta. Su propósito es centralizar la información clínica necesaria para el seguimiento de tratamientos.
 
 <img src="assets/ux-ui/mockups/web/physiotherapist/dashboardphysiotherapistuflex.png" alt="Mock-up del dashboard del fisioterapeuta en uFlex" width="100%">
 
-#### Organization Physiotherapist Mock-up
+**Organization Physiotherapist Mock-up**
 
 Esta pantalla muestra información de la organización asociada al fisioterapeuta.
 
 <img src="assets/ux-ui/mockups/web/physiotherapist/Organization_physiotherapist.png" alt="Mock-up de organización del fisioterapeuta en uFlex" width="100%">
 
-#### Device Assignment Physiotherapist Mock-up
+**Device Assignment Physiotherapist Mock-up**
 
 Esta pantalla muestra la asignación de dispositivos IoT a pacientes, asegurando que el monitoreo remoto esté correctamente vinculado.
 
 <img src="assets/ux-ui/mockups/web/physiotherapist/deviceassignmentphysiotherapistuflex.png" alt="Mock-up de asignación de dispositivo del fisioterapeuta en uFlex" width="100%">
 
-#### Planning Physiotherapist Mock-up
+**Planning Physiotherapist Mock-up**
 
 Esta pantalla muestra la planificación terapéutica de pacientes, incluyendo sesiones, ejercicios y objetivos de recuperación.
 
 <img src="assets/ux-ui/mockups/web/physiotherapist/planningphysiotherapistuflex.png" alt="Mock-up de planificación del fisioterapeuta en uFlex" width="100%">
 
-#### Therapy Physiotherapist Mock-up
+**Therapy Physiotherapist Mock-up**
 
 Esta pantalla muestra la gestión y seguimiento de terapias del paciente, permitiendo revisar el avance registrado por el sistema.
 
 <img src="assets/ux-ui/mockups/web/physiotherapist/Therapy_physiotherapist.png" alt="Mock-up de terapia del fisioterapeuta en uFlex" width="100%">
 
+<hr class="page-break">
 
-#### Application Mobile - Paciente
+#### Mobile Application - Patient Mock-ups
 
 En esta seccion se presentan los mockups de alta fidelidad para la aplicacion movil del paciente. El diseno aplica el Design System de uFlex con colores corporativos, bordes redondeados y sombras sutiles. Cada pantalla esta disenada para ser intuitiva, con elementos claros y accesibles que cumplen con los principios de diseno inclusivo.
 
@@ -6239,167 +6232,169 @@ El mockup del historial muestra graficos de como ha evolucionado el progreso del
 
 ![Mobile Patient Mockup - Historial Progreso](./assets/ux-ui/mockups/mobile/patient/mobile-patient-mockup-11.png)
 
+<hr class="page-break">
+
 #### 5.4.4. Applications User Flow Diagrams
-
-
-## 5.4.4. Applications User Flow Diagrams.
 
 Los user flow diagrams muestran los pasos que sigue cada usuario para completar una tarea dentro de la aplicación web de uFlex. Estos diagramas permiten validar que las tareas principales puedan realizarse de forma lógica, clara y sin pasos innecesarios.
 
-### 5.4.4.1. Administrator User Flow Diagrams.
+#### Web Application - Clinic Administrator User Flow Diagrams
 
 Los siguientes diagramas representan los flujos principales que realiza el administrador dentro de la aplicación web de uFlex. Cada flujo muestra la relación entre pantallas, las acciones seleccionadas por el usuario y el resultado esperado dentro de la plataforma. Estos recorridos permiten validar que el administrador pueda gestionar la operación de la clínica, los dispositivos IoT, las terapias, el personal clínico y la suscripción del servicio de forma ordenada.
 
-#### Administrator Register New Exercise User Flow
+**Administrator Register New Exercise User Flow**
 
 Este flujo representa el proceso que sigue el administrador para registrar un nuevo ejercicio terapéutico dentro de uFlex. El recorrido inicia en la pantalla de Therapy Management, donde el administrador selecciona la opción Register New Exercise. Luego, el sistema lo dirige al formulario de registro, en el que se completan datos como nombre del ejercicio, categoría, parte del cuerpo objetivo, instrucciones, parámetros de prescripción, nivel de dificultad, equipo requerido y recurso multimedia. Finalmente, el administrador guarda el ejercicio para incorporarlo a la biblioteca terapéutica de la clínica.
 
 <img src="assets/ux-ui/userflows/web/admin/admin_register_new_exercise_user_flow.png" alt="User flow de registro de nuevo ejercicio terapéutico por el administrador en uFlex" width="100%">
 
-#### Administrator Authentication and Account Creation User Flow
+**Administrator Authentication and Account Creation User Flow**
 
 Este flujo representa el primer contacto del administrador con la plataforma web de uFlex. El usuario inicia en la pantalla de inicio de sesión y, si todavía no cuenta con una cuenta, selecciona la opción Create Account. Luego, el sistema lo dirige a la pantalla de registro, donde puede seleccionar el rol Clinic Admin, ingresar sus datos personales, correo, contraseña y código de invitación de la clínica. Este flujo permite diferenciar el acceso del administrador desde el proceso inicial de autenticación.
 
 <img src="assets/ux-ui/userflows/web/admin/admin_auth_create_account_user_flow.png" alt="User flow de autenticación y creación de cuenta del administrador en uFlex" width="100%">
 
-#### Administrator Sign In to Therapy Management User Flow
+**Administrator Sign In to Therapy Management User Flow**
 
 Este flujo muestra cómo el administrador ingresa a la plataforma desde la pantalla de inicio de sesión. Después de ingresar sus credenciales y seleccionar Sign In, el sistema lo redirige al entorno principal de administración, iniciando en la vista de Therapy Management. Desde esta pantalla, el administrador puede comenzar a revisar y gestionar los ejercicios terapéuticos registrados en la plataforma.
 
 <img src="assets/ux-ui/userflows/web/admin/admin_sign_in_to_therapy_management_user_flow.png" alt="User flow de inicio de sesión del administrador hacia Therapy Management en uFlex" width="100%">
 
-#### Administrator Therapy to Exercise Registration User Flow
+**Administrator Therapy to Exercise Registration User Flow**
 
 Este flujo complementa el proceso de creación de ejercicios desde la vista Therapy Management. El administrador revisa la biblioteca de ejercicios existentes y selecciona Register New Exercise para acceder al formulario de registro. Este recorrido permite mantener actualizada la base terapéutica que posteriormente será utilizada por los fisioterapeutas al planificar tratamientos.
 
 <img src="assets/ux-ui/userflows/web/admin/admin_therapy_to_exercise_registration_user_flow.png" alt="User flow desde Therapy Management hacia registro de ejercicio en uFlex" width="100%">
 
-#### Administrator Therapy to Device Inventory User Flow
+**Administrator Therapy to Device Inventory User Flow**
 
 Este flujo muestra la navegación del administrador desde el módulo Therapy hacia el módulo Device. Mediante el menú lateral, el usuario cambia de la gestión terapéutica al inventario de dispositivos IoT. Este recorrido evidencia cómo la plataforma permite pasar de la administración de ejercicios al control de los activos tecnológicos utilizados en la rehabilitación.
 
 <img src="assets/ux-ui/userflows/web/admin/admin_therapy_to_device_inventory_user_flow.png" alt="User flow desde Therapy Management hacia Device Inventory en uFlex" width="100%">
 
-#### Administrator Open Device Calibration User Flow
+**Administrator Open Device Calibration User Flow**
 
 Este flujo representa el acceso del administrador al proceso de calibración de dispositivos IoT. Desde Device Inventory, el administrador selecciona la opción relacionada con calibración y el sistema muestra la pantalla Device Calibration. Esta vista permite revisar la alineación espacial del dispositivo y preparar el hardware antes de su uso en sesiones clínicas.
 
 <img src="assets/ux-ui/userflows/web/admin/admin_open_device_calibration_user_flow.png" alt="User flow de acceso a calibración de dispositivo IoT en uFlex" width="100%">
 
-#### Administrator Complete Device Calibration User Flow
+**Administrator Complete Device Calibration User Flow**
 
 Este flujo muestra la etapa de validación dentro de la calibración del dispositivo IoT. El administrador revisa los indicadores de alineación, eje vertical, estado del hardware y pasos pendientes; luego selecciona Complete Calibration para finalizar el proceso. Este recorrido es importante porque asegura que el dispositivo capture datos biomecánicos confiables durante la terapia.
 
 <img src="assets/ux-ui/userflows/web/admin/admin_complete_device_calibration_user_flow.png" alt="User flow de finalización de calibración de dispositivo IoT en uFlex" width="100%">
 
-#### Administrator Calibrate Device from Inventory User Flow
+**Administrator Calibrate Device from Inventory User Flow**
 
 Este flujo representa una ruta adicional para acceder a la calibración desde el inventario de dispositivos. El administrador identifica un kit IoT que requiere revisión y selecciona la acción Calibrate. El sistema lo dirige a la pantalla Device Calibration, donde puede revisar los pasos técnicos y completar la validación del hardware.
 
 <img src="assets/ux-ui/userflows/web/admin/admin_calibrate_device_from_inventory_user_flow.png" alt="User flow de calibración de dispositivo desde el inventario en uFlex" width="100%">
 
-#### Administrator Run Device Diagnostics User Flow
+**Administrator Run Device Diagnostics User Flow**
 
 Este flujo muestra cómo el administrador ejecuta un diagnóstico técnico sobre un dispositivo IoT. Desde Device Inventory, selecciona Run Diagnostics y el sistema lo dirige a la pantalla System Diagnostics. En esta vista se visualiza el progreso del escaneo, capacidad de batería, nivel de señal, temperatura del hardware y registros técnicos. Este flujo permite verificar el estado del dispositivo antes de utilizarlo en una terapia.
 
 <img src="assets/ux-ui/userflows/web/admin/admin_run_device_diagnostics_user_flow.png" alt="User flow de diagnóstico técnico de dispositivo IoT en uFlex" width="100%">
 
-#### Administrator Register New Device User Flow
+**Administrator Register New Device User Flow**
 
 Este flujo representa el proceso de registro de un nuevo dispositivo IoT dentro del inventario de la clínica. Desde Device Inventory, el administrador selecciona Register Device y accede a una pantalla de registro. Allí puede abrir el escáner, validar el hardware, ingresar identificadores y completar la incorporación del dispositivo al sistema. Este flujo asegura que cada kit quede registrado antes de ser asignado a un paciente.
 
 <img src="assets/ux-ui/userflows/web/admin/admin_register_new_device_user_flow.png" alt="User flow de registro de nuevo dispositivo IoT por el administrador en uFlex" width="100%">
 
-#### Administrator Device Inventory Assignment Overview User Flow
+**Administrator Device Inventory Assignment Overview User Flow**
 
 Este flujo muestra la navegación desde el inventario administrativo hacia una vista de asignación de dispositivos. El administrador parte de Device Inventory y selecciona la opción Link to Patient o una acción relacionada con asignación. El sistema muestra una pantalla con indicadores de conectividad, disponibilidad, batería y dispositivos activos, permitiendo revisar el estado general antes de realizar asignaciones.
 
 <img src="assets/ux-ui/userflows/web/admin/admin_device_inventory_assignment_overview_user_flow.png" alt="User flow de vista general de asignación desde inventario de dispositivos en uFlex" width="100%">
 
-#### Administrator Assign Device to Patient User Flow
+**Administrator Assign Device to Patient User Flow**
 
 Este flujo representa el proceso de asignación de un dispositivo IoT a un paciente desde la vista de inventario. El administrador revisa la disponibilidad de dispositivos y selecciona Assign to Patient para iniciar la asignación. Este recorrido permite vincular un kit IoT disponible con un paciente activo, asegurando que el monitoreo remoto quede correctamente habilitado.
 
 <img src="assets/ux-ui/userflows/web/admin/admin_assign_device_to_patient_user_flow.png" alt="User flow de asignación de dispositivo IoT a paciente en uFlex" width="100%">
 
-#### Administrator Link IoT Device to Patient User Flow
+**Administrator Link IoT Device to Patient User Flow**
 
 Este flujo muestra el proceso específico para vincular un dispositivo IoT con un paciente. Desde Device Inventory, el administrador selecciona Link to Patient y accede a la pantalla Link IoT Device. En esta vista, selecciona un paciente, revisa el kit disponible y confirma la asignación final. Este flujo es fundamental para garantizar que los datos capturados por el sensor se almacenen en el perfil clínico correcto.
 
 <img src="assets/ux-ui/userflows/web/admin/admin_link_iot_device_to_patient_user_flow.png" alt="User flow de vinculación de dispositivo IoT a paciente en uFlex" width="100%">
 
-#### Administrator Open Organization Dashboard User Flow
+**Administrator Open Organization Dashboard User Flow**
 
 Este flujo muestra cómo el administrador navega desde Device Inventory hacia el módulo Organization mediante el menú lateral. En la pantalla de organización, el administrador puede revisar información general de la clínica, número de pacientes, fisioterapeutas activos, disponibilidad de kits IoT, rendimiento institucional y actualizaciones recientes. Este flujo permite centralizar la supervisión operativa de la clínica.
 
 <img src="assets/ux-ui/userflows/web/admin/admin_open_organization_dashboard_user_flow.png" alt="User flow hacia dashboard de organización del administrador en uFlex" width="100%">
 
-#### Administrator Register New Physiotherapist User Flow
+**Administrator Register New Physiotherapist User Flow**
 
 Este flujo representa el registro de un nuevo fisioterapeuta dentro de la organización. Desde el dashboard de la clínica, el administrador selecciona Add New Physiotherapist y accede al formulario Register New Physiotherapist. En esta pantalla ingresa datos personales, especialidad, contacto, licencia profesional y credenciales clínicas. Finalmente, guarda el perfil para incorporar al nuevo especialista al equipo de la clínica.
 
 <img src="assets/ux-ui/userflows/web/admin/admin_register_new_physiotherapist_user_flow.png" alt="User flow de registro de nuevo fisioterapeuta por el administrador en uFlex" width="100%">
 
-#### Administrator Open Subscription Management User Flow
+**Administrator Open Subscription Management User Flow**
 
 Este flujo muestra cómo el administrador accede al módulo Subscription desde la vista Organization. En la pantalla de suscripción puede revisar el plan activo, método de pago, historial de facturación, balance de uso y planes disponibles. Este recorrido responde al modelo SaaS de uFlex, ya que permite que la clínica controle el estado del servicio contratado.
 
 <img src="assets/ux-ui/userflows/web/admin/admin_open_subscription_management_user_flow.png" alt="User flow de acceso a gestión de suscripción del administrador en uFlex" width="100%">
 
-#### Administrator Upgrade Plan and Payment User Flow
+**Administrator Upgrade Plan and Payment User Flow**
 
 Este flujo representa la actualización del plan de suscripción y el proceso de pago. Desde Subscription, el administrador selecciona una opción de mejora del plan y el sistema lo dirige a un formulario de pago. En esta pantalla puede ingresar los datos de tarjeta, país, código postal y confirmar la operación mediante Pay Now. Este flujo permite que la clínica amplíe las capacidades contratadas del servicio.
 
 <img src="assets/ux-ui/userflows/web/admin/admin_upgrade_plan_payment_user_flow.png" alt="User flow de actualización de plan y pago de suscripción en uFlex" width="100%">
 
-#### Administrator Open Profile and Access Management User Flow
+**Administrator Open Profile and Access Management User Flow**
 
 Este flujo muestra cómo el administrador accede al módulo Profile desde Subscription mediante el menú lateral. En la pantalla Profile, el administrador puede revisar usuarios, estado de verificación, accesos suspendidos, roles, último inicio de sesión y acciones disponibles. Este recorrido permite mantener control sobre los perfiles vinculados a la organización.
 
 <img src="assets/ux-ui/userflows/web/admin/admin_open_profile_access_management_user_flow.png" alt="User flow de acceso a perfil y gestión de usuarios en uFlex" width="100%">
 
-### 5.4.4.2. Physiotherapist User Flow Diagrams.
+<hr class="page-break">
+
+#### Web Application - Physiotherapist User Flow Diagrams
 
 Los siguientes diagramas representan los flujos principales que realiza el fisioterapeuta dentro de la aplicación web de uFlex. Cada flujo muestra la relación entre pantallas, las acciones realizadas por el usuario y el resultado esperado dentro del portal clínico. Estos recorridos permiten validar que el fisioterapeuta pueda acceder a la plataforma, registrar pacientes, planificar terapias, asignar dispositivos IoT y consultar información de la organización de manera clara y ordenada.
 
-#### Physiotherapist Authentication and Account Creation User Flow
+**Physiotherapist Authentication and Account Creation User Flow**
 
 Este flujo representa el proceso inicial de creación de cuenta del fisioterapeuta dentro de uFlex. El usuario inicia en la pantalla de inicio de sesión y selecciona la opción Create Account. Luego, el sistema lo dirige al formulario de registro, donde debe escoger el rol Physiotherapist, ingresar sus datos personales, correo, contraseña y código de invitación de la clínica. Este flujo permite diferenciar el acceso del fisioterapeuta desde el primer contacto con la plataforma y asegurar que su cuenta quede asociada al entorno clínico correspondiente.
 
 <img src="assets/ux-ui/userflows/web/physiotherapist/physiotherapist_auth_create_account_user_flow.png" alt="User flow de autenticación y creación de cuenta del fisioterapeuta en uFlex" width="100%">
 
-#### Physiotherapist Sign In to Dashboard User Flow
+**Physiotherapist Sign In to Dashboard User Flow**
 
 Este flujo muestra cómo el fisioterapeuta accede al portal clínico de uFlex desde la pantalla de inicio de sesión. Después de ingresar sus credenciales y seleccionar Sign In, el sistema lo redirige al dashboard principal. En esta vista, el fisioterapeuta puede revisar indicadores generales, sesiones programadas, pacientes activos, alertas urgentes y métricas clínicas relevantes para iniciar su jornada de seguimiento terapéutico.
 
 <img src="assets/ux-ui/userflows/web/physiotherapist/physiotherapist_sign_in_to_dashboard_user_flow.png" alt="User flow de inicio de sesión del fisioterapeuta hacia el dashboard en uFlex" width="100%">
 
-#### Physiotherapist Register New Patient User Flow
+**Physiotherapist Register New Patient User Flow**
 
 Este flujo representa el proceso para registrar un nuevo paciente desde el módulo Therapy Management. El fisioterapeuta visualiza la lista de pacientes activos y selecciona la opción Register New Patient. Luego, el sistema muestra un formulario lateral donde se ingresa la información clínica inicial del paciente, como nombre completo, fecha de nacimiento, género, diagnóstico principal y fisioterapeuta asignado. Finalmente, el usuario guarda el registro para iniciar el proceso de rehabilitación digital del paciente dentro de uFlex.
 
 <img src="assets/ux-ui/userflows/web/physiotherapist/physiotherapist_register_new_patient_user_flow.png" alt="User flow de registro de nuevo paciente por el fisioterapeuta en uFlex" width="100%">
 
-#### Physiotherapist Therapy to Planning Roadmap User Flow
+**Physiotherapist Therapy to Planning Roadmap User Flow**
 
 Este flujo muestra cómo el fisioterapeuta navega desde el módulo Therapy hacia el módulo Planning. El recorrido inicia en Therapy Management, donde el fisioterapeuta revisa la cartera de pacientes y su estado de tratamiento. Al seleccionar Planning desde el menú lateral, el sistema lo dirige a la pantalla Therapy Roadmap, donde puede diseñar una ruta personalizada de rehabilitación, seleccionar ejercicios validados, configurar parámetros de recuperación y finalizar el plan terapéutico para su despliegue.
 
 <img src="assets/ux-ui/userflows/web/physiotherapist/physiotherapist_therapy_to_planning_roadmap_user_flow.png" alt="User flow desde gestión de terapias hacia planificación terapéutica del fisioterapeuta en uFlex" width="100%">
 
-#### Physiotherapist Planning to Device Assignment User Flow
+**Physiotherapist Planning to Device Assignment User Flow**
 
 Este flujo representa la transición desde la planificación terapéutica hacia la asignación de dispositivos IoT. El fisioterapeuta parte de la pantalla Therapy Roadmap, donde configura ejercicios y parámetros de la rutina del paciente. Luego, mediante el menú lateral, accede al módulo Device y el sistema muestra la pantalla Assign Device to Patient. En esta vista, puede revisar el inventario disponible, seleccionar un paciente, elegir un dispositivo y confirmar la asignación para habilitar el monitoreo remoto.
 
 <img src="assets/ux-ui/userflows/web/physiotherapist/physiotherapist_planning_to_device_assignment_user_flow.png" alt="User flow desde planificación terapéutica hacia asignación de dispositivo IoT en uFlex" width="100%">
 
-#### Physiotherapist Device to Organization View User Flow
+**Physiotherapist Device to Organization View User Flow**
 
 Este flujo muestra cómo el fisioterapeuta navega desde el módulo Device hacia la vista Organization. El recorrido inicia en Assign Device to Patient, donde se gestionan dispositivos disponibles y pacientes vinculados. Luego, al seleccionar Organization desde el menú lateral, el sistema muestra la vista de organización, donde el fisioterapeuta puede consultar información del equipo clínico, pacientes sin asignar, carga de trabajo, productividad del personal y estado general de la flota IoT de la clínica.
 
 <img src="assets/ux-ui/userflows/web/physiotherapist/physiotherapist_device_to_organization_view_user_flow.png" alt="User flow desde asignación de dispositivo hacia vista de organización del fisioterapeuta en uFlex" width="100%">
 
+<hr class="page-break">
 
-#### Application Mobile - Paciente
+#### Mobile Application - Patient User Flow Diagrams
 
 En esta seccion se presentan los User Flow Diagrams de la aplicacion movil del paciente. A diferencia de los Wireflow Diagrams, los User Flows incluyen tanto el camino principal (happy path) como los caminos alternativos (unhappy paths) para cada User Goal. Esto permite visualizar todas las posibles rutas que el usuario puede seguir dentro de la aplicacion, incluyendo los casos donde ocurren errores o el usuario decide cancelar una accion.
 
@@ -6440,25 +6435,25 @@ Los User Flows son consistentes con los Wireflows previamente definidos, utiliza
 
 ![User Flow - Progress History](./assets/ux-ui/userflows/patient/mobile-patient-userflow-3.png)
 
+<hr class="page-break">
+
 #### 5.5. Applications Prototyping
 
-
-### 5.5.1. Web Application Prototyping.
+#### Web Application - Clinic Administrator & Physiotherapist Prototyping
 
 El prototipo web permite simular la experiencia de administradores y fisioterapeutas dentro de la plataforma. Incluye módulos como dashboard, organización, dispositivos, terapias, planificación y suscripción.
 
 <img src="assets/ux-ui/prototypes/web/admin/web_prototype.png" alt="Prototipo web de uFlex" width="100%">
 
-Link de video de explicación: (https://goo.su/Y2U5M)[https://goo.su/Y2U5M]
+**Enlace al prototipo:**
 
-Link del figma del prototipo web: (https://www.figma.com/design/ETmizOcfDmHvDkg0PojfDo/uFlex-WebPlatform?node-id=0-1&t=SsqIkA3YfMBnHQVy-1)[https://www.figma.com/design/ETmizOcfDmHvDkg0PojfDo/uFlex-WebPlatform?node-id=0-1&t=SsqIkA3YfMBnHQVy-1]
+El prototipo interactivo se encuentra disponible en Figma y puede ser accesado a traves del siguiente enlace: [https://www.figma.com/design/ETmizOcfDmHvDkg0PojfDo/uFlex-WebPlatform?node-id=0-1&t=SsqIkA3YfMBnHQVy-1](https://www.figma.com/design/ETmizOcfDmHvDkg0PojfDo/uFlex-WebPlatform?node-id=0-1&t=SsqIkA3YfMBnHQVy-1)
 
-### 5.5.2. Prototype Validation.
+El video del prototipo interactivo se encuentra disponible a traves del siguiente enlace: [https://goo.su/Y2U5M](https://goo.su/Y2U5M)
 
-La validación del prototipo permite comprobar si los usuarios comprenden la navegación y pueden completar sus tareas principales dentro de uFlex. Esta etapa es importante porque el sistema integra gestión clínica, datos de rehabilitación y dispositivos IoT, por lo que la experiencia debe ser clara para el personal administrativo y clínico.
+<hr class="page-break">
 
-
-#### Application Mobile - Paciente
+#### Mobile Application - Patient Prototyping
 
 En esta seccion se presenta el prototipo interactivo de la aplicacion movil del paciente. El prototipo fue desarrollado utilizando Figma y permite experimentar las interacciones reales de la app, incluyendo las transiciones entre pantallas, los flujos de navegacion y la retroalimentacion visual de cada elemento.
 
@@ -6472,6 +6467,7 @@ El prototipo interactivo se encuentra disponible en Figma y puede ser accesado a
 
 El video del prototipo interactivo se encuentra disponible a traves del siguiente enlace: [https://goo.su/NxMQR](https://goo.su/NxMQR)
 
+<hr class="page-break">
 
 ### 5.6. IoT Device Design
 
