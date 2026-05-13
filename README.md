@@ -5970,7 +5970,7 @@ Los User Flows son consistentes con los Wireflows previamente definidos, utiliza
 
 ![User Flow - Progress History](./assets/ux-ui/userflows/patient/mobile-patient-userflow-3.png)
 
-#### 5.4.5. Applications Prototyping
+#### 5.5. Applications Prototyping
 
 
 
