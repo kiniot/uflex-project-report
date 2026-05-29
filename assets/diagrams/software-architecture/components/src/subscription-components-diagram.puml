@@ -39,7 +39,7 @@ Container(webApp, "Web Client App", "TypeScript / Angular PWA", "PWA para admini
 Container_Boundary(subscriptionService, "Subscription Service — RESTful API") {
   Component(interfaceLayer,      "Subscription Interface Layer",       "Component: Java 17 / Spring Boot 3", "Controllers y endpoints REST — Subscriptions, Plans, Invoices", $tags="interface")
   Component(applicationLayer,    "Subscription Application Layer",     "Component: Java 17 / Spring Boot 3", "Servicios CQRS que coordinan commands, queries y event handlers del dominio Subscription", $tags="application")
-  Component(culqiAcl,            "Culqi Payments Service ACL",         "Component: Java 17 / Spring Boot 3", "Fachada ACL hacia Culqi — crea cobros, valida tokens y consume webhooks de confirmación de pago", $tags="aclPayment")
+  Component(stripeAcl,           "Stripe Payments Service ACL",        "Component: Java 17 / Spring Boot 3", "Fachada ACL hacia Stripe — crea cobros, valida tokens y consume webhooks de confirmación de pago", $tags="aclPayment")
   Component(iamAcl,              "IAM Context Service ACL",            "Component: Java 17 / Spring Boot 3", "Fachada ACL hacia el BC IAM para validar clinicAdmin y asociar la suscripción a su clínica", $tags="aclIam")
   Component(domainLayer,         "Subscription Domain Layer",          "Component: Java 17 / Spring Boot 3", "Aggregate Subscription, Entities SubscriptionPlan e Invoice, Value Objects y eventos de dominio", $tags="domain")
   Component(infrastructureLayer, "Subscription Infrastructure Layer",  "Component: Java 17 / Spring Boot 3", "Repositorios JPA, scheduler de renovaciones, integración con Notification Service y plantillas de facturación", $tags="infrastructure")
@@ -48,7 +48,7 @@ Container_Boundary(subscriptionService, "Subscription Service — RESTful API") 
 ' =========================================================
 ' External systems / sibling services / database
 ' =========================================================
-System_Ext(culqi,         "Culqi — Payment Gateway",       "Sistema externo de pagos peruano", $tags="externalPayment")
+System_Ext(stripe,        "Stripe — Payment Gateway",      "Sistema externo de pagos internacional", $tags="externalPayment")
 Container(iamService,     "IAM Service",                   "Java / Spring Boot",                "Contexto hermano — expone perfil clínico vía ACL", $tags="iamService")
 Container(notifService,   "Notification Service",          "Java / Spring Boot",                "Contexto hermano — envía correos transaccionales vía Resend", $tags="notifService")
 ContainerDb(subscriptionDB, "Subscription Relational SQL Database", "Container: Azure Database for PostgreSQL", "Almacena planes, suscripciones, periodos y facturas del contexto Subscription", $tags="database")
@@ -60,12 +60,12 @@ Rel(webApp, interfaceLayer, "Hace llamadas API hacia", "JSON/HTTPS")
 
 Rel(interfaceLayer, applicationLayer, "Invoca servicios de la capa de aplicación")
 
-Rel(applicationLayer, culqiAcl,            "Delega cobros y reconciliación de pagos", "in-process call")
+Rel(applicationLayer, stripeAcl,           "Delega cobros y reconciliación de pagos", "in-process call")
 Rel(applicationLayer, iamAcl,              "Obtiene perfil y clinicId del administrador", "in-process call")
 Rel(applicationLayer, domainLayer,         "Orquesta casos de uso del dominio")
 Rel(applicationLayer, infrastructureLayer, "Usa infraestructura — repos JPA, scheduler y notificaciones")
 
-Rel(culqiAcl,            culqi,        "Crea cobros, procesa webhooks y consulta transacciones", "HTTPS")
+Rel(stripeAcl,           stripe,       "Crea cobros, procesa webhooks y consulta transacciones", "HTTPS")
 Rel(iamAcl,              iamService,   "Consulta perfil clínico y valida rol CLINIC_ADMIN",      "HTTPS")
 Rel(infrastructureLayer, notifService, "Solicita envío de correos de facturación",                "HTTPS")
 Rel(infrastructureLayer, subscriptionDB, "Persistencia — commands y queries",                     "JDBC/SSL")
