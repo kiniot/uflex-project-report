@@ -24,7 +24,7 @@ Person(clinicAdmin,     "Administrador de Clínica", "Gestiona sedes, pacientes 
 System(uflex, "uFlex", "Plataforma IoT/SaaS multi-tenant para telerehabilitación de miembro superior; incluye firmware embebido, app móvil y backend cloud", $tags="target")
 
 System_Ext(uflexHardware, "Hardware uFlex",     "Wearable con sensores IMU y actuadores hápticos", $tags="external")
-System_Ext(culqi,         "Culqi",              "Pasarela de pagos peruana para suscripciones de clínicas", $tags="external")
+System_Ext(stripe,        "Stripe",             "Pasarela de pagos internacional para suscripciones de clínicas", $tags="external")
 System_Ext(resend,        "Resend",             "Servicio de envío de correos transaccionales", $tags="external")
 
 Rel(patient,         uflex, "Ejecuta rutinas y consulta retroalimentación biomecánica")
@@ -32,7 +32,7 @@ Rel(physiotherapist, uflex, "Supervisa sesiones y ajusta protocolos clínicos")
 Rel(clinicAdmin,     uflex, "Administra clínica, usuarios y suscripción")
 
 Rel_L(uflexHardware, uflex,    "Envía datos de movimiento y recibe retroalimentación (vía BLE)")
-Rel(uflex,           culqi,    "Procesa pagos de suscripción")
+Rel(uflex,           stripe,   "Procesa pagos de suscripción")
 Rel(uflex,           resend,   "Envía correos transaccionales y notificaciones")
 
 Lay_R(uflex, uflexHardware)
