@@ -6101,13 +6101,13 @@ Esta pantalla muestra información complementaria sobre los dispositivos registr
 
 Esta pantalla muestra la gestión visual de terapias dentro de la clínica.
 
-<img src="assets/ux-ui/mockups/web/admin/Therapy_admin_1.png" alt="Mock-up de gestión de terapias del administrador en uFlex" width="100%">
+<img src="assets/ux-ui/mockups/web/admin/Theraphy_admin_1.png" alt="Mock-up de gestión de terapias del administrador en uFlex" width="100%">
 
 **Therapy Register Exercise Mock-up**
 
 Esta pantalla muestra el formulario final para registrar ejercicios terapéuticos dentro de la plataforma.
 
-<img src="assets/ux-ui/mockups/web/admin/Therapy_register_exercise.png" alt="Mock-up de registro de ejercicio terapéutico en uFlex" width="100%">
+<img src="assets/ux-ui/mockups/web/admin/Theraphy_register_exercise.png" alt="Mock-up de registro de ejercicio terapéutico en uFlex" width="100%">
 
 **Subscription Admin Mock-up**
 
