@@ -5957,7 +5957,7 @@ Pantalla de consulta histórica que muestra gráficos de evolución de la movili
 
 Este diagrama representa el recorrido del administrador dentro de la aplicación web. El flujo inicia con el acceso al sistema y continúa con la gestión de organización, dispositivos, terapias y suscripción.
 
-<img src="assets/ux-ui/wireflows/web/admin/admin_wireflow.png" alt="Wireflow web del administrador en uFlex" width="100%">
+<img src="assets/ux-ui/wireflows/admin/admin_wireflow.png" alt="Wireflow web del administrador en uFlex" width="100%">
 
 <hr class="page-break">
 
@@ -5965,7 +5965,7 @@ Este diagrama representa el recorrido del administrador dentro de la aplicación
 
 Este diagrama representa el recorrido del fisioterapeuta dentro del portal clínico. El flujo considera el acceso al dashboard, revisión de pacientes, planificación de terapias, asignación de dispositivos y seguimiento del progreso.
 
-<img src="assets/ux-ui/wireflows/web/physiotherapist/physiotherapist_wireflow.png" alt="Wireflow web del fisioterapeuta en uFlex" width="100%">
+<img src="assets/ux-ui/wireflows/physiotherapist/physiotherapist_wireflow.png" alt="Wireflow web del fisioterapeuta en uFlex" width="100%">
 
 <hr class="page-break">
 
