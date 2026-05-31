@@ -6059,7 +6059,7 @@ Esta pantalla muestra el perfil del administrador y la información asociada a s
 
 Esta pantalla muestra la gestión visual de la organización o clínica dentro de uFlex.
 
-<img src="assets/ux-ui/mockups/web/admin/Organization_admin.png" alt="Mock-up de organización del administrador en uFlex" width="100%">
+<img src="assets/ux-ui/mockups/web/admin/Organizacion_admin.png" alt="Mock-up de organización del administrador en uFlex" width="100%">
 
 **Organization Admin 2 Mock-up**
 
@@ -6155,7 +6155,7 @@ Esta pantalla muestra la planificación terapéutica de pacientes, incluyendo se
 
 Esta pantalla muestra la gestión y seguimiento de terapias del paciente, permitiendo revisar el avance registrado por el sistema.
 
-<img src="assets/ux-ui/mockups/web/physiotherapist/Therapy_physiotherapist.png" alt="Mock-up de terapia del fisioterapeuta en uFlex" width="100%">
+<img src="assets/ux-ui/mockups/web/physiotherapist/Theraphy_physiotherapist.png" alt="Mock-up de terapia del fisioterapeuta en uFlex" width="100%">
 
 <hr class="page-break">
 
