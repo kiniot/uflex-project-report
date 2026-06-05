@@ -7597,6 +7597,487 @@ Durante el Sprint 1 las actividades de implementación se distribuyeron de forma
 
 <hr class="page-break">
 
+#### 6.2.2. Sprint 2
+
+Durante el segundo sprint, el equipo se enfoco en avanzar desde una primera version funcional de la web application hacia la integracion tecnica del ecosistema de uFlex con los componentes IoT, Edge y backend principal. El trabajo se concentro en los bounded contexts de **Organization**, **Device**, **Planning** y **Therapy**, asi como en la configuracion inicial del entorno Edge, la comunicacion BLE, el broker Mosquitto, el PoC del dispositivo en Wokwi/Cirkit y la mejora responsive de la aplicacion web.
+
+Este sprint busca conectar la experiencia digital con la capa fisica del sistema, permitiendo que los flujos de paciente, fisioterapeuta y administrador tengan soporte tecnico para gestionar kits IoT, crear planes terapeuticos, ejecutar sesiones de rehabilitacion y registrar telemetria proveniente del dispositivo.
+
+##### 6.2.2.1. Sprint Planning 2
+
+Se presenta el sprint planning correspondiente a la segunda entrega, detallando el contexto de planificacion, el objetivo del sprint y la capacidad estimada del equipo.
+
+A continuación se presenta una captura de pantalla de nuestro tablero en Jira/Trello:
+
+![Captura Sprint 2](./assets/images/screenshots/sprint-2/sprint-2-board.png)  
+[https://kyrubi-upc.atlassian.net/jira/software/projects/HU/boards/34](https://kyrubi-upc.atlassian.net/jira/software/projects/HU/boards/34)
+
+<div style="font-size:90%; overflow-x:auto;">
+  <table border="1" cellspacing="0" cellpadding="5">
+    <tbody>
+      <tr>
+        <th>Sprint #</th>
+        <td>Sprint 2</td>
+      </tr>
+      <tr>
+        <th colspan="2">Sprint Planning Background</th>
+      </tr>
+      <tr>
+        <th>Date</th>
+        <td>05/06/2026</td>
+      </tr>
+      <tr>
+        <th>Time</th>
+        <td>08:30 PM</td>
+      </tr>
+      <tr>
+        <th>Location</th>
+        <td>Reunion grupal virtual mediante Discord</td>
+      </tr>
+      <tr>
+        <th>Prepared By</th>
+        <td>Marcelo Varela</td>
+      </tr>
+      <tr>
+        <th>Attendees (to planning meeting)</th>
+        <td>Paul Sulca, Daniel Crispin, Salim Ramirez, Eduardo Rivera, Marcelo Varela</td>
+      </tr>
+      <tr>
+        <th colspan="2">Sprint Goal & User Stories</th>
+      </tr>
+      <tr>
+        <th>Sprint 2 Goal</th>
+        <td>
+          Nos centramos en implementar e integrar los principales modulos de software relacionados con Organization, Device, Planning y Therapy, conectandolos con la capa Embedded y Edge del ecosistema uFlex. Creemos que esto entregara una base funcional para registrar dispositivos, vincular kits IoT, crear planes terapeuticos, ejecutar sesiones de rehabilitacion y procesar telemetria desde el entorno Edge. Esto se confirmara cuando el PoC del dispositivo pueda simular la captura de datos, el Edge tenga configuracion inicial con Mosquitto e IAM, y la web application muestre flujos coherentes para fisioterapeutas y administradores.
+        </td>
+      </tr>
+      <tr>
+        <th>Sprint 2 Velocity</th>
+        <td>52</td>
+      </tr>
+      <tr>
+        <th>Sum of Story Points</th>
+        <td>52</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+##### 6.2.2.2. Aspect Leaders and Collaborators
+
+En esta seccion se presenta la matriz Leadership-and-Collaboration Matrix (LACX) correspondiente al Sprint 2. A diferencia del Sprint 1, este sprint incorpora mas frentes tecnicos debido a la integracion del software con el dispositivo IoT y el entorno Edge. Por ello, los aspectos principales de coordinacion fueron **Organization**, **Device**, **Planning**, **Therapy**, **Embedded**, **Edge** y **Web**.
+
+<div style="font-size:80%; overflow-x:auto;">
+  <table border="1" cellspacing="0" cellpadding="5">
+    <thead>
+      <tr>
+        <th>Team Member (Last Name, First Name)</th>
+        <th>GitHub Username</th>
+        <th>Organization</th>
+        <th>Device</th>
+        <th>Planning</th>
+        <th>Therapy</th>
+        <th>Embedded</th>
+        <th>Edge</th>
+        <th>Web</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Ramirez Mestanza, Salim Ignacio</td>
+        <td><code>salimramirez</code></td>
+        <td>-</td>
+        <td>-</td>
+        <td>L</td>
+        <td>-</td>
+        <td>C</td>
+        <td>C</td>
+        <td>C</td>
+      </tr>
+      <tr>
+        <td>Sulca Gonzales, Paul Fernando</td>
+        <td><code>Kyrubi</code></td>
+        <td>-</td>
+        <td>L</td>
+        <td>-</td>
+        <td>L</td>
+        <td>C</td>
+        <td>C</td>
+        <td>C</td>
+      </tr>
+      <tr>
+        <td>Crispin Ramos, Daniel Franco</td>
+        <td><code>danielcr04</code></td>
+        <td>L</td>
+        <td>C</td>
+        <td>-</td>
+        <td>-</td>
+        <td>C</td>
+        <td>C</td>
+        <td>C</td>
+      </tr>
+      <tr>
+        <td>Varela Bustinza, Marcelo Alessandro</td>
+        <td><code>VarBus</code></td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>L</td>
+        <td>C</td>
+        <td>-</td>
+      </tr>
+      <tr>
+        <td>Rivera Sosa, Eduardo Gael</td>
+        <td><code>gael-rs</code></td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>C</td>
+        <td>L</td>
+        <td>L</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+La organizacion de lideres y colaboradores mantiene relacion directa con la distribucion de tareas del Sprint 2, ya que cada integrante asumio responsabilidades especificas sobre los modulos de software, la integracion con hardware, la configuracion del Edge y la preparacion de artefactos tecnicos para el reporte.
+
+##### 6.2.2.3. Sprint Backlog 2
+
+El objetivo de este Sprint es presentar una segunda version funcional del ecosistema uFlex, incorporando la base tecnica para la comunicacion entre el dispositivo IoT, el entorno Edge y los modulos principales del backend. Para ello, se priorizaron User Stories y Technical Stories relacionadas con emparejamiento del sensor, ejecucion de sesiones, creacion de protocolos, vinculacion de kits IoT, registro de sesiones, consulta de metricas, autenticacion multitenant y envio de telemetria al Edge API.
+
+<div style="font-size:80%; overflow-x:auto;">
+  <table border="1" cellspacing="0" cellpadding="5">
+    <thead>
+      <tr>
+        <th colspan="2">Sprint #</th>
+        <th colspan="6">Sprint 2</th>
+      </tr>
+      <tr>
+        <th colspan="2">User Story / Technical Story</th>
+        <th colspan="6">Work-Item / Task</th>
+      </tr>
+      <tr>
+        <th>Id</th>
+        <th>Title</th>
+        <th>Id</th>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Estimation (Hours)</th>
+        <th>Assigned To</th>
+        <th>Status (To-do / In-Process / To-Review / Done)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>US29</td>
+        <td>Gestion de fisioterapeutas de la clinica</td>
+        <td>US29-a</td>
+        <td>Implementar modulo Organization</td>
+        <td>Desarrollar la base backend, web y mobile para registrar y consultar fisioterapeutas asociados a una clinica.</td>
+        <td>4</td>
+        <td>Daniel Crispin</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US29</td>
+        <td>Gestion de fisioterapeutas de la clinica</td>
+        <td>US29-b</td>
+        <td>Validar relacion usuario-clinica</td>
+        <td>Agregar validaciones para asegurar que los usuarios operen dentro de la clinica correspondiente.</td>
+        <td>3</td>
+        <td>Daniel Crispin</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US30</td>
+        <td>Invitacion de paciente y vinculacion de kit IoT</td>
+        <td>US30-a</td>
+        <td>Modelar vinculacion paciente-kit</td>
+        <td>Implementar la logica inicial para asociar un kit IoT disponible a un paciente invitado por la clinica.</td>
+        <td>4</td>
+        <td>Paul Sulca</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US30</td>
+        <td>Invitacion de paciente y vinculacion de kit IoT</td>
+        <td>US30-b</td>
+        <td>Validar disponibilidad del kit</td>
+        <td>Verificar que un kit no pueda ser asignado a mas de un paciente y mantener su estado actualizado.</td>
+        <td>3</td>
+        <td>Daniel Crispin</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US21</td>
+        <td>Creacion de protocolo de ejercicios</td>
+        <td>US21-a</td>
+        <td>Implementar backend de Planning</td>
+        <td>Desarrollar la estructura inicial para crear protocolos terapeuticos con ejercicios, series, repeticiones y rangos articulares.</td>
+        <td>4</td>
+        <td>Salim Ramirez</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US21</td>
+        <td>Creacion de protocolo de ejercicios</td>
+        <td>US21-b</td>
+        <td>Conectar Planning con Web y Mobile</td>
+        <td>Preparar la integracion del protocolo terapeutico para que pueda ser consultado desde los clientes web y mobile.</td>
+        <td>3</td>
+        <td>Salim Ramirez</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US11</td>
+        <td>Consulta de la rutina asignada del dia</td>
+        <td>US11-a</td>
+        <td>Exponer rutina vigente</td>
+        <td>Implementar la consulta de la rutina diaria asignada al paciente desde el modulo Planning.</td>
+        <td>3</td>
+        <td>Salim Ramirez</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US11</td>
+        <td>Consulta de la rutina asignada del dia</td>
+        <td>US11-b</td>
+        <td>Validar respuesta para cliente mobile</td>
+        <td>Preparar la respuesta con ejercicios, series y rangos objetivo para su consumo desde la aplicacion movil.</td>
+        <td>2</td>
+        <td>Salim Ramirez</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US12</td>
+        <td>Emparejamiento del sensor IoT</td>
+        <td>US12-a</td>
+        <td>Implementar comunicacion BLE</td>
+        <td>Configurar el flujo de descubrimiento y emparejamiento del sensor mediante Bluetooth Low Energy.</td>
+        <td>4</td>
+        <td>Daniel Crispin</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US12</td>
+        <td>Emparejamiento del sensor IoT</td>
+        <td>US12-b</td>
+        <td>Validar sensor aprovisionado</td>
+        <td>Verificar que el identificador del sensor se encuentre vinculado a un kit registrado antes de iniciar la captura.</td>
+        <td>3</td>
+        <td>Paul Sulca</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US12</td>
+        <td>Emparejamiento del sensor IoT</td>
+        <td>US12-c</td>
+        <td>Actualizar User Stories del flujo IoT</td>
+        <td>Alinear las historias de usuario del flujo de emparejamiento con el alcance real del PoC fisico y del entorno Edge.</td>
+        <td>2</td>
+        <td>Marcelo Varela</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US13</td>
+        <td>Ejecucion de una sesion de ejercicio</td>
+        <td>US13-a</td>
+        <td>Implementar modulo Therapy</td>
+        <td>Desarrollar la base backend, web y mobile para registrar la ejecucion de sesiones de rehabilitacion.</td>
+        <td>5</td>
+        <td>Paul Sulca</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US13</td>
+        <td>Ejecucion de una sesion de ejercicio</td>
+        <td>US13-b</td>
+        <td>Procesar rutina con telemetria Edge</td>
+        <td>Preparar el flujo para recibir datos del Edge y relacionarlos con la sesion terapeutica activa.</td>
+        <td>4</td>
+        <td>Paul Sulca</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US13</td>
+        <td>Ejecucion de una sesion de ejercicio</td>
+        <td>US13-c</td>
+        <td>Integrar captura desde hardware IoT</td>
+        <td>Validar las conexiones fisicas del hardware IoT necesarias para la captura inicial de movimiento.</td>
+        <td>3</td>
+        <td>Eduardo Gael</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US14</td>
+        <td>Reporte de dolor al finalizar la sesion</td>
+        <td>US14-a</td>
+        <td>Registrar reporte de dolor</td>
+        <td>Permitir que el paciente registre un valor de dolor asociado a una sesion finalizada.</td>
+        <td>2</td>
+        <td>Paul Sulca</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US23</td>
+        <td>Revision del dashboard de metricas ROM</td>
+        <td>US23-c</td>
+        <td>Conectar dashboard con metricas</td>
+        <td>Consumir las metricas ROM registradas para mostrar informacion clinica al fisioterapeuta.</td>
+        <td>3</td>
+        <td>Eduardo Gael</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US23</td>
+        <td>Revision del dashboard de metricas ROM</td>
+        <td>US23-d</td>
+        <td>Ajustar responsividad web</td>
+        <td>Optimizar la visualizacion del dashboard y vistas principales en distintos tamanos de pantalla.</td>
+        <td>3</td>
+        <td>Eduardo Gael</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>TS34</td>
+        <td>Endpoint de registro de sesiones de rehabilitacion</td>
+        <td>TS34-a</td>
+        <td>Definir contrato POST /api/v1/sessions</td>
+        <td>Implementar el contrato base para registrar sesiones de rehabilitacion desde los clientes.</td>
+        <td>3</td>
+        <td>Paul Sulca</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>TS34</td>
+        <td>Endpoint de registro de sesiones de rehabilitacion</td>
+        <td>TS34-b</td>
+        <td>Validar persistencia de sesiones</td>
+        <td>Probar que las sesiones se registren correctamente con paciente, protocolo y fecha de ejecucion.</td>
+        <td>3</td>
+        <td>Paul Sulca</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>TS35</td>
+        <td>Endpoint de consulta de metricas del paciente</td>
+        <td>TS35-a</td>
+        <td>Definir contrato GET /api/v1/patients/{id}/metrics</td>
+        <td>Implementar la consulta del historico de metricas del paciente para web y mobile.</td>
+        <td>3</td>
+        <td>Eduardo Gael</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>TS35</td>
+        <td>Endpoint de consulta de metricas del paciente</td>
+        <td>TS35-b</td>
+        <td>Preparar respuesta para dashboard</td>
+        <td>Estructurar la respuesta con datos de ROM, adherencia y progreso para el dashboard clinico.</td>
+        <td>3</td>
+        <td>Eduardo Gael</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>TS36</td>
+        <td>Envio de telemetria al Edge API</td>
+        <td>TS36-a</td>
+        <td>Seteo inicial del Edge</td>
+        <td>Preparar el entorno base del Edge para recibir telemetria del dispositivo IoT.</td>
+        <td>4</td>
+        <td>Eduardo Gael</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>TS36</td>
+        <td>Envio de telemetria al Edge API</td>
+        <td>TS36-b</td>
+        <td>Configurar broker Mosquitto</td>
+        <td>Configurar Mosquitto como broker MQTT para la comunicacion entre sensores, Edge y servicios.</td>
+        <td>4</td>
+        <td>Salim Ramirez</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>TS36</td>
+        <td>Envio de telemetria al Edge API</td>
+        <td>TS36-c</td>
+        <td>Implementar Therapy del Edge</td>
+        <td>Preparar la logica inicial del Edge para procesar datos relacionados con sesiones terapeuticas.</td>
+        <td>4</td>
+        <td>Paul Sulca</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>TS36</td>
+        <td>Envio de telemetria al Edge API</td>
+        <td>TS36-d</td>
+        <td>Construir PoC en Wokwi / Cirkit</td>
+        <td>Crear la prueba de concepto del dispositivo IoT para validar sensores, conexiones y flujo de datos.</td>
+        <td>4</td>
+        <td>Marcelo Varela</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>TS36</td>
+        <td>Envio de telemetria al Edge API</td>
+        <td>TS36-e</td>
+        <td>Documentar conexiones de hardware IoT</td>
+        <td>Registrar las conexiones fisicas del hardware IoT usadas en el prototipo y su relacion con el flujo de telemetria.</td>
+        <td>3</td>
+        <td>Salim Ramirez, Paul Sulca, Eduardo Gael</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>TS36</td>
+        <td>Envio de telemetria al Edge API</td>
+        <td>TS36-f</td>
+        <td>Elaborar diagrama de clases Embedded</td>
+        <td>Construir el diagrama de clases en PlantUML para representar los componentes principales del modulo Embedded.</td>
+        <td>3</td>
+        <td>Marcelo Varela</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>TS37</td>
+        <td>Autenticacion JWT con filtro multitenant</td>
+        <td>TS37-c</td>
+        <td>Implementar IAM del Edge</td>
+        <td>Preparar la validacion de identidad y permisos para las solicitudes procesadas desde el entorno Edge.</td>
+        <td>4</td>
+        <td>Daniel Crispin</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>TS37</td>
+        <td>Autenticacion JWT con filtro multitenant</td>
+        <td>TS37-d</td>
+        <td>Validar acceso de servicios Edge</td>
+        <td>Probar que los servicios del Edge respeten el contexto de usuario, clinica y rol definido por el sistema.</td>
+        <td>3</td>
+        <td>Daniel Crispin</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>TS37</td>
+        <td>Autenticacion JWT con filtro multitenant</td>
+        <td>TS37-e</td>
+        <td>Elaborar diagrama de clases Edge</td>
+        <td>Construir el diagrama de clases en PlantUML para representar los componentes principales del Edge.</td>
+        <td>3</td>
+        <td>Marcelo Varela</td>
+        <td>Done</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+
+
 # Conclusiones
 
 En esta sección se presentan las conclusiones y recomendaciones derivadas del desarrollo del proyecto. Se analizan los resultados obtenidos, los desafíos enfrentados y las lecciones aprendidas durante el proceso. Además, se proponen acciones futuras para mejorar y optimizar la plataforma uFlex.
