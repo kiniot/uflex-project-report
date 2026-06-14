@@ -1933,11 +1933,11 @@ A partir del análisis de los segmentos objetivo, las entrevistas, las hipótesi
       <td>EP04</td>
     </tr>
     <tr>
-      <td><b>EP05</b></td>
-      <td>Technical Stories (APIs, Edge e integraciones)</td>
-      <td>Conjunto de Technical Stories que soportan los productos digitales sin interacción directa con usuarios finales: RESTful API interno, Edge API para telemetría del sensor, integración con la pasarela de pagos externa y servicio de notificaciones transaccionales.</td>
-      <td>—</td>
-      <td>—</td>
+  <td><b>EP05</b></td>
+  <td>Technical Stories (APIs, Edge e integraciones)</td>
+  <td>Conjunto de Technical Stories que soportan los productos digitales sin interacción directa con usuarios finales: RESTful API interno, Edge API para telemetría del sensor, firmware Embedded del dispositivo IoT, integración con la pasarela de pagos externa y servicio de notificaciones transaccionales.</td>
+  <td>—</td>
+  <td>—</td>
     </tr>
     <tr>
       <td>TS34</td>
@@ -2035,6 +2035,55 @@ A partir del análisis de los segmentos objetivo, las entrevistas, las hipótesi
       </td>
       <td>EP05</td>
     </tr>
+<tr>
+  <td>TS40</td>
+  <td>Firmware Embedded para captura de datos de movimiento</td>
+  <td>Como Developer, quiero implementar la lógica Embedded de captura de datos desde los sensores del dispositivo IoT para obtener mediciones iniciales del movimiento articular durante una sesión de rehabilitación.</td>
+  <td>
+    <b>Escenario 1: Captura exitosa de datos del sensor</b><br>
+    <b>Given</b> que el dispositivo IoT se encuentra encendido y los sensores están conectados correctamente,<br>
+    <b>When</b> el firmware inicia la lectura de datos,<br>
+    <b>Then</b> el sistema captura valores de movimiento y los prepara para su procesamiento local.<br><br>
+    <b>Escenario 2: Sensor no disponible</b><br>
+    <b>Given</b> que el dispositivo IoT intenta iniciar la captura,<br>
+    <b>When</b> uno de los sensores no responde o no está conectado correctamente,<br>
+    <b>Then</b> el sistema marca el estado del dispositivo como error y evita enviar datos inválidos.
+  </td>
+  <td>EP05</td>
+</tr>
+
+<tr>
+  <td>TS41</td>
+  <td>Calibración y validación inicial del dispositivo IoT</td>
+  <td>Como Developer, quiero implementar una rutina de calibración y validación inicial del dispositivo IoT para asegurar que las mediciones capturadas sean consistentes antes de iniciar una sesión terapéutica.</td>
+  <td>
+    <b>Escenario 1: Calibración completada correctamente</b><br>
+    <b>Given</b> que el dispositivo IoT se encuentra en estado de configuración inicial,<br>
+    <b>When</b> el firmware ejecuta la rutina de calibración,<br>
+    <b>Then</b> el sistema establece valores base para la captura de movimiento y permite continuar con la sesión.<br><br>
+    <b>Escenario 2: Calibración fallida</b><br>
+    <b>Given</b> que el dispositivo IoT intenta calibrarse,<br>
+    <b>When</b> los valores obtenidos están fuera del rango esperado,<br>
+    <b>Then</b> el sistema conserva el estado de error y solicita repetir la calibración antes de capturar telemetría.
+  </td>
+  <td>EP05</td>
+</tr>
+<tr>
+  <td>TS42</td>
+  <td>Generación de paquete de telemetría desde Embedded</td>
+  <td>Como Developer, quiero generar paquetes de telemetría desde el firmware Embedded para enviar datos estructurados hacia la capa Edge del ecosistema uFlex.</td>
+  <td>
+    <b>Escenario 1: Paquete de telemetría generado correctamente</b><br>
+    <b>Given</b> que el dispositivo IoT capturó datos válidos de movimiento,<br>
+    <b>When</b> el firmware construye el paquete de telemetría,<br>
+    <b>Then</b> el sistema incluye identificador del dispositivo, sesión, ángulo estimado, batería y marca temporal.<br><br>
+    <b>Escenario 2: Datos incompletos</b><br>
+    <b>Given</b> que el dispositivo IoT intenta generar telemetría,<br>
+    <b>When</b> faltan datos obligatorios del sensor o de la sesión,<br>
+    <b>Then</b> el sistema descarta el paquete y no lo envía hacia la capa Edge.
+  </td>
+  <td>EP05</td>
+</tr>
   </tbody>
 </table>
 
@@ -7660,150 +7709,10 @@ Durante el segundo sprint, el equipo se enfoco en avanzar desde una primera vers
 
 Este sprint busca conectar la experiencia digital con la capa fisica del sistema, permitiendo que los flujos de paciente, fisioterapeuta y administrador tengan soporte tecnico para gestionar kits IoT, crear planes terapeuticos, ejecutar sesiones de rehabilitacion y registrar telemetria proveniente del dispositivo.
 
-##### 6.2.2.1. Sprint Planning 2
-
-Se presenta el sprint planning correspondiente a la segunda entrega, detallando el contexto de planificacion, el objetivo del sprint y la capacidad estimada del equipo.
-
-A continuación se presenta una captura de pantalla de nuestro tablero en Jira/Trello:
-
-![Captura Sprint 2](./assets/images/screenshots/sprint-2/sprint-2-board.png)  
-[https://kyrubi-upc.atlassian.net/jira/software/projects/HU/boards/34](https://kyrubi-upc.atlassian.net/jira/software/projects/HU/boards/34)
-
-<div style="font-size:90%; overflow-x:auto;">
-  <table border="1" cellspacing="0" cellpadding="5">
-    <tbody>
-      <tr>
-        <th>Sprint #</th>
-        <td>Sprint 2</td>
-      </tr>
-      <tr>
-        <th colspan="2">Sprint Planning Background</th>
-      </tr>
-      <tr>
-        <th>Date</th>
-        <td>05/06/2026</td>
-      </tr>
-      <tr>
-        <th>Time</th>
-        <td>08:30 PM</td>
-      </tr>
-      <tr>
-        <th>Location</th>
-        <td>Reunion grupal virtual mediante Discord</td>
-      </tr>
-      <tr>
-        <th>Prepared By</th>
-        <td>Marcelo Varela</td>
-      </tr>
-      <tr>
-        <th>Attendees (to planning meeting)</th>
-        <td>Paul Sulca, Daniel Crispin, Salim Ramirez, Eduardo Rivera, Marcelo Varela</td>
-      </tr>
-      <tr>
-        <th colspan="2">Sprint Goal & User Stories</th>
-      </tr>
-      <tr>
-        <th>Sprint 2 Goal</th>
-        <td>
-          Nos centramos en implementar e integrar los principales modulos de software relacionados con Organization, Device, Planning y Therapy, conectandolos con la capa Embedded y Edge del ecosistema uFlex. Creemos que esto entregara una base funcional para registrar dispositivos, vincular kits IoT, crear planes terapeuticos, ejecutar sesiones de rehabilitacion y procesar telemetria desde el entorno Edge. Esto se confirmara cuando el PoC del dispositivo pueda simular la captura de datos, el Edge tenga configuracion inicial con Mosquitto e IAM, y la web application muestre flujos coherentes para fisioterapeutas y administradores.
-        </td>
-      </tr>
-      <tr>
-        <th>Sprint 2 Velocity</th>
-        <td>52</td>
-      </tr>
-      <tr>
-        <th>Sum of Story Points</th>
-        <td>52</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
-##### 6.2.2.2. Aspect Leaders and Collaborators
-
-En esta seccion se presenta la matriz Leadership-and-Collaboration Matrix (LACX) correspondiente al Sprint 2. A diferencia del Sprint 1, este sprint incorpora mas frentes tecnicos debido a la integracion del software con el dispositivo IoT y el entorno Edge. Por ello, los aspectos principales de coordinacion fueron **Organization**, **Device**, **Planning**, **Therapy**, **Embedded**, **Edge** y **Web**.
-
-<div style="font-size:80%; overflow-x:auto;">
-  <table border="1" cellspacing="0" cellpadding="5">
-    <thead>
-      <tr>
-        <th>Team Member (Last Name, First Name)</th>
-        <th>GitHub Username</th>
-        <th>Organization</th>
-        <th>Device</th>
-        <th>Planning</th>
-        <th>Therapy</th>
-        <th>Embedded</th>
-        <th>Edge</th>
-        <th>Web</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Ramirez Mestanza, Salim Ignacio</td>
-        <td><code>salimramirez</code></td>
-        <td>-</td>
-        <td>-</td>
-        <td>L</td>
-        <td>-</td>
-        <td>C</td>
-        <td>C</td>
-        <td>C</td>
-      </tr>
-      <tr>
-        <td>Sulca Gonzales, Paul Fernando</td>
-        <td><code>Kyrubi</code></td>
-        <td>-</td>
-        <td>L</td>
-        <td>-</td>
-        <td>L</td>
-        <td>C</td>
-        <td>C</td>
-        <td>C</td>
-      </tr>
-      <tr>
-        <td>Crispin Ramos, Daniel Franco</td>
-        <td><code>danielcr04</code></td>
-        <td>L</td>
-        <td>C</td>
-        <td>-</td>
-        <td>-</td>
-        <td>C</td>
-        <td>C</td>
-        <td>C</td>
-      </tr>
-      <tr>
-        <td>Varela Bustinza, Marcelo Alessandro</td>
-        <td><code>VarBus</code></td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
-        <td>L</td>
-        <td>C</td>
-        <td>-</td>
-      </tr>
-      <tr>
-        <td>Rivera Sosa, Eduardo Gael</td>
-        <td><code>gael-rs</code></td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
-        <td>C</td>
-        <td>L</td>
-        <td>L</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
-La organizacion de lideres y colaboradores mantiene relacion directa con la distribucion de tareas del Sprint 2, ya que cada integrante asumio responsabilidades especificas sobre los modulos de software, la integracion con hardware, la configuracion del Edge y la preparacion de artefactos tecnicos para el reporte.
 
 ##### 6.2.2.3. Sprint Backlog 2
 
-El objetivo de este Sprint es presentar una segunda version funcional del ecosistema uFlex, incorporando la base tecnica para la comunicacion entre el dispositivo IoT, el entorno Edge y los modulos principales del backend. Para ello, se priorizaron User Stories y Technical Stories relacionadas con emparejamiento del sensor, ejecucion de sesiones, creacion de protocolos, vinculacion de kits IoT, registro de sesiones, consulta de metricas, autenticacion multitenant y envio de telemetria al Edge API.
+El objetivo de este Sprint es presentar una segunda version funcional del ecosistema uFlex, incorporando la base tecnica para la comunicacion entre el dispositivo IoT, el entorno Edge y los modulos principales del backend. Para ello, se priorizaron User Stories y Technical Stories relacionadas con emparejamiento del sensor, ejecucion de sesiones, creacion de protocolos, vinculacion de kits IoT, registro de sesiones, consulta de metricas, autenticacion multitenant, envio de telemetria al Edge API y soporte Embedded para la captura, calibracion y generacion de paquetes de telemetria desde el prototipo IoT.
 
 <div style="font-size:80%; overflow-x:auto;">
   <table border="1" cellspacing="0" cellpadding="5">
@@ -7929,16 +7838,6 @@ El objetivo de este Sprint es presentar una segunda version funcional del ecosis
         <td>Done</td>
       </tr>
       <tr>
-        <td>US12</td>
-        <td>Emparejamiento del sensor IoT</td>
-        <td>US12-c</td>
-        <td>Actualizar User Stories del flujo IoT</td>
-        <td>Alinear las historias de usuario del flujo de emparejamiento con el alcance real del PoC fisico y del entorno Edge.</td>
-        <td>2</td>
-        <td>Marcelo Varela</td>
-        <td>Done</td>
-      </tr>
-      <tr>
         <td>US13</td>
         <td>Ejecucion de una sesion de ejercicio</td>
         <td>US13-a</td>
@@ -7959,16 +7858,6 @@ El objetivo de este Sprint es presentar una segunda version funcional del ecosis
         <td>Done</td>
       </tr>
       <tr>
-        <td>US13</td>
-        <td>Ejecucion de una sesion de ejercicio</td>
-        <td>US13-c</td>
-        <td>Integrar captura desde hardware IoT</td>
-        <td>Validar las conexiones fisicas del hardware IoT necesarias para la captura inicial de movimiento.</td>
-        <td>3</td>
-        <td>Eduardo Gael</td>
-        <td>Done</td>
-      </tr>
-      <tr>
         <td>US14</td>
         <td>Reporte de dolor al finalizar la sesion</td>
         <td>US14-a</td>
@@ -7981,7 +7870,7 @@ El objetivo de este Sprint es presentar una segunda version funcional del ecosis
       <tr>
         <td>US23</td>
         <td>Revision del dashboard de metricas ROM</td>
-        <td>US23-c</td>
+        <td>US23-a</td>
         <td>Conectar dashboard con metricas</td>
         <td>Consumir las metricas ROM registradas para mostrar informacion clinica al fisioterapeuta.</td>
         <td>3</td>
@@ -7991,7 +7880,7 @@ El objetivo de este Sprint es presentar una segunda version funcional del ecosis
       <tr>
         <td>US23</td>
         <td>Revision del dashboard de metricas ROM</td>
-        <td>US23-d</td>
+        <td>US23-b</td>
         <td>Ajustar responsividad web</td>
         <td>Optimizar la visualizacion del dashboard y vistas principales en distintos tamanos de pantalla.</td>
         <td>3</td>
@@ -8069,39 +7958,9 @@ El objetivo de este Sprint es presentar una segunda version funcional del ecosis
         <td>Done</td>
       </tr>
       <tr>
-        <td>TS36</td>
-        <td>Envio de telemetria al Edge API</td>
-        <td>TS36-d</td>
-        <td>Construir PoC en Wokwi / Cirkit</td>
-        <td>Crear la prueba de concepto del dispositivo IoT para validar sensores, conexiones y flujo de datos.</td>
-        <td>4</td>
-        <td>Marcelo Varela</td>
-        <td>Done</td>
-      </tr>
-      <tr>
-        <td>TS36</td>
-        <td>Envio de telemetria al Edge API</td>
-        <td>TS36-e</td>
-        <td>Documentar conexiones de hardware IoT</td>
-        <td>Registrar las conexiones fisicas del hardware IoT usadas en el prototipo y su relacion con el flujo de telemetria.</td>
-        <td>3</td>
-        <td>Salim Ramirez, Paul Sulca, Eduardo Gael</td>
-        <td>Done</td>
-      </tr>
-      <tr>
-        <td>TS36</td>
-        <td>Envio de telemetria al Edge API</td>
-        <td>TS36-f</td>
-        <td>Elaborar diagrama de clases Embedded</td>
-        <td>Construir el diagrama de clases en PlantUML para representar los componentes principales del modulo Embedded.</td>
-        <td>3</td>
-        <td>Marcelo Varela</td>
-        <td>Done</td>
-      </tr>
-      <tr>
         <td>TS37</td>
         <td>Autenticacion JWT con filtro multitenant</td>
-        <td>TS37-c</td>
+        <td>TS37-a</td>
         <td>Implementar IAM del Edge</td>
         <td>Preparar la validacion de identidad y permisos para las solicitudes procesadas desde el entorno Edge.</td>
         <td>4</td>
@@ -8111,7 +7970,7 @@ El objetivo de este Sprint es presentar una segunda version funcional del ecosis
       <tr>
         <td>TS37</td>
         <td>Autenticacion JWT con filtro multitenant</td>
-        <td>TS37-d</td>
+        <td>TS37-b</td>
         <td>Validar acceso de servicios Edge</td>
         <td>Probar que los servicios del Edge respeten el contexto de usuario, clinica y rol definido por el sistema.</td>
         <td>3</td>
@@ -8119,20 +7978,108 @@ El objetivo de este Sprint es presentar una segunda version funcional del ecosis
         <td>Done</td>
       </tr>
       <tr>
+        <td>TS40</td>
+        <td>Firmware Embedded para captura de datos de movimiento</td>
+        <td>TS40-a</td>
+        <td>Construir PoC en Wokwi / Cirkit</td>
+        <td>Crear la prueba de concepto del dispositivo IoT para validar sensores, conexiones y flujo basico de captura de datos.</td>
+        <td>4</td>
+        <td>Marcelo Varela</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>TS40</td>
+        <td>Firmware Embedded para captura de datos de movimiento</td>
+        <td>TS40-b</td>
+        <td>Implementar lectura inicial de sensores</td>
+        <td>Preparar la logica Embedded para capturar datos basicos de movimiento desde los sensores del dispositivo IoT.</td>
+        <td>4</td>
+        <td>Marcelo Varela</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>TS40</td>
+        <td>Firmware Embedded para captura de datos de movimiento</td>
+        <td>TS40-c</td>
+        <td>Validar conexiones del prototipo IoT</td>
+        <td>Revisar que el prototipo mantenga conexiones coherentes entre sensores, placa de control y flujo de captura.</td>
+        <td>3</td>
+        <td>Salim Ramirez, Paul Sulca, Eduardo Gael</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>TS41</td>
+        <td>Calibracion y validacion inicial del dispositivo IoT</td>
+        <td>TS41-a</td>
+        <td>Definir rutina de calibracion Embedded</td>
+        <td>Agregar la logica conceptual de calibracion inicial para evitar que el dispositivo capture datos invalidos antes de una sesion.</td>
+        <td>3</td>
+        <td>Marcelo Varela</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>TS41</td>
+        <td>Calibracion y validacion inicial del dispositivo IoT</td>
+        <td>TS41-b</td>
+        <td>Documentar validacion del prototipo</td>
+        <td>Registrar la validacion del comportamiento esperado del dispositivo dentro del PoC en Wokwi/Cirkit.</td>
+        <td>3</td>
+        <td>Marcelo Varela</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>TS42</td>
+        <td>Generacion de paquete de telemetria desde Embedded</td>
+        <td>TS42-a</td>
+        <td>Definir estructura del paquete de telemetria</td>
+        <td>Establecer los campos minimos que el firmware debe preparar para enviar informacion hacia la capa Edge.</td>
+        <td>3</td>
+        <td>Marcelo Varela</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>TS42</td>
+        <td>Generacion de paquete de telemetria desde Embedded</td>
+        <td>TS42-b</td>
+        <td>Relacionar paquete Embedded con Edge API</td>
+        <td>Alinear la estructura del paquete de telemetria con el flujo de recepcion y procesamiento definido para la capa Edge.</td>
+        <td>3</td>
+        <td>Marcelo Varela</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>TS42</td>
+        <td>Generacion de paquete de telemetria desde Embedded</td>
+        <td>TS42-c</td>
+        <td>Actualizar diagrama de clases Embedded</td>
+        <td>Actualizar el diagrama PlantUML del modulo Embedded para reflejar captura de sensores, calibracion, estado del dispositivo y generacion de telemetria.</td>
+        <td>3</td>
+        <td>Marcelo Varela</td>
+        <td>Done</td>
+      </tr>
+      <tr>
         <td>TS37</td>
         <td>Autenticacion JWT con filtro multitenant</td>
-        <td>TS37-e</td>
-        <td>Elaborar diagrama de clases Edge</td>
-        <td>Construir el diagrama de clases en PlantUML para representar los componentes principales del Edge.</td>
+        <td>TS37-c</td>
+        <td>Actualizar diagrama de clases Edge</td>
+        <td>Actualizar el diagrama PlantUML del Edge para representar los servicios principales de IAM, monitoreo, procesamiento y comunicacion con el backend.</td>
         <td>3</td>
+        <td>Marcelo Varela</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>TS40 / TS41 / TS42</td>
+        <td>Actualizacion de Technical Stories Embedded</td>
+        <td>TS40-42-a</td>
+        <td>Agregar nuevas Technical Stories al informe</td>
+        <td>Actualizar la seccion de User Stories y Sprint Backlog para incorporar el alcance Embedded del dispositivo IoT.</td>
+        <td>2</td>
         <td>Marcelo Varela</td>
         <td>Done</td>
       </tr>
     </tbody>
   </table>
 </div>
-
-
 
 
 # Conclusiones
