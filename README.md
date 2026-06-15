@@ -7705,14 +7705,159 @@ Durante el Sprint 1 las actividades de implementación se distribuyeron de forma
 
 #### 6.2.2. Sprint 2
 
-Durante el segundo sprint, el equipo se enfoco en avanzar desde una primera version funcional de la web application hacia la integracion tecnica del ecosistema de uFlex con los componentes IoT, Edge y backend principal. El trabajo se concentro en los bounded contexts de **Organization**, **Device**, **Planning** y **Therapy**, asi como en la configuracion inicial del entorno Edge, la comunicacion BLE, el broker Mosquitto, el PoC del dispositivo en Wokwi/Cirkit y la mejora responsive de la aplicacion web.
+<p>
+Durante el segundo sprint, el equipo se enfoco en avanzar desde una primera version funcional de la web application hacia la integracion tecnica del ecosistema de uFlex con los componentes IoT, Edge y backend principal. El trabajo se concentro en los bounded contexts de <strong>Organization</strong>, <strong>Device</strong>, <strong>Planning</strong>, <strong>Therapy</strong>, <strong>IAM</strong> y <strong>Subscription</strong>, asi como en la configuracion inicial del entorno Edge, la comunicacion BLE, el broker Mosquitto, el PoC del dispositivo en Wokwi/Cirkit, el soporte Embedded y la mejora responsive de la aplicacion web.
+</p>
 
-Este sprint busca conectar la experiencia digital con la capa fisica del sistema, permitiendo que los flujos de paciente, fisioterapeuta y administrador tengan soporte tecnico para gestionar kits IoT, crear planes terapeuticos, ejecutar sesiones de rehabilitacion y registrar telemetria proveniente del dispositivo.
+<p>
+Este sprint busca conectar la experiencia digital con la capa fisica del sistema, permitiendo que los flujos de paciente, fisioterapeuta y administrador tengan soporte tecnico para gestionar kits IoT, crear planes terapeuticos, ejecutar sesiones de rehabilitacion, registrar telemetria proveniente del dispositivo y validar el correcto funcionamiento de los servicios principales mediante pruebas automatizadas.
+</p>
 
+##### 6.2.2.1. Sprint Planning 2
+
+<p>
+Se presenta el Sprint Planning correspondiente a la segunda entrega del proyecto. En esta etapa se definio el objetivo del Sprint, la capacidad de trabajo del equipo y las historias priorizadas para avanzar en la integracion entre backend, Edge Gateway, prototipo IoT, soporte Embedded, web application y mobile application.
+</p>
+
+<p>
+A continuacion se presenta el enlace al tablero de Jira utilizado para la gestion del Sprint 2:
+</p>
+
+<p>
+https://fastpavos.atlassian.net/jira/software/projects/UF/boards/34
+</p>
+
+<div style="font-size:80%; overflow-x:auto;">
+  <table border="1" cellspacing="0" cellpadding="5">
+    <tbody>
+      <tr>
+        <th colspan="2">Sprint #</th>
+        <td colspan="2">Sprint 2</td>
+      </tr>
+      <tr>
+        <th colspan="4">Sprint Planning Background</th>
+      </tr>
+      <tr>
+        <th>Date</th>
+        <td>07/06/2026</td>
+        <th>Time</th>
+        <td>03:30 PM</td>
+      </tr>
+      <tr>
+        <th>Location</th>
+        <td colspan="3">Reunion grupal virtual mediante Discord</td>
+      </tr>
+      <tr>
+        <th>Prepared By</th>
+        <td colspan="3">Equipo KinIoT</td>
+      </tr>
+      <tr>
+        <th>Attendees</th>
+        <td colspan="3">Daniel Crispin, Salim Ramirez, Eduardo Rivera, Paul Sulca, Marcelo Varela</td>
+      </tr>
+      <tr>
+        <th colspan="4">Sprint Goal & User Stories</th>
+      </tr>
+      <tr>
+        <th>Sprint 2 Goal</th>
+        <td colspan="3">
+          Nos centramos en integrar la base tecnica del ecosistema uFlex con los modulos backend, Edge Gateway, prototipo IoT y soporte Embedded. Creemos que esto permitira validar una segunda version funcional del producto, conectando la gestion clinica con el flujo de dispositivos, planes terapeuticos, sesiones de rehabilitacion, telemetria y autenticacion segura.
+        </td>
+      </tr>
+      <tr>
+        <th>Sprint 2 Velocity</th>
+        <td>63</td>
+        <th>Sum of Story Points</th>
+        <td>63</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+##### 6.2.2.2. Aspect Leaders and Collaborators
+
+<p>
+En esta seccion se presenta la matriz Leadership-and-Collaboration Matrix correspondiente al Sprint 2. Dado que el alcance de este sprint incluye backend, web application, mobile application, Edge Gateway, prototipo IoT, Embedded y testing, se definieron lideres y colaboradores por frente de trabajo.
+</p>
+
+<div style="font-size:80%; overflow-x:auto;">
+  <table border="1" cellspacing="0" cellpadding="5">
+    <thead>
+      <tr>
+        <th>Team Member</th>
+        <th>GitHub Username</th>
+        <th>Backend REST API</th>
+        <th>Web Application</th>
+        <th>Mobile Application</th>
+        <th>Edge Gateway</th>
+        <th>IoT / Embedded</th>
+        <th>Testing & Documentation</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Crispin Ramos, Daniel Franco</td>
+        <td>danielcr04</td>
+        <td>L</td>
+        <td>C</td>
+        <td>C</td>
+        <td>C</td>
+        <td>C</td>
+        <td>C</td>
+      </tr>
+      <tr>
+        <td>Ramirez Mestanza, Salim Ignacio</td>
+        <td>salimramirez</td>
+        <td>L</td>
+        <td>C</td>
+        <td>C</td>
+        <td>L</td>
+        <td>C</td>
+        <td>C</td>
+      </tr>
+      <tr>
+        <td>Sulca Gonzales, Paul Fernando</td>
+        <td>Kyrubi</td>
+        <td>L</td>
+        <td>C</td>
+        <td>C</td>
+        <td>L</td>
+        <td>C</td>
+        <td>C</td>
+      </tr>
+      <tr>
+        <td>Rivera Sosa, Eduardo Gael</td>
+        <td>gael-rs</td>
+        <td>C</td>
+        <td>L</td>
+        <td>C</td>
+        <td>L</td>
+        <td>C</td>
+        <td>C</td>
+      </tr>
+      <tr>
+        <td>Varela Bustinza, Marcelo Alessandro</td>
+        <td>VarBus</td>
+        <td>C</td>
+        <td>C</td>
+        <td>C</td>
+        <td>C</td>
+        <td>L</td>
+        <td>L</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<p>
+Leyenda: <strong>L</strong> = Leader, <strong>C</strong> = Collaborator.
+</p>
 
 ##### 6.2.2.3. Sprint Backlog 2
 
+<p>
 El objetivo de este Sprint es presentar una segunda version funcional del ecosistema uFlex, incorporando la base tecnica para la comunicacion entre el dispositivo IoT, el entorno Edge y los modulos principales del backend. Para ello, se priorizaron User Stories y Technical Stories relacionadas con emparejamiento del sensor, ejecucion de sesiones, creacion de protocolos, vinculacion de kits IoT, registro de sesiones, consulta de metricas, autenticacion multitenant, envio de telemetria al Edge API y soporte Embedded para la captura, calibracion y generacion de paquetes de telemetria desde el prototipo IoT.
+</p>
 
 <div style="font-size:80%; overflow-x:auto;">
   <table border="1" cellspacing="0" cellpadding="5">
@@ -7737,350 +7882,430 @@ El objetivo de este Sprint es presentar una segunda version funcional del ecosis
       </tr>
     </thead>
     <tbody>
+      <tr><td>US29</td><td>Gestion de fisioterapeutas de la clinica</td><td>US29-a</td><td>Implementar modulo Organization</td><td>Desarrollar la base backend, web y mobile para registrar y consultar fisioterapeutas asociados a una clinica.</td><td>4</td><td>Daniel Crispin</td><td>Done</td></tr>
+      <tr><td>US29</td><td>Gestion de fisioterapeutas de la clinica</td><td>US29-b</td><td>Validar relacion usuario-clinica</td><td>Agregar validaciones para asegurar que los usuarios operen dentro de la clinica correspondiente.</td><td>3</td><td>Daniel Crispin</td><td>Done</td></tr>
+      <tr><td>US30</td><td>Invitacion de paciente y vinculacion de kit IoT</td><td>US30-a</td><td>Modelar vinculacion paciente-kit</td><td>Implementar la logica inicial para asociar un kit IoT disponible a un paciente invitado por la clinica.</td><td>4</td><td>Paul Sulca</td><td>Done</td></tr>
+      <tr><td>US30</td><td>Invitacion de paciente y vinculacion de kit IoT</td><td>US30-b</td><td>Validar disponibilidad del kit</td><td>Verificar que un kit no pueda ser asignado a mas de un paciente y mantener su estado actualizado.</td><td>3</td><td>Daniel Crispin</td><td>Done</td></tr>
+      <tr><td>US21</td><td>Creacion de protocolo de ejercicios</td><td>US21-a</td><td>Implementar backend de Planning</td><td>Desarrollar la estructura inicial para crear protocolos terapeuticos con ejercicios, series, repeticiones y rangos articulares.</td><td>4</td><td>Salim Ramirez</td><td>Done</td></tr>
+      <tr><td>US21</td><td>Creacion de protocolo de ejercicios</td><td>US21-b</td><td>Conectar Planning con Web y Mobile</td><td>Preparar la integracion del protocolo terapeutico para que pueda ser consultado desde los clientes web y mobile.</td><td>3</td><td>Salim Ramirez</td><td>Done</td></tr>
+      <tr><td>US11</td><td>Consulta de la rutina asignada del dia</td><td>US11-a</td><td>Exponer rutina vigente</td><td>Implementar la consulta de la rutina diaria asignada al paciente desde el modulo Planning.</td><td>3</td><td>Salim Ramirez</td><td>Done</td></tr>
+      <tr><td>US11</td><td>Consulta de la rutina asignada del dia</td><td>US11-b</td><td>Validar respuesta para cliente mobile</td><td>Preparar la respuesta con ejercicios, series y rangos objetivo para su consumo desde la aplicacion movil.</td><td>2</td><td>Salim Ramirez</td><td>Done</td></tr>
+      <tr><td>US12</td><td>Emparejamiento del sensor IoT</td><td>US12-a</td><td>Implementar comunicacion BLE</td><td>Configurar el flujo de descubrimiento y emparejamiento del sensor mediante Bluetooth Low Energy.</td><td>4</td><td>Daniel Crispin</td><td>Done</td></tr>
+      <tr><td>US12</td><td>Emparejamiento del sensor IoT</td><td>US12-b</td><td>Validar sensor aprovisionado</td><td>Verificar que el identificador del sensor se encuentre vinculado a un kit registrado antes de iniciar la captura.</td><td>3</td><td>Paul Sulca</td><td>Done</td></tr>
+      <tr><td>US13</td><td>Ejecucion de una sesion de ejercicio</td><td>US13-a</td><td>Implementar modulo Therapy</td><td>Desarrollar la base backend, web y mobile para registrar la ejecucion de sesiones de rehabilitacion.</td><td>5</td><td>Paul Sulca</td><td>Done</td></tr>
+      <tr><td>US13</td><td>Ejecucion de una sesion de ejercicio</td><td>US13-b</td><td>Procesar rutina con telemetria Edge</td><td>Preparar el flujo para recibir datos del Edge y relacionarlos con la sesion terapeutica activa.</td><td>4</td><td>Paul Sulca</td><td>Done</td></tr>
+      <tr><td>US14</td><td>Reporte de dolor al finalizar la sesion</td><td>US14-a</td><td>Registrar reporte de dolor</td><td>Permitir que el paciente registre un valor de dolor asociado a una sesion finalizada.</td><td>2</td><td>Paul Sulca</td><td>Done</td></tr>
+      <tr><td>US23</td><td>Revision del dashboard de metricas ROM</td><td>US23-a</td><td>Conectar dashboard con metricas</td><td>Consumir las metricas ROM registradas para mostrar informacion clinica al fisioterapeuta.</td><td>3</td><td>Eduardo Gael</td><td>Done</td></tr>
+      <tr><td>US23</td><td>Revision del dashboard de metricas ROM</td><td>US23-b</td><td>Ajustar responsividad web</td><td>Optimizar la visualizacion del dashboard y vistas principales en distintos tamanos de pantalla.</td><td>3</td><td>Eduardo Gael</td><td>Done</td></tr>
+      <tr><td>TS34</td><td>Endpoint de registro de sesiones de rehabilitacion</td><td>TS34-a</td><td>Definir contrato POST /api/v1/sessions</td><td>Implementar el contrato base para registrar sesiones de rehabilitacion desde los clientes.</td><td>3</td><td>Paul Sulca</td><td>Done</td></tr>
+      <tr><td>TS34</td><td>Endpoint de registro de sesiones de rehabilitacion</td><td>TS34-b</td><td>Validar persistencia de sesiones</td><td>Probar que las sesiones se registren correctamente con paciente, protocolo y fecha de ejecucion.</td><td>3</td><td>Paul Sulca</td><td>Done</td></tr>
+      <tr><td>TS35</td><td>Endpoint de consulta de metricas del paciente</td><td>TS35-a</td><td>Definir contrato GET /api/v1/patients/{id}/metrics</td><td>Implementar la consulta del historico de metricas del paciente para web y mobile.</td><td>3</td><td>Eduardo Gael</td><td>Done</td></tr>
+      <tr><td>TS35</td><td>Endpoint de consulta de metricas del paciente</td><td>TS35-b</td><td>Preparar respuesta para dashboard</td><td>Estructurar la respuesta con datos de ROM, adherencia y progreso para el dashboard clinico.</td><td>3</td><td>Eduardo Gael</td><td>Done</td></tr>
+      <tr><td>TS36</td><td>Envio de telemetria al Edge API</td><td>TS36-a</td><td>Seteo inicial del Edge</td><td>Preparar el entorno base del Edge para recibir telemetria del dispositivo IoT.</td><td>4</td><td>Eduardo Gael</td><td>Done</td></tr>
+      <tr><td>TS36</td><td>Envio de telemetria al Edge API</td><td>TS36-b</td><td>Configurar broker Mosquitto</td><td>Configurar Mosquitto como broker MQTT para la comunicacion entre sensores, Edge y servicios.</td><td>4</td><td>Salim Ramirez</td><td>Done</td></tr>
+      <tr><td>TS36</td><td>Envio de telemetria al Edge API</td><td>TS36-c</td><td>Implementar Therapy del Edge</td><td>Preparar la logica inicial del Edge para procesar datos relacionados con sesiones terapeuticas.</td><td>4</td><td>Paul Sulca</td><td>Done</td></tr>
+      <tr><td>TS37</td><td>Autenticacion JWT con filtro multitenant</td><td>TS37-a</td><td>Implementar IAM del Edge</td><td>Preparar la validacion de identidad y permisos para las solicitudes procesadas desde el entorno Edge.</td><td>4</td><td>Daniel Crispin</td><td>Done</td></tr>
+      <tr><td>TS37</td><td>Autenticacion JWT con filtro multitenant</td><td>TS37-b</td><td>Validar acceso de servicios Edge</td><td>Probar que los servicios del Edge respeten el contexto de usuario, clinica y rol definido por el sistema.</td><td>3</td><td>Daniel Crispin</td><td>Done</td></tr>
+      <tr><td>TS40</td><td>Firmware Embedded para captura de datos de movimiento</td><td>TS40-a</td><td>Construir PoC en Wokwi / Cirkit</td><td>Crear la prueba de concepto del dispositivo IoT para validar sensores, conexiones y flujo basico de captura de datos.</td><td>4</td><td>Marcelo Varela</td><td>Done</td></tr>
+      <tr><td>TS40</td><td>Firmware Embedded para captura de datos de movimiento</td><td>TS40-b</td><td>Implementar lectura inicial de sensores</td><td>Preparar la logica Embedded para capturar datos basicos de movimiento desde los sensores del dispositivo IoT.</td><td>4</td><td>Marcelo Varela</td><td>Done</td></tr>
+      <tr><td>TS40</td><td>Firmware Embedded para captura de datos de movimiento</td><td>TS40-c</td><td>Validar conexiones del prototipo IoT</td><td>Revisar que el prototipo mantenga conexiones coherentes entre sensores, placa de control y flujo de captura.</td><td>3</td><td>Salim Ramirez, Paul Sulca, Eduardo Gael</td><td>Done</td></tr>
+      <tr><td>TS41</td><td>Calibracion y validacion inicial del dispositivo IoT</td><td>TS41-a</td><td>Definir rutina de calibracion Embedded</td><td>Agregar la logica conceptual de calibracion inicial para evitar que el dispositivo capture datos invalidos antes de una sesion.</td><td>3</td><td>Marcelo Varela</td><td>Done</td></tr>
+      <tr><td>TS41</td><td>Calibracion y validacion inicial del dispositivo IoT</td><td>TS41-b</td><td>Documentar validacion del prototipo</td><td>Registrar la validacion del comportamiento esperado del dispositivo dentro del PoC en Wokwi/Cirkit.</td><td>3</td><td>Marcelo Varela</td><td>Done</td></tr>
+      <tr><td>TS42</td><td>Generacion de paquete de telemetria desde Embedded</td><td>TS42-a</td><td>Definir estructura del paquete de telemetria</td><td>Establecer los campos minimos que el firmware debe preparar para enviar informacion hacia la capa Edge.</td><td>3</td><td>Marcelo Varela</td><td>Done</td></tr>
+      <tr><td>TS42</td><td>Generacion de paquete de telemetria desde Embedded</td><td>TS42-b</td><td>Relacionar paquete Embedded con Edge API</td><td>Alinear la estructura del paquete de telemetria con el flujo de recepcion y procesamiento definido para la capa Edge.</td><td>3</td><td>Marcelo Varela</td><td>Done</td></tr>
+      <tr><td>TS42</td><td>Generacion de paquete de telemetria desde Embedded</td><td>TS42-c</td><td>Actualizar diagrama de clases Embedded</td><td>Actualizar el diagrama PlantUML del modulo Embedded para reflejar captura de sensores, calibracion, estado del dispositivo y generacion de telemetria.</td><td>3</td><td>Marcelo Varela</td><td>Done</td></tr>
+      <tr><td>TS37</td><td>Autenticacion JWT con filtro multitenant</td><td>TS37-c</td><td>Actualizar diagrama de clases Edge</td><td>Actualizar el diagrama PlantUML del Edge para representar los servicios principales de IAM, monitoreo, procesamiento y comunicacion con el backend.</td><td>3</td><td>Marcelo Varela</td><td>Done</td></tr>
+      <tr><td>TS40 / TS41 / TS42</td><td>Actualizacion de Technical Stories Embedded</td><td>TS40-42-a</td><td>Agregar nuevas Technical Stories al informe</td><td>Actualizar la seccion de User Stories y Sprint Backlog para incorporar el alcance Embedded del dispositivo IoT.</td><td>2</td><td>Marcelo Varela</td><td>Done</td></tr>
+    </tbody>
+  </table>
+</div>
+
+##### 6.2.2.5. Testing Suite Evidence for Sprint Review
+
+<p>
+En esta seccion se presenta la evidencia de la suite de pruebas implementada para el Sprint 2 del proyecto uFlex. Las pruebas se enfocaron principalmente en los Web Services del backend, debido a que las User Stories y Technical Stories priorizadas requieren validar servicios REST, reglas de negocio, autenticacion JWT, control multitenant, gestion de dispositivos, fisioterapeutas, pacientes, planes de tratamiento y suscripciones.
+</p>
+
+<p>
+La suite fue ejecutada en el repositorio <code>kiniot/uflex-rest-api</code>, utilizando el perfil de desarrollo y Maven como herramienta de ejecucion. Como resultado, se obtuvo una ejecucion exitosa de 46 pruebas automatizadas, sin fallos, errores ni pruebas omitidas.
+</p>
+
+<pre><code>Tests run: 46, Failures: 0, Errors: 0, Skipped: 0
+BUILD SUCCESS</code></pre>
+
+<div align="center">
+  <img src="assets/testing/03_maven_clean_test_build_success_46_tests.png" alt="Maven clean test build success" width="90%">
+  <p><strong>Figura 6.2.2.5.1.</strong> Ejecucion general de la suite de pruebas con 46 tests ejecutados correctamente.</p>
+</div>
+
+###### Repositorio de Testing
+
+<div style="font-size:80%; overflow-x:auto;">
+  <table border="1" cellspacing="0" cellpadding="5">
+    <thead>
       <tr>
-        <td>US29</td>
-        <td>Gestion de fisioterapeutas de la clinica</td>
-        <td>US29-a</td>
-        <td>Implementar modulo Organization</td>
-        <td>Desarrollar la base backend, web y mobile para registrar y consultar fisioterapeutas asociados a una clinica.</td>
-        <td>4</td>
-        <td>Daniel Crispin</td>
-        <td>Done</td>
+        <th>Repository</th>
+        <th>Branch</th>
+        <th>Testing Scope</th>
       </tr>
+    </thead>
+    <tbody>
       <tr>
-        <td>US29</td>
-        <td>Gestion de fisioterapeutas de la clinica</td>
-        <td>US29-b</td>
-        <td>Validar relacion usuario-clinica</td>
-        <td>Agregar validaciones para asegurar que los usuarios operen dentro de la clinica correspondiente.</td>
-        <td>3</td>
-        <td>Daniel Crispin</td>
-        <td>Done</td>
-      </tr>
-      <tr>
-        <td>US30</td>
-        <td>Invitacion de paciente y vinculacion de kit IoT</td>
-        <td>US30-a</td>
-        <td>Modelar vinculacion paciente-kit</td>
-        <td>Implementar la logica inicial para asociar un kit IoT disponible a un paciente invitado por la clinica.</td>
-        <td>4</td>
-        <td>Paul Sulca</td>
-        <td>Done</td>
-      </tr>
-      <tr>
-        <td>US30</td>
-        <td>Invitacion de paciente y vinculacion de kit IoT</td>
-        <td>US30-b</td>
-        <td>Validar disponibilidad del kit</td>
-        <td>Verificar que un kit no pueda ser asignado a mas de un paciente y mantener su estado actualizado.</td>
-        <td>3</td>
-        <td>Daniel Crispin</td>
-        <td>Done</td>
-      </tr>
-      <tr>
-        <td>US21</td>
-        <td>Creacion de protocolo de ejercicios</td>
-        <td>US21-a</td>
-        <td>Implementar backend de Planning</td>
-        <td>Desarrollar la estructura inicial para crear protocolos terapeuticos con ejercicios, series, repeticiones y rangos articulares.</td>
-        <td>4</td>
-        <td>Salim Ramirez</td>
-        <td>Done</td>
-      </tr>
-      <tr>
-        <td>US21</td>
-        <td>Creacion de protocolo de ejercicios</td>
-        <td>US21-b</td>
-        <td>Conectar Planning con Web y Mobile</td>
-        <td>Preparar la integracion del protocolo terapeutico para que pueda ser consultado desde los clientes web y mobile.</td>
-        <td>3</td>
-        <td>Salim Ramirez</td>
-        <td>Done</td>
-      </tr>
-      <tr>
-        <td>US11</td>
-        <td>Consulta de la rutina asignada del dia</td>
-        <td>US11-a</td>
-        <td>Exponer rutina vigente</td>
-        <td>Implementar la consulta de la rutina diaria asignada al paciente desde el modulo Planning.</td>
-        <td>3</td>
-        <td>Salim Ramirez</td>
-        <td>Done</td>
-      </tr>
-      <tr>
-        <td>US11</td>
-        <td>Consulta de la rutina asignada del dia</td>
-        <td>US11-b</td>
-        <td>Validar respuesta para cliente mobile</td>
-        <td>Preparar la respuesta con ejercicios, series y rangos objetivo para su consumo desde la aplicacion movil.</td>
-        <td>2</td>
-        <td>Salim Ramirez</td>
-        <td>Done</td>
-      </tr>
-      <tr>
-        <td>US12</td>
-        <td>Emparejamiento del sensor IoT</td>
-        <td>US12-a</td>
-        <td>Implementar comunicacion BLE</td>
-        <td>Configurar el flujo de descubrimiento y emparejamiento del sensor mediante Bluetooth Low Energy.</td>
-        <td>4</td>
-        <td>Daniel Crispin</td>
-        <td>Done</td>
-      </tr>
-      <tr>
-        <td>US12</td>
-        <td>Emparejamiento del sensor IoT</td>
-        <td>US12-b</td>
-        <td>Validar sensor aprovisionado</td>
-        <td>Verificar que el identificador del sensor se encuentre vinculado a un kit registrado antes de iniciar la captura.</td>
-        <td>3</td>
-        <td>Paul Sulca</td>
-        <td>Done</td>
-      </tr>
-      <tr>
-        <td>US13</td>
-        <td>Ejecucion de una sesion de ejercicio</td>
-        <td>US13-a</td>
-        <td>Implementar modulo Therapy</td>
-        <td>Desarrollar la base backend, web y mobile para registrar la ejecucion de sesiones de rehabilitacion.</td>
-        <td>5</td>
-        <td>Paul Sulca</td>
-        <td>Done</td>
-      </tr>
-      <tr>
-        <td>US13</td>
-        <td>Ejecucion de una sesion de ejercicio</td>
-        <td>US13-b</td>
-        <td>Procesar rutina con telemetria Edge</td>
-        <td>Preparar el flujo para recibir datos del Edge y relacionarlos con la sesion terapeutica activa.</td>
-        <td>4</td>
-        <td>Paul Sulca</td>
-        <td>Done</td>
-      </tr>
-      <tr>
-        <td>US14</td>
-        <td>Reporte de dolor al finalizar la sesion</td>
-        <td>US14-a</td>
-        <td>Registrar reporte de dolor</td>
-        <td>Permitir que el paciente registre un valor de dolor asociado a una sesion finalizada.</td>
-        <td>2</td>
-        <td>Paul Sulca</td>
-        <td>Done</td>
-      </tr>
-      <tr>
-        <td>US23</td>
-        <td>Revision del dashboard de metricas ROM</td>
-        <td>US23-a</td>
-        <td>Conectar dashboard con metricas</td>
-        <td>Consumir las metricas ROM registradas para mostrar informacion clinica al fisioterapeuta.</td>
-        <td>3</td>
-        <td>Eduardo Gael</td>
-        <td>Done</td>
-      </tr>
-      <tr>
-        <td>US23</td>
-        <td>Revision del dashboard de metricas ROM</td>
-        <td>US23-b</td>
-        <td>Ajustar responsividad web</td>
-        <td>Optimizar la visualizacion del dashboard y vistas principales en distintos tamanos de pantalla.</td>
-        <td>3</td>
-        <td>Eduardo Gael</td>
-        <td>Done</td>
-      </tr>
-      <tr>
-        <td>TS34</td>
-        <td>Endpoint de registro de sesiones de rehabilitacion</td>
-        <td>TS34-a</td>
-        <td>Definir contrato POST /api/v1/sessions</td>
-        <td>Implementar el contrato base para registrar sesiones de rehabilitacion desde los clientes.</td>
-        <td>3</td>
-        <td>Paul Sulca</td>
-        <td>Done</td>
-      </tr>
-      <tr>
-        <td>TS34</td>
-        <td>Endpoint de registro de sesiones de rehabilitacion</td>
-        <td>TS34-b</td>
-        <td>Validar persistencia de sesiones</td>
-        <td>Probar que las sesiones se registren correctamente con paciente, protocolo y fecha de ejecucion.</td>
-        <td>3</td>
-        <td>Paul Sulca</td>
-        <td>Done</td>
-      </tr>
-      <tr>
-        <td>TS35</td>
-        <td>Endpoint de consulta de metricas del paciente</td>
-        <td>TS35-a</td>
-        <td>Definir contrato GET /api/v1/patients/{id}/metrics</td>
-        <td>Implementar la consulta del historico de metricas del paciente para web y mobile.</td>
-        <td>3</td>
-        <td>Eduardo Gael</td>
-        <td>Done</td>
-      </tr>
-      <tr>
-        <td>TS35</td>
-        <td>Endpoint de consulta de metricas del paciente</td>
-        <td>TS35-b</td>
-        <td>Preparar respuesta para dashboard</td>
-        <td>Estructurar la respuesta con datos de ROM, adherencia y progreso para el dashboard clinico.</td>
-        <td>3</td>
-        <td>Eduardo Gael</td>
-        <td>Done</td>
-      </tr>
-      <tr>
-        <td>TS36</td>
-        <td>Envio de telemetria al Edge API</td>
-        <td>TS36-a</td>
-        <td>Seteo inicial del Edge</td>
-        <td>Preparar el entorno base del Edge para recibir telemetria del dispositivo IoT.</td>
-        <td>4</td>
-        <td>Eduardo Gael</td>
-        <td>Done</td>
-      </tr>
-      <tr>
-        <td>TS36</td>
-        <td>Envio de telemetria al Edge API</td>
-        <td>TS36-b</td>
-        <td>Configurar broker Mosquitto</td>
-        <td>Configurar Mosquitto como broker MQTT para la comunicacion entre sensores, Edge y servicios.</td>
-        <td>4</td>
-        <td>Salim Ramirez</td>
-        <td>Done</td>
-      </tr>
-      <tr>
-        <td>TS36</td>
-        <td>Envio de telemetria al Edge API</td>
-        <td>TS36-c</td>
-        <td>Implementar Therapy del Edge</td>
-        <td>Preparar la logica inicial del Edge para procesar datos relacionados con sesiones terapeuticas.</td>
-        <td>4</td>
-        <td>Paul Sulca</td>
-        <td>Done</td>
-      </tr>
-      <tr>
-        <td>TS37</td>
-        <td>Autenticacion JWT con filtro multitenant</td>
-        <td>TS37-a</td>
-        <td>Implementar IAM del Edge</td>
-        <td>Preparar la validacion de identidad y permisos para las solicitudes procesadas desde el entorno Edge.</td>
-        <td>4</td>
-        <td>Daniel Crispin</td>
-        <td>Done</td>
-      </tr>
-      <tr>
-        <td>TS37</td>
-        <td>Autenticacion JWT con filtro multitenant</td>
-        <td>TS37-b</td>
-        <td>Validar acceso de servicios Edge</td>
-        <td>Probar que los servicios del Edge respeten el contexto de usuario, clinica y rol definido por el sistema.</td>
-        <td>3</td>
-        <td>Daniel Crispin</td>
-        <td>Done</td>
-      </tr>
-      <tr>
-        <td>TS40</td>
-        <td>Firmware Embedded para captura de datos de movimiento</td>
-        <td>TS40-a</td>
-        <td>Construir PoC en Wokwi / Cirkit</td>
-        <td>Crear la prueba de concepto del dispositivo IoT para validar sensores, conexiones y flujo basico de captura de datos.</td>
-        <td>4</td>
-        <td>Marcelo Varela</td>
-        <td>Done</td>
-      </tr>
-      <tr>
-        <td>TS40</td>
-        <td>Firmware Embedded para captura de datos de movimiento</td>
-        <td>TS40-b</td>
-        <td>Implementar lectura inicial de sensores</td>
-        <td>Preparar la logica Embedded para capturar datos basicos de movimiento desde los sensores del dispositivo IoT.</td>
-        <td>4</td>
-        <td>Marcelo Varela</td>
-        <td>Done</td>
-      </tr>
-      <tr>
-        <td>TS40</td>
-        <td>Firmware Embedded para captura de datos de movimiento</td>
-        <td>TS40-c</td>
-        <td>Validar conexiones del prototipo IoT</td>
-        <td>Revisar que el prototipo mantenga conexiones coherentes entre sensores, placa de control y flujo de captura.</td>
-        <td>3</td>
-        <td>Salim Ramirez, Paul Sulca, Eduardo Gael</td>
-        <td>Done</td>
-      </tr>
-      <tr>
-        <td>TS41</td>
-        <td>Calibracion y validacion inicial del dispositivo IoT</td>
-        <td>TS41-a</td>
-        <td>Definir rutina de calibracion Embedded</td>
-        <td>Agregar la logica conceptual de calibracion inicial para evitar que el dispositivo capture datos invalidos antes de una sesion.</td>
-        <td>3</td>
-        <td>Marcelo Varela</td>
-        <td>Done</td>
-      </tr>
-      <tr>
-        <td>TS41</td>
-        <td>Calibracion y validacion inicial del dispositivo IoT</td>
-        <td>TS41-b</td>
-        <td>Documentar validacion del prototipo</td>
-        <td>Registrar la validacion del comportamiento esperado del dispositivo dentro del PoC en Wokwi/Cirkit.</td>
-        <td>3</td>
-        <td>Marcelo Varela</td>
-        <td>Done</td>
-      </tr>
-      <tr>
-        <td>TS42</td>
-        <td>Generacion de paquete de telemetria desde Embedded</td>
-        <td>TS42-a</td>
-        <td>Definir estructura del paquete de telemetria</td>
-        <td>Establecer los campos minimos que el firmware debe preparar para enviar informacion hacia la capa Edge.</td>
-        <td>3</td>
-        <td>Marcelo Varela</td>
-        <td>Done</td>
-      </tr>
-      <tr>
-        <td>TS42</td>
-        <td>Generacion de paquete de telemetria desde Embedded</td>
-        <td>TS42-b</td>
-        <td>Relacionar paquete Embedded con Edge API</td>
-        <td>Alinear la estructura del paquete de telemetria con el flujo de recepcion y procesamiento definido para la capa Edge.</td>
-        <td>3</td>
-        <td>Marcelo Varela</td>
-        <td>Done</td>
-      </tr>
-      <tr>
-        <td>TS42</td>
-        <td>Generacion de paquete de telemetria desde Embedded</td>
-        <td>TS42-c</td>
-        <td>Actualizar diagrama de clases Embedded</td>
-        <td>Actualizar el diagrama PlantUML del modulo Embedded para reflejar captura de sensores, calibracion, estado del dispositivo y generacion de telemetria.</td>
-        <td>3</td>
-        <td>Marcelo Varela</td>
-        <td>Done</td>
-      </tr>
-      <tr>
-        <td>TS37</td>
-        <td>Autenticacion JWT con filtro multitenant</td>
-        <td>TS37-c</td>
-        <td>Actualizar diagrama de clases Edge</td>
-        <td>Actualizar el diagrama PlantUML del Edge para representar los servicios principales de IAM, monitoreo, procesamiento y comunicacion con el backend.</td>
-        <td>3</td>
-        <td>Marcelo Varela</td>
-        <td>Done</td>
-      </tr>
-      <tr>
-        <td>TS40 / TS41 / TS42</td>
-        <td>Actualizacion de Technical Stories Embedded</td>
-        <td>TS40-42-a</td>
-        <td>Agregar nuevas Technical Stories al informe</td>
-        <td>Actualizar la seccion de User Stories y Sprint Backlog para incorporar el alcance Embedded del dispositivo IoT.</td>
-        <td>2</td>
-        <td>Marcelo Varela</td>
-        <td>Done</td>
+        <td>kiniot/uflex-rest-api</td>
+        <td>feature/test</td>
+        <td>Unit Tests e Integration Tests para Web Services, servicios de aplicacion, entidades de dominio, filtros JWT, assemblers y controladores REST.</td>
       </tr>
     </tbody>
   </table>
 </div>
 
+###### Evidencia de estructura de pruebas
+
+<p>
+La organizacion de las pruebas se realizo siguiendo la estructura del backend por bounded contexts. Las clases de prueba se encuentran dentro de <code>src/test/java/com/kiniot/uflex/api</code> y se agrupan en los contextos <strong>device</strong>, <strong>iam</strong>, <strong>organization</strong>, <strong>planning</strong> y <strong>subscription</strong>.
+</p>
+
+<div align="center">
+  <img src="assets/testing/04_backend_test_package_structure_intellij.png" alt="Backend test package structure in IntelliJ" width="90%">
+  <p><strong>Figura 6.2.2.5.2.</strong> Estructura general de paquetes de pruebas en IntelliJ IDEA.</p>
+</div>
+
+<div align="center">
+  <img src="assets/testing/05_backend_test_classes_tree.png" alt="Backend test classes tree" width="90%">
+  <p><strong>Figura 6.2.2.5.3.</strong> Arbol de clases de prueba agrupadas por bounded contexts.</p>
+</div>
+
+###### Unit Tests diseñados
+
+<div style="font-size:80%; overflow-x:auto;">
+  <table border="1" cellspacing="0" cellpadding="5">
+    <thead>
+      <tr>
+        <th>Test Class</th>
+        <th>Related Class / Component</th>
+        <th>Validated Behavior</th>
+        <th>Related User Story / Technical Story</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>DeviceCommandServiceImplTests</td>
+        <td>Device Command Service</td>
+        <td>Valida la asignacion de dispositivos, la relacion con pacientes y las restricciones cuando el dispositivo no cumple las condiciones requeridas.</td>
+        <td>US12, US30, TS36</td>
+      </tr>
+      <tr>
+        <td>TokenServiceImplTests</td>
+        <td>Token Service</td>
+        <td>Valida la generacion, firma, extraccion y verificacion de tokens utilizados por el sistema de autenticacion.</td>
+        <td>TS37</td>
+      </tr>
+      <tr>
+        <td>BearerAuthorizationRequestFilterTests</td>
+        <td>Bearer Authorization Request Filter</td>
+        <td>Valida el comportamiento del filtro de autorizacion frente a tokens validos e invalidos.</td>
+        <td>TS37</td>
+      </tr>
+      <tr>
+        <td>PhysiotherapistTests</td>
+        <td>Physiotherapist Entity</td>
+        <td>Valida cambios de estado, reactivacion, suspension y sincronizacion de disponibilidad del fisioterapeuta.</td>
+        <td>US29</td>
+      </tr>
+      <tr>
+        <td>PhysiotherapistCommandServiceImplTests</td>
+        <td>Physiotherapist Command Service</td>
+        <td>Valida el registro de fisioterapeutas y la relacion entre usuarios, clinica y estado del especialista.</td>
+        <td>US29</td>
+      </tr>
+      <tr>
+        <td>PatientTests</td>
+        <td>Patient Entity</td>
+        <td>Valida la asignacion y desasignacion de fisioterapeuta, considerando reglas de clinica y disponibilidad.</td>
+        <td>US20, US29, US30</td>
+      </tr>
+      <tr>
+        <td>TreatmentPlanTests</td>
+        <td>Treatment Plan Entity</td>
+        <td>Valida activacion, cancelacion, cambios de estado y restricciones de planes de tratamiento.</td>
+        <td>US11, US21, US22</td>
+      </tr>
+      <tr>
+        <td>TreatmentPlanCommandServiceImplTests</td>
+        <td>Treatment Plan Command Service</td>
+        <td>Valida la creacion de planes terapeuticos, alcance del tenant y restricciones al registrar ejercicios o parametros invalidos.</td>
+        <td>US21, TS37</td>
+      </tr>
+      <tr>
+        <td>ExerciseTests</td>
+        <td>Exercise Entity</td>
+        <td>Valida la creacion y actualizacion de ejercicios dentro del modulo de planificacion.</td>
+        <td>US21</td>
+      </tr>
+      <tr>
+        <td>CreateSubscriptionCommandTests</td>
+        <td>Create Subscription Command</td>
+        <td>Valida restricciones de monto y datos requeridos para la creacion de suscripciones.</td>
+        <td>US31</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+###### Evidencia visual de Unit Tests
+
+<div align="center">
+  <img src="assets/testing/06_device_command_service_tests_results.png" alt="Device command service tests results" width="90%">
+  <p><strong>Figura 6.2.2.5.4.</strong> Resultado de pruebas del servicio de comandos de dispositivos.</p>
+</div>
+
+<div align="center">
+  <img src="assets/testing/14_token_service_impl_tests_results.png" alt="Token service tests results" width="90%">
+  <p><strong>Figura 6.2.2.5.5.</strong> Resultado de pruebas del servicio de tokens JWT.</p>
+</div>
+
+<div align="center">
+  <img src="assets/testing/09_bearer_authorization_request_filter_tests_results.png" alt="Bearer authorization request filter tests results" width="90%">
+  <p><strong>Figura 6.2.2.5.6.</strong> Resultado de pruebas del filtro de autorizacion Bearer/JWT.</p>
+</div>
+
+<div align="center">
+  <img src="assets/testing/08_physiotherapist_entity_tests_results.png" alt="Physiotherapist entity tests results" width="90%">
+  <p><strong>Figura 6.2.2.5.7.</strong> Resultado de pruebas de la entidad Physiotherapist.</p>
+</div>
+
+<div align="center">
+  <img src="assets/testing/11_physiotherapist_command_service_tests_results.png" alt="Physiotherapist command service tests results" width="90%">
+  <p><strong>Figura 6.2.2.5.8.</strong> Resultado de pruebas del servicio de comandos de fisioterapeutas.</p>
+</div>
+
+<div align="center">
+  <img src="assets/testing/12_patient_entity_tests_results.png" alt="Patient entity tests results" width="90%">
+  <p><strong>Figura 6.2.2.5.9.</strong> Resultado de pruebas de la entidad Patient.</p>
+</div>
+
+<div align="center">
+  <img src="assets/testing/16_treatment_plan_entity_tests_results.png" alt="Treatment plan entity tests results" width="90%">
+  <p><strong>Figura 6.2.2.5.10.</strong> Resultado de pruebas de la entidad Treatment Plan.</p>
+</div>
+
+<div align="center">
+  <img src="assets/testing/01_treatment_plan_command_service_tests_results.png" alt="Treatment plan command service tests results" width="90%">
+  <p><strong>Figura 6.2.2.5.11.</strong> Resultado de pruebas del servicio de comandos de planes de tratamiento.</p>
+</div>
+
+<div align="center">
+  <img src="assets/testing/10_exercise_entity_tests_results.png" alt="Exercise entity tests results" width="90%">
+  <p><strong>Figura 6.2.2.5.12.</strong> Resultado de pruebas de la entidad Exercise.</p>
+</div>
+
+<div align="center">
+  <img src="assets/testing/07_create_subscription_command_tests_results.png" alt="Create subscription command tests results" width="90%">
+  <p><strong>Figura 6.2.2.5.13.</strong> Resultado de pruebas del comando de creacion de suscripciones.</p>
+</div>
+
+###### Integration Tests diseñados
+
+<div style="font-size:80%; overflow-x:auto;">
+  <table border="1" cellspacing="0" cellpadding="5">
+    <thead>
+      <tr>
+        <th>Test Class</th>
+        <th>Endpoint / Flow</th>
+        <th>Validated Behavior</th>
+        <th>Expected Result</th>
+        <th>Related User Story / Technical Story</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>AuthenticationControllerTests</td>
+        <td>Authentication REST endpoints</td>
+        <td>Valida el flujo de autenticacion, registro y respuestas ante datos invalidos.</td>
+        <td>200 OK / 400 Bad Request / 404 Not Found</td>
+        <td>US08, US17, US26, TS37</td>
+      </tr>
+      <tr>
+        <td>PatientTreatmentPlansControllerTests</td>
+        <td>Patient Treatment Plans REST endpoints</td>
+        <td>Valida la consulta de planes de tratamiento del paciente, rutina activa y restricciones por acceso invalido.</td>
+        <td>200 OK / 404 Not Found</td>
+        <td>US11, US13, US23</td>
+      </tr>
+      <tr>
+        <td>CreateExerciseCommandFromResourceAssemblerTests</td>
+        <td>Exercise request assembler</td>
+        <td>Valida la transformacion de recursos REST hacia comandos de aplicacion para la creacion de ejercicios.</td>
+        <td>Command mapped correctly / Invalid resource rejected</td>
+        <td>US21</td>
+      </tr>
+      <tr>
+        <td>ExerciseSeriesFromResourceAssemblerTests</td>
+        <td>Exercise Series resource assembler</td>
+        <td>Valida la conversion de series de ejercicios desde recursos externos hacia objetos de valor internos.</td>
+        <td>Value object mapped correctly</td>
+        <td>US21</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+###### Evidencia visual de Integration Tests
+
+<div align="center">
+  <img src="assets/testing/17_authentication_controller_tests_results.png" alt="Authentication controller tests results" width="90%">
+  <p><strong>Figura 6.2.2.5.14.</strong> Resultado de pruebas del controlador de autenticacion.</p>
+</div>
+
+<div align="center">
+  <img src="assets/testing/13_patient_treatment_plans_controller_tests_results.png" alt="Patient treatment plans controller tests results" width="90%">
+  <p><strong>Figura 6.2.2.5.15.</strong> Resultado de pruebas del controlador de planes de tratamiento del paciente.</p>
+</div>
+
+<div align="center">
+  <img src="assets/testing/02_create_exercise_command_assembler_tests_results.png" alt="Create exercise command assembler tests results" width="90%">
+  <p><strong>Figura 6.2.2.5.16.</strong> Resultado de pruebas del assembler para crear ejercicios.</p>
+</div>
+
+<div align="center">
+  <img src="assets/testing/15_exercise_series_resource_assembler_tests_results.png" alt="Exercise series resource assembler tests results" width="90%">
+  <p><strong>Figura 6.2.2.5.17.</strong> Resultado de pruebas del assembler de series de ejercicios.</p>
+</div>
+
+###### Acceptance Tests bajo enfoque BDD
+
+<p>
+Los Acceptance Tests se documentan mediante escenarios en lenguaje Gherkin para representar el comportamiento esperado del sistema desde la perspectiva funcional. Estos escenarios se relacionan con las User Stories y Technical Stories priorizadas en el Sprint 2.
+</p>
+
+<pre><code class="language-gherkin">Feature: Gestion de planes de tratamiento del paciente
+
+  Scenario: Consulta exitosa de rutina activa
+    Given que el paciente tiene un plan de tratamiento activo
+    When el cliente consulta la rutina asignada del dia
+    Then el API entrega los ejercicios y series correspondientes
+
+  Scenario: Paciente sin rutina activa
+    Given que el paciente no tiene un plan de tratamiento vigente
+    When el cliente consulta la rutina asignada del dia
+    Then el API responde indicando que no existen planes activos</code></pre>
+
+<p><strong>Historias relacionadas:</strong> US11, US13 y US23.</p>
+
+<pre><code class="language-gherkin">Feature: Autenticacion y autorizacion JWT
+
+  Scenario: Acceso permitido con token valido
+    Given que el usuario cuenta con un JWT valido
+    When solicita un recurso protegido dentro de su clinica
+    Then el API permite continuar con la operacion
+
+  Scenario: Acceso rechazado con token invalido
+    Given que el usuario envia un JWT invalido o expirado
+    When solicita un recurso protegido
+    Then el API rechaza la solicitud</code></pre>
+
+<p><strong>Historia relacionada:</strong> TS37.</p>
+
+<pre><code class="language-gherkin">Feature: Gestion de fisioterapeutas y dispositivos IoT
+
+  Scenario: Registro exitoso de fisioterapeuta
+    Given que el administrador pertenece a una clinica activa
+    When registra los datos validos de un fisioterapeuta
+    Then el sistema crea el perfil y lo asocia a la clinica correspondiente
+
+  Scenario: Vinculacion de dispositivo a paciente
+    Given que existe un dispositivo IoT disponible
+    When el administrador vincula el dispositivo a un paciente
+    Then el sistema actualiza el estado del dispositivo como asignado</code></pre>
+
+<p><strong>Historias relacionadas:</strong> US29, US30 y US12.</p>
+
+###### Comandos utilizados para ejecutar las pruebas
+
+<pre><code class="language-bash">export SPRING_PROFILES_ACTIVE=dev
+export JWT_SECRET="uflex-testing-secret-key-for-dev-environment-123456"
+export JWT_EXPIRATION_DAYS=7
+
+./mvnw clean test</code></pre>
+
+###### Commits relacionados con Testing
+
+<p>
+A continuacion se presenta la relacion de commits asociados a la implementacion de pruebas, evidencias y recursos BDD desarrollados para el Sprint 2 en el repositorio backend.
+</p>
+
+<div style="font-size:80%; overflow-x:auto;">
+  <table border="1" cellspacing="0" cellpadding="5">
+    <thead>
+      <tr>
+        <th>Repository</th>
+        <th>Branch</th>
+        <th>Commit Id</th>
+        <th>Commit Message</th>
+        <th>Commit Message Body</th>
+        <th>Commited on (Date)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>kiniot/uflex-rest-api</td>
+        <td>feature/test</td>
+        <td>494ada0</td>
+        <td>test(planning): add unit tests for exercise and exercise series resource assemblers</td>
+        <td>Se agregan pruebas unitarias para validar assemblers relacionados con ejercicios y series dentro del modulo Planning.</td>
+        <td>2026-05-31</td>
+      </tr>
+      <tr>
+        <td>kiniot/uflex-rest-api</td>
+        <td>feature/test</td>
+        <td>83d7cbf</td>
+        <td>feat: add device testing evidence</td>
+        <td>Se agregan pruebas y evidencias relacionadas con el contexto Device y la validacion de dispositivos IoT.</td>
+        <td>2026-06-14</td>
+      </tr>
+      <tr>
+        <td>kiniot/uflex-rest-api</td>
+        <td>feature/test</td>
+        <td>1547e3a</td>
+        <td>feat: add IAM authentication testing evidence</td>
+        <td>Se agregan pruebas y evidencias relacionadas con autenticacion, autorizacion, tokens JWT y seguridad.</td>
+        <td>2026-06-14</td>
+      </tr>
+      <tr>
+        <td>kiniot/uflex-rest-api</td>
+        <td>feature/test</td>
+        <td>28b56aa</td>
+        <td>feat: add organization testing evidence</td>
+        <td>Se agregan pruebas y evidencias relacionadas con fisioterapeutas, pacientes y reglas del contexto Organization.</td>
+        <td>2026-06-14</td>
+      </tr>
+      <tr>
+        <td>kiniot/uflex-rest-api</td>
+        <td>feature/test</td>
+        <td>5ea2fd6</td>
+        <td>feat: add planning application testing evidence</td>
+        <td>Se agregan pruebas y evidencias relacionadas con servicios de aplicacion del modulo Planning y planes de tratamiento.</td>
+        <td>2026-06-14</td>
+      </tr>
+      <tr>
+        <td>kiniot/uflex-rest-api</td>
+        <td>feature/test</td>
+        <td>af01f25</td>
+        <td>feat: add planning controller testing evidence</td>
+        <td>Se agregan pruebas y evidencias relacionadas con controladores REST de Planning y consulta de planes del paciente.</td>
+        <td>2026-06-14</td>
+      </tr>
+      <tr>
+        <td>kiniot/uflex-rest-api</td>
+        <td>feature/test</td>
+        <td>f58f09e</td>
+        <td>feat: add BDD testing resources</td>
+        <td>Se agregan recursos BDD para documentar escenarios de aceptacion relacionados con las historias del Sprint 2.</td>
+        <td>2026-06-14</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
 # Conclusiones
 
