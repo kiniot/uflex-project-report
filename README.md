@@ -7723,9 +7723,8 @@ Se presenta el Sprint Planning correspondiente a la segunda entrega del proyecto
 A continuacion se presenta el enlace al tablero de Jira utilizado para la gestion del Sprint 2:
 </p>
 
-<p>
-https://fastpavos.atlassian.net/jira/software/projects/UF/boards/34
-</p>
+[https://kyrubi-upc.atlassian.net/jira/software/projects/HU/boards/34](https://kyrubi-upc.atlassian.net/jira/software/projects/HU/boards/34)
+
 
 <div style="font-size:80%; overflow-x:auto;">
   <table border="1" cellspacing="0" cellpadding="5">
