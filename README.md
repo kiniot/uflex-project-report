@@ -387,90 +387,79 @@ En el siguiente cuadro se describe las acciones realizadas y enunciados de concl
         <b>TB1:</b> En esta etapa técnica, el liderazgo se manifestó en la capacidad de guiar la implementación del software sin perder la visión estratégica. Aprendimos que el liderazgo técnico implica no solo delegar, sino asegurar la trazabilidad entre lo diseñado y lo construido. La coordinación en la consolidación de evidencias demostró que un liderazgo distribuido permite identificar cuellos de botella rápidamente y mantener la integridad del sistema uFlex.
       </td>
     </tr>
-<tr>
-  <td>
-    <strong>Ramirez Mestanza, Salim Ignacio</strong><br>
-    <b>AV1:</b> Lideré la elaboración de las User Stories del proyecto, estructurando los requerimientos funcionales y sus criterios de aceptación para mantener coherencia entre los módulos. Además, apoyé activamente en el Design-Level EventStorming para alinear decisiones de dominio con el equipo y desarrollé el Domain Message Flows Modeling, integrando los eventos y mensajes clave entre bounded contexts.<br><br>
-    <b>TB1:</b> Lideré la gestión del Product Backlog y el Sprint Backlog del TB1, asegurando que cada User Story tuviera criterios de aceptación claros y estuviera vinculada correctamente a los Issues de GitHub. Coordiné con el equipo la definición de los Acceptance Tests y supervisé la implementación de la lógica de dominio en el backend para mantener la integridad de los flujos de mensajes diseñados previamente. Facilité la comunicación entre los encargados de frontend y backend para asegurar que la integración de servicios cumpliera con las expectativas del negocio.
-  </td>
-</tr>
-
-<tr>
-  <td>
-    <strong>Rivera Sosa, Eduardo Gael</strong><br>
-    <b>AV1:</b> Lideré el diseño de la arquitectura de software de uFlex elaborando los diagramas Landscape, Context, Container y Deployment. Facilité junto al equipo el Design-Level EventStorming, guiando las decisiones sobre eventos y bounded contexts. También dirigí el análisis competitivo y las estrategias frente a competidores, consolidando los aportes del equipo en un entregable coherente.<br><br>
-    <b>TB1:</b> Lideré la consolidación de la evidencia técnica del Sprint Review del TB1 articulando los aportes del equipo en seis frentes: <em>Development Evidence</em>, <em>Testing Suite Evidence</em>, <em>Execution Evidence</em>, <em>Services Documentation</em>, <em>Software Deployment Evidence</em> y <em>Team Collaboration Insights</em>. Coordiné con cada integrante para integrar sus aportes en un entregable unificado, asegurando trazabilidad entre las historias del Sprint Backlog y la implementación efectiva.
-  </td>
-</tr>
-
-<tr>
-  <td>
-    <strong>Sulca Gonzales, Paúl Fernando</strong><br>
-    <b>AV1:</b> Lideré y facilité actividades de análisis centradas en el usuario, incluyendo la elaboración de entrevistas, User Task Matrix, User Journey Mapping y Empathy Mapping, articulando los aportes del equipo para convertirlos en insumos de diseño consistentes. Además, participé activamente en Big Picture Event Storming y Candidate Context Discovery para alinear decisiones de dominio y delimitar bounded contexts con enfoque estratégico.<br><br>
-    <b>TB1:</b> Coordiné en equipo las secciones de Software Configuration Management y la planificación del Sprint 1, promoviendo liderazgo compartido y alineando criterios técnicos y de contenido con el resto del equipo.
-  </td>
-</tr>
-
-<tr>
-  <td>
-    <strong>Varela Bustinza, Marcelo Alessandro</strong><br>
-    <b>AV1:</b> Durante el desarrollo del proyecto, aporté activamente en la organización y desarrollo de capítulos clave, participando en temas como Lean UX, entrevistas, needfinding y diseño de software. Mi contribución permitió coordinar ideas con el equipo y avanzar de manera conjunta hacia los objetivos del trabajo.<br><br>
-    <b>TB1:</b> Desarrollé e implementé la documentación correspondiente a la sección UX/UI Design de la aplicación web de uFlex, enfocándome en la organización de wireframes, mock-ups, wireflow diagrams y user flow diagrams. Asimismo, analicé los flujos del administrador y del fisioterapeuta, identificando la función de cada pantalla y redactando descripciones coherentes con el propósito del proyecto. También contribuí a ordenar los assets visuales, renombrar las imágenes con nombres específicos y estructurar el contenido en formato Markdown para facilitar su integración al reporte del equipo.<br><br>
-    <b>AV2:</b> Aporté en la organización y consolidación de los entregables técnicos del Sprint 2, apoyando la integración de nuevas secciones relacionadas con la validación del producto, el avance del prototipo IoT y la documentación de componentes técnicos del ecosistema uFlex. Mi participación permitió mantener la coherencia entre las tareas asignadas, las historias de usuario actualizadas y la estructura del informe, contribuyendo al liderazgo compartido dentro del equipo.
-  </td>
-</tr>
-
-<tr>
-  <td rowspan="5"><strong>Crea un entorno colaborativo e inclusivo, establece metas, planifica tareas y cumple objetivos</strong></td>
-  <td>
-    <strong>Crispin Ramos, Daniel Franco</strong><br>
-    <b>AV1:</b> Planifiqué y cumplí con los entregables de análisis y diseño asignados, coordinando con el equipo la priorización de las actividades dentro del Bounded Context Device. Mi participación activa en las sesiones de EventStorming y en la validación de diagramas tácticos facilitó el consenso técnico y aseguró que los aportes del equipo se integraran correctamente dentro de los plazos del AV1.<br><br>
-    <b>TB1:</b> Planifiqué las tareas de diseño UI/UX estableciendo metas claras y plazos para el desarrollo de wireframes, mockups y prototipos. Cumplí con los objetivos asignados manteniendo un entorno colaborativo con los desarrolladores frontend, facilitando la comunicación para lograr la correcta implementación de las interfaces diseñadas.
-  </td>
-  <td rowspan="5">
-    <b>AV1:</b> A lo largo del AV1 hemos logrado cubrir todo el alcance planificado, desde la definición de la startup y el análisis del problema hasta el diseño completo de la solución de software. Para conseguirlo establecimos metas claras por capítulo, distribuimos las tareas según las fortalezas de cada integrante y realizamos revisiones constantes para mantener el avance alineado. Creemos que el entorno colaborativo e inclusivo que construimos fue clave: cada propuesta fue discutida en conjunto y los entregables finales reflejan aportes de todo el equipo, cumpliendo los objetivos acordados en los plazos previstos.
-    <br><br>
-    <b>TB1:</b> El cumplimiento del Sprint Goal fue posible gracias a una planificación rigurosa de tareas en GitHub y la flexibilidad para ajustar la arquitectura de forma consensuada. Mantuvimos un entorno inclusivo donde la revisión de código y la documentación técnica fueron responsabilidades compartidas, lo que garantizó que todos los integrantes estuvieran alineados con el despliegue final y la calidad de las pruebas.
-  </td>
-</tr>
-
-<tr>
-  <td>
-    <strong>Ramirez Mestanza, Salim Ignacio</strong><br>
-    <b>AV1:</b> Planifiqué y entregué en los plazos acordados las secciones a mi cargo, especialmente la definición de User Stories y el Domain Message Flows Modeling. Participé de forma activa en el Design-Level EventStorming como espacio colaborativo, incorporando los aportes del equipo para mantener metas comunes, una coordinación inclusiva y el cumplimiento de los objetivos del AV1.<br><br>
-    <b>TB1:</b> Planifiqué y ejecuté la migración de los requerimientos del AV1 hacia el entorno de desarrollo, definiendo las metas de cada historia de usuario dentro del Sprint. Cumplí con la entrega de los reportes de pruebas unitarias y de integración, garantizando que el software cumpliera con los estándares de calidad antes del Sprint Review. Promoví un entorno inclusivo mediante la revisión técnica por pares, brindando soporte a mis compañeros en la resolución de conflictos de código y asegurando que los objetivos técnicos del TB1 se alcanzaran puntualmente.
-  </td>
-</tr>
-
-<tr>
-  <td>
-    <strong>Rivera Sosa, Eduardo Gael</strong><br>
-    <b>AV1:</b> Planifiqué y entregué en los plazos acordados las secciones a mi cargo: segmentos objetivo, análisis competitivo, estrategias frente a competidores, user personas y la arquitectura de software con sus diagramas. Participé activamente en el Design-Level EventStorming como actividad colaborativa, asegurando que los aportes de todos los integrantes se reflejaran en el diseño final.<br><br>
-    <b>TB1:</b> Planifiqué y entregué dentro de los plazos del Sprint las secciones de evidencia a mi cargo, distribuyendo subtareas claras por integrante y haciendo seguimiento de su avance. Mantuve un entorno colaborativo e inclusivo durante el Sprint: revisé los aportes de cada miembro, integré sus capturas y commits a la documentación, y propicié ajustes consensuados cumpliendo los objetivos del Sprint Goal.
-  </td>
-</tr>
-
-<tr>
-  <td>
-    <strong>Sulca Gonzales, Paúl Fernando</strong><br>
-    <b>AV1:</b> Planifiqué y cumplí los entregables asignados en las etapas de investigación y modelado del dominio, coordinando con el equipo la priorización de tareas para mantener el avance del AV1 dentro de los plazos. Mi participación en la definición de bounded contexts y en el diseño táctico DDD contribuyó a consolidar un entorno de trabajo colaborativo, ordenado e inclusivo orientado al cumplimiento de objetivos.<br><br>
-    <b>TB1:</b> Organicé y completé los apartados de Software Configuration Management y la documentación de Sprint 1, estableciendo metas claras, distribuyendo tareas y asegurando coherencia entre backlog, liderazgo y alcance acordado.
-  </td>
-</tr>
-
-<tr>
-  <td>
-    <strong>Varela Bustinza, Marcelo Alessandro</strong><br>
-    <b>AV1:</b> Participé de forma colaborativa en la distribución y ejecución de tareas, asumiendo responsabilidades concretas dentro del proyecto y cumpliendo con los entregables asignados. Esto ayudó a mantener un trabajo ordenado, con metas claras y un avance coordinado entre los integrantes.<br><br>
-    <b>TB1:</b> Planifiqué y cumplí con las tareas asignadas relacionadas con la documentación de la aplicación web, priorizando la correcta organización de las imágenes, la separación de flujos por rol y la redacción de subtítulos y descripciones para cada user flow. Además, propuse una estructura clara para que el contenido pudiera ser copiado e integrado directamente en el reporte, manteniendo consistencia con la plantilla del curso y evitando incluir secciones que no correspondían al alcance definido.<br><br>
-    <b>AV2:</b> Planifiqué y cumplí con las actividades asignadas para el Sprint 2, organizando la información técnica de manera clara y alineada con los avances reales del equipo. Además, apoyé en la actualización de los requerimientos y evidencias del producto, manteniendo comunicación constante con mis compañeros para que el contenido agregado al informe conserve trazabilidad con el trabajo desarrollado y responda al alcance solicitado para esta entrega.
-  </td>
-</tr>
+    <tr>
+      <td>
+        <strong>Ramirez Mestanza, Salim Ignacio</strong><br>
+        <b>AV1:</b> Lideré la elaboración de las User Stories del proyecto, estructurando los requerimientos funcionales y sus criterios de aceptación para mantener coherencia entre los módulos. Además, apoyé activamente en el Design-Level EventStorming para alinear decisiones de dominio con el equipo y desarrollé el Domain Message Flows Modeling, integrando los eventos y mensajes clave entre bounded contexts.<br><br>
+        <b>TB1:</b> Lideré la gestión del Product Backlog y el Sprint Backlog del TB1, asegurando que cada User Story tuviera criterios de aceptación claros y estuviera vinculada correctamente a los Issues de GitHub. Coordiné con el equipo la definición de los Acceptance Tests y supervisé la implementación de la lógica de dominio en el backend para mantener la integridad de los flujos de mensajes diseñados previamente. Facilité la comunicación entre los encargados de frontend y backend para asegurar que la integración de servicios cumpliera con las expectativas del negocio.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <strong>Rivera Sosa, Eduardo Gael</strong><br>
+        <b>AV1:</b> Lideré el diseño de la arquitectura de software de uFlex elaborando los diagramas Landscape, Context, Container y Deployment. Facilité junto al equipo el Design-Level EventStorming, guiando las decisiones sobre eventos y bounded contexts. También dirigí el análisis competitivo y las estrategias frente a competidores, consolidando los aportes del equipo en un entregable coherente.<br><br>
+        <b>TB1:</b> Lideré la consolidación de la evidencia técnica del Sprint Review del TB1 articulando los aportes del equipo en seis frentes: <em>Development Evidence</em>, <em>Testing Suite Evidence</em>, <em>Execution Evidence</em>, <em>Services Documentation</em>, <em>Software Deployment Evidence</em> y <em>Team Collaboration Insights</em>. Coordiné con cada integrante para integrar sus aportes en un entregable unificado, asegurando trazabilidad entre las historias del Sprint Backlog y la implementación efectiva.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <strong>Sulca Gonzales, Paúl Fernando</strong><br>
+        <b>AV1:</b> Lideré y facilité actividades de análisis centradas en el usuario, incluyendo la elaboración de entrevistas, User Task Matrix, User Journey Mapping y Empathy Mapping, articulando los aportes del equipo para convertirlos en insumos de diseño consistentes. Además, participé activamente en Big Picture Event Storming y Candidate Context Discovery para alinear decisiones de dominio y delimitar bounded contexts con enfoque estratégico.<br><br>
+        <b>TB1:</b> Coordiné en equipo las secciones de Software Configuration Management y la planificación del Sprint 1, promoviendo liderazgo compartido y alineando criterios técnicos y de contenido con el resto del equipo.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <strong>Varela Bustinza, Marcelo Alessandro</strong><br>
+        <b>AV1:</b> Durante el desarrollo del proyecto, aporté activamente en la organización y desarrollo de capítulos clave, participando en temas como Lean UX, entrevistas, needfinding y diseño de software. Mi contribución permitió coordinar ideas con el equipo y avanzar de manera conjunta hacia los objetivos del trabajo.<br><br>
+        <b>TB1:</b> Desarrollé e implementé la documentación correspondiente a la sección UX/UI Design de la aplicación web de uFlex, enfocándome en la organización de wireframes, mock-ups, wireflow diagrams y user flow diagrams. Asimismo, analicé los flujos del administrador y del fisioterapeuta, identificando la función de cada pantalla y redactando descripciones coherentes con el propósito del proyecto. También contribuí a ordenar los assets visuales, renombrar las imágenes con nombres específicos y estructurar el contenido en formato Markdown para facilitar su integración al reporte del equipo.<br><br>
+        <b>AV2:</b> Aporté en la organización y consolidación de los entregables técnicos del Sprint 2, apoyando la integración de nuevas secciones relacionadas con la validación del producto, el avance del prototipo IoT y la documentación de componentes técnicos del ecosistema uFlex. Mi participación permitió mantener la coherencia entre las tareas asignadas, las historias de usuario actualizadas y la estructura del informe, contribuyendo al liderazgo compartido dentro del equipo.
+      </td>
+    </tr>
+    <tr>
+      <td rowspan="5"><strong>Crea un entorno colaborativo e inclusivo, establece metas, planifica tareas y cumple objetivos</strong></td>
+      <td>
+        <strong>Crispin Ramos, Daniel Franco</strong><br>
+        <b>AV1:</b> Planifiqué y cumplí con los entregables de análisis y diseño asignados, coordinando con el equipo la priorización de las actividades dentro del Bounded Context Device. Mi participación activa en las sesiones de EventStorming y en la validación de diagramas tácticos facilitó el consenso técnico y aseguró que los aportes del equipo se integraran correctamente dentro de los plazos del AV1.<br><br>
+        <b>TB1:</b> Planifiqué las tareas de diseño UI/UX estableciendo metas claras y plazos para el desarrollo de wireframes, mockups y prototipos. Cumplí con los objetivos asignados manteniendo un entorno colaborativo con los desarrolladores frontend, facilitando la comunicación para lograr la correcta implementación de las interfaces diseñadas.
+      </td>
+      <td rowspan="5">
+        <b>AV1:</b> A lo largo del AV1 hemos logrado cubrir todo el alcance planificado, desde la definición de la startup y el análisis del problema hasta el diseño completo de la solución de software. Para conseguirlo establecimos metas claras por capítulo, distribuimos las tareas según las fortalezas de cada integrante y realizamos revisiones constantes para mantener el avance alineado. Creemos que el entorno colaborativo e inclusivo que construimos fue clave: cada propuesta fue discutida en conjunto y los entregables finales reflejan aportes de todo el equipo, cumpliendo los objetivos acordados en los plazos previstos.
+        <br><br>
+        <b>TB1:</b> El cumplimiento del Sprint Goal fue posible gracias a una planificación rigurosa de tareas en GitHub y la flexibilidad para ajustar la arquitectura de forma consensuada. Mantuvimos un entorno inclusivo donde la revisión de código y la documentación técnica fueron responsabilidades compartidas, lo que garantizó que todos los integrantes estuvieran alineados con el despliegue final y la calidad de las pruebas.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <strong>Ramirez Mestanza, Salim Ignacio</strong><br>
+        <b>AV1:</b> Planifiqué y entregué en los plazos acordados las secciones a mi cargo, especialmente la definición de User Stories y el Domain Message Flows Modeling. Participé de forma activa en el Design-Level EventStorming como espacio colaborativo, incorporando los aportes del equipo para mantener metas comunes, una coordinación inclusiva y el cumplimiento de los objetivos del AV1.<br><br>
+        <b>TB1:</b> Planifiqué y ejecuté la migración de los requerimientos del AV1 hacia el entorno de desarrollo, definiendo las metas de cada historia de usuario dentro del Sprint. Cumplí con la entrega de los reportes de pruebas unitarias y de integración, garantizando que el software cumpliera con los estándares de calidad antes del Sprint Review. Promoví un entorno inclusivo mediante la revisión técnica por pares, brindando soporte a mis compañeros en la resolución de conflictos de código y asegurando que los objetivos técnicos del TB1 se alcanzaran puntualmente.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <strong>Rivera Sosa, Eduardo Gael</strong><br>
+        <b>AV1:</b> Planifiqué y entregué en los plazos acordados las secciones a mi cargo: segmentos objetivo, análisis competitivo, estrategias frente a competidores, user personas y la arquitectura de software con sus diagramas. Participé activamente en el Design-Level EventStorming como actividad colaborativa, asegurando que los aportes de todos los integrantes se reflejaran en el diseño final.<br><br>
+        <b>TB1:</b> Planifiqué y entregué dentro de los plazos del Sprint las secciones de evidencia a mi cargo, distribuyendo subtareas claras por integrante y haciendo seguimiento de su avance. Mantuve un entorno colaborativo e inclusivo durante el Sprint: revisé los aportes de cada miembro, integré sus capturas y commits a la documentación, y propicié ajustes consensuados cumpliendo los objetivos del Sprint Goal.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <strong>Sulca Gonzales, Paúl Fernando</strong><br>
+        <b>AV1:</b> Planifiqué y cumplí los entregables asignados en las etapas de investigación y modelado del dominio, coordinando con el equipo la priorización de tareas para mantener el avance del AV1 dentro de los plazos. Mi participación en la definición de bounded contexts y en el diseño táctico DDD contribuyó a consolidar un entorno de trabajo colaborativo, ordenado e inclusivo orientado al cumplimiento de objetivos.<br><br>
+        <b>TB1:</b> Organicé y completé los apartados de Software Configuration Management y la documentación de Sprint 1, estableciendo metas claras, distribuyendo tareas y asegurando coherencia entre backlog, liderazgo y alcance acordado.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <strong>Varela Bustinza, Marcelo Alessandro</strong><br>
+        <b>AV1:</b> Participé de forma colaborativa en la distribución y ejecución de tareas, asumiendo responsabilidades concretas dentro del proyecto y cumpliendo con los entregables asignados. Esto ayudó a mantener un trabajo ordenado, con metas claras y un avance coordinado entre los integrantes.<br><br>
+        <b>TB1:</b> Planifiqué y cumplí con las tareas asignadas relacionadas con la documentación de la aplicación web, priorizando la correcta organización de las imágenes, la separación de flujos por rol y la redacción de subtítulos y descripciones para cada user flow. Además, propuse una estructura clara para que el contenido pudiera ser copiado e integrado directamente en el reporte, manteniendo consistencia con la plantilla del curso y evitando incluir secciones que no correspondían al alcance definido.<br><br>
+        <b>AV2:</b> Planifiqué y cumplí con las actividades asignadas para el Sprint 2, organizando la información técnica de manera clara y alineada con los avances reales del equipo. Además, apoyé en la actualización de los requerimientos y evidencias del producto, manteniendo comunicación constante con mis compañeros para que el contenido agregado al informe conserve trazabilidad con el trabajo desarrollado y responda al alcance solicitado para esta entrega.
+      </td>
+    </tr>
   </tbody>
 </table>
-
-<hr class="page-break">
-
 
 <hr class="page-break">
 
@@ -2035,55 +2024,54 @@ A partir del análisis de los segmentos objetivo, las entrevistas, las hipótesi
       </td>
       <td>EP05</td>
     </tr>
-<tr>
-  <td>TS40</td>
-  <td>Firmware Embedded para captura de datos de movimiento</td>
-  <td>Como Developer, quiero implementar la lógica Embedded de captura de datos desde los sensores del dispositivo IoT para obtener mediciones iniciales del movimiento articular durante una sesión de rehabilitación.</td>
-  <td>
-    <b>Escenario 1: Captura exitosa de datos del sensor</b><br>
-    <b>Given</b> que el dispositivo IoT se encuentra encendido y los sensores están conectados correctamente,<br>
-    <b>When</b> el firmware inicia la lectura de datos,<br>
-    <b>Then</b> el sistema captura valores de movimiento y los prepara para su procesamiento local.<br><br>
-    <b>Escenario 2: Sensor no disponible</b><br>
-    <b>Given</b> que el dispositivo IoT intenta iniciar la captura,<br>
-    <b>When</b> uno de los sensores no responde o no está conectado correctamente,<br>
-    <b>Then</b> el sistema marca el estado del dispositivo como error y evita enviar datos inválidos.
-  </td>
-  <td>EP05</td>
-</tr>
-
-<tr>
-  <td>TS41</td>
-  <td>Calibración y validación inicial del dispositivo IoT</td>
-  <td>Como Developer, quiero implementar una rutina de calibración y validación inicial del dispositivo IoT para asegurar que las mediciones capturadas sean consistentes antes de iniciar una sesión terapéutica.</td>
-  <td>
-    <b>Escenario 1: Calibración completada correctamente</b><br>
-    <b>Given</b> que el dispositivo IoT se encuentra en estado de configuración inicial,<br>
-    <b>When</b> el firmware ejecuta la rutina de calibración,<br>
-    <b>Then</b> el sistema establece valores base para la captura de movimiento y permite continuar con la sesión.<br><br>
-    <b>Escenario 2: Calibración fallida</b><br>
-    <b>Given</b> que el dispositivo IoT intenta calibrarse,<br>
-    <b>When</b> los valores obtenidos están fuera del rango esperado,<br>
-    <b>Then</b> el sistema conserva el estado de error y solicita repetir la calibración antes de capturar telemetría.
-  </td>
-  <td>EP05</td>
-</tr>
-<tr>
-  <td>TS42</td>
-  <td>Generación de paquete de telemetría desde Embedded</td>
-  <td>Como Developer, quiero generar paquetes de telemetría desde el firmware Embedded para enviar datos estructurados hacia la capa Edge del ecosistema uFlex.</td>
-  <td>
-    <b>Escenario 1: Paquete de telemetría generado correctamente</b><br>
-    <b>Given</b> que el dispositivo IoT capturó datos válidos de movimiento,<br>
-    <b>When</b> el firmware construye el paquete de telemetría,<br>
-    <b>Then</b> el sistema incluye identificador del dispositivo, sesión, ángulo estimado, batería y marca temporal.<br><br>
-    <b>Escenario 2: Datos incompletos</b><br>
-    <b>Given</b> que el dispositivo IoT intenta generar telemetría,<br>
-    <b>When</b> faltan datos obligatorios del sensor o de la sesión,<br>
-    <b>Then</b> el sistema descarta el paquete y no lo envía hacia la capa Edge.
-  </td>
-  <td>EP05</td>
-</tr>
+    <tr>
+      <td>TS40</td>
+      <td>Firmware Embedded para captura de datos de movimiento</td>
+      <td>Como Developer, quiero implementar la lógica Embedded de captura de datos desde los sensores del dispositivo IoT para obtener mediciones iniciales del movimiento articular durante una sesión de rehabilitación.</td>
+      <td>
+        <b>Escenario 1: Captura exitosa de datos del sensor</b><br>
+        <b>Given</b> que el dispositivo IoT se encuentra encendido y los sensores están conectados correctamente,<br>
+        <b>When</b> el firmware inicia la lectura de datos,<br>
+        <b>Then</b> el sistema captura valores de movimiento y los prepara para su procesamiento local.<br><br>
+        <b>Escenario 2: Sensor no disponible</b><br>
+        <b>Given</b> que el dispositivo IoT intenta iniciar la captura,<br>
+        <b>When</b> uno de los sensores no responde o no está conectado correctamente,<br>
+        <b>Then</b> el sistema marca el estado del dispositivo como error y evita enviar datos inválidos.
+      </td>
+      <td>EP05</td>
+    </tr>
+    <tr>
+      <td>TS41</td>
+      <td>Calibración y validación inicial del dispositivo IoT</td>
+      <td>Como Developer, quiero implementar una rutina de calibración y validación inicial del dispositivo IoT para asegurar que las mediciones capturadas sean consistentes antes de iniciar una sesión terapéutica.</td>
+      <td>
+        <b>Escenario 1: Calibración completada correctamente</b><br>
+        <b>Given</b> que el dispositivo IoT se encuentra en estado de configuración inicial,<br>
+        <b>When</b> el firmware ejecuta la rutina de calibración,<br>
+        <b>Then</b> el sistema establece valores base para la captura de movimiento y permite continuar con la sesión.<br><br>
+        <b>Escenario 2: Calibración fallida</b><br>
+        <b>Given</b> que el dispositivo IoT intenta calibrarse,<br>
+        <b>When</b> los valores obtenidos están fuera del rango esperado,<br>
+        <b>Then</b> el sistema conserva el estado de error y solicita repetir la calibración antes de capturar telemetría.
+      </td>
+      <td>EP05</td>
+    </tr>
+    <tr>
+      <td>TS42</td>
+      <td>Generación de paquete de telemetría desde Embedded</td>
+      <td>Como Developer, quiero generar paquetes de telemetría desde el firmware Embedded para enviar datos estructurados hacia la capa Edge del ecosistema uFlex.</td>
+      <td>
+        <b>Escenario 1: Paquete de telemetría generado correctamente</b><br>
+        <b>Given</b> que el dispositivo IoT capturó datos válidos de movimiento,<br>
+        <b>When</b> el firmware construye el paquete de telemetría,<br>
+        <b>Then</b> el sistema incluye identificador del dispositivo, sesión, ángulo estimado, batería y marca temporal.<br><br>
+        <b>Escenario 2: Datos incompletos</b><br>
+        <b>Given</b> que el dispositivo IoT intenta generar telemetría,<br>
+        <b>When</b> faltan datos obligatorios del sensor o de la sesión,<br>
+        <b>Then</b> el sistema descarta el paquete y no lo envía hacia la capa Edge.
+      </td>
+      <td>EP05</td>
+    </tr>
   </tbody>
 </table>
 
@@ -7723,6 +7711,7 @@ Se presenta el Sprint Planning correspondiente a la segunda entrega del proyecto
 A continuacion se presenta el enlace al tablero de Jira utilizado para la gestion del Sprint 2:
 </p>
 
+![Captura  Sprint 1 de Trello](./assets/images/screenshots/sprint-2/sprint-2-board.png)  
 [https://kyrubi-upc.atlassian.net/jira/software/projects/HU/boards/34](https://kyrubi-upc.atlassian.net/jira/software/projects/HU/boards/34)
 
 
@@ -7970,7 +7959,7 @@ La organizacion de las pruebas se realizo siguiendo la estructura del backend po
 </div>
 
 <div align="center">
-  <img src="assets/testing/05_backend_test_classes_tree.png" alt="Backend test classes tree" width="90%">
+  <img src="assets/testing/05_backend_test_classes_tree.png" alt="Backend test classes tree" width="50%">
   <p><strong>Figura 6.2.2.5.3.</strong> Arbol de clases de prueba agrupadas por bounded contexts.</p>
 </div>
 
@@ -8305,6 +8294,8 @@ A continuacion se presenta la relacion de commits asociados a la implementacion 
     </tbody>
   </table>
 </div>
+
+<hr class="page-break">
 
 # Conclusiones
 
