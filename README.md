@@ -347,6 +347,15 @@ Análisis de cantidad de commits realizados por semana.
             - [6.2.1.7. Services Documentation Evidence for Sprint Review](#6217-services-documentation-evidence-for-sprint-review)
             - [6.2.1.8. Software Deployment Evidence for Sprint Review](#6218-software-deployment-evidence-for-sprint-review)
             - [6.2.1.9. Team Collaboration Insights during Sprint](#6219-team-collaboration-insights-during-sprint)
+         - [6.2.2. Sprint 2](#622-sprint-2)
+            - [6.2.2.1. Sprint Planning 2](#6221-sprint-planning-2)
+            - [6.2.2.2. Aspect Leaders and Collaborators](#6222-aspect-leaders-and-collaborators)
+            - [6.2.2.3. Sprint Backlog 2](#6223-sprint-backlog-2)
+            - [6.2.2.4. Development Evidence for Sprint Review](#6224-development-evidence-for-sprint-review)
+            - [6.2.2.5. Testing Suite Evidence for Sprint Review](#6225-testing-suite-evidence-for-sprint-review)
+            - [6.2.2.7. Services Documentation Evidence for Sprint Review](#6227-services-documentation-evidence-for-sprint-review)
+            - [6.2.2.8. Software Deployment Evidence for Sprint Review](#6228-software-deployment-evidence-for-sprint-review)
+            - [6.2.2.9. Team Collaboration Insights during Sprint](#6229-team-collaboration-insights-during-sprint)
 
 - [Conclusiones](#conclusiones)
    - [Conclusiones y recomendaciones](#conclusiones-y-recomendaciones)
@@ -7908,6 +7917,250 @@ El objetivo de este Sprint es presentar una segunda version funcional del ecosis
   </table>
 </div>
 
+##### 6.2.2.4. Development Evidence for Sprint Review
+
+Durante el Sprint 2 el equipo expandió el ecosistema uFlex desde la capa de front-end entregada en el Sprint 1 hacia la **integración técnica del backend, el Edge Gateway, el firmware Embedded del dispositivo IoT y la aplicación móvil del paciente**. El trabajo de desarrollo se concentró en cuatro repositorios, cada uno asociado a un frente de trabajo de la matriz de Aspect Leaders and Collaborators (sección 6.2.2.2):
+
+- **Backend — REST API** (`kiniot/uflex-rest-api`): monolito en Java + Spring Boot estructurado por bounded contexts (IAM, Organization, Planning, Subscription y Device) bajo Domain-Driven Design.
+- **Edge — Gateway** (`kiniot/uflex-edge-gateway`): servicio Edge en Python + Flask que autentica los kits IoT e ingiere la telemetría de movimiento (ángulo de flexión articular).
+- **Embedded — Firmware IoT** (`kiniot/uflex-embedded-app`): firmware en C++ para ESP32 (sensores MPU9250 vía multiplexor TCA9548A) con simulación en Wokwi.
+- **Mobile — Patient App** (`kiniot/uflex-patient-mobile`): aplicación Android nativa en Kotlin (Jetpack Compose) que consume el REST API del backend.
+
+A continuación se presentan los commits realizados en cada repositorio durante el Sprint, **omitiendo los commits de merge** para resaltar únicamente el trabajo de implementación. Los commits se agrupan por la rama (feature branch) en la que se desarrollaron antes de integrarse a `develop`.
+
+**Repositorio: Backend — REST API**
+
+URL del repositorio: <https://github.com/kiniot/uflex-rest-api>
+
+El backend concentró el mayor volumen de desarrollo del Sprint (151 commits sin merge), cubriendo autenticación JWT multitenant, gestión de clínicas, pacientes y fisioterapeutas, planes de tratamiento y ejercicios, suscripciones con Stripe y gestión de dispositivos IoT, además de la configuración de despliegue y la documentación OpenAPI/Scalar.
+
+| Branch | Commit Id | Commit Message | Commit Message Body | Committed on (Date) |
+|--------|-----------|----------------|---------------------|---------------------|
+| develop | a777cc0 | chore: initial commit | — | 01/05/2026 |
+| develop | 2db2806 | feat(subs): add stripe checkout and yaml | — | 12/05/2026 |
+| develop | f827aea | feat(subs): add subscription stripe conection with external service | — | 13/05/2026 |
+| develop | e86468d | feat(config): update application-prod.yaml with database and JWT configuration | — | 14/05/2026 |
+| develop | 09ae1d0 | feat(docker): add Dockerfile for multi-stage build and application deployment | — | 14/05/2026 |
+| develop | a729b5a | fix(docker): update Maven base image version in Dockerfile for build stage | — | 14/05/2026 |
+| develop | e698df4 | fix(docker): rename build stage to builder in Dockerfile | — | 14/05/2026 |
+| develop | 1c4707b | fix(docker): rename build stage from 'builder' to 'build' in Dockerfile | — | 14/05/2026 |
+| develop | f8d497d | fix(docker): update base image version to Eclipse Temurin 25 in Dockerfile | — | 14/05/2026 |
+| develop | 79b9ad2 | fix(security): update CORS configuration to allow specific origins | — | 14/05/2026 |
+| develop | 1dba3af | feat(api): add server configurations for local and production environments in OpenAPI | — | 14/05/2026 |
+| develop | 083cdda | fix(logging): change Hibernate SQL logging level from error to info | — | 14/05/2026 |
+| feature/initial-structure | 0099ebc | build(pom): add dependencies for Spring Boot Actuator, Security, and JWT | — | 01/05/2026 |
+| feature/initial-structure | 8266478 | docs(setup): add initial setup and configuration guide for uFlex REST API | — | 01/05/2026 |
+| feature/initial-structure | 310309a | feat(shared): implement Snake Case with Pluralized Table Naming Strategy | — | 01/05/2026 |
+| feature/initial-structure | c3fc5bd | feat(config): add application configuration for development and production environments | — | 01/05/2026 |
+| feature/initial-structure | 08a7817 | feat(openapi): add OpenAPI configuration for API documentation | — | 01/05/2026 |
+| feature/initial-structure | 8989008 | feat(shared): add AuditableAbstractAggregateRoot for auditing support in aggregates | — | 01/05/2026 |
+| feature/initial-structure | cfefdb9 | feat(shared): add AuditableModel base class for entity auditing | — | 01/05/2026 |
+| feature/initial-structure | 67dccda | feat(app): enable JPA auditing for entity tracking | — | 01/05/2026 |
+| feature/initial-structure | cd9d61d | feat(iam): add value objects for Email, Password, RoleId, RoleName, and UserId | — | 01/05/2026 |
+| feature/initial-structure | 240050e | feat(iam): add Role entity with value objects for RoleId and RoleName | — | 01/05/2026 |
+| feature/initial-structure | be7a199 | feat(iam): add UserCreatedEvent record for user creation events | — | 01/05/2026 |
+| feature/initial-structure | 35d0fa8 | feat(shared): enhance AuditableAbstractAggregateRoot with domain event publishing and optimized persistence management | — | 01/05/2026 |
+| feature/initial-structure | f1035d4 | feat(shared): enhance AuditableModel with optimized persistence management and auditing capabilities | — | 01/05/2026 |
+| feature/initial-structure | 54936a8 | feat(iam): refine Role entity by removing Persistable implementation and enhancing auditing capabilities | — | 01/05/2026 |
+| feature/initial-structure | 16f8f14 | feat(iam): add User aggregate root with role management and user creation event publishing | — | 01/05/2026 |
+| feature/initial-structure | 1e222a0 | feat(iam): add RoleRepository and UserRepository for role and user management | — | 01/05/2026 |
+| feature/initial-structure | 3776184 | feat(iam): implement UserDetailsImpl for user authentication and authorization | — | 01/05/2026 |
+| feature/initial-structure | bc37c46 | feat(iam): add UsernamePasswordAuthenticationTokenBuilder for authentication token creation | — | 01/05/2026 |
+| feature/initial-structure | dd84fda | feat(iam): implement UserDetailsService for loading user details by username | — | 01/05/2026 |
+| feature/initial-structure | 2b23484 | feat(iam): add HashingService and TokenService interfaces for password hashing and token management | — | 01/05/2026 |
+| feature/initial-structure | b327834 | feat(iam): implement BCryptHashingService and TokenService for password hashing and JWT token management | — | 01/05/2026 |
+| feature/initial-structure | 8ced73e | feat(iam): add BearerAuthorizationRequestFilter and UnauthorizedRequestHandlerEntryPoint for token validation and unauthorized request handling | — | 01/05/2026 |
+| feature/initial-structure | a502e03 | feat(iam): add WebSecurityConfiguration for web security setup and authentication management | — | 01/05/2026 |
+| feature/initial-structure | 6ed466b | feat(iam): add command and query records for user authentication and role management | — | 01/05/2026 |
+| feature/initial-structure | ead1bd6 | feat(iam): implement role management services and application ready event handler for role seeding | — | 01/05/2026 |
+| feature/initial-structure | 53b65c3 | feat(iam): add resource classes for user authentication and role management | — | 01/05/2026 |
+| feature/initial-structure | 8ce302b | feat(iam): add assemblers for user authentication and registration commands | — | 01/05/2026 |
+| feature/initial-structure | 7a68e9c | feat(iam): add authentication and user retrieval controllers | — | 01/05/2026 |
+| feature/initial-structure | 0d87ae3 | feat(shared): add JWT security scheme and requirements to OpenAPI configuration | — | 01/05/2026 |
+| feature/initial-structure | 1a482f9 | feat(docker): add initial docker-compose configuration for development environment | — | 01/05/2026 |
+| feature/initial-structure | ce7368b | feat(iam): add TenantId value object and associate/disassociate methods in User | — | 03/05/2026 |
+| feature/initial-structure | 3317dc8 | feat(iam): add tenant field to UserDetailsImpl and update constructor | — | 03/05/2026 |
+| feature/initial-structure | ebd4305 | build(pom): add spring-boot-starter-mail and spring-boot-starter-thymeleaf dependencies | — | 03/05/2026 |
+| feature/initial-structure | 809d6a3 | feat(email): add HTML templates for password reset, temporary password, and verification emails | — | 03/05/2026 |
+| feature/initial-structure | a5110b5 | feat(config): add email configuration and OTP settings to application.yaml | — | 03/05/2026 |
+| feature/initial-structure | eb5212b | feat(shared): implement EmailService for sending templated emails | — | 03/05/2026 |
+| feature/initial-structure | d048898 | feat(shared): implement NotificationEmailService for sending verification, password reset, and temporary password emails | — | 03/05/2026 |
+| feature/initial-structure | 7a9c5f7 | feat(iam): implement OTP verification configuration and service | — | 03/05/2026 |
+| feature/initial-structure | 6b361c9 | feat(iam): implement CurrentUserProvider for retrieving user details from Spring Security context | — | 03/05/2026 |
+| feature/initial-structure | d3e4bd6 | feat(iam): add queries for retrieving authenticated user ID and tenant ID | — | 03/05/2026 |
+| feature/initial-structure | c423938 | feat(iam): add GetUserByIdQuery and update UserQueryService to handle user retrieval by ID | — | 03/05/2026 |
+| feature/initial-structure | 85c9b75 | feat(iam): implement IamContextFacade and IamContextFacadeImpl for user and tenant ID retrieval | — | 03/05/2026 |
+| feature/initial-structure | dbb58df | feat(shared): add ClinicId value object for clinic identifier representation | — | 03/05/2026 |
+| feature/initial-structure | 6fb6b25 | feat(planning): add PlanName and TreatmentPlan value objects with validation | — | 03/05/2026 |
+| feature/initial-structure | f1cb618 | feat(planning): implement ExternalIamService to fetch current academy ID | — | 03/05/2026 |
+| feature/initial-structure | 40db6b7 | feat(planning): implement CreateTreatmentPlanCommand and associated service for treatment plan creation | — | 03/05/2026 |
+| feature/initial-structure | da757fc | feat(iam): add UserWithEmailNotFound and UserWithIdNotFoundException for improved error handling | — | 03/05/2026 |
+| feature/initial-structure | 986bbf6 | feat(iam): implement event handler for ClinicAdminRegisteredEvent to assign tenant ID to user | — | 03/05/2026 |
+| feature/initial-structure | de5e47b | feat(iam): implement handle method for AssignUserTenantId command to associate tenant ID with user | — | 03/05/2026 |
+| feature/initial-structure | 6d0f216 | docs: add CLAUDE.md for project setup and architecture guidance | — | 03/05/2026 |
+| feature/initial-structure | 064217e | docs: add AGENTS.md for project setup and architecture overview | — | 03/05/2026 |
+| feature/initial-structure | b3a967d | docs: add README.md for project overview and setup instructions | — | 03/05/2026 |
+| feature/iam-integration | db141c9 | feat(iam): make IAM functional end-to-end with Supabase | - Add /users/me and /users/me/password endpoints<br>- Harden /users/{email} with @PreAuthorize (owner or admin)<br>- Include roles in AuthenticatedUserResource for client-side routing<br>- Improve CORS for local frontend (origin patterns, OPTIONS, credentials)<br>- Add SSL mode to dev datasource for Supabase compatibility<br>- Default spring.profiles.active to dev<br>- Add run-dev.ps1 to load .env on Windows; ignore local .env files<br>- Disable Co-Authored-By trailers via .claude/settings.json | 08/05/2026 |
+| feature/organization | 072e343 | feat(organization): add value objects for organization domain model | — | 10/05/2026 |
+| feature/organization | bb00fc3 | feat(organization): add domain models for Clinic, Patient, Physiotherapist | — | 10/05/2026 |
+| feature/organization | dc089dd | feat(organization): refactor domain models to include new value objects | — | 10/05/2026 |
+| feature/organization | e142e23 | feat(organization): add exceptions for patient and physiotherapist management | — | 10/05/2026 |
+| feature/organization | e06c89f | feat(organization): simplify clinic management by removing status handling and updating command parameters | — | 12/05/2026 |
+| feature/organization | 8cbb22e | feat(organization): simplify clinic management by removing status handling and updating command parameters | — | 12/05/2026 |
+| feature/organization | c32ec66 | feat(organization): enhance patient registration and management with optional physiotherapist assignment | — | 12/05/2026 |
+| feature/organization | aecf6ae | chore: remove unused items | — | 12/05/2026 |
+| feature/iam-tenantid-contract | c858664 | feat(iam): add tenantId to user contract | — | 10/05/2026 |
+| feature/subscription | 5d04fba | feat(subscription): add subscription backend bounded context | — | 10/05/2026 |
+| feature/subscription | c796825 | build(subscription): add stripe java sdk dependency | — | 10/05/2026 |
+| feature/subscription | 973aa7b | chore(subscription): configure stripe environment properties | — | 10/05/2026 |
+| feature/subscription | da6f446 | chore(security): allow stripe webhook endpoint | — | 10/05/2026 |
+| feature/planning-context | bf51cdd | feat(planning): add commands and entities for exercise and treatment plan management | — | 11/05/2026 |
+| feature/planning-context | 97ea6fa | feat(planning): add commands, queries, exceptions and domain services for exercise and treatment plan management | — | 11/05/2026 |
+| feature/planning-context | e0d7b34 | feat(planning): add ExerciseRepository and enhance TreatmentPlanRepository with new query methods | — | 11/05/2026 |
+| feature/planning-context | 9a47114 | feat(planning): enhance routine commands with treatment plan ID and improve exception handling | — | 11/05/2026 |
+| feature/planning-context | fd5fe29 | feat(planning): add resource classes for exercise, routine, and treatment plan management | — | 11/05/2026 |
+| feature/planning-context | f0360d8 | feat(planning): implement ExerciseCommandService and ExerciseQueryService for exercise management | — | 11/05/2026 |
+| feature/planning-context | 9e01026 | feat(planning): add resource assemblers for creating and updating exercise, routine, and treatment plan commands | — | 11/05/2026 |
+| feature/planning-context | 94fc759 | feat(planning): add ExercisesController and TreatmentPlansController for exercise and treatment plan management | — | 11/05/2026 |
+| feature/planning-context | afe8db0 | fix(planning): enhance resource assemblers for Routine and TreatmentPlan with additional fields | — | 11/05/2026 |
+| feature/planning-context | 7ebf016 | feat(planning): enhance ExercisesController and TreatmentPlansController with OpenAPI annotations for improved API documentation | — | 11/05/2026 |
+| feature/planning-context | a2e69e0 | refactor(planning): rename repository methods for consistency in TreatmentPlan handling | — | 12/05/2026 |
+| feature/planning-context | 3b9608d | feat(planning): implement Exercise aggregate and enhance command services with clinic validation | — | 12/05/2026 |
+| feature/iam-tenant-changes | 5e61416 | feat(iam): implement AssignUserRoleCommand and enhance user role assignment logic | — | 12/05/2026 |
+| feature/iam-tenant-changes | 6cdc109 | feat(iam): replace EmailAddress with Email value object across multiple entities and commands and creates User for Physiotherapist | — | 12/05/2026 |
+| feature/iam-tenant-changes | ed75027 | feat(iam): enhance user signup process with email notification and update temporary password email template | — | 12/05/2026 |
+| feature/iam-tenant-changes | ab93c5a | refactor(iam): refactor UserId import to shared domain model across multiple commands and entities | — | 12/05/2026 |
+| feature/iam-tenant-changes | f237147 | refactor(iam): update ClinicId references to use the new id() method across multiple resource assemblers | — | 12/05/2026 |
+| feature/iam-tenant-changes | c714080 | feat(iam): implement patient registration commands for clinic admins and physiotherapists | — | 12/05/2026 |
+| feature/iam-tenant-changes | 96acb18 | feat(iam): add patient registration and deletion functionality for clinic admins and physiotherapists | — | 12/05/2026 |
+| feature/iam-tenant-changes | f97769e | feat(shared): implement global exception handler for improved error management | — | 12/05/2026 |
+| feature/iam-tenant-changes | 9c913d9 | feat(iam): enhance error handling with ErrorResource and update exception responses | — | 12/05/2026 |
+| feature/iam-tenant-changes | 5086b06 | chore(design): add uFlex design system documentation with color and typography guidelines for HTML templates | — | 12/05/2026 |
+| feature/subscription | a83a05a | feat(subs): add subscription tools | — | 12/05/2026 |
+| feature/subscription-refactor | 2a6d19c | refactor(subscription): rename billing cycle to billing period and introduce subscription selection and tier pricing | — | 21/05/2026 |
+| feature/subscription-refactor | 391035e | feat(subscription): implement tier seeding functionality and related command structure | — | 21/05/2026 |
+| feature/subscription-refactor | e7dcc76 | refactor(iam): rename authenticated user queries and update context fetching methods | — | 21/05/2026 |
+| feature/subscription-refactor | 8bdf9ff | fix(planning): rename method to fetch current clinic ID in services | — | 21/05/2026 |
+| feature/subscription-refactor | fb84f67 | feat(subscription): implement subscription command and query services with external IAM integration | — | 21/05/2026 |
+| feature/subscription-refactor | 2eccb77 | feat(subscription): enhance subscription management with current status checks and tier pricing validation | — | 21/05/2026 |
+| feature/subscription-refactor | 0f59fe1 | feat(subscription): add CreateSubscription command and resource with validation | — | 21/05/2026 |
+| feature/subscription-refactor | 88f79c6 | feat(subscription): refactor subscription creation with checkout session integration and kit selection handling | — | 21/05/2026 |
+| feature/subscription-refactor | 334115a | feat(subscription): add tier catalog retrieval with associated resources and query handling | — | 25/05/2026 |
+| feature/subscription-refactor | 50a95e2 | feat(subscription): enhance Stripe webhook and subscription checkout endpoints with OpenAPI documentation | — | 25/05/2026 |
+| feature/subscription-refactor | 7e7f9d7 | build(environment): update application configuration for dynamic Stripe URLs and enhance environment variable handling | — | 28/05/2026 |
+| feature/subscription-refactor | 6689e12 | feat(subscription): add validation for subscription amount format and handle exceptions for Stripe checkout session creation | — | 29/05/2026 |
+| feature/subscription-refactor | 0ebaff6 | feat(subscription): add validation for subscription amount format and handle exceptions for Stripe checkout session creation | — | 29/05/2026 |
+| feature/planning-refactor | f85d45b | feat(planning): refactor exercise model to include movement type and video URL | — | 31/05/2026 |
+| feature/planning-refactor | 494ada0 | test(planning): add unit tests for exercise and exercise series resource assemblers | — | 31/05/2026 |
+| feature/planning-refactor | b643778 | feat(planning): introduce treatment plan status and period value objects, refactor treatment plan commands and resources | — | 31/05/2026 |
+| feature/planning-refactor | 260521d | feat(planning): refactor treatment plan queries and specifications to support filtering by patient and physiotherapist | — | 31/05/2026 |
+| feature/planning-refactor | b6337af | feat(planning): implement treatment plan status transitions and associated commands | — | 31/05/2026 |
+| feature/planning-refactor | 5dd5a83 | feat(planning): add endpoints to retrieve active and scheduled treatment plans by patient | — | 31/05/2026 |
+| feature/planning-refactor | 55ba227 | feat(planning): add endpoints for authenticated patient to retrieve treatment plans and handle user profile exceptions | — | 31/05/2026 |
+| feature/planning-refactor | 45d64b1 | feat(planning): update operation summaries and descriptions for Exercises, Patients, and Physiotherapists controllers | — | 31/05/2026 |
+| feature/organization-refactor | e464ee0 | feat(organization): add queries and endpoints to retrieve current clinic admin, clinic, patient, and physiotherapist profiles | — | 31/05/2026 |
+| feature/organization-refactor | 32cb760 | feat(organization): add address field to clinic registration and related resources | — | 31/05/2026 |
+| feature/treatment-plan-default-scheduled | bc10be4 | feat(planning): set default treatment plan status to SCHEDULED and remove status from command | — | 01/06/2026 |
+| feature/treatment-plan-default-scheduled | 3ac54b0 | feat(organization): add commands to complete, mark inactive, and reactivate patients; enhance physiotherapist assignment logic | — | 02/06/2026 |
+| feature/treatment-plan-default-scheduled | 35879df | feat(organization): add commands and resources for updating patient profiles and deleting patients; implement email synchronization and validation | — | 03/06/2026 |
+| feature/device-management | ecf980c | feat(device): add value objects for device management | — | 04/06/2026 |
+| feature/device-management | c5224fc | feat(device): add events for device management including assignment, battery status, and registration | — | 04/06/2026 |
+| feature/device-management | 0bf3b8d | feat(device): add query records for device management | — | 04/06/2026 |
+| feature/device-management | 06ec52c | feat(device): add command objects for device management | — | 04/06/2026 |
+| feature/device-management | 8a2ece4 | feat(device): add command objects for device management | — | 04/06/2026 |
+| feature/device-management | 081b539 | feat(device): add interfaces and implement for query services for device management | — | 04/06/2026 |
+| feature/device-management | 2fdea76 | feat(device): add patient full name retrieval and clinic fleet metrics record | — | 04/06/2026 |
+| feature/device-management | 9388ebe | feat(device): add external services for IAM and organization context | — | 04/06/2026 |
+| feature/device-management | ae97723 | feat(device): add DeviceRepository interface for device persistence operations | — | 04/06/2026 |
+| feature/device-management | 81e7125 | feat(device): add resource classes for device management operations | — | 04/06/2026 |
+| feature/device-management | f156df7 | feat(device): implement DevicesController for device management operations | — | 04/06/2026 |
+| feature/device-management | 513b620 | feat(device): refactor DeviceResourceFromEntityAssembler to accept patient full name directly | — | 04/06/2026 |
+| feature/device-management | 7b1296f | feat(device): implement delete device functionality in DeviceCommandService and DevicesController | — | 09/06/2026 |
+| feature/standardize-api-errors | 2fb2232 | feat(exceptions): standardize API error handling with custom exceptions and error response structure | — | 14/06/2026 |
+| feature/standardize-api-errors | 7cf9669 | feat(exceptions): enhance API error handling for bad request scenarios with additional exception types | — | 14/06/2026 |
+| feature/test | 83d7cbf | feat: add device testing evidence | — | 14/06/2026 |
+| feature/test | 1547e3a | feat: add IAM authentication testing evidence | — | 14/06/2026 |
+| feature/test | 28b56aa | feat: add organization testing evidence | — | 14/06/2026 |
+| feature/test | 5ea2fd6 | feat: add planning application testing evidence | — | 14/06/2026 |
+| feature/test | af01f25 | feat: add planning controller testing evidence | — | 14/06/2026 |
+| feature/test | f58f09e | feat: add BDD testing resources | — | 14/06/2026 |
+| feature/device-improvements | bb21197 | feat(device): refactor device identification to use DeviceId; add AdvertisedName and update related commands | — | 15/06/2026 |
+| feature/device-improvements | 9e53b85 | docs: update exception handling guidelines in AGENTS.md, CLAUDE.md, and README.md | — | 15/06/2026 |
+| feature/device-improvements | 131df3c | docs: add design notes for Device, BLE, Edge, and API in English and Spanish | — | 15/06/2026 |
+
+**Repositorio: Edge — Gateway**
+
+URL del repositorio: <https://github.com/kiniot/uflex-edge-gateway>
+
+El Edge Gateway se inicializó durante el Sprint con su arquitectura base DDD (2 commits sin merge): un punto de entrada Flask que cablea los bounded contexts de IAM (autenticación de kits IoT mediante `device_id` + `X-API-Key`) y Monitoring (ingesta y validación de lecturas de ángulo de flexión).
+
+| Branch | Commit Id | Commit Message | Commit Message Body | Committed on (Date) |
+|--------|-----------|----------------|---------------------|---------------------|
+| develop | a99cfc4 | chore: bootstrap uFlex Edge Gateway repository | Add baseline project files: MIT license, Python .gitignore and a<br>project README describing the edge gateway scope, DDD architecture and<br>the movement-monitoring API contract. | 29/05/2026 |
+| develop | b32fc79 | feat: scaffold edge gateway base system with DDD bounded contexts | Set up the base uFlex Edge Gateway following the smart-band example,<br>oriented to the uFlex tele-rehabilitation domain.<br>- Flask entry point (app.py) wiring IAM + Monitoring blueprints and a<br>  before_request bootstrap that initializes SQLite and seeds the test kit<br>- IAM bounded context: IoT Kit (Device) authentication via device_id +<br>  X-API-Key across domain/application/infrastructure/interfaces layers<br>- Monitoring bounded context: ingestion of joint flexion angle readings<br>  (MovementRecord) with domain validation (0..360 deg) and UTC timestamp<br>  normalization<br>- shared/infrastructure: single Peewee SQLite database + init_db helper<br>- docs: technical stories (TS-UEG-001..006) and PlantUML class diagram<br>- requirements.txt: flask, peewee, python-dateutil | 29/05/2026 |
+
+**Repositorio: Embedded — Firmware IoT**
+
+URL del repositorio: <https://github.com/kiniot/uflex-embedded-app>
+
+El firmware Embedded (24 commits sin merge) implementó la estructura inicial del prototipo, el multiplexor I2C TCA9548A, los sensores inerciales MPU9250, el cálculo de ángulos relativos para el estado de movimiento y la generación del paquete de telemetría, con targets de simulación (`esp32_sim`) y hardware (`esp32_hw`).
+
+| Branch | Commit Id | Commit Message | Commit Message Body | Committed on (Date) |
+|--------|-----------|----------------|---------------------|---------------------|
+| develop | f613049 | chore: initial commit | — | 04/06/2026 |
+| feature/initial-structure | 7403159 | docs: add environment setup guides in English and Spanish | — | 05/06/2026 |
+| feature/initial-structure | 293c53e | feat(app): add initial hardware simulation setup | — | 05/06/2026 |
+| feature/initial-structure | a8ca3d2 | docs(simulation): add hardware simulation guides in English and Spanish | — | 05/06/2026 |
+| feature/initial-structure | 43ea53c | chore: update .gitignore and add VS Code extensions configuration | — | 06/06/2026 |
+| feature/initial-structure | e4c01b9 | chore: clean up extensions.json by removing unnecessary comments | — | 06/06/2026 |
+| feature/multiplexor-tca9548a | fe874d0 | feat(tca9548a): implement TCA9548A I2C multiplexer functionality | — | 07/06/2026 |
+| feature/multiplexor-tca9548a | 2681ed6 | feat(tca9548a): add TCA9548A chip to diagram and update PlatformIO configurations | — | 07/06/2026 |
+| feature/multiplexor-tca9548a | c079d81 | docs(simulation): update simulation setup documentation for PlatformIO environments and custom chips | — | 07/06/2026 |
+| feature/modest-iot | 4d2601e | feat(lib): add core classes for Modest IoT Nano-framework including Actuator, Sensor, Button, and Led | — | 08/06/2026 |
+| feature/inertial-mpu9250 | 18099a7 | feat(inertial): implement InertialSensor and related classes for inertial measurement | — | 08/06/2026 |
+| feature/inertial-mpu9250 | 1dca8fb | feat(modest-iot): add ToggableLedDevice class ModestIoT example | — | 08/06/2026 |
+| feature/inertial-mpu9250 | afbafe4 | feat(inertial): add SimulatedInertialSensorArray class for MPU6050 sensor simulation | — | 08/06/2026 |
+| feature/inertial-mpu9250 | 72535cf | fix: update author name in comments and add build flags for Modest IoT libraries | — | 08/06/2026 |
+| feature/inertial-mpu9250 | c0ff3f3 | refactor(imu): add IMU sensor classes and motion state handling | — | 08/06/2026 |
+| feature/inertial-mpu9250 | 584483d | feat: update LICENSE and README for ToggableLedDevice example | — | 08/06/2026 |
+| feature/inertial-mpu9250 | 644535d | feat(inertial): implement MPU9250 hardware adapter and runtime selection | — | 08/06/2026 |
+| feature/inertial-mpu9250 | cecb29b | feat(device): enhance IMU and motion payload abstractions with detailed documentation | — | 08/06/2026 |
+| feature/inertial-mpu9250 | a8e86da | docs: add authors and contribution guidelines in Spanish and English | — | 08/06/2026 |
+| feature/inertial-mpu9250 | d92f7d4 | chore: add .editorconfig and .gitattributes for consistent coding standards | — | 08/06/2026 |
+| feature/inertial-mpu9250 | 028db83 | docs: update authors and contributing guidelines for clarity and consistency | — | 08/06/2026 |
+| feature/inertial-mpu9250 | dd94864 | chore: add horizontal rule for improved README structure | — | 08/06/2026 |
+| feature/class-diagram | 62bbf77 | feat: add embedded class diagra and test | — | 15/06/2026 |
+| documentation | 3fd06ce | docs: add hardware overview (sensor topology and I2C wiring) | Document the physical sensing setup: three MPU9250 IMUs reached through a<br>TCA9548A I2C multiplexer, WHO_AM_I/wake/sampling registers, and how IMU<br>samples flow into the MotionState via RelativeAngleCalculator. Covers both<br>esp32_hw and esp32_sim targets. | 15/06/2026 |
+
+**Repositorio: Mobile — Patient App**
+
+URL del repositorio: <https://github.com/kiniot/uflex-patient-mobile>
+
+La aplicación móvil del paciente (18 commits sin merge) estableció la estructura base con Hilt, Retrofit y Navigation Compose, e implementó el flujo de inicio de sesión con el backend, la gestión de sesión local, la pantalla principal y la gestión del perfil del paciente.
+
+| Branch | Commit Id | Commit Message | Commit Message Body | Committed on (Date) |
+|--------|-----------|----------------|---------------------|---------------------|
+| develop | a3a1087 | chore: initial commit | — | 04/05/2026 |
+| feature/initial-structure | c1773e4 | build(app): add dependencies for Hilt, KSP, Retrofit, Navigation, and other libraries | — | 04/05/2026 |
+| feature/initial-structure | ddff360 | build(app): configure build types with API base URL and logging settings | — | 04/05/2026 |
+| feature/initial-structure | 6216143 | chore: add EditorConfig for consistent coding styles and formatting rules | — | 04/05/2026 |
+| feature/initial-structure | 0160591 | chore: add .gitattributes for consistent line endings and binary file handling | — | 04/05/2026 |
+| feature/initial-structure | ffbbedc | build(app): add Kotlin Serialization plugin to build configuration | — | 04/05/2026 |
+| feature/initial-structure | cdffdd0 | feat: implement initial app structure with navigation and screens | — | 04/05/2026 |
+| feature/initial-structure | b00eefb | build(libs): enable multiDex and core library desugaring, update dependencies for serialization and remove moshi | — | 04/05/2026 |
+| feature/initial-structure | a42d980 | feat(core): add serializers for LocalDate and LocalDateTime, and configure network module | — | 04/05/2026 |
+| feature/initial-structure | 2781349 | feat(core): add serializers for LocalDate and LocalDateTime, and configure network module | — | 04/05/2026 |
+| feature/initial-structure | d89e170 | feat(theme): restructure color and typography management, add internet permissions | — | 04/05/2026 |
+| feature/initial-structure | 08de7ff | feat(auth): implement sign-in functionality with API integration and update navigation | — | 14/06/2026 |
+| feature/initial-structure | c840e5e | feat(auth): enhance sign-in functionality with local session management and network security configuration | — | 14/06/2026 |
+| feature/initial-structure | f06a87b | feat(auth): enhance error handling and snackbar integration for sign-in process | — | 15/06/2026 |
+| feature/initial-structure | 428df1a | feat(home): implement home screen and update main navigation structure | — | 15/06/2026 |
+| feature/initial-structure | 3aa7f9b | feat(profile): add patient profile management with gender and status enums, local data source, and API integration | — | 15/06/2026 |
+| feature/initial-structure | ad598da | docs: add AGENTS.md and ARCHITECTURE.md for project guidelines and structure | — | 15/06/2026 |
+| documentation | f49fac5 | docs: add setup guide and project README | Add docs/SETUP.md with a step-by-step local build/run guide (prerequisites,<br>API base URL config, build, run, first login, troubleshooting) and a root<br>README.md describing the app, stack, architecture, and project status. | 15/06/2026 |
+
+<hr class="page-break">
+
 ##### 6.2.2.5. Testing Suite Evidence for Sprint Review
 
 <p>
@@ -8294,6 +8547,233 @@ A continuacion se presenta la relacion de commits asociados a la implementacion 
     </tbody>
   </table>
 </div>
+
+##### 6.2.2.7. Services Documentation Evidence for Sprint Review
+
+A diferencia del Sprint 1 —donde esta sección no aplicaba por concentrarse en productos de front-end— en el Sprint 2 se entregaron Web Services reales. La documentación de servicios se cubre en **dos tablas independientes**: la del **Backend REST API**, documentado con **Scalar** sobre **OpenAPI 3.1**, y la del **Edge API**, implementado en Flask para la ingesta de telemetría. La aplicación móvil del paciente **consume** estos servicios y el firmware Embedded **produce** la telemetría que llega al Edge, por lo que ninguno de los dos expone documentación de servicios propia.
+
+**1) Backend — REST API (documentado con Scalar / OpenAPI 3.1)**
+
+La API del backend está documentada con Scalar (tema *kepler*), con esquema de seguridad **Bearer JWT** y servidores configurados para entorno local y de producción. La interfaz de documentación está disponible públicamente en:
+
+- UI de Scalar: <https://uflex-rest-api-production.up.railway.app/scalar/index.html>
+
+A continuación se listan los endpoints expuestos, agrupados por bounded context:
+
+| Bounded Context | Verbo HTTP | Endpoint | Descripción |
+|-----------------|-----------|----------|-------------|
+| IAM | POST | `/api/v1/authentication/sign-up` | Registrar un nuevo usuario en el sistema. |
+| IAM | POST | `/api/v1/authentication/sign-in` | Autenticar al usuario y emitir un token JWT. |
+| IAM | GET | `/api/v1/users/me` | Obtener los datos del usuario autenticado. |
+| IAM | PUT | `/api/v1/users/me/password` | Cambiar la contraseña del usuario autenticado. |
+| IAM | GET | `/api/v1/users/{email}` | Obtener un usuario por email (propietario o admin). |
+| Organization | POST | `/api/v1/clinics` | Registrar una nueva clínica. |
+| Organization | GET | `/api/v1/clinics/me` | Obtener la clínica del usuario autenticado. |
+| Organization | POST | `/api/v1/clinic-admins` | Registrar un administrador de clínica. |
+| Organization | GET | `/api/v1/clinic-admins/me` | Obtener el perfil del admin de clínica autenticado. |
+| Organization | POST | `/api/v1/patients/by-clinic-admin` | Registrar un paciente como admin de clínica. |
+| Organization | POST | `/api/v1/patients/by-physiotherapist` | Registrar un paciente como fisioterapeuta. |
+| Organization | GET | `/api/v1/patients/{id}` | Obtener un paciente por ID. |
+| Organization | GET | `/api/v1/patients/me` | Obtener el perfil del paciente autenticado. |
+| Organization | PUT | `/api/v1/patients/me` | Actualizar el perfil del paciente autenticado. |
+| Organization | GET | `/api/v1/patients` | Listar los pacientes de la clínica autenticada. |
+| Organization | GET | `/api/v1/patients/by-clinic/{clinicId}` | Listar los pacientes de una clínica. |
+| Organization | GET | `/api/v1/patients/by-physiotherapist/{physiotherapistId}` | Listar los pacientes de un fisioterapeuta. |
+| Organization | PUT | `/api/v1/patients/by-clinic-admin/{id}` | Actualizar un paciente como admin de clínica. |
+| Organization | PUT | `/api/v1/patients/by-physiotherapist/{id}` | Actualizar un paciente como fisioterapeuta. |
+| Organization | PUT | `/api/v1/patients/{id}/assign` | Asignar o reasignar un paciente a un fisioterapeuta. |
+| Organization | PUT | `/api/v1/patients/{id}/discharge` | Dar de alta a un paciente. |
+| Organization | POST | `/api/v1/patients/{id}/complete` | Marcar un paciente como completado. |
+| Organization | POST | `/api/v1/patients/{id}/inactive` | Marcar un paciente como inactivo. |
+| Organization | POST | `/api/v1/patients/{id}/reactivate` | Reactivar un paciente. |
+| Organization | DELETE | `/api/v1/patients/{id}` | Eliminar un paciente. |
+| Organization | POST | `/api/v1/physiotherapists` | Registrar un fisioterapeuta. |
+| Organization | GET | `/api/v1/physiotherapists/{id}` | Obtener un fisioterapeuta por ID. |
+| Organization | GET | `/api/v1/physiotherapists/me` | Obtener el perfil del fisioterapeuta autenticado. |
+| Planning | GET | `/api/v1/exercises` | Listar el catálogo de ejercicios. |
+| Planning | GET | `/api/v1/exercises/{id}` | Obtener un ejercicio por ID. |
+| Planning | POST | `/api/v1/exercises` | Crear un nuevo ejercicio. |
+| Planning | PUT | `/api/v1/exercises/{id}` | Actualizar un ejercicio. |
+| Planning | DELETE | `/api/v1/exercises/{id}` | Eliminar un ejercicio. |
+| Planning | GET | `/api/v1/treatment-plans` | Listar planes de tratamiento (con filtros opcionales). |
+| Planning | GET | `/api/v1/treatment-plans/{id}` | Obtener un plan de tratamiento por ID. |
+| Planning | POST | `/api/v1/treatment-plans` | Crear un plan de tratamiento. |
+| Planning | PUT | `/api/v1/treatment-plans/{id}` | Actualizar un plan de tratamiento. |
+| Planning | POST | `/api/v1/treatment-plans/{id}/activate` | Activar un plan de tratamiento. |
+| Planning | POST | `/api/v1/treatment-plans/{id}/complete` | Completar un plan de tratamiento. |
+| Planning | POST | `/api/v1/treatment-plans/{id}/cancel` | Cancelar un plan de tratamiento. |
+| Planning | DELETE | `/api/v1/treatment-plans/{id}` | Eliminar un plan de tratamiento. |
+| Planning | GET | `/api/v1/patients/me/treatment-plans` | Obtener mis planes de tratamiento (paciente). |
+| Planning | GET | `/api/v1/patients/me/treatment-plans/active` | Obtener mi plan de tratamiento activo. |
+| Planning | GET | `/api/v1/patients/me/treatment-plans/scheduled` | Obtener mis planes de tratamiento programados. |
+| Planning | GET | `/api/v1/patients/me/treatment-plans/next-scheduled` | Obtener mi próximo plan de tratamiento programado. |
+| Planning | GET | `/api/v1/patients/me/treatment-plans/{treatmentPlanId}` | Obtener un plan de tratamiento propio específico. |
+| Subscription | POST | `/api/v1/subscriptions/checkout` | Crear una sesión de checkout de suscripción. |
+| Subscription | GET | `/api/v1/subscriptions/current` | Obtener la suscripción actual. |
+| Subscription | GET | `/api/v1/subscriptions/tiers` | Obtener el catálogo de planes (tiers). |
+| Subscription | POST | `/api/v1/subscriptions/webhook` | Webhook de Stripe (acceso sin autenticación). |
+| Device | POST | `/api/v1/devices` | Registrar un nuevo dispositivo. |
+| Device | GET | `/api/v1/devices` | Listar los dispositivos de la clínica. |
+| Device | GET | `/api/v1/devices/{deviceId}` | Obtener un dispositivo por ID. |
+| Device | GET | `/api/v1/devices/by-serial-number/{serialNumber}` | Obtener un dispositivo por número de serie. |
+| Device | GET | `/api/v1/devices/metrics` | Obtener las métricas de la flota de dispositivos. |
+| Device | PUT | `/api/v1/devices/{deviceId}` | Actualizar un dispositivo. |
+| Device | POST | `/api/v1/devices/{deviceId}/assign` | Asignar un dispositivo a un paciente. |
+| Device | POST | `/api/v1/devices/{deviceId}/unassign` | Desasignar un dispositivo de un paciente. |
+| Device | DELETE | `/api/v1/devices/{deviceId}` | Eliminar un dispositivo. |
+
+<div style="text-align: center;">
+  <img src="assets/images/screenshots/sprint-2/scalar-overview.png" alt="Scalar — vista general de la API" style="max-width: 100%; height: auto;">
+</div>
+
+*Figura 6.2.2.7.1. Scalar — vista general de la documentación del REST API uFlex (OpenAPI 3.1.0, servidores y autenticación Bearer JWT).*
+
+<div style="text-align: center;">
+  <img src="assets/images/screenshots/sprint-2/scalar-signup-endpoint.png" alt="Scalar — detalle del endpoint POST /api/v1/authentication/sign-up" style="max-width: 100%; height: auto;">
+</div>
+
+*Figura 6.2.2.7.2. Scalar — detalle del endpoint `POST /api/v1/authentication/sign-up`: cuerpo de la solicitud, respuestas y ejemplo de request/response.*
+
+<div style="text-align: center;">
+  <img src="assets/images/screenshots/sprint-2/scalar-devices-endpoint.png" alt="Scalar — detalle del endpoint GET /api/v1/devices" style="max-width: 100%; height: auto;">
+</div>
+
+*Figura 6.2.2.7.3. Scalar — detalle del endpoint `GET /api/v1/devices`: respuesta 200 OK y esquema del recurso Device.*
+
+**2) Edge — Gateway API (Flask, documentado con Scalar)**
+
+El Edge Gateway expone su API REST en Flask, también documentada con **Scalar** (disponible localmente en `http://localhost:5000/scalar`). Su responsabilidad principal es la ingesta de telemetría de movimiento emitida por los kits IoT; la autenticación del kit se realiza mediante el header `X-API-Key` junto al `device_id` del cuerpo de la solicitud.
+
+| Servicio | Verbo HTTP | Endpoint | Descripción |
+|----------|-----------|----------|-------------|
+| Movement Monitoring | POST | `/api/v1/movement-monitoring/data-records` | Registrar una lectura de ángulo de flexión articular (0–360°) proveniente de un kit IoT autenticado. |
+
+Ejemplo de **request**:
+
+```http
+POST /api/v1/movement-monitoring/data-records
+Content-Type: application/json
+X-API-Key: <kit api key>
+
+{
+  "device_id": "uflex-kit-001",
+  "angle": 92.5,
+  "created_at": "2026-05-29T18:23:00-05:00"
+}
+```
+
+Ejemplo de **response** (201 Created):
+
+```json
+{
+  "id": 1,
+  "device_id": "uflex-kit-001",
+  "angle": 92.5,
+  "created_at": "2026-05-29T23:23:00+00:00Z"
+}
+```
+
+Códigos de estado: **201 Created** (registro exitoso), **400 Bad Request** (campos faltantes, ángulo fuera de rango o timestamp inválido) y **401 Unauthorized** (credenciales del kit ausentes o inválidas).
+
+<div style="text-align: center;">
+  <img src="assets/images/screenshots/sprint-2/scalar-edge-ingestion.png" alt="Edge API — documentación Scalar del endpoint de ingesta de telemetría" style="max-width: 100%; height: auto;">
+</div>
+
+*Figura 6.2.2.7.4. Scalar — documentación del Edge API: endpoint `POST /api/v1/movement-monitoring/data-records` (ingesta de lectura de ángulo) con su cuerpo, respuestas y autenticación por `X-API-Key`.*
+
+<hr class="page-break">
+
+##### 6.2.2.8. Software Deployment Evidence for Sprint Review
+
+Durante el Sprint 2 el equipo desplegó el **Backend — REST API** en **Railway**, el proveedor cloud elegido para publicar el monolito de servicios de uFlex. El despliegue se realiza a partir del **Dockerfile** multi-stage del repositorio (build con Maven sobre Eclipse Temurin 25 y ejecución sobre una imagen Alpine ligera), que Railway detecta automáticamente.
+
+**Despliegue — Backend REST API**
+
+URL pública: <https://uflex-rest-api-production.up.railway.app/>
+
+Pasos realizados durante el Sprint:
+1. **Creación del proyecto en Railway.** Se accedió al dashboard de Railway con la cuenta enlazada a GitHub y se creó un nuevo proyecto para el backend de uFlex.
+2. **Importación del repositorio.** Se importó el repositorio `kiniot/uflex-rest-api`, conectándolo a la rama de producción para los despliegues automáticos.
+3. **Detección del Dockerfile y build.** Railway detectó el `Dockerfile` del repositorio y ejecutó el build multi-stage (compilación con Maven y empaquetado del `.jar` ejecutable que expone el puerto 8080).
+4. **Provisión de la base de datos PostgreSQL.** Se añadió un servicio de PostgreSQL al proyecto y se conectó al backend mediante las variables de entorno de datasource (`UFLEX_DB_HOST`, `UFLEX_DB_PORT`, `UFLEX_DB_NAME`, `UFLEX_DB_USERNAME`, `UFLEX_DB_PASSWORD`), con `sslmode=require`.
+5. **Configuración de variables de entorno.** Se definieron las variables del perfil de producción: `SPRING_PROFILES_ACTIVE=prod`, el secreto y la expiración del JWT (`JWT_SECRET`, `JWT_EXPIRATION_DAYS`), las credenciales de Stripe (`STRIPE_SECRET_KEY`, `STRIPE_WEBHOOK_SECRET`, URLs de éxito/cancelación) y las credenciales SMTP del servicio de correo.
+6. **Verificación del dominio público.** Tras finalizar el build, Railway asignó el dominio `https://uflex-rest-api-production.up.railway.app/` y el deployment quedó en estado **Active**. Se validó el acceso a la documentación Scalar y a los endpoints del API.
+
+<div style="text-align: center;">
+  <img src="assets/images/screenshots/sprint-2/deploy-backend-railway.png" alt="Deploy Backend — Railway" style="max-width: 100%; height: auto;">
+</div>
+
+*Figura 6.2.2.8.1. Railway — proyecto y despliegue del Backend REST API de uFlex.* <!-- TODO: subir captura a assets/images/screenshots/sprint-2/deploy-backend-railway.png -->
+
+**Estado de despliegue del resto de componentes**
+
+Los demás frentes del Sprint no se despliegan en un proveedor cloud por la naturaleza de cada uno:
+
+- **Edge — Gateway:** para el alcance del curso se ejecuta a nivel local (en una laptop) con Flask y base de datos SQLite; en un entorno productivo real residiría en un servidor dentro de la red de la clínica.
+- **Embedded — Firmware IoT:** se ejecuta directamente sobre el microcontrolador **ESP32** (y en el simulador Wokwi), por lo que no aplica un despliegue cloud.
+- **Mobile — Patient App:** se distribuye como **APK** Android nativo; no requiere despliegue en servidor.
+
+<hr class="page-break">
+
+##### 6.2.2.9. Team Collaboration Insights during Sprint
+
+Durante el Sprint 2 el trabajo se distribuyó por frentes técnicos siguiendo la matriz de Aspect Leaders and Collaborators (sección 6.2.2.2): el backend tuvo a Daniel Crispin, Salim Ramírez y Paul Sulca como líderes; el Edge Gateway a Salim Ramírez, Paul Sulca y Eduardo Gael; el firmware Embedded y el frente de Testing & Documentation a Marcelo Varela; y la Web/Mobile a Eduardo Gael, con colaboración cruzada de todo el equipo. La coordinación se sostuvo con dailies y revisión de pull requests para mantener la coherencia entre el contrato del API, el Edge, el dispositivo y los clientes. A continuación se presentan los analíticos de colaboración de GitHub (pestaña **Insights**) de cada repositorio del Sprint, junto con la interpretación del equipo.
+
+**GitHub Insights — Backend — REST API** (`kiniot/uflex-rest-api`)
+
+<div style="text-align: center;">
+  <img src="assets/images/screenshots/sprint-2/insights-uflex-rest-api-contributors.png" alt="Backend — REST API — Contributors" style="max-width: 100%; height: auto;">
+</div>
+
+*Figura 6.2.2.9.1. Backend — REST API — Contributors.* <!-- TODO: subir captura a assets/images/screenshots/sprint-2/insights-uflex-rest-api-contributors.png -->
+
+<div style="text-align: center;">
+  <img src="assets/images/screenshots/sprint-2/insights-uflex-rest-api-commits.png" alt="Backend — REST API — Commits over time" style="max-width: 100%; height: auto;">
+</div>
+
+*Figura 6.2.2.9.2. Backend — REST API — Commits over time.* <!-- TODO: subir captura a assets/images/screenshots/sprint-2/insights-uflex-rest-api-commits.png -->
+
+**GitHub Insights — Edge — Gateway** (`kiniot/uflex-edge-gateway`)
+
+<div style="text-align: center;">
+  <img src="assets/images/screenshots/sprint-2/insights-uflex-edge-gateway-contributors.png" alt="Edge — Gateway — Contributors" style="max-width: 100%; height: auto;">
+</div>
+
+*Figura 6.2.2.9.3. Edge — Gateway — Contributors.* <!-- TODO: subir captura a assets/images/screenshots/sprint-2/insights-uflex-edge-gateway-contributors.png -->
+
+<div style="text-align: center;">
+  <img src="assets/images/screenshots/sprint-2/insights-uflex-edge-gateway-commits.png" alt="Edge — Gateway — Commits over time" style="max-width: 100%; height: auto;">
+</div>
+
+*Figura 6.2.2.9.4. Edge — Gateway — Commits over time.* <!-- TODO: subir captura a assets/images/screenshots/sprint-2/insights-uflex-edge-gateway-commits.png -->
+
+**GitHub Insights — Embedded — Firmware IoT** (`kiniot/uflex-embedded-app`)
+
+<div style="text-align: center;">
+  <img src="assets/images/screenshots/sprint-2/insights-uflex-embedded-app-contributors.png" alt="Embedded — Firmware IoT — Contributors" style="max-width: 100%; height: auto;">
+</div>
+
+*Figura 6.2.2.9.5. Embedded — Firmware IoT — Contributors.* <!-- TODO: subir captura a assets/images/screenshots/sprint-2/insights-uflex-embedded-app-contributors.png -->
+
+<div style="text-align: center;">
+  <img src="assets/images/screenshots/sprint-2/insights-uflex-embedded-app-commits.png" alt="Embedded — Firmware IoT — Commits over time" style="max-width: 100%; height: auto;">
+</div>
+
+*Figura 6.2.2.9.6. Embedded — Firmware IoT — Commits over time.* <!-- TODO: subir captura a assets/images/screenshots/sprint-2/insights-uflex-embedded-app-commits.png -->
+
+**GitHub Insights — Mobile — Patient App** (`kiniot/uflex-patient-mobile`)
+
+<div style="text-align: center;">
+  <img src="assets/images/screenshots/sprint-2/insights-uflex-patient-mobile-contributors.png" alt="Mobile — Patient App — Contributors" style="max-width: 100%; height: auto;">
+</div>
+
+*Figura 6.2.2.9.7. Mobile — Patient App — Contributors.* <!-- TODO: subir captura a assets/images/screenshots/sprint-2/insights-uflex-patient-mobile-contributors.png -->
+
+<div style="text-align: center;">
+  <img src="assets/images/screenshots/sprint-2/insights-uflex-patient-mobile-commits.png" alt="Mobile — Patient App — Commits over time" style="max-width: 100%; height: auto;">
+</div>
+
+*Figura 6.2.2.9.8. Mobile — Patient App — Commits over time.* <!-- TODO: subir captura a assets/images/screenshots/sprint-2/insights-uflex-patient-mobile-commits.png -->
 
 <hr class="page-break">
 
