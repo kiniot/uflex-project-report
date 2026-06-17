@@ -8227,6 +8227,162 @@ export JWT_EXPIRATION_DAYS=7
 
 ./mvnw clean test</code></pre>
 
+###### Embedded App Testing Build Validation
+
+<p>
+Adicionalmente a la suite de pruebas del backend, el equipo implemento una estructura inicial de pruebas para el proyecto <strong>uFlex Embedded App</strong>. Esta estructura se organizo dentro del directorio <code>test/test_uflex</code> y permite validar componentes relacionados con el dominio del firmware, el estado de movimiento, el calculo de angulos relativos, el dispositivo uFlex y el mapeo de payloads de movimiento.
+</p>
+
+<p>
+A diferencia del backend, las pruebas del proyecto Embedded se ejecutan sobre un entorno PlatformIO orientado a ESP32. Por ello, para ejecutar completamente los casos de prueba se requiere una placa fisica conectada y un puerto serial configurado. En esta entrega, la validacion se realizo mediante <strong>test build validation</strong>, confirmando que la suite de pruebas fue detectada y compilada correctamente para el entorno <code>esp32_sim</code>.
+</p>
+
+###### Embedded Testing Structure
+
+<div style="font-size:80%; overflow-x:auto;">
+  <table border="1" cellspacing="0" cellpadding="5">
+    <thead>
+      <tr>
+        <th>Test File</th>
+        <th>Validated Component</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>test_cases.h</td>
+        <td>Test Suite Definition</td>
+        <td>Centraliza la declaracion de los casos de prueba utilizados por la suite Embedded.</td>
+      </tr>
+      <tr>
+        <td>test_main.cpp</td>
+        <td>Test Runner</td>
+        <td>Define el punto de entrada de la suite de pruebas y ejecuta los casos definidos para el proyecto Embedded.</td>
+      </tr>
+      <tr>
+        <td>test_imu.cpp</td>
+        <td>Imu Domain Model</td>
+        <td>Valida el comportamiento base del modelo de sensor IMU dentro del dominio del firmware.</td>
+      </tr>
+      <tr>
+        <td>test_motion_payload.cpp</td>
+        <td>Motion Payload</td>
+        <td>Valida la estructura y preparacion de datos de movimiento que luego pueden ser enviados hacia la capa Edge.</td>
+      </tr>
+      <tr>
+        <td>test_motion_state.cpp</td>
+        <td>Motion State</td>
+        <td>Valida los estados de movimiento utilizados para representar el comportamiento detectado por el dispositivo.</td>
+      </tr>
+      <tr>
+        <td>test_relative_angle_calculator.cpp</td>
+        <td>Relative Angle Calculator</td>
+        <td>Valida la logica encargada de calcular angulos relativos entre sensores IMU.</td>
+      </tr>
+      <tr>
+        <td>test_uflex_device.cpp</td>
+        <td>UflexDevice Domain Model</td>
+        <td>Valida el comportamiento del dispositivo principal que coordina la informacion de los sensores.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+###### Embedded Test Build Validation
+
+<p>
+El comando utilizado para validar la compilacion de la suite de pruebas Embedded fue el siguiente:
+</p>
+
+<pre><code class="language-bash">py -m platformio test -e esp32_sim --without-uploading --without-testing</code></pre>
+
+<p>
+Este comando permitio comprobar que PlatformIO detecta correctamente el grupo de pruebas <code>test_uflex</code> y que la suite puede compilarse para el entorno <code>esp32_sim</code>. El resultado obtenido fue <strong>PASSED</strong>, lo que confirma que la estructura inicial de pruebas fue integrada correctamente dentro del proyecto.
+</p>
+
+<div align="center">
+  <img src="assets/testing/01_embedded_test_suite_build_validation_passed.png" alt="Embedded test suite build validation passed" width="90%">
+  <p><strong>Figura 6.2.2.5.18.</strong> Validacion exitosa de compilacion de la suite de pruebas Embedded para el grupo <code>test_uflex</code>.</p>
+</div>
+
+###### Embedded Simulation Build Validation
+
+<p>
+Luego de validar la estructura de pruebas, se compilo el firmware para el entorno de simulacion <code>esp32_sim</code>. Esta validacion confirma que el codigo del firmware puede construirse correctamente usando el flujo simulado definido en PlatformIO.
+</p>
+
+<p>
+El comando utilizado para compilar el entorno de simulacion fue el siguiente:
+</p>
+
+<pre><code class="language-bash">py -m platformio run -e esp32_sim</code></pre>
+
+<div align="center">
+  <img src="assets/testing/02_embedded_esp32_sim_build_process.png" alt="Embedded ESP32 simulation build process" width="90%">
+  <p><strong>Figura 6.2.2.5.19.</strong> Proceso de compilacion del firmware Embedded en el entorno <code>esp32_sim</code>.</p>
+</div>
+
+<div align="center">
+  <img src="assets/testing/03_embedded_esp32_sim_build_success.png" alt="Embedded ESP32 simulation build success" width="90%">
+  <p><strong>Figura 6.2.2.5.20.</strong> Compilacion exitosa del firmware Embedded para el entorno <code>esp32_sim</code>.</p>
+</div>
+
+###### Embedded Hardware Build Validation
+
+<p>
+Finalmente, se valido la compilacion del firmware para el entorno de hardware <code>esp32_hw</code>. Esta evidencia confirma que el mismo codigo base puede construirse correctamente para una placa ESP32 fisica, manteniendo compatibilidad entre el entorno simulado y el entorno de hardware.
+</p>
+
+<p>
+El comando utilizado para compilar el entorno de hardware fue el siguiente:
+</p>
+
+<pre><code class="language-bash">py -m platformio run -e esp32_hw</code></pre>
+
+<div align="center">
+  <img src="assets/testing/04_embedded_esp32_hw_build_success.png" alt="Embedded ESP32 hardware build success" width="90%">
+  <p><strong>Figura 6.2.2.5.21.</strong> Compilacion exitosa del firmware Embedded para el entorno <code>esp32_hw</code>.</p>
+</div>
+
+###### Embedded Testing Result Summary
+
+<div style="font-size:80%; overflow-x:auto;">
+  <table border="1" cellspacing="0" cellpadding="5">
+    <thead>
+      <tr>
+        <th>Validation</th>
+        <th>Command</th>
+        <th>Result</th>
+        <th>Evidence</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Test Build Validation</td>
+        <td><code>py -m platformio test -e esp32_sim --without-uploading --without-testing</code></td>
+        <td>PASSED</td>
+        <td>Figura 6.2.2.5.18</td>
+      </tr>
+      <tr>
+        <td>Simulation Build Validation</td>
+        <td><code>py -m platformio run -e esp32_sim</code></td>
+        <td>SUCCESS</td>
+        <td>Figuras 6.2.2.5.19 y 6.2.2.5.20</td>
+      </tr>
+      <tr>
+        <td>Hardware Build Validation</td>
+        <td><code>py -m platformio run -e esp32_hw</code></td>
+        <td>SUCCESS</td>
+        <td>Figura 6.2.2.5.21</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<p>
+En conclusion, la evidencia del proyecto Embedded demuestra que la estructura inicial de pruebas fue integrada correctamente en PlatformIO y que el firmware compila de manera exitosa tanto para el entorno de simulacion como para el entorno de hardware. La ejecucion completa de los casos de prueba sobre ESP32 queda pendiente para una siguiente iteracion, cuando se cuente con una placa fisica conectada y el puerto serial configurado.
+</p>
+
 ###### Commits relacionados con Testing
 
 <p>
