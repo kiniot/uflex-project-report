@@ -353,6 +353,7 @@ Análisis de cantidad de commits realizados por semana.
             - [6.2.2.3. Sprint Backlog 2](#6223-sprint-backlog-2)
             - [6.2.2.4. Development Evidence for Sprint Review](#6224-development-evidence-for-sprint-review)
             - [6.2.2.5. Testing Suite Evidence for Sprint Review](#6225-testing-suite-evidence-for-sprint-review)
+            - [6.2.2.6. Execution Evidence for Sprint Review](#6226-execution-evidence-for-sprint-review)
             - [6.2.2.7. Services Documentation Evidence for Sprint Review](#6227-services-documentation-evidence-for-sprint-review)
             - [6.2.2.8. Software Deployment Evidence for Sprint Review](#6228-software-deployment-evidence-for-sprint-review)
             - [6.2.2.9. Team Collaboration Insights during Sprint](#6229-team-collaboration-insights-during-sprint)
@@ -8552,6 +8553,10 @@ A continuacion se presenta la relacion de commits asociados a la implementacion 
     </tbody>
   </table>
 </div>
+
+##### 6.2.2.6. Execution Evidence for Sprint Review
+
+
 
 ##### 6.2.2.7. Services Documentation Evidence for Sprint Review
 
