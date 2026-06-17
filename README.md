@@ -9219,7 +9219,7 @@ No están incluidas en esta versión de la evaluación las siguientes tareas:
 A continuación se presenta el video About the product, que empieza desde el aterrizaje del usuario en la landing page, hasta el uso y presentación de la aplicación.  
 ![Video About the Product](./assets/images/screenshots/about-the-product-screenshot.png)
 
-Enlace al video about the product: [link](link)
+Enlace al video about the product: [link](https://youtu.be/Mzj2mZpZhKc)
     
 <hr class="page-break">
 
