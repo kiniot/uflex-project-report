@@ -356,6 +356,11 @@ Análisis de cantidad de commits realizados por semana.
             - [6.2.2.7. Services Documentation Evidence for Sprint Review](#6227-services-documentation-evidence-for-sprint-review)
             - [6.2.2.8. Software Deployment Evidence for Sprint Review](#6228-software-deployment-evidence-for-sprint-review)
             - [6.2.2.9. Team Collaboration Insights during Sprint](#6229-team-collaboration-insights-during-sprint)
+      - [6.3. Validation Interviews](#63-validation-interviews)
+         - [6.3.1. Diseño de entrevistas](#631-diseño-de-entrevistas)
+         - [6.3.2. Registro de entrevistas](#632-registro-de-entrevistas)
+         - [6.3.3. Evaluaciones según heurísticas](#633-evaluaciones-según-heurísticas)
+      - [6.4. Video About-the-Product](#64-video-about-the-product)
 
 - [Conclusiones](#conclusiones)
    - [Conclusiones y recomendaciones](#conclusiones-y-recomendaciones)
@@ -8775,6 +8780,286 @@ Durante el Sprint 2 el trabajo se distribuyó por frentes técnicos siguiendo la
 
 *Figura 6.2.2.9.8. Mobile — Patient App — Commits over time.* <!-- TODO: subir captura a assets/images/screenshots/sprint-2/insights-uflex-patient-mobile-commits.png -->
 
+<hr class="page-break">
+
+## 6.3. Validation Interviews
+
+En esta sección se presentan las entrevistas de validación realizadas con usuarios clave para evaluar la propuesta de valor, la experiencia de usuario y la viabilidad técnica de uFlex. Se describen los perfiles de los entrevistados, los objetivos de cada entrevista, los hallazgos obtenidos y las implicancias para el desarrollo del proyecto.
+
+### 6.3.1. Diseño de Entrevistas
+
+Para validar las hipótesis de valor y las funcionalidades propuestas en uFlex, se diseñaron entrevistas semiestructuradas dirigidas a tres perfiles clave: fisioterapeutas, pacientes y administradores de clínicas de rehabilitación. Cada entrevista se enfocó en aspectos específicos relacionados con la experiencia actual de rehabilitación domiciliaria, los desafíos enfrentados, las expectativas sobre una solución tecnológica y la disposición para adoptar una plataforma como uFlex.
+
+---
+
+### A. Segmento: Administradores de Clínicas y Centros de Salud
+
+* **Objetivos de la sesión:**
+    * Validar si la propuesta de valor y los precios (Planes) expuestos en la Landing Page son atractivos y claros para la toma de decisiones B2B.
+    * Evaluar la facilidad del flujo de registro, adquisición de suscripción y configuración inicial del centro de salud en la Aplicación Web.
+    * Comprobar la usabilidad en la visualización, control del inventario y estado del hardware IoT, así como la gestión de personal clínico y catálogos de la organización.
+* **Artefactos a evaluar:** Landing Page (Desktop/Mobile responsive) y Aplicación Web (Rol: *Clinic Admin*).
+
+#### User Flows del Segmento a Validar (Web App):
+
+```text
+[Flujo 1: Onboarding B2B] 
+Landing Page (Sección Planes) -> Registro de Clínica -> Pasarela de Pago -> Primer Inicio de Sesión (Sign In).
+
+[Flujo 2: Configuración del Ecosistema Clínico]
+Dashboard Admin -> Configuración de la Organización -> Registrar Fisioterapeuta -> Registrar Paciente.
+
+[Flujo 3: Gestión de Activos y Catálogos]
+Inventario de Dispositivos -> Revisión/Verificación de Kits IoT vinculados -> Gestión del Catálogo de Ejercicios de la Clínica.
+```
+
+#### Guía de Tareas y Escenarios:
+1. **Escenario de la Landing Page:** *"Usted es el director de una clínica en Lima y busca reducir la deserción de pacientes mediante telemonitoreo. Explore la Landing Page, cambie el idioma al inglés para revisar el estándar de cara a socios internacionales, y ubique el costo del plan para su clínica."*
+2. **Tarea de Flujo 1 (Onboarding):** *"Proceda a registrar su clínica ingresando los datos de la organización, seleccione el plan idóneo para su flujo y complete la simulación de pago para acceder a su nuevo panel."*
+3. **Tarea de Flujo 2 y 3 (Gestión):** *"Una vez en el dashboard, cree la cuenta de un fisioterapeuta de su equipo. Posteriormente, ingrese al módulo de dispositivos para verificar el estado de los kits de sensores asignados a su organización y pase a configurar un nuevo ejercicio base dentro del catálogo institucional."*
+
+#### Banco de Preguntas para el Segmento:
+* **Preguntas Durante la Interacción (Landing y Web App):**
+    1. Al revisar la sección de planes en la Landing Page, ¿queda claro qué incluye el cobro por hardware (One-time fee) versus la suscripción por paciente activo?
+    2. En el formulario de registro de la organización, ¿hubo algún campo de datos que le pareciera confuso o innecesario?
+    3. Al interactuar con el módulo de dispositivos, ¿considera intuitivo el panel para auditar qué kits están asignados a su clínica y cuál es su estado actual?
+    4. ¿Qué cambiaría o simplificaría de la interfaz correspondiente a la creación y gestión del catálogo de ejercicios de la clínica?
+* **Preguntas de Cierre (Validación):**
+    5. ¿Considera que centralizar la gestión de fisioterapeutas, pacientes y hardware en este dashboard le ahorraría costos operativos por deserción?
+    6. ¿Qué funcionalidad sintió que faltó en la gestión de su suscripción actual?
+    7. Si tuviera que definir la plataforma web en tres palabras en cuanto a su diseño visual (temas claro/oscuro, tipografía), ¿cuáles serían?
+
+---
+
+### B. Segmento: Fisioterapeutas y Especialistas en Rehabilitación
+
+* **Objetivos de la sesión:**
+    * Evaluar si el módulo de terapias proporciona los datos biomecánicos y de adherencia necesarios sin generar sobrecarga cognitiva.
+    * Validar el flujo de asignación de tratamientos y planes usando el catálogo preexistente, así como la vinculación de hardware a pacientes específicos.
+    * Medir la utilidad de la internacionalización (i18n) y el cambio de tema visual (oscuro/claro) en entornos de alta o baja iluminación clínica.
+* **Artefactos a evaluar:** Aplicación Web (Rol: *Fisioterapeuta*).
+
+#### User Flows del Segmento a Validar (Web App):
+
+```text
+[Flujo 1: Acceso y Monitoreo Clínico]
+Sign In (Credenciales provistas por Admin) -> Dashboard Principal -> Selección de Paciente -> Gestión de Terapias (Revisión de Métricas).
+
+[Flujo 2: Prescripción de Tele-rehabilitación]
+Perfil del Paciente -> Gestión de Plan de Tratamiento -> Asignación de Ejercicios utilizando el Catálogo de la Clínica -> Configuración de Rangos de Movimiento (ROM) Objetivo.
+
+[Flujo 3: Asignación de Hardware]
+Perfil del Paciente -> Gestión de Dispositivos -> Vincular Kit IoT disponible al Paciente para su uso en casa.
+```
+
+#### Guía de Tareas y Escenarios:
+1. **Escenario de Acceso:** *"Usted inicia su turno clínico por la tarde. Inicie sesión con las credenciales provistas por su administrador y active el 'Tema Oscuro' para adaptar la pantalla a la iluminación actual de su consultorio."*
+2. **Tarea de Flujo 1 (Monitoreo):** *"Busque en su lista de pacientes asignados al usuario 'Juan Pérez', diríjase al módulo de sus terapias y revise si ha tenido alertas de mala ejecución o cómo se encuentran reflejados sus arcos de movilidad."*
+3. **Tarea de Flujo 2 y 3 (Prescripción y Vínculo):** *"Asigne a este paciente un nuevo plan de tratamiento seleccionando ejercicios del catálogo establecido por la clínica. Finalmente, asigne un Kit IoT disponible a su perfil para que pueda usar los sensores en casa."*
+
+#### Banco de Preguntas para el Segmento:
+* **Preguntas Durante la Interacción (Web App):**
+    1. Al ingresar a la sección de "Gestión de Terapias" del paciente, ¿las métricas del estado biomecánico y la evolución de los ejercicios se entienden a primera vista o requiere analizar demasiado la pantalla?
+    2. Al configurar el plan de tratamiento y definir los rangos de movimiento (ROM) objetivo a partir de la lista de ejercicios de la clínica, ¿siente que el proceso es ágil o interrumpe su ritmo de trabajo acelerado?
+    3. Al momento de enlazar el Kit IoT al paciente en su panel, ¿la pantalla le transmite seguridad de que el hardware quedó listo para ser usado de forma remota?
+    4. ¿El uso de las opciones de idioma (i18n) o el cambio de tema claro/oscuro le aporta valor real en su entorno de consulta?
+* **Preguntas de Cierre (Validación):**
+    5. ¿Siente que los datos biomecánicos que le muestra la plataforma en el seguimiento de terapias son suficientes para tomar decisiones clínicas asíncronas sin necesidad de ver al paciente presencialmente cada semana?
+    6. ¿Hubo algún paso en el flujo de asignación del Kit IoT que le haya generado desconfianza o duda de si se configuró bien?
+
+---
+
+### C. Segmento: Pacientes en Rehabilitación de Miembro Superior
+
+* **Objetivos de la sesión:**
+    * Validar la claridad y simplicidad del flujo de inicio de sesión y preparación de la terapia en la aplicación móvil.
+    * Evaluar la comprensión del estado del dispositivo IoT (vinculación Bluetooth) y de las pantallas de la sesión de terapia.
+    * Determinar si la interfaz reduce la kinesiofobia (miedo al movimiento) mediante elementos visuales de guía intuitivos.
+* **Artefactos a evaluar:** Aplicación Móvil (Prototipo de Alta Fidelidad).
+
+#### User Flows del Segmento a Validar (Mobile App):
+
+```text
+[Flujo 1: Preparación del Entorno]
+Sign In -> Pantalla Principal -> Sección "Mi Dispositivo" -> Confirmar Vinculación Bluetooth del Kit IoT.
+
+[Flujo 2: Ejecución de Terapia Domiciliaria]
+Pantalla Principal -> Seleccionar "Sesión de Terapia del Día" -> Visualizar Guía del Ejercicio -> Simular envío de datos biomecánicos.
+
+[Flujo 3: Consulta de Progreso]
+Menú de Navegación -> Consultar Historial de Progreso (Arcos de movimiento logrados).
+```
+
+#### Guía de Tareas y Escenarios:
+1. **Escenario de Configuración:** *"Se encuentra en casa y es hora de realizar sus ejercicios diarios de rehabilitación. Abra la aplicación en su teléfono e ingrese a la sección de su dispositivo para asegurarse de que los sensores estén encendidos y enlazados por Bluetooth de forma autónoma."*
+2. **Tarea de Flujo 2 (Sesión):** *"Inicie la sesión de terapia programada para el día de hoy. Siga la guía visual e interactiva de la pantalla simulando las repeticiones e identifique cómo la interfaz le avisa si comete un error."*
+3. **Tarea de Flujo 3 (Motivación):** *"Al finalizar su rutina, busque la pantalla donde pueda verificar si ha mejorado sus rangos de movimiento en comparación con los días anteriores para evaluar su progreso acumulado."*
+
+#### Banco de Preguntas para el Segmento:
+* **Preguntas Durante la Interacción (Mobile App):**
+    1. Al intentar conectar los sensores en la sección "Mi Dispositivo", ¿el estado de la conexión fue evidente o le generó incertidumbre?
+    2. Durante la simulación de la sesión de terapia, ¿los elementos visuales y de guía le ayudaron a entender cómo realizar el ejercicio o sintió miedo de moverse de forma incorrecta?
+    3. ¿Le resulta clara la forma en que se estructuran las repeticiones y las series en la pantalla activa?
+* **Preguntas de Cierre (Validación):**
+    4. ¿Considera que podría colocarse los sensores y usar esta aplicación diariamente en su casa sin necesidad de que un familiar lo ayude?
+    5. ¿La pantalla de "Historial de Progreso" (gráficos de evolución) le motiva a continuar con el tratamiento o prefiere que solo se guarden los datos para el médico?
+    6. ¿Qué opina sobre la legibilidad de los textos y colores de la aplicación? ¿Le gustaría que tuviera una opción de modo oscuro/claro?
+
+### 6.3.2. Registro de Entrevistas
+
+
+
+### 6.3.3. Evaluaciones según heurísticas
+
+#### UX Heuristics & Principles Evaluation
+#### Usability – Inclusive Design – Information Architecture
+
+**CARRERA** : Ingeniería de Software
+
+**CURSO** : Desarrollo de Soluciones IoT
+
+**NRC** : 17755
+
+**PROFESOR** : Marco Antonio León Baca
+
+**AUDITOR** : KinIoT
+
+**CLIENTES** : [...]
+
+#### SITE o APP A EVALUAR:
+
+**uFlex**
+
+#### TAREAS A EVALUAR:
+
+El alcance de esta evaluación incluye la revisión de usabilidad de las siguientes tareas:
+
+**Landing Page**:
+1. Navegación responsiva a través de secciones informativas (Hero, Beneficios, Cómo Funciona, Arquitectura, Testimonios).
+2. Uso del sistema de internacionalización (i18n) para el cambio de idioma de la interfaz.
+3. Consulta de los planes de suscripción (esquema B2B híbrido) y redirección al formulario de registro.
+4. Envío del formulario de la sección de contacto.
+
+**Web Application**:
+1. Flujo completo de Onboarding B2B para el Administrador de la clínica (Sign Up, selección de plan, pasarela de pago simulada y Sign In).
+2. Gestión del ecosistema clínico por parte del Administrador (alta de fisioterapeutas, pacientes y administración del catálogo institucional de ejercicios).
+3. Monitoreo y control del inventario/estado de los Kits IoT de la organización por el Administrador.
+4. Consulta visual del módulo de terapias y evolución biomecánica (arcos de movilidad/ROM) por parte del Fisioterapeuta.
+5. Prescripción y asignación de planes de tratamiento utilizando el catálogo existente, vinculando un Kit IoT específico a un paciente.
+6. Interactividad del sistema i18n y cambio dinámico entre los temas visuales claro y oscuro en ambos roles.
+
+**Mobile Application**:
+1. Inicio de sesión del paciente (Sign In) con credenciales preestablecidas.
+2. Consulta de la pantalla principal y navegación hacia la sección "Mi Plan de Tratamiento".
+3. Vinculación y verificación de la conectividad Bluetooth del Kit IoT en la sección de estado del dispositivo.
+4. Ejecución guiada de la sesión de terapia activa diaria, con visualización de rangos y retroalimentación en tiempo real.
+5. Acceso y visualización del historial de progreso y curvas de recuperación articular.
+
+#### FUERA DE ALCANCE:
+
+No están incluidas en esta versión de la evaluación las siguientes tareas:
+
+**Landing Page**
+1. Redes sociales asociadas a la startup.
+2. Política de privacidad y condiciones de uso.
+3. Pasarela de facturación real o emisión de comprobantes de pago electrónicos.
+
+**Web Application**
+1. Gestión avanzada o edición del estado de la suscripción (limitado visualmente al plan actual).
+2. Procesos de liquidación financiera masiva o reportes contables del centro de salud.
+3. Modificación avanzada de perfiles de usuario ajenos o auditoría de accesos.
+4. Descarga de reportes clínicos exportables en formatos externos (PDF/Excel).
+
+**Mobile Applications**
+1. Recuperación de contraseña.
+2. Política de privacidad y condiciones de uso.
+3. Reportes de bugs.
+4. Configuraciones generales del sistema del dispositivo (permisos de sistema a nivel de sistema operativo que excedan el Bluetooth interno).
+5. Configuración explícita de i18n y modo oscuro/claro (pendiente de definición en la etapa móvil actual).
+
+#### ESCALA DE SEVERIDAD:
+
+| Nivel   | Descripción                                                                                                                                                                                         |
+|---------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 1       | **Problema superficial**: puede ser fácilmente superador por el usuario o ocurre con muy poca frecuencia. No necesita ser arreglado a no ser que exista disponibilidad de tiempo.                   |
+| 2       | **Problema menor**: puede ocurrir un poco más frecuentemente o es un poco más difícil de superar para el usuario. Se le debería asignar una prioridad baja resolverlo de cara al siguiente reléase. |
+| 3       | **Problema mayor**: ocurre frecuentemente o los usuarios no son capaces de resolverlos. Es importante que sean corregidos y se les debe asignar una prioridad alta.                                 |
+| 4       | **Problema muy grave**: un error de gran impacto que impide al usuario continuar con el uso de la herramienta. Es imperativo que sea corregido antes del lanzamiento.                               |
+
+#### TABLA RESUMEN:
+
+#### **Landing Page**
+
+| # | Problema | Escala de severidad | Heurística/ Principio Violado |
+| - |----------|---------------------|-------------------------------|
+| 1 | ...      | ...                 | ...                           |
+
+**DESCRIPCIÓN DE PROBLEMAS:**
+
+**PROBLEMA #X:** ...
+
+**Severidad: ...**  
+**Heurística violada:** ...
+
+**Problema:**
+...
+
+![Captura](captura)
+
+**Recomendación:**
+...
+
+#### **Web Application**
+
+| # | Problema | Escala de severidad | Heurística/ Principio Violado |
+| - |----------|---------------------|-------------------------------|
+| 1 | ...      | ...                 | ...                           |
+
+**DESCRIPCIÓN DE PROBLEMAS:**
+
+**PROBLEMA #X:** ...
+
+**Severidad: ...**  
+**Heurística violada:** ...
+
+**Problema:**
+...
+
+![Captura](captura)
+
+**Recomendación:**
+...
+
+#### **Mobile Application**
+
+| # | Problema | Escala de severidad | Heurística/ Principio Violado |
+| - |----------|---------------------|-------------------------------|
+| 1 | ...      | ...                 | ...                           |
+
+**DESCRIPCIÓN DE PROBLEMAS:**
+
+**PROBLEMA #X:** ...
+
+**Severidad: ...**  
+**Heurística violada:** ...
+
+**Problema:**
+...
+
+![Captura](captura)
+
+**Recomendación:**
+...
+
+<hr class="page-break">
+
+## 6.4. Video About-the-Product
+
+A continuación se presenta el video About the product, que empieza desde el aterrizaje del usuario en la landing page, hasta el uso y presentación de la aplicación.  
+![Video About the Product](./assets/images/screenshots/about-the-product-screenshot.png)
+
+Enlace al video about the product: [link](link)
+    
 <hr class="page-break">
 
 # Conclusiones
