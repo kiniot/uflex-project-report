@@ -8475,6 +8475,162 @@ export JWT_EXPIRATION_DAYS=7
 
 ./mvnw clean test</code></pre>
 
+###### Embedded App Testing Build Validation
+
+<p>
+Adicionalmente a la suite de pruebas del backend, el equipo implemento una estructura inicial de pruebas para el proyecto <strong>uFlex Embedded App</strong>. Esta estructura se organizo dentro del directorio <code>test/test_uflex</code> y permite validar componentes relacionados con el dominio del firmware, el estado de movimiento, el calculo de angulos relativos, el dispositivo uFlex y el mapeo de payloads de movimiento.
+</p>
+
+<p>
+A diferencia del backend, las pruebas del proyecto Embedded se ejecutan sobre un entorno PlatformIO orientado a ESP32. Por ello, para ejecutar completamente los casos de prueba se requiere una placa fisica conectada y un puerto serial configurado. En esta entrega, la validacion se realizo mediante <strong>test build validation</strong>, confirmando que la suite de pruebas fue detectada y compilada correctamente para el entorno <code>esp32_sim</code>.
+</p>
+
+###### Embedded Testing Structure
+
+<div style="font-size:80%; overflow-x:auto;">
+  <table border="1" cellspacing="0" cellpadding="5">
+    <thead>
+      <tr>
+        <th>Test File</th>
+        <th>Validated Component</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>test_cases.h</td>
+        <td>Test Suite Definition</td>
+        <td>Centraliza la declaracion de los casos de prueba utilizados por la suite Embedded.</td>
+      </tr>
+      <tr>
+        <td>test_main.cpp</td>
+        <td>Test Runner</td>
+        <td>Define el punto de entrada de la suite de pruebas y ejecuta los casos definidos para el proyecto Embedded.</td>
+      </tr>
+      <tr>
+        <td>test_imu.cpp</td>
+        <td>Imu Domain Model</td>
+        <td>Valida el comportamiento base del modelo de sensor IMU dentro del dominio del firmware.</td>
+      </tr>
+      <tr>
+        <td>test_motion_payload.cpp</td>
+        <td>Motion Payload</td>
+        <td>Valida la estructura y preparacion de datos de movimiento que luego pueden ser enviados hacia la capa Edge.</td>
+      </tr>
+      <tr>
+        <td>test_motion_state.cpp</td>
+        <td>Motion State</td>
+        <td>Valida los estados de movimiento utilizados para representar el comportamiento detectado por el dispositivo.</td>
+      </tr>
+      <tr>
+        <td>test_relative_angle_calculator.cpp</td>
+        <td>Relative Angle Calculator</td>
+        <td>Valida la logica encargada de calcular angulos relativos entre sensores IMU.</td>
+      </tr>
+      <tr>
+        <td>test_uflex_device.cpp</td>
+        <td>UflexDevice Domain Model</td>
+        <td>Valida el comportamiento del dispositivo principal que coordina la informacion de los sensores.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+###### Embedded Test Build Validation
+
+<p>
+El comando utilizado para validar la compilacion de la suite de pruebas Embedded fue el siguiente:
+</p>
+
+<pre><code class="language-bash">py -m platformio test -e esp32_sim --without-uploading --without-testing</code></pre>
+
+<p>
+Este comando permitio comprobar que PlatformIO detecta correctamente el grupo de pruebas <code>test_uflex</code> y que la suite puede compilarse para el entorno <code>esp32_sim</code>. El resultado obtenido fue <strong>PASSED</strong>, lo que confirma que la estructura inicial de pruebas fue integrada correctamente dentro del proyecto.
+</p>
+
+<div align="center">
+  <img src="assets/testing/01_embedded_test_suite_build_validation_passed.png" alt="Embedded test suite build validation passed" width="90%">
+  <p><strong>Figura 6.2.2.5.18.</strong> Validacion exitosa de compilacion de la suite de pruebas Embedded para el grupo <code>test_uflex</code>.</p>
+</div>
+
+###### Embedded Simulation Build Validation
+
+<p>
+Luego de validar la estructura de pruebas, se compilo el firmware para el entorno de simulacion <code>esp32_sim</code>. Esta validacion confirma que el codigo del firmware puede construirse correctamente usando el flujo simulado definido en PlatformIO.
+</p>
+
+<p>
+El comando utilizado para compilar el entorno de simulacion fue el siguiente:
+</p>
+
+<pre><code class="language-bash">py -m platformio run -e esp32_sim</code></pre>
+
+<div align="center">
+  <img src="assets/testing/02_embedded_esp32_sim_build_process.png" alt="Embedded ESP32 simulation build process" width="90%">
+  <p><strong>Figura 6.2.2.5.19.</strong> Proceso de compilacion del firmware Embedded en el entorno <code>esp32_sim</code>.</p>
+</div>
+
+<div align="center">
+  <img src="assets/testing/03_embedded_esp32_sim_build_success.png" alt="Embedded ESP32 simulation build success" width="90%">
+  <p><strong>Figura 6.2.2.5.20.</strong> Compilacion exitosa del firmware Embedded para el entorno <code>esp32_sim</code>.</p>
+</div>
+
+###### Embedded Hardware Build Validation
+
+<p>
+Finalmente, se valido la compilacion del firmware para el entorno de hardware <code>esp32_hw</code>. Esta evidencia confirma que el mismo codigo base puede construirse correctamente para una placa ESP32 fisica, manteniendo compatibilidad entre el entorno simulado y el entorno de hardware.
+</p>
+
+<p>
+El comando utilizado para compilar el entorno de hardware fue el siguiente:
+</p>
+
+<pre><code class="language-bash">py -m platformio run -e esp32_hw</code></pre>
+
+<div align="center">
+  <img src="assets/testing/04_embedded_esp32_hw_build_success.png" alt="Embedded ESP32 hardware build success" width="90%">
+  <p><strong>Figura 6.2.2.5.21.</strong> Compilacion exitosa del firmware Embedded para el entorno <code>esp32_hw</code>.</p>
+</div>
+
+###### Embedded Testing Result Summary
+
+<div style="font-size:80%; overflow-x:auto;">
+  <table border="1" cellspacing="0" cellpadding="5">
+    <thead>
+      <tr>
+        <th>Validation</th>
+        <th>Command</th>
+        <th>Result</th>
+        <th>Evidence</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Test Build Validation</td>
+        <td><code>py -m platformio test -e esp32_sim --without-uploading --without-testing</code></td>
+        <td>PASSED</td>
+        <td>Figura 6.2.2.5.18</td>
+      </tr>
+      <tr>
+        <td>Simulation Build Validation</td>
+        <td><code>py -m platformio run -e esp32_sim</code></td>
+        <td>SUCCESS</td>
+        <td>Figuras 6.2.2.5.19 y 6.2.2.5.20</td>
+      </tr>
+      <tr>
+        <td>Hardware Build Validation</td>
+        <td><code>py -m platformio run -e esp32_hw</code></td>
+        <td>SUCCESS</td>
+        <td>Figura 6.2.2.5.21</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<p>
+En conclusion, la evidencia del proyecto Embedded demuestra que la estructura inicial de pruebas fue integrada correctamente en PlatformIO y que el firmware compila de manera exitosa tanto para el entorno de simulacion como para el entorno de hardware. La ejecucion completa de los casos de prueba sobre ESP32 queda pendiente para una siguiente iteracion, cuando se cuente con una placa fisica conectada y el puerto serial configurado.
+</p>
+
 ###### Commits relacionados con Testing
 
 <p>
@@ -8556,6 +8712,355 @@ A continuacion se presenta la relacion de commits asociados a la implementacion 
 
 ##### 6.2.2.6. Execution Evidence for Sprint Review
 
+<p>
+La presente sección muestra las evidencias de ejecución desarrolladas durante el Sprint Review. Estas evidencias corresponden a la validación funcional del backend mediante la <strong>API REST de uFlex</strong> y a la ejecución del <strong>frontend web de uFlex</strong>. En conjunto, las capturas permiten demostrar que los principales módulos del sistema fueron implementados, desplegados y revisados en el entorno de desarrollo.
+</p>
+
+<p>
+Por el lado del backend, se evidencia la disponibilidad de endpoints relacionados con autenticación, usuarios, clínicas, pacientes, fisioterapeutas, dispositivos IoT, planes de tratamiento, sesiones de terapia, ejercicios, suscripciones, ejecución terapéutica, webhooks de Stripe y modelos de datos. Por el lado del frontend, se evidencia el flujo de acceso, selección de plan, registro de clínica, validación de suscripción y navegación por los principales módulos administrativos de la plataforma.
+</p>
+
+<h4>Backend Execution Evidence - uFlex REST API</h4>
+
+<p>
+La API REST de uFlex representa el servicio backend encargado de exponer los recursos principales de la plataforma. Estas capturas fueron obtenidas desde la documentación interactiva de la API, permitiendo validar que los endpoints implementados se encuentran organizados por módulo y disponibles para ser consumidos por las aplicaciones cliente.
+</p>
+
+<h5>API Overview</h5>
+
+<p>
+Esta captura muestra la vista general de la API REST de uFlex. En ella se agrupan los endpoints disponibles por módulo, permitiendo identificar de forma ordenada las capacidades principales implementadas en el backend durante el sprint.
+</p>
+
+<figure>
+  <img src="assets/execution/01-uflex-rest-api-overview.png" alt="Vista general de la API REST de uFlex" width="100%">
+  <figcaption>Figura 1. Vista general de los endpoints de la API REST de uFlex.</figcaption>
+</figure>
+
+<h5>Devices</h5>
+
+<p>
+Esta evidencia muestra los endpoints relacionados con la gestión de dispositivos IoT. Estos endpoints permiten registrar, consultar y administrar los dispositivos asociados al monitoreo de rehabilitación.
+</p>
+
+<figure>
+  <img src="assets/execution/02-devices.png" alt="Ejecución de endpoints de dispositivos IoT" width="100%">
+  <figcaption>Figura 2. Evidencia de ejecución de los endpoints de gestión de dispositivos IoT.</figcaption>
+</figure>
+
+<h5>Current Patient Treatment Plans</h5>
+
+<p>
+Esta captura presenta los endpoints utilizados para consultar el plan de tratamiento actual asignado a un paciente. Esta funcionalidad permite que la plataforma identifique qué rutina de rehabilitación se encuentra activa.
+</p>
+
+<figure>
+  <img src="assets/execution/03-current-patient-treatment-plans.png" alt="Ejecución de endpoints de planes actuales del paciente" width="100%">
+  <figcaption>Figura 3. Evidencia de ejecución de los endpoints de planes de tratamiento actuales del paciente.</figcaption>
+</figure>
+
+<h5>Therapy Sessions</h5>
+
+<p>
+Esta evidencia muestra los endpoints relacionados con las sesiones de terapia. Estos recursos permiten gestionar registros de sesiones, información terapéutica y la relación entre pacientes, fisioterapeutas y actividades de rehabilitación.
+</p>
+
+<figure>
+  <img src="assets/execution/04-therapy-sessions.png" alt="Ejecución de endpoints de sesiones de terapia" width="100%">
+  <figcaption>Figura 4. Evidencia de ejecución de los endpoints de sesiones de terapia.</figcaption>
+</figure>
+
+<h5>Subscriptions</h5>
+
+<p>
+Esta captura muestra los endpoints de suscripciones. Estos endpoints permiten gestionar planes de suscripción de clínicas, estado de pago, cantidad de kits solicitados e información relacionada con la facturación del servicio.
+</p>
+
+<figure>
+  <img src="assets/execution/05-subscriptions.png" alt="Ejecución de endpoints de suscripciones" width="100%">
+  <figcaption>Figura 5. Evidencia de ejecución de los endpoints de gestión de suscripciones.</figcaption>
+</figure>
+
+<h5>Patient Treatment Plans</h5>
+
+<p>
+Esta evidencia presenta los endpoints utilizados para gestionar los planes de tratamiento asignados a pacientes. Mediante estos recursos, la plataforma puede vincular rutinas de rehabilitación con pacientes específicos.
+</p>
+
+<figure>
+  <img src="assets/execution/06-patient-treatment-plans.png" alt="Ejecución de endpoints de planes de tratamiento por paciente" width="100%">
+  <figcaption>Figura 6. Evidencia de ejecución de los endpoints de planes de tratamiento por paciente.</figcaption>
+</figure>
+
+<h5>Users</h5>
+
+<p>
+Esta captura muestra los endpoints de gestión de usuarios. Estos endpoints permiten administrar la información necesaria para la autenticación, identificación de usuarios y control de acceso dentro de la plataforma uFlex.
+</p>
+
+<figure>
+  <img src="assets/execution/07-users.png" alt="Ejecución de endpoints de usuarios" width="100%">
+  <figcaption>Figura 7. Evidencia de ejecución de los endpoints de gestión de usuarios.</figcaption>
+</figure>
+
+<h5>Exercises</h5>
+
+<p>
+Esta evidencia muestra los endpoints relacionados con los ejercicios terapéuticos. Estos recursos permiten administrar los ejercicios que pueden ser incluidos dentro de planes de tratamiento y sesiones de terapia.
+</p>
+
+<figure>
+  <img src="assets/execution/08-exercises.png" alt="Ejecución de endpoints de ejercicios" width="100%">
+  <figcaption>Figura 8. Evidencia de ejecución de los endpoints de gestión de ejercicios terapéuticos.</figcaption>
+</figure>
+
+<h5>Stripe Webhooks</h5>
+
+<p>
+Esta captura presenta el endpoint de webhook utilizado para recibir eventos desde Stripe. Esta funcionalidad permite procesar actualizaciones externas relacionadas con pagos, suscripciones y eventos del proveedor de pagos.
+</p>
+
+<figure>
+  <img src="assets/execution/09-stripe-webhooks.png" alt="Ejecución de webhook de Stripe" width="100%">
+  <figcaption>Figura 9. Evidencia de ejecución del endpoint de integración con webhooks de Stripe.</figcaption>
+</figure>
+
+<h5>Treatment Plans</h5>
+
+<p>
+Esta evidencia muestra los endpoints relacionados con la gestión general de planes de tratamiento. Estos recursos permiten crear, consultar y organizar planes de rehabilitación que posteriormente pueden ser asignados a pacientes.
+</p>
+
+<figure>
+  <img src="assets/execution/10-treatment-plans.png" alt="Ejecución de endpoints de planes de tratamiento" width="100%">
+  <figcaption>Figura 10. Evidencia de ejecución de los endpoints de planes de tratamiento.</figcaption>
+</figure>
+
+<h5>Clinics</h5>
+
+<p>
+Esta captura muestra los endpoints de gestión de clínicas. Estos endpoints permiten administrar la información institucional necesaria para relacionar pacientes, fisioterapeutas, dispositivos, suscripciones y demás recursos de la plataforma.
+</p>
+
+<figure>
+  <img src="assets/execution/11-clinics.png" alt="Ejecución de endpoints de clínicas" width="100%">
+  <figcaption>Figura 11. Evidencia de ejecución de los endpoints de gestión de clínicas.</figcaption>
+</figure>
+
+<h5>Authentication</h5>
+
+<p>
+Esta evidencia presenta los endpoints de autenticación. Estos recursos permiten que los usuarios inicien sesión y obtengan credenciales de acceso para interactuar de forma segura con los endpoints protegidos del backend.
+</p>
+
+<figure>
+  <img src="assets/execution/12-authentication.png" alt="Ejecución de endpoints de autenticación" width="100%">
+  <figcaption>Figura 12. Evidencia de ejecución de los endpoints de autenticación.</figcaption>
+</figure>
+
+<h5>Therapy Execution</h5>
+
+<p>
+Esta captura muestra los endpoints relacionados con la ejecución de terapias. Estos recursos se encargan de registrar repeticiones válidas y datos generados durante la ejecución de actividades de rehabilitación.
+</p>
+
+<figure>
+  <img src="assets/execution/13-therapy-execution.png" alt="Ejecución de endpoints de ejecución de terapia" width="100%">
+  <figcaption>Figura 13. Evidencia de ejecución de los endpoints de ejecución de terapia.</figcaption>
+</figure>
+
+<h5>Patients</h5>
+
+<p>
+Esta evidencia muestra los endpoints de gestión de pacientes. Estos recursos permiten registrar, consultar y administrar la información de pacientes requerida para el monitoreo de rehabilitación.
+</p>
+
+<figure>
+  <img src="assets/execution/14-patients.png" alt="Ejecución de endpoints de pacientes" width="100%">
+  <figcaption>Figura 14. Evidencia de ejecución de los endpoints de gestión de pacientes.</figcaption>
+</figure>
+
+<h5>Physiotherapists</h5>
+
+<p>
+Esta captura presenta los endpoints de gestión de fisioterapeutas. Estos recursos permiten administrar la información de los profesionales responsables de asignar planes de tratamiento y monitorear el progreso de los pacientes.
+</p>
+
+<figure>
+  <img src="assets/execution/15-physiotherapists.png" alt="Ejecución de endpoints de fisioterapeutas" width="100%">
+  <figcaption>Figura 15. Evidencia de ejecución de los endpoints de gestión de fisioterapeutas.</figcaption>
+</figure>
+
+<h5>Models</h5>
+
+<p>
+Esta evidencia muestra los modelos de solicitud y respuesta utilizados por la API REST. Estos modelos definen la estructura de los datos intercambiados entre las aplicaciones frontend, los servicios externos y el backend de uFlex.
+</p>
+
+<figure>
+  <img src="assets/execution/16-models.png" alt="Modelos de datos de la API REST de uFlex" width="100%">
+  <figcaption>Figura 16. Evidencia de los modelos de datos utilizados por la API REST de uFlex.</figcaption>
+</figure>
+
+<h4>Frontend Execution Evidence - uFlex Web Application</h4>
+
+<p>
+El frontend web de uFlex permite a las clínicas interactuar con los principales servicios de la plataforma. Las capturas evidencian el flujo de autenticación, selección de plan, creación de cuenta, registro de clínica, pago de suscripción y navegación por los módulos administrativos.
+</p>
+
+<h5>Login Page</h5>
+
+<p>
+Esta captura muestra la pantalla de inicio de sesión del frontend de uFlex. Desde esta vista, el usuario puede acceder a su cuenta mediante sus credenciales o dirigirse al flujo de creación de cuenta.
+</p>
+
+<figure>
+  <img src="assets/execution/01-front-login-page.png" alt="Pantalla de inicio de sesión del frontend de uFlex" width="100%">
+  <figcaption>Figura 17. Pantalla de inicio de sesión de la plataforma web de uFlex.</figcaption>
+</figure>
+
+<h5>Plan Selection</h5>
+
+<p>
+Esta evidencia muestra la etapa inicial de selección de plan. La interfaz guía al usuario para escoger un plan de suscripción antes de completar el registro de su organización o clínica.
+</p>
+
+<figure>
+  <img src="assets/execution/02-front-plan-selection.png" alt="Selección de plan en el frontend de uFlex" width="100%">
+  <figcaption>Figura 18. Vista inicial para la selección del plan de suscripción.</figcaption>
+</figure>
+
+<h5>Pricing Plans</h5>
+
+<p>
+Esta captura presenta las opciones de planes disponibles dentro del frontend. En esta sección se visualizan alternativas de suscripción, permitiendo al usuario comparar beneficios y seleccionar el plan adecuado para su clínica.
+</p>
+
+<figure>
+  <img src="assets/execution/03-front-pricing-plans.png" alt="Planes de precios disponibles en uFlex" width="100%">
+  <figcaption>Figura 19. Visualización de los planes de suscripción disponibles.</figcaption>
+</figure>
+
+<h5>Create Account</h5>
+
+<p>
+Esta evidencia muestra el formulario de creación de cuenta. En esta vista, el usuario registra sus datos principales, como correo, contraseña y nombre completo, para iniciar el proceso de alta dentro de la plataforma.
+</p>
+
+<figure>
+  <img src="assets/execution/04-front-create-account.png" alt="Formulario de creación de cuenta en uFlex" width="100%">
+  <figcaption>Figura 20. Formulario de creación de cuenta de usuario.</figcaption>
+</figure>
+
+<h5>Clinic Registration Validation</h5>
+
+<p>
+Esta captura evidencia la validación del formulario de registro de clínica. La interfaz muestra mensajes de validación cuando los campos requeridos no cumplen con las condiciones necesarias.
+</p>
+
+<figure>
+  <img src="assets/execution/05-front-clinic-registration-validation.png" alt="Validación del registro de clínica en uFlex" width="100%">
+  <figcaption>Figura 21. Validación de campos durante el registro de clínica.</figcaption>
+</figure>
+
+<h5>Clinic Registration Form</h5>
+
+<p>
+Esta evidencia muestra el formulario de registro de clínica con información institucional. Esta vista permite completar datos como nombre legal, nombre comercial, RUC, teléfono, país, región, ciudad y dirección.
+</p>
+
+<figure>
+  <img src="assets/execution/06-front-clinic-registration-form.png" alt="Formulario de registro de clínica en uFlex" width="100%">
+  <figcaption>Figura 22. Formulario de registro de clínica con datos institucionales.</figcaption>
+</figure>
+
+<h5>Payment Checkout</h5>
+
+<p>
+Esta captura muestra el proceso de pago asociado a la suscripción seleccionada. La vista corresponde al checkout de pago, donde el usuario puede confirmar el monto y completar la operación mediante el proveedor de pagos integrado.
+</p>
+
+<figure>
+  <img src="assets/execution/07-front-payment-checkout.png" alt="Checkout de pago de suscripción en uFlex" width="100%">
+  <figcaption>Figura 23. Vista de checkout para el pago de la suscripción.</figcaption>
+</figure>
+
+<h5>Subscription Validation</h5>
+
+<p>
+Esta evidencia presenta la pantalla de validación de suscripción. Luego del proceso de pago, el sistema verifica el estado de la suscripción para permitir el acceso a las funcionalidades correspondientes.
+</p>
+
+<figure>
+  <img src="assets/execution/08-front-subscription-validation.png" alt="Validación de suscripción en uFlex" width="100%">
+  <figcaption>Figura 24. Pantalla de validación del estado de suscripción.</figcaption>
+</figure>
+
+<h5>Company Dashboard</h5>
+
+<p>
+Esta captura muestra el panel principal de la compañía o clínica. Desde esta vista se resumen indicadores generales y accesos a módulos relevantes para la administración institucional.
+</p>
+
+<figure>
+  <img src="assets/execution/09-front-company-dashboard.png" alt="Dashboard de compañía en uFlex" width="100%">
+  <figcaption>Figura 25. Panel principal de administración de la clínica.</figcaption>
+</figure>
+
+<h5>Device Inventory</h5>
+
+<p>
+Esta evidencia muestra la vista de inventario de dispositivos. Este módulo permite visualizar y administrar los dispositivos IoT asociados a la clínica.
+</p>
+
+<figure>
+  <img src="assets/execution/10-front-device-inventory.png" alt="Inventario de dispositivos IoT en uFlex" width="100%">
+  <figcaption>Figura 26. Módulo de inventario y gestión de dispositivos IoT.</figcaption>
+</figure>
+
+<h5>Clinic Session Oversight</h5>
+
+<p>
+Esta captura presenta la vista de supervisión de sesiones clínicas. El módulo permite revisar información general sobre sesiones, pacientes y actividades terapéuticas asociadas al proceso de rehabilitación.
+</p>
+
+<figure>
+  <img src="assets/execution/11-front-clinic-session-oversight.png" alt="Supervisión de sesiones clínicas en uFlex" width="100%">
+  <figcaption>Figura 27. Vista de supervisión de sesiones clínicas.</figcaption>
+</figure>
+
+<h5>Exercise Catalog</h5>
+
+<p>
+Esta evidencia muestra el catálogo de ejercicios terapéuticos. Desde esta sección, la plataforma permite visualizar y administrar ejercicios que pueden formar parte de los planes de tratamiento asignados a los pacientes.
+</p>
+
+<figure>
+  <img src="assets/execution/12-front-exercise-catalog.png" alt="Catálogo de ejercicios terapéuticos en uFlex" width="100%">
+  <figcaption>Figura 28. Catálogo de ejercicios terapéuticos disponibles en la plataforma.</figcaption>
+</figure>
+
+<h5>Subscription Status</h5>
+
+<p>
+Esta captura muestra el módulo de suscripción dentro del panel. En esta vista se puede revisar el estado de la suscripción de la clínica y verificar si existe un plan activo asociado a la organización.
+</p>
+
+<figure>
+  <img src="assets/execution/13-front-subscription-status.png" alt="Estado de suscripción en el frontend de uFlex" width="100%">
+  <figcaption>Figura 29. Vista del estado de suscripción de la clínica.</figcaption>
+</figure>
+
+<h5>Profile Management</h5>
+
+<p>
+Esta evidencia presenta la vista de perfil y gestión administrativa. Desde este módulo se visualiza información general de la organización, métricas principales y una tabla con usuarios o miembros asociados a la clínica.
+</p>
+
+<figure>
+  <img src="assets/execution/14-front-profile-management.png" alt="Gestión de perfil y usuarios en uFlex" width="100%">
+  <figcaption>Figura 30. Vista de perfil institucional y gestión de miembros.</figcaption>
+</figure>
 
 
 ##### 6.2.2.7. Services Documentation Evidence for Sprint Review
@@ -8914,6 +9419,7 @@ Menú de Navegación -> Consultar Historial de Progreso (Arcos de movimiento log
 
 
 
+
 ### 6.3.3. Evaluaciones según heurísticas
 
 #### UX Heuristics & Principles Evaluation
@@ -9063,7 +9569,7 @@ No están incluidas en esta versión de la evaluación las siguientes tareas:
 A continuación se presenta el video About the product, que empieza desde el aterrizaje del usuario en la landing page, hasta el uso y presentación de la aplicación.  
 ![Video About the Product](./assets/images/screenshots/about-the-product-screenshot.png)
 
-Enlace al video about the product: [link](link)
+Enlace al video about the product: [link](https://youtu.be/Mzj2mZpZhKc)
     
 <hr class="page-break">
 
