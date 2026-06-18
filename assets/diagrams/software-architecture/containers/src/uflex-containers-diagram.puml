@@ -63,7 +63,7 @@ System_Boundary(uflex, "uFlex") {
 ' External systems (columna derecha)
 ' =========================================================
 System_Ext(uflexHardware, "Hardware uFlex", "Wearable con sensores IMU y actuadores hápticos", $tags="external")
-System_Ext(culqi,         "Culqi",          "Pasarela de pagos peruana",                       $tags="external")
+System_Ext(stripe,        "Stripe",         "Pasarela de pagos internacional",                 $tags="external")
 System_Ext(resend,         "Resend",        "Envío de correos transaccionales",                $tags="external")
 
 ' =========================================================
@@ -73,6 +73,10 @@ Rel(patient,         landingPage,  "Explora contenido público")
 Rel(patient,         mobileApp,    "Ejecuta rutinas y revisa feedback")
 Rel(physiotherapist, webClientApp, "Supervisa sesiones y ajusta protocolos")
 Rel(clinicAdmin,     webClientApp, "Administra clínica y suscripción")
+
+' Landing Page → otras apps (descarga / acceso)
+Rel(landingPage, mobileApp,    "Redirige a descarga de la app")
+Rel(landingPage, webClientApp, "Redirige al acceso web")
 
 ' =========================================================
 ' Mobile App ↔ otros contenedores
@@ -98,7 +102,7 @@ Rel(edgeApp,     restApi,       "Envía datos anonimizados (HTTPS)")
 ' REST API ↔ DB ↔ externos
 ' =========================================================
 Rel(restApi, uflexDB, "Lee/escribe datos de negocio")
-Rel(restApi, culqi,   "Procesa pagos de suscripción")
+Rel(restApi, stripe,  "Procesa pagos de suscripción")
 Rel(restApi, resend,  "Envía correos transaccionales")
 
 ' =========================================================
@@ -109,8 +113,8 @@ Lay_D(patient, physiotherapist)
 Lay_D(physiotherapist, clinicAdmin)
 
 ' Sistemas externos apilados verticalmente
-Lay_D(uflexHardware, culqi)
-Lay_D(culqi, resend)
+Lay_D(uflexHardware, stripe)
+Lay_D(stripe, resend)
 
 ' DB junto al REST API (a la derecha)
 Lay_R(restApi, uflexDB)

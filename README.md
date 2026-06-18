@@ -347,6 +347,21 @@ Análisis de cantidad de commits realizados por semana.
             - [6.2.1.7. Services Documentation Evidence for Sprint Review](#6217-services-documentation-evidence-for-sprint-review)
             - [6.2.1.8. Software Deployment Evidence for Sprint Review](#6218-software-deployment-evidence-for-sprint-review)
             - [6.2.1.9. Team Collaboration Insights during Sprint](#6219-team-collaboration-insights-during-sprint)
+         - [6.2.2. Sprint 2](#622-sprint-2)
+            - [6.2.2.1. Sprint Planning 2](#6221-sprint-planning-2)
+            - [6.2.2.2. Aspect Leaders and Collaborators](#6222-aspect-leaders-and-collaborators)
+            - [6.2.2.3. Sprint Backlog 2](#6223-sprint-backlog-2)
+            - [6.2.2.4. Development Evidence for Sprint Review](#6224-development-evidence-for-sprint-review)
+            - [6.2.2.5. Testing Suite Evidence for Sprint Review](#6225-testing-suite-evidence-for-sprint-review)
+            - [6.2.2.6. Execution Evidence for Sprint Review](#6226-execution-evidence-for-sprint-review)
+            - [6.2.2.7. Services Documentation Evidence for Sprint Review](#6227-services-documentation-evidence-for-sprint-review)
+            - [6.2.2.8. Software Deployment Evidence for Sprint Review](#6228-software-deployment-evidence-for-sprint-review)
+            - [6.2.2.9. Team Collaboration Insights during Sprint](#6229-team-collaboration-insights-during-sprint)
+      - [6.3. Validation Interviews](#63-validation-interviews)
+         - [6.3.1. Diseño de entrevistas](#631-diseño-de-entrevistas)
+         - [6.3.2. Registro de entrevistas](#632-registro-de-entrevistas)
+         - [6.3.3. Evaluaciones según heurísticas](#633-evaluaciones-según-heurísticas)
+      - [6.4. Video About-the-Product](#64-video-about-the-product)
 
 - [Conclusiones](#conclusiones)
    - [Conclusiones y recomendaciones](#conclusiones-y-recomendaciones)
@@ -361,6 +376,10 @@ Análisis de cantidad de commits realizados por semana.
 
 En el siguiente cuadro se describe las acciones realizadas y enunciados de conclusiones por parte del grupo, que permiten sustentar el haber alcanzado el logro del ABET – EAC - Student Outcome 5
 
+# Student Outcome
+
+En el siguiente cuadro se describe las acciones realizadas y enunciados de conclusiones por parte del grupo, que permiten sustentar el haber alcanzado el logro del ABET – EAC - Student Outcome 5.
+
 <table>
   <thead>
     <tr>
@@ -372,45 +391,87 @@ En el siguiente cuadro se describe las acciones realizadas y enunciados de concl
   <tbody>
     <tr>
       <td rowspan="5"><strong>Trabaja en equipo para proporcionar liderazgo en forma conjunta</strong></td>
-      <td><strong>Crispin Ramos, Daniel Franco</strong><br><b>AV1:</b> Lideré la ejecución del Needfinding y la elaboración del Impact Mapping, articulando las necesidades del usuario con los objetivos de negocio. Asumí la responsabilidad del diseño estratégico Context Mapping y el desarrollo táctico DDD del Bounded Context Device. Participé activamente en las sesiones de EventStorming, guiando la delimitación de contextos y validando las interacciones estratégicas del sistema.<br><br><b>TB1:</b> Lideré el diseño UI/UX de la aplicación móvil del paciente, asegurando la coherencia visual con el Design System y guiando al equipo en la adopción de patrones de diseño inclusivo. Coordiné con los desarrolladores para traducir los wireframes en interfaces funcionales en el módulo Organization de la Web Application, demostrando liderazgo técnico en la integración de diseño y desarrollo.</td>
-        <td rowspan="5">
-          <b>AV1:</b> Durante el desarrollo del AV1, que abarcó desde el perfil de la startup hasta el diseño de la solución de software, hemos aprendido que el liderazgo no recae en una sola persona sino que se ejerce de forma conjunta. Cada integrante tomó la conducción de las secciones en las que tenía mayor dominio y al mismo tiempo apoyó activamente al resto, lo que nos permitió avanzar de manera paralela sin perder coherencia. Actividades transversales como el EventStorming evidenciaron que compartir el liderazgo fortalece la calidad de las decisiones y nos ayuda a alinear el rumbo del proyecto como equipo.
-          <br><br>
-          <b>TB1:</b> En esta etapa técnica, el liderazgo se manifestó en la capacidad de guiar la implementación del software sin perder la visión estratégica. Aprendimos que el liderazgo técnico implica no solo delegar, sino asegurar la trazabilidad entre lo diseñado (EventStorming) y lo construido (Código). La coordinación en la consolidación de evidencias demostró que un liderazgo distribuido permite identificar cuellos de botella rápidamente y mantener la integridad del sistema uFlex.
-        </td>
+      <td>
+        <strong>Crispin Ramos, Daniel Franco</strong><br>
+        <b>AV1:</b> Lideré la ejecución del Needfinding y la elaboración del Impact Mapping, articulando las necesidades del usuario con los objetivos de negocio. Asumí la responsabilidad del diseño estratégico Context Mapping y el desarrollo táctico DDD del Bounded Context Device. Participé activamente en las sesiones de EventStorming, guiando la delimitación de contextos y validando las interacciones estratégicas del sistema.<br><br>
+        <b>TB1:</b> Lideré el diseño UI/UX de la aplicación móvil del paciente, asegurando la coherencia visual con el Design System y guiando al equipo en la adopción de patrones de diseño inclusivo. Coordiné con los desarrolladores para traducir los wireframes en interfaces funcionales en el módulo Organization de la Web Application, demostrando liderazgo técnico en la integración de diseño y desarrollo.
+      </td>
+      <td rowspan="5">
+        <b>AV1:</b> Durante el desarrollo del AV1, que abarcó desde el perfil de la startup hasta el diseño de la solución de software, hemos aprendido que el liderazgo no recae en una sola persona sino que se ejerce de forma conjunta. Cada integrante tomó la conducción de las secciones en las que tenía mayor dominio y al mismo tiempo apoyó activamente al resto, lo que nos permitió avanzar de manera paralela sin perder coherencia. Actividades transversales como el EventStorming evidenciaron que compartir el liderazgo fortalece la calidad de las decisiones y nos ayuda a alinear el rumbo del proyecto como equipo.
+        <br><br>
+        <b>TB1:</b> En esta etapa técnica, el liderazgo se manifestó en la capacidad de guiar la implementación del software sin perder la visión estratégica. Aprendimos que el liderazgo técnico implica no solo delegar, sino asegurar la trazabilidad entre lo diseñado y lo construido. La coordinación en la consolidación de evidencias demostró que un liderazgo distribuido permite identificar cuellos de botella rápidamente y mantener la integridad del sistema uFlex.
+      </td>
     </tr>
     <tr>
-      <td><strong>Ramirez Mestanza, Salim Ignacio</strong><br><b>AV1:</b> Lideré la elaboración de las User Stories del proyecto, estructurando los requerimientos funcionales y sus criterios de aceptación para mantener coherencia entre los módulos. Además, apoyé activamente en el Design-Level EventStorming para alinear decisiones de dominio con el equipo y desarrollé el Domain Message Flows Modeling, integrando los eventos y mensajes clave entre bounded contexts.<br><br><b>TB1:</b> Lideré la gestión del Product Backlog y el Sprint Backlog del TB1, asegurando que cada User Story tuviera criterios de aceptación claros y estuviera vinculada correctamente a los Issues de GitHub. Coordiné con el equipo la definición de los Acceptance Tests y supervisé la implementación de la lógica de dominio en el backend para mantener la integridad de los flujos de mensajes diseñados previamente. Facilité la comunicación entre los encargados de frontend y backend para asegurar que la integración de servicios cumpliera con las expectativas del negocio.</td>
+      <td>
+        <strong>Ramirez Mestanza, Salim Ignacio</strong><br>
+        <b>AV1:</b> Lideré la elaboración de las User Stories del proyecto, estructurando los requerimientos funcionales y sus criterios de aceptación para mantener coherencia entre los módulos. Además, apoyé activamente en el Design-Level EventStorming para alinear decisiones de dominio con el equipo y desarrollé el Domain Message Flows Modeling, integrando los eventos y mensajes clave entre bounded contexts.<br><br>
+        <b>TB1:</b> Lideré la gestión del Product Backlog y el Sprint Backlog del TB1, asegurando que cada User Story tuviera criterios de aceptación claros y estuviera vinculada correctamente a los Issues de GitHub. Coordiné con el equipo la definición de los Acceptance Tests y supervisé la implementación de la lógica de dominio en el backend para mantener la integridad de los flujos de mensajes diseñados previamente. Facilité la comunicación entre los encargados de frontend y backend para asegurar que la integración de servicios cumpliera con las expectativas del negocio.
+      </td>
     </tr>
     <tr>
-      <td><strong>Rivera Sosa, Eduardo Gael</strong><br><b>AV1:</b> Lideré el diseño de la arquitectura de software de uFlex elaborando los diagramas Landscape, Context, Container y Deployment. Facilité junto al equipo el Design-Level EventStorming, guiando las decisiones sobre eventos y bounded contexts. También dirigí el análisis competitivo y las estrategias frente a competidores, consolidando los aportes del equipo en un entregable coherente.<br><br><b>TB1:</b> Lideré la consolidación de la evidencia técnica del Sprint Review del TB1 articulando los aportes del equipo en seis frentes: <em>Development Evidence</em> (organización del repositorio, ramas y pull requests), <em>Testing Suite Evidence</em> (estructura y reporte de las suites de pruebas), <em>Execution Evidence</em> (capturas funcionales del producto en ejecución), <em>Services Documentation</em> (documentación de los endpoints REST del monolito uFlex), <em>Software Deployment Evidence</em> (URLs y configuración del despliegue) y <em>Team Collaboration Insights</em> (métricas de GitHub Insights). Coordiné con cada integrante para integrar sus aportes en un entregable unificado, asegurando trazabilidad entre las historias del Sprint Backlog y la implementación efectiva.</td>
+      <td>
+        <strong>Rivera Sosa, Eduardo Gael</strong><br>
+        <b>AV1:</b> Lideré el diseño de la arquitectura de software de uFlex elaborando los diagramas Landscape, Context, Container y Deployment. Facilité junto al equipo el Design-Level EventStorming, guiando las decisiones sobre eventos y bounded contexts. También dirigí el análisis competitivo y las estrategias frente a competidores, consolidando los aportes del equipo en un entregable coherente.<br><br>
+        <b>TB1:</b> Lideré la consolidación de la evidencia técnica del Sprint Review del TB1 articulando los aportes del equipo en seis frentes: <em>Development Evidence</em>, <em>Testing Suite Evidence</em>, <em>Execution Evidence</em>, <em>Services Documentation</em>, <em>Software Deployment Evidence</em> y <em>Team Collaboration Insights</em>. Coordiné con cada integrante para integrar sus aportes en un entregable unificado, asegurando trazabilidad entre las historias del Sprint Backlog y la implementación efectiva.
+      </td>
     </tr>
     <tr>
-      <td><strong>Sulca Gonzales, Paúl Fernando</strong><br><b>AV1:</b> Lideré y facilité actividades de análisis centradas en el usuario, incluyendo la elaboración de entrevistas, User Task Matrix, User Journey Mapping y Empathy Mapping, articulando los aportes del equipo para convertirlos en insumos de diseño consistentes. Además, participé activamente en Big Picture Event Storming y Candidate Context Discovery para alinear decisiones de dominio y delimitar bounded contexts con enfoque estratégico.<br><b>TB1:</b> Coordiné en equipo las secciones de Software Configuration Management y la planificación del Sprint 1, promoviendo liderazgo compartido y alineando criterios técnicos y de contenido con el resto del equipo.</td>
+      <td>
+        <strong>Sulca Gonzales, Paúl Fernando</strong><br>
+        <b>AV1:</b> Lideré y facilité actividades de análisis centradas en el usuario, incluyendo la elaboración de entrevistas, User Task Matrix, User Journey Mapping y Empathy Mapping, articulando los aportes del equipo para convertirlos en insumos de diseño consistentes. Además, participé activamente en Big Picture Event Storming y Candidate Context Discovery para alinear decisiones de dominio y delimitar bounded contexts con enfoque estratégico.<br><br>
+        <b>TB1:</b> Coordiné en equipo las secciones de Software Configuration Management y la planificación del Sprint 1, promoviendo liderazgo compartido y alineando criterios técnicos y de contenido con el resto del equipo.
+      </td>
     </tr>
     <tr>
-      <td><strong>Varela Bustinza, Marcelo Alessandro</strong><br><b>AV1:</b>Durante el desarrollo del proyecto, aporté activamente en la organización y desarrollo de capítulos clave, participando en temas como Lean UX, entrevistas, needfinding y diseño de software. Mi contribución permitió coordinar ideas con el equipo y avanzar de manera conjunta hacia los objetivos del trabajo.</td> <b>TB1:</b> Desarrollé e implementé la documentación correspondiente a la sección UX/UI Design de la aplicación web de uFlex, enfocándome en la organización de wireframes, mock-ups, wireflow diagrams y user flow diagrams. Asimismo, analicé los flujos del administrador y del fisioterapeuta, identificando la función de cada pantalla y redactando descripciones coherentes con el propósito del proyecto. También contribuí a ordenar los assets visuales, renombrar las imágenes con nombres específicos y estructurar el contenido en formato Markdown para facilitar su integración al reporte del equipo.
+      <td>
+        <strong>Varela Bustinza, Marcelo Alessandro</strong><br>
+        <b>AV1:</b> Durante el desarrollo del proyecto, aporté activamente en la organización y desarrollo de capítulos clave, participando en temas como Lean UX, entrevistas, needfinding y diseño de software. Mi contribución permitió coordinar ideas con el equipo y avanzar de manera conjunta hacia los objetivos del trabajo.<br><br>
+        <b>TB1:</b> Desarrollé e implementé la documentación correspondiente a la sección UX/UI Design de la aplicación web de uFlex, enfocándome en la organización de wireframes, mock-ups, wireflow diagrams y user flow diagrams. Asimismo, analicé los flujos del administrador y del fisioterapeuta, identificando la función de cada pantalla y redactando descripciones coherentes con el propósito del proyecto. También contribuí a ordenar los assets visuales, renombrar las imágenes con nombres específicos y estructurar el contenido en formato Markdown para facilitar su integración al reporte del equipo.<br><br>
+        <b>AV2:</b> Aporté en la organización y consolidación de los entregables técnicos del Sprint 2, apoyando la integración de nuevas secciones relacionadas con la validación del producto, el avance del prototipo IoT y la documentación de componentes técnicos del ecosistema uFlex. Mi participación permitió mantener la coherencia entre las tareas asignadas, las historias de usuario actualizadas y la estructura del informe, contribuyendo al liderazgo compartido dentro del equipo.
+      </td>
     </tr>
     <tr>
       <td rowspan="5"><strong>Crea un entorno colaborativo e inclusivo, establece metas, planifica tareas y cumple objetivos</strong></td>
-      <td><strong>Crispin Ramos, Daniel Franco</strong><br><b>AV1:</b> Planifiqué y cumplí con los entregables de análisis y diseño asignados, coordinando con el equipo la priorización de las actividades dentro del Bounded Context Device. Mi participación activa en las sesiones de EventStorming y en la validación de diagramas tácticos facilitó el consenso técnico y aseguró que los aportes del equipo se integraran correctamente dentro de los plazos del AV1.<br><br><b>TB1:</b> Planifiqué las tareas de diseño UI/UX estableciendo metas claras y plazos para el desarrollo de wireframes, mockups y prototipos. Cumplí con los objetivos asignados manteniendo un entorno colaborativo con los desarrolladores frontend, facilitando la comunicación para lograr la correcta implementación de las interfaces diseñadas.</td>
-        <td rowspan="5">
-          <b>AV1:</b> A lo largo del AV1 hemos logrado cubrir todo el alcance planificado, desde la definición de la startup y el análisis del problema hasta el diseño completo de la solución de software. Para conseguirlo establecimos metas claras por capítulo, distribuimos las tareas según las fortalezas de cada integrante y realizamos revisiones constantes para mantener el avance alineado. Creemos que el entorno colaborativo e inclusivo que construimos fue clave: cada propuesta fue discutida en conjunto y los entregables finales reflejan aportes de todo el equipo, cumpliendo los objetivos acordados en los plazos previstos.
-          <br><br>
-          <b>TB1:</b> El cumplimiento del Sprint Goal fue posible gracias a una planificación rigurosa de tareas en GitHub y la flexibilidad para ajustar la arquitectura (como la transición al monolito) de forma consensuada. Mantuvimos un entorno inclusivo donde la revisión de código y la documentación técnica fueron responsabilidades compartidas, lo que garantizó que todos los integrantes estuvieran alineados con el despliegue final y la calidad de las pruebas.
-        </td>
+      <td>
+        <strong>Crispin Ramos, Daniel Franco</strong><br>
+        <b>AV1:</b> Planifiqué y cumplí con los entregables de análisis y diseño asignados, coordinando con el equipo la priorización de las actividades dentro del Bounded Context Device. Mi participación activa en las sesiones de EventStorming y en la validación de diagramas tácticos facilitó el consenso técnico y aseguró que los aportes del equipo se integraran correctamente dentro de los plazos del AV1.<br><br>
+        <b>TB1:</b> Planifiqué las tareas de diseño UI/UX estableciendo metas claras y plazos para el desarrollo de wireframes, mockups y prototipos. Cumplí con los objetivos asignados manteniendo un entorno colaborativo con los desarrolladores frontend, facilitando la comunicación para lograr la correcta implementación de las interfaces diseñadas.
+      </td>
+      <td rowspan="5">
+        <b>AV1:</b> A lo largo del AV1 hemos logrado cubrir todo el alcance planificado, desde la definición de la startup y el análisis del problema hasta el diseño completo de la solución de software. Para conseguirlo establecimos metas claras por capítulo, distribuimos las tareas según las fortalezas de cada integrante y realizamos revisiones constantes para mantener el avance alineado. Creemos que el entorno colaborativo e inclusivo que construimos fue clave: cada propuesta fue discutida en conjunto y los entregables finales reflejan aportes de todo el equipo, cumpliendo los objetivos acordados en los plazos previstos.
+        <br><br>
+        <b>TB1:</b> El cumplimiento del Sprint Goal fue posible gracias a una planificación rigurosa de tareas en GitHub y la flexibilidad para ajustar la arquitectura de forma consensuada. Mantuvimos un entorno inclusivo donde la revisión de código y la documentación técnica fueron responsabilidades compartidas, lo que garantizó que todos los integrantes estuvieran alineados con el despliegue final y la calidad de las pruebas.
+      </td>
     </tr>
     <tr>
-      <td><strong>Ramirez Mestanza, Salim Ignacio</strong><br><b>AV1:</b> Planifiqué y entregué en los plazos acordados las secciones a mi cargo, especialmente la definición de User Stories y el Domain Message Flows Modeling. Participé de forma activa en el Design-Level EventStorming como espacio colaborativo, incorporando los aportes del equipo para mantener metas comunes, una coordinación inclusiva y el cumplimiento de los objetivos del AV1.<br><br><b>TB1:</b> Planifiqué y ejecuté la migración de los requerimientos del AV1 hacia el entorno de desarrollo, definiendo las metas de cada historia de usuario dentro del Sprint. Cumplí con la entrega de los reportes de pruebas unitarias y de integración, garantizando que el software cumpliera con los estándares de calidad antes del Sprint Review. Promoví un entorno inclusivo mediante la revisión técnica por pares (Peer Review), brindando soporte a mis compañeros en la resolución de conflictos de código y asegurando que los objetivos técnicos del TB1 se alcanzaran puntualmente.</td>
+      <td>
+        <strong>Ramirez Mestanza, Salim Ignacio</strong><br>
+        <b>AV1:</b> Planifiqué y entregué en los plazos acordados las secciones a mi cargo, especialmente la definición de User Stories y el Domain Message Flows Modeling. Participé de forma activa en el Design-Level EventStorming como espacio colaborativo, incorporando los aportes del equipo para mantener metas comunes, una coordinación inclusiva y el cumplimiento de los objetivos del AV1.<br><br>
+        <b>TB1:</b> Planifiqué y ejecuté la migración de los requerimientos del AV1 hacia el entorno de desarrollo, definiendo las metas de cada historia de usuario dentro del Sprint. Cumplí con la entrega de los reportes de pruebas unitarias y de integración, garantizando que el software cumpliera con los estándares de calidad antes del Sprint Review. Promoví un entorno inclusivo mediante la revisión técnica por pares, brindando soporte a mis compañeros en la resolución de conflictos de código y asegurando que los objetivos técnicos del TB1 se alcanzaran puntualmente.
+      </td>
     </tr>
     <tr>
-      <td><strong>Rivera Sosa, Eduardo Gael</strong><br><b>AV1:</b> Planifiqué y entregué en los plazos acordados las secciones a mi cargo: segmentos objetivo, análisis competitivo, estrategias frente a competidores, user personas y la arquitectura de software con sus diagramas. Participé activamente en el Design-Level EventStorming como actividad colaborativa, asegurando que los aportes de todos los integrantes se reflejaran en el diseño final.<br><br><b>TB1:</b> Planifiqué y entregué dentro de los plazos del Sprint las seis secciones de evidencia a mi cargo (Development, Testing Suite, Execution, Services Documentation, Software Deployment y Team Collaboration Insights), distribuyendo subtareas claras por integrante y haciendo seguimiento de su avance. Mantuve un entorno colaborativo e inclusivo durante el Sprint: revisé los aportes de cada miembro, integré sus capturas y commits a la documentación, y propicié ajustes consensuados (por ejemplo, la corrección de los diagramas C4 y la simplificación del backend a un monolito) cumpliendo los objetivos del Sprint Goal.</td>
+      <td>
+        <strong>Rivera Sosa, Eduardo Gael</strong><br>
+        <b>AV1:</b> Planifiqué y entregué en los plazos acordados las secciones a mi cargo: segmentos objetivo, análisis competitivo, estrategias frente a competidores, user personas y la arquitectura de software con sus diagramas. Participé activamente en el Design-Level EventStorming como actividad colaborativa, asegurando que los aportes de todos los integrantes se reflejaran en el diseño final.<br><br>
+        <b>TB1:</b> Planifiqué y entregué dentro de los plazos del Sprint las secciones de evidencia a mi cargo, distribuyendo subtareas claras por integrante y haciendo seguimiento de su avance. Mantuve un entorno colaborativo e inclusivo durante el Sprint: revisé los aportes de cada miembro, integré sus capturas y commits a la documentación, y propicié ajustes consensuados cumpliendo los objetivos del Sprint Goal.
+      </td>
     </tr>
     <tr>
-      <td><strong>Sulca Gonzales, Paúl Fernando</strong><br><b>AV1:</b> Planifiqué y cumplí los entregables asignados en las etapas de investigación y modelado del dominio, coordinando con el equipo la priorización de tareas para mantener el avance del AV1 dentro de los plazos. Mi participación en la definición de bounded contexts y en el diseño táctico DDD (capas y diagramas de soporte) contribuyó a consolidar un entorno de trabajo colaborativo, ordenado e inclusivo orientado al cumplimiento de objetivos.<br><b>TB1:</b> Organicé y completé los apartados de Software Configuration Management y la documentación de Sprint 1, estableciendo metas claras, distribuyendo tareas y asegurando coherencia entre backlog, liderazgo y alcance acordado.</td>
+      <td>
+        <strong>Sulca Gonzales, Paúl Fernando</strong><br>
+        <b>AV1:</b> Planifiqué y cumplí los entregables asignados en las etapas de investigación y modelado del dominio, coordinando con el equipo la priorización de tareas para mantener el avance del AV1 dentro de los plazos. Mi participación en la definición de bounded contexts y en el diseño táctico DDD contribuyó a consolidar un entorno de trabajo colaborativo, ordenado e inclusivo orientado al cumplimiento de objetivos.<br><br>
+        <b>TB1:</b> Organicé y completé los apartados de Software Configuration Management y la documentación de Sprint 1, estableciendo metas claras, distribuyendo tareas y asegurando coherencia entre backlog, liderazgo y alcance acordado.
+      </td>
     </tr>
     <tr>
-      <td><strong>Varela Bustinza, Marcelo Alessandro</strong><br><b>AV1:</b>Participé de forma colaborativa en la distribución y ejecución de tareas, asumiendo responsabilidades concretas dentro del proyecto y cumpliendo con los entregables asignados. Esto ayudó a mantener un trabajo ordenado, con metas claras y un avance coordinado entre los integrantes.</td> <b>TB1:</b> Planifiqué y cumplí con las tareas asignadas relacionadas con la documentación de la aplicación web, priorizando la correcta organización de las imágenes, la separación de flujos por rol y la redacción de subtítulos y descripciones para cada user flow. Además, propuse una estructura clara para que el contenido pudiera ser copiado e integrado directamente en el reporte, manteniendo consistencia con la plantilla del curso y evitando incluir secciones que no correspondían al alcance definido, como la aplicación móvil.
+      <td>
+        <strong>Varela Bustinza, Marcelo Alessandro</strong><br>
+        <b>AV1:</b> Participé de forma colaborativa en la distribución y ejecución de tareas, asumiendo responsabilidades concretas dentro del proyecto y cumpliendo con los entregables asignados. Esto ayudó a mantener un trabajo ordenado, con metas claras y un avance coordinado entre los integrantes.<br><br>
+        <b>TB1:</b> Planifiqué y cumplí con las tareas asignadas relacionadas con la documentación de la aplicación web, priorizando la correcta organización de las imágenes, la separación de flujos por rol y la redacción de subtítulos y descripciones para cada user flow. Además, propuse una estructura clara para que el contenido pudiera ser copiado e integrado directamente en el reporte, manteniendo consistencia con la plantilla del curso y evitando incluir secciones que no correspondían al alcance definido.<br><br>
+        <b>AV2:</b> Planifiqué y cumplí con las actividades asignadas para el Sprint 2, organizando la información técnica de manera clara y alineada con los avances reales del equipo. Además, apoyé en la actualización de los requerimientos y evidencias del producto, manteniendo comunicación constante con mis compañeros para que el contenido agregado al informe conserve trazabilidad con el trabajo desarrollado y responda al alcance solicitado para esta entrega.
+      </td>
     </tr>
   </tbody>
 </table>
@@ -1876,11 +1937,11 @@ A partir del análisis de los segmentos objetivo, las entrevistas, las hipótesi
       <td>EP04</td>
     </tr>
     <tr>
-      <td><b>EP05</b></td>
-      <td>Technical Stories (APIs, Edge e integraciones)</td>
-      <td>Conjunto de Technical Stories que soportan los productos digitales sin interacción directa con usuarios finales: RESTful API interno, Edge API para telemetría del sensor, integración con la pasarela de pagos externa y servicio de notificaciones transaccionales.</td>
-      <td>—</td>
-      <td>—</td>
+  <td><b>EP05</b></td>
+  <td>Technical Stories (APIs, Edge e integraciones)</td>
+  <td>Conjunto de Technical Stories que soportan los productos digitales sin interacción directa con usuarios finales: RESTful API interno, Edge API para telemetría del sensor, firmware Embedded del dispositivo IoT, integración con la pasarela de pagos externa y servicio de notificaciones transaccionales.</td>
+  <td>—</td>
+  <td>—</td>
     </tr>
     <tr>
       <td>TS34</td>
@@ -1975,6 +2036,54 @@ A partir del análisis de los segmentos objetivo, las entrevistas, las hipótesi
         <b>Given</b> que ocurre un evento de dominio que requiere notificación por correo,<br>
         <b>When</b> el proveedor externo no responde dentro del tiempo máximo,<br>
         <b>Then</b> el servicio marca el envío como pendiente y lo encola para reintento posterior.
+      </td>
+      <td>EP05</td>
+    </tr>
+    <tr>
+      <td>TS40</td>
+      <td>Firmware Embedded para captura de datos de movimiento</td>
+      <td>Como Developer, quiero implementar la lógica Embedded de captura de datos desde los sensores del dispositivo IoT para obtener mediciones iniciales del movimiento articular durante una sesión de rehabilitación.</td>
+      <td>
+        <b>Escenario 1: Captura exitosa de datos del sensor</b><br>
+        <b>Given</b> que el dispositivo IoT se encuentra encendido y los sensores están conectados correctamente,<br>
+        <b>When</b> el firmware inicia la lectura de datos,<br>
+        <b>Then</b> el sistema captura valores de movimiento y los prepara para su procesamiento local.<br><br>
+        <b>Escenario 2: Sensor no disponible</b><br>
+        <b>Given</b> que el dispositivo IoT intenta iniciar la captura,<br>
+        <b>When</b> uno de los sensores no responde o no está conectado correctamente,<br>
+        <b>Then</b> el sistema marca el estado del dispositivo como error y evita enviar datos inválidos.
+      </td>
+      <td>EP05</td>
+    </tr>
+    <tr>
+      <td>TS41</td>
+      <td>Calibración y validación inicial del dispositivo IoT</td>
+      <td>Como Developer, quiero implementar una rutina de calibración y validación inicial del dispositivo IoT para asegurar que las mediciones capturadas sean consistentes antes de iniciar una sesión terapéutica.</td>
+      <td>
+        <b>Escenario 1: Calibración completada correctamente</b><br>
+        <b>Given</b> que el dispositivo IoT se encuentra en estado de configuración inicial,<br>
+        <b>When</b> el firmware ejecuta la rutina de calibración,<br>
+        <b>Then</b> el sistema establece valores base para la captura de movimiento y permite continuar con la sesión.<br><br>
+        <b>Escenario 2: Calibración fallida</b><br>
+        <b>Given</b> que el dispositivo IoT intenta calibrarse,<br>
+        <b>When</b> los valores obtenidos están fuera del rango esperado,<br>
+        <b>Then</b> el sistema conserva el estado de error y solicita repetir la calibración antes de capturar telemetría.
+      </td>
+      <td>EP05</td>
+    </tr>
+    <tr>
+      <td>TS42</td>
+      <td>Generación de paquete de telemetría desde Embedded</td>
+      <td>Como Developer, quiero generar paquetes de telemetría desde el firmware Embedded para enviar datos estructurados hacia la capa Edge del ecosistema uFlex.</td>
+      <td>
+        <b>Escenario 1: Paquete de telemetría generado correctamente</b><br>
+        <b>Given</b> que el dispositivo IoT capturó datos válidos de movimiento,<br>
+        <b>When</b> el firmware construye el paquete de telemetría,<br>
+        <b>Then</b> el sistema incluye identificador del dispositivo, sesión, ángulo estimado, batería y marca temporal.<br><br>
+        <b>Escenario 2: Datos incompletos</b><br>
+        <b>Given</b> que el dispositivo IoT intenta generar telemetría,<br>
+        <b>When</b> faltan datos obligatorios del sensor o de la sesión,<br>
+        <b>Then</b> el sistema descarta el paquete y no lo envía hacia la capa Edge.
       </td>
       <td>EP05</td>
     </tr>
@@ -5957,7 +6066,7 @@ Pantalla de consulta histórica que muestra gráficos de evolución de la movili
 
 Este diagrama representa el recorrido del administrador dentro de la aplicación web. El flujo inicia con el acceso al sistema y continúa con la gestión de organización, dispositivos, terapias y suscripción.
 
-<img src="assets/ux-ui/wireflows/web/admin/admin_wireflow.png" alt="Wireflow web del administrador en uFlex" width="100%">
+<img src="assets/ux-ui/wireflows/admin/admin_wireflow.png" alt="Wireflow web del administrador en uFlex" width="100%">
 
 <hr class="page-break">
 
@@ -5965,7 +6074,7 @@ Este diagrama representa el recorrido del administrador dentro de la aplicación
 
 Este diagrama representa el recorrido del fisioterapeuta dentro del portal clínico. El flujo considera el acceso al dashboard, revisión de pacientes, planificación de terapias, asignación de dispositivos y seguimiento del progreso.
 
-<img src="assets/ux-ui/wireflows/web/physiotherapist/physiotherapist_wireflow.png" alt="Wireflow web del fisioterapeuta en uFlex" width="100%">
+<img src="assets/ux-ui/wireflows/physiotherapist/physiotherapist_wireflow.png" alt="Wireflow web del fisioterapeuta en uFlex" width="100%">
 
 <hr class="page-break">
 
@@ -6059,7 +6168,7 @@ Esta pantalla muestra el perfil del administrador y la información asociada a s
 
 Esta pantalla muestra la gestión visual de la organización o clínica dentro de uFlex.
 
-<img src="assets/ux-ui/mockups/web/admin/Organization_admin.png" alt="Mock-up de organización del administrador en uFlex" width="100%">
+<img src="assets/ux-ui/mockups/web/admin/Organizacion_admin.png" alt="Mock-up de organización del administrador en uFlex" width="100%">
 
 **Organization Admin 2 Mock-up**
 
@@ -6101,13 +6210,13 @@ Esta pantalla muestra información complementaria sobre los dispositivos registr
 
 Esta pantalla muestra la gestión visual de terapias dentro de la clínica.
 
-<img src="assets/ux-ui/mockups/web/admin/Therapy_admin_1.png" alt="Mock-up de gestión de terapias del administrador en uFlex" width="100%">
+<img src="assets/ux-ui/mockups/web/admin/Theraphy_admin_1.png" alt="Mock-up de gestión de terapias del administrador en uFlex" width="100%">
 
 **Therapy Register Exercise Mock-up**
 
 Esta pantalla muestra el formulario final para registrar ejercicios terapéuticos dentro de la plataforma.
 
-<img src="assets/ux-ui/mockups/web/admin/Therapy_register_exercise.png" alt="Mock-up de registro de ejercicio terapéutico en uFlex" width="100%">
+<img src="assets/ux-ui/mockups/web/admin/Theraphy_register_exercise.png" alt="Mock-up de registro de ejercicio terapéutico en uFlex" width="100%">
 
 **Subscription Admin Mock-up**
 
@@ -6155,7 +6264,7 @@ Esta pantalla muestra la planificación terapéutica de pacientes, incluyendo se
 
 Esta pantalla muestra la gestión y seguimiento de terapias del paciente, permitiendo revisar el avance registrado por el sistema.
 
-<img src="assets/ux-ui/mockups/web/physiotherapist/Therapy_physiotherapist.png" alt="Mock-up de terapia del fisioterapeuta en uFlex" width="100%">
+<img src="assets/ux-ui/mockups/web/physiotherapist/Theraphy_physiotherapist.png" alt="Mock-up de terapia del fisioterapeuta en uFlex" width="100%">
 
 <hr class="page-break">
 
@@ -7595,6 +7704,1873 @@ Durante el Sprint 1 las actividades de implementación se distribuyeron de forma
 
 *Figura 6.2.1.9.6. Web Application — Network graph.* <!-- TODO: subir captura a assets/images/screenshots/sprint-1/insights-webapp-network.png -->
 
+<hr class="page-break">
+
+#### 6.2.2. Sprint 2
+
+<p>
+Durante el segundo sprint, el equipo se enfoco en avanzar desde una primera version funcional de la web application hacia la integracion tecnica del ecosistema de uFlex con los componentes IoT, Edge y backend principal. El trabajo se concentro en los bounded contexts de <strong>Organization</strong>, <strong>Device</strong>, <strong>Planning</strong>, <strong>Therapy</strong>, <strong>IAM</strong> y <strong>Subscription</strong>, asi como en la configuracion inicial del entorno Edge, la comunicacion BLE, el broker Mosquitto, el PoC del dispositivo en Wokwi/Cirkit, el soporte Embedded y la mejora responsive de la aplicacion web.
+</p>
+
+<p>
+Este sprint busca conectar la experiencia digital con la capa fisica del sistema, permitiendo que los flujos de paciente, fisioterapeuta y administrador tengan soporte tecnico para gestionar kits IoT, crear planes terapeuticos, ejecutar sesiones de rehabilitacion, registrar telemetria proveniente del dispositivo y validar el correcto funcionamiento de los servicios principales mediante pruebas automatizadas.
+</p>
+
+##### 6.2.2.1. Sprint Planning 2
+
+<p>
+Se presenta el Sprint Planning correspondiente a la segunda entrega del proyecto. En esta etapa se definio el objetivo del Sprint, la capacidad de trabajo del equipo y las historias priorizadas para avanzar en la integracion entre backend, Edge Gateway, prototipo IoT, soporte Embedded, web application y mobile application.
+</p>
+
+<p>
+A continuacion se presenta el enlace al tablero de Jira utilizado para la gestion del Sprint 2:
+</p>
+
+![Captura  Sprint 1 de Trello](./assets/images/screenshots/sprint-2/sprint-2-board.png)  
+[https://kyrubi-upc.atlassian.net/jira/software/projects/HU/boards/34](https://kyrubi-upc.atlassian.net/jira/software/projects/HU/boards/34)
+
+
+<div style="font-size:80%; overflow-x:auto;">
+  <table border="1" cellspacing="0" cellpadding="5">
+    <tbody>
+      <tr>
+        <th colspan="2">Sprint #</th>
+        <td colspan="2">Sprint 2</td>
+      </tr>
+      <tr>
+        <th colspan="4">Sprint Planning Background</th>
+      </tr>
+      <tr>
+        <th>Date</th>
+        <td>07/06/2026</td>
+        <th>Time</th>
+        <td>03:30 PM</td>
+      </tr>
+      <tr>
+        <th>Location</th>
+        <td colspan="3">Reunion grupal virtual mediante Discord</td>
+      </tr>
+      <tr>
+        <th>Prepared By</th>
+        <td colspan="3">Equipo KinIoT</td>
+      </tr>
+      <tr>
+        <th>Attendees</th>
+        <td colspan="3">Daniel Crispin, Salim Ramirez, Eduardo Rivera, Paul Sulca, Marcelo Varela</td>
+      </tr>
+      <tr>
+        <th colspan="4">Sprint Goal & User Stories</th>
+      </tr>
+      <tr>
+        <th>Sprint 2 Goal</th>
+        <td colspan="3">
+          Nos centramos en integrar la base tecnica del ecosistema uFlex con los modulos backend, Edge Gateway, prototipo IoT y soporte Embedded. Creemos que esto permitira validar una segunda version funcional del producto, conectando la gestion clinica con el flujo de dispositivos, planes terapeuticos, sesiones de rehabilitacion, telemetria y autenticacion segura.
+        </td>
+      </tr>
+      <tr>
+        <th>Sprint 2 Velocity</th>
+        <td>63</td>
+        <th>Sum of Story Points</th>
+        <td>63</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+##### 6.2.2.2. Aspect Leaders and Collaborators
+
+<p>
+En esta seccion se presenta la matriz Leadership-and-Collaboration Matrix correspondiente al Sprint 2. Dado que el alcance de este sprint incluye backend, web application, mobile application, Edge Gateway, prototipo IoT, Embedded y testing, se definieron lideres y colaboradores por frente de trabajo.
+</p>
+
+<div style="font-size:80%; overflow-x:auto;">
+  <table border="1" cellspacing="0" cellpadding="5">
+    <thead>
+      <tr>
+        <th>Team Member</th>
+        <th>GitHub Username</th>
+        <th>Backend REST API</th>
+        <th>Web Application</th>
+        <th>Mobile Application</th>
+        <th>Edge Gateway</th>
+        <th>IoT / Embedded</th>
+        <th>Testing & Documentation</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Crispin Ramos, Daniel Franco</td>
+        <td>danielcr04</td>
+        <td>L</td>
+        <td>C</td>
+        <td>C</td>
+        <td>C</td>
+        <td>C</td>
+        <td>C</td>
+      </tr>
+      <tr>
+        <td>Ramirez Mestanza, Salim Ignacio</td>
+        <td>salimramirez</td>
+        <td>L</td>
+        <td>C</td>
+        <td>C</td>
+        <td>L</td>
+        <td>C</td>
+        <td>C</td>
+      </tr>
+      <tr>
+        <td>Sulca Gonzales, Paul Fernando</td>
+        <td>Kyrubi</td>
+        <td>L</td>
+        <td>C</td>
+        <td>C</td>
+        <td>L</td>
+        <td>C</td>
+        <td>C</td>
+      </tr>
+      <tr>
+        <td>Rivera Sosa, Eduardo Gael</td>
+        <td>gael-rs</td>
+        <td>C</td>
+        <td>L</td>
+        <td>C</td>
+        <td>L</td>
+        <td>C</td>
+        <td>C</td>
+      </tr>
+      <tr>
+        <td>Varela Bustinza, Marcelo Alessandro</td>
+        <td>VarBus</td>
+        <td>C</td>
+        <td>C</td>
+        <td>C</td>
+        <td>C</td>
+        <td>L</td>
+        <td>L</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<p>
+Leyenda: <strong>L</strong> = Leader, <strong>C</strong> = Collaborator.
+</p>
+
+##### 6.2.2.3. Sprint Backlog 2
+
+<p>
+El objetivo de este Sprint es presentar una segunda version funcional del ecosistema uFlex, incorporando la base tecnica para la comunicacion entre el dispositivo IoT, el entorno Edge y los modulos principales del backend. Para ello, se priorizaron User Stories y Technical Stories relacionadas con emparejamiento del sensor, ejecucion de sesiones, creacion de protocolos, vinculacion de kits IoT, registro de sesiones, consulta de metricas, autenticacion multitenant, envio de telemetria al Edge API y soporte Embedded para la captura, calibracion y generacion de paquetes de telemetria desde el prototipo IoT.
+</p>
+
+<div style="font-size:80%; overflow-x:auto;">
+  <table border="1" cellspacing="0" cellpadding="5">
+    <thead>
+      <tr>
+        <th colspan="2">Sprint #</th>
+        <th colspan="6">Sprint 2</th>
+      </tr>
+      <tr>
+        <th colspan="2">User Story / Technical Story</th>
+        <th colspan="6">Work-Item / Task</th>
+      </tr>
+      <tr>
+        <th>Id</th>
+        <th>Title</th>
+        <th>Id</th>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Estimation (Hours)</th>
+        <th>Assigned To</th>
+        <th>Status (To-do / In-Process / To-Review / Done)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>US29</td><td>Gestion de fisioterapeutas de la clinica</td><td>US29-a</td><td>Implementar modulo Organization</td><td>Desarrollar la base backend, web y mobile para registrar y consultar fisioterapeutas asociados a una clinica.</td><td>4</td><td>Daniel Crispin</td><td>Done</td></tr>
+      <tr><td>US29</td><td>Gestion de fisioterapeutas de la clinica</td><td>US29-b</td><td>Validar relacion usuario-clinica</td><td>Agregar validaciones para asegurar que los usuarios operen dentro de la clinica correspondiente.</td><td>3</td><td>Daniel Crispin</td><td>Done</td></tr>
+      <tr><td>US30</td><td>Invitacion de paciente y vinculacion de kit IoT</td><td>US30-a</td><td>Modelar vinculacion paciente-kit</td><td>Implementar la logica inicial para asociar un kit IoT disponible a un paciente invitado por la clinica.</td><td>4</td><td>Paul Sulca</td><td>Done</td></tr>
+      <tr><td>US30</td><td>Invitacion de paciente y vinculacion de kit IoT</td><td>US30-b</td><td>Validar disponibilidad del kit</td><td>Verificar que un kit no pueda ser asignado a mas de un paciente y mantener su estado actualizado.</td><td>3</td><td>Daniel Crispin</td><td>Done</td></tr>
+      <tr><td>US21</td><td>Creacion de protocolo de ejercicios</td><td>US21-a</td><td>Implementar backend de Planning</td><td>Desarrollar la estructura inicial para crear protocolos terapeuticos con ejercicios, series, repeticiones y rangos articulares.</td><td>4</td><td>Salim Ramirez</td><td>Done</td></tr>
+      <tr><td>US21</td><td>Creacion de protocolo de ejercicios</td><td>US21-b</td><td>Conectar Planning con Web y Mobile</td><td>Preparar la integracion del protocolo terapeutico para que pueda ser consultado desde los clientes web y mobile.</td><td>3</td><td>Salim Ramirez</td><td>Done</td></tr>
+      <tr><td>US11</td><td>Consulta de la rutina asignada del dia</td><td>US11-a</td><td>Exponer rutina vigente</td><td>Implementar la consulta de la rutina diaria asignada al paciente desde el modulo Planning.</td><td>3</td><td>Salim Ramirez</td><td>Done</td></tr>
+      <tr><td>US11</td><td>Consulta de la rutina asignada del dia</td><td>US11-b</td><td>Validar respuesta para cliente mobile</td><td>Preparar la respuesta con ejercicios, series y rangos objetivo para su consumo desde la aplicacion movil.</td><td>2</td><td>Salim Ramirez</td><td>Done</td></tr>
+      <tr><td>US12</td><td>Emparejamiento del sensor IoT</td><td>US12-a</td><td>Implementar comunicacion BLE</td><td>Configurar el flujo de descubrimiento y emparejamiento del sensor mediante Bluetooth Low Energy.</td><td>4</td><td>Daniel Crispin</td><td>Done</td></tr>
+      <tr><td>US12</td><td>Emparejamiento del sensor IoT</td><td>US12-b</td><td>Validar sensor aprovisionado</td><td>Verificar que el identificador del sensor se encuentre vinculado a un kit registrado antes de iniciar la captura.</td><td>3</td><td>Paul Sulca</td><td>Done</td></tr>
+      <tr><td>US13</td><td>Ejecucion de una sesion de ejercicio</td><td>US13-a</td><td>Implementar modulo Therapy</td><td>Desarrollar la base backend, web y mobile para registrar la ejecucion de sesiones de rehabilitacion.</td><td>5</td><td>Paul Sulca</td><td>Done</td></tr>
+      <tr><td>US13</td><td>Ejecucion de una sesion de ejercicio</td><td>US13-b</td><td>Procesar rutina con telemetria Edge</td><td>Preparar el flujo para recibir datos del Edge y relacionarlos con la sesion terapeutica activa.</td><td>4</td><td>Paul Sulca</td><td>Done</td></tr>
+      <tr><td>US14</td><td>Reporte de dolor al finalizar la sesion</td><td>US14-a</td><td>Registrar reporte de dolor</td><td>Permitir que el paciente registre un valor de dolor asociado a una sesion finalizada.</td><td>2</td><td>Paul Sulca</td><td>Done</td></tr>
+      <tr><td>US23</td><td>Revision del dashboard de metricas ROM</td><td>US23-a</td><td>Conectar dashboard con metricas</td><td>Consumir las metricas ROM registradas para mostrar informacion clinica al fisioterapeuta.</td><td>3</td><td>Eduardo Gael</td><td>Done</td></tr>
+      <tr><td>US23</td><td>Revision del dashboard de metricas ROM</td><td>US23-b</td><td>Ajustar responsividad web</td><td>Optimizar la visualizacion del dashboard y vistas principales en distintos tamanos de pantalla.</td><td>3</td><td>Eduardo Gael</td><td>Done</td></tr>
+      <tr><td>TS34</td><td>Endpoint de registro de sesiones de rehabilitacion</td><td>TS34-a</td><td>Definir contrato POST /api/v1/sessions</td><td>Implementar el contrato base para registrar sesiones de rehabilitacion desde los clientes.</td><td>3</td><td>Paul Sulca</td><td>Done</td></tr>
+      <tr><td>TS34</td><td>Endpoint de registro de sesiones de rehabilitacion</td><td>TS34-b</td><td>Validar persistencia de sesiones</td><td>Probar que las sesiones se registren correctamente con paciente, protocolo y fecha de ejecucion.</td><td>3</td><td>Paul Sulca</td><td>Done</td></tr>
+      <tr><td>TS35</td><td>Endpoint de consulta de metricas del paciente</td><td>TS35-a</td><td>Definir contrato GET /api/v1/patients/{id}/metrics</td><td>Implementar la consulta del historico de metricas del paciente para web y mobile.</td><td>3</td><td>Eduardo Gael</td><td>Done</td></tr>
+      <tr><td>TS35</td><td>Endpoint de consulta de metricas del paciente</td><td>TS35-b</td><td>Preparar respuesta para dashboard</td><td>Estructurar la respuesta con datos de ROM, adherencia y progreso para el dashboard clinico.</td><td>3</td><td>Eduardo Gael</td><td>Done</td></tr>
+      <tr><td>TS36</td><td>Envio de telemetria al Edge API</td><td>TS36-a</td><td>Seteo inicial del Edge</td><td>Preparar el entorno base del Edge para recibir telemetria del dispositivo IoT.</td><td>4</td><td>Eduardo Gael</td><td>Done</td></tr>
+      <tr><td>TS36</td><td>Envio de telemetria al Edge API</td><td>TS36-b</td><td>Configurar broker Mosquitto</td><td>Configurar Mosquitto como broker MQTT para la comunicacion entre sensores, Edge y servicios.</td><td>4</td><td>Salim Ramirez</td><td>Done</td></tr>
+      <tr><td>TS36</td><td>Envio de telemetria al Edge API</td><td>TS36-c</td><td>Implementar Therapy del Edge</td><td>Preparar la logica inicial del Edge para procesar datos relacionados con sesiones terapeuticas.</td><td>4</td><td>Paul Sulca</td><td>Done</td></tr>
+      <tr><td>TS37</td><td>Autenticacion JWT con filtro multitenant</td><td>TS37-a</td><td>Implementar IAM del Edge</td><td>Preparar la validacion de identidad y permisos para las solicitudes procesadas desde el entorno Edge.</td><td>4</td><td>Daniel Crispin</td><td>Done</td></tr>
+      <tr><td>TS37</td><td>Autenticacion JWT con filtro multitenant</td><td>TS37-b</td><td>Validar acceso de servicios Edge</td><td>Probar que los servicios del Edge respeten el contexto de usuario, clinica y rol definido por el sistema.</td><td>3</td><td>Daniel Crispin</td><td>Done</td></tr>
+      <tr><td>TS40</td><td>Firmware Embedded para captura de datos de movimiento</td><td>TS40-a</td><td>Construir PoC en Wokwi / Cirkit</td><td>Crear la prueba de concepto del dispositivo IoT para validar sensores, conexiones y flujo basico de captura de datos.</td><td>4</td><td>Marcelo Varela</td><td>Done</td></tr>
+      <tr><td>TS40</td><td>Firmware Embedded para captura de datos de movimiento</td><td>TS40-b</td><td>Implementar lectura inicial de sensores</td><td>Preparar la logica Embedded para capturar datos basicos de movimiento desde los sensores del dispositivo IoT.</td><td>4</td><td>Marcelo Varela</td><td>Done</td></tr>
+      <tr><td>TS40</td><td>Firmware Embedded para captura de datos de movimiento</td><td>TS40-c</td><td>Validar conexiones del prototipo IoT</td><td>Revisar que el prototipo mantenga conexiones coherentes entre sensores, placa de control y flujo de captura.</td><td>3</td><td>Salim Ramirez, Paul Sulca, Eduardo Gael</td><td>Done</td></tr>
+      <tr><td>TS41</td><td>Calibracion y validacion inicial del dispositivo IoT</td><td>TS41-a</td><td>Definir rutina de calibracion Embedded</td><td>Agregar la logica conceptual de calibracion inicial para evitar que el dispositivo capture datos invalidos antes de una sesion.</td><td>3</td><td>Marcelo Varela</td><td>Done</td></tr>
+      <tr><td>TS41</td><td>Calibracion y validacion inicial del dispositivo IoT</td><td>TS41-b</td><td>Documentar validacion del prototipo</td><td>Registrar la validacion del comportamiento esperado del dispositivo dentro del PoC en Wokwi/Cirkit.</td><td>3</td><td>Marcelo Varela</td><td>Done</td></tr>
+      <tr><td>TS42</td><td>Generacion de paquete de telemetria desde Embedded</td><td>TS42-a</td><td>Definir estructura del paquete de telemetria</td><td>Establecer los campos minimos que el firmware debe preparar para enviar informacion hacia la capa Edge.</td><td>3</td><td>Marcelo Varela</td><td>Done</td></tr>
+      <tr><td>TS42</td><td>Generacion de paquete de telemetria desde Embedded</td><td>TS42-b</td><td>Relacionar paquete Embedded con Edge API</td><td>Alinear la estructura del paquete de telemetria con el flujo de recepcion y procesamiento definido para la capa Edge.</td><td>3</td><td>Marcelo Varela</td><td>Done</td></tr>
+      <tr><td>TS42</td><td>Generacion de paquete de telemetria desde Embedded</td><td>TS42-c</td><td>Actualizar diagrama de clases Embedded</td><td>Actualizar el diagrama PlantUML del modulo Embedded para reflejar captura de sensores, calibracion, estado del dispositivo y generacion de telemetria.</td><td>3</td><td>Marcelo Varela</td><td>Done</td></tr>
+      <tr><td>TS37</td><td>Autenticacion JWT con filtro multitenant</td><td>TS37-c</td><td>Actualizar diagrama de clases Edge</td><td>Actualizar el diagrama PlantUML del Edge para representar los servicios principales de IAM, monitoreo, procesamiento y comunicacion con el backend.</td><td>3</td><td>Marcelo Varela</td><td>Done</td></tr>
+      <tr><td>TS40 / TS41 / TS42</td><td>Actualizacion de Technical Stories Embedded</td><td>TS40-42-a</td><td>Agregar nuevas Technical Stories al informe</td><td>Actualizar la seccion de User Stories y Sprint Backlog para incorporar el alcance Embedded del dispositivo IoT.</td><td>2</td><td>Marcelo Varela</td><td>Done</td></tr>
+    </tbody>
+  </table>
+</div>
+
+##### 6.2.2.4. Development Evidence for Sprint Review
+
+Durante el Sprint 2 el equipo expandió el ecosistema uFlex desde la capa de front-end entregada en el Sprint 1 hacia la **integración técnica del backend, el Edge Gateway, el firmware Embedded del dispositivo IoT y la aplicación móvil del paciente**. El trabajo de desarrollo se concentró en cuatro repositorios, cada uno asociado a un frente de trabajo de la matriz de Aspect Leaders and Collaborators (sección 6.2.2.2):
+
+- **Backend — REST API** (`kiniot/uflex-rest-api`): monolito en Java + Spring Boot estructurado por bounded contexts (IAM, Organization, Planning, Subscription y Device) bajo Domain-Driven Design.
+- **Edge — Gateway** (`kiniot/uflex-edge-gateway`): servicio Edge en Python + Flask que autentica los kits IoT e ingiere la telemetría de movimiento (ángulo de flexión articular).
+- **Embedded — Firmware IoT** (`kiniot/uflex-embedded-app`): firmware en C++ para ESP32 (sensores MPU9250 vía multiplexor TCA9548A) con simulación en Wokwi.
+- **Mobile — Patient App** (`kiniot/uflex-patient-mobile`): aplicación Android nativa en Kotlin (Jetpack Compose) que consume el REST API del backend.
+
+A continuación se presentan los commits realizados en cada repositorio durante el Sprint, **omitiendo los commits de merge** para resaltar únicamente el trabajo de implementación. Los commits se agrupan por la rama (feature branch) en la que se desarrollaron antes de integrarse a `develop`.
+
+**Repositorio: Backend — REST API**
+
+URL del repositorio: <https://github.com/kiniot/uflex-rest-api>
+
+El backend concentró el mayor volumen de desarrollo del Sprint (151 commits sin merge), cubriendo autenticación JWT multitenant, gestión de clínicas, pacientes y fisioterapeutas, planes de tratamiento y ejercicios, suscripciones con Stripe y gestión de dispositivos IoT, además de la configuración de despliegue y la documentación OpenAPI/Scalar.
+
+| Branch | Commit Id | Commit Message | Commit Message Body | Committed on (Date) |
+|--------|-----------|----------------|---------------------|---------------------|
+| develop | a777cc0 | chore: initial commit | — | 01/05/2026 |
+| develop | 2db2806 | feat(subs): add stripe checkout and yaml | — | 12/05/2026 |
+| develop | f827aea | feat(subs): add subscription stripe conection with external service | — | 13/05/2026 |
+| develop | e86468d | feat(config): update application-prod.yaml with database and JWT configuration | — | 14/05/2026 |
+| develop | 09ae1d0 | feat(docker): add Dockerfile for multi-stage build and application deployment | — | 14/05/2026 |
+| develop | a729b5a | fix(docker): update Maven base image version in Dockerfile for build stage | — | 14/05/2026 |
+| develop | e698df4 | fix(docker): rename build stage to builder in Dockerfile | — | 14/05/2026 |
+| develop | 1c4707b | fix(docker): rename build stage from 'builder' to 'build' in Dockerfile | — | 14/05/2026 |
+| develop | f8d497d | fix(docker): update base image version to Eclipse Temurin 25 in Dockerfile | — | 14/05/2026 |
+| develop | 79b9ad2 | fix(security): update CORS configuration to allow specific origins | — | 14/05/2026 |
+| develop | 1dba3af | feat(api): add server configurations for local and production environments in OpenAPI | — | 14/05/2026 |
+| develop | 083cdda | fix(logging): change Hibernate SQL logging level from error to info | — | 14/05/2026 |
+| feature/initial-structure | 0099ebc | build(pom): add dependencies for Spring Boot Actuator, Security, and JWT | — | 01/05/2026 |
+| feature/initial-structure | 8266478 | docs(setup): add initial setup and configuration guide for uFlex REST API | — | 01/05/2026 |
+| feature/initial-structure | 310309a | feat(shared): implement Snake Case with Pluralized Table Naming Strategy | — | 01/05/2026 |
+| feature/initial-structure | c3fc5bd | feat(config): add application configuration for development and production environments | — | 01/05/2026 |
+| feature/initial-structure | 08a7817 | feat(openapi): add OpenAPI configuration for API documentation | — | 01/05/2026 |
+| feature/initial-structure | 8989008 | feat(shared): add AuditableAbstractAggregateRoot for auditing support in aggregates | — | 01/05/2026 |
+| feature/initial-structure | cfefdb9 | feat(shared): add AuditableModel base class for entity auditing | — | 01/05/2026 |
+| feature/initial-structure | 67dccda | feat(app): enable JPA auditing for entity tracking | — | 01/05/2026 |
+| feature/initial-structure | cd9d61d | feat(iam): add value objects for Email, Password, RoleId, RoleName, and UserId | — | 01/05/2026 |
+| feature/initial-structure | 240050e | feat(iam): add Role entity with value objects for RoleId and RoleName | — | 01/05/2026 |
+| feature/initial-structure | be7a199 | feat(iam): add UserCreatedEvent record for user creation events | — | 01/05/2026 |
+| feature/initial-structure | 35d0fa8 | feat(shared): enhance AuditableAbstractAggregateRoot with domain event publishing and optimized persistence management | — | 01/05/2026 |
+| feature/initial-structure | f1035d4 | feat(shared): enhance AuditableModel with optimized persistence management and auditing capabilities | — | 01/05/2026 |
+| feature/initial-structure | 54936a8 | feat(iam): refine Role entity by removing Persistable implementation and enhancing auditing capabilities | — | 01/05/2026 |
+| feature/initial-structure | 16f8f14 | feat(iam): add User aggregate root with role management and user creation event publishing | — | 01/05/2026 |
+| feature/initial-structure | 1e222a0 | feat(iam): add RoleRepository and UserRepository for role and user management | — | 01/05/2026 |
+| feature/initial-structure | 3776184 | feat(iam): implement UserDetailsImpl for user authentication and authorization | — | 01/05/2026 |
+| feature/initial-structure | bc37c46 | feat(iam): add UsernamePasswordAuthenticationTokenBuilder for authentication token creation | — | 01/05/2026 |
+| feature/initial-structure | dd84fda | feat(iam): implement UserDetailsService for loading user details by username | — | 01/05/2026 |
+| feature/initial-structure | 2b23484 | feat(iam): add HashingService and TokenService interfaces for password hashing and token management | — | 01/05/2026 |
+| feature/initial-structure | b327834 | feat(iam): implement BCryptHashingService and TokenService for password hashing and JWT token management | — | 01/05/2026 |
+| feature/initial-structure | 8ced73e | feat(iam): add BearerAuthorizationRequestFilter and UnauthorizedRequestHandlerEntryPoint for token validation and unauthorized request handling | — | 01/05/2026 |
+| feature/initial-structure | a502e03 | feat(iam): add WebSecurityConfiguration for web security setup and authentication management | — | 01/05/2026 |
+| feature/initial-structure | 6ed466b | feat(iam): add command and query records for user authentication and role management | — | 01/05/2026 |
+| feature/initial-structure | ead1bd6 | feat(iam): implement role management services and application ready event handler for role seeding | — | 01/05/2026 |
+| feature/initial-structure | 53b65c3 | feat(iam): add resource classes for user authentication and role management | — | 01/05/2026 |
+| feature/initial-structure | 8ce302b | feat(iam): add assemblers for user authentication and registration commands | — | 01/05/2026 |
+| feature/initial-structure | 7a68e9c | feat(iam): add authentication and user retrieval controllers | — | 01/05/2026 |
+| feature/initial-structure | 0d87ae3 | feat(shared): add JWT security scheme and requirements to OpenAPI configuration | — | 01/05/2026 |
+| feature/initial-structure | 1a482f9 | feat(docker): add initial docker-compose configuration for development environment | — | 01/05/2026 |
+| feature/initial-structure | ce7368b | feat(iam): add TenantId value object and associate/disassociate methods in User | — | 03/05/2026 |
+| feature/initial-structure | 3317dc8 | feat(iam): add tenant field to UserDetailsImpl and update constructor | — | 03/05/2026 |
+| feature/initial-structure | ebd4305 | build(pom): add spring-boot-starter-mail and spring-boot-starter-thymeleaf dependencies | — | 03/05/2026 |
+| feature/initial-structure | 809d6a3 | feat(email): add HTML templates for password reset, temporary password, and verification emails | — | 03/05/2026 |
+| feature/initial-structure | a5110b5 | feat(config): add email configuration and OTP settings to application.yaml | — | 03/05/2026 |
+| feature/initial-structure | eb5212b | feat(shared): implement EmailService for sending templated emails | — | 03/05/2026 |
+| feature/initial-structure | d048898 | feat(shared): implement NotificationEmailService for sending verification, password reset, and temporary password emails | — | 03/05/2026 |
+| feature/initial-structure | 7a9c5f7 | feat(iam): implement OTP verification configuration and service | — | 03/05/2026 |
+| feature/initial-structure | 6b361c9 | feat(iam): implement CurrentUserProvider for retrieving user details from Spring Security context | — | 03/05/2026 |
+| feature/initial-structure | d3e4bd6 | feat(iam): add queries for retrieving authenticated user ID and tenant ID | — | 03/05/2026 |
+| feature/initial-structure | c423938 | feat(iam): add GetUserByIdQuery and update UserQueryService to handle user retrieval by ID | — | 03/05/2026 |
+| feature/initial-structure | 85c9b75 | feat(iam): implement IamContextFacade and IamContextFacadeImpl for user and tenant ID retrieval | — | 03/05/2026 |
+| feature/initial-structure | dbb58df | feat(shared): add ClinicId value object for clinic identifier representation | — | 03/05/2026 |
+| feature/initial-structure | 6fb6b25 | feat(planning): add PlanName and TreatmentPlan value objects with validation | — | 03/05/2026 |
+| feature/initial-structure | f1cb618 | feat(planning): implement ExternalIamService to fetch current academy ID | — | 03/05/2026 |
+| feature/initial-structure | 40db6b7 | feat(planning): implement CreateTreatmentPlanCommand and associated service for treatment plan creation | — | 03/05/2026 |
+| feature/initial-structure | da757fc | feat(iam): add UserWithEmailNotFound and UserWithIdNotFoundException for improved error handling | — | 03/05/2026 |
+| feature/initial-structure | 986bbf6 | feat(iam): implement event handler for ClinicAdminRegisteredEvent to assign tenant ID to user | — | 03/05/2026 |
+| feature/initial-structure | de5e47b | feat(iam): implement handle method for AssignUserTenantId command to associate tenant ID with user | — | 03/05/2026 |
+| feature/initial-structure | 6d0f216 | docs: add CLAUDE.md for project setup and architecture guidance | — | 03/05/2026 |
+| feature/initial-structure | 064217e | docs: add AGENTS.md for project setup and architecture overview | — | 03/05/2026 |
+| feature/initial-structure | b3a967d | docs: add README.md for project overview and setup instructions | — | 03/05/2026 |
+| feature/iam-integration | db141c9 | feat(iam): make IAM functional end-to-end with Supabase | - Add /users/me and /users/me/password endpoints<br>- Harden /users/{email} with @PreAuthorize (owner or admin)<br>- Include roles in AuthenticatedUserResource for client-side routing<br>- Improve CORS for local frontend (origin patterns, OPTIONS, credentials)<br>- Add SSL mode to dev datasource for Supabase compatibility<br>- Default spring.profiles.active to dev<br>- Add run-dev.ps1 to load .env on Windows; ignore local .env files<br>- Disable Co-Authored-By trailers via .claude/settings.json | 08/05/2026 |
+| feature/organization | 072e343 | feat(organization): add value objects for organization domain model | — | 10/05/2026 |
+| feature/organization | bb00fc3 | feat(organization): add domain models for Clinic, Patient, Physiotherapist | — | 10/05/2026 |
+| feature/organization | dc089dd | feat(organization): refactor domain models to include new value objects | — | 10/05/2026 |
+| feature/organization | e142e23 | feat(organization): add exceptions for patient and physiotherapist management | — | 10/05/2026 |
+| feature/organization | e06c89f | feat(organization): simplify clinic management by removing status handling and updating command parameters | — | 12/05/2026 |
+| feature/organization | 8cbb22e | feat(organization): simplify clinic management by removing status handling and updating command parameters | — | 12/05/2026 |
+| feature/organization | c32ec66 | feat(organization): enhance patient registration and management with optional physiotherapist assignment | — | 12/05/2026 |
+| feature/organization | aecf6ae | chore: remove unused items | — | 12/05/2026 |
+| feature/iam-tenantid-contract | c858664 | feat(iam): add tenantId to user contract | — | 10/05/2026 |
+| feature/subscription | 5d04fba | feat(subscription): add subscription backend bounded context | — | 10/05/2026 |
+| feature/subscription | c796825 | build(subscription): add stripe java sdk dependency | — | 10/05/2026 |
+| feature/subscription | 973aa7b | chore(subscription): configure stripe environment properties | — | 10/05/2026 |
+| feature/subscription | da6f446 | chore(security): allow stripe webhook endpoint | — | 10/05/2026 |
+| feature/planning-context | bf51cdd | feat(planning): add commands and entities for exercise and treatment plan management | — | 11/05/2026 |
+| feature/planning-context | 97ea6fa | feat(planning): add commands, queries, exceptions and domain services for exercise and treatment plan management | — | 11/05/2026 |
+| feature/planning-context | e0d7b34 | feat(planning): add ExerciseRepository and enhance TreatmentPlanRepository with new query methods | — | 11/05/2026 |
+| feature/planning-context | 9a47114 | feat(planning): enhance routine commands with treatment plan ID and improve exception handling | — | 11/05/2026 |
+| feature/planning-context | fd5fe29 | feat(planning): add resource classes for exercise, routine, and treatment plan management | — | 11/05/2026 |
+| feature/planning-context | f0360d8 | feat(planning): implement ExerciseCommandService and ExerciseQueryService for exercise management | — | 11/05/2026 |
+| feature/planning-context | 9e01026 | feat(planning): add resource assemblers for creating and updating exercise, routine, and treatment plan commands | — | 11/05/2026 |
+| feature/planning-context | 94fc759 | feat(planning): add ExercisesController and TreatmentPlansController for exercise and treatment plan management | — | 11/05/2026 |
+| feature/planning-context | afe8db0 | fix(planning): enhance resource assemblers for Routine and TreatmentPlan with additional fields | — | 11/05/2026 |
+| feature/planning-context | 7ebf016 | feat(planning): enhance ExercisesController and TreatmentPlansController with OpenAPI annotations for improved API documentation | — | 11/05/2026 |
+| feature/planning-context | a2e69e0 | refactor(planning): rename repository methods for consistency in TreatmentPlan handling | — | 12/05/2026 |
+| feature/planning-context | 3b9608d | feat(planning): implement Exercise aggregate and enhance command services with clinic validation | — | 12/05/2026 |
+| feature/iam-tenant-changes | 5e61416 | feat(iam): implement AssignUserRoleCommand and enhance user role assignment logic | — | 12/05/2026 |
+| feature/iam-tenant-changes | 6cdc109 | feat(iam): replace EmailAddress with Email value object across multiple entities and commands and creates User for Physiotherapist | — | 12/05/2026 |
+| feature/iam-tenant-changes | ed75027 | feat(iam): enhance user signup process with email notification and update temporary password email template | — | 12/05/2026 |
+| feature/iam-tenant-changes | ab93c5a | refactor(iam): refactor UserId import to shared domain model across multiple commands and entities | — | 12/05/2026 |
+| feature/iam-tenant-changes | f237147 | refactor(iam): update ClinicId references to use the new id() method across multiple resource assemblers | — | 12/05/2026 |
+| feature/iam-tenant-changes | c714080 | feat(iam): implement patient registration commands for clinic admins and physiotherapists | — | 12/05/2026 |
+| feature/iam-tenant-changes | 96acb18 | feat(iam): add patient registration and deletion functionality for clinic admins and physiotherapists | — | 12/05/2026 |
+| feature/iam-tenant-changes | f97769e | feat(shared): implement global exception handler for improved error management | — | 12/05/2026 |
+| feature/iam-tenant-changes | 9c913d9 | feat(iam): enhance error handling with ErrorResource and update exception responses | — | 12/05/2026 |
+| feature/iam-tenant-changes | 5086b06 | chore(design): add uFlex design system documentation with color and typography guidelines for HTML templates | — | 12/05/2026 |
+| feature/subscription | a83a05a | feat(subs): add subscription tools | — | 12/05/2026 |
+| feature/subscription-refactor | 2a6d19c | refactor(subscription): rename billing cycle to billing period and introduce subscription selection and tier pricing | — | 21/05/2026 |
+| feature/subscription-refactor | 391035e | feat(subscription): implement tier seeding functionality and related command structure | — | 21/05/2026 |
+| feature/subscription-refactor | e7dcc76 | refactor(iam): rename authenticated user queries and update context fetching methods | — | 21/05/2026 |
+| feature/subscription-refactor | 8bdf9ff | fix(planning): rename method to fetch current clinic ID in services | — | 21/05/2026 |
+| feature/subscription-refactor | fb84f67 | feat(subscription): implement subscription command and query services with external IAM integration | — | 21/05/2026 |
+| feature/subscription-refactor | 2eccb77 | feat(subscription): enhance subscription management with current status checks and tier pricing validation | — | 21/05/2026 |
+| feature/subscription-refactor | 0f59fe1 | feat(subscription): add CreateSubscription command and resource with validation | — | 21/05/2026 |
+| feature/subscription-refactor | 88f79c6 | feat(subscription): refactor subscription creation with checkout session integration and kit selection handling | — | 21/05/2026 |
+| feature/subscription-refactor | 334115a | feat(subscription): add tier catalog retrieval with associated resources and query handling | — | 25/05/2026 |
+| feature/subscription-refactor | 50a95e2 | feat(subscription): enhance Stripe webhook and subscription checkout endpoints with OpenAPI documentation | — | 25/05/2026 |
+| feature/subscription-refactor | 7e7f9d7 | build(environment): update application configuration for dynamic Stripe URLs and enhance environment variable handling | — | 28/05/2026 |
+| feature/subscription-refactor | 6689e12 | feat(subscription): add validation for subscription amount format and handle exceptions for Stripe checkout session creation | — | 29/05/2026 |
+| feature/subscription-refactor | 0ebaff6 | feat(subscription): add validation for subscription amount format and handle exceptions for Stripe checkout session creation | — | 29/05/2026 |
+| feature/planning-refactor | f85d45b | feat(planning): refactor exercise model to include movement type and video URL | — | 31/05/2026 |
+| feature/planning-refactor | 494ada0 | test(planning): add unit tests for exercise and exercise series resource assemblers | — | 31/05/2026 |
+| feature/planning-refactor | b643778 | feat(planning): introduce treatment plan status and period value objects, refactor treatment plan commands and resources | — | 31/05/2026 |
+| feature/planning-refactor | 260521d | feat(planning): refactor treatment plan queries and specifications to support filtering by patient and physiotherapist | — | 31/05/2026 |
+| feature/planning-refactor | b6337af | feat(planning): implement treatment plan status transitions and associated commands | — | 31/05/2026 |
+| feature/planning-refactor | 5dd5a83 | feat(planning): add endpoints to retrieve active and scheduled treatment plans by patient | — | 31/05/2026 |
+| feature/planning-refactor | 55ba227 | feat(planning): add endpoints for authenticated patient to retrieve treatment plans and handle user profile exceptions | — | 31/05/2026 |
+| feature/planning-refactor | 45d64b1 | feat(planning): update operation summaries and descriptions for Exercises, Patients, and Physiotherapists controllers | — | 31/05/2026 |
+| feature/organization-refactor | e464ee0 | feat(organization): add queries and endpoints to retrieve current clinic admin, clinic, patient, and physiotherapist profiles | — | 31/05/2026 |
+| feature/organization-refactor | 32cb760 | feat(organization): add address field to clinic registration and related resources | — | 31/05/2026 |
+| feature/treatment-plan-default-scheduled | bc10be4 | feat(planning): set default treatment plan status to SCHEDULED and remove status from command | — | 01/06/2026 |
+| feature/treatment-plan-default-scheduled | 3ac54b0 | feat(organization): add commands to complete, mark inactive, and reactivate patients; enhance physiotherapist assignment logic | — | 02/06/2026 |
+| feature/treatment-plan-default-scheduled | 35879df | feat(organization): add commands and resources for updating patient profiles and deleting patients; implement email synchronization and validation | — | 03/06/2026 |
+| feature/device-management | ecf980c | feat(device): add value objects for device management | — | 04/06/2026 |
+| feature/device-management | c5224fc | feat(device): add events for device management including assignment, battery status, and registration | — | 04/06/2026 |
+| feature/device-management | 0bf3b8d | feat(device): add query records for device management | — | 04/06/2026 |
+| feature/device-management | 06ec52c | feat(device): add command objects for device management | — | 04/06/2026 |
+| feature/device-management | 8a2ece4 | feat(device): add command objects for device management | — | 04/06/2026 |
+| feature/device-management | 081b539 | feat(device): add interfaces and implement for query services for device management | — | 04/06/2026 |
+| feature/device-management | 2fdea76 | feat(device): add patient full name retrieval and clinic fleet metrics record | — | 04/06/2026 |
+| feature/device-management | 9388ebe | feat(device): add external services for IAM and organization context | — | 04/06/2026 |
+| feature/device-management | ae97723 | feat(device): add DeviceRepository interface for device persistence operations | — | 04/06/2026 |
+| feature/device-management | 81e7125 | feat(device): add resource classes for device management operations | — | 04/06/2026 |
+| feature/device-management | f156df7 | feat(device): implement DevicesController for device management operations | — | 04/06/2026 |
+| feature/device-management | 513b620 | feat(device): refactor DeviceResourceFromEntityAssembler to accept patient full name directly | — | 04/06/2026 |
+| feature/device-management | 7b1296f | feat(device): implement delete device functionality in DeviceCommandService and DevicesController | — | 09/06/2026 |
+| feature/standardize-api-errors | 2fb2232 | feat(exceptions): standardize API error handling with custom exceptions and error response structure | — | 14/06/2026 |
+| feature/standardize-api-errors | 7cf9669 | feat(exceptions): enhance API error handling for bad request scenarios with additional exception types | — | 14/06/2026 |
+| feature/test | 83d7cbf | feat: add device testing evidence | — | 14/06/2026 |
+| feature/test | 1547e3a | feat: add IAM authentication testing evidence | — | 14/06/2026 |
+| feature/test | 28b56aa | feat: add organization testing evidence | — | 14/06/2026 |
+| feature/test | 5ea2fd6 | feat: add planning application testing evidence | — | 14/06/2026 |
+| feature/test | af01f25 | feat: add planning controller testing evidence | — | 14/06/2026 |
+| feature/test | f58f09e | feat: add BDD testing resources | — | 14/06/2026 |
+| feature/device-improvements | bb21197 | feat(device): refactor device identification to use DeviceId; add AdvertisedName and update related commands | — | 15/06/2026 |
+| feature/device-improvements | 9e53b85 | docs: update exception handling guidelines in AGENTS.md, CLAUDE.md, and README.md | — | 15/06/2026 |
+| feature/device-improvements | 131df3c | docs: add design notes for Device, BLE, Edge, and API in English and Spanish | — | 15/06/2026 |
+
+**Repositorio: Edge — Gateway**
+
+URL del repositorio: <https://github.com/kiniot/uflex-edge-gateway>
+
+El Edge Gateway se inicializó durante el Sprint con su arquitectura base DDD (2 commits sin merge): un punto de entrada Flask que cablea los bounded contexts de IAM (autenticación de kits IoT mediante `device_id` + `X-API-Key`) y Monitoring (ingesta y validación de lecturas de ángulo de flexión).
+
+| Branch | Commit Id | Commit Message | Commit Message Body | Committed on (Date) |
+|--------|-----------|----------------|---------------------|---------------------|
+| develop | a99cfc4 | chore: bootstrap uFlex Edge Gateway repository | Add baseline project files: MIT license, Python .gitignore and a<br>project README describing the edge gateway scope, DDD architecture and<br>the movement-monitoring API contract. | 29/05/2026 |
+| develop | b32fc79 | feat: scaffold edge gateway base system with DDD bounded contexts | Set up the base uFlex Edge Gateway following the smart-band example,<br>oriented to the uFlex tele-rehabilitation domain.<br>- Flask entry point (app.py) wiring IAM + Monitoring blueprints and a<br>  before_request bootstrap that initializes SQLite and seeds the test kit<br>- IAM bounded context: IoT Kit (Device) authentication via device_id +<br>  X-API-Key across domain/application/infrastructure/interfaces layers<br>- Monitoring bounded context: ingestion of joint flexion angle readings<br>  (MovementRecord) with domain validation (0..360 deg) and UTC timestamp<br>  normalization<br>- shared/infrastructure: single Peewee SQLite database + init_db helper<br>- docs: technical stories (TS-UEG-001..006) and PlantUML class diagram<br>- requirements.txt: flask, peewee, python-dateutil | 29/05/2026 |
+
+**Repositorio: Embedded — Firmware IoT**
+
+URL del repositorio: <https://github.com/kiniot/uflex-embedded-app>
+
+El firmware Embedded (24 commits sin merge) implementó la estructura inicial del prototipo, el multiplexor I2C TCA9548A, los sensores inerciales MPU9250, el cálculo de ángulos relativos para el estado de movimiento y la generación del paquete de telemetría, con targets de simulación (`esp32_sim`) y hardware (`esp32_hw`).
+
+| Branch | Commit Id | Commit Message | Commit Message Body | Committed on (Date) |
+|--------|-----------|----------------|---------------------|---------------------|
+| develop | f613049 | chore: initial commit | — | 04/06/2026 |
+| feature/initial-structure | 7403159 | docs: add environment setup guides in English and Spanish | — | 05/06/2026 |
+| feature/initial-structure | 293c53e | feat(app): add initial hardware simulation setup | — | 05/06/2026 |
+| feature/initial-structure | a8ca3d2 | docs(simulation): add hardware simulation guides in English and Spanish | — | 05/06/2026 |
+| feature/initial-structure | 43ea53c | chore: update .gitignore and add VS Code extensions configuration | — | 06/06/2026 |
+| feature/initial-structure | e4c01b9 | chore: clean up extensions.json by removing unnecessary comments | — | 06/06/2026 |
+| feature/multiplexor-tca9548a | fe874d0 | feat(tca9548a): implement TCA9548A I2C multiplexer functionality | — | 07/06/2026 |
+| feature/multiplexor-tca9548a | 2681ed6 | feat(tca9548a): add TCA9548A chip to diagram and update PlatformIO configurations | — | 07/06/2026 |
+| feature/multiplexor-tca9548a | c079d81 | docs(simulation): update simulation setup documentation for PlatformIO environments and custom chips | — | 07/06/2026 |
+| feature/modest-iot | 4d2601e | feat(lib): add core classes for Modest IoT Nano-framework including Actuator, Sensor, Button, and Led | — | 08/06/2026 |
+| feature/inertial-mpu9250 | 18099a7 | feat(inertial): implement InertialSensor and related classes for inertial measurement | — | 08/06/2026 |
+| feature/inertial-mpu9250 | 1dca8fb | feat(modest-iot): add ToggableLedDevice class ModestIoT example | — | 08/06/2026 |
+| feature/inertial-mpu9250 | afbafe4 | feat(inertial): add SimulatedInertialSensorArray class for MPU6050 sensor simulation | — | 08/06/2026 |
+| feature/inertial-mpu9250 | 72535cf | fix: update author name in comments and add build flags for Modest IoT libraries | — | 08/06/2026 |
+| feature/inertial-mpu9250 | c0ff3f3 | refactor(imu): add IMU sensor classes and motion state handling | — | 08/06/2026 |
+| feature/inertial-mpu9250 | 584483d | feat: update LICENSE and README for ToggableLedDevice example | — | 08/06/2026 |
+| feature/inertial-mpu9250 | 644535d | feat(inertial): implement MPU9250 hardware adapter and runtime selection | — | 08/06/2026 |
+| feature/inertial-mpu9250 | cecb29b | feat(device): enhance IMU and motion payload abstractions with detailed documentation | — | 08/06/2026 |
+| feature/inertial-mpu9250 | a8e86da | docs: add authors and contribution guidelines in Spanish and English | — | 08/06/2026 |
+| feature/inertial-mpu9250 | d92f7d4 | chore: add .editorconfig and .gitattributes for consistent coding standards | — | 08/06/2026 |
+| feature/inertial-mpu9250 | 028db83 | docs: update authors and contributing guidelines for clarity and consistency | — | 08/06/2026 |
+| feature/inertial-mpu9250 | dd94864 | chore: add horizontal rule for improved README structure | — | 08/06/2026 |
+| feature/class-diagram | 62bbf77 | feat: add embedded class diagra and test | — | 15/06/2026 |
+| documentation | 3fd06ce | docs: add hardware overview (sensor topology and I2C wiring) | Document the physical sensing setup: three MPU9250 IMUs reached through a<br>TCA9548A I2C multiplexer, WHO_AM_I/wake/sampling registers, and how IMU<br>samples flow into the MotionState via RelativeAngleCalculator. Covers both<br>esp32_hw and esp32_sim targets. | 15/06/2026 |
+
+**Repositorio: Mobile — Patient App**
+
+URL del repositorio: <https://github.com/kiniot/uflex-patient-mobile>
+
+La aplicación móvil del paciente (18 commits sin merge) estableció la estructura base con Hilt, Retrofit y Navigation Compose, e implementó el flujo de inicio de sesión con el backend, la gestión de sesión local, la pantalla principal y la gestión del perfil del paciente.
+
+| Branch | Commit Id | Commit Message | Commit Message Body | Committed on (Date) |
+|--------|-----------|----------------|---------------------|---------------------|
+| develop | a3a1087 | chore: initial commit | — | 04/05/2026 |
+| feature/initial-structure | c1773e4 | build(app): add dependencies for Hilt, KSP, Retrofit, Navigation, and other libraries | — | 04/05/2026 |
+| feature/initial-structure | ddff360 | build(app): configure build types with API base URL and logging settings | — | 04/05/2026 |
+| feature/initial-structure | 6216143 | chore: add EditorConfig for consistent coding styles and formatting rules | — | 04/05/2026 |
+| feature/initial-structure | 0160591 | chore: add .gitattributes for consistent line endings and binary file handling | — | 04/05/2026 |
+| feature/initial-structure | ffbbedc | build(app): add Kotlin Serialization plugin to build configuration | — | 04/05/2026 |
+| feature/initial-structure | cdffdd0 | feat: implement initial app structure with navigation and screens | — | 04/05/2026 |
+| feature/initial-structure | b00eefb | build(libs): enable multiDex and core library desugaring, update dependencies for serialization and remove moshi | — | 04/05/2026 |
+| feature/initial-structure | a42d980 | feat(core): add serializers for LocalDate and LocalDateTime, and configure network module | — | 04/05/2026 |
+| feature/initial-structure | 2781349 | feat(core): add serializers for LocalDate and LocalDateTime, and configure network module | — | 04/05/2026 |
+| feature/initial-structure | d89e170 | feat(theme): restructure color and typography management, add internet permissions | — | 04/05/2026 |
+| feature/initial-structure | 08de7ff | feat(auth): implement sign-in functionality with API integration and update navigation | — | 14/06/2026 |
+| feature/initial-structure | c840e5e | feat(auth): enhance sign-in functionality with local session management and network security configuration | — | 14/06/2026 |
+| feature/initial-structure | f06a87b | feat(auth): enhance error handling and snackbar integration for sign-in process | — | 15/06/2026 |
+| feature/initial-structure | 428df1a | feat(home): implement home screen and update main navigation structure | — | 15/06/2026 |
+| feature/initial-structure | 3aa7f9b | feat(profile): add patient profile management with gender and status enums, local data source, and API integration | — | 15/06/2026 |
+| feature/initial-structure | ad598da | docs: add AGENTS.md and ARCHITECTURE.md for project guidelines and structure | — | 15/06/2026 |
+| documentation | f49fac5 | docs: add setup guide and project README | Add docs/SETUP.md with a step-by-step local build/run guide (prerequisites,<br>API base URL config, build, run, first login, troubleshooting) and a root<br>README.md describing the app, stack, architecture, and project status. | 15/06/2026 |
+
+<hr class="page-break">
+
+##### 6.2.2.5. Testing Suite Evidence for Sprint Review
+
+<p>
+En esta seccion se presenta la evidencia de la suite de pruebas implementada para el Sprint 2 del proyecto uFlex. Las pruebas se enfocaron principalmente en los Web Services del backend, debido a que las User Stories y Technical Stories priorizadas requieren validar servicios REST, reglas de negocio, autenticacion JWT, control multitenant, gestion de dispositivos, fisioterapeutas, pacientes, planes de tratamiento y suscripciones.
+</p>
+
+<p>
+La suite fue ejecutada en el repositorio <code>kiniot/uflex-rest-api</code>, utilizando el perfil de desarrollo y Maven como herramienta de ejecucion. Como resultado, se obtuvo una ejecucion exitosa de 46 pruebas automatizadas, sin fallos, errores ni pruebas omitidas.
+</p>
+
+<pre><code>Tests run: 46, Failures: 0, Errors: 0, Skipped: 0
+BUILD SUCCESS</code></pre>
+
+<div align="center">
+  <img src="assets/testing/03_maven_clean_test_build_success_46_tests.png" alt="Maven clean test build success" width="90%">
+  <p><strong>Figura 6.2.2.5.1.</strong> Ejecucion general de la suite de pruebas con 46 tests ejecutados correctamente.</p>
+</div>
+
+###### Repositorio de Testing
+
+<div style="font-size:80%; overflow-x:auto;">
+  <table border="1" cellspacing="0" cellpadding="5">
+    <thead>
+      <tr>
+        <th>Repository</th>
+        <th>Branch</th>
+        <th>Testing Scope</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>kiniot/uflex-rest-api</td>
+        <td>feature/test</td>
+        <td>Unit Tests e Integration Tests para Web Services, servicios de aplicacion, entidades de dominio, filtros JWT, assemblers y controladores REST.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+###### Evidencia de estructura de pruebas
+
+<p>
+La organizacion de las pruebas se realizo siguiendo la estructura del backend por bounded contexts. Las clases de prueba se encuentran dentro de <code>src/test/java/com/kiniot/uflex/api</code> y se agrupan en los contextos <strong>device</strong>, <strong>iam</strong>, <strong>organization</strong>, <strong>planning</strong> y <strong>subscription</strong>.
+</p>
+
+<div align="center">
+  <img src="assets/testing/04_backend_test_package_structure_intellij.png" alt="Backend test package structure in IntelliJ" width="90%">
+  <p><strong>Figura 6.2.2.5.2.</strong> Estructura general de paquetes de pruebas en IntelliJ IDEA.</p>
+</div>
+
+<div align="center">
+  <img src="assets/testing/05_backend_test_classes_tree.png" alt="Backend test classes tree" width="50%">
+  <p><strong>Figura 6.2.2.5.3.</strong> Arbol de clases de prueba agrupadas por bounded contexts.</p>
+</div>
+
+###### Unit Tests diseñados
+
+<div style="font-size:80%; overflow-x:auto;">
+  <table border="1" cellspacing="0" cellpadding="5">
+    <thead>
+      <tr>
+        <th>Test Class</th>
+        <th>Related Class / Component</th>
+        <th>Validated Behavior</th>
+        <th>Related User Story / Technical Story</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>DeviceCommandServiceImplTests</td>
+        <td>Device Command Service</td>
+        <td>Valida la asignacion de dispositivos, la relacion con pacientes y las restricciones cuando el dispositivo no cumple las condiciones requeridas.</td>
+        <td>US12, US30, TS36</td>
+      </tr>
+      <tr>
+        <td>TokenServiceImplTests</td>
+        <td>Token Service</td>
+        <td>Valida la generacion, firma, extraccion y verificacion de tokens utilizados por el sistema de autenticacion.</td>
+        <td>TS37</td>
+      </tr>
+      <tr>
+        <td>BearerAuthorizationRequestFilterTests</td>
+        <td>Bearer Authorization Request Filter</td>
+        <td>Valida el comportamiento del filtro de autorizacion frente a tokens validos e invalidos.</td>
+        <td>TS37</td>
+      </tr>
+      <tr>
+        <td>PhysiotherapistTests</td>
+        <td>Physiotherapist Entity</td>
+        <td>Valida cambios de estado, reactivacion, suspension y sincronizacion de disponibilidad del fisioterapeuta.</td>
+        <td>US29</td>
+      </tr>
+      <tr>
+        <td>PhysiotherapistCommandServiceImplTests</td>
+        <td>Physiotherapist Command Service</td>
+        <td>Valida el registro de fisioterapeutas y la relacion entre usuarios, clinica y estado del especialista.</td>
+        <td>US29</td>
+      </tr>
+      <tr>
+        <td>PatientTests</td>
+        <td>Patient Entity</td>
+        <td>Valida la asignacion y desasignacion de fisioterapeuta, considerando reglas de clinica y disponibilidad.</td>
+        <td>US20, US29, US30</td>
+      </tr>
+      <tr>
+        <td>TreatmentPlanTests</td>
+        <td>Treatment Plan Entity</td>
+        <td>Valida activacion, cancelacion, cambios de estado y restricciones de planes de tratamiento.</td>
+        <td>US11, US21, US22</td>
+      </tr>
+      <tr>
+        <td>TreatmentPlanCommandServiceImplTests</td>
+        <td>Treatment Plan Command Service</td>
+        <td>Valida la creacion de planes terapeuticos, alcance del tenant y restricciones al registrar ejercicios o parametros invalidos.</td>
+        <td>US21, TS37</td>
+      </tr>
+      <tr>
+        <td>ExerciseTests</td>
+        <td>Exercise Entity</td>
+        <td>Valida la creacion y actualizacion de ejercicios dentro del modulo de planificacion.</td>
+        <td>US21</td>
+      </tr>
+      <tr>
+        <td>CreateSubscriptionCommandTests</td>
+        <td>Create Subscription Command</td>
+        <td>Valida restricciones de monto y datos requeridos para la creacion de suscripciones.</td>
+        <td>US31</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+###### Evidencia visual de Unit Tests
+
+<div align="center">
+  <img src="assets/testing/06_device_command_service_tests_results.png" alt="Device command service tests results" width="90%">
+  <p><strong>Figura 6.2.2.5.4.</strong> Resultado de pruebas del servicio de comandos de dispositivos.</p>
+</div>
+
+<div align="center">
+  <img src="assets/testing/14_token_service_impl_tests_results.png" alt="Token service tests results" width="90%">
+  <p><strong>Figura 6.2.2.5.5.</strong> Resultado de pruebas del servicio de tokens JWT.</p>
+</div>
+
+<div align="center">
+  <img src="assets/testing/09_bearer_authorization_request_filter_tests_results.png" alt="Bearer authorization request filter tests results" width="90%">
+  <p><strong>Figura 6.2.2.5.6.</strong> Resultado de pruebas del filtro de autorizacion Bearer/JWT.</p>
+</div>
+
+<div align="center">
+  <img src="assets/testing/08_physiotherapist_entity_tests_results.png" alt="Physiotherapist entity tests results" width="90%">
+  <p><strong>Figura 6.2.2.5.7.</strong> Resultado de pruebas de la entidad Physiotherapist.</p>
+</div>
+
+<div align="center">
+  <img src="assets/testing/11_physiotherapist_command_service_tests_results.png" alt="Physiotherapist command service tests results" width="90%">
+  <p><strong>Figura 6.2.2.5.8.</strong> Resultado de pruebas del servicio de comandos de fisioterapeutas.</p>
+</div>
+
+<div align="center">
+  <img src="assets/testing/12_patient_entity_tests_results.png" alt="Patient entity tests results" width="90%">
+  <p><strong>Figura 6.2.2.5.9.</strong> Resultado de pruebas de la entidad Patient.</p>
+</div>
+
+<div align="center">
+  <img src="assets/testing/16_treatment_plan_entity_tests_results.png" alt="Treatment plan entity tests results" width="90%">
+  <p><strong>Figura 6.2.2.5.10.</strong> Resultado de pruebas de la entidad Treatment Plan.</p>
+</div>
+
+<div align="center">
+  <img src="assets/testing/01_treatment_plan_command_service_tests_results.png" alt="Treatment plan command service tests results" width="90%">
+  <p><strong>Figura 6.2.2.5.11.</strong> Resultado de pruebas del servicio de comandos de planes de tratamiento.</p>
+</div>
+
+<div align="center">
+  <img src="assets/testing/10_exercise_entity_tests_results.png" alt="Exercise entity tests results" width="90%">
+  <p><strong>Figura 6.2.2.5.12.</strong> Resultado de pruebas de la entidad Exercise.</p>
+</div>
+
+<div align="center">
+  <img src="assets/testing/07_create_subscription_command_tests_results.png" alt="Create subscription command tests results" width="90%">
+  <p><strong>Figura 6.2.2.5.13.</strong> Resultado de pruebas del comando de creacion de suscripciones.</p>
+</div>
+
+###### Integration Tests diseñados
+
+<div style="font-size:80%; overflow-x:auto;">
+  <table border="1" cellspacing="0" cellpadding="5">
+    <thead>
+      <tr>
+        <th>Test Class</th>
+        <th>Endpoint / Flow</th>
+        <th>Validated Behavior</th>
+        <th>Expected Result</th>
+        <th>Related User Story / Technical Story</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>AuthenticationControllerTests</td>
+        <td>Authentication REST endpoints</td>
+        <td>Valida el flujo de autenticacion, registro y respuestas ante datos invalidos.</td>
+        <td>200 OK / 400 Bad Request / 404 Not Found</td>
+        <td>US08, US17, US26, TS37</td>
+      </tr>
+      <tr>
+        <td>PatientTreatmentPlansControllerTests</td>
+        <td>Patient Treatment Plans REST endpoints</td>
+        <td>Valida la consulta de planes de tratamiento del paciente, rutina activa y restricciones por acceso invalido.</td>
+        <td>200 OK / 404 Not Found</td>
+        <td>US11, US13, US23</td>
+      </tr>
+      <tr>
+        <td>CreateExerciseCommandFromResourceAssemblerTests</td>
+        <td>Exercise request assembler</td>
+        <td>Valida la transformacion de recursos REST hacia comandos de aplicacion para la creacion de ejercicios.</td>
+        <td>Command mapped correctly / Invalid resource rejected</td>
+        <td>US21</td>
+      </tr>
+      <tr>
+        <td>ExerciseSeriesFromResourceAssemblerTests</td>
+        <td>Exercise Series resource assembler</td>
+        <td>Valida la conversion de series de ejercicios desde recursos externos hacia objetos de valor internos.</td>
+        <td>Value object mapped correctly</td>
+        <td>US21</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+###### Evidencia visual de Integration Tests
+
+<div align="center">
+  <img src="assets/testing/17_authentication_controller_tests_results.png" alt="Authentication controller tests results" width="90%">
+  <p><strong>Figura 6.2.2.5.14.</strong> Resultado de pruebas del controlador de autenticacion.</p>
+</div>
+
+<div align="center">
+  <img src="assets/testing/13_patient_treatment_plans_controller_tests_results.png" alt="Patient treatment plans controller tests results" width="90%">
+  <p><strong>Figura 6.2.2.5.15.</strong> Resultado de pruebas del controlador de planes de tratamiento del paciente.</p>
+</div>
+
+<div align="center">
+  <img src="assets/testing/02_create_exercise_command_assembler_tests_results.png" alt="Create exercise command assembler tests results" width="90%">
+  <p><strong>Figura 6.2.2.5.16.</strong> Resultado de pruebas del assembler para crear ejercicios.</p>
+</div>
+
+<div align="center">
+  <img src="assets/testing/15_exercise_series_resource_assembler_tests_results.png" alt="Exercise series resource assembler tests results" width="90%">
+  <p><strong>Figura 6.2.2.5.17.</strong> Resultado de pruebas del assembler de series de ejercicios.</p>
+</div>
+
+###### Acceptance Tests bajo enfoque BDD
+
+<p>
+Los Acceptance Tests se documentan mediante escenarios en lenguaje Gherkin para representar el comportamiento esperado del sistema desde la perspectiva funcional. Estos escenarios se relacionan con las User Stories y Technical Stories priorizadas en el Sprint 2.
+</p>
+
+<pre><code class="language-gherkin">Feature: Gestion de planes de tratamiento del paciente
+
+  Scenario: Consulta exitosa de rutina activa
+    Given que el paciente tiene un plan de tratamiento activo
+    When el cliente consulta la rutina asignada del dia
+    Then el API entrega los ejercicios y series correspondientes
+
+  Scenario: Paciente sin rutina activa
+    Given que el paciente no tiene un plan de tratamiento vigente
+    When el cliente consulta la rutina asignada del dia
+    Then el API responde indicando que no existen planes activos</code></pre>
+
+<p><strong>Historias relacionadas:</strong> US11, US13 y US23.</p>
+
+<pre><code class="language-gherkin">Feature: Autenticacion y autorizacion JWT
+
+  Scenario: Acceso permitido con token valido
+    Given que el usuario cuenta con un JWT valido
+    When solicita un recurso protegido dentro de su clinica
+    Then el API permite continuar con la operacion
+
+  Scenario: Acceso rechazado con token invalido
+    Given que el usuario envia un JWT invalido o expirado
+    When solicita un recurso protegido
+    Then el API rechaza la solicitud</code></pre>
+
+<p><strong>Historia relacionada:</strong> TS37.</p>
+
+<pre><code class="language-gherkin">Feature: Gestion de fisioterapeutas y dispositivos IoT
+
+  Scenario: Registro exitoso de fisioterapeuta
+    Given que el administrador pertenece a una clinica activa
+    When registra los datos validos de un fisioterapeuta
+    Then el sistema crea el perfil y lo asocia a la clinica correspondiente
+
+  Scenario: Vinculacion de dispositivo a paciente
+    Given que existe un dispositivo IoT disponible
+    When el administrador vincula el dispositivo a un paciente
+    Then el sistema actualiza el estado del dispositivo como asignado</code></pre>
+
+<p><strong>Historias relacionadas:</strong> US29, US30 y US12.</p>
+
+###### Comandos utilizados para ejecutar las pruebas
+
+<pre><code class="language-bash">export SPRING_PROFILES_ACTIVE=dev
+export JWT_SECRET="uflex-testing-secret-key-for-dev-environment-123456"
+export JWT_EXPIRATION_DAYS=7
+
+./mvnw clean test</code></pre>
+
+###### Embedded App Testing Build Validation
+
+<p>
+Adicionalmente a la suite de pruebas del backend, el equipo implemento una estructura inicial de pruebas para el proyecto <strong>uFlex Embedded App</strong>. Esta estructura se organizo dentro del directorio <code>test/test_uflex</code> y permite validar componentes relacionados con el dominio del firmware, el estado de movimiento, el calculo de angulos relativos, el dispositivo uFlex y el mapeo de payloads de movimiento.
+</p>
+
+<p>
+A diferencia del backend, las pruebas del proyecto Embedded se ejecutan sobre un entorno PlatformIO orientado a ESP32. Por ello, para ejecutar completamente los casos de prueba se requiere una placa fisica conectada y un puerto serial configurado. En esta entrega, la validacion se realizo mediante <strong>test build validation</strong>, confirmando que la suite de pruebas fue detectada y compilada correctamente para el entorno <code>esp32_sim</code>.
+</p>
+
+###### Embedded Testing Structure
+
+<div style="font-size:80%; overflow-x:auto;">
+  <table border="1" cellspacing="0" cellpadding="5">
+    <thead>
+      <tr>
+        <th>Test File</th>
+        <th>Validated Component</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>test_cases.h</td>
+        <td>Test Suite Definition</td>
+        <td>Centraliza la declaracion de los casos de prueba utilizados por la suite Embedded.</td>
+      </tr>
+      <tr>
+        <td>test_main.cpp</td>
+        <td>Test Runner</td>
+        <td>Define el punto de entrada de la suite de pruebas y ejecuta los casos definidos para el proyecto Embedded.</td>
+      </tr>
+      <tr>
+        <td>test_imu.cpp</td>
+        <td>Imu Domain Model</td>
+        <td>Valida el comportamiento base del modelo de sensor IMU dentro del dominio del firmware.</td>
+      </tr>
+      <tr>
+        <td>test_motion_payload.cpp</td>
+        <td>Motion Payload</td>
+        <td>Valida la estructura y preparacion de datos de movimiento que luego pueden ser enviados hacia la capa Edge.</td>
+      </tr>
+      <tr>
+        <td>test_motion_state.cpp</td>
+        <td>Motion State</td>
+        <td>Valida los estados de movimiento utilizados para representar el comportamiento detectado por el dispositivo.</td>
+      </tr>
+      <tr>
+        <td>test_relative_angle_calculator.cpp</td>
+        <td>Relative Angle Calculator</td>
+        <td>Valida la logica encargada de calcular angulos relativos entre sensores IMU.</td>
+      </tr>
+      <tr>
+        <td>test_uflex_device.cpp</td>
+        <td>UflexDevice Domain Model</td>
+        <td>Valida el comportamiento del dispositivo principal que coordina la informacion de los sensores.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+###### Embedded Test Build Validation
+
+<p>
+El comando utilizado para validar la compilacion de la suite de pruebas Embedded fue el siguiente:
+</p>
+
+<pre><code class="language-bash">py -m platformio test -e esp32_sim --without-uploading --without-testing</code></pre>
+
+<p>
+Este comando permitio comprobar que PlatformIO detecta correctamente el grupo de pruebas <code>test_uflex</code> y que la suite puede compilarse para el entorno <code>esp32_sim</code>. El resultado obtenido fue <strong>PASSED</strong>, lo que confirma que la estructura inicial de pruebas fue integrada correctamente dentro del proyecto.
+</p>
+
+<div align="center">
+  <img src="assets/testing/01_embedded_test_suite_build_validation_passed.png" alt="Embedded test suite build validation passed" width="90%">
+  <p><strong>Figura 6.2.2.5.18.</strong> Validacion exitosa de compilacion de la suite de pruebas Embedded para el grupo <code>test_uflex</code>.</p>
+</div>
+
+###### Embedded Simulation Build Validation
+
+<p>
+Luego de validar la estructura de pruebas, se compilo el firmware para el entorno de simulacion <code>esp32_sim</code>. Esta validacion confirma que el codigo del firmware puede construirse correctamente usando el flujo simulado definido en PlatformIO.
+</p>
+
+<p>
+El comando utilizado para compilar el entorno de simulacion fue el siguiente:
+</p>
+
+<pre><code class="language-bash">py -m platformio run -e esp32_sim</code></pre>
+
+<div align="center">
+  <img src="assets/testing/02_embedded_esp32_sim_build_process.png" alt="Embedded ESP32 simulation build process" width="90%">
+  <p><strong>Figura 6.2.2.5.19.</strong> Proceso de compilacion del firmware Embedded en el entorno <code>esp32_sim</code>.</p>
+</div>
+
+<div align="center">
+  <img src="assets/testing/03_embedded_esp32_sim_build_success.png" alt="Embedded ESP32 simulation build success" width="90%">
+  <p><strong>Figura 6.2.2.5.20.</strong> Compilacion exitosa del firmware Embedded para el entorno <code>esp32_sim</code>.</p>
+</div>
+
+###### Embedded Hardware Build Validation
+
+<p>
+Finalmente, se valido la compilacion del firmware para el entorno de hardware <code>esp32_hw</code>. Esta evidencia confirma que el mismo codigo base puede construirse correctamente para una placa ESP32 fisica, manteniendo compatibilidad entre el entorno simulado y el entorno de hardware.
+</p>
+
+<p>
+El comando utilizado para compilar el entorno de hardware fue el siguiente:
+</p>
+
+<pre><code class="language-bash">py -m platformio run -e esp32_hw</code></pre>
+
+<div align="center">
+  <img src="assets/testing/04_embedded_esp32_hw_build_success.png" alt="Embedded ESP32 hardware build success" width="90%">
+  <p><strong>Figura 6.2.2.5.21.</strong> Compilacion exitosa del firmware Embedded para el entorno <code>esp32_hw</code>.</p>
+</div>
+
+###### Embedded Testing Result Summary
+
+<div style="font-size:80%; overflow-x:auto;">
+  <table border="1" cellspacing="0" cellpadding="5">
+    <thead>
+      <tr>
+        <th>Validation</th>
+        <th>Command</th>
+        <th>Result</th>
+        <th>Evidence</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Test Build Validation</td>
+        <td><code>py -m platformio test -e esp32_sim --without-uploading --without-testing</code></td>
+        <td>PASSED</td>
+        <td>Figura 6.2.2.5.18</td>
+      </tr>
+      <tr>
+        <td>Simulation Build Validation</td>
+        <td><code>py -m platformio run -e esp32_sim</code></td>
+        <td>SUCCESS</td>
+        <td>Figuras 6.2.2.5.19 y 6.2.2.5.20</td>
+      </tr>
+      <tr>
+        <td>Hardware Build Validation</td>
+        <td><code>py -m platformio run -e esp32_hw</code></td>
+        <td>SUCCESS</td>
+        <td>Figura 6.2.2.5.21</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<p>
+En conclusion, la evidencia del proyecto Embedded demuestra que la estructura inicial de pruebas fue integrada correctamente en PlatformIO y que el firmware compila de manera exitosa tanto para el entorno de simulacion como para el entorno de hardware. La ejecucion completa de los casos de prueba sobre ESP32 queda pendiente para una siguiente iteracion, cuando se cuente con una placa fisica conectada y el puerto serial configurado.
+</p>
+
+###### Commits relacionados con Testing
+
+<p>
+A continuacion se presenta la relacion de commits asociados a la implementacion de pruebas, evidencias y recursos BDD desarrollados para el Sprint 2 en el repositorio backend.
+</p>
+
+<div style="font-size:80%; overflow-x:auto;">
+  <table border="1" cellspacing="0" cellpadding="5">
+    <thead>
+      <tr>
+        <th>Repository</th>
+        <th>Branch</th>
+        <th>Commit Id</th>
+        <th>Commit Message</th>
+        <th>Commit Message Body</th>
+        <th>Commited on (Date)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>kiniot/uflex-rest-api</td>
+        <td>feature/test</td>
+        <td>494ada0</td>
+        <td>test(planning): add unit tests for exercise and exercise series resource assemblers</td>
+        <td>Se agregan pruebas unitarias para validar assemblers relacionados con ejercicios y series dentro del modulo Planning.</td>
+        <td>2026-05-31</td>
+      </tr>
+      <tr>
+        <td>kiniot/uflex-rest-api</td>
+        <td>feature/test</td>
+        <td>83d7cbf</td>
+        <td>feat: add device testing evidence</td>
+        <td>Se agregan pruebas y evidencias relacionadas con el contexto Device y la validacion de dispositivos IoT.</td>
+        <td>2026-06-14</td>
+      </tr>
+      <tr>
+        <td>kiniot/uflex-rest-api</td>
+        <td>feature/test</td>
+        <td>1547e3a</td>
+        <td>feat: add IAM authentication testing evidence</td>
+        <td>Se agregan pruebas y evidencias relacionadas con autenticacion, autorizacion, tokens JWT y seguridad.</td>
+        <td>2026-06-14</td>
+      </tr>
+      <tr>
+        <td>kiniot/uflex-rest-api</td>
+        <td>feature/test</td>
+        <td>28b56aa</td>
+        <td>feat: add organization testing evidence</td>
+        <td>Se agregan pruebas y evidencias relacionadas con fisioterapeutas, pacientes y reglas del contexto Organization.</td>
+        <td>2026-06-14</td>
+      </tr>
+      <tr>
+        <td>kiniot/uflex-rest-api</td>
+        <td>feature/test</td>
+        <td>5ea2fd6</td>
+        <td>feat: add planning application testing evidence</td>
+        <td>Se agregan pruebas y evidencias relacionadas con servicios de aplicacion del modulo Planning y planes de tratamiento.</td>
+        <td>2026-06-14</td>
+      </tr>
+      <tr>
+        <td>kiniot/uflex-rest-api</td>
+        <td>feature/test</td>
+        <td>af01f25</td>
+        <td>feat: add planning controller testing evidence</td>
+        <td>Se agregan pruebas y evidencias relacionadas con controladores REST de Planning y consulta de planes del paciente.</td>
+        <td>2026-06-14</td>
+      </tr>
+      <tr>
+        <td>kiniot/uflex-rest-api</td>
+        <td>feature/test</td>
+        <td>f58f09e</td>
+        <td>feat: add BDD testing resources</td>
+        <td>Se agregan recursos BDD para documentar escenarios de aceptacion relacionados con las historias del Sprint 2.</td>
+        <td>2026-06-14</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+##### 6.2.2.6. Execution Evidence for Sprint Review
+
+<p>
+La presente sección muestra las evidencias de ejecución desarrolladas durante el Sprint Review. Estas evidencias corresponden a la validación funcional del backend mediante la <strong>API REST de uFlex</strong> y a la ejecución del <strong>frontend web de uFlex</strong>. En conjunto, las capturas permiten demostrar que los principales módulos del sistema fueron implementados, desplegados y revisados en el entorno de desarrollo.
+</p>
+
+<p>
+Por el lado del backend, se evidencia la disponibilidad de endpoints relacionados con autenticación, usuarios, clínicas, pacientes, fisioterapeutas, dispositivos IoT, planes de tratamiento, sesiones de terapia, ejercicios, suscripciones, ejecución terapéutica, webhooks de Stripe y modelos de datos. Por el lado del frontend, se evidencia el flujo de acceso, selección de plan, registro de clínica, validación de suscripción y navegación por los principales módulos administrativos de la plataforma.
+</p>
+
+<h4>Backend Execution Evidence - uFlex REST API</h4>
+
+<p>
+La API REST de uFlex representa el servicio backend encargado de exponer los recursos principales de la plataforma. Estas capturas fueron obtenidas desde la documentación interactiva de la API, permitiendo validar que los endpoints implementados se encuentran organizados por módulo y disponibles para ser consumidos por las aplicaciones cliente.
+</p>
+
+<h5>API Overview</h5>
+
+<p>
+Esta captura muestra la vista general de la API REST de uFlex. En ella se agrupan los endpoints disponibles por módulo, permitiendo identificar de forma ordenada las capacidades principales implementadas en el backend durante el sprint.
+</p>
+
+<figure>
+  <img src="assets/execution/01-uflex-rest-api-overview.png" alt="Vista general de la API REST de uFlex" width="100%">
+  <figcaption>Figura 1. Vista general de los endpoints de la API REST de uFlex.</figcaption>
+</figure>
+
+<h5>Devices</h5>
+
+<p>
+Esta evidencia muestra los endpoints relacionados con la gestión de dispositivos IoT. Estos endpoints permiten registrar, consultar y administrar los dispositivos asociados al monitoreo de rehabilitación.
+</p>
+
+<figure>
+  <img src="assets/execution/02-devices.png" alt="Ejecución de endpoints de dispositivos IoT" width="100%">
+  <figcaption>Figura 2. Evidencia de ejecución de los endpoints de gestión de dispositivos IoT.</figcaption>
+</figure>
+
+<h5>Current Patient Treatment Plans</h5>
+
+<p>
+Esta captura presenta los endpoints utilizados para consultar el plan de tratamiento actual asignado a un paciente. Esta funcionalidad permite que la plataforma identifique qué rutina de rehabilitación se encuentra activa.
+</p>
+
+<figure>
+  <img src="assets/execution/03-current-patient-treatment-plans.png" alt="Ejecución de endpoints de planes actuales del paciente" width="100%">
+  <figcaption>Figura 3. Evidencia de ejecución de los endpoints de planes de tratamiento actuales del paciente.</figcaption>
+</figure>
+
+<h5>Therapy Sessions</h5>
+
+<p>
+Esta evidencia muestra los endpoints relacionados con las sesiones de terapia. Estos recursos permiten gestionar registros de sesiones, información terapéutica y la relación entre pacientes, fisioterapeutas y actividades de rehabilitación.
+</p>
+
+<figure>
+  <img src="assets/execution/04-therapy-sessions.png" alt="Ejecución de endpoints de sesiones de terapia" width="100%">
+  <figcaption>Figura 4. Evidencia de ejecución de los endpoints de sesiones de terapia.</figcaption>
+</figure>
+
+<h5>Subscriptions</h5>
+
+<p>
+Esta captura muestra los endpoints de suscripciones. Estos endpoints permiten gestionar planes de suscripción de clínicas, estado de pago, cantidad de kits solicitados e información relacionada con la facturación del servicio.
+</p>
+
+<figure>
+  <img src="assets/execution/05-subscriptions.png" alt="Ejecución de endpoints de suscripciones" width="100%">
+  <figcaption>Figura 5. Evidencia de ejecución de los endpoints de gestión de suscripciones.</figcaption>
+</figure>
+
+<h5>Patient Treatment Plans</h5>
+
+<p>
+Esta evidencia presenta los endpoints utilizados para gestionar los planes de tratamiento asignados a pacientes. Mediante estos recursos, la plataforma puede vincular rutinas de rehabilitación con pacientes específicos.
+</p>
+
+<figure>
+  <img src="assets/execution/06-patient-treatment-plans.png" alt="Ejecución de endpoints de planes de tratamiento por paciente" width="100%">
+  <figcaption>Figura 6. Evidencia de ejecución de los endpoints de planes de tratamiento por paciente.</figcaption>
+</figure>
+
+<h5>Users</h5>
+
+<p>
+Esta captura muestra los endpoints de gestión de usuarios. Estos endpoints permiten administrar la información necesaria para la autenticación, identificación de usuarios y control de acceso dentro de la plataforma uFlex.
+</p>
+
+<figure>
+  <img src="assets/execution/07-users.png" alt="Ejecución de endpoints de usuarios" width="100%">
+  <figcaption>Figura 7. Evidencia de ejecución de los endpoints de gestión de usuarios.</figcaption>
+</figure>
+
+<h5>Exercises</h5>
+
+<p>
+Esta evidencia muestra los endpoints relacionados con los ejercicios terapéuticos. Estos recursos permiten administrar los ejercicios que pueden ser incluidos dentro de planes de tratamiento y sesiones de terapia.
+</p>
+
+<figure>
+  <img src="assets/execution/08-exercises.png" alt="Ejecución de endpoints de ejercicios" width="100%">
+  <figcaption>Figura 8. Evidencia de ejecución de los endpoints de gestión de ejercicios terapéuticos.</figcaption>
+</figure>
+
+<h5>Stripe Webhooks</h5>
+
+<p>
+Esta captura presenta el endpoint de webhook utilizado para recibir eventos desde Stripe. Esta funcionalidad permite procesar actualizaciones externas relacionadas con pagos, suscripciones y eventos del proveedor de pagos.
+</p>
+
+<figure>
+  <img src="assets/execution/09-stripe-webhooks.png" alt="Ejecución de webhook de Stripe" width="100%">
+  <figcaption>Figura 9. Evidencia de ejecución del endpoint de integración con webhooks de Stripe.</figcaption>
+</figure>
+
+<h5>Treatment Plans</h5>
+
+<p>
+Esta evidencia muestra los endpoints relacionados con la gestión general de planes de tratamiento. Estos recursos permiten crear, consultar y organizar planes de rehabilitación que posteriormente pueden ser asignados a pacientes.
+</p>
+
+<figure>
+  <img src="assets/execution/10-treatment-plans.png" alt="Ejecución de endpoints de planes de tratamiento" width="100%">
+  <figcaption>Figura 10. Evidencia de ejecución de los endpoints de planes de tratamiento.</figcaption>
+</figure>
+
+<h5>Clinics</h5>
+
+<p>
+Esta captura muestra los endpoints de gestión de clínicas. Estos endpoints permiten administrar la información institucional necesaria para relacionar pacientes, fisioterapeutas, dispositivos, suscripciones y demás recursos de la plataforma.
+</p>
+
+<figure>
+  <img src="assets/execution/11-clinics.png" alt="Ejecución de endpoints de clínicas" width="100%">
+  <figcaption>Figura 11. Evidencia de ejecución de los endpoints de gestión de clínicas.</figcaption>
+</figure>
+
+<h5>Authentication</h5>
+
+<p>
+Esta evidencia presenta los endpoints de autenticación. Estos recursos permiten que los usuarios inicien sesión y obtengan credenciales de acceso para interactuar de forma segura con los endpoints protegidos del backend.
+</p>
+
+<figure>
+  <img src="assets/execution/12-authentication.png" alt="Ejecución de endpoints de autenticación" width="100%">
+  <figcaption>Figura 12. Evidencia de ejecución de los endpoints de autenticación.</figcaption>
+</figure>
+
+<h5>Therapy Execution</h5>
+
+<p>
+Esta captura muestra los endpoints relacionados con la ejecución de terapias. Estos recursos se encargan de registrar repeticiones válidas y datos generados durante la ejecución de actividades de rehabilitación.
+</p>
+
+<figure>
+  <img src="assets/execution/13-therapy-execution.png" alt="Ejecución de endpoints de ejecución de terapia" width="100%">
+  <figcaption>Figura 13. Evidencia de ejecución de los endpoints de ejecución de terapia.</figcaption>
+</figure>
+
+<h5>Patients</h5>
+
+<p>
+Esta evidencia muestra los endpoints de gestión de pacientes. Estos recursos permiten registrar, consultar y administrar la información de pacientes requerida para el monitoreo de rehabilitación.
+</p>
+
+<figure>
+  <img src="assets/execution/14-patients.png" alt="Ejecución de endpoints de pacientes" width="100%">
+  <figcaption>Figura 14. Evidencia de ejecución de los endpoints de gestión de pacientes.</figcaption>
+</figure>
+
+<h5>Physiotherapists</h5>
+
+<p>
+Esta captura presenta los endpoints de gestión de fisioterapeutas. Estos recursos permiten administrar la información de los profesionales responsables de asignar planes de tratamiento y monitorear el progreso de los pacientes.
+</p>
+
+<figure>
+  <img src="assets/execution/15-physiotherapists.png" alt="Ejecución de endpoints de fisioterapeutas" width="100%">
+  <figcaption>Figura 15. Evidencia de ejecución de los endpoints de gestión de fisioterapeutas.</figcaption>
+</figure>
+
+<h5>Models</h5>
+
+<p>
+Esta evidencia muestra los modelos de solicitud y respuesta utilizados por la API REST. Estos modelos definen la estructura de los datos intercambiados entre las aplicaciones frontend, los servicios externos y el backend de uFlex.
+</p>
+
+<figure>
+  <img src="assets/execution/16-models.png" alt="Modelos de datos de la API REST de uFlex" width="100%">
+  <figcaption>Figura 16. Evidencia de los modelos de datos utilizados por la API REST de uFlex.</figcaption>
+</figure>
+
+<h4>Frontend Execution Evidence - uFlex Web Application</h4>
+
+<p>
+El frontend web de uFlex permite a las clínicas interactuar con los principales servicios de la plataforma. Las capturas evidencian el flujo de autenticación, selección de plan, creación de cuenta, registro de clínica, pago de suscripción y navegación por los módulos administrativos.
+</p>
+
+<h5>Login Page</h5>
+
+<p>
+Esta captura muestra la pantalla de inicio de sesión del frontend de uFlex. Desde esta vista, el usuario puede acceder a su cuenta mediante sus credenciales o dirigirse al flujo de creación de cuenta.
+</p>
+
+<figure>
+  <img src="assets/execution/01-front-login-page.png" alt="Pantalla de inicio de sesión del frontend de uFlex" width="100%">
+  <figcaption>Figura 17. Pantalla de inicio de sesión de la plataforma web de uFlex.</figcaption>
+</figure>
+
+<h5>Plan Selection</h5>
+
+<p>
+Esta evidencia muestra la etapa inicial de selección de plan. La interfaz guía al usuario para escoger un plan de suscripción antes de completar el registro de su organización o clínica.
+</p>
+
+<figure>
+  <img src="assets/execution/02-front-plan-selection.png" alt="Selección de plan en el frontend de uFlex" width="100%">
+  <figcaption>Figura 18. Vista inicial para la selección del plan de suscripción.</figcaption>
+</figure>
+
+<h5>Pricing Plans</h5>
+
+<p>
+Esta captura presenta las opciones de planes disponibles dentro del frontend. En esta sección se visualizan alternativas de suscripción, permitiendo al usuario comparar beneficios y seleccionar el plan adecuado para su clínica.
+</p>
+
+<figure>
+  <img src="assets/execution/03-front-pricing-plans.png" alt="Planes de precios disponibles en uFlex" width="100%">
+  <figcaption>Figura 19. Visualización de los planes de suscripción disponibles.</figcaption>
+</figure>
+
+<h5>Create Account</h5>
+
+<p>
+Esta evidencia muestra el formulario de creación de cuenta. En esta vista, el usuario registra sus datos principales, como correo, contraseña y nombre completo, para iniciar el proceso de alta dentro de la plataforma.
+</p>
+
+<figure>
+  <img src="assets/execution/04-front-create-account.png" alt="Formulario de creación de cuenta en uFlex" width="100%">
+  <figcaption>Figura 20. Formulario de creación de cuenta de usuario.</figcaption>
+</figure>
+
+<h5>Clinic Registration Validation</h5>
+
+<p>
+Esta captura evidencia la validación del formulario de registro de clínica. La interfaz muestra mensajes de validación cuando los campos requeridos no cumplen con las condiciones necesarias.
+</p>
+
+<figure>
+  <img src="assets/execution/05-front-clinic-registration-validation.png" alt="Validación del registro de clínica en uFlex" width="100%">
+  <figcaption>Figura 21. Validación de campos durante el registro de clínica.</figcaption>
+</figure>
+
+<h5>Clinic Registration Form</h5>
+
+<p>
+Esta evidencia muestra el formulario de registro de clínica con información institucional. Esta vista permite completar datos como nombre legal, nombre comercial, RUC, teléfono, país, región, ciudad y dirección.
+</p>
+
+<figure>
+  <img src="assets/execution/06-front-clinic-registration-form.png" alt="Formulario de registro de clínica en uFlex" width="100%">
+  <figcaption>Figura 22. Formulario de registro de clínica con datos institucionales.</figcaption>
+</figure>
+
+<h5>Payment Checkout</h5>
+
+<p>
+Esta captura muestra el proceso de pago asociado a la suscripción seleccionada. La vista corresponde al checkout de pago, donde el usuario puede confirmar el monto y completar la operación mediante el proveedor de pagos integrado.
+</p>
+
+<figure>
+  <img src="assets/execution/07-front-payment-checkout.png" alt="Checkout de pago de suscripción en uFlex" width="100%">
+  <figcaption>Figura 23. Vista de checkout para el pago de la suscripción.</figcaption>
+</figure>
+
+<h5>Subscription Validation</h5>
+
+<p>
+Esta evidencia presenta la pantalla de validación de suscripción. Luego del proceso de pago, el sistema verifica el estado de la suscripción para permitir el acceso a las funcionalidades correspondientes.
+</p>
+
+<figure>
+  <img src="assets/execution/08-front-subscription-validation.png" alt="Validación de suscripción en uFlex" width="100%">
+  <figcaption>Figura 24. Pantalla de validación del estado de suscripción.</figcaption>
+</figure>
+
+<h5>Company Dashboard</h5>
+
+<p>
+Esta captura muestra el panel principal de la compañía o clínica. Desde esta vista se resumen indicadores generales y accesos a módulos relevantes para la administración institucional.
+</p>
+
+<figure>
+  <img src="assets/execution/09-front-company-dashboard.png" alt="Dashboard de compañía en uFlex" width="100%">
+  <figcaption>Figura 25. Panel principal de administración de la clínica.</figcaption>
+</figure>
+
+<h5>Device Inventory</h5>
+
+<p>
+Esta evidencia muestra la vista de inventario de dispositivos. Este módulo permite visualizar y administrar los dispositivos IoT asociados a la clínica.
+</p>
+
+<figure>
+  <img src="assets/execution/10-front-device-inventory.png" alt="Inventario de dispositivos IoT en uFlex" width="100%">
+  <figcaption>Figura 26. Módulo de inventario y gestión de dispositivos IoT.</figcaption>
+</figure>
+
+<h5>Clinic Session Oversight</h5>
+
+<p>
+Esta captura presenta la vista de supervisión de sesiones clínicas. El módulo permite revisar información general sobre sesiones, pacientes y actividades terapéuticas asociadas al proceso de rehabilitación.
+</p>
+
+<figure>
+  <img src="assets/execution/11-front-clinic-session-oversight.png" alt="Supervisión de sesiones clínicas en uFlex" width="100%">
+  <figcaption>Figura 27. Vista de supervisión de sesiones clínicas.</figcaption>
+</figure>
+
+<h5>Exercise Catalog</h5>
+
+<p>
+Esta evidencia muestra el catálogo de ejercicios terapéuticos. Desde esta sección, la plataforma permite visualizar y administrar ejercicios que pueden formar parte de los planes de tratamiento asignados a los pacientes.
+</p>
+
+<figure>
+  <img src="assets/execution/12-front-exercise-catalog.png" alt="Catálogo de ejercicios terapéuticos en uFlex" width="100%">
+  <figcaption>Figura 28. Catálogo de ejercicios terapéuticos disponibles en la plataforma.</figcaption>
+</figure>
+
+<h5>Subscription Status</h5>
+
+<p>
+Esta captura muestra el módulo de suscripción dentro del panel. En esta vista se puede revisar el estado de la suscripción de la clínica y verificar si existe un plan activo asociado a la organización.
+</p>
+
+<figure>
+  <img src="assets/execution/13-front-subscription-status.png" alt="Estado de suscripción en el frontend de uFlex" width="100%">
+  <figcaption>Figura 29. Vista del estado de suscripción de la clínica.</figcaption>
+</figure>
+
+<h5>Profile Management</h5>
+
+<p>
+Esta evidencia presenta la vista de perfil y gestión administrativa. Desde este módulo se visualiza información general de la organización, métricas principales y una tabla con usuarios o miembros asociados a la clínica.
+</p>
+
+<figure>
+  <img src="assets/execution/14-front-profile-management.png" alt="Gestión de perfil y usuarios en uFlex" width="100%">
+  <figcaption>Figura 30. Vista de perfil institucional y gestión de miembros.</figcaption>
+</figure>
+
+
+##### 6.2.2.7. Services Documentation Evidence for Sprint Review
+
+A diferencia del Sprint 1 —donde esta sección no aplicaba por concentrarse en productos de front-end— en el Sprint 2 se entregaron Web Services reales. La documentación de servicios se cubre en **dos tablas independientes**: la del **Backend REST API**, documentado con **Scalar** sobre **OpenAPI 3.1**, y la del **Edge API**, implementado en Flask para la ingesta de telemetría. La aplicación móvil del paciente **consume** estos servicios y el firmware Embedded **produce** la telemetría que llega al Edge, por lo que ninguno de los dos expone documentación de servicios propia.
+
+**1) Backend — REST API (documentado con Scalar / OpenAPI 3.1)**
+
+La API del backend está documentada con Scalar (tema *kepler*), con esquema de seguridad **Bearer JWT** y servidores configurados para entorno local y de producción. La interfaz de documentación está disponible públicamente en:
+
+- UI de Scalar: <https://uflex-rest-api-production.up.railway.app/scalar/index.html>
+
+A continuación se listan los endpoints expuestos, agrupados por bounded context:
+
+| Bounded Context | Verbo HTTP | Endpoint | Descripción |
+|-----------------|-----------|----------|-------------|
+| IAM | POST | `/api/v1/authentication/sign-up` | Registrar un nuevo usuario en el sistema. |
+| IAM | POST | `/api/v1/authentication/sign-in` | Autenticar al usuario y emitir un token JWT. |
+| IAM | GET | `/api/v1/users/me` | Obtener los datos del usuario autenticado. |
+| IAM | PUT | `/api/v1/users/me/password` | Cambiar la contraseña del usuario autenticado. |
+| IAM | GET | `/api/v1/users/{email}` | Obtener un usuario por email (propietario o admin). |
+| Organization | POST | `/api/v1/clinics` | Registrar una nueva clínica. |
+| Organization | GET | `/api/v1/clinics/me` | Obtener la clínica del usuario autenticado. |
+| Organization | POST | `/api/v1/clinic-admins` | Registrar un administrador de clínica. |
+| Organization | GET | `/api/v1/clinic-admins/me` | Obtener el perfil del admin de clínica autenticado. |
+| Organization | POST | `/api/v1/patients/by-clinic-admin` | Registrar un paciente como admin de clínica. |
+| Organization | POST | `/api/v1/patients/by-physiotherapist` | Registrar un paciente como fisioterapeuta. |
+| Organization | GET | `/api/v1/patients/{id}` | Obtener un paciente por ID. |
+| Organization | GET | `/api/v1/patients/me` | Obtener el perfil del paciente autenticado. |
+| Organization | PUT | `/api/v1/patients/me` | Actualizar el perfil del paciente autenticado. |
+| Organization | GET | `/api/v1/patients` | Listar los pacientes de la clínica autenticada. |
+| Organization | GET | `/api/v1/patients/by-clinic/{clinicId}` | Listar los pacientes de una clínica. |
+| Organization | GET | `/api/v1/patients/by-physiotherapist/{physiotherapistId}` | Listar los pacientes de un fisioterapeuta. |
+| Organization | PUT | `/api/v1/patients/by-clinic-admin/{id}` | Actualizar un paciente como admin de clínica. |
+| Organization | PUT | `/api/v1/patients/by-physiotherapist/{id}` | Actualizar un paciente como fisioterapeuta. |
+| Organization | PUT | `/api/v1/patients/{id}/assign` | Asignar o reasignar un paciente a un fisioterapeuta. |
+| Organization | PUT | `/api/v1/patients/{id}/discharge` | Dar de alta a un paciente. |
+| Organization | POST | `/api/v1/patients/{id}/complete` | Marcar un paciente como completado. |
+| Organization | POST | `/api/v1/patients/{id}/inactive` | Marcar un paciente como inactivo. |
+| Organization | POST | `/api/v1/patients/{id}/reactivate` | Reactivar un paciente. |
+| Organization | DELETE | `/api/v1/patients/{id}` | Eliminar un paciente. |
+| Organization | POST | `/api/v1/physiotherapists` | Registrar un fisioterapeuta. |
+| Organization | GET | `/api/v1/physiotherapists/{id}` | Obtener un fisioterapeuta por ID. |
+| Organization | GET | `/api/v1/physiotherapists/me` | Obtener el perfil del fisioterapeuta autenticado. |
+| Planning | GET | `/api/v1/exercises` | Listar el catálogo de ejercicios. |
+| Planning | GET | `/api/v1/exercises/{id}` | Obtener un ejercicio por ID. |
+| Planning | POST | `/api/v1/exercises` | Crear un nuevo ejercicio. |
+| Planning | PUT | `/api/v1/exercises/{id}` | Actualizar un ejercicio. |
+| Planning | DELETE | `/api/v1/exercises/{id}` | Eliminar un ejercicio. |
+| Planning | GET | `/api/v1/treatment-plans` | Listar planes de tratamiento (con filtros opcionales). |
+| Planning | GET | `/api/v1/treatment-plans/{id}` | Obtener un plan de tratamiento por ID. |
+| Planning | POST | `/api/v1/treatment-plans` | Crear un plan de tratamiento. |
+| Planning | PUT | `/api/v1/treatment-plans/{id}` | Actualizar un plan de tratamiento. |
+| Planning | POST | `/api/v1/treatment-plans/{id}/activate` | Activar un plan de tratamiento. |
+| Planning | POST | `/api/v1/treatment-plans/{id}/complete` | Completar un plan de tratamiento. |
+| Planning | POST | `/api/v1/treatment-plans/{id}/cancel` | Cancelar un plan de tratamiento. |
+| Planning | DELETE | `/api/v1/treatment-plans/{id}` | Eliminar un plan de tratamiento. |
+| Planning | GET | `/api/v1/patients/me/treatment-plans` | Obtener mis planes de tratamiento (paciente). |
+| Planning | GET | `/api/v1/patients/me/treatment-plans/active` | Obtener mi plan de tratamiento activo. |
+| Planning | GET | `/api/v1/patients/me/treatment-plans/scheduled` | Obtener mis planes de tratamiento programados. |
+| Planning | GET | `/api/v1/patients/me/treatment-plans/next-scheduled` | Obtener mi próximo plan de tratamiento programado. |
+| Planning | GET | `/api/v1/patients/me/treatment-plans/{treatmentPlanId}` | Obtener un plan de tratamiento propio específico. |
+| Subscription | POST | `/api/v1/subscriptions/checkout` | Crear una sesión de checkout de suscripción. |
+| Subscription | GET | `/api/v1/subscriptions/current` | Obtener la suscripción actual. |
+| Subscription | GET | `/api/v1/subscriptions/tiers` | Obtener el catálogo de planes (tiers). |
+| Subscription | POST | `/api/v1/subscriptions/webhook` | Webhook de Stripe (acceso sin autenticación). |
+| Device | POST | `/api/v1/devices` | Registrar un nuevo dispositivo. |
+| Device | GET | `/api/v1/devices` | Listar los dispositivos de la clínica. |
+| Device | GET | `/api/v1/devices/{deviceId}` | Obtener un dispositivo por ID. |
+| Device | GET | `/api/v1/devices/by-serial-number/{serialNumber}` | Obtener un dispositivo por número de serie. |
+| Device | GET | `/api/v1/devices/metrics` | Obtener las métricas de la flota de dispositivos. |
+| Device | PUT | `/api/v1/devices/{deviceId}` | Actualizar un dispositivo. |
+| Device | POST | `/api/v1/devices/{deviceId}/assign` | Asignar un dispositivo a un paciente. |
+| Device | POST | `/api/v1/devices/{deviceId}/unassign` | Desasignar un dispositivo de un paciente. |
+| Device | DELETE | `/api/v1/devices/{deviceId}` | Eliminar un dispositivo. |
+
+<div style="text-align: center;">
+  <img src="assets/images/screenshots/sprint-2/scalar-overview.png" alt="Scalar — vista general de la API" style="max-width: 100%; height: auto;">
+</div>
+
+*Figura 6.2.2.7.1. Scalar — vista general de la documentación del REST API uFlex (OpenAPI 3.1.0, servidores y autenticación Bearer JWT).*
+
+<div style="text-align: center;">
+  <img src="assets/images/screenshots/sprint-2/scalar-signup-endpoint.png" alt="Scalar — detalle del endpoint POST /api/v1/authentication/sign-up" style="max-width: 100%; height: auto;">
+</div>
+
+*Figura 6.2.2.7.2. Scalar — detalle del endpoint `POST /api/v1/authentication/sign-up`: cuerpo de la solicitud, respuestas y ejemplo de request/response.*
+
+<div style="text-align: center;">
+  <img src="assets/images/screenshots/sprint-2/scalar-devices-endpoint.png" alt="Scalar — detalle del endpoint GET /api/v1/devices" style="max-width: 100%; height: auto;">
+</div>
+
+*Figura 6.2.2.7.3. Scalar — detalle del endpoint `GET /api/v1/devices`: respuesta 200 OK y esquema del recurso Device.*
+
+**2) Edge — Gateway API (Flask, documentado con Scalar)**
+
+El Edge Gateway expone su API REST en Flask, también documentada con **Scalar** (disponible localmente en `http://localhost:5000/scalar`). Su responsabilidad principal es la ingesta de telemetría de movimiento emitida por los kits IoT; la autenticación del kit se realiza mediante el header `X-API-Key` junto al `device_id` del cuerpo de la solicitud.
+
+| Servicio | Verbo HTTP | Endpoint | Descripción |
+|----------|-----------|----------|-------------|
+| Movement Monitoring | POST | `/api/v1/movement-monitoring/data-records` | Registrar una lectura de ángulo de flexión articular (0–360°) proveniente de un kit IoT autenticado. |
+
+Ejemplo de **request**:
+
+```http
+POST /api/v1/movement-monitoring/data-records
+Content-Type: application/json
+X-API-Key: <kit api key>
+
+{
+  "device_id": "uflex-kit-001",
+  "angle": 92.5,
+  "created_at": "2026-05-29T18:23:00-05:00"
+}
+```
+
+Ejemplo de **response** (201 Created):
+
+```json
+{
+  "id": 1,
+  "device_id": "uflex-kit-001",
+  "angle": 92.5,
+  "created_at": "2026-05-29T23:23:00+00:00Z"
+}
+```
+
+Códigos de estado: **201 Created** (registro exitoso), **400 Bad Request** (campos faltantes, ángulo fuera de rango o timestamp inválido) y **401 Unauthorized** (credenciales del kit ausentes o inválidas).
+
+<div style="text-align: center;">
+  <img src="assets/images/screenshots/sprint-2/scalar-edge-ingestion.png" alt="Edge API — documentación Scalar del endpoint de ingesta de telemetría" style="max-width: 100%; height: auto;">
+</div>
+
+*Figura 6.2.2.7.4. Scalar — documentación del Edge API: endpoint `POST /api/v1/movement-monitoring/data-records` (ingesta de lectura de ángulo) con su cuerpo, respuestas y autenticación por `X-API-Key`.*
+
+<hr class="page-break">
+
+##### 6.2.2.8. Software Deployment Evidence for Sprint Review
+
+Durante el Sprint 2 el equipo desplegó el **Backend — REST API** en **Railway**, el proveedor cloud elegido para publicar el monolito de servicios de uFlex. El despliegue se realiza a partir del **Dockerfile** multi-stage del repositorio (build con Maven sobre Eclipse Temurin 25 y ejecución sobre una imagen Alpine ligera), que Railway detecta automáticamente.
+
+**Despliegue — Backend REST API**
+
+URL pública: <https://uflex-rest-api-production.up.railway.app/>
+
+Pasos realizados durante el Sprint:
+1. **Creación del proyecto en Railway.** Se accedió al dashboard de Railway con la cuenta enlazada a GitHub y se creó un nuevo proyecto para el backend de uFlex.
+2. **Importación del repositorio.** Se importó el repositorio `kiniot/uflex-rest-api`, conectándolo a la rama de producción para los despliegues automáticos.
+3. **Detección del Dockerfile y build.** Railway detectó el `Dockerfile` del repositorio y ejecutó el build multi-stage (compilación con Maven y empaquetado del `.jar` ejecutable que expone el puerto 8080).
+4. **Provisión de la base de datos PostgreSQL.** Se añadió un servicio de PostgreSQL al proyecto y se conectó al backend mediante las variables de entorno de datasource (`UFLEX_DB_HOST`, `UFLEX_DB_PORT`, `UFLEX_DB_NAME`, `UFLEX_DB_USERNAME`, `UFLEX_DB_PASSWORD`), con `sslmode=require`.
+5. **Configuración de variables de entorno.** Se definieron las variables del perfil de producción: `SPRING_PROFILES_ACTIVE=prod`, el secreto y la expiración del JWT (`JWT_SECRET`, `JWT_EXPIRATION_DAYS`), las credenciales de Stripe (`STRIPE_SECRET_KEY`, `STRIPE_WEBHOOK_SECRET`, URLs de éxito/cancelación) y las credenciales SMTP del servicio de correo.
+6. **Verificación del dominio público.** Tras finalizar el build, Railway asignó el dominio `https://uflex-rest-api-production.up.railway.app/` y el deployment quedó en estado **Active**. Se validó el acceso a la documentación Scalar y a los endpoints del API.
+
+<div style="text-align: center;">
+  <img src="assets/images/screenshots/sprint-2/deploy-backend-railway.png" alt="Deploy Backend — Railway" style="max-width: 100%; height: auto;">
+</div>
+
+*Figura 6.2.2.8.1. Railway — proyecto y despliegue del Backend REST API de uFlex.* <!-- TODO: subir captura a assets/images/screenshots/sprint-2/deploy-backend-railway.png -->
+
+**Estado de despliegue del resto de componentes**
+
+Los demás frentes del Sprint no se despliegan en un proveedor cloud por la naturaleza de cada uno:
+
+- **Edge — Gateway:** para el alcance del curso se ejecuta a nivel local (en una laptop) con Flask y base de datos SQLite; en un entorno productivo real residiría en un servidor dentro de la red de la clínica.
+- **Embedded — Firmware IoT:** se ejecuta directamente sobre el microcontrolador **ESP32** (y en el simulador Wokwi), por lo que no aplica un despliegue cloud.
+- **Mobile — Patient App:** se distribuye como **APK** Android nativo; no requiere despliegue en servidor.
+
+<hr class="page-break">
+
+##### 6.2.2.9. Team Collaboration Insights during Sprint
+
+Durante el Sprint 2 el trabajo se distribuyó por frentes técnicos siguiendo la matriz de Aspect Leaders and Collaborators (sección 6.2.2.2): el backend tuvo a Daniel Crispin, Salim Ramírez y Paul Sulca como líderes; el Edge Gateway a Salim Ramírez, Paul Sulca y Eduardo Gael; el firmware Embedded y el frente de Testing & Documentation a Marcelo Varela; y la Web/Mobile a Eduardo Gael, con colaboración cruzada de todo el equipo. La coordinación se sostuvo con dailies y revisión de pull requests para mantener la coherencia entre el contrato del API, el Edge, el dispositivo y los clientes. A continuación se presentan los analíticos de colaboración de GitHub (pestaña **Insights**) de cada repositorio del Sprint, junto con la interpretación del equipo.
+
+**GitHub Insights — Backend — REST API** (`kiniot/uflex-rest-api`)
+
+<div style="text-align: center;">
+  <img src="assets/images/screenshots/sprint-2/insights-uflex-rest-api-contributors.png" alt="Backend — REST API — Contributors" style="max-width: 100%; height: auto;">
+</div>
+
+*Figura 6.2.2.9.1. Backend — REST API — Contributors.* <!-- TODO: subir captura a assets/images/screenshots/sprint-2/insights-uflex-rest-api-contributors.png -->
+
+<div style="text-align: center;">
+  <img src="assets/images/screenshots/sprint-2/insights-uflex-rest-api-commits.png" alt="Backend — REST API — Commits over time" style="max-width: 100%; height: auto;">
+</div>
+
+*Figura 6.2.2.9.2. Backend — REST API — Commits over time.* <!-- TODO: subir captura a assets/images/screenshots/sprint-2/insights-uflex-rest-api-commits.png -->
+
+**GitHub Insights — Edge — Gateway** (`kiniot/uflex-edge-gateway`)
+
+<div style="text-align: center;">
+  <img src="assets/images/screenshots/sprint-2/insights-uflex-edge-gateway-contributors.png" alt="Edge — Gateway — Contributors" style="max-width: 100%; height: auto;">
+</div>
+
+*Figura 6.2.2.9.3. Edge — Gateway — Contributors.* <!-- TODO: subir captura a assets/images/screenshots/sprint-2/insights-uflex-edge-gateway-contributors.png -->
+
+<div style="text-align: center;">
+  <img src="assets/images/screenshots/sprint-2/insights-uflex-edge-gateway-commits.png" alt="Edge — Gateway — Commits over time" style="max-width: 100%; height: auto;">
+</div>
+
+*Figura 6.2.2.9.4. Edge — Gateway — Commits over time.* <!-- TODO: subir captura a assets/images/screenshots/sprint-2/insights-uflex-edge-gateway-commits.png -->
+
+**GitHub Insights — Embedded — Firmware IoT** (`kiniot/uflex-embedded-app`)
+
+<div style="text-align: center;">
+  <img src="assets/images/screenshots/sprint-2/insights-uflex-embedded-app-contributors.png" alt="Embedded — Firmware IoT — Contributors" style="max-width: 100%; height: auto;">
+</div>
+
+*Figura 6.2.2.9.5. Embedded — Firmware IoT — Contributors.* <!-- TODO: subir captura a assets/images/screenshots/sprint-2/insights-uflex-embedded-app-contributors.png -->
+
+<div style="text-align: center;">
+  <img src="assets/images/screenshots/sprint-2/insights-uflex-embedded-app-commits.png" alt="Embedded — Firmware IoT — Commits over time" style="max-width: 100%; height: auto;">
+</div>
+
+*Figura 6.2.2.9.6. Embedded — Firmware IoT — Commits over time.* <!-- TODO: subir captura a assets/images/screenshots/sprint-2/insights-uflex-embedded-app-commits.png -->
+
+**GitHub Insights — Mobile — Patient App** (`kiniot/uflex-patient-mobile`)
+
+<div style="text-align: center;">
+  <img src="assets/images/screenshots/sprint-2/insights-uflex-patient-mobile-contributors.png" alt="Mobile — Patient App — Contributors" style="max-width: 100%; height: auto;">
+</div>
+
+*Figura 6.2.2.9.7. Mobile — Patient App — Contributors.* <!-- TODO: subir captura a assets/images/screenshots/sprint-2/insights-uflex-patient-mobile-contributors.png -->
+
+<div style="text-align: center;">
+  <img src="assets/images/screenshots/sprint-2/insights-uflex-patient-mobile-commits.png" alt="Mobile — Patient App — Commits over time" style="max-width: 100%; height: auto;">
+</div>
+
+*Figura 6.2.2.9.8. Mobile — Patient App — Commits over time.* <!-- TODO: subir captura a assets/images/screenshots/sprint-2/insights-uflex-patient-mobile-commits.png -->
+
+<hr class="page-break">
+
+## 6.3. Validation Interviews
+
+En esta sección se presentan las entrevistas de validación realizadas con usuarios clave para evaluar la propuesta de valor, la experiencia de usuario y la viabilidad técnica de uFlex. Se describen los perfiles de los entrevistados, los objetivos de cada entrevista, los hallazgos obtenidos y las implicancias para el desarrollo del proyecto.
+
+### 6.3.1. Diseño de Entrevistas
+
+Para validar las hipótesis de valor y las funcionalidades propuestas en uFlex, se diseñaron entrevistas semiestructuradas dirigidas a tres perfiles clave: fisioterapeutas, pacientes y administradores de clínicas de rehabilitación. Cada entrevista se enfocó en aspectos específicos relacionados con la experiencia actual de rehabilitación domiciliaria, los desafíos enfrentados, las expectativas sobre una solución tecnológica y la disposición para adoptar una plataforma como uFlex.
+
+---
+
+### A. Segmento: Administradores de Clínicas y Centros de Salud
+
+* **Objetivos de la sesión:**
+    * Validar si la propuesta de valor y los precios (Planes) expuestos en la Landing Page son atractivos y claros para la toma de decisiones B2B.
+    * Evaluar la facilidad del flujo de registro, adquisición de suscripción y configuración inicial del centro de salud en la Aplicación Web.
+    * Comprobar la usabilidad en la visualización, control del inventario y estado del hardware IoT, así como la gestión de personal clínico y catálogos de la organización.
+* **Artefactos a evaluar:** Landing Page (Desktop/Mobile responsive) y Aplicación Web (Rol: *Clinic Admin*).
+
+#### User Flows del Segmento a Validar (Web App):
+
+```text
+[Flujo 1: Onboarding B2B] 
+Landing Page (Sección Planes) -> Registro de Clínica -> Pasarela de Pago -> Primer Inicio de Sesión (Sign In).
+
+[Flujo 2: Configuración del Ecosistema Clínico]
+Dashboard Admin -> Configuración de la Organización -> Registrar Fisioterapeuta -> Registrar Paciente.
+
+[Flujo 3: Gestión de Activos y Catálogos]
+Inventario de Dispositivos -> Revisión/Verificación de Kits IoT vinculados -> Gestión del Catálogo de Ejercicios de la Clínica.
+```
+
+#### Guía de Tareas y Escenarios:
+1. **Escenario de la Landing Page:** *"Usted es el director de una clínica en Lima y busca reducir la deserción de pacientes mediante telemonitoreo. Explore la Landing Page, cambie el idioma al inglés para revisar el estándar de cara a socios internacionales, y ubique el costo del plan para su clínica."*
+2. **Tarea de Flujo 1 (Onboarding):** *"Proceda a registrar su clínica ingresando los datos de la organización, seleccione el plan idóneo para su flujo y complete la simulación de pago para acceder a su nuevo panel."*
+3. **Tarea de Flujo 2 y 3 (Gestión):** *"Una vez en el dashboard, cree la cuenta de un fisioterapeuta de su equipo. Posteriormente, ingrese al módulo de dispositivos para verificar el estado de los kits de sensores asignados a su organización y pase a configurar un nuevo ejercicio base dentro del catálogo institucional."*
+
+#### Banco de Preguntas para el Segmento:
+* **Preguntas Durante la Interacción (Landing y Web App):**
+    1. Al revisar la sección de planes en la Landing Page, ¿queda claro qué incluye el cobro por hardware (One-time fee) versus la suscripción por paciente activo?
+    2. En el formulario de registro de la organización, ¿hubo algún campo de datos que le pareciera confuso o innecesario?
+    3. Al interactuar con el módulo de dispositivos, ¿considera intuitivo el panel para auditar qué kits están asignados a su clínica y cuál es su estado actual?
+    4. ¿Qué cambiaría o simplificaría de la interfaz correspondiente a la creación y gestión del catálogo de ejercicios de la clínica?
+* **Preguntas de Cierre (Validación):**
+    5. ¿Considera que centralizar la gestión de fisioterapeutas, pacientes y hardware en este dashboard le ahorraría costos operativos por deserción?
+    6. ¿Qué funcionalidad sintió que faltó en la gestión de su suscripción actual?
+    7. Si tuviera que definir la plataforma web en tres palabras en cuanto a su diseño visual (temas claro/oscuro, tipografía), ¿cuáles serían?
+
+---
+
+### B. Segmento: Fisioterapeutas y Especialistas en Rehabilitación
+
+* **Objetivos de la sesión:**
+    * Evaluar si el módulo de terapias proporciona los datos biomecánicos y de adherencia necesarios sin generar sobrecarga cognitiva.
+    * Validar el flujo de asignación de tratamientos y planes usando el catálogo preexistente, así como la vinculación de hardware a pacientes específicos.
+    * Medir la utilidad de la internacionalización (i18n) y el cambio de tema visual (oscuro/claro) en entornos de alta o baja iluminación clínica.
+* **Artefactos a evaluar:** Aplicación Web (Rol: *Fisioterapeuta*).
+
+#### User Flows del Segmento a Validar (Web App):
+
+```text
+[Flujo 1: Acceso y Monitoreo Clínico]
+Sign In (Credenciales provistas por Admin) -> Dashboard Principal -> Selección de Paciente -> Gestión de Terapias (Revisión de Métricas).
+
+[Flujo 2: Prescripción de Tele-rehabilitación]
+Perfil del Paciente -> Gestión de Plan de Tratamiento -> Asignación de Ejercicios utilizando el Catálogo de la Clínica -> Configuración de Rangos de Movimiento (ROM) Objetivo.
+
+[Flujo 3: Asignación de Hardware]
+Perfil del Paciente -> Gestión de Dispositivos -> Vincular Kit IoT disponible al Paciente para su uso en casa.
+```
+
+#### Guía de Tareas y Escenarios:
+1. **Escenario de Acceso:** *"Usted inicia su turno clínico por la tarde. Inicie sesión con las credenciales provistas por su administrador y active el 'Tema Oscuro' para adaptar la pantalla a la iluminación actual de su consultorio."*
+2. **Tarea de Flujo 1 (Monitoreo):** *"Busque en su lista de pacientes asignados al usuario 'Juan Pérez', diríjase al módulo de sus terapias y revise si ha tenido alertas de mala ejecución o cómo se encuentran reflejados sus arcos de movilidad."*
+3. **Tarea de Flujo 2 y 3 (Prescripción y Vínculo):** *"Asigne a este paciente un nuevo plan de tratamiento seleccionando ejercicios del catálogo establecido por la clínica. Finalmente, asigne un Kit IoT disponible a su perfil para que pueda usar los sensores en casa."*
+
+#### Banco de Preguntas para el Segmento:
+* **Preguntas Durante la Interacción (Web App):**
+    1. Al ingresar a la sección de "Gestión de Terapias" del paciente, ¿las métricas del estado biomecánico y la evolución de los ejercicios se entienden a primera vista o requiere analizar demasiado la pantalla?
+    2. Al configurar el plan de tratamiento y definir los rangos de movimiento (ROM) objetivo a partir de la lista de ejercicios de la clínica, ¿siente que el proceso es ágil o interrumpe su ritmo de trabajo acelerado?
+    3. Al momento de enlazar el Kit IoT al paciente en su panel, ¿la pantalla le transmite seguridad de que el hardware quedó listo para ser usado de forma remota?
+    4. ¿El uso de las opciones de idioma (i18n) o el cambio de tema claro/oscuro le aporta valor real en su entorno de consulta?
+* **Preguntas de Cierre (Validación):**
+    5. ¿Siente que los datos biomecánicos que le muestra la plataforma en el seguimiento de terapias son suficientes para tomar decisiones clínicas asíncronas sin necesidad de ver al paciente presencialmente cada semana?
+    6. ¿Hubo algún paso en el flujo de asignación del Kit IoT que le haya generado desconfianza o duda de si se configuró bien?
+
+---
+
+### C. Segmento: Pacientes en Rehabilitación de Miembro Superior
+
+* **Objetivos de la sesión:**
+    * Validar la claridad y simplicidad del flujo de inicio de sesión y preparación de la terapia en la aplicación móvil.
+    * Evaluar la comprensión del estado del dispositivo IoT (vinculación Bluetooth) y de las pantallas de la sesión de terapia.
+    * Determinar si la interfaz reduce la kinesiofobia (miedo al movimiento) mediante elementos visuales de guía intuitivos.
+* **Artefactos a evaluar:** Aplicación Móvil (Prototipo de Alta Fidelidad).
+
+#### User Flows del Segmento a Validar (Mobile App):
+
+```text
+[Flujo 1: Preparación del Entorno]
+Sign In -> Pantalla Principal -> Sección "Mi Dispositivo" -> Confirmar Vinculación Bluetooth del Kit IoT.
+
+[Flujo 2: Ejecución de Terapia Domiciliaria]
+Pantalla Principal -> Seleccionar "Sesión de Terapia del Día" -> Visualizar Guía del Ejercicio -> Simular envío de datos biomecánicos.
+
+[Flujo 3: Consulta de Progreso]
+Menú de Navegación -> Consultar Historial de Progreso (Arcos de movimiento logrados).
+```
+
+#### Guía de Tareas y Escenarios:
+1. **Escenario de Configuración:** *"Se encuentra en casa y es hora de realizar sus ejercicios diarios de rehabilitación. Abra la aplicación en su teléfono e ingrese a la sección de su dispositivo para asegurarse de que los sensores estén encendidos y enlazados por Bluetooth de forma autónoma."*
+2. **Tarea de Flujo 2 (Sesión):** *"Inicie la sesión de terapia programada para el día de hoy. Siga la guía visual e interactiva de la pantalla simulando las repeticiones e identifique cómo la interfaz le avisa si comete un error."*
+3. **Tarea de Flujo 3 (Motivación):** *"Al finalizar su rutina, busque la pantalla donde pueda verificar si ha mejorado sus rangos de movimiento en comparación con los días anteriores para evaluar su progreso acumulado."*
+
+#### Banco de Preguntas para el Segmento:
+* **Preguntas Durante la Interacción (Mobile App):**
+    1. Al intentar conectar los sensores en la sección "Mi Dispositivo", ¿el estado de la conexión fue evidente o le generó incertidumbre?
+    2. Durante la simulación de la sesión de terapia, ¿los elementos visuales y de guía le ayudaron a entender cómo realizar el ejercicio o sintió miedo de moverse de forma incorrecta?
+    3. ¿Le resulta clara la forma en que se estructuran las repeticiones y las series en la pantalla activa?
+* **Preguntas de Cierre (Validación):**
+    4. ¿Considera que podría colocarse los sensores y usar esta aplicación diariamente en su casa sin necesidad de que un familiar lo ayude?
+    5. ¿La pantalla de "Historial de Progreso" (gráficos de evolución) le motiva a continuar con el tratamiento o prefiere que solo se guarden los datos para el médico?
+    6. ¿Qué opina sobre la legibilidad de los textos y colores de la aplicación? ¿Le gustaría que tuviera una opción de modo oscuro/claro?
+
+### 6.3.2. Registro de Entrevistas
+
+
+
+
+### 6.3.3. Evaluaciones según heurísticas
+
+#### UX Heuristics & Principles Evaluation
+#### Usability – Inclusive Design – Information Architecture
+
+**CARRERA** : Ingeniería de Software
+
+**CURSO** : Desarrollo de Soluciones IoT
+
+**NRC** : 17755
+
+**PROFESOR** : Marco Antonio León Baca
+
+**AUDITOR** : KinIoT
+
+**CLIENTES** : [...]
+
+#### SITE o APP A EVALUAR:
+
+**uFlex**
+
+#### TAREAS A EVALUAR:
+
+El alcance de esta evaluación incluye la revisión de usabilidad de las siguientes tareas:
+
+**Landing Page**:
+1. Navegación responsiva a través de secciones informativas (Hero, Beneficios, Cómo Funciona, Arquitectura, Testimonios).
+2. Uso del sistema de internacionalización (i18n) para el cambio de idioma de la interfaz.
+3. Consulta de los planes de suscripción (esquema B2B híbrido) y redirección al formulario de registro.
+4. Envío del formulario de la sección de contacto.
+
+**Web Application**:
+1. Flujo completo de Onboarding B2B para el Administrador de la clínica (Sign Up, selección de plan, pasarela de pago simulada y Sign In).
+2. Gestión del ecosistema clínico por parte del Administrador (alta de fisioterapeutas, pacientes y administración del catálogo institucional de ejercicios).
+3. Monitoreo y control del inventario/estado de los Kits IoT de la organización por el Administrador.
+4. Consulta visual del módulo de terapias y evolución biomecánica (arcos de movilidad/ROM) por parte del Fisioterapeuta.
+5. Prescripción y asignación de planes de tratamiento utilizando el catálogo existente, vinculando un Kit IoT específico a un paciente.
+6. Interactividad del sistema i18n y cambio dinámico entre los temas visuales claro y oscuro en ambos roles.
+
+**Mobile Application**:
+1. Inicio de sesión del paciente (Sign In) con credenciales preestablecidas.
+2. Consulta de la pantalla principal y navegación hacia la sección "Mi Plan de Tratamiento".
+3. Vinculación y verificación de la conectividad Bluetooth del Kit IoT en la sección de estado del dispositivo.
+4. Ejecución guiada de la sesión de terapia activa diaria, con visualización de rangos y retroalimentación en tiempo real.
+5. Acceso y visualización del historial de progreso y curvas de recuperación articular.
+
+#### FUERA DE ALCANCE:
+
+No están incluidas en esta versión de la evaluación las siguientes tareas:
+
+**Landing Page**
+1. Redes sociales asociadas a la startup.
+2. Política de privacidad y condiciones de uso.
+3. Pasarela de facturación real o emisión de comprobantes de pago electrónicos.
+
+**Web Application**
+1. Gestión avanzada o edición del estado de la suscripción (limitado visualmente al plan actual).
+2. Procesos de liquidación financiera masiva o reportes contables del centro de salud.
+3. Modificación avanzada de perfiles de usuario ajenos o auditoría de accesos.
+4. Descarga de reportes clínicos exportables en formatos externos (PDF/Excel).
+
+**Mobile Applications**
+1. Recuperación de contraseña.
+2. Política de privacidad y condiciones de uso.
+3. Reportes de bugs.
+4. Configuraciones generales del sistema del dispositivo (permisos de sistema a nivel de sistema operativo que excedan el Bluetooth interno).
+5. Configuración explícita de i18n y modo oscuro/claro (pendiente de definición en la etapa móvil actual).
+
+#### ESCALA DE SEVERIDAD:
+
+| Nivel   | Descripción                                                                                                                                                                                         |
+|---------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 1       | **Problema superficial**: puede ser fácilmente superador por el usuario o ocurre con muy poca frecuencia. No necesita ser arreglado a no ser que exista disponibilidad de tiempo.                   |
+| 2       | **Problema menor**: puede ocurrir un poco más frecuentemente o es un poco más difícil de superar para el usuario. Se le debería asignar una prioridad baja resolverlo de cara al siguiente reléase. |
+| 3       | **Problema mayor**: ocurre frecuentemente o los usuarios no son capaces de resolverlos. Es importante que sean corregidos y se les debe asignar una prioridad alta.                                 |
+| 4       | **Problema muy grave**: un error de gran impacto que impide al usuario continuar con el uso de la herramienta. Es imperativo que sea corregido antes del lanzamiento.                               |
+
+#### TABLA RESUMEN:
+
+#### **Landing Page**
+
+| # | Problema | Escala de severidad | Heurística/ Principio Violado |
+| - |----------|---------------------|-------------------------------|
+| 1 | ...      | ...                 | ...                           |
+
+**DESCRIPCIÓN DE PROBLEMAS:**
+
+**PROBLEMA #X:** ...
+
+**Severidad: ...**  
+**Heurística violada:** ...
+
+**Problema:**
+...
+
+![Captura](captura)
+
+**Recomendación:**
+...
+
+#### **Web Application**
+
+| # | Problema | Escala de severidad | Heurística/ Principio Violado |
+| - |----------|---------------------|-------------------------------|
+| 1 | ...      | ...                 | ...                           |
+
+**DESCRIPCIÓN DE PROBLEMAS:**
+
+**PROBLEMA #X:** ...
+
+**Severidad: ...**  
+**Heurística violada:** ...
+
+**Problema:**
+...
+
+![Captura](captura)
+
+**Recomendación:**
+...
+
+#### **Mobile Application**
+
+| # | Problema | Escala de severidad | Heurística/ Principio Violado |
+| - |----------|---------------------|-------------------------------|
+| 1 | ...      | ...                 | ...                           |
+
+**DESCRIPCIÓN DE PROBLEMAS:**
+
+**PROBLEMA #X:** ...
+
+**Severidad: ...**  
+**Heurística violada:** ...
+
+**Problema:**
+...
+
+![Captura](captura)
+
+**Recomendación:**
+...
+
+<hr class="page-break">
+
+## 6.4. Video About-the-Product
+
+A continuación se presenta el video About the product, que empieza desde el aterrizaje del usuario en la landing page, hasta el uso y presentación de la aplicación.  
+![Video About the Product](./assets/images/screenshots/about-the-product-screenshot.png)
+
+Enlace al video about the product: [link](https://youtu.be/Mzj2mZpZhKc)
+    
 <hr class="page-break">
 
 # Conclusiones
