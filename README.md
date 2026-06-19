@@ -57,25 +57,30 @@
 
 # Registro de Versiones del Informe
 
-| Version | Fecha      | Autor                                 | Descripción de modificación                                                    |
-|---------|------------|---------------------------------------|--------------------------------------------------------------------------------|
-| 1.0.0   | 2026-04-04 | Ramirez Mestanza, Salim Ignacio       | Creación de estructura base, carátula y registro de versiones.                 |
-| 1.1.0   | 2026-04-05 | Varela Bustinza, Marcelo Alessandro   | Redacción de Capítulo I: Startup Profile y Solution Profile (Lean UX).         |
-| 1.2.0   | 2026-04-07 | Sulca Gonzales, Paúl Fernando         | Desarrollo de Capítulo II: Requirements Elicitation & Analysis.                |
-| 1.3.0   | 2026-04-10 | Crispín Ramos, Daniel Franco          | Desarrollo de Capítulo III: Requirements Specification.                        |
-| 1.4.0   | 2026-04-13 | Rivera Sosa, Eduardo Gael             | Desarrollo de Capítulo IV: Strategic DDD y Software Architecture.              |
-| 1.5.1   | 2026-04-16 | Varela Bustinza, Marcelo Alessandro   | Desarrollo Tactical DDD del Bounded Context: Organization.                     |
-| 1.5.2   | 2026-04-16 | Rivera Sosa, Eduardo Gael             | Desarrollo Tactical DDD del Bounded Context: IAM y Subscription.               |
-| 1.5.3   | 2026-04-19 | Crispín Ramos, Daniel Franco          | Desarrollo Tactical DDD del Bounded Context: Device.                           |
-| 1.5.4   | 2026-04-21 | Ramirez Mestanza, Salim Ignacio       | Desarrollo Tactical DDD del Bounded Context: Planning.                         |
-| 1.5.5   | 2026-04-22 | Sulca Gonzales, Paúl Fernando         | Desarrollo Tactical DDD del Bounded Context: Therapy.                          |
-| 1.6.0   | 2026-04-23 | Ramirez Mestanza, Salim Ignacio       | Integración de Student Outcome, Conclusiones (avance) y Bibliografía para AV1. |
-| 2.0.0   | 2026-05-13 | Crispín Ramos, Daniel Franco          | Mejora continua y corrección de errores del AV1.                               |
-| 2.0.1   | 2026-05-13 | Ramirez Mestanza, Salim Ignacio       | Style Guidelines, Information Architecture y IoT Device Design.                |
-| 2.0.2   | 2026-05-13 | Rivera Sosa, Eduardo Gael             | Application UX-UI Web                                                          |
-| 2.0.3   | 2026-05-13 | Sulca Gonzales, Paúl Fernando         | Application UX-UI Móvil                                                        |
-| 2.0.4   | 2026-05-13 | Varela Bustinza, Marcelo Alessandro   | Software Configuration Management, Landing Page, Sprint 1 evidence.            |
-| 2.0.5   | 2026-05-13 | Ramirez Mestanza, Salim Ignacio       | Integración de Student Outcome, Conclusiones (avance) y Bibliografía para TB1. |
+| Version | Fecha      | Autor                               | Descripción de modificación                                                                                                                                  |
+|---------|------------|-------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 1.0.0   | 2026-04-04 | Ramirez Mestanza, Salim Ignacio     | Creación de estructura base, carátula y registro de versiones.                                                                                               |
+| 1.1.0   | 2026-04-05 | Varela Bustinza, Marcelo Alessandro | Redacción de Capítulo I: Startup Profile y Solution Profile (Lean UX).                                                                                       |
+| 1.2.0   | 2026-04-07 | Sulca Gonzales, Paúl Fernando       | Desarrollo de Capítulo II: Requirements Elicitation & Analysis.                                                                                              |
+| 1.3.0   | 2026-04-10 | Crispín Ramos, Daniel Franco        | Desarrollo de Capítulo III: Requirements Specification.                                                                                                      |
+| 1.4.0   | 2026-04-13 | Rivera Sosa, Eduardo Gael           | Desarrollo de Capítulo IV: Strategic DDD y Software Architecture.                                                                                            |
+| 1.5.1   | 2026-04-16 | Varela Bustinza, Marcelo Alessandro | Desarrollo Tactical DDD del Bounded Context: Organization.                                                                                                   |
+| 1.5.2   | 2026-04-16 | Rivera Sosa, Eduardo Gael           | Desarrollo Tactical DDD del Bounded Context: IAM y Subscription.                                                                                             |
+| 1.5.3   | 2026-04-19 | Crispín Ramos, Daniel Franco        | Desarrollo Tactical DDD del Bounded Context: Device.                                                                                                         |
+| 1.5.4   | 2026-04-21 | Ramirez Mestanza, Salim Ignacio     | Desarrollo Tactical DDD del Bounded Context: Planning.                                                                                                       |
+| 1.5.5   | 2026-04-22 | Sulca Gonzales, Paúl Fernando       | Desarrollo Tactical DDD del Bounded Context: Therapy.                                                                                                        |
+| 1.6.0   | 2026-04-23 | Ramirez Mestanza, Salim Ignacio     | Integración de Student Outcome, Conclusiones (avance) y Bibliografía para AV1.                                                                               |
+| 2.0.0   | 2026-05-13 | Crispín Ramos, Daniel Franco        | Mejora continua y corrección de errores del AV1.                                                                                                             |
+| 2.0.1   | 2026-05-13 | Ramirez Mestanza, Salim Ignacio     | Style Guidelines, Information Architecture y IoT Device Design.                                                                                              |
+| 2.0.2   | 2026-05-13 | Rivera Sosa, Eduardo Gael           | Application UX-UI Web                                                                                                                                        |
+| 2.0.3   | 2026-05-13 | Sulca Gonzales, Paúl Fernando       | Application UX-UI Móvil                                                                                                                                      |
+| 2.0.4   | 2026-05-13 | Varela Bustinza, Marcelo Alessandro | Software Configuration Management, Landing Page, Sprint 1 evidence.                                                                                          |
+| 2.0.5   | 2026-05-13 | Ramirez Mestanza, Salim Ignacio     | Integración de Student Outcome, Conclusiones (avance) y Bibliografía para TB1.                                                                               |
+| 3.0.0   | 2026-06-19 | Ramirez Mestanza, Salim Ignacio     | Planificación y gestión de Sprint n (Sprint Planning, Aspect Leaders, Sprint Backlog y Team Collaboration Insights).                                         |
+| 3.0.1   | 2026-06-19 | Crispín Ramos, Daniel Franco        | Documentación de Development Evidence y Services Documentation Evidence para el Sprint Review.                                                               |
+| 3.0.2   | 2026-06-19 | Sulca Gonzales, Paúl Fernando       | Desarrollo y registro de Testing Suite Evidence y Execution Evidence para el Sprint Review.                                                                  |
+| 3.0.3   | 2026-06-19 | Rivera Sosa, Eduardo Gael           | Despliegue de software y documentación de Software Deployment Evidence para el Sprint Review.                                                                |
+| 3.0.4   | 2026-06-19 | Varela Bustinza, Marcelo Alessandro | Desarrollo de sección 6.3 Validation Interviews (Diseño, Registro, Heurísticas), elaboración del Video About-the-Product e integración final del entregable. |
 
 <hr class="page-break">
 
@@ -200,6 +205,56 @@ El siguiente gráfico muestra la cantidad de commits realizados en la semana con
 Análisis de cantidad de commits realizados por semana.
 
 ![Insights - Commits](./assets/images/screenshots/sprint-1/insights-commits.png)
+
+</div>
+
+<hr class="page-break">
+
+## AV2
+
+**Tareas**
+
+Para el desarrollo del AV2, cada participante del equipo realizó las siguientes tareas:
+
+| Integrantes                         | Tarea asignada                                                                                                       |
+|-------------------------------------|----------------------------------------------------------------------------------------------------------------------|
+| Ramirez Mestanza, Salim Ignacio     | - Deployment Evidence <br> - Execution Evidence <br> - Validation Interviews <br> - Aspect Leaders and Collaborators |
+| Sulca Gonzales, Paúl Fernando       | - Sprint Planning 2 <br> - Validation Interviews <br> - Services Documentation <br> - Diseño de Entrevistas          |
+| Crispin Ramos, Daniel Franco        | - Sprint Backlog 2 <br> - Validation Interviews <br> - Team Collaboration Insights <br> - Video About-the-Product    |
+| Varela Bustinza, Marcelo Alessandro | - Testing Suite Evidence <br> - Execution Evidence <br> - Validation Interviews <br> - Evaluación Según Heurísticas  |
+| Rivera Sosa, Eduardo Gael           | - Development Evidence <br> - Testing Suite Evidence <br> - Execution Evidence <br> - Deployment Evidence            |
+
+**GitHub Collaboration Insights**
+
+En GitHub se presenta un timeline de las principales ramas creadas por cada integrante del equipo, así como los procesos de merge realizados.  
+Todas las ramas fueron gestionadas siguiendo el flujo de trabajo **GitFlow**, adaptado para una organización que utiliza un sistema de control de versiones.
+
+<div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
+
+Gráfico de red (*network graph*) de ramas en el repositorio de GitHub.
+
+![Insights - Network Graph](./assets/images/screenshots/sprint-2/insights-network-graph.png)
+
+</div>
+
+A continuación, se presentan los gráficos que muestran el análisis de los commits en el repositorio correspondiente al informe.  
+Estos gráficos detallan la cantidad de líneas de código añadidas por cada miembro del equipo y la actividad de commits registrada.
+
+<div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
+
+Análisis de líneas de código añadidas por contribuyente.
+
+![Insights - Contributors](./assets/images/screenshots/sprint-2/insights-contributor.png)
+
+</div>
+
+El siguiente gráfico muestra la cantidad de commits realizados en la semana con mayor actividad en el proyecto.
+
+<div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
+
+Análisis de cantidad de commits realizados por semana.
+
+![Insights - Commits](./assets/images/screenshots/sprint-2/insights-commits.png)
 
 </div>
 
@@ -394,33 +449,39 @@ En el siguiente cuadro se describe las acciones realizadas y enunciados de concl
       <td>
         <strong>Crispin Ramos, Daniel Franco</strong><br>
         <b>AV1:</b> Lideré la ejecución del Needfinding y la elaboración del Impact Mapping, articulando las necesidades del usuario con los objetivos de negocio. Asumí la responsabilidad del diseño estratégico Context Mapping y el desarrollo táctico DDD del Bounded Context Device. Participé activamente en las sesiones de EventStorming, guiando la delimitación de contextos y validando las interacciones estratégicas del sistema.<br><br>
-        <b>TB1:</b> Lideré el diseño UI/UX de la aplicación móvil del paciente, asegurando la coherencia visual con el Design System y guiando al equipo en la adopción de patrones de diseño inclusivo. Coordiné con los desarrolladores para traducir los wireframes en interfaces funcionales en el módulo Organization de la Web Application, demostrando liderazgo técnico en la integración de diseño y desarrollo.
+        <b>TB1:</b> Lideré el diseño UI/UX de la aplicación móvil del paciente, asegurando la coherencia visual con el Design System y guiando al equipo en la adopción de patrones de diseño inclusivo. Coordiné con los desarrolladores para traducir los wireframes en interfaces funcionales en el módulo Organization de la Web Application, demostrando liderazgo técnico en la integración de diseño y desarrollo.<br><br>
+        <b>AV2:</b> Lideré la supervisión técnica y consistencia de las interfaces de usuario web y móvil frente al Design System de uFlex, coordinando la revisión de las heurísticas de Nielsen durante las pruebas de usabilidad. Guié al equipo en la priorización de los cambios técnicos requeridos en el Frontend tras las entrevistas de validación.
       </td>
       <td rowspan="5">
         <b>AV1:</b> Durante el desarrollo del AV1, que abarcó desde el perfil de la startup hasta el diseño de la solución de software, hemos aprendido que el liderazgo no recae en una sola persona sino que se ejerce de forma conjunta. Cada integrante tomó la conducción de las secciones en las que tenía mayor dominio y al mismo tiempo apoyó activamente al resto, lo que nos permitió avanzar de manera paralela sin perder coherencia. Actividades transversales como el EventStorming evidenciaron que compartir el liderazgo fortalece la calidad de las decisiones y nos ayuda a alinear el rumbo del proyecto como equipo.
         <br><br>
         <b>TB1:</b> En esta etapa técnica, el liderazgo se manifestó en la capacidad de guiar la implementación del software sin perder la visión estratégica. Aprendimos que el liderazgo técnico implica no solo delegar, sino asegurar la trazabilidad entre lo diseñado y lo construido. La coordinación en la consolidación de evidencias demostró que un liderazgo distribuido permite identificar cuellos de botella rápidamente y mantener la integridad del sistema uFlex.
+        <br><br>
+        <b>AV2:</b> En la entrega del AV2, el liderazgo conjunto se consolidó al pasar de la etapa de diseño de software puro hacia la fase de validación directa con usuarios y despliegue del ecosistema uFlex. Aprendimos que dirigir un proceso de validación heurística y pruebas IoT requiere una sincronización exacta entre frentes de hardware, backend y frontend. El liderazgo distribuido nos permitió procesar el feedback de las entrevistas de forma inmediata para aplicarlo directamente en las mejoras del producto sin retrasar el ritmo del Sprint.
       </td>
     </tr>
     <tr>
       <td>
         <strong>Ramirez Mestanza, Salim Ignacio</strong><br>
         <b>AV1:</b> Lideré la elaboración de las User Stories del proyecto, estructurando los requerimientos funcionales y sus criterios de aceptación para mantener coherencia entre los módulos. Además, apoyé activamente en el Design-Level EventStorming para alinear decisiones de dominio con el equipo y desarrollé el Domain Message Flows Modeling, integrando los eventos y mensajes clave entre bounded contexts.<br><br>
-        <b>TB1:</b> Lideré la gestión del Product Backlog y el Sprint Backlog del TB1, asegurando que cada User Story tuviera criterios de aceptación claros y estuviera vinculada correctamente a los Issues de GitHub. Coordiné con el equipo la definición de los Acceptance Tests y supervisé la implementación de la lógica de dominio en el backend para mantener la integridad de los flujos de mensajes diseñados previamente. Facilité la comunicación entre los encargados de frontend y backend para asegurar que la integración de servicios cumpliera con las expectativas del negocio.
+        <b>TB1:</b> Lideré la gestión del Product Backlog y el Sprint Backlog del TB1, asegurando que cada User Story tuviera criterios de aceptación claros y estuviera vinculada correctamente a los Issues de GitHub. Coordiné con el equipo la definición de los Acceptance Tests y supervisé la implementación de la lógica de dominio en el backend para mantener la integridad de los flujos de mensajes diseñados previamente. Facilites la comunicación entre los encargados de frontend y backend para asegurar que la integración de servicios cumpliera con las expectativas del negocio.<br><br>
+        <b>AV2:</b> Lideré la planificación e integración de la arquitectura de la información, el diseño físico del dispositivo IoT y los lineamientos de estilo de la marca. Asimismo, asumí la dirección y edición del video "About-the-Product", coordinando con cada integrante sus participaciones para asegurar una explicación clara y profesional del valor comercial e ingenieril de uFlex.
       </td>
     </tr>
     <tr>
       <td>
         <strong>Rivera Sosa, Eduardo Gael</strong><br>
         <b>AV1:</b> Lideré el diseño de la arquitectura de software de uFlex elaborando los diagramas Landscape, Context, Container y Deployment. Facilité junto al equipo el Design-Level EventStorming, guiando las decisiones sobre eventos y bounded contexts. También dirigí el análisis competitivo y las estrategias frente a competidores, consolidando los aportes del equipo en un entregable coherente.<br><br>
-        <b>TB1:</b> Lideré la consolidación de la evidencia técnica del Sprint Review del TB1 articulando los aportes del equipo en seis frentes: <em>Development Evidence</em>, <em>Testing Suite Evidence</em>, <em>Execution Evidence</em>, <em>Services Documentation</em>, <em>Software Deployment Evidence</em> y <em>Team Collaboration Insights</em>. Coordiné con cada integrante para integrar sus aportes en un entregable unificado, asegurando trazabilidad entre las historias del Sprint Backlog y la implementación efectiva.
+        <b>TB1:</b> Lideré la consolidación de la evidencia técnica del Sprint Review del TB1 articulando los aportes del equipo en seis frentes: <em>Development Evidence</em>, <em>Testing Suite Evidence</em>, <em>Execution Evidence</em>, <em>Services Documentation</em>, <em>Software Deployment Evidence</em> y <em>Team Collaboration Insights</em>. Coordiné con cada integrante para integrar sus aportes en un entregable unificado, asegurando trazabilidad entre las historias del Sprint Backlog y la implementación efectiva.<br><br>
+        <b>AV2:</b> Lideré la consolidación integral del reporte técnico y de evidencias del Sprint 2, garantizando el correcto versionamiento de los servicios backend desplegados y la vinculación de evidencias en entornos de producción. Dirigí la revisión de la documentación de endpoints y coordiné con el equipo el análisis de métricas de colaboración interna en GitHub durante el ciclo de desarrollo.
       </td>
     </tr>
     <tr>
       <td>
         <strong>Sulca Gonzales, Paúl Fernando</strong><br>
         <b>AV1:</b> Lideré y facilité actividades de análisis centradas en el usuario, incluyendo la elaboración de entrevistas, User Task Matrix, User Journey Mapping y Empathy Mapping, articulando los aportes del equipo para convertirlos en insumos de diseño consistentes. Además, participé activamente en Big Picture Event Storming y Candidate Context Discovery para alinear decisiones de dominio y delimitar bounded contexts con enfoque estratégico.<br><br>
-        <b>TB1:</b> Coordiné en equipo las secciones de Software Configuration Management y la planificación del Sprint 1, promoviendo liderazgo compartido y alineando criterios técnicos y de contenido con el resto del equipo.
+        <b>TB1:</b> Coordiné en equipo las secciones de Software Configuration Management y la planificación del Sprint 1, promoviendo liderazgo compartido y alineando criterios técnicos y de contenido con el resto del equipo.<br><br>
+        <b>AV2:</b> Lideré la fase de validación con usuarios reales mediante la estructuración, diseño y registro de las entrevistas de validación. Coordiné las sesiones de testing de usabilidad y consolidé las matrices de feedback e insights obtenidos, guiando la posterior evaluación del sistema uFlex mediante heurísticas de interfaz para asegurar la mejora continua.
       </td>
     </tr>
     <tr>
@@ -436,33 +497,39 @@ En el siguiente cuadro se describe las acciones realizadas y enunciados de concl
       <td>
         <strong>Crispin Ramos, Daniel Franco</strong><br>
         <b>AV1:</b> Planifiqué y cumplí con los entregables de análisis y diseño asignados, coordinando con el equipo la priorización de las actividades dentro del Bounded Context Device. Mi participación activa en las sesiones de EventStorming y en la validación de diagramas tácticos facilitó el consenso técnico y aseguró que los aportes del equipo se integraran correctamente dentro de los plazos del AV1.<br><br>
-        <b>TB1:</b> Planifiqué las tareas de diseño UI/UX estableciendo metas claras y plazos para el desarrollo de wireframes, mockups y prototipos. Cumplí con los objetivos asignados manteniendo un entorno colaborativo con los desarrolladores frontend, facilitando la comunicación para lograr la correcta implementación de las interfaces diseñadas.
+        <b>TB1:</b> Planifiqué las tareas de diseño UI/UX estableciendo metas claras y plazos para el desarrollo de wireframes, mockups y prototipos. Cumplí con los objetivos asignados manteniendo un entorno colaborativo con los desarrolladores frontend, facilitando la comunicación para lograr la correcta implementación de las interfaces diseñadas.<br><br>
+        <b>AV2:</b> Planifiqué y ejecuté las metas de desarrollo asociadas a la fidelidad del prototipo UI/UX, cumpliendo a tiempo con la entrega del diseño e interacción de las pantallas críticas de uFlex. Fomenté un entorno colaborativo al resolver dudas técnicas con los encargados del desarrollo móvil y web, asegurando el cumplimiento de los estándares de usabilidad requeridos.
       </td>
       <td rowspan="5">
         <b>AV1:</b> A lo largo del AV1 hemos logrado cubrir todo el alcance planificado, desde la definición de la startup y el análisis del problema hasta el diseño completo de la solución de software. Para conseguirlo establecimos metas claras por capítulo, distribuimos las tareas según las fortalezas de cada integrante y realizamos revisiones constantes para mantener el avance alineado. Creemos que el entorno colaborativo e inclusivo que construimos fue clave: cada propuesta fue discutida en conjunto y los entregables finales reflejan aportes de todo el equipo, cumpliendo los objetivos acordados en los plazos previstos.
         <br><br>
         <b>TB1:</b> El cumplimiento del Sprint Goal fue posible gracias a una planificación rigurosa de tareas en GitHub y la flexibilidad para ajustar la arquitectura de forma consensuada. Mantuvimos un entorno inclusivo donde la revisión de código y la documentación técnica fueron responsabilidades compartidas, lo que garantizó que todos los integrantes estuvieran alineados con el despliegue final y la calidad de las pruebas.
+        <br><br>
+        <b>AV2:</b> Durante el AV2 demostramos madurez en la gestión ágil del equipo mediante el uso riguroso de tableros de control de tareas en GitHub. El entorno colaborativo permitió una óptima sincronización cruzada entre las metas de desarrollo de software y las de investigación empírica (entrevistas y validación heurística). El cumplimiento puntual del Sprint Goal y de la documentación técnica se logró gracias a revisiones internas constantes, asegurando la inclusión y el refinamiento de los aportes de cada miembro sobre el producto final.
       </td>
     </tr>
     <tr>
       <td>
         <strong>Ramirez Mestanza, Salim Ignacio</strong><br>
         <b>AV1:</b> Planifiqué y entregué en los plazos acordados las secciones a mi cargo, especialmente la definición de User Stories y el Domain Message Flows Modeling. Participé de forma activa en el Design-Level EventStorming como espacio colaborativo, incorporando los aportes del equipo para mantener metas comunes, una coordinación inclusiva y el cumplimiento de los objetivos del AV1.<br><br>
-        <b>TB1:</b> Planifiqué y ejecuté la migración de los requerimientos del AV1 hacia el entorno de desarrollo, definiendo las metas de cada historia de usuario dentro del Sprint. Cumplí con la entrega de los reportes de pruebas unitarias y de integración, garantizando que el software cumpliera con los estándares de calidad antes del Sprint Review. Promoví un entorno inclusivo mediante la revisión técnica por pares, brindando soporte a mis compañeros en la resolución de conflictos de código y asegurando que los objetivos técnicos del TB1 se alcanzaran puntualmente.
+        <b>TB1:</b> Planifiqué y ejecuté la migración de los requerimientos del AV1 hacia el entorno de desarrollo, definiendo las metas de cada historia de usuario dentro del Sprint. Cumplí con la entrega de los reportes de pruebas unitarias y de integración, garantizando que el software cumpliera con los estándares de calidad antes del Sprint Review. Promoví un entorno inclusivo mediante la revisión técnica por pares, brindando soporte a mis compañeros en la resolución de conflictos de código y asegurando que los objetivos técnicos del TB1 se alcanzaran puntualmente.<br><br>
+        <b>AV2:</b> Planifíquie y cumplí en los plazos establecidos los objetivos de diseño del hardware del dispositivo IoT junto con las guías de estilos de interfaz de uFlex. Aseguré un entorno de trabajo colaborativo e inclusivo durante la estructuración y guionaje del video del producto, brindando un espacio abierto para que todos aporten de manera equitativa e integrada.
       </td>
     </tr>
     <tr>
       <td>
         <strong>Rivera Sosa, Eduardo Gael</strong><br>
         <b>AV1:</b> Planifiqué y entregué en los plazos acordados las secciones a mi cargo: segmentos objetivo, análisis competitivo, estrategias frente a competidores, user personas y la arquitectura de software con sus diagramas. Participé activamente en el Design-Level EventStorming como actividad colaborativa, asegurando que los aportes de todos los integrantes se reflejaran en el diseño final.<br><br>
-        <b>TB1:</b> Planifiqué y entregué dentro de los plazos del Sprint las secciones de evidencia a mi cargo, distribuyendo subtareas claras por integrante y haciendo seguimiento de su avance. Mantuve un entorno colaborativo e inclusivo durante el Sprint: revisé los aportes de cada miembro, integré sus capturas y commits a la documentación, y propicié ajustes consensuados cumpliendo los objetivos del Sprint Goal.
+        <b>TB1:</b> Planifiqué y entregué dentro de los plazos del Sprint las secciones de evidencia a mi cargo, distribuyendo subtareas claras por integrante y haciendo seguimiento de su avance. Mantuve un entorno colaborativo e inclusivo durante el Sprint: revisé los aportes de cada miembro, integré sus capturas y commits a la documentación, y propicié ajustes consensuados cumpliendo los objetivos del Sprint Goal.<br><br>
+        <b>AV2:</b> Establecí metas de control e integración técnica diaria en los repositorios de GitHub. Logré un entorno de revisión inclusivo donde cada miembro pudo validar el estado de los despliegues de la aplicación uFlex, cumpliendo eficientemente con los objetivos de documentación del Sprint Review y asegurando transparencia absoluta en los registros de colaboración.
       </td>
     </tr>
     <tr>
       <td>
         <strong>Sulca Gonzales, Paúl Fernando</strong><br>
         <b>AV1:</b> Planifiqué y cumplí los entregables asignados en las etapas de investigación y modelado del dominio, coordinando con el equipo la priorización de tareas para mantener el avance del AV1 dentro de los plazos. Mi participación en la definición de bounded contexts y en el diseño táctico DDD contribuyó a consolidar un entorno de trabajo colaborativo, ordenado e inclusivo orientado al cumplimiento de objetivos.<br><br>
-        <b>TB1:</b> Organicé y completé los apartados de Software Configuration Management y la documentación de Sprint 1, estableciendo metas claras, distribuyendo tareas y asegurando coherencia entre backlog, liderazgo y alcance acordado.
+        <b>TB1:</b> Organicé y completé los apartados de Software Configuration Management y la documentación de Sprint 1, estableciendo metas claras, distribuyendo tareas y asegurando coherencia entre backlog, liderazgo y alcance acordado.<br><br>
+        <b>AV2:</b> Planifiqué detalladamente los objetivos y el cronograma para la ejecución de las entrevistas de validación. Fomenté un entorno inclusivo al convocar al equipo para analizar en conjunto las métricas y los hallazgos de las pruebas de usabilidad, logrando que el mapeo de heurísticas reflejara una visión consensuada del equipo y se cumplieran los objetivos del entregable en los tiempos fijados.
       </td>
     </tr>
     <tr>
@@ -9968,7 +10035,7 @@ Incorporar progresivamente opciones de idioma y tema visual en la configuración
 A continuación se presenta el video About the product, que empieza desde el aterrizaje del usuario en la landing page, hasta el uso y presentación de la aplicación.  
 ![Video About the Product](./assets/images/screenshots/about-the-product-screenshot.png)
 
-Enlace al video about the product: [link](https://youtu.be/Mzj2mZpZhKc)
+Enlace al video about the product: [https://youtu.be/Mzj2mZpZhKc](https://youtu.be/Mzj2mZpZhKc)
     
 <hr class="page-break">
 
