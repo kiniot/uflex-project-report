@@ -205,6 +205,56 @@ Análisis de cantidad de commits realizados por semana.
 
 <hr class="page-break">
 
+## AV2
+
+**Tareas**
+
+Para el desarrollo del AV2, cada participante del equipo realizó las siguientes tareas:
+
+| Integrantes                         | Tarea asignada                                                                                                       |
+|-------------------------------------|----------------------------------------------------------------------------------------------------------------------|
+| Ramirez Mestanza, Salim Ignacio     | - Deployment Evidence <br> - Execution Evidence <br> - Validation Interviews <br> - Aspect Leaders and Collaborators |
+| Sulca Gonzales, Paúl Fernando       | - Sprint Planning 2 <br> - Validation Interviews <br> - Services Documentation <br> - Diseño de Entrevistas          |
+| Crispin Ramos, Daniel Franco        | - Sprint Backlog 2 <br> - Validation Interviews <br> - Team Collaboration Insights <br> - Video About-the-Product    |
+| Varela Bustinza, Marcelo Alessandro | - Testing Suite Evidence <br> - Execution Evidence <br> - Validation Interviews <br> - Evaluación Según Heurísticas  |
+| Rivera Sosa, Eduardo Gael           | - Development Evidence <br> - Testing Suite Evidence <br> - Execution Evidence <br> - Deployment Evidence            |
+
+**GitHub Collaboration Insights**
+
+En GitHub se presenta un timeline de las principales ramas creadas por cada integrante del equipo, así como los procesos de merge realizados.  
+Todas las ramas fueron gestionadas siguiendo el flujo de trabajo **GitFlow**, adaptado para una organización que utiliza un sistema de control de versiones.
+
+<div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
+
+Gráfico de red (*network graph*) de ramas en el repositorio de GitHub.
+
+![Insights - Network Graph](./assets/images/screenshots/sprint-2/insights-network-graph.png)
+
+</div>
+
+A continuación, se presentan los gráficos que muestran el análisis de los commits en el repositorio correspondiente al informe.  
+Estos gráficos detallan la cantidad de líneas de código añadidas por cada miembro del equipo y la actividad de commits registrada.
+
+<div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
+
+Análisis de líneas de código añadidas por contribuyente.
+
+![Insights - Contributors](./assets/images/screenshots/sprint-2/insights-contributor.png)
+
+</div>
+
+El siguiente gráfico muestra la cantidad de commits realizados en la semana con mayor actividad en el proyecto.
+
+<div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
+
+Análisis de cantidad de commits realizados por semana.
+
+![Insights - Commits](./assets/images/screenshots/sprint-2/insights-commits.png)
+
+</div>
+
+<hr class="page-break">
+
 # Contenido
 
 - [Capítulo I: Introducción](#capítulo-i-introducción)
@@ -9569,7 +9619,7 @@ No están incluidas en esta versión de la evaluación las siguientes tareas:
 A continuación se presenta el video About the product, que empieza desde el aterrizaje del usuario en la landing page, hasta el uso y presentación de la aplicación.  
 ![Video About the Product](./assets/images/screenshots/about-the-product-screenshot.png)
 
-Enlace al video about the product: [link](https://youtu.be/Mzj2mZpZhKc)
+Enlace al video about the product: [https://youtu.be/Mzj2mZpZhKc](https://youtu.be/Mzj2mZpZhKc)
     
 <hr class="page-break">
 
