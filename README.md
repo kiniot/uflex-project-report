@@ -1108,7 +1108,7 @@ En esta sección se detallan las estrategias y tácticas que KinIoT aplicará pa
 
 | Atributo                | Detalle                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
 |-------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Nombre**              | Bianca Díaz                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| **Nombre**              | VianKa Díaz                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
 | **Edad**                | 20                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
 | **Sexo**                | Femenino                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 | **Distrito**            | San Juan de Lurigancho                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
@@ -1116,7 +1116,7 @@ En esta sección se detallan las estrategias y tácticas que KinIoT aplicará pa
 | **Fecha de entrevista** | 2026-04-09                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 | **Timing**              | 21:52 - 30:32                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 | **Video**               | [https://goo.su/8EMwBnI](https://goo.su/8EMwBnI)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
-| **Captura**             | ![Captura entrevista Bianca](assets/images/screenshots/patient-interview-screenshot-1.png)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| **Captura**             | ![Captura entrevista Bianca](assets/images/screenshots/patient-interview-screenshot-1-1.png)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
 | **Resumen**             | Paciente joven en proceso de rehabilitación de miembro superior que manifiesta dificultades críticas con la adherencia al tratamiento y la falta de supervisión técnica en el hogar. Su principal barrera es la incertidumbre sobre la ejecución correcta de los ejercicios, lo que genera desmotivación y sensación de estancamiento. Valora positivamente una solución que ofrezca retroalimentación técnica en tiempo real y enfatiza que la usabilidad autónoma —específicamente la facilidad de colocación y uso sin asistencia— es un factor determinante para su adopción. |
 
 **Segmento Pacientes: Entrevistado 2**
@@ -9129,6 +9129,154 @@ Esta evidencia presenta la vista de perfil y gestión administrativa. Desde este
   <figcaption>Figura 30. Vista de perfil institucional y gestión de miembros.</figcaption>
 </figure>
 
+<h4>Mobile Execution Evidence - uFlex Mobile Application</h4>
+
+<p>
+La aplicación móvil de uFlex permite al paciente acceder a su rutina de rehabilitación, sincronizar su sensor IoT, ejecutar ejercicios terapéuticos, reportar la percepción de dolor al finalizar una sesión y revisar su progreso clínico. Las siguientes capturas evidencian el flujo principal desarrollado para el paciente durante el Sprint 2.
+</p>
+
+<h5>Mobile Login Page</h5>
+
+<p>
+Esta captura muestra la pantalla de inicio de sesión de la aplicación móvil de uFlex. Desde esta vista, el paciente puede ingresar sus credenciales para acceder a su plan clínico personalizado.
+</p>
+
+<figure align="center">
+  <img src="assets/execution/31-mobile-login-page.png" alt="Pantalla de inicio de sesión de la aplicación móvil de uFlex" style="width:40%; max-width:320px;">
+  <figcaption>Figura 31. Pantalla de inicio de sesión de la aplicación móvil de uFlex.</figcaption>
+</figure>
+
+<h5>Patient Home Dashboard</h5>
+
+<p>
+Esta evidencia muestra la pantalla principal del paciente. En ella se visualiza el progreso semanal, el porcentaje de avance del plan de rehabilitación y los ejercicios asignados para el día.
+</p>
+
+<figure align="center">
+  <img src="assets/execution/32-mobile-home-dashboard.png" alt="Panel principal del paciente en la aplicación móvil de uFlex" style="width:40%; max-width:320px;">
+  <figcaption>Figura 32. Panel principal del paciente con progreso semanal y ejercicios del día.</figcaption>
+</figure>
+
+<h5>Sensor Device List</h5>
+
+<p>
+Esta captura muestra la sección de dispositivos del paciente. En esta vista se presenta el sensor asignado a la cuenta y su estado de sincronización.
+</p>
+
+<figure align="center">
+  <img src="assets/execution/33-mobile-sensor-device-list.png" alt="Listado de sensor asignado al paciente en uFlex Mobile" style="width:40%; max-width:320px;">
+  <figcaption>Figura 33. Vista del sensor IoT asignado al paciente.</figcaption>
+</figure>
+
+<h5>Sensor Power On Step</h5>
+
+<p>
+Esta evidencia muestra el primer paso del proceso de sincronización del sensor. La aplicación indica al paciente que encienda el dispositivo para iniciar el emparejamiento.
+</p>
+
+<figure align="center">
+  <img src="assets/execution/34-mobile-sensor-power-on-step.png" alt="Primer paso para encender el sensor IoT en uFlex Mobile" style="width:40%; max-width:320px;">
+  <figcaption>Figura 34. Paso inicial para encender el sensor IoT.</figcaption>
+</figure>
+
+<h5>Sensor Connection Progress</h5>
+
+<p>
+Esta captura evidencia el proceso de vinculación del sensor. La aplicación muestra que se está configurando una conexión segura entre el dispositivo móvil y el sensor IoT.
+</p>
+
+<figure align="center">
+  <img src="assets/execution/35-mobile-sensor-connection-progress.png" alt="Proceso de conexión del sensor IoT en uFlex Mobile" style="width:40%; max-width:320px;">
+  <figcaption>Figura 35. Proceso de conexión y sincronización del sensor IoT.</figcaption>
+</figure>
+
+<h5>Sensor Connected Status</h5>
+
+<p>
+Esta evidencia muestra el estado de conexión exitosa del sensor. La aplicación confirma que el dispositivo fue sincronizado correctamente y muestra información asociada al estado de batería.
+</p>
+
+<figure align="center">
+  <img src="assets/execution/36-mobile-sensor-connected-status.png" alt="Sensor IoT conectado correctamente en uFlex Mobile" style="width:40%; max-width:320px;">
+  <figcaption>Figura 36. Confirmación de sensor conectado y sincronizado correctamente.</figcaption>
+</figure>
+
+<h5>Daily Exercises List</h5>
+
+<p>
+Esta captura muestra la lista de ejercicios asignados para el día. Desde esta vista, el paciente puede revisar sus ejercicios terapéuticos e iniciar cada actividad según su rutina.
+</p>
+
+<figure align="center">
+  <img src="assets/execution/37-mobile-daily-exercises-list.png" alt="Lista de ejercicios diarios en uFlex Mobile" style="width:40%; max-width:320px;">
+  <figcaption>Figura 37. Lista de ejercicios terapéuticos asignados al paciente.</figcaption>
+</figure>
+
+<h5>Exercise Preparation Detail</h5>
+
+<p>
+Esta evidencia muestra la pantalla previa al inicio de un ejercicio. En ella se presenta el nombre del ejercicio, número de series, repeticiones, lado del cuerpo y una breve indicación para colocar el sensor correctamente.
+</p>
+
+<figure align="center">
+  <img src="assets/execution/38-mobile-exercise-preparation-detail.png" alt="Detalle de preparación de ejercicio en uFlex Mobile" style="width:40%; max-width:320px;">
+  <figcaption>Figura 38. Detalle de preparación para iniciar el ejercicio de flexión de codo.</figcaption>
+</figure>
+
+<h5>Exercise Correct Movement</h5>
+
+<p>
+Esta captura muestra la ejecución activa del ejercicio cuando el sistema detecta movimiento correcto. La aplicación muestra el avance de repeticiones y permite pausar o finalizar la actividad.
+</p>
+
+<figure align="center">
+  <img src="assets/execution/39-mobile-exercise-correct-movement.png" alt="Ejecución de ejercicio con movimiento correcto en uFlex Mobile" style="width:40%; max-width:320px;">
+  <figcaption>Figura 39. Ejecución del ejercicio con detección de movimiento correcto.</figcaption>
+</figure>
+
+<h5>Exercise Incorrect Posture Alert</h5>
+
+<p>
+Esta evidencia muestra una alerta de postura incorrecta durante la ejecución del ejercicio. La aplicación informa al paciente que debe ajustar su posición para continuar de manera adecuada.
+</p>
+
+<figure align="center">
+  <img src="assets/execution/40-mobile-exercise-incorrect-posture-alert.png" alt="Alerta de postura incorrecta durante ejercicio en uFlex Mobile" style="width:40%; max-width:320px;">
+  <figcaption>Figura 40. Alerta de postura incorrecta durante la ejecución del ejercicio.</figcaption>
+</figure>
+
+<h5>Session Feedback Form</h5>
+
+<p>
+Esta captura muestra el formulario de retroalimentación al finalizar una sesión. El paciente puede indicar cuánto dolor sintió durante la rutina y registrar sensaciones adicionales como fatiga, rigidez o movimiento fluido.
+</p>
+
+<figure align="center">
+  <img src="assets/execution/41-mobile-session-feedback-form.png" alt="Formulario de feedback de sesión en uFlex Mobile" style="width:40%; max-width:320px;">
+  <figcaption>Figura 41. Formulario de retroalimentación posterior a la sesión terapéutica.</figcaption>
+</figure>
+
+<h5>Progress History Dashboard</h5>
+
+<p>
+Esta evidencia muestra el historial de progreso del paciente. La pantalla presenta la evolución del rango de movimiento, el porcentaje de adherencia y la mejora total registrada durante el proceso de rehabilitación.
+</p>
+
+<figure align="center">
+  <img src="assets/execution/42-mobile-progress-history-dashboard.png" alt="Historial de progreso del paciente en uFlex Mobile" style="width:40%; max-width:320px;">
+  <figcaption>Figura 42. Historial de progreso y evolución del rango de movimiento del paciente.</figcaption>
+</figure>
+
+<h5>Mobile Profile Page</h5>
+
+<p>
+Esta captura muestra la vista de perfil del paciente. En esta sección se visualiza información personal y clínica, permitiendo revisar los datos asociados a la cuenta del usuario.
+</p>
+
+<figure align="center">
+  <img src="assets/execution/43-mobile-profile-page.png" alt="Perfil del paciente en la aplicación móvil de uFlex" style="width:40%; max-width:320px;">
+  <figcaption>Figura 43. Vista de perfil del paciente dentro de la aplicación móvil de uFlex.</figcaption>
+</figure>
 
 ##### 6.2.2.7. Services Documentation Evidence for Sprint Review
 
@@ -9482,14 +9630,255 @@ Menú de Navegación -> Consultar Historial de Progreso (Arcos de movimiento log
     5. ¿La pantalla de "Historial de Progreso" (gráficos de evolución) le motiva a continuar con el tratamiento o prefiere que solo se guarden los datos para el médico?
     6. ¿Qué opina sobre la legibilidad de los textos y colores de la aplicación? ¿Le gustaría que tuviera una opción de modo oscuro/claro?
 
+
+
 ### 6.3.2. Registro de Entrevistas
 
+<p>
+En esta sección se presenta el registro de entrevistas de validación realizadas para evaluar la percepción de usuarios potenciales frente al ecosistema uFlex. Las entrevistas fueron organizadas según los perfiles principales del producto: administradores de clínica, fisioterapeutas y pacientes. Para esta entrega, se cuenta con entrevistas a administradores, fisioterapeutas y pacientes, lo que permite validar la experiencia administrativa, clínica y móvil del sistema.
+</p>
 
+<p>
+Las entrevistas permitieron recoger opiniones sobre la Landing Page, la Web Application y la Mobile Application, considerando aspectos como claridad de la propuesta de valor, facilidad de uso, navegación, gestión clínica, visualización de información, sincronización con dispositivos IoT y utilidad del sistema para el seguimiento remoto de terapias de rehabilitación.
+</p>
+
+#### Administradores de clínica
+
+<div style="font-size:75%; overflow-x:auto;">
+  <table border="1" cellspacing="0" cellpadding="5">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Entrevistado</th>
+        <th>Perfil</th>
+        <th>Producto evaluado</th>
+        <th>Link de entrevista</th>
+        <th>Inicio</th>
+        <th>Fin</th>
+        <th>Evidencia</th>
+        <th>Resumen de la entrevista</th>
+        <th>Principales hallazgos</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>Carlos Vega</td>
+        <td>Administrador de clínica</td>
+        <td>Landing Page y Web Application</td>
+        <td><a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u20201e843_upc_edu_pe/IQD_qlYjDzu1TpK41elo6f88AeXg56UeSNZMFSmreYfYCn8?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=3SzTXh">Ver entrevista</a></td>
+        <td>0:00:00</td>
+        <td>0:15:47</td>
+        <td align="center">
+          <img src="assets/images/screenshots/clinic-admin-interview-screenshot-1.png" alt="Evidencia entrevista Carlos Vega" style="width:170px; max-width:170px;">
+          <br>
+          <small>Figura 6.3.2.1. Entrevista a Carlos Vega.</small>
+        </td>
+        <td>
+          Carlos Vega comentó que la Landing Page le pareció atractiva, llamativa y con una presentación profesional. Destacó que la información se encuentra bien estructurada y que es suficiente para comprender la propuesta de valor y los planes ofrecidos. En cuanto a la Aplicación Web, indicó que el proceso de registro, inicio de sesión y selección del plan de suscripción es fácil de seguir, además de considerar que los planes son flexibles.
+        </td>
+        <td>
+          Valoró positivamente la estructura visual, los planes, el cambio de idioma, el modo oscuro y la centralización de dispositivos, ejercicios y terapias en una sola plataforma.
+        </td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Alejandro Torres</td>
+        <td>Administrador de clínica</td>
+        <td>Landing Page y Web Application</td>
+        <td><a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u20201e843_upc_edu_pe/IQD_qlYjDzu1TpK41elo6f88AeXg56UeSNZMFSmreYfYCn8?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=3SzTXh">Ver entrevista</a></td>
+        <td>0:15:47</td>
+        <td>0:39:32</td>
+        <td align="center">
+          <img src="assets/images/screenshots/clinic-admin-interview-screenshot-2.png" alt="Evidencia entrevista Alejandro Torres" style="width:170px; max-width:170px;">
+          <br>
+          <small>Figura 6.3.2.2. Entrevista a Alejandro Torres.</small>
+        </td>
+        <td>
+          Alejandro Torres evaluó positivamente el ecosistema de uFlex, destacando que la Landing Page y la Aplicación Web son intuitivas, fluidas y organizadas. También valoró los ejemplos en los campos de registro, el diseño directo y la inclusión del modo oscuro para reducir el cansancio visual.
+        </td>
+        <td>
+          Sugirió hacer obligatoria la foto de perfil del fisioterapeuta para reforzar el profesionalismo y ampliar el catálogo de ejercicios hacia más partes del cuerpo. También indicó que términos técnicos como firmware pueden resultar complejos para usuarios no especializados.
+        </td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Roberto Jiménez</td>
+        <td>Administrador de clínica</td>
+        <td>Landing Page y Web Application</td>
+        <td><a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u20201e843_upc_edu_pe/IQD_qlYjDzu1TpK41elo6f88AeXg56UeSNZMFSmreYfYCn8?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=3SzTXh">Ver entrevista</a></td>
+        <td>0:39:33</td>
+        <td>1:01:13</td>
+        <td align="center">
+          <img src="assets/images/screenshots/clinic-admin-interview-screenshot-3.png" alt="Evidencia entrevista Roberto Jiménez" style="width:170px; max-width:170px;">
+          <br>
+          <small>Figura 6.3.2.3. Entrevista a Roberto Jiménez.</small>
+        </td>
+        <td>
+          Roberto Jiménez valoró positivamente la Landing Page y la Aplicación Web por ser dinámicas, completas e intuitivas. Destacó la claridad en la sección de beneficios, el detalle de los planes de suscripción y el flujo fluido de registro y pago con tarjeta.
+        </td>
+        <td>
+          Consideró práctico el alta y asignación de fisioterapeutas y pacientes, el registro de dispositivos IoT y ejercicios. Como mejora, propuso añadir un indicador visual en el menú de navegación que muestre la sección actual al desplazarse por la página.
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+#### Fisioterapeutas
+
+<div style="font-size:75%; overflow-x:auto;">
+  <table border="1" cellspacing="0" cellpadding="5">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Entrevistado</th>
+        <th>Perfil</th>
+        <th>Producto evaluado</th>
+        <th>Link de entrevista</th>
+        <th>Inicio</th>
+        <th>Fin</th>
+        <th>Evidencia</th>
+        <th>Resumen de la entrevista</th>
+        <th>Principales hallazgos</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>Gustavo</td>
+        <td>Fisioterapeuta en formación</td>
+        <td>Web Application</td>
+        <td><a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u20201e843_upc_edu_pe/IQD_qlYjDzu1TpK41elo6f88AeXg56UeSNZMFSmreYfYCn8?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=3SzTXh">Ver entrevista</a></td>
+        <td>1:01:13</td>
+        <td>1:10:49</td>
+        <td align="center">
+          <img src="assets/images/screenshots/physiotherapist-interview-screenshot-1.png" alt="Evidencia entrevista Gustavo" style="width:170px; max-width:170px;">
+          <br>
+          <small>Figura 6.3.2.4. Entrevista a Gustavo.</small>
+        </td>
+        <td>
+          Gustavo indicó que la Aplicación Web le pareció clara y útil para el seguimiento clínico de pacientes, especialmente porque permite visualizar métricas biomecánicas, alertas de mala ejecución y evolución de ejercicios en un solo lugar.
+        </td>
+        <td>
+          Consideró que el sistema facilitaría la toma de decisiones entre sesiones presenciales. También recomendó incluir confirmaciones claras sobre el estado del dispositivo IoT y la asignación correcta del kit al paciente.
+        </td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Fabián Rojas</td>
+        <td>Fisioterapeuta</td>
+        <td>Web Application y Mobile Application</td>
+        <td><a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u20201e843_upc_edu_pe/IQD_qlYjDzu1TpK41elo6f88AeXg56UeSNZMFSmreYfYCn8?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=3SzTXh">Ver entrevista</a></td>
+        <td>1:10:49</td>
+        <td>1:17:03</td>
+        <td align="center">
+          <img src="assets/images/screenshots/physiotherapist-interview-screenshot-2.png" alt="Evidencia entrevista Fabián Rojas" style="width:170px; max-width:170px;">
+          <br>
+          <small>Figura 6.3.2.5. Entrevista a Fabián Rojas.</small>
+        </td>
+        <td>
+          Fabián Rojas señaló que la propuesta de uFlex resulta útil para mejorar el seguimiento de pacientes que realizan ejercicios desde casa. Comentó que la Web Application permite organizar mejor la información clínica, revisar pacientes asignados, consultar planes de tratamiento y visualizar datos de evolución. Asimismo, consideró que la aplicación móvil puede ayudar al paciente a seguir su rutina de forma más guiada, especialmente si muestra instrucciones claras, estado del sensor y retroalimentación durante el ejercicio.
+        </td>
+        <td>
+          Destacó como puntos positivos la organización del dashboard, la posibilidad de asignar planes terapéuticos y la vinculación con sensores IoT. Como mejora, recomendó reforzar los mensajes de confirmación cuando se asigne un dispositivo a un paciente y agregar indicaciones más visuales durante la ejecución del ejercicio móvil.
+        </td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Diego García</td>
+        <td>Fisioterapeuta</td>
+        <td>Web Application</td>
+        <td><a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u20201e843_upc_edu_pe/IQD_qlYjDzu1TpK41elo6f88AeXg56UeSNZMFSmreYfYCn8?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=3SzTXh">Ver entrevista</a></td>
+        <td>1:17:03</td>
+        <td>1:29:14</td>
+        <td align="center">
+          <img src="assets/images/screenshots/physiotherapist-interview-screenshot-3.png" alt="Evidencia entrevista Diego García" style="width:170px; max-width:170px;">
+          <br>
+          <small>Figura 6.3.2.6. Entrevista a Diego García.</small>
+        </td>
+        <td>
+          Diego García indicó que la Aplicación Web le pareció clara e intuitiva, resaltando que el dashboard concentra información necesaria para facilitar la toma de decisiones y la planificación de actividades clínicas. También mencionó que el modo oscuro resulta útil durante largas jornadas frente al computador.
+        </td>
+        <td>
+          Destacó que el registro de pacientes es sencillo, que la interacción con el sistema es fluida y que el flujo para registrar pacientes, crear planificaciones y asignar terapias permite llevar un mejor control del tratamiento.
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+#### Pacientes
+
+<div style="font-size:75%; overflow-x:auto;">
+  <table border="1" cellspacing="0" cellpadding="5">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Entrevistado</th>
+        <th>Perfil</th>
+        <th>Producto evaluado</th>
+        <th>Link de entrevista</th>
+        <th>Inicio</th>
+        <th>Fin</th>
+        <th>Evidencia</th>
+        <th>Resumen de la entrevista</th>
+        <th>Principales hallazgos</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>Gabriel</td>
+        <td>Paciente</td>
+        <td>Mobile Application</td>
+        <td><a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u20201e843_upc_edu_pe/IQD_qlYjDzu1TpK41elo6f88AeXg56UeSNZMFSmreYfYCn8?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=3SzTXh">Ver entrevista</a></td>
+        <td>1:29:15</td>
+        <td>1:38:07</td>
+        <td align="center">
+          <img src="assets/images/screenshots/patient-interview-screenshot-1.png" alt="Evidencia entrevista Gabriel" style="width:170px; max-width:170px;">
+          <br>
+          <small>Figura 6.3.2.7. Entrevista a Gabriel.</small>
+        </td>
+        <td>
+          Gabriel indicó que la aplicación móvil le parece intuitiva y fácil de entender. Comentó que el flujo de acceso, la visualización de ejercicios y la información del sensor son claros para un paciente que necesita seguir una rutina desde casa. También destacó la flexibilidad de la aplicación, ya que permite revisar ejercicios, seguir indicaciones y consultar el progreso sin depender totalmente de una sesión presencial.
+        </td>
+        <td>
+          Como punto positivo, señaló que la app se entiende bien y que el flujo principal resulta práctico. Como mejora, indicó que le gustaría que se trabajen mejor los estilos visuales, especialmente el contraste entre fondos claros y oscuros, para que la interfaz se vea más consistente y cómoda.
+        </td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Vianka</td>
+        <td>Paciente</td>
+        <td>Mobile Application</td>
+        <td><a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u20201e843_upc_edu_pe/IQD_qlYjDzu1TpK41elo6f88AeXg56UeSNZMFSmreYfYCn8?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=3SzTXh">Ver entrevista</a></td>
+        <td>1:29:15</td>
+        <td>1:38:07</td>
+        <td align="center">
+          <img src="assets/images/screenshots/patient-interview-screenshot-1-1.png" alt="Evidencia entrevista Vianka" style="width:170px; max-width:170px;">
+          <br>
+          <small>Figura 6.3.2.8. Entrevista a Vianka.</small>
+        </td>
+        <td>
+          Vianka comentó que la aplicación móvil le resulta útil para acompañar una rutina de rehabilitación desde casa. Señaló que la pantalla principal permite entender qué ejercicios debe realizar y que el seguimiento del progreso puede motivar al paciente a continuar con el tratamiento. También consideró importante que la app muestre mensajes claros cuando el sensor se encuentre conectado o cuando el movimiento no se esté realizando correctamente.
+        </td>
+        <td>
+          Destacó como puntos positivos la guía paso a paso, la visualización del avance y la posibilidad de recibir retroalimentación durante el ejercicio. Como mejora, recomendó que las alertas sean más visuales y que las instrucciones se presenten con frases cortas para que el paciente pueda corregir su postura rápidamente.
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<p>
+En síntesis, las entrevistas realizadas muestran una percepción positiva del ecosistema uFlex. Los administradores valoraron principalmente la claridad de la propuesta, la organización de la plataforma, los planes de suscripción, el modo oscuro y la gestión centralizada de recursos clínicos. Por su parte, los fisioterapeutas destacaron la utilidad del sistema para el seguimiento de pacientes, la visualización de métricas, la planificación de tratamientos, la asignación de terapias y el control del estado de los dispositivos IoT. Finalmente, los pacientes resaltaron que la aplicación móvil es intuitiva, flexible y útil para realizar ejercicios desde casa, aunque sugirieron mejorar el contraste visual y reforzar las instrucciones durante la ejecución de los ejercicios.
+</p>
 
 
 ### 6.3.3. Evaluaciones según heurísticas
 
-#### UX Heuristics & Principles Evaluation
+#### UX Heuristics & Principles Evaluation![img.png](img.png)![img_1.png](img_1.png)
 #### Usability – Inclusive Design – Information Architecture
 
 **CARRERA** : Ingeniería de Software
@@ -9502,7 +9891,7 @@ Menú de Navegación -> Consultar Historial de Progreso (Arcos de movimiento log
 
 **AUDITOR** : KinIoT
 
-**CLIENTES** : [...]
+**CLIENTES** : Carlos Vega, Fabián Rojas
 
 #### SITE o APP A EVALUAR:
 
@@ -9513,23 +9902,23 @@ Menú de Navegación -> Consultar Historial de Progreso (Arcos de movimiento log
 El alcance de esta evaluación incluye la revisión de usabilidad de las siguientes tareas:
 
 **Landing Page**:
-1. Navegación responsiva a través de secciones informativas (Hero, Beneficios, Cómo Funciona, Arquitectura, Testimonios).
-2. Uso del sistema de internacionalización (i18n) para el cambio de idioma de la interfaz.
-3. Consulta de los planes de suscripción (esquema B2B híbrido) y redirección al formulario de registro.
+1. Navegación responsiva a través de secciones informativas: Hero, Beneficios, Cómo Funciona, Arquitectura y Testimonios.
+2. Uso del sistema de internacionalización i18n para el cambio de idioma de la interfaz.
+3. Consulta de los planes de suscripción y redirección al formulario de registro.
 4. Envío del formulario de la sección de contacto.
 
 **Web Application**:
-1. Flujo completo de Onboarding B2B para el Administrador de la clínica (Sign Up, selección de plan, pasarela de pago simulada y Sign In).
-2. Gestión del ecosistema clínico por parte del Administrador (alta de fisioterapeutas, pacientes y administración del catálogo institucional de ejercicios).
-3. Monitoreo y control del inventario/estado de los Kits IoT de la organización por el Administrador.
-4. Consulta visual del módulo de terapias y evolución biomecánica (arcos de movilidad/ROM) por parte del Fisioterapeuta.
+1. Flujo completo de Onboarding B2B para el Administrador de la clínica: Sign Up, selección de plan, pasarela de pago simulada y Sign In.
+2. Gestión del ecosistema clínico por parte del Administrador: alta de fisioterapeutas, pacientes y administración del catálogo institucional de ejercicios.
+3. Monitoreo y control del inventario y estado de los Kits IoT de la organización.
+4. Consulta visual del módulo de terapias y evolución biomecánica por parte del Fisioterapeuta.
 5. Prescripción y asignación de planes de tratamiento utilizando el catálogo existente, vinculando un Kit IoT específico a un paciente.
-6. Interactividad del sistema i18n y cambio dinámico entre los temas visuales claro y oscuro en ambos roles.
+6. Interactividad del sistema i18n y cambio dinámico entre tema claro y oscuro.
 
 **Mobile Application**:
-1. Inicio de sesión del paciente (Sign In) con credenciales preestablecidas.
-2. Consulta de la pantalla principal y navegación hacia la sección "Mi Plan de Tratamiento".
-3. Vinculación y verificación de la conectividad Bluetooth del Kit IoT en la sección de estado del dispositivo.
+1. Inicio de sesión del paciente con credenciales preestablecidas para demostración.
+2. Consulta de la pantalla principal y navegación hacia la sección de plan de tratamiento.
+3. Vinculación y verificación de la conectividad Bluetooth del Kit IoT.
 4. Ejecución guiada de la sesión de terapia activa diaria, con visualización de rangos y retroalimentación en tiempo real.
 5. Acceso y visualización del historial de progreso y curvas de recuperación articular.
 
@@ -9543,91 +9932,195 @@ No están incluidas en esta versión de la evaluación las siguientes tareas:
 3. Pasarela de facturación real o emisión de comprobantes de pago electrónicos.
 
 **Web Application**
-1. Gestión avanzada o edición del estado de la suscripción (limitado visualmente al plan actual).
+1. Gestión avanzada o edición del estado de la suscripción.
 2. Procesos de liquidación financiera masiva o reportes contables del centro de salud.
 3. Modificación avanzada de perfiles de usuario ajenos o auditoría de accesos.
-4. Descarga de reportes clínicos exportables en formatos externos (PDF/Excel).
+4. Descarga de reportes clínicos exportables en formatos externos como PDF o Excel.
 
-**Mobile Applications**
+**Mobile Application**
 1. Recuperación de contraseña.
 2. Política de privacidad y condiciones de uso.
 3. Reportes de bugs.
-4. Configuraciones generales del sistema del dispositivo (permisos de sistema a nivel de sistema operativo que excedan el Bluetooth interno).
-5. Configuración explícita de i18n y modo oscuro/claro (pendiente de definición en la etapa móvil actual).
+4. Configuraciones generales del sistema operativo fuera del flujo Bluetooth interno.
+5. Configuración explícita de i18n y modo oscuro/claro en la versión móvil actual.
 
 #### ESCALA DE SEVERIDAD:
 
-| Nivel   | Descripción                                                                                                                                                                                         |
-|---------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 1       | **Problema superficial**: puede ser fácilmente superador por el usuario o ocurre con muy poca frecuencia. No necesita ser arreglado a no ser que exista disponibilidad de tiempo.                   |
-| 2       | **Problema menor**: puede ocurrir un poco más frecuentemente o es un poco más difícil de superar para el usuario. Se le debería asignar una prioridad baja resolverlo de cara al siguiente reléase. |
-| 3       | **Problema mayor**: ocurre frecuentemente o los usuarios no son capaces de resolverlos. Es importante que sean corregidos y se les debe asignar una prioridad alta.                                 |
-| 4       | **Problema muy grave**: un error de gran impacto que impide al usuario continuar con el uso de la herramienta. Es imperativo que sea corregido antes del lanzamiento.                               |
+| Nivel | Descripción |
+|-------|-------------|
+| 1 | **Problema superficial**: puede ser fácilmente superado por el usuario o ocurre con muy poca frecuencia. No necesita ser arreglado a menos que exista disponibilidad de tiempo. |
+| 2 | **Problema menor**: puede ocurrir con cierta frecuencia o ser un poco más difícil de superar. Se le debería asignar una prioridad baja para el siguiente release. |
+| 3 | **Problema mayor**: ocurre frecuentemente o los usuarios no son capaces de resolverlo fácilmente. Es importante corregirlo y asignarle prioridad alta. |
+| 4 | **Problema muy grave**: error de gran impacto que impide al usuario continuar con el uso de la herramienta. Debe corregirse antes del lanzamiento. |
 
 #### TABLA RESUMEN:
 
 #### **Landing Page**
 
-| # | Problema | Escala de severidad | Heurística/ Principio Violado |
-| - |----------|---------------------|-------------------------------|
-| 1 | ...      | ...                 | ...                           |
+| # | Problema | Escala de severidad | Heurística / Principio Violado |
+| - |----------|---------------------|--------------------------------|
+| 1 | El menú de navegación no muestra con suficiente claridad la sección actual al hacer scroll. | 2 | Visibilidad del estado del sistema / Arquitectura de información |
+| 2 | Algunos términos técnicos pueden resultar poco claros para usuarios administrativos no especializados. | 2 | Relación entre el sistema y el mundo real |
 
 **DESCRIPCIÓN DE PROBLEMAS:**
 
-**PROBLEMA #X:** ...
+**PROBLEMA #1: Falta de indicador visual de sección activa**
 
-**Severidad: ...**  
-**Heurística violada:** ...
+**Severidad:** 2  
+**Heurística violada:** Visibilidad del estado del sistema / Arquitectura de información
 
-**Problema:**
-...
+**Problema:**  
+Durante la revisión de la Landing Page, se identificó que el usuario puede desplazarse por distintas secciones informativas, pero no siempre cuenta con una señal visual clara que indique en qué sección se encuentra. Esto puede afectar la orientación dentro de la página, especialmente cuando se revisan secciones como beneficios, planes, arquitectura o testimonios.
 
-![Captura](captura)
+<figure align="center">
+  <img src="assets/ux-ui/mockups/landing/landing-page-mockup-9.png" alt="Landing Page - Menú de navegación" width="100%">
+  <figcaption>Figura 6.3.3.1. Menú de navegación de la Landing Page.</figcaption>
+</figure>
 
-**Recomendación:**
-...
+**Recomendación:**  
+Agregar un estado activo en el menú de navegación que cambie dinámicamente según la sección visible. Esto puede realizarse mediante resaltado de color, subrayado o cambio de estilo del enlace activo.
+
+**PROBLEMA #2: Uso de términos técnicos poco familiares**
+
+**Severidad:** 2  
+**Heurística violada:** Relación entre el sistema y el mundo real
+
+**Problema:**  
+La Landing Page y algunas secciones explicativas pueden utilizar términos técnicos relacionados con IoT, firmware o arquitectura del sistema. Para usuarios administrativos o clínicos sin perfil técnico, estos conceptos pueden no ser completamente claros.
+
+<figure align="center">
+  <img src="assets/ux-ui/mockups/landing/landing-page-mockup-4.png" alt="Landing Page - Sección de arquitectura IoT" width="100%">
+  <figcaption>Figura 6.3.3.2. Sección informativa de arquitectura IoT en la Landing Page.</figcaption>
+</figure>
+
+**Recomendación:**  
+Agregar microcopys, tooltips o explicaciones breves para términos técnicos. También se recomienda reemplazar palabras muy técnicas por frases orientadas al beneficio clínico o administrativo.
 
 #### **Web Application**
 
-| # | Problema | Escala de severidad | Heurística/ Principio Violado |
-| - |----------|---------------------|-------------------------------|
-| 1 | ...      | ...                 | ...                           |
+| # | Problema | Escala de severidad | Heurística / Principio Violado |
+| - |----------|---------------------|--------------------------------|
+| 1 | La foto de perfil del fisioterapeuta no aparece como dato obligatorio. | 2 | Prevención de errores / Consistencia y estándares |
+| 2 | El catálogo de ejercicios aún es limitado para cubrir diferentes zonas del cuerpo. | 3 | Flexibilidad y eficiencia de uso / Relación con el mundo real |
+| 3 | La vinculación del Kit IoT requiere confirmaciones más claras para evitar dudas clínicas. | 3 | Visibilidad del estado del sistema / Prevención de errores |
 
 **DESCRIPCIÓN DE PROBLEMAS:**
 
-**PROBLEMA #X:** ...
+**PROBLEMA #1: Foto de perfil del fisioterapeuta no obligatoria**
 
-**Severidad: ...**  
-**Heurística violada:** ...
+**Severidad:** 2  
+**Heurística violada:** Prevención de errores / Consistencia y estándares
 
-**Problema:**
-...
+**Problema:**  
+En el registro de fisioterapeutas, la foto de perfil puede no percibirse como un dato necesario. Esto puede reducir la percepción de profesionalismo y dificultar la identificación visual de los especialistas dentro de la plataforma.
 
-![Captura](captura)
+<figure align="center">
+  <img src="assets/ux-ui/mockups/web/admin/Organizacion_admin.png" alt="Web App - Gestión de organización y miembros" width="100%">
+  <figcaption>Figura 6.3.3.3. Gestión de organización y miembros en la Web Application.</figcaption>
+</figure>
 
-**Recomendación:**
-...
+**Recomendación:**  
+Marcar la foto de perfil como obligatoria o, en su defecto, mostrar una alerta que recomiende cargarla para mejorar la identificación del profesional.
+
+**PROBLEMA #2: Catálogo de ejercicios limitado**
+
+**Severidad:** 3  
+**Heurística violada:** Flexibilidad y eficiencia de uso / Relación con el mundo real
+
+**Problema:**  
+El catálogo de ejercicios representa una función central para la creación de planes de tratamiento. Sin embargo, si el catálogo se limita a pocas zonas corporales, como codo o muñeca, puede no cubrir todos los casos clínicos que atiende una clínica de rehabilitación.
+
+<figure align="center">
+  <img src="assets/ux-ui/mockups/web/admin/Theraphy_register_exercise.png" alt="Web App - Registro de ejercicios terapéuticos" width="100%">
+  <figcaption>Figura 6.3.3.4. Registro de ejercicios terapéuticos en la Web Application.</figcaption>
+</figure>
+
+**Recomendación:**  
+Ampliar progresivamente el catálogo de ejercicios, incorporando más partes del cuerpo y filtros por zona, tipo de movimiento, nivel de dificultad y objetivo terapéutico.
+
+**PROBLEMA #3: Confirmación insuficiente en la asignación del Kit IoT**
+
+**Severidad:** 3  
+**Heurística violada:** Visibilidad del estado del sistema / Prevención de errores
+
+**Problema:**  
+La vinculación de un Kit IoT a un paciente es una tarea crítica. Si el sistema no confirma claramente que el dispositivo quedó asignado al paciente correcto, el fisioterapeuta puede tener dudas sobre si el paciente está listo para iniciar el monitoreo remoto.
+
+<figure align="center">
+  <img src="assets/ux-ui/mockups/web/admin/adminlinkdevicetopatient(new).png" alt="Web App - Asignación de dispositivo IoT a paciente" width="100%">
+  <figcaption>Figura 6.3.3.5. Asignación de Kit IoT a paciente en la Web Application.</figcaption>
+</figure>
+
+<figure align="center">
+  <img src="assets/ux-ui/mockups/web/admin/Device_admin_1.png" alt="Web App - Inventario de dispositivos IoT" width="100%">
+  <figcaption>Figura 6.3.3.6. Inventario de dispositivos IoT en la Web Application.</figcaption>
+</figure>
+
+**Recomendación:**  
+Agregar mensajes de confirmación más visibles, estado del dispositivo, nombre del paciente vinculado y una validación final antes de guardar la asignación del kit.
 
 #### **Mobile Application**
 
-| # | Problema | Escala de severidad | Heurística/ Principio Violado |
-| - |----------|---------------------|-------------------------------|
-| 1 | ...      | ...                 | ...                           |
+| # | Problema | Escala de severidad | Heurística / Principio Violado |
+| - |----------|---------------------|--------------------------------|
+| 1 | El flujo de vinculación del sensor requiere mensajes claros durante cada etapa de conexión. | 3 | Visibilidad del estado del sistema |
+| 2 | La alerta de postura incorrecta debe ser clara y accionable para el paciente. | 3 | Ayuda a reconocer, diagnosticar y recuperarse de errores |
+| 3 | La versión móvil aún no contempla configuración explícita de idioma o modo oscuro/claro. | 2 | Diseño inclusivo / Accesibilidad |
 
 **DESCRIPCIÓN DE PROBLEMAS:**
 
-**PROBLEMA #X:** ...
+**PROBLEMA #1: Falta de claridad en cada etapa de vinculación del sensor**
 
-**Severidad: ...**  
-**Heurística violada:** ...
+**Severidad:** 3  
+**Heurística violada:** Visibilidad del estado del sistema
 
-**Problema:**
-...
+**Problema:**  
+Durante la vinculación del sensor IoT, el paciente necesita saber si debe encender el dispositivo, esperar la conexión, acercar el sensor o confirmar que ya está listo. Si el sistema no muestra estados claros, el paciente puede pensar que la conexión falló.
 
-![Captura](captura)
+<figure align="center">
+  <img src="assets/ux-ui/mockups/mobile/patient/mobile-patient-mockup-5.png" alt="Mobile App - Vinculación del sensor IoT" style="width:40%; max-width:320px;">
+  <figcaption>Figura 6.3.3.7. Proceso de conexión del sensor IoT en la Mobile Application.</figcaption>
+</figure>
 
-**Recomendación:**
-...
+<figure align="center">
+  <img src="assets/ux-ui/mockups/mobile/patient/mobile-patient-mockup-6.png" alt="Mobile App - Sensor IoT conectado" style="width:40%; max-width:320px;">
+  <figcaption>Figura 6.3.3.8. Confirmación de sensor conectado en la Mobile Application.</figcaption>
+</figure>
+
+**Recomendación:**  
+Mostrar estados progresivos como “Buscando sensor”, “Conectando”, “Sensor conectado” y “Listo para iniciar”. Además, se recomienda usar íconos, colores y mensajes breves para reforzar el estado actual.
+
+**PROBLEMA #2: Alerta de postura incorrecta poco accionable**
+
+**Severidad:** 3  
+**Heurística violada:** Ayuda a reconocer, diagnosticar y recuperarse de errores
+
+**Problema:**  
+La alerta de postura incorrecta debe ayudar al paciente a corregir el movimiento. Si solo se indica que existe un error, pero no se explica qué debe ajustar, el paciente puede frustrarse o continuar realizando el ejercicio de forma incorrecta.
+
+<figure align="center">
+  <img src="assets/ux-ui/mockups/mobile/patient/mobile-patient-mockup-9.png" alt="Mobile App - Alerta de postura incorrecta" style="width:40%; max-width:320px;">
+  <figcaption>Figura 6.3.3.9. Alerta de postura incorrecta durante la ejecución del ejercicio.</figcaption>
+</figure>
+
+**Recomendación:**  
+Acompañar la alerta con una instrucción concreta, por ejemplo: “Ajusta el ángulo del brazo”, “Mantén el codo alineado” o “Repite el movimiento lentamente”. Esto ayuda a corregir el error en tiempo real.
+
+**PROBLEMA #3: Falta de configuración móvil de idioma y tema visual**
+
+**Severidad:** 2  
+**Heurística violada:** Diseño inclusivo / Accesibilidad
+
+**Problema:**  
+A diferencia de la experiencia web, la aplicación móvil aún no contempla una configuración explícita para cambio de idioma o tema visual. Esto puede limitar la accesibilidad para usuarios que prefieren otro idioma o que realizan ejercicios en ambientes de baja iluminación.
+
+<figure align="center">
+  <img src="assets/ux-ui/mockups/mobile/patient/mobile-patient-mockup-11.png" alt="Mobile App - Perfil del paciente" style="width:40%; max-width:320px;">
+  <figcaption>Figura 6.3.3.10. Vista de perfil del paciente donde podría incorporarse configuración de idioma y tema visual.</figcaption>
+</figure>
+
+**Recomendación:**  
+Incorporar progresivamente opciones de idioma y tema visual en la configuración de la aplicación móvil, manteniendo consistencia con la experiencia web.
 
 <hr class="page-break">
 
